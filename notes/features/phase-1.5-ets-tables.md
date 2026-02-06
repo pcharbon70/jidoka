@@ -57,9 +57,9 @@ The GenServer owns the tables so they are automatically cleaned up when it stops
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/context_store.ex` | GenServer owning ETS tables |
-| `test/jido_coder_lib/context_store_test.exs` | ContextStore tests |
-| `lib/jido_coder_lib/application.ex` | Add ContextStore to supervision tree |
+| `lib/jidoka/context_store.ex` | GenServer owning ETS tables |
+| `test/jidoka/context_store_test.exs` | ContextStore tests |
+| `lib/jidoka/application.ex` | Add ContextStore to supervision tree |
 
 ### Table Definitions
 
@@ -80,7 +80,7 @@ The GenServer owns the tables so they are automatically cleaned up when it stops
 ## Implementation Plan
 
 ### Step 1: Create ContextStore GenServer ✅
-- [x] Create `JidoCoderLib.ContextStore` module
+- [x] Create `Jidoka.ContextStore` module
 - [x] Add @moduledoc with usage examples
 - [x] Implement `init/1` to create ETS tables
 - [x] Implement `terminate/2` for cleanup
@@ -135,14 +135,14 @@ The GenServer owns the tables so they are automatically cleaned up when it stops
 - All tests passing
 
 **Changes Made:**
-- Created `lib/jido_coder_lib/context_store.ex` (403 lines)
-- Updated `lib/jido_coder_lib/application.ex` to add ContextStore
-- Created `test/jido_coder_lib/context_store_test.exs` (364 lines, 18 tests)
+- Created `lib/jidoka/context_store.ex` (403 lines)
+- Updated `lib/jidoka/application.ex` to add ContextStore
+- Created `test/jidoka/context_store_test.exs` (364 lines, 18 tests)
 - Updated `test/test_helper.exs` to start application for tests
 
 **How to Test:**
 ```bash
-mix test test/jido_coder_lib/context_store_test.exs
+mix test test/jidoka/context_store_test.exs
 ```
 
 ---

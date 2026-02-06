@@ -14,7 +14,7 @@ Implemented a SPARQL 1.1 compliant client library for querying and updating RDF 
 
 ## What Was Implemented
 
-### 1. SPARQLClient Module (`lib/jido_coder_lib/knowledge/sparql_client.ex`)
+### 1. SPARQLClient Module (`lib/jidoka/knowledge/sparql_client.ex`)
 
 A complete SPARQL client module supporting:
 
@@ -42,7 +42,7 @@ Added `validate_context/1` helper to ensure proper database references:
 - Validates `:dict_manager` is a PID
 - Returns `{:error, :invalid_context}` for invalid contexts
 
-### 3. Test Suite (`test/jido_coder_lib/knowledge/sparql_client_test.exs`)
+### 3. Test Suite (`test/jidoka/knowledge/sparql_client_test.exs`)
 
 15 tests covering:
 - API shape verification for all query types
@@ -59,8 +59,8 @@ All tests pass.
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/knowledge/sparql_client.ex` | Main SPARQL client module |
-| `test/jido_coder_lib/knowledge/sparql_client_test.exs` | Test suite |
+| `lib/jidoka/knowledge/sparql_client.ex` | Main SPARQL client module |
+| `test/jidoka/knowledge/sparql_client_test.exs` | Test suite |
 
 ---
 
@@ -150,7 +150,7 @@ The following items are deferred for future implementation:
 
 | Requirement | Status |
 |------------|--------|
-| 5.1.1 Create `JidoCoderLib.Knowledge.SPARQLClient` module | Complete |
+| 5.1.1 Create `Jidoka.Knowledge.SPARQLClient` module | Complete |
 | 5.1.2 Implement `query/3` for SELECT queries | Complete |
 | 5.1.3 Implement `query/3` for CONSTRUCT queries | Complete |
 | 5.1.4 Implement `query/3` for ASK queries | Complete |

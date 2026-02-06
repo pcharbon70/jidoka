@@ -8,15 +8,15 @@
 
 ## Overview
 
-Implemented `JidoCoderLib.Knowledge.Engine`, a GenServer wrapper for the triple_store backend that provides a supervised, OTP-compliant knowledge graph engine for the jido_coder_lib project.
+Implemented `Jidoka.Knowledge.Engine`, a GenServer wrapper for the triple_store backend that provides a supervised, OTP-compliant knowledge graph engine for the jidoka project.
 
 ---
 
 ## What Was Implemented
 
-### Core Module: `JidoCoderLib.Knowledge.Engine`
+### Core Module: `Jidoka.Knowledge.Engine`
 
-**File:** `lib/jido_coder_lib/knowledge/engine.ex` (620 lines)
+**File:** `lib/jidoka/knowledge/engine.ex` (620 lines)
 
 **Key Features:**
 1. **GenServer Lifecycle Management**
@@ -60,12 +60,12 @@ Four standard graphs are created on startup:
 ### Application Integration
 
 **Files Modified:**
-- `lib/jido_coder_lib/application.ex` - Added Engine to supervision tree
+- `lib/jidoka/application.ex` - Added Engine to supervision tree
 - `config/config.exs` - Added `:knowledge_engine` configuration
 
 **Configuration:**
 ```elixir
-config :jido_coder_lib, :knowledge_engine,
+config :jidoka, :knowledge_engine,
   data_dir: "data/knowledge_graph",
   health_check_interval: 30_000,
   create_standard_graphs: true,
@@ -74,7 +74,7 @@ config :jido_coder_lib, :knowledge_engine,
 
 ### Test Suite
 
-**File:** `test/jido_coder_lib/knowledge/engine_test.exs` (285 lines)
+**File:** `test/jidoka/knowledge/engine_test.exs` (285 lines)
 
 **Test Results:** 22 tests, 0 failures, 6 skipped
 
@@ -124,14 +124,14 @@ The `db` field in the context is a PID (GenServer) not a reference:
 ## Files Created/Modified
 
 ### Created
-1. `lib/jido_coder_lib/knowledge/engine.ex` (620 lines)
-2. `test/jido_coder_lib/knowledge/engine_test.exs` (285 lines)
+1. `lib/jidoka/knowledge/engine.ex` (620 lines)
+2. `test/jidoka/knowledge/engine_test.exs` (285 lines)
 3. `notes/features/phase-5.2-knowledge-engine.md` (feature planning doc)
 
 ### Modified
-1. `lib/jido_coder_lib/application.ex` - Added Engine to supervision tree
+1. `lib/jidoka/application.ex` - Added Engine to supervision tree
 2. `config/config.exs` - Added knowledge_engine configuration
-3. `lib/jido_coder_lib/knowledge/sparql_client.ex` - Fixed context validation to accept PID
+3. `lib/jidoka/knowledge/sparql_client.ex` - Fixed context validation to accept PID
 
 ---
 
@@ -139,7 +139,7 @@ The `db` field in the context is a PID (GenServer) not a reference:
 
 ### Functional Requirements
 - [x] 5.2.1 Select quad-store implementation (triple_store)
-- [x] 5.2.2 Create `JidoCoderLib.Knowledge.Engine` module
+- [x] 5.2.2 Create `Jidoka.Knowledge.Engine` module
 - [x] 5.2.3 Implement `start_link/1` for engine initialization
 - [x] 5.2.4 Configure named graph support
 - [x] 5.2.5 Add engine to supervision tree
@@ -174,4 +174,4 @@ The `db` field in the context is a PID (GenServer) not a reference:
 - [TripleStore Documentation](/home/ducky/code/triple_store)
 - [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/)
 - [RDF.ex Documentation](https://hexdocs.pm/rdf/)
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)

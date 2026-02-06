@@ -12,25 +12,25 @@
 Created all required lib and test directories with .keep files for git tracking:
 
 **Lib directories:**
-- `lib/jido_coder_lib/agents/`
-- `lib/jido_coder_lib/session/`
-- `lib/jido_coder_lib/memory/short_term/`
-- `lib/jido_coder_lib/memory/long_term/`
-- `lib/jido_coder_lib/knowledge/`
-- `lib/jido_coder_lib/tools/`
-- `lib/jido_coder_lib/protocol/mcp/`
-- `lib/jido_coder_lib/protocol/phoenix/`
-- `lib/jido_coder_lib/protocol/a2a/`
-- `lib/jido_coder_lib/signals/`
+- `lib/jidoka/agents/`
+- `lib/jidoka/session/`
+- `lib/jidoka/memory/short_term/`
+- `lib/jidoka/memory/long_term/`
+- `lib/jidoka/knowledge/`
+- `lib/jidoka/tools/`
+- `lib/jidoka/protocol/mcp/`
+- `lib/jidoka/protocol/phoenix/`
+- `lib/jidoka/protocol/a2a/`
+- `lib/jidoka/signals/`
 
 **Test directories:**
-- `test/jido_coder_lib/agents/`
-- `test/jido_coder_lib/session/`
-- `test/jido_coder_lib/memory/`
-- `test/jido_coder_lib/knowledge/`
-- `test/jido_coder_lib/tools/`
-- `test/jido_coder_lib/protocol/`
-- `test/jido_coder_lib/integration/`
+- `test/jidoka/agents/`
+- `test/jidoka/session/`
+- `test/jidoka/memory/`
+- `test/jidoka/knowledge/`
+- `test/jidoka/tools/`
+- `test/jidoka/protocol/`
+- `test/jidoka/integration/`
 
 ### mix.exs Updates
 Updated `mix.exs` with:
@@ -73,8 +73,8 @@ All verification steps passed:
 |------|---------|
 | `mix.exs` | Added description, package, docs functions; added phoenix_pubsub; updated rdf version |
 | `README.md` | Complete rewrite with project information |
-| `lib/jido_coder_lib/*/.keep` | New files (11 directories) |
-| `test/jido_coder_lib/*/.keep` | New files (7 directories) |
+| `lib/jidoka/*/.keep` | New files (11 directories) |
+| `test/jidoka/*/.keep` | New files (7 directories) |
 
 ---
 

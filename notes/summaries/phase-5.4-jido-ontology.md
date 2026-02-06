@@ -14,9 +14,9 @@ Implemented Jido Ontology loading with a Turtle (.ttl) file defining memory type
 
 ## Implementation Summary
 
-### Module Created: `JidoCoderLib.Knowledge.Ontology`
+### Module Created: `Jidoka.Knowledge.Ontology`
 
-**Location:** `lib/jido_coder_lib/knowledge/ontology.ex`
+**Location:** `lib/jidoka/knowledge/ontology.ex`
 
 **Purpose:** Loader and validator for domain ontologies in the knowledge graph.
 
@@ -57,7 +57,7 @@ Implemented Jido Ontology loading with a Turtle (.ttl) file defining memory type
 
 ## Tests Created
 
-**Location:** `test/jido_coder_lib/knowledge/ontology_test.exs`
+**Location:** `test/jidoka/knowledge/ontology_test.exs`
 
 **Total Tests:** 35 tests (all passing)
 
@@ -110,9 +110,9 @@ Implemented Jido Ontology loading with a Turtle (.ttl) file defining memory type
 ## Files Changed
 
 ### Created
-1. `lib/jido_coder_lib/knowledge/ontology.ex` - Ontology loader module (530 lines)
+1. `lib/jidoka/knowledge/ontology.ex` - Ontology loader module (530 lines)
 2. `priv/ontologies/jido.ttl` - Jido ontology file (270 lines)
-3. `test/jido_coder_lib/knowledge/ontology_test.exs` - Test suite (350 lines)
+3. `test/jidoka/knowledge/ontology_test.exs` - Test suite (350 lines)
 4. `notes/features/phase-5.4-jido-ontology.md` - Feature planning document
 5. `notes/summaries/phase-5.4-jido-ontology.md` - This file
 
@@ -124,8 +124,8 @@ Implemented Jido Ontology loading with a Turtle (.ttl) file defining memory type
 ## Integration Notes
 
 The Ontology module integrates with:
-- **JidoCoderLib.Knowledge.Engine** - For graph context and triple insertion
-- **JidoCoderLib.Knowledge.NamedGraphs** - For graph IRI resolution
+- **Jidoka.Knowledge.Engine** - For graph context and triple insertion
+- **Jidoka.Knowledge.NamedGraphs** - For graph IRI resolution
 - **RDF** and **RDF.Turtle** - For parsing Turtle files
 - **TripleStore.SPARQL.Update.UpdateExecutor** - For quad insertion into named graphs
 
@@ -176,9 +176,9 @@ The triple_store dependency has known SPARQL parser issues affecting:
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
-- [Engine Implementation](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [Named Graphs](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/named_graphs.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
+- [Engine Implementation](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [Named Graphs](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/named_graphs.ex)
 - [RDF.ex Documentation](https://hexdocs.pm/rdf/)
 - [W3C RDF Schema](https://www.w3.org/2001/sw/RDFSchema/)
 - [W3C OWL Web Ontology Language](https://www.w3.org/OWL/)

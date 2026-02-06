@@ -41,7 +41,7 @@ Added new helper functions:
 
 ## Files Modified
 
-### lib/jido_coder_lib/indexing/code_indexer.ex
+### lib/jidoka/indexing/code_indexer.ex
 - Added `@default_base_iri` module attribute
 - Added `base_iri` to GenServer state
 - Added `parse_file_for_modules/1` - Parse file for module names
@@ -51,7 +51,7 @@ Added new helper functions:
 - Updated `remove_file_triples/2` - Parse and delete by module IRI
 - Removed `delete_indexing_operation_triples` function
 
-### lib/jido_coder_lib/indexing/indexing_status_tracker.ex
+### lib/jidoka/indexing/indexing_status_tracker.ex
 - Removed `persist_operation` calls from all handlers
 - Removed unused helper functions
 - Removed unused imports
@@ -85,8 +85,8 @@ This ensures complete cleanup including:
 ## Test Results
 
 All 34 tests passing:
-- `test/jido_coder_lib/indexing/code_indexer_test.exs`
-- `test/jido_coder_lib/indexing/indexing_status_tracker_test.exs`
+- `test/jidoka/indexing/code_indexer_test.exs`
+- `test/jidoka/indexing/indexing_status_tracker_test.exs`
 
 ---
 

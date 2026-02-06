@@ -7,7 +7,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project requires an Elixir code ontology to represent code constructs as RDF triples in the knowledge graph. This ontology will enable semantic representation and querying of Elixir source code structure including modules, functions, structs, protocols, behaviours, and macros.
+The jidoka project requires an Elixir code ontology to represent code constructs as RDF triples in the knowledge graph. This ontology will enable semantic representation and querying of Elixir source code structure including modules, functions, structs, protocols, behaviours, and macros.
 
 **Impact:**
 - Phase 6.2 (Code Indexer) cannot create typed code triples
@@ -33,12 +33,12 @@ Implement Elixir Ontology integration by loading the existing `elixir_ontologies
    - Defines Module, Function, Struct, Protocol, Behaviour, Macro classes
    - License: CC BY 4.0, Creator: Pascal Music
 
-3. **`test/jido_coder_lib/knowledge/elixir_ontology_test.exs`** (283 lines)
+3. **`test/jidoka/knowledge/elixir_ontology_test.exs`** (283 lines)
    - 42 comprehensive tests for Elixir ontology functionality
 
 ### Files Modified
 
-1. **`lib/jido_coder_lib/knowledge/ontology.ex`** (+256 lines)
+1. **`lib/jidoka/knowledge/ontology.ex`** (+256 lines)
    - Added Elixir namespace constants
    - Added Elixir class mappings (17 classes)
    - Implemented `load_elixir_ontology/0` - Loads both core and structure ontologies
@@ -194,6 +194,6 @@ Jido uses its own namespace (`https://jido.ai/`) for individuals (specific modul
 
 ## References
 
-- [Phase 6 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-06.md)
+- [Phase 6 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-06.md)
 - [elixir-ontologies Package](/home/ducky/code/elixir-ontologies)
 - [Elixir Ontology README](/home/ducky/code/elixir-ontologies/README.md)

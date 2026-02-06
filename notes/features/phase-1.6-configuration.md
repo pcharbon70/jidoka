@@ -41,7 +41,7 @@ The application needs a comprehensive configuration structure to manage:
 
 ```elixir
 # LLM Provider
-config :jido_coder_lib, :llm,
+config :jidoka, :llm,
   provider: :openai,  # :openai, :anthropic, :ollama, :mock
   model: "gpt-4",
   api_key: System.get_env("OPENAI_API_KEY"),
@@ -49,14 +49,14 @@ config :jido_coder_lib, :llm,
   temperature: 0.7
 
 # Knowledge Graph
-config :jido_coder_lib, :knowledge_graph,
+config :jidoka, :knowledge_graph,
   backend: :native,  # :native, :remote_sparql
   sparql_endpoint: "http://localhost:8080/sparql",
   cache_enabled: true,
   max_cache_size: 10_000
 
 # Session Management
-config :jido_coder_lib, :session,
+config :jidoka, :session,
   max_sessions: 100,
   idle_timeout: 300_000,  # 5 minutes
   absolute_timeout: 3_600_000  # 1 hour
@@ -70,8 +70,8 @@ config :jido_coder_lib, :session,
 | `config/dev.exs` | Add development-specific overrides |
 | `config/test.exs` | Add test-specific overrides (mock LLM, in-memory backend) |
 | `config/prod.exs` | Add production-specific overrides |
-| `lib/jido_coder_lib/config.ex` | New config validation module |
-| `test/jido_coder_lib/config_test.exs` | Config validation tests |
+| `lib/jidoka/config.ex` | New config validation module |
+| `test/jidoka/config_test.exs` | Config validation tests |
 
 ---
 
@@ -89,7 +89,7 @@ config :jido_coder_lib, :session,
 - [x] Update prod.exs with production settings
 
 ### Step 3: Create Config Validation Module
-- [x] Create `JidoCoderLib.Config` module
+- [x] Create `Jidoka.Config` module
 - [x] Add validation for LLM configuration
 - [x] Add validation for knowledge graph configuration
 - [x] Add validation for session configuration
@@ -129,7 +129,7 @@ config :jido_coder_lib, :session,
 - Updated dev.exs with development defaults (mock LLM, longer timeouts)
 - Updated test.exs with test defaults (fast timeouts, small caches)
 - Updated prod.exs with production settings (environment variable requirements)
-- Created JidoCoderLib.Config module with:
+- Created Jidoka.Config module with:
   - validate_all/0 for startup validation
   - Getter functions for all configuration values
   - Validation helpers with clear error messages

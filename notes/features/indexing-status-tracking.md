@@ -65,11 +65,11 @@ IndexingStatusTracker (GenServer)
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/indexing/indexing_status_tracker.ex`
+**Primary Module:** `lib/jidoka/indexing/indexing_status_tracker.ex`
 
 **Ontology Extension:** `priv/ontologies/elixir_indexing.ttl` (new)
 
-**Signal Module:** `lib/jido_coder_lib/signals/indexing_status.ex` (new)
+**Signal Module:** `lib/jidoka/signals/indexing_status.ex` (new)
 
 ### Data Structures
 
@@ -89,7 +89,7 @@ IndexingStatusTracker (GenServer)
 ### API Design
 
 ```elixir
-defmodule JidoCoderLib.Indexing.IndexingStatusTracker do
+defmodule Jidoka.Indexing.IndexingStatusTracker do
   use GenServer
 
   # Client API
@@ -163,15 +163,15 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/indexing/indexing_status_tracker.ex`
+- [ ] Create `lib/jidoka/indexing/indexing_status_tracker.ex`
 - [ ] Add GenServer use statement
 - [ ] Define state struct with operation maps
 - [ ] Add module documentation with examples
 - [ ] Implement start_link/1
 
 **Files:**
-- `lib/jido_coder_lib/indexing/indexing_status_tracker.ex` (new)
-- `test/jido_coder_lib/indexing/indexing_status_tracker_test.exs` (new)
+- `lib/jidoka/indexing/indexing_status_tracker.ex` (new)
+- `test/jidoka/indexing/indexing_status_tracker_test.exs` (new)
 
 ---
 
@@ -188,7 +188,7 @@ end
 - [ ] Implement `list_failed/0` - Return failed operations
 
 **Files:**
-- `lib/jido_coder_lib/indexing/indexing_status_tracker.ex` (modify)
+- `lib/jidoka/indexing/indexing_status_tracker.ex` (modify)
 
 ---
 
@@ -203,7 +203,7 @@ end
 - [ ] Load existing operations on startup
 
 **Files:**
-- `lib/jido_coder_lib/indexing/indexing_status_tracker.ex` (modify)
+- `lib/jidoka/indexing/indexing_status_tracker.ex` (modify)
 
 ---
 
@@ -218,8 +218,8 @@ end
 - [ ] Emit `indexing_failed` on fail_indexing
 
 **Files:**
-- `lib/jido_coder_lib/telemetry.ex` (modify)
-- `test/jido_coder_lib/telemetry_test.exs` (modify)
+- `lib/jidoka/telemetry.ex` (modify)
+- `test/jidoka/telemetry_test.exs` (modify)
 
 ---
 
@@ -228,14 +228,14 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/signals/indexing_status.ex`
+- [ ] Create `lib/jidoka/signals/indexing_status.ex`
 - [ ] Follow existing Signal pattern
 - [ ] Add to Signals convenience module
 
 **Files:**
-- `lib/jido_coder_lib/signals/indexing_status.ex` (new)
-- `lib/jido_coder_lib/signals.ex` (modify)
-- `test/jido_coder_lib/signals/indexing_status_test.exs` (new)
+- `lib/jidoka/signals/indexing_status.ex` (new)
+- `lib/jidoka/signals.ex` (modify)
+- `test/jidoka/signals/indexing_status_test.exs` (new)
 
 ---
 
@@ -249,7 +249,7 @@ end
 - [ ] Add configuration to config.exs
 
 **Files:**
-- `lib/jido_coder_lib/application.ex` (modify)
+- `lib/jidoka/application.ex` (modify)
 - `config/config.exs` (modify)
 
 ---
@@ -264,7 +264,7 @@ end
 - [ ] Test process restart recovery
 
 **Files:**
-- `test/jido_coder_lib/integration/indexing_status_integration_test.exs` (new)
+- `test/jidoka/integration/indexing_status_integration_test.exs` (new)
 
 ---
 
@@ -286,11 +286,11 @@ end
 All 8 steps have been completed successfully. The Indexing Status Tracking feature is now fully implemented with:
 
 - **Ontology Extension** (`priv/ontologies/elixir_indexing.ttl`): Defines semantic structure for indexing status
-- **IndexingStatusTracker GenServer** (`lib/jido_coder_lib/indexing/indexing_status_tracker.ex`): Core tracking logic with dual-storage approach
+- **IndexingStatusTracker GenServer** (`lib/jidoka/indexing/indexing_status_tracker.ex`): Core tracking logic with dual-storage approach
 - **API Functions**: start_indexing/2, complete_indexing/3, fail_indexing/3, get_status/2, get_project_status/2, list_failed/0, list_in_progress/0, get_operation/2
 - **Knowledge Graph Persistence**: SPARQL INSERT DATA operations to persist status to elixir-codebase graph
-- **Telemetry Events**: [:jido_coder_lib, :indexing, :started|:completed|:failed] events
-- **IndexingStatus Signal** (`lib/jido_coder_lib/signals/indexing_status.ex`): CloudEvents-compliant signal for status updates
+- **Telemetry Events**: [:jidoka, :indexing, :started|:completed|:failed] events
+- **IndexingStatus Signal** (`lib/jidoka/signals/indexing_status.ex`): CloudEvents-compliant signal for status updates
 - **Supervision Tree**: Added to main application supervision tree
 - **Comprehensive Tests**: 16 unit tests, 8 signal tests, 11 integration tests
 
@@ -304,7 +304,7 @@ All 8 steps have been completed successfully. The Indexing Status Tracking featu
 
 ## References
 
-- [Phase 6 Planning Document](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-06.md)
-- [Knowledge Engine](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [Telemetry Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/telemetry.ex)
-- [Signals Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/signals.ex)
+- [Phase 6 Planning Document](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-06.md)
+- [Knowledge Engine](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [Telemetry Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/telemetry.ex)
+- [Signals Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/signals.ex)

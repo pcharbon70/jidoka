@@ -311,18 +311,18 @@ The implementation demonstrates solid engineering with room for optimization. Wi
 ## Appendix: Files Reviewed
 
 ### Implementation Files
-- lib/jido_coder_lib/indexing/code_indexer.ex (549 lines)
-- lib/jido_coder_lib/indexing/indexing_status_tracker.ex (435 lines)
-- lib/jido_coder_lib/indexing/file_system_watcher.ex (508 lines)
-- lib/jido_coder_lib/codebase/queries.ex (1,932 lines)
-- lib/jido_coder_lib/agents/codebase_context.ex (756 lines)
+- lib/jidoka/indexing/code_indexer.ex (549 lines)
+- lib/jidoka/indexing/indexing_status_tracker.ex (435 lines)
+- lib/jidoka/indexing/file_system_watcher.ex (508 lines)
+- lib/jidoka/codebase/queries.ex (1,932 lines)
+- lib/jidoka/agents/codebase_context.ex (756 lines)
 
 ### Test Files
-- test/jido_coder_lib/indexing/code_indexer_test.exs
-- test/jido_coder_lib/indexing/indexing_status_tracker_test.exs
-- test/jido_coder_lib/indexing/file_system_watcher_test.exs
-- test/jido_coder_lib/codebase/queries_test.exs
-- test/jido_coder_lib/agents/codebase_context_test.exs
-- test/jido_coder_lib/integration/phase6_test.exs (600 lines)
+- test/jidoka/indexing/code_indexer_test.exs
+- test/jidoka/indexing/indexing_status_tracker_test.exs
+- test/jidoka/indexing/file_system_watcher_test.exs
+- test/jidoka/codebase/queries_test.exs
+- test/jidoka/agents/codebase_context_test.exs
+- test/jidoka/integration/phase6_test.exs (600 lines)
 
 ### Total Lines Analyzed: ~4,238 lines of implementation code

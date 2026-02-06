@@ -14,7 +14,7 @@ All requirements for section 4.2 were satisfied by the Phase 4.1 implementation:
 
 | Requirement | Status | Location |
 |------------|--------|----------|
-| 4.2.1 Create ConversationBuffer module | ✅ Complete | `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` |
+| 4.2.1 Create ConversationBuffer module | ✅ Complete | `lib/jidoka/memory/short_term/conversation_buffer.ex` |
 | 4.2.2 Implement `add/2` | ✅ Complete | Lines 88-102 |
 | 4.2.3 Token-aware eviction | ✅ Complete | Lines 257-310 |
 | 4.2.4 Return evicted messages | ✅ Complete | Returns `{:ok, buffer, evicted}` |
@@ -35,7 +35,7 @@ All requirements for section 4.2 were satisfied by the Phase 4.1 implementation:
 
 **20 tests passing** (part of 88 total STM tests from Phase 4.1)
 
-All ConversationBuffer tests in `test/jido_coder_lib/memory/short_term/conversation_buffer_test.exs`:
+All ConversationBuffer tests in `test/jidoka/memory/short_term/conversation_buffer_test.exs`:
 - Test initialization with defaults and custom options
 - Test add adds messages with token estimation
 - Test eviction triggers when budget exceeded

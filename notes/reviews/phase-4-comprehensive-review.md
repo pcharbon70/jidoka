@@ -208,7 +208,7 @@ Concerns:
 2. Error tuple format varies from existing `%{type: atom(), details: map()}` pattern
 
 **Good Practices:**
-- Excellent module naming (`JidoCoderLib.Memory.*` hierarchy)
+- Excellent module naming (`Jidoka.Memory.*` hierarchy)
 - Consistent CRUD operations
 - Proper guard clause usage
 - Standard library usage consistent
@@ -351,36 +351,36 @@ Concerns:
 1. **Fix ETS Table Access Control** (SEC-1)
    - Change `:public` to `:protected` in session_adapter.ex:78
    - Or implement GenServer wrapper for access control
-   - **Files:** `lib/jido_coder_lib/memory/long_term/session_adapter.ex`
+   - **Files:** `lib/jidoka/memory/long_term/session_adapter.ex`
 
 2. **Fix Atom Creation from User Input** (SEC-2)
    - Validate session_id length FIRST (max 100 chars)
    - Use crypto hash instead of sanitized input
-   - **Files:** `lib/jido_coder_lib/memory/long_term/session_adapter.ex:337-350`
+   - **Files:** `lib/jidoka/memory/long_term/session_adapter.ex:337-350`
 
 3. **Add Memory Data Size Validation** (SEC-3)
    - Implement `@max_data_size 102_400` (100KB limit)
    - Validate before storage
-   - **Files:** `lib/jido_coder_lib/memory/promotion_engine.ex:445-452`
+   - **Files:** `lib/jidoka/memory/promotion_engine.ex:445-452`
 
 4. **Fix Cache Key to Include Session** (SEC-4)
    - Add adapter.session_id to cache_key calculation
-   - **Files:** `lib/jido_coder_lib/memory/retrieval.ex:467-472`
+   - **Files:** `lib/jidoka/memory/retrieval.ex:467-472`
 
 ### Priority 2 - HIGH (Do Soon)
 
 5. **Add STM Process Isolation** (ARCH-1)
    - Wrap STM in GenServer or Agent
    - Provides supervision and crash recovery
-   - **Files:** `lib/jido_coder_lib/memory/short_term.ex`
+   - **Files:** `lib/jidoka/memory/short_term.ex`
 
 6. **Implement ETS Table Cleanup** (ARCH-2, SEC-5)
    - Add session supervision with terminate callback
    - Call drop_table on session termination
-   - **Files:** `lib/jido_coder_lib/memory/long_term/session_adapter.ex`
+   - **Files:** `lib/jidoka/memory/long_term/session_adapter.ex`
 
 7. **Extract Validation Module** (RED-1)
-   - Create `lib/jido_coder_lib/memory/validation.ex`
+   - Create `lib/jidoka/memory/validation.ex`
    - Consolidate validation logic from 4 files
    - **Affected Files:** conversation_buffer.ex, pending_memories.ex, promotion_engine.ex, session_adapter.ex
 
@@ -389,15 +389,15 @@ Concerns:
 8. **Bound Access Log Growth** (ARCH-3)
    - Implement `@max_access_log 1000`
    - Trim log when exceeding limit
-   - **Files:** `lib/jido_coder_lib/memory/short_term.ex`
+   - **Files:** `lib/jidoka/memory/short_term.ex`
 
 9. **Fix O(n²) Eviction** (ARCH-4)
    - Pass running token count as accumulator
    - Eliminate redundant Enum.reduce calls
-   - **Files:** `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex:286-310`
+   - **Files:** `lib/jidoka/memory/short_term/conversation_buffer.ex:286-310`
 
 10. **Extract Type Inference Module** (RED-2)
-    - Create `lib/jido_coder_lib/memory/type_inference.ex`
+    - Create `lib/jidoka/memory/type_inference.ex`
     - Consolidate from WorkingContext and PromotionEngine
 
 ### Priority 4 - LOW (Nice to Have)

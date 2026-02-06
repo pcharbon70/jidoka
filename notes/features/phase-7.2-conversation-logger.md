@@ -25,7 +25,7 @@ Phase 7.2 implements the conversation logger that records all interaction compon
 
 ## Solution Overview
 
-Create `JidoCoderLib.Conversation.Logger` module that:
+Create `Jidoka.Conversation.Logger` module that:
 1. Creates and manages conversation records in the knowledge graph
 2. Logs conversation turns with prompts and answers
 3. Logs tool invocations and their results
@@ -49,15 +49,15 @@ Create `JidoCoderLib.Conversation.Logger` module that:
 
 | File | Action | Purpose |
 |------|--------|---------|
-| `lib/jido_coder_lib/conversation/logger.ex` | Create | Conversation logging module |
-| `test/jido_coder_lib/conversation/logger_test.exs` | Create | Unit tests for logger |
-| `lib/jido_coder_lib/conversation.ex` | Create | Main conversation module header |
+| `lib/jidoka/conversation/logger.ex` | Create | Conversation logging module |
+| `test/jidoka/conversation/logger_test.exs` | Create | Unit tests for logger |
+| `lib/jidoka/conversation.ex` | Create | Main conversation module header |
 
 ### Dependencies
 
-- `JidoCoderLib.Knowledge.Engine` - Knowledge graph access
-- `JidoCoderLib.Knowledge.Ontology` - Conversation ontology helpers
-- `JidoCoderLib.Knowledge.NamedGraphs` - Named graph management
+- `Jidoka.Knowledge.Engine` - Knowledge graph access
+- `Jidoka.Knowledge.Ontology` - Conversation ontology helpers
+- `Jidoka.Knowledge.NamedGraphs` - Named graph management
 - `TripleStore` - SPARQL update operations
 - `Jason` - JSON encoding for parameters/results
 
@@ -95,8 +95,8 @@ From Phase 7.1 conversation-history.ttl:
 ## Implementation Plan
 
 ### Task 7.2.1: Create Conversation module structure
-- [x] Create `lib/jido_coder_lib/conversation.ex` header module
-- [x] Create `lib/jido_coder_lib/conversation/logger.ex`
+- [x] Create `lib/jidoka/conversation.ex` header module
+- [x] Create `lib/jidoka/conversation/logger.ex`
 - [x] Add module documentation and @moduledoc
 - [x] Define module attributes for prefixes
 
@@ -155,14 +155,14 @@ From Phase 7.1 conversation-history.ttl:
 
 ## Unit Tests
 
-### File: `test/jido_coder_lib/conversation/logger_test.exs`
+### File: `test/jidoka/conversation/logger_test.exs`
 
 ```elixir
-defmodule JidoCoderLib.Conversation.LoggerTest do
+defmodule Jidoka.Conversation.LoggerTest do
   use ExUnit.Case, async: false
 
-  alias JidoCoderLib.Conversation.Logger
-  alias JidoCoderLib.Knowledge.{Engine, Ontology, NamedGraphs}
+  alias Jidoka.Conversation.Logger
+  alias Jidoka.Knowledge.{Engine, Ontology, NamedGraphs}
 
   @moduletag :conversation_logger
   @moduletag :external
@@ -449,9 +449,9 @@ All tests pass:
 
 | File | Status | Lines |
 |------|--------|-------|
-| `lib/jido_coder_lib/conversation.ex` | Created | 56 |
-| `lib/jido_coder_lib/conversation/logger.ex` | Created | 558 |
-| `test/jido_coder_lib/conversation/logger_test.exs` | Created | 148 |
+| `lib/jidoka/conversation.ex` | Created | 56 |
+| `lib/jidoka/conversation/logger.ex` | Created | 558 |
+| `test/jidoka/conversation/logger_test.exs` | Created | 148 |
 
 ---
 

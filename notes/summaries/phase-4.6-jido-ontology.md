@@ -10,9 +10,9 @@ Implemented Jido Memory Core (jmem) ontology integration for memory items. This 
 
 ## Implementation Details
 
-### Module: `JidoCoderLib.Memory.Ontology`
+### Module: `Jidoka.Memory.Ontology`
 
-Location: `lib/jido_coder_lib/memory/ontology.ex` (427 lines)
+Location: `lib/jidoka/memory/ontology.ex` (427 lines)
 
 **Namespaces:**
 - Jido Memory Core: `https://w3id.org/jido/memory/core#`
@@ -68,7 +68,7 @@ Location: `lib/jido_coder_lib/memory/ontology.ex` (427 lines)
 
 ## Test Coverage
 
-**36 tests passing** in `test/jido_coder_lib/memory/ontology_test.exs`
+**36 tests passing** in `test/jidoka/memory/ontology_test.exs`
 
 ### Test Categories:
 
@@ -110,8 +110,8 @@ Location: `lib/jido_coder_lib/memory/ontology.ex` (427 lines)
 ## Files Created/Modified
 
 **New Files:**
-1. `lib/jido_coder_lib/memory/ontology.ex` - Main ontology module (427 lines)
-2. `test/jido_coder_lib/memory/ontology_test.exs` - Test suite (351 lines)
+1. `lib/jidoka/memory/ontology.ex` - Main ontology module (427 lines)
+2. `test/jidoka/memory/ontology_test.exs` - Test suite (351 lines)
 
 **Documentation:**
 1. `notes/features/phase-4.6-jido-ontology.md` - Feature planning document

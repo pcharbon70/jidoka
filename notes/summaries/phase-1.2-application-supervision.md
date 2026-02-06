@@ -8,14 +8,14 @@
 
 ## What Was Done
 
-### Application Module (`lib/jido_coder_lib/application.ex`)
+### Application Module (`lib/jidoka/application.ex`)
 Complete rewrite with proper documentation:
 - Added comprehensive @moduledoc explaining the supervision tree
 - Added @doc for start/2 function
 - Configured children list with ProtocolSupervisor DynamicSupervisor
 - Set up :one_for_one supervision strategy
 
-### Supervisor Module (`lib/jido_coder_lib/supervisor.ex`)
+### Supervisor Module (`lib/jidoka/supervisor.ex`)
 Created new supervisor documentation module:
 - Explains the supervision tree structure
 - Documents current and future children
@@ -28,7 +28,7 @@ Created complete configuration structure:
 - `config/test.exs` - Test environment (fast timeouts, minimal logging)
 - `config/prod.exs` - Production environment (standard settings, telemetry enabled)
 
-### Tests (`test/jido_coder_lib/application_test.exs`)
+### Tests (`test/jidoka/application_test.exs`)
 Added comprehensive application tests:
 - Application starts without errors
 - ProtocolSupervisor is accessible and functioning
@@ -40,8 +40,8 @@ Added comprehensive application tests:
 ## Supervision Tree
 
 ```
-JidoCoderLib.Supervisor (one_for_one)
-├── JidoCoderLib.ProtocolSupervisor (DynamicSupervisor)
+Jidoka.Supervisor (one_for_one)
+├── Jidoka.ProtocolSupervisor (DynamicSupervisor)
 │   └── Protocol connections (MCP, Phoenix, A2A) - added later
 ├── Phoenix.PubSub - added in Phase 1.3
 ├── AgentRegistry - added in Phase 1.4
@@ -67,13 +67,13 @@ Finished in 0.1 seconds (0.00s async, 0.09s sync)
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Complete rewrite |
-| `lib/jido_coder_lib/supervisor.ex` | New file |
+| `lib/jidoka/application.ex` | Complete rewrite |
+| `lib/jidoka/supervisor.ex` | New file |
 | `config/config.exs` | New file |
 | `config/dev.exs` | New file |
 | `config/test.exs` | New file |
 | `config/prod.exs` | New file |
-| `test/jido_coder_lib/application_test.exs` | New file |
+| `test/jidoka/application_test.exs` | New file |
 
 ---
 

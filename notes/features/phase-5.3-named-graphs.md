@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project requires a high-level API for managing named graphs in the knowledge graph engine. While the Engine provides low-level graph operations, there is a need for:
+The jidoka project requires a high-level API for managing named graphs in the knowledge graph engine. While the Engine provides low-level graph operations, there is a need for:
 
 1. A convenient API that doesn't require passing the engine name every time
 2. Centralized definition of standard graph names and their IRIs
@@ -29,7 +29,7 @@ The jido_coder_lib project requires a high-level API for managing named graphs i
 
 ## Solution Overview
 
-Implement `JidoCoderLib.Knowledge.NamedGraphs` module as a high-level API for named graph management.
+Implement `Jidoka.Knowledge.NamedGraphs` module as a high-level API for named graph management.
 
 **Key Design Decisions:**
 1. **Default Engine Name** - Functions use `:knowledge_engine` as default
@@ -40,7 +40,7 @@ Implement `JidoCoderLib.Knowledge.NamedGraphs` module as a high-level API for na
 
 **Architecture:**
 ```
-JidoCoderLib.Knowledge.NamedGraphs (high-level API)
+Jidoka.Knowledge.NamedGraphs (high-level API)
 ├── list/0                     - List all standard graphs
 ├── get_info/1                 - Get graph metadata
 ├── exists?/1                  - Check if graph exists
@@ -61,11 +61,11 @@ JidoCoderLib.Knowledge.NamedGraphs (high-level API)
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/knowledge/named_graphs.ex`
+**Primary Module:** `lib/jidoka/knowledge/named_graphs.ex`
 
 **API Design:**
 ```elixir
-defmodule JidoCoderLib.Knowledge.NamedGraphs do
+defmodule Jidoka.Knowledge.NamedGraphs do
   @moduledoc """
   High-level API for managing named graphs in the knowledge graph.
 
@@ -106,7 +106,7 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 ### Dependencies
 
 **Existing:**
-- `JidoCoderLib.Knowledge.Engine` - For graph operations
+- `Jidoka.Knowledge.Engine` - For graph operations
 - `RDF.IRI` - For IRI handling
 
 ---
@@ -114,7 +114,7 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 ## Success Criteria
 
 ### Functional Requirements
-- [x] 5.3.1 Create `JidoCoderLib.Knowledge.NamedGraphs` module
+- [x] 5.3.1 Create `Jidoka.Knowledge.NamedGraphs` module
 - [x] 5.3.2 Define `long_term_context` graph metadata
 - [x] 5.3.3 Define `elixir_codebase` graph metadata
 - [x] 5.3.4 Define `conversation_history` graph metadata
@@ -153,13 +153,13 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 **Status:** Complete
 
 **Tasks:**
-- [x] Create `lib/jido_coder_lib/knowledge/named_graphs.ex`
+- [x] Create `lib/jidoka/knowledge/named_graphs.ex`
 - [x] Add module documentation
 - [x] Define @graphs attribute with standard graph registry
 - [x] Add @spec types
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/named_graphs.ex` (new)
+- `lib/jidoka/knowledge/named_graphs.ex` (new)
 
 ---
 
@@ -215,7 +215,7 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 - [x] Implement `exists?/1` - Checks if graph exists
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/named_graphs.ex` (modify)
+- `lib/jidoka/knowledge/named_graphs.ex` (modify)
 
 ---
 
@@ -229,7 +229,7 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 - [x] Implement `drop/1` - Drop a standard graph
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/named_graphs.ex` (modify)
+- `lib/jidoka/knowledge/named_graphs.ex` (modify)
 
 ---
 
@@ -249,7 +249,7 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 - [x] Test iri conversion works
 
 **Files:**
-- `test/jido_coder_lib/knowledge/named_graphs_test.exs` (new)
+- `test/jidoka/knowledge/named_graphs_test.exs` (new)
 
 **Test Results:**
 - 30 tests created
@@ -272,6 +272,6 @@ Uses existing `:knowledge_engine` configuration from config.exs.
 
 ## References
 
-- [Phase 5.2 Engine Implementation](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
+- [Phase 5.2 Engine Implementation](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
 - [RDF.ex Documentation](https://hexdocs.pm/rdf/)

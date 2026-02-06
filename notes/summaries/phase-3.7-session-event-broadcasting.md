@@ -18,8 +18,8 @@ Phase 3.7 adds `session_status` event broadcasting to the SessionManager. When a
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Added `broadcast_session_status/3` helper, calls at all state transitions |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | Added 4 tests for session_status event broadcasting |
+| `lib/jidoka/agents/session_manager.ex` | Added `broadcast_session_status/3` helper, calls at all state transitions |
+| `test/jidoka/agents/session_manager_test.exs` | Added 4 tests for session_status event broadcasting |
 
 ### New Event: session_status
 
@@ -68,19 +68,19 @@ end
 
 Broadcasts are now triggered at 4 transition points:
 
-1. **Session Creation** (lib/jido_coder_lib/agents/session_manager.ex:218)
+1. **Session Creation** (lib/jidoka/agents/session_manager.ex:218)
    - `:initializing` → `:active`
    - Broadcasts after SessionSupervisor starts successfully
 
-2. **Session Termination - First Transition** (lib/jido_coder_lib/agents/session_manager.ex:269)
+2. **Session Termination - First Transition** (lib/jidoka/agents/session_manager.ex:269)
    - `:active` → `:terminating`
    - Broadcasts before stopping SessionSupervisor
 
-3. **Session Termination - Final Transition** (lib/jido_coder_lib/agents/session_manager.ex:296)
+3. **Session Termination - Final Transition** (lib/jidoka/agents/session_manager.ex:296)
    - `:terminating` → `:terminated`
    - Broadcasts after SessionSupervisor stops
 
-4. **Session Crash Handling** (lib/jido_coder_lib/agents/session_manager.ex:388)
+4. **Session Crash Handling** (lib/jidoka/agents/session_manager.ex:388)
    - `:*` → `:terminated` (via crash)
    - Broadcasts when SessionSupervisor crashes
 
@@ -177,10 +177,10 @@ Phase 3.7 adds to the existing event system from Phase 3.6:
 
 ```elixir
 # Subscribe to all session events (global)
-JidoCoderLib.PubSub.subscribe_client_events()
+Jidoka.PubSub.subscribe_client_events()
 
 # Or subscribe to specific session events
-JidoCoderLib.PubSub.subscribe_client_session(session_id)
+Jidoka.PubSub.subscribe_client_session(session_id)
 
 # In your GenServer or process
 def handle_info({_, {:session_status, event}}, state) do
@@ -212,7 +212,7 @@ defmodule SessionTracker do
 
   def init(state) do
     # Subscribe to all session events
-    JidoCoderLib.PubSub.subscribe_client_events()
+    Jidoka.PubSub.subscribe_client_events()
     {:ok, state}
   end
 
@@ -309,7 +309,7 @@ Potential additions for future phases:
 
 - Feature Planning: `notes/features/phase-3.7-session-event-broadcasting.md`
 - Main Planning: `notes/planning/01-foundation/phase-03.md`
-- SessionManager: `lib/jido_coder_lib/agents/session_manager.ex`
-- Session.State: `lib/jido_coder_lib/session/state.ex`
-- PubSub: `lib/jido_coder_lib/pubsub.ex`
-- Tests: `test/jido_coder_lib/agents/session_manager_test.exs`
+- SessionManager: `lib/jidoka/agents/session_manager.ex`
+- Session.State: `lib/jidoka/session/state.ex`
+- PubSub: `lib/jidoka/pubsub.ex`
+- Tests: `test/jidoka/agents/session_manager_test.exs`

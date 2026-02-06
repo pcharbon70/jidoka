@@ -52,28 +52,28 @@ Create the core STM data structures as a foundation for the two-tier memory syst
 
 | File | Purpose | Lines (est.) |
 |------|---------|--------------|
-| `lib/jido_coder_lib/memory/short_term.ex` | Main STM module | 200 |
-| `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` | Sliding window buffer | 250 |
-| `lib/jido_coder_lib/memory/short_term/working_context.ex` | Semantic scratchpad | 180 |
-| `lib/jido_coder_lib/memory/short_term/pending_memories.ex` | Promotion queue | 150 |
-| `lib/jido_coder_lib/memory/token_budget.ex` | Token config struct | 100 |
+| `lib/jidoka/memory/short_term.ex` | Main STM module | 200 |
+| `lib/jidoka/memory/short_term/conversation_buffer.ex` | Sliding window buffer | 250 |
+| `lib/jidoka/memory/short_term/working_context.ex` | Semantic scratchpad | 180 |
+| `lib/jidoka/memory/short_term/pending_memories.ex` | Promotion queue | 150 |
+| `lib/jidoka/memory/token_budget.ex` | Token config struct | 100 |
 
 ### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Add STM supervisor to supervision tree |
+| `lib/jidoka/application.ex` | Add STM supervisor to supervision tree |
 | `test/test_helper.exs` | Add STM test setup if needed |
 
 ### Module Hierarchy
 
 ```
-JidoCoderLib.Memory.ShortTerm
+Jidoka.Memory.ShortTerm
 ├── ConversationBuffer (sliding window)
 ├── WorkingContext (semantic scratchpad)
 └── PendingMemories (promotion queue)
 
-JidoCoderLib.Memory.TokenBudget (configuration)
+Jidoka.Memory.TokenBudget (configuration)
 ```
 
 ---
@@ -109,7 +109,7 @@ JidoCoderLib.Memory.TokenBudget (configuration)
 ### 4.1.1-4.1.2: Create ShortTerm Module and ConversationBuffer
 
 **Tasks:**
-- [ ] 4.1.1 Create `JidoCoderLib.Memory.ShortTerm` module
+- [ ] 4.1.1 Create `Jidoka.Memory.ShortTerm` module
 - [ ] 4.1.2 Create `ConversationBuffer` struct with fields:
   - `messages` - List of conversation messages
   - `max_messages` - Maximum message count
@@ -208,7 +208,7 @@ We'll keep STM as functional data structures (not GenServers) for simplicity. Th
 ### ConversationBuffer
 
 ```elixir
-defmodule JidoCoderLib.Memory.ShortTerm.ConversationBuffer do
+defmodule Jidoka.Memory.ShortTerm.ConversationBuffer do
   defstruct [
     :messages,      # [%{role: :user, content: "...", tokens: 10}]
     :max_messages,  # 100
@@ -221,7 +221,7 @@ end
 ### WorkingContext
 
 ```elixir
-defmodule JidoCoderLib.Memory.ShortTerm.WorkingContext do
+defmodule Jidoka.Memory.ShortTerm.WorkingContext do
   defstruct [
     :data,        # %{"current_file" => "/path/to/file.ex"}
     :max_items,   # 50
@@ -233,7 +233,7 @@ end
 ### PendingMemories
 
 ```elixir
-defmodule JidoCoderLib.Memory.ShortTerm.PendingMemories do
+defmodule Jidoka.Memory.ShortTerm.PendingMemories do
   defstruct [
     :queue,     # :queue.new()
     :max_size   # 20
@@ -244,7 +244,7 @@ end
 ### TokenBudget
 
 ```elixir
-defmodule JidoCoderLib.Memory.TokenBudget do
+defmodule Jidoka.Memory.TokenBudget do
   defstruct [
     :max_tokens,           # 4000
     :reserve_percentage,   # 0.1 (10% reserve)

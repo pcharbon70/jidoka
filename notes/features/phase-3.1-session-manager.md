@@ -38,14 +38,14 @@ The SessionManager will be a GenServer that tracks sessions but delegates actual
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | SessionManager GenServer |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | Unit tests |
+| `lib/jidoka/agents/session_manager.ex` | SessionManager GenServer |
+| `test/jidoka/agents/session_manager_test.exs` | Unit tests |
 
 ### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Add SessionManager to supervision tree |
+| `lib/jidoka/application.ex` | Add SessionManager to supervision tree |
 
 ### SessionManager API
 
@@ -90,7 +90,7 @@ Table: `:session_registry`
 ## Implementation Plan
 
 ### Step 1: Create SessionManager Module
-- [x] 3.1.1 Create `JidoCoderLib.Agents.SessionManager` as GenServer
+- [x] 3.1.1 Create `Jidoka.Agents.SessionManager` as GenServer
 - [x] 3.1.2 Define session state struct
 - [x] 3.1.3 Define ETS table name
 
@@ -146,7 +146,7 @@ Table: `:session_registry`
 mix compile
 
 # Run tests (after implementation)
-mix test test/jido_coder_lib/agents/session_manager_test.exs
+mix test test/jidoka/agents/session_manager_test.exs
 
 # Run all tests
 mix test

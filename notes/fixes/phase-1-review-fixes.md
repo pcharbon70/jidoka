@@ -75,17 +75,17 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] TelemetryHandlers: Change duration table to `:protected`
 - [x] Add tests for ETS access control
 
-**Files**: `lib/jido_coder_lib/context_store.ex`, `lib/jido_coder_lib/telemetry_handlers.ex`
+**Files**: `lib/jidoka/context_store.ex`, `lib/jidoka/telemetry_handlers.ex`
 
 #### 1.2 Implement SecureCredentials Module
-- [x] Create `lib/jido_coder_lib/secure_credentials.ex`
+- [x] Create `lib/jidoka/secure_credentials.ex`
 - [x] Implement GenServer-based storage with private ETS table
 - [x] Add `get_api_key/1`, `put_api_key/2`, `delete_api_key/1`, `clear_all/0`
 - [x] Add to application supervision tree
 - [x] Update Config to use SecureCredentials
 - [x] Add tests for SecureCredentials
 
-**Files**: `lib/jido_coder_lib/secure_credentials.ex`, `lib/jido_coder_lib/application.ex`, `lib/jido_coder_lib/config.ex`, `test/jido_coder_lib/secure_credentials_test.exs`
+**Files**: `lib/jidoka/secure_credentials.ex`, `lib/jidoka/application.ex`, `lib/jidoka/config.ex`, `test/jidoka/secure_credentials_test.exs`
 
 #### 1.3 Add Registry Access Controls
 - [x] Add key pattern validation to AgentRegistry
@@ -94,7 +94,7 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] Add @spec to all public functions
 - [x] Add tests for access controls
 
-**Files**: `lib/jido_coder_lib/agent_registry.ex`, `lib/jido_coder_lib/topic_registry.ex`
+**Files**: `lib/jidoka/agent_registry.ex`, `lib/jidoka/topic_registry.ex`
 
 ---
 
@@ -105,7 +105,7 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] Add `max_seconds: 5` to supervisor opts
 - [x] Integration test verifies supervisor children
 
-**Files**: `lib/jido_coder_lib/application.ex`, `test/jido_coder_lib/integration/phase1_test.exs`
+**Files**: `lib/jidoka/application.ex`, `test/jidoka/integration/phase1_test.exs`
 
 #### 2.2 Add @spec Attributes to Public APIs
 - [x] ContextStore: Add @spec to all public functions
@@ -117,7 +117,7 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] TelemetryHandlers: Add @spec to all public functions
 - [x] SecureCredentials: Add @spec to all public functions
 
-**Files**: All lib/jido_coder_lib/*.ex files
+**Files**: All lib/jidoka/*.ex files
 
 ---
 
@@ -128,14 +128,14 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] Update handle_call to accept pre-computed mtime and size
 - [x] Add test for cache_file with metadata
 
-**Files**: `lib/jido_coder_lib/context_store.ex`, `test/jido_coder_lib/context_store_test.exs`
+**Files**: `lib/jidoka/context_store.ex`, `test/jidoka/context_store_test.exs`
 
 #### 3.2 Fix TelemetryHandlers Race Condition
 - [x] Change ensure_tables_exist to use try/rescue
 - [x] Add test setup to detach pre-attached handlers
 - [x] Verify tables are :protected
 
-**Files**: `lib/jido_coder_lib/telemetry_handlers.ex`, `test/jido_coder_lib/telemetry_handlers_test.exs`
+**Files**: `lib/jidoka/telemetry_handlers.ex`, `test/jidoka/telemetry_handlers_test.exs`
 
 #### 3.3 Verify @impl Annotations
 - [x] All GenServer callbacks have @impl true annotations
@@ -155,7 +155,7 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] Integration test: Fix Registry.register return value assertion
 - [x] Telemetry test: Fix unused variable warning
 
-**Files**: `test/jido_coder_lib/config_test.exs`, `test/jido_coder_lib/topic_registry_test.exs`, `test/jido_coder_lib/context_store_test.exs`, `test/jido_coder_lib/integration/phase1_test.exs`, `test/jido_coder_lib/telemetry_test.exs`
+**Files**: `test/jidoka/config_test.exs`, `test/jidoka/topic_registry_test.exs`, `test/jidoka/context_store_test.exs`, `test/jidoka/integration/phase1_test.exs`, `test/jidoka/telemetry_test.exs`
 
 ---
 
@@ -165,13 +165,13 @@ The comprehensive Phase 1 code review identified several issues that need to be 
 - [x] Make TopicRegistry.lookup return {:ok, entries} or :error
 - [x] Add @spec to all Registry functions
 
-**Files**: `lib/jido_coder_lib/topic_registry.ex`
+**Files**: `lib/jidoka/topic_registry.ex`
 
 #### 5.2 Fixed Test Warnings
 - [x] Fixed unused variable warnings in integration tests
 - [x] Fixed unreachable code pattern in integration tests
 
-**Files**: `test/jido_coder_lib/integration/phase1_test.exs`
+**Files**: `test/jidoka/integration/phase1_test.exs`
 
 ---
 

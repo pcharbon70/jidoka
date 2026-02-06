@@ -15,35 +15,35 @@ Implemented CloudEvents-based signal system for inter-agent communication follow
 ## What Was Implemented
 
 ### Signal Modules (4 files)
-1. **`lib/jido_coder_lib/signals/file_changed.ex`**
+1. **`lib/jidoka/signals/file_changed.ex`**
    - Type: `jido_coder.file.changed`
    - Source: `/jido_coder/filesystem`
    - Fields: `path`, `action` (:created/:updated/:deleted), `session_id`, `metadata`
 
-2. **`lib/jido_coder_lib/signals/analysis_complete.ex`**
+2. **`lib/jidoka/signals/analysis_complete.ex`**
    - Type: `jido_coder.analysis.complete`
    - Source: `/jido_coder/analyzer`
    - Fields: `analysis_type`, `results`, `session_id`, `duration_ms`
 
-3. **`lib/jido_coder_lib/signals/broadcast_event.ex`**
+3. **`lib/jidoka/signals/broadcast_event.ex`**
    - Type: `jido_coder.client.broadcast`
    - Source: `/jido_coder/coordinator`
    - Fields: `event_type`, `payload`, `session_id`
 
-4. **`lib/jido_coder_lib/signals/chat_request.ex`**
+4. **`lib/jidoka/signals/chat_request.ex`**
    - Type: `jido_coder.chat.request`
    - Source: `/jido_coder/client`
    - Fields: `message`, `session_id`, `user_id`, `context`
 
 ### Convenience Module
-**`lib/jido_coder_lib/signals.ex`**
+**`lib/jidoka/signals.ex`**
 - Wrapper functions for each signal type
 - Optional `dispatch: false` flag to create without broadcasting
 - Automatic PubSub routing to signal-specific topics
 - Client-facing signals also broadcast to `jido.client.events` topic
 
 ### Test Coverage
-**`test/jido_coder_lib/signals_test.exs`**
+**`test/jidoka/signals_test.exs`**
 - 37 tests, all passing
 - Tests for signal creation, validation, CloudEvents compliance
 - Tests for PubSub dispatch and client event broadcasting
@@ -62,12 +62,12 @@ Implemented CloudEvents-based signal system for inter-agent communication follow
 ## Files Changed
 
 ```
-lib/jido_coder_lib/signals.ex                      (new)
-lib/jido_coder_lib/signals/file_changed.ex         (new)
-lib/jido_coder_lib/signals/analysis_complete.ex    (new)
-lib/jido_coder_lib/signals/broadcast_event.ex      (new)
-lib/jido_coder_lib/signals/chat_request.ex         (new)
-test/jido_coder_lib/signals_test.exs               (new)
+lib/jidoka/signals.ex                      (new)
+lib/jidoka/signals/file_changed.ex         (new)
+lib/jidoka/signals/analysis_complete.ex    (new)
+lib/jidoka/signals/broadcast_event.ex      (new)
+lib/jidoka/signals/chat_request.ex         (new)
+test/jidoka/signals_test.exs               (new)
 mix.exs                                            (modified - jido version, req_llm added)
 mix.lock                                           (regenerated)
 ```

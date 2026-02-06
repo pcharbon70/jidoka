@@ -1,9 +1,9 @@
-defmodule JidoCoderLib.MixProject do
+defmodule Jidoka.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :jido_coder_lib,
+      app: :jidoka,
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
@@ -18,7 +18,7 @@ defmodule JidoCoderLib.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {JidoCoderLib.Application, []}
+      mod: {Jidoka.Application, []}
     ]
   end
 
@@ -36,7 +36,7 @@ defmodule JidoCoderLib.MixProject do
     [
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/agentjido/jido_coder_lib"
+        "GitHub" => "https://github.com/agentjido/jidoka"
       }
     ]
   end

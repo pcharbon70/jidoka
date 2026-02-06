@@ -8,7 +8,7 @@
 
 ## Overview
 
-This phase implemented base agent behaviors and utilities that complement Jido 2.0's agent framework. Since Jido already provides the behavior definition via `use Jido.Agent`, this phase focused on creating utility modules for common operations across jido_coder_lib agents.
+This phase implemented base agent behaviors and utilities that complement Jido 2.0's agent framework. Since Jido already provides the behavior definition via `use Jido.Agent`, this phase focused on creating utility modules for common operations across jidoka agents.
 
 ---
 
@@ -18,12 +18,12 @@ This phase implemented base agent behaviors and utilities that complement Jido 2
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `lib/jido_coder_lib/agent.ex` | 207 | Core agent utilities |
-| `lib/jido_coder_lib/agent/directives.ex` | 186 | Directive helpers |
-| `lib/jido_coder_lib/agent/state.ex` | 463 | State management utilities |
-| `test/jido_coder_lib/agent_test.exs` | 112 | Core utilities tests |
-| `test/jido_coder_lib/agent/directives_test.exs` | 168 | Directive tests |
-| `test/jido_coder_lib/agent/state_test.exs` | 282 | State utilities tests |
+| `lib/jidoka/agent.ex` | 207 | Core agent utilities |
+| `lib/jidoka/agent/directives.ex` | 186 | Directive helpers |
+| `lib/jidoka/agent/state.ex` | 463 | State management utilities |
+| `test/jidoka/agent_test.exs` | 112 | Core utilities tests |
+| `test/jidoka/agent/directives_test.exs` | 168 | Directive tests |
+| `test/jidoka/agent/state_test.exs` | 282 | State utilities tests |
 
 ### Test Coverage
 
@@ -37,7 +37,7 @@ This phase implemented base agent behaviors and utilities that complement Jido 2
 
 ## Key Features Implemented
 
-### 1. JidoCoderLib.Agent (Core Utilities)
+### 1. Jidoka.Agent (Core Utilities)
 
 **Task ID Generation:**
 - `generate_task_id/2` - Creates unique task IDs with optional session prefix
@@ -56,7 +56,7 @@ This phase implemented base agent behaviors and utilities that complement Jido 2
 - `session_topic/1` - Returns session-specific topic
 - `pubsub_name/0` - Returns PubSub process name
 
-### 2. JidoCoderLib.Agent.Directives
+### 2. Jidoka.Agent.Directives
 
 **Broadcast Directives:**
 - `client_broadcast/3` - Creates Directive.Emit for global client events
@@ -65,7 +65,7 @@ This phase implemented base agent behaviors and utilities that complement Jido 2
 
 All directives automatically include timestamps and proper PubSub dispatch configuration.
 
-### 3. JidoCoderLib.Agent.State
+### 3. Jidoka.Agent.State
 
 **Numeric Operations:**
 - `increment_field/3` - Increment numeric state fields
@@ -109,9 +109,9 @@ Aggregation entries use atom keys (`:count`, `:last_*`) for consistency with Eli
 ### 3. Module Organization
 
 Three focused modules following single responsibility:
-- `JidoCoderLib.Agent` - Core utilities
-- `JidoCoderLib.Agent.Directives` - Directive helpers
-- `JidoCoderLib.Agent.State` - State management
+- `Jidoka.Agent` - Core utilities
+- `Jidoka.Agent.Directives` - Directive helpers
+- `Jidoka.Agent.State` - State management
 
 ---
 
@@ -175,9 +175,9 @@ Three focused modules following single responsibility:
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/agent_test.exs
-mix test test/jido_coder_lib/agent/directives_test.exs
-mix test test/jido_coder_lib/agent/state_test.exs
+mix test test/jidoka/agent_test.exs
+mix test test/jidoka/agent/directives_test.exs
+mix test test/jidoka/agent/state_test.exs
 
 # Run all tests
 mix test
@@ -191,8 +191,8 @@ mix format
 ## Documentation
 
 All modules include comprehensive `@moduledoc` with examples:
-- `lib/jido_coder_lib/agent.ex`
-- `lib/jido_coder_lib/agent/directives.ex`
-- `lib/jido_coder_lib/agent/state.ex`
+- `lib/jidoka/agent.ex`
+- `lib/jidoka/agent/directives.ex`
+- `lib/jidoka/agent/state.ex`
 
 Feature document: `notes/features/phase-2.4-base-agent-behaviors.md`

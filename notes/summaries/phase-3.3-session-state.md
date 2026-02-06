@@ -14,7 +14,7 @@ Implemented Phase 3.3 of the multi-session architecture: Session State Managemen
 
 ## Implementation Details
 
-### 1. Session.State Module (`lib/jido_coder_lib/session/state.ex`)
+### 1. Session.State Module (`lib/jidoka/session/state.ex`)
 
 Created a comprehensive session state management module with:
 
@@ -62,7 +62,7 @@ Valid statuses: `:initializing | :active | :idle | :terminating | :terminated`
 
 ### 3. SessionManager Integration
 
-Updated `lib/jido_coder_lib/agents/session_manager.ex`:
+Updated `lib/jidoka/agents/session_manager.ex`:
 
 - ETS entries now contain a wrapper map with:
   - `state` - Session.State struct
@@ -121,12 +121,12 @@ All existing tests updated to work with Session.State:
 ## Files Changed
 
 ### Created
-- `lib/jido_coder_lib/session/state.ex` (460 lines)
-- `test/jido_coder_lib/session/state_test.exs` (560 lines)
+- `lib/jidoka/session/state.ex` (460 lines)
+- `test/jidoka/session/state_test.exs` (560 lines)
 
 ### Modified
-- `lib/jido_coder_lib/agents/session_manager.ex` (significant refactoring)
-- `test/jido_coder_lib/agents/session_manager_test.exs` (status expectation updated)
+- `lib/jidoka/agents/session_manager.ex` (significant refactoring)
+- `test/jidoka/agents/session_manager_test.exs` (status expectation updated)
 
 ### Documentation Updated
 - `notes/planning/01-foundation/phase-03.md` (marked 3.3 complete)
@@ -148,13 +148,13 @@ All existing tests updated to work with Session.State:
 
 ```bash
 # Run Session.State tests
-mix test test/jido_coder_lib/session/state_test.exs
+mix test test/jidoka/session/state_test.exs
 
 # Run SessionManager tests
-mix test test/jido_coder_lib/agents/session_manager_test.exs
+mix test test/jidoka/agents/session_manager_test.exs
 
 # Run all session-related tests
-mix test test/jido_coder_lib/session/ test/jido_coder_lib/agents/session_manager_test.exs
+mix test test/jidoka/session/ test/jidoka/agents/session_manager_test.exs
 ```
 
 ---

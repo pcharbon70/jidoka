@@ -1,10 +1,12 @@
-# JidoCoderLib
+# Jidoka
+
+**Jidoka** — a Japanese word translating to "Automation with a human touch"
 
 A **headless, client-agnostic agentic coding assistant core** built on Elixir and the BEAM VM.
 
 ## Overview
 
-JidoCoderLib provides the foundational architecture for building intelligent coding assistants. It features:
+Jidoka provides the foundational architecture for building intelligent coding assistants. It features:
 
 - **Multi-session workspaces** - Isolated concurrent coding sessions
 - **Two-tier memory system** - Short-term context and persistent semantic memory
@@ -34,12 +36,12 @@ JidoCoderLib provides the foundational architecture for building intelligent cod
 
 > **Note**: This is currently under active development. The API is not yet stable.
 
-Add `jido_coder_lib` to your list of dependencies in `mix.exs`:
+Add `jidoka` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:jido_coder_lib, "~> 0.1.0"}
+    {:jidoka, "~> 0.1.0"}
   ]
 end
 ```
@@ -74,4 +76,4 @@ MIT License
 
 ## Documentation
 
-Full documentation is available at [HexDocs](https://hexdocs.pm/jido_coder_lib) (once published).
+Full documentation is available at [HexDocs](https://hexdocs.pm/jidoka) (once published).

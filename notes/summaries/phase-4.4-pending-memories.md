@@ -13,14 +13,14 @@ Implemented the missing functions for section 4.4 of the Phase 4 planning docume
 ### Functions Added
 
 **1. `ready_for_promotion/2`** - Filter items ready for LTM promotion
-- Location: `lib/jido_coder_lib/memory/short_term/pending_memories.ex:345-356`
+- Location: `lib/jidoka/memory/short_term/pending_memories.ex:345-356`
 - Returns items meeting promotion criteria
 - Options:
   - `:min_importance` - Minimum importance score (default: 0.7)
   - `:max_age_seconds` - Maximum age in seconds (optional)
 
 **2. `calculate_importance/1`** - Calculate importance score
-- Location: `lib/jido_coder_lib/memory/short_term/pending_memories.ex:383-391`
+- Location: `lib/jidoka/memory/short_term/pending_memories.ex:383-391`
 - Calculates score based on item type and age
 - Returns float between 0.0 and 1.0
 
@@ -39,7 +39,7 @@ Implemented the missing functions for section 4.4 of the Phase 4 planning docume
 - Maximum 50% decay (older items retain at least 50% of base)
 
 **3. `clear_promoted/2`** - Remove promoted items
-- Location: `lib/jido_coder_lib/memory/short_term/pending_memories.ex:410-435`
+- Location: `lib/jidoka/memory/short_term/pending_memories.ex:410-435`
 - Removes items by their IDs
 - Uses MapSet for efficient lookup
 - Returns `{:ok, updated_pending, cleared_count}`
@@ -76,10 +76,10 @@ New tests added:
 ## Files Modified
 
 **Implementation:**
-- `lib/jido_coder_lib/memory/short_term/pending_memories.ex` - Added 3 functions + 3 helpers (67 lines)
+- `lib/jidoka/memory/short_term/pending_memories.ex` - Added 3 functions + 3 helpers (67 lines)
 
 **Tests:**
-- `test/jido_coder_lib/memory/short_term/pending_memories_test.exs` - Added 3 test blocks (172 lines)
+- `test/jidoka/memory/short_term/pending_memories_test.exs` - Added 3 test blocks (172 lines)
 
 **Documentation:**
 - `notes/features/phase-4.4-pending-memories.md` - Feature planning document

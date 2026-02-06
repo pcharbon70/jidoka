@@ -25,7 +25,7 @@ Currently, the SessionSupervisor uses a placeholder for ContextManager. Each ses
 
 ## Solution Overview
 
-Implement a `JidoCoderLib.Agents.ContextManager` GenServer that:
+Implement a `Jidoka.Agents.ContextManager` GenServer that:
 
 1. Starts with a session_id for isolation
 2. Registers in Registry with `"context_#{session_id}"` key for lookup
@@ -44,15 +44,15 @@ Implement a `JidoCoderLib.Agents.ContextManager` GenServer that:
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/agents/context_manager.ex` | ContextManager GenServer |
-| `test/jido_coder_lib/agents/context_manager_test.exs` | Unit tests |
+| `lib/jidoka/agents/context_manager.ex` | ContextManager GenServer |
+| `test/jidoka/agents/context_manager_test.exs` | Unit tests |
 
 ### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/session/supervisor.ex` | Replace Placeholder with ContextManager |
-| `test/jido_coder_lib/session/supervisor_test.exs` | Update tests for ContextManager |
+| `lib/jidoka/session/supervisor.ex` | Replace Placeholder with ContextManager |
+| `test/jidoka/session/supervisor_test.exs` | Update tests for ContextManager |
 
 ### ContextManager State
 
@@ -70,7 +70,7 @@ defstruct [
 ### Registry Key Pattern
 
 - Key: `"context_manager:#{session_id}"`
-- Registry: `JidoCoderLib.AgentRegistry`
+- Registry: `Jidoka.AgentRegistry`
 - Allows lookup by session_id
 
 ### PubSub Topics
@@ -180,10 +180,10 @@ defstruct [
 mix compile
 
 # Run ContextManager tests
-mix test test/jido_coder_lib/agents/context_manager_test.exs
+mix test test/jidoka/agents/context_manager_test.exs
 
 # Run SessionSupervisor tests
-mix test test/jido_coder_lib/session/supervisor_test.exs
+mix test test/jidoka/session/supervisor_test.exs
 
 # Run all tests
 mix test
@@ -197,7 +197,7 @@ mix test
 
 1. **No Process Naming:** ContextManager does not use a name (via `name:` option). Instead, it relies solely on Registry registration for process lookup. This avoids issues with the global name registry and allows for better isolation.
 
-2. **Registry Key Pattern:** Uses `"context_manager:" <> session_id` as the registry key in `JidoCoderLib.AgentRegistry` (unique keys).
+2. **Registry Key Pattern:** Uses `"context_manager:" <> session_id` as the registry key in `Jidoka.AgentRegistry` (unique keys).
 
 3. **Metadata Merging:** `update_file_index/3` merges new metadata with existing metadata using `Map.merge`, allowing incremental updates to file metadata.
 
@@ -245,5 +245,5 @@ mix test
 - Phase 3.1: SessionManager implementation
 - Phase 3.2: SessionSupervisor implementation
 - Phase 3.3: Session.State implementation
-- PubSub Module: `lib/jido_coder_lib/pubsub.ex`
-- AgentRegistry: `JidoCoderLib.AgentRegistry`
+- PubSub Module: `lib/jidoka/pubsub.ex`
+- AgentRegistry: `Jidoka.AgentRegistry`

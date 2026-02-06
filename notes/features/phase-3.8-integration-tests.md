@@ -29,7 +29,7 @@ Phases 3.1-3.7 have implemented the multi-session architecture with comprehensiv
 
 ## Solution Overview
 
-Create comprehensive integration tests in `test/jido_coder_lib/integration/phase3_test.exs` that verify all multi-session functionality working together end-to-end.
+Create comprehensive integration tests in `test/jidoka/integration/phase3_test.exs` that verify all multi-session functionality working together end-to-end.
 
 **Key Design Decisions:**
 
@@ -47,19 +47,19 @@ Create comprehensive integration tests in `test/jido_coder_lib/integration/phase
 
 | File | Purpose |
 |------|---------|
-| `test/jido_coder_lib/integration/phase3_test.exs` | Phase 3 integration tests |
+| `test/jidoka/integration/phase3_test.exs` | Phase 3 integration tests |
 
 ### Modules to Test
 
 | Module | Integration Points |
 |--------|-------------------|
-| `JidoCoderLib.Client` | Session lifecycle API |
-| `JidoCoderLib.Agents.SessionManager` | Session tracking and ETS |
-| `JidoCoderLib.Session.Supervisor` | Session supervision trees |
-| `JidoCoderLib.Session.State` | State transitions |
-| `JidoCoderLib.Agents.ContextManager` | Session-isolated context |
-| `JidoCoderLib.PubSub` | Event broadcasting |
-| `JidoCoderLib.ContextStore` | Session-scoped ETS cache |
+| `Jidoka.Client` | Session lifecycle API |
+| `Jidoka.Agents.SessionManager` | Session tracking and ETS |
+| `Jidoka.Session.Supervisor` | Session supervision trees |
+| `Jidoka.Session.State` | State transitions |
+| `Jidoka.Agents.ContextManager` | Session-isolated context |
+| `Jidoka.PubSub` | Event broadcasting |
+| `Jidoka.ContextStore` | Session-scoped ETS cache |
 
 ---
 
@@ -117,7 +117,7 @@ Create comprehensive integration tests in `test/jido_coder_lib/integration/phase
 
 ## Success Criteria
 
-1. **Integration Test File**: ✅ `test/jido_coder_lib/integration/phase3_test.exs` exists
+1. **Integration Test File**: ✅ `test/jidoka/integration/phase3_test.exs` exists
 2. **All Tests Pass**: ✅ All integration tests pass
 3. **Coverage**: All 8 test categories implemented
 4. **No Pollution**: Tests clean up after themselves
@@ -128,7 +128,7 @@ Create comprehensive integration tests in `test/jido_coder_lib/integration/phase
 ## Test Structure
 
 ```elixir
-defmodule JidoCoderLib.Integration.Phase3Test do
+defmodule Jidoka.Integration.Phase3Test do
   use ExUnit.Case, async: false
 
   @moduledoc """
@@ -170,9 +170,9 @@ end
 ## References
 
 - Planning Document: `notes/planning/01-foundation/phase-03.md`
-- SessionManager: `lib/jido_coder_lib/agents/session_manager.ex`
-- Client API: `lib/jido_coder_lib/client.ex`
-- PubSub: `lib/jido_coder_lib/pubsub.ex`
-- ContextManager: `lib/jido_coder_lib/agents/context_manager.ex`
-- ContextStore: `lib/jido_coder_lib/context_store.ex`
-- Phase 1 Integration Tests: `test/jido_coder_lib/integration/phase1_test.exs`
+- SessionManager: `lib/jidoka/agents/session_manager.ex`
+- Client API: `lib/jidoka/client.ex`
+- PubSub: `lib/jidoka/pubsub.ex`
+- ContextManager: `lib/jidoka/agents/context_manager.ex`
+- ContextStore: `lib/jidoka/context_store.ex`
+- Phase 1 Integration Tests: `test/jidoka/integration/phase1_test.exs`

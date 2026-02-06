@@ -18,7 +18,7 @@ This implementation addressed all CRITICAL and HIGH priority issues identified i
 **Problem:** User input was directly interpolated into SPARQL queries without proper escaping.
 
 **Solution:**
-- Created `lib/jido_coder_lib/knowledge/sparql_helpers.ex` with:
+- Created `lib/jidoka/knowledge/sparql_helpers.ex` with:
   - `escape_string/1` - Escapes backslashes, quotes, newlines, CR, tabs
   - `validate_iri/1` - Validates IRI format and scheme
   - `string_literal/1` - Wraps and escapes values for SPARQL literals
@@ -37,14 +37,14 @@ This implementation addressed all CRITICAL and HIGH priority issues identified i
   - `Queries.search_by_name/2`
   - `CodebaseContext.find_modules_by_file/2`
 
-**Tests:** 28 tests in `test/jido_coder_lib/knowledge/sparql_helpers_test.exs`
+**Tests:** 28 tests in `test/jidoka/knowledge/sparql_helpers_test.exs`
 
 ### 2. Path Traversal Prevention
 
 **Problem:** Insufficient validation that indexed paths stay within allowed directories.
 
 **Solution:**
-- Created `lib/jido_coder_lib/utils/path_validator.ex` with:
+- Created `lib/jidoka/utils/path_validator.ex` with:
   - `validate_within/3` - Ensures paths are within allowed directories
   - `safe_path?/2` - Comprehensive path validation for indexing
   - `suspicious_path?/1` - Detects potentially malicious paths
@@ -55,7 +55,7 @@ This implementation addressed all CRITICAL and HIGH priority issues identified i
   - `allowed_dirs` option for flexibility
 - Updated all tests to use project-local directories
 
-**Tests:** 19 tests in `test/jido_coder_lib/utils/path_validator_test.exs`
+**Tests:** 19 tests in `test/jidoka/utils/path_validator_test.exs`
 
 ### 3. Timeout DoS Prevention
 
@@ -103,20 +103,20 @@ This implementation addressed all CRITICAL and HIGH priority issues identified i
 ## Files Modified
 
 ### New Files Created
-- `lib/jido_coder_lib/knowledge/sparql_helpers.ex` (230+ lines)
-- `lib/jido_coder_lib/utils/path_validator.ex` (180+ lines)
-- `test/jido_coder_lib/knowledge/sparql_helpers_test.exs` (170+ lines)
-- `test/jido_coder_lib/utils/path_validator_test.exs` (140+ lines)
+- `lib/jidoka/knowledge/sparql_helpers.ex` (230+ lines)
+- `lib/jidoka/utils/path_validator.ex` (180+ lines)
+- `test/jidoka/knowledge/sparql_helpers_test.exs` (170+ lines)
+- `test/jidoka/utils/path_validator_test.exs` (140+ lines)
 
 ### Files Modified
-- `lib/jido_coder_lib/codebase/queries.ex` - Added SPARQL escaping to all query functions
-- `lib/jido_coder_lib/indexing/code_indexer.ex` - Added path validation and timeout limits
-- `lib/jido_coder_lib/agents/codebase_context.ex` - Added cache limits, depth limits, SPARQL escaping
-- `test/jido_coder_lib/codebase/queries_test.exs` - Updated for path validation
-- `test/jido_coder_lib/indexing/code_indexer_test.exs` - Updated for path validation
-- `test/jido_coder_lib/agents/codebase_context_test.exs` - Updated for expected behavior
-- `test/jido_coder_lib/integration/phase6_test.exs` - Updated for path validation
-- `test/jido_coder_lib/integration/phase1_test.exs` - Updated child count
+- `lib/jidoka/codebase/queries.ex` - Added SPARQL escaping to all query functions
+- `lib/jidoka/indexing/code_indexer.ex` - Added path validation and timeout limits
+- `lib/jidoka/agents/codebase_context.ex` - Added cache limits, depth limits, SPARQL escaping
+- `test/jidoka/codebase/queries_test.exs` - Updated for path validation
+- `test/jidoka/indexing/code_indexer_test.exs` - Updated for path validation
+- `test/jidoka/agents/codebase_context_test.exs` - Updated for expected behavior
+- `test/jidoka/integration/phase6_test.exs` - Updated for path validation
+- `test/jidoka/integration/phase1_test.exs` - Updated child count
 
 ## Test Results
 

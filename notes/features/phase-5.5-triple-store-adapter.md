@@ -80,19 +80,19 @@ TripleStoreAdapter
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex`
+**Primary Module:** `lib/jidoka/memory/long_term/triple_store_adapter.ex`
 
 **Dependencies:**
-- `JidoCoderLib.Knowledge.Engine` - For graph context
-- `JidoCoderLib.Knowledge.NamedGraphs` - For graph IRI resolution
-- `JidoCoderLib.Knowledge.SPARQLClient` - For SPARQL operations
-- `JidoCoderLib.Knowledge.Ontology` - For class IRIs and helpers
-- `JidoCoderLib.Memory.Validation` - For input validation
+- `Jidoka.Knowledge.Engine` - For graph context
+- `Jidoka.Knowledge.NamedGraphs` - For graph IRI resolution
+- `Jidoka.Knowledge.SPARQLClient` - For SPARQL operations
+- `Jidoka.Knowledge.Ontology` - For class IRIs and helpers
+- `Jidoka.Memory.Validation` - For input validation
 
 **API Design:**
 
 ```elixir
-defmodule JidoCoderLib.Memory.LongTerm.TripleStoreAdapter do
+defmodule Jidoka.Memory.LongTerm.TripleStoreAdapter do
   @moduledoc """
   SPARQL-based adapter for long-term memory storage.
 
@@ -100,7 +100,7 @@ defmodule JidoCoderLib.Memory.LongTerm.TripleStoreAdapter do
   All operations are scoped to a session_id for isolation.
   """
 
-  alias JidoCoderLib.Knowledge.{Engine, SPARQLClient, Ontology, NamedGraphs}
+  alias Jidoka.Knowledge.{Engine, SPARQLClient, Ontology, NamedGraphs}
   alias RDF.IRI
 
   defstruct [:session_id, :engine_name, :graph_name]
@@ -268,14 +268,14 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex`
+- [ ] Create `lib/jidoka/memory/long_term/triple_store_adapter.ex`
 - [ ] Define struct with session_id, engine_name, graph_name
 - [ ] Implement `new/2` constructor
 - [ ] Add module documentation with examples
 - [ ] Add @spec annotations for all functions
 
 **Files:**
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` (new)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` (new)
 
 ---
 
@@ -292,7 +292,7 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 - [ ] Return `{:ok, memory}` or `{:error, reason}`
 
 **Files:**
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` (modify)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` (modify)
 
 ---
 
@@ -310,7 +310,7 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 - [ ] Return `{:ok, memories}` or `{:error, reason}`
 
 **Files:**
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` (modify)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` (modify)
 
 ---
 
@@ -325,7 +325,7 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 - [ ] Return `{:ok, memory}` or `{:error, :not_found}`
 
 **Files:**
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` (modify)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` (modify)
 
 ---
 
@@ -341,7 +341,7 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 - [ ] Return `{:ok, updated_memory}` or `{:error, :not_found}`
 
 **Files:**
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` (modify)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` (modify)
 
 ---
 
@@ -357,7 +357,7 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 - [ ] Return appropriate success/error tuples
 
 **Files:**
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` (modify)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` (modify)
 
 ---
 
@@ -381,7 +381,7 @@ SELECT (COUNT(?s) AS ?count) WHERE {
 - [ ] Test clear removes all session memories
 
 **Files:**
-- `test/jido_coder_lib/memory/long_term/triple_store_adapter_test.exs` (new)
+- `test/jidoka/memory/long_term/triple_store_adapter_test.exs` (new)
 
 ---
 
@@ -472,9 +472,9 @@ Each session should have a corresponding WorkSession individual:
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
-- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jido_coder_lib/notes/features/phase-5.4-jido-ontology.md)
-- [SessionAdapter Implementation](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/memory/long_term/session_adapter.ex)
-- [Engine Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [SPARQLClient Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/sparql_client.ex)
-- [Ontology Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/ontology.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
+- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jidoka/notes/features/phase-5.4-jido-ontology.md)
+- [SessionAdapter Implementation](/home/ducky/code/agentjido/jidoka/lib/jidoka/memory/long_term/session_adapter.ex)
+- [Engine Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [SPARQLClient Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/sparql_client.ex)
+- [Ontology Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/ontology.ex)

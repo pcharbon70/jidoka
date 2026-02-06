@@ -8,7 +8,7 @@
 
 ## Overview
 
-Implemented comprehensive configuration management for the JidoCoderLib application, including LLM provider settings, knowledge graph configuration, and session management with environment-specific overrides and runtime validation.
+Implemented comprehensive configuration management for the Jidoka application, including LLM provider settings, knowledge graph configuration, and session management with environment-specific overrides and runtime validation.
 
 ---
 
@@ -61,7 +61,7 @@ Extended the base configuration with three main sections:
 - Larger cache for production (100_000)
 - Production-scale session limits (1000)
 
-### 3. Config Validation Module (lib/jido_coder_lib/config.ex)
+### 3. Config Validation Module (lib/jidoka/config.ex)
 
 Created a comprehensive configuration validation module:
 
@@ -93,7 +93,7 @@ Created a comprehensive configuration validation module:
 - `operation_timeout/0`: Returns operation timeout
 - `telemetry_enabled?/0`: Returns telemetry status
 
-### 4. Test Suite (test/jido_coder_lib/config_test.exs)
+### 4. Test Suite (test/jidoka/config_test.exs)
 
 Created 41 comprehensive tests covering:
 - Configuration validation for all sections
@@ -143,8 +143,8 @@ Configuration module tests: 41 tests passing
 | `config/dev.exs` | ~20 | Development overrides |
 | `config/test.exs` | ~20 | Test configuration |
 | `config/prod.exs` | ~30 | Production configuration |
-| `lib/jido_coder_lib/config.ex` | ~380 | Validation module |
-| `test/jido_coder_lib/config_test.exs` | ~370 | Test suite |
+| `lib/jidoka/config.ex` | ~380 | Validation module |
+| `test/jidoka/config_test.exs` | ~370 | Test suite |
 
 ---
 

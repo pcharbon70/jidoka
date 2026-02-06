@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-While Jido 2.0 provides a built-in agent registry via `Jido.whereis/2` and jido_coder_lib has a custom AgentRegistry, there are no unified convenience helpers for agent discovery and lookup. Developers need to know which registry to use and must call low-level functions directly.
+While Jido 2.0 provides a built-in agent registry via `Jido.whereis/2` and jidoka has a custom AgentRegistry, there are no unified convenience helpers for agent discovery and lookup. Developers need to know which registry to use and must call low-level functions directly.
 
 **Impact:**
 - Inconsistent agent lookup patterns across the codebase
@@ -21,7 +21,7 @@ While Jido 2.0 provides a built-in agent registry via `Jido.whereis/2` and jido_
 
 ## Solution Overview
 
-Enhanced the existing `JidoCoderLib.Agent` module with unified agent discovery and registration helpers that work seamlessly with both Jido's built-in registry and the custom AgentRegistry.
+Enhanced the existing `Jidoka.Agent` module with unified agent discovery and registration helpers that work seamlessly with both Jido's built-in registry and the custom AgentRegistry.
 
 **Key Design Decisions:**
 - Build on existing infrastructure (Jido.whereis/2 + AgentRegistry)
@@ -38,12 +38,12 @@ Enhanced the existing `JidoCoderLib.Agent` module with unified agent discovery a
 
 **Findings:**
 - Jido 2.0 provides `Jido.whereis/2` for agent lookup
-- Custom `JidoCoderLib.AgentRegistry` exists for process registration
+- Custom `Jidoka.AgentRegistry` exists for process registration
 - Two registries: Jido's (for agents) and custom (for general processes)
 - Coordinator agent uses Jido's registry automatically
 
 **Recommendations:**
-1. Extend `JidoCoderLib.Agent` with discovery functions
+1. Extend `Jidoka.Agent` with discovery functions
 2. Create unified lookup that checks both registries
 3. Add agent enumeration capabilities
 4. Add agent health check helpers
@@ -56,8 +56,8 @@ Enhanced the existing `JidoCoderLib.Agent` module with unified agent discovery a
 
 | File | Lines Added | Purpose |
 |------|-------------|---------|
-| `lib/jido_coder_lib/agent.ex` | +330 | Add discovery and registry helpers |
-| `test/jido_coder_lib/agent_test.exs` | +193 | Add tests for new functions |
+| `lib/jidoka/agent.ex` | +330 | Add discovery and registry helpers |
+| `test/jidoka/agent_test.exs` | +193 | Add tests for new functions |
 
 ### New Functions Added
 
@@ -145,7 +145,7 @@ Enhanced the existing `JidoCoderLib.Agent` module with unified agent discovery a
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/agent_test.exs
+mix test test/jidoka/agent_test.exs
 
 # All tests
 mix test
@@ -178,5 +178,5 @@ mix test
 
 - Jido Documentation: hexdocs.pm for jido 2.0.0-rc.1
 - Planning Document: `notes/planning/01-foundation/phase-02.md`
-- Existing Agent module: `lib/jido_coder_lib/agent.ex`
-- Existing AgentRegistry: `lib/jido_coder_lib/agent_registry.ex`
+- Existing Agent module: `lib/jidoka/agent.ex`
+- Existing AgentRegistry: `lib/jidoka/agent_registry.ex`

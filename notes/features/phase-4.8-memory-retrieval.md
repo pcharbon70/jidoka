@@ -19,7 +19,7 @@ What's missing:
 
 ## Solution Overview
 
-Create a `JidoCoderLib.Memory.Retrieval` module that provides:
+Create a `Jidoka.Memory.Retrieval` module that provides:
 
 1. **Keyword Retrieval** - Search memories by matching keywords in data fields
 2. **Similarity Retrieval** - Rank memories by relevance using TF-IDF or cosine similarity
@@ -74,13 +74,13 @@ Inject into LLM prompt
 
 ### File Locations
 
-- **Module**: `lib/jido_coder_lib/memory/retrieval.ex`
-- **Tests**: `test/jido_coder_lib/memory/retrieval_test.exs`
+- **Module**: `lib/jidoka/memory/retrieval.ex`
+- **Tests**: `test/jidoka/memory/retrieval_test.exs`
 - **Planning**: `notes/planning/01-foundation/phase-04.md` (section 4.8)
 
 ### Dependencies
 
-- `JidoCoderLib.Memory.LongTerm.SessionAdapter` - LTM storage and base queries
+- `Jidoka.Memory.LongTerm.SessionAdapter` - LTM storage and base queries
 - `:ets` - For retrieval caching
 - `DateTime` - For recency scoring
 
@@ -135,7 +135,7 @@ Inject into LLM prompt
 
 ### Step 1: Create Retrieval Module Structure
 
-1. Create `lib/jido_coder_lib/memory/retrieval.ex`
+1. Create `lib/jidoka/memory/retrieval.ex`
 2. Define module with @moduledoc
 3. Define query and result types
 4. Define default configuration
@@ -305,20 +305,20 @@ Inject into LLM prompt
 
 ### How to Run Tests
 ```bash
-mix test test/jido_coder_lib/memory/retrieval_test.exs
+mix test test/jidoka/memory/retrieval_test.exs
 ```
 
 ## Implementation Summary
 
 ### Files Created
 
-1. **`lib/jido_coder_lib/memory/retrieval.ex`** (540 lines)
+1. **`lib/jidoka/memory/retrieval.ex`** (540 lines)
    - Main Retrieval module
    - Core API: `search/2`, `search_with_cache/2`, `enrich_context/3`
    - Relevance scoring with 4 factors (keyword 40%, recency 20%, importance 20%, type 20%)
    - ETS-based caching with TTL and size limits
 
-2. **`test/jido_coder_lib/memory/retrieval_test.exs`** (382 lines)
+2. **`test/jidoka/memory/retrieval_test.exs`** (382 lines)
    - 28 tests covering all operations
    - Test groups: search, caching, enrich_context, calculate_relevance, edge cases
 

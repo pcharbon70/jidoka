@@ -18,15 +18,15 @@ This phase implemented the SessionSupervisor that manages the lifecycle of sessi
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `lib/jido_coder_lib/session/supervisor.ex` | 277 | SessionSupervisor module with Placeholder |
-| `test/jido_coder_lib/session/supervisor_test.exs` | 202 | Unit tests |
+| `lib/jidoka/session/supervisor.ex` | 277 | SessionSupervisor module with Placeholder |
+| `test/jidoka/session/supervisor_test.exs` | 202 | Unit tests |
 
 ### Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Integrated SessionSupervisor start/stop |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | Updated tests for SessionSupervisor integration |
+| `lib/jidoka/agents/session_manager.ex` | Integrated SessionSupervisor start/stop |
+| `test/jidoka/agents/session_manager_test.exs` | Updated tests for SessionSupervisor integration |
 | `notes/planning/01-foundation/phase-03.md` | Marked section 3.2 complete |
 
 ### Test Coverage
@@ -126,7 +126,7 @@ SessionManager uses `Supervisor.stop/3` with 5-second timeout for graceful shutd
 
 ## Registry Integration
 
-Sessions are registered in `JidoCoderLib.AgentRegistry` with:
+Sessions are registered in `Jidoka.AgentRegistry` with:
 - **Key:** `"session_supervisor:#{session_id}"`
 - **Value:** Empty map `%{}`
 
@@ -141,10 +141,10 @@ This allows looking up sessions by session_id from anywhere in the application.
 mix compile
 
 # Run SessionSupervisor tests
-mix test test/jido_coder_lib/session/supervisor_test.exs
+mix test test/jidoka/session/supervisor_test.exs
 
 # Run SessionManager tests (updated for Phase 3.2)
-mix test test/jido_coder_lib/agents/session_manager_test.exs
+mix test test/jidoka/agents/session_manager_test.exs
 
 # Run all tests
 mix test
@@ -155,7 +155,7 @@ mix test
 ## Documentation
 
 All functions include comprehensive `@moduledoc` and `@doc` with examples:
-- `lib/jido_coder_lib/session/supervisor.ex` - SessionSupervisor implementation
+- `lib/jidoka/session/supervisor.ex` - SessionSupervisor implementation
 
 Feature document: `notes/features/phase-3.2-session-supervisor.md`
 Planning document: `notes/planning/01-foundation/phase-03.md`

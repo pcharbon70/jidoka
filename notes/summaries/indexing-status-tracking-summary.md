@@ -16,24 +16,24 @@ Successfully implemented comprehensive indexing status tracking for code indexin
    - `priv/ontologies/elixir_indexing.ttl` - Defines semantic structure for indexing status with OWL classes and properties
 
 2. **Core Module**
-   - `lib/jido_coder_lib/indexing/indexing_status_tracker.ex` - GenServer for tracking indexing operations (503 lines)
+   - `lib/jidoka/indexing/indexing_status_tracker.ex` - GenServer for tracking indexing operations (503 lines)
 
 3. **Signal Module**
-   - `lib/jido_coder_lib/signals/indexing_status.ex` - CloudEvents-compliant signal for indexing status updates
+   - `lib/jidoka/signals/indexing_status.ex` - CloudEvents-compliant signal for indexing status updates
 
 4. **Test Files**
-   - `test/jido_coder_lib/indexing/indexing_status_tracker_test.exs` - 16 unit tests
-   - `test/jido_coder_lib/signals/indexing_status_test.exs` - 8 signal tests
-   - `test/jido_coder_lib/integration/indexing_status_integration_test.exs` - 11 integration tests
+   - `test/jidoka/indexing/indexing_status_tracker_test.exs` - 16 unit tests
+   - `test/jidoka/signals/indexing_status_test.exs` - 8 signal tests
+   - `test/jidoka/integration/indexing_status_integration_test.exs` - 11 integration tests
 
 5. **Planning Document**
    - `notes/features/indexing-status-tracking.md` - Feature specification and progress tracking
 
 ### Files Modified
 
-1. **`lib/jido_coder_lib/signals.ex`** - Added `indexing_status/2` convenience function
-2. **`lib/jido_coder_lib/application.ex`** - Added IndexingStatusTracker to supervision tree
-3. **`test/jido_coder_lib/integration/phase1_test.exs`** - Updated child count expectations
+1. **`lib/jidoka/signals.ex`** - Added `indexing_status/2` convenience function
+2. **`lib/jidoka/application.ex`** - Added IndexingStatusTracker to supervision tree
+3. **`test/jidoka/integration/phase1_test.exs`** - Updated child count expectations
 
 ## Architecture
 
@@ -81,15 +81,15 @@ IndexingStatusTracker.fail_indexing("lib/invalid.ex", "Parse error")
 
 ### Telemetry Events
 
-- `[:jido_coder_lib, :indexing, :started]` - Emitted when indexing starts
-- `[:jido_coder_lib, :indexing, :completed]` - Emitted with duration and triple count
-- `[:jido_coder_lib, :indexing, :failed]` - Emitted with duration and error message
+- `[:jidoka, :indexing, :started]` - Emitted when indexing starts
+- `[:jidoka, :indexing, :completed]` - Emitted with duration and triple count
+- `[:jidoka, :indexing, :failed]` - Emitted with duration and error message
 
 ### Signal Integration
 
 ```elixir
 # Create and dispatch indexing status signal
-{:ok, signal} = JidoCoderLib.Signals.indexing_status(
+{:ok, signal} = Jidoka.Signals.indexing_status(
   "lib/my_app.ex",
   :completed,
   triple_count: 42,

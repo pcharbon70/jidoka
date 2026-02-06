@@ -10,7 +10,7 @@ This phase implements the multi-session architecture that allows multiple isolat
 
 The SessionManager handles the lifecycle of all work-sessions including creation, termination, and listing.
 
-- [x] 3.1.1 Create `JidoCoderLib.Agents.SessionManager` as GenServer
+- [x] 3.1.1 Create `Jidoka.Agents.SessionManager` as GenServer
 - [x] 3.1.2 Implement `start_link/1` with ETS table for session tracking
 - [x] 3.1.3 Implement `create_session/1` for session creation
 - [x] 3.1.4 Implement `terminate_session/1` for session termination
@@ -44,7 +44,7 @@ The SessionManager handles the lifecycle of all work-sessions including creation
 
 Each session has its own supervisor that manages the agents specific to that session.
 
-- [x] 3.2.1 Create `JidoCoderLib.Session.Supervisor` using `Supervisor`
+- [x] 3.2.1 Create `Jidoka.Session.Supervisor` using `Supervisor`
 - [x] 3.2.2 Implement `start_link/1` with session_id and llm_config
 - [x] 3.2.3 Register supervisor via Registry with session_id
 - [x] 3.2.4 Configure `:one_for_one` strategy for session agents
@@ -76,7 +76,7 @@ Each session has its own supervisor that manages the agents specific to that ses
 
 Define the data structures that hold session-specific state and configuration.
 
-- [x] 3.3.1 Create `JidoCoderLib.Session.State` struct
+- [x] 3.3.1 Create `Jidoka.Session.State` struct
 - [x] 3.3.2 Define session configuration schema
 - [x] 3.3.3 Define session status enum (:initializing, :active, :idle, :terminating, :terminated)
 - [x] 3.3.4 Implement state transition functions
@@ -103,7 +103,7 @@ Define the data structures that hold session-specific state and configuration.
 
 Each session has its own ContextManager that manages context for that specific session.
 
-- [x] 3.4.1 Create `JidoCoderLib.Agents.ContextManager` using GenServer
+- [x] 3.4.1 Create `Jidoka.Agents.ContextManager` using GenServer
 - [x] 3.4.2 Accept session_id in start_link options
 - [x] 3.4.3 Register via Registry with "context_manager:#{session_id}" key
 - [x] 3.4.4 Maintain session-isolated conversation history
@@ -169,7 +169,7 @@ Update the ContextStore to handle session-scoped data using composite keys.
 
 Provide a clean API for clients to manage work-sessions.
 
-- [x] 3.6.1 Create `JidoCoderLib.Client` module
+- [x] 3.6.1 Create `Jidoka.Client` module
 - [x] 3.6.2 Implement `create_session/1` for session creation
 - [x] 3.6.3 Implement `terminate_session/1` for session termination
 - [x] 3.6.4 Implement `list_sessions/0` for listing sessions
@@ -287,21 +287,21 @@ Comprehensive integration tests verifying multi-session functionality and isolat
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/agents/session_manager.ex` - SessionManager supervisor
-- `lib/jido_coder_lib/session/supervisor.ex` - SessionSupervisor
-- `lib/jido_coder_lib/session/state.ex` - Session state struct
-- `lib/jido_coder_lib/agents/context_manager.ex` - ContextManager agent
-- `lib/jido_coder_lib/client.ex` - Client API
-- `test/jido_coder_lib/agents/session_manager_test.exs`
-- `test/jido_coder_lib/session/supervisor_test.exs`
-- `test/jido_coder_lib/session/state_test.exs`
-- `test/jido_coder_lib/agents/context_manager_test.exs`
-- `test/jido_coder_lib/integration/phase3_test.exs`
+- `lib/jidoka/agents/session_manager.ex` - SessionManager supervisor
+- `lib/jidoka/session/supervisor.ex` - SessionSupervisor
+- `lib/jidoka/session/state.ex` - Session state struct
+- `lib/jidoka/agents/context_manager.ex` - ContextManager agent
+- `lib/jidoka/client.ex` - Client API
+- `test/jidoka/agents/session_manager_test.exs`
+- `test/jidoka/session/supervisor_test.exs`
+- `test/jidoka/session/state_test.exs`
+- `test/jidoka/agents/context_manager_test.exs`
+- `test/jidoka/integration/phase3_test.exs`
 
 **Modified Files:**
-- `lib/jido_coder_lib/application.ex` - Add SessionManager
-- `lib/jido_coder_lib/context_store.ex` - Add session_id scoping
-- `lib/jido_coder_lib/pubsub.ex` - Add session topic helpers
+- `lib/jidoka/application.ex` - Add SessionManager
+- `lib/jidoka/context_store.ex` - Add session_id scoping
+- `lib/jidoka/pubsub.ex` - Add session topic helpers
 
 **Dependencies:**
 - Phase 1: Core Foundation

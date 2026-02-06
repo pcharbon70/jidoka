@@ -2,7 +2,7 @@
 
 ## Overview
 
-This implementation plan describes the construction of **jido_coder_lib**, a headless, client-agnostic agentic coding assistant core built on Elixir and the BEAM VM. The architecture follows a layered design with specialized agents, semantic memory systems, and pluggable protocol integrations.
+This implementation plan describes the construction of **jidoka**, a headless, client-agnostic agentic coding assistant core built on Elixir and the BEAM VM. The architecture follows a layered design with specialized agents, semantic memory systems, and pluggable protocol integrations.
 
 ## Architecture Diagram
 
@@ -99,9 +99,9 @@ graph TD
 ## Project Structure
 
 ```
-jido_coder_lib/
+jidoka/
 ├── lib/
-│   ├── jido_coder_lib/
+│   ├── jidoka/
 │   │   ├── application.ex                 # Application entry point
 │   │   ├── pubsub.ex                      # PubSub configuration
 │   │   ├── agents/                        # Agent implementations
@@ -135,9 +135,9 @@ jido_coder_lib/
 │   │   │   ├── phoenix/
 │   │   │   └── a2a/
 │   │   └── signals/                       # Signal definitions
-│   └── jido_coder_lib.ex
+│   └── jidoka.ex
 ├── test/
-│   ├── jido_coder_lib/
+│   ├── jidoka/
 │   │   ├── agents/
 │   │   ├── session/
 │   │   ├── memory/

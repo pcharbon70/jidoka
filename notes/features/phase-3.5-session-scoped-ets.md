@@ -45,8 +45,8 @@ Modify ContextStore to use composite keys `{session_id, path}` for session-scope
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/context_store.ex` | Add session_id parameter and composite keys |
-| `test/jido_coder_lib/context_store_test.exs` | Add session isolation tests |
+| `lib/jidoka/context_store.ex` | Add session_id parameter and composite keys |
+| `test/jidoka/context_store_test.exs` | Add session isolation tests |
 
 ### ETS Table Changes
 
@@ -143,7 +143,7 @@ Modify ContextStore to use composite keys `{session_id, path}` for session-scope
 mix compile
 
 # Run tests (after implementation)
-mix test test/jido_coder_lib/context_store_test.exs
+mix test test/jidoka/context_store_test.exs
 
 # Run all tests
 mix test
@@ -184,7 +184,7 @@ mix test
 ## References
 
 - Planning Document: `notes/planning/01-foundation/phase-03.md`
-- ContextStore: `lib/jido_coder_lib/context_store.ex`
-- ContextStore Tests: `test/jido_coder_lib/context_store_test.exs`
+- ContextStore: `lib/jidoka/context_store.ex`
+- ContextStore Tests: `test/jidoka/context_store_test.exs`
 - Phase 3.4: ContextManager implementation (session context)
 - Phase 3.1: SessionManager (session lifecycle)

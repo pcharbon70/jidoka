@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project requires a domain ontology for memory types and work sessions. This ontology will define the semantic structure for storing facts, decisions, and lessons learned in the knowledge graph. Currently, there is no ontology file, no loading mechanism, and no validation of ontology integrity.
+The jidoka project requires a domain ontology for memory types and work sessions. This ontology will define the semantic structure for storing facts, decisions, and lessons learned in the knowledge graph. Currently, there is no ontology file, no loading mechanism, and no validation of ontology integrity.
 
 **Current State:**
 - No Jido ontology file exists
@@ -39,7 +39,7 @@ Implement Jido Ontology loading with a Turtle (.ttl) file defining memory types 
 
 **Architecture:**
 ```
-JidoCoderLib.Knowledge.Ontology (loader module)
+Jidoka.Knowledge.Ontology (loader module)
 ├── load_jido_ontology/0       - Load Jido ontology into system_knowledge
 ├── load_ontology/2            - Generic loader for any .ttl file
 ├── validate_loaded/1          - Verify ontology triples exist
@@ -66,11 +66,11 @@ priv/ontologies/jido.ttl
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/knowledge/ontology.ex`
+**Primary Module:** `lib/jidoka/knowledge/ontology.ex`
 
 **API Design:**
 ```elixir
-defmodule JidoCoderLib.Knowledge.Ontology do
+defmodule Jidoka.Knowledge.Ontology do
   @moduledoc """
   Loader and validator for domain ontologies.
 
@@ -78,8 +78,8 @@ defmodule JidoCoderLib.Knowledge.Ontology do
   validate that ontologies loaded correctly, and query ontology metadata.
   """
 
-  alias JidoCoderLib.Knowledge.Engine
-  alias JidoCoderLib.Knowledge.NamedGraphs
+  alias Jidoka.Knowledge.Engine
+  alias Jidoka.Knowledge.NamedGraphs
 
   # Public API - Loading
   def load_jido_ontology()
@@ -183,8 +183,8 @@ Uses existing `:knowledge_engine` from Engine module.
 ### Dependencies
 
 **Existing:**
-- `JidoCoderLib.Knowledge.Engine` - For graph context
-- `JidoCoderLib.Knowledge.NamedGraphs` - For graph IRI resolution
+- `Jidoka.Knowledge.Engine` - For graph context
+- `Jidoka.Knowledge.NamedGraphs` - For graph IRI resolution
 - `RDF` - For Turtle parsing
 - `RDF.Turtle` - For Turtle format reading
 
@@ -253,7 +253,7 @@ Uses existing `:knowledge_engine` from Engine module.
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/knowledge/ontology.ex`
+- [ ] Create `lib/jidoka/knowledge/ontology.ex`
 - [ ] Implement `load_ontology/2` for generic .ttl loading
 - [ ] Implement `load_jido_ontology/0` for Jido-specific loading
 - [ ] Use RDF.Turtle to parse .ttl files
@@ -262,7 +262,7 @@ Uses existing `:knowledge_engine` from Engine module.
 - [ ] Handle parse errors gracefully
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/ontology.ex` (new)
+- `lib/jidoka/knowledge/ontology.ex` (new)
 
 ---
 
@@ -278,7 +278,7 @@ Uses existing `:knowledge_engine` from Engine module.
 - [ ] Implement `ontology_version/0` to get version from triples
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/ontology.ex` (modify)
+- `lib/jidoka/knowledge/ontology.ex` (modify)
 
 ---
 
@@ -295,7 +295,7 @@ Uses existing `:knowledge_engine` from Engine module.
 - [ ] Implement `create_work_session_individual/1` for session creation
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/ontology.ex` (modify)
+- `lib/jidoka/knowledge/ontology.ex` (modify)
 
 ---
 
@@ -314,7 +314,7 @@ Uses existing `:knowledge_engine` from Engine module.
 - [ ] Test triple creation helpers generate correct triples
 
 **Files:**
-- `test/jido_coder_lib/knowledge/ontology_test.exs` (new)
+- `test/jidoka/knowledge/ontology_test.exs` (new)
 
 ---
 
@@ -386,7 +386,7 @@ Memory type IRIs will be:
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
 - [Elixir Ontologies](/home/ducky/code/elixir-ontologies)
 - [RDF.ex Documentation](https://hexdocs.pm/rdf/)
 - [W3C RDF Schema](https://www.w3.org/2001/sw/RDFSchema/)

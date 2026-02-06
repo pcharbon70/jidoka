@@ -1,7 +1,7 @@
 import Config
 
 # Configuration for test environment
-config :jido_coder_lib,
+config :jidoka,
   # Set environment to :test for proper test data paths
   env: :test,
   # In tests, we want shorter timeouts to fail fast
@@ -21,7 +21,7 @@ config :logger,
   metadata: []
 
 # LLM Provider - Test Configuration
-config :jido_coder_lib, :llm,
+config :jidoka, :llm,
   # Always use mock in tests
   provider: :mock,
   # Use a test model name
@@ -30,7 +30,7 @@ config :jido_coder_lib, :llm,
   request_timeout: 1_000
 
 # Knowledge Graph - Test Configuration
-config :jido_coder_lib, :knowledge_graph,
+config :jidoka, :knowledge_graph,
   # Use in-memory backend for tests
   backend: :native,
   # Small cache for tests
@@ -38,7 +38,7 @@ config :jido_coder_lib, :knowledge_graph,
   max_cache_size: 100
 
 # Knowledge Engine - Test Configuration
-config :jido_coder_lib, :knowledge_engine,
+config :jidoka, :knowledge_engine,
   # Use quad schema for multiple named graphs with ACL support
   schema: :quad,
   # Shorter health check interval for tests
@@ -47,7 +47,7 @@ config :jido_coder_lib, :knowledge_engine,
   create_standard_graphs: true
 
 # Session Management - Test Configuration
-config :jido_coder_lib, :session,
+config :jidoka, :session,
   # Fewer sessions for tests
   max_sessions: 5,
   # Short timeouts for tests

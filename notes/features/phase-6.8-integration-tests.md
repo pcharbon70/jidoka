@@ -32,9 +32,9 @@ Phases 6.1-6.7 have implemented the codebase semantic model with individual unit
 
 ## Solution Overview
 
-Create comprehensive integration tests in `test/jido_coder_lib/integration/phase6_test.exs` that verify:
+Create comprehensive integration tests in `test/jidoka/integration/phase6_test.exs` that verify:
 
-1. **Full Project Indexing**: Index the jido_coder_lib project and verify results
+1. **Full Project Indexing**: Index the jidoka project and verify results
 2. **AST to RDF Mapping**: Verify code structures map to correct ontology triples
 3. **Incremental Indexing**: Verify file changes trigger correct updates
 4. **File System Integration**: Verify FileSystemWatcher → CodeIndexer pipeline
@@ -45,10 +45,10 @@ Create comprehensive integration tests in `test/jido_coder_lib/integration/phase
 
 **Key Design Decisions:**
 
-1. **Separate Test File**: Create `test/jido_coder_lib/integration/phase6_test.exs`
+1. **Separate Test File**: Create `test/jidoka/integration/phase6_test.exs`
 2. **Async: false**: Integration tests must not run async due to shared state
 3. **Setup/Teardown**: Proper test database setup and cleanup
-4. **Real Code**: Test against actual jido_coder_lib codebase
+4. **Real Code**: Test against actual jidoka codebase
 5. **Skip in CI**: Mark as integration tests that can be skipped in fast CI runs
 
 ---
@@ -57,7 +57,7 @@ Create comprehensive integration tests in `test/jido_coder_lib/integration/phase
 
 ### Test File Location
 
-- File: `test/jido_coder_lib/integration/phase6_test.exs`
+- File: `test/jidoka/integration/phase6_test.exs`
 - Tag: `:phase6_integration` (for selective test running)
 - Async: `false` (shared state with triple store and codebase)
 
@@ -93,14 +93,14 @@ Create sample Elixir files in `test/support/code_samples/`:
 
 ### Step 2: Create Integration Test File
 
-- [x] 2.1 Create `test/jido_coder_lib/integration/phase6_test.exs`
+- [x] 2.1 Create `test/jidoka/integration/phase6_test.exs`
 - [x] 2.2 Add module header with `async: false` and `:phase6_integration` tag
 - [x] 2.3 Add setup callback for test initialization
 - [x] 2.4 Add setup callback for test cleanup
 
 ### Step 3: Implement Full Project Indexing Test
 
-- [x] 3.1 Test: Index full jido_coder_lib project
+- [x] 3.1 Test: Index full jidoka project
 - [x] 3.2 Verify: Total modules indexed
 - [x] 3.3 Verify: Named graph has triples
 - [x] 3.4 Verify: Indexing status is complete
@@ -209,13 +209,13 @@ Create sample Elixir files in `test/support/code_samples/`:
 **How to Test:**
 ```bash
 # Run all integration tests
-mix test test/jido_coder_lib/integration/phase6_test.exs
+mix test test/jidoka/integration/phase6_test.exs
 
 # Run only phase 6 integration tests
 mix test --only phase6_integration
 
 # Run specific test
-mix test test/jido_coder_lib/integration/phase6_test.exs:123
+mix test test/jidoka/integration/phase6_test.exs:123
 ```
 
 ---
@@ -223,7 +223,7 @@ mix test test/jido_coder_lib/integration/phase6_test.exs:123
 ## Files Modified
 
 1. **test/support/code_samples/** - Directory for test code samples
-2. **test/jido_coder_lib/integration/phase6_test.exs** - Integration test file
+2. **test/jidoka/integration/phase6_test.exs** - Integration test file
 
 ---
 

@@ -10,7 +10,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib test suite had 308 failing tests (26.5% failure rate) out of 1,163 total tests.
+The jidoka test suite had 308 failing tests (26.5% failure rate) out of 1,163 total tests.
 
 ### Root Causes Identified
 
@@ -71,15 +71,15 @@ The jido_coder_lib test suite had 308 failing tests (26.5% failure rate) out of 
 ## Files Modified
 
 ### Test Files Fixed:
-1. `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
-2. `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
-3. `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+1. `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
+2. `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
+3. `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
 4. `test/test_helper.exs` - Added database cleanup
 
 ### Source Files Fixed:
-1. `lib/jido_coder_lib/agents/coordinator/actions/handle_issue_found.ex` - Fixed severity default
-2. `lib/jido_coder_lib/knowledge/context.ex` - Added :permit_all to context map
-3. `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` - SPARQL and authorization fixes
+1. `lib/jidoka/agents/coordinator/actions/handle_issue_found.ex` - Fixed severity default
+2. `lib/jidoka/knowledge/context.ex` - Added :permit_all to context map
+3. `lib/jidoka/memory/long_term/triple_store_adapter.ex` - SPARQL and authorization fixes
 
 ## Success Criteria
 
@@ -124,8 +124,8 @@ assert Enum.find(directives, &match?(%Emit{}, &1)).signal.data.session_id == nil
 The triple_store dependency creates RocksDB databases with specific column families. When the schema changes, old databases become incompatible.
 
 **Affected files:**
-- `test/jido_coder_lib/knowledge/engine_test.exs`
-- `test/jido_coder_lib/knowledge/ontology_test.exs`
+- `test/jidoka/knowledge/engine_test.exs`
+- `test/jidoka/knowledge/ontology_test.exs`
 - Any test that uses `:knowledge_engine`
 
 ## Solution Overview
@@ -135,9 +135,9 @@ The triple_store dependency creates RocksDB databases with specific column famil
 Update all tests that check action directives to properly handle multiple directives.
 
 **Files to fix:**
-1. `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
-2. `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
-3. `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+1. `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
+2. `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
+3. `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
 4. Any other action tests with similar patterns
 
 ### Phase 2: Fix Knowledge Engine Database Issues (Priority: Medium)
@@ -262,23 +262,23 @@ end
 ## Files Modified
 
 ### Test Files Fixed:
-1. `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
+1. `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
    - Updated to find Emit directive using `Enum.find`
    - Fixed assertions to use correct signal data structure (event_type + payload)
    - Fixed to use string keys for event_aggregation
 
-2. `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
+2. `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
    - Updated to find Emit directive using `Enum.find`
    - Fixed assertions to use correct signal data structure
    - Fixed to check for missing keys with `refute Map.has_key?`
 
-3. `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+3. `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
    - Updated to expect 3 directives (SetState + 2 Emit)
    - Fixed to find directives by type using `Enum.find`
    - Fixed assertions for payload structure
 
 ### Source Files Fixed:
-1. `lib/jido_coder_lib/agents/coordinator/actions/handle_issue_found.ex`
+1. `lib/jidoka/agents/coordinator/actions/handle_issue_found.ex`
    - Fixed severity default: `severity = params[:severity] || :medium`
    - Schema default was not being applied by Jido.Action
 
@@ -299,7 +299,7 @@ The remaining 312 failures are primarily due to:
 ## Implementation Plan
 
 ### Step 1: Fix HandleAnalysisComplete Tests
-**File:** `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
+**File:** `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
 
 1. Update "processes analysis complete and returns emit directive" test
 2. Update "handles missing optional fields" test
@@ -307,7 +307,7 @@ The remaining 312 failures are primarily due to:
 4. Verify both directives are correct
 
 ### Step 2: Fix HandleIssueFound Tests
-**File:** `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
+**File:** `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
 
 1. Update "processes issue found and returns emit directive" test
 2. Update "uses default severity when not provided" test
@@ -316,7 +316,7 @@ The remaining 312 failures are primarily due to:
 5. Verify state aggregation logic
 
 ### Step 3: Fix HandleChatRequest Tests
-**File:** `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+**File:** `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
 
 1. Review test structure
 2. Apply same pattern as Steps 1-2
@@ -325,8 +325,8 @@ The remaining 312 failures are primarily due to:
 ### Step 4: Improve Database Cleanup
 **Files:**
 - `test/test_helper.exs`
-- `test/jido_coder_lib/knowledge/engine_test.exs`
-- `test/jido_coder_lib/knowledge/ontology_test.exs`
+- `test/jidoka/knowledge/engine_test.exs`
+- `test/jidoka/knowledge/ontology_test.exs`
 
 1. Add more aggressive cleanup in test_helper.exs
 2. Ensure each test uses unique data directory (already done)
@@ -353,7 +353,7 @@ Create reusable test helpers for checking directives:
 
 ```elixir
 # In test/support/test_helpers.ex
-defmodule JidoCoderLib.TestHelpers do
+defmodule Jidoka.TestHelpers do
   @doc """
   Finds the Emit directive in a list of directives
   """
@@ -434,7 +434,7 @@ The triple_store dependency is under active development. Column family schemas m
 - **Jido.Action** - Action behavior (stable)
 - **Jido.Agent.Directive.Emit** - Emit directive (stable)
 - **Jido.Agent.StateOp.SetState** - SetState operation (stable)
-- **JidoCoderLib.Knowledge.Engine** - Knowledge Engine (stable)
+- **Jidoka.Knowledge.Engine** - Knowledge Engine (stable)
 
 ## Timeline Estimate
 
@@ -466,13 +466,13 @@ The triple_store dependency is under active development. Column family schemas m
 ## References
 
 ### Related Files
-- `/home/ducky/code/agentjido/jido_coder_lib/test/test_helper.exs`
-- `/home/ducky/code/agentjido/jido_coder_lib/test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
-- `/home/ducky/code/agentjido/jido_coder_lib/test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
-- `/home/ducky/code/agentjido/jido_coder_lib/test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
-- `/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex`
-- `/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/agents/coordinator/actions/handle_issue_found.ex`
-- `/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex`
+- `/home/ducky/code/agentjido/jidoka/test/test_helper.exs`
+- `/home/ducky/code/agentjido/jidoka/test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
+- `/home/ducky/code/agentjido/jidoka/test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
+- `/home/ducky/code/agentjido/jidoka/test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
+- `/home/ducky/code/agentjido/jidoka/lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex`
+- `/home/ducky/code/agentjido/jidoka/lib/jidoka/agents/coordinator/actions/handle_issue_found.ex`
+- `/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex`
 
 ### Related Documentation
 - Jido Action Documentation: https://hexdocs.pm/jido/Jido.Action.html
@@ -482,38 +482,38 @@ The triple_store dependency is under active development. Column family schemas m
 ## Appendix: Test File Inventory
 
 ### Async Test Files (18)
-1. `test/jido_coder_lib/client_events_test.exs`
-2. `test/jido_coder_lib/agent_test.exs`
-3. `test/jido_coder_lib/memory/token_budget_test.exs`
-4. `test/jido_coder_lib/signals_test.exs`
-5. `test/jido_coder_lib/memory/ontology_test.exs`
-6. `test/jido_coder_lib/session/state_test.exs`
-7. `test/jido_coder_lib/memory/promotion_engine_test.exs`
-8. `test/jido_coder_lib/memory/short_term_test.exs`
-9. `test/jido_coder_lib/agent/directives_test.exs`
-10. `test/jido_coder_lib/memory/validation_test.exs`
-11. `test/jido_coder_lib/memory/short_term/working_context_test.exs`
-12. `test/jido_coder_lib/agent/state_test.exs`
-13. `test/jido_coder_lib/memory/short_term/pending_memories_test.exs`
-14. `test/jido_coder_lib/memory/retrieval_test.exs`
-15. `test/jido_coder_lib/memory/short_term/conversation_buffer_test.exs`
-16. `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
-17. `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
-18. `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+1. `test/jidoka/client_events_test.exs`
+2. `test/jidoka/agent_test.exs`
+3. `test/jidoka/memory/token_budget_test.exs`
+4. `test/jidoka/signals_test.exs`
+5. `test/jidoka/memory/ontology_test.exs`
+6. `test/jidoka/session/state_test.exs`
+7. `test/jidoka/memory/promotion_engine_test.exs`
+8. `test/jidoka/memory/short_term_test.exs`
+9. `test/jidoka/agent/directives_test.exs`
+10. `test/jidoka/memory/validation_test.exs`
+11. `test/jidoka/memory/short_term/working_context_test.exs`
+12. `test/jidoka/agent/state_test.exs`
+13. `test/jidoka/memory/short_term/pending_memories_test.exs`
+14. `test/jidoka/memory/retrieval_test.exs`
+15. `test/jidoka/memory/short_term/conversation_buffer_test.exs`
+16. `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
+17. `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
+18. `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
 
 ### Sync Test Files (26)
-1. `test/jido_coder_lib/memory/long_term/triple_store_adapter_test.exs`
-2. `test/jido_coder_lib/knowledge/engine_test.exs`
-3. `test/jido_coder_lib/knowledge/named_graphs_test.exs`
-4. `test/jido_coder_lib/knowledge/ontology_test.exs`
-5. `test/jido_coder_lib/knowledge/queries_test.exs`
-6. `test/jido_coder_lib/agents/session_manager_test.exs`
-7. `test/jido_coder_lib/integration/phase3_test.exs`
-8. `test/jido_coder_lib/integration/phase1_test.exs`
-9. `test/jido_coder_lib/pubsub_test.exs`
-10. `test/jido_coder_lib/client_test.exs`
-11. `test/jido_coder_lib/memory/integration_test.exs`
-12. `test/jido_coder_lib/integration/phase4_test.exs`
+1. `test/jidoka/memory/long_term/triple_store_adapter_test.exs`
+2. `test/jidoka/knowledge/engine_test.exs`
+3. `test/jidoka/knowledge/named_graphs_test.exs`
+4. `test/jidoka/knowledge/ontology_test.exs`
+5. `test/jidoka/knowledge/queries_test.exs`
+6. `test/jidoka/agents/session_manager_test.exs`
+7. `test/jidoka/integration/phase3_test.exs`
+8. `test/jidoka/integration/phase1_test.exs`
+9. `test/jidoka/pubsub_test.exs`
+10. `test/jidoka/client_test.exs`
+11. `test/jidoka/memory/integration_test.exs`
+12. `test/jidoka/integration/phase4_test.exs`
 13. And 13 others...
 
 ---

@@ -12,31 +12,31 @@ Implemented section 4.9 of the Phase 4 planning document: Memory System Integrat
 
 ### Files Created
 
-1. **`lib/jido_coder_lib/signals/memory.ex`**
+1. **`lib/jidoka/signals/memory.ex`**
    - Memory-related signal types for the memory system
    - Signals: `promoted`, `stored`, `retrieved`, `context_enriched`
    - All signals follow CloudEvents v1.0.2 specification
 
-2. **`lib/jido_coder_lib/memory/integration.ex`**
+2. **`lib/jidoka/memory/integration.ex`**
    - Memory integration helpers for connecting memory system to agents
    - Functions: `initialize_stm/2`, `initialize_ltm/2`, `promote_memories/3`, `store_memory/3`, `retrieve_memories/3`
    - Signal broadcasting functions for memory operations
 
-3. **`test/jido_coder_lib/memory/integration_test.exs`**
+3. **`test/jidoka/memory/integration_test.exs`**
    - Comprehensive integration tests (19 tests)
    - Tests for STM/LTM initialization, promotion, storage, retrieval
    - Tests for ContextManager STM integration and signal types
 
 ### Files Modified
 
-1. **`lib/jido_coder_lib/agents/context_manager.ex`**
+1. **`lib/jidoka/agents/context_manager.ex`**
    - Added STM integration with backward compatibility
    - New state fields: `stm_enabled`, `stm`, `max_tokens`, `max_context_items`
    - New API functions: `put_working_context/3`, `get_working_context/2`, `working_context_keys/1`, `delete_working_context/2`, `get_stm/1`
    - Updated `build_context/3` to include `:working_context` option
    - Fixed `working_context.data` access (was incorrectly accessing `.items`)
 
-2. **`lib/jido_coder_lib/session/supervisor.ex`**
+2. **`lib/jidoka/session/supervisor.ex`**
    - Updated to support on-demand LTM adapter creation
    - New functions: `get_ltm_adapter/1`, `get_stm/1`
    - Simplified from supervised LTM process to on-demand struct creation
@@ -60,7 +60,7 @@ Implemented section 4.9 of the Phase 4 planning document: Memory System Integrat
 - **Integration Tests**: 19/19 passing
 - **All Memory Tests**: 252/252 passing
 - **New Test Files**:
-  - `test/jido_coder_lib/memory/integration_test.exs` (19 tests)
+  - `test/jidoka/memory/integration_test.exs` (19 tests)
 
 ## API Examples
 
@@ -68,20 +68,20 @@ Implemented section 4.9 of the Phase 4 planning document: Memory System Integrat
 
 ```elixir
 # Initialize STM for a session
-{:ok, stm} = JidoCoderLib.Memory.Integration.initialize_stm("session_123",
+{:ok, stm} = Jidoka.Memory.Integration.initialize_stm("session_123",
   max_buffer_size: 100,
   max_working_context: 50
 )
 
 # Initialize LTM for a session
-{:ok, ltm} = JidoCoderLib.Memory.Integration.initialize_ltm("session_123")
+{:ok, ltm} = Jidoka.Memory.Integration.initialize_ltm("session_123")
 ```
 
 ### ContextManager with STM
 
 ```elixir
 # Start ContextManager with STM enabled
-{:ok, pid} = JidoCoderLib.Agents.ContextManager.start_link(
+{:ok, pid} = Jidoka.Agents.ContextManager.start_link(
   session_id: "session_123",
   stm_enabled: true
 )
@@ -107,7 +107,7 @@ Implemented section 4.9 of the Phase 4 planning document: Memory System Integrat
 
 ```elixir
 # Store memory in LTM
-{:ok, memory} = JidoCoderLib.Memory.Integration.store_memory(ltm, %{
+{:ok, memory} = Jidoka.Memory.Integration.store_memory(ltm, %{
   id: "mem_1",
   type: :fact,
   data: %{"key" => "value"},
@@ -115,12 +115,12 @@ Implemented section 4.9 of the Phase 4 planning document: Memory System Integrat
 })
 
 # Retrieve memories from LTM
-{:ok, memories} = JidoCoderLib.Memory.Integration.retrieve_memories(ltm,
+{:ok, memories} = Jidoka.Memory.Integration.retrieve_memories(ltm,
   %{keywords: ["file", "elixir"]}
 )
 
 # Promote pending memories from STM to LTM
-{:ok, stm, results} = JidoCoderLib.Memory.Integration.promote_memories(stm, ltm,
+{:ok, stm, results} = Jidoka.Memory.Integration.promote_memories(stm, ltm,
   min_importance: 0.5,
   batch_size: 10
 )
@@ -130,14 +130,14 @@ Implemented section 4.9 of the Phase 4 planning document: Memory System Integrat
 
 ```elixir
 # Create memory signals
-signal = JidoCoderLib.Signals.Memory.promoted(%{
+signal = Jidoka.Signals.Memory.promoted(%{
   session_id: "session_123",
   memory_id: "mem_abc",
   type: :fact,
   confidence: 0.85
 })
 
-signal = JidoCoderLib.Signals.Memory.stored(%{
+signal = Jidoka.Signals.Memory.stored(%{
   session_id: "session_123",
   memory_id: "mem_xyz",
   type: :file_context

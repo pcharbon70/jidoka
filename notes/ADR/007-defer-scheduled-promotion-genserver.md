@@ -61,7 +61,7 @@ A GenServer wrapper could be added later that provides:
 ## Implementation Guidance for Future GenServer
 If implementing later, consider:
 ```elixir
-defmodule JidoCoderLib.Memory.PeriodicPromoter do
+defmodule Jidoka.Memory.PeriodicPromoter do
   use GenServer
 
   def start_link(opts) do

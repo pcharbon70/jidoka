@@ -18,7 +18,7 @@ This implementation addresses all critical security vulnerabilities, architectur
 
 ### High Priority Security Fixes (Priority 1)
 
-#### 1. Validation Module (`lib/jido_coder_lib/memory/validation.ex`)
+#### 1. Validation Module (`lib/jidoka/memory/validation.ex`)
 - **Purpose:** Centralized validation for memory operations
 - **Features:**
   - `validate_required_fields/2` - Checks for required fields
@@ -29,7 +29,7 @@ This implementation addresses all critical security vulnerabilities, architectur
   - `validate_memory/1` - Composite validation
 - **Tests:** 66 tests passing (11 doctests + 55 unit tests)
 
-#### 2. SessionServer GenServer (`lib/jido_coder_lib/memory/long_term/session_server.ex`)
+#### 2. SessionServer GenServer (`lib/jidoka/memory/long_term/session_server.ex`)
 - **Purpose:** Process-isolated LTM with proper security
 - **Security Improvements:**
   - Uses `:protected` ETS table (only owner can write)
@@ -43,7 +43,7 @@ This implementation addresses all critical security vulnerabilities, architectur
 - Added deprecation notice pointing to SessionServer
 - Security note about `:public` access being a concern
 
-#### 4. STM.Server GenServer (`lib/jido_coder_lib/memory/short_term/server.ex`)
+#### 4. STM.Server GenServer (`lib/jidoka/memory/short_term/server.ex`)
 - **Purpose:** Process isolation for Short-Term Memory
 - **Features:**
   - Wraps STM struct in GenServer
@@ -77,18 +77,18 @@ This implementation addresses all critical security vulnerabilities, architectur
 ## Files Modified
 
 ### New Files
-- `lib/jido_coder_lib/memory/validation.ex`
-- `lib/jido_coder_lib/memory/long_term/session_server.ex`
-- `test/jido_coder_lib/memory/validation_test.exs`
-- `test/jido_coder_lib/memory/long_term/session_server_test.exs`
+- `lib/jidoka/memory/validation.ex`
+- `lib/jidoka/memory/long_term/session_server.ex`
+- `test/jidoka/memory/validation_test.exs`
+- `test/jidoka/memory/long_term/session_server_test.exs`
 
 ### Modified Files
-- `lib/jido_coder_lib/memory/short_term/server.ex` - Fixed recent_messages, get_stm, start_link
-- `lib/jido_coder_lib/memory/short_term.ex` - Added access log bounding
-- `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` - Fixed O(n²) eviction
-- `lib/jido_coder_lib/memory/long_term/session_adapter.ex` - Added Validation usage, deprecation
-- `lib/jido_coder_lib/application.ex` - Added SessionRegistry
-- `test/jido_coder_lib/memory/short_term/server_test.exs` - Fixed assertions, variable usage
+- `lib/jidoka/memory/short_term/server.ex` - Fixed recent_messages, get_stm, start_link
+- `lib/jidoka/memory/short_term.ex` - Added access log bounding
+- `lib/jidoka/memory/short_term/conversation_buffer.ex` - Fixed O(n²) eviction
+- `lib/jidoka/memory/long_term/session_adapter.ex` - Added Validation usage, deprecation
+- `lib/jidoka/application.ex` - Added SessionRegistry
+- `test/jidoka/memory/short_term/server_test.exs` - Fixed assertions, variable usage
 
 ---
 

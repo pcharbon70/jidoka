@@ -18,16 +18,16 @@ Phase 3.4 implements the ContextManager agent, which provides session-isolated c
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/agents/context_manager.ex` | ContextManager GenServer (656 lines) |
-| `test/jido_coder_lib/agents/context_manager_test.exs` | Comprehensive unit tests (617 lines) |
+| `lib/jidoka/agents/context_manager.ex` | ContextManager GenServer (656 lines) |
+| `test/jidoka/agents/context_manager_test.exs` | Comprehensive unit tests (617 lines) |
 
 ### Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/session/supervisor.ex` | Replaced Placeholder with ContextManager child |
-| `test/jido_coder_lib/session/supervisor_test.exs` | Updated tests for ContextManager child |
-| `test/jido_coder_lib/integration/phase1_test.exs` | Updated child count from 6 to 9 |
+| `lib/jidoka/session/supervisor.ex` | Replaced Placeholder with ContextManager child |
+| `test/jidoka/session/supervisor_test.exs` | Updated tests for ContextManager child |
+| `test/jidoka/integration/phase1_test.exs` | Updated child count from 6 to 9 |
 
 ---
 
@@ -76,7 +76,7 @@ Phase 3.4 implements the ContextManager agent, which provides session-isolated c
 ### Registry Key Pattern
 
 - Key: `"context_manager:" <> session_id`
-- Registry: `JidoCoderLib.AgentRegistry` (unique keys)
+- Registry: `Jidoka.AgentRegistry` (unique keys)
 - Allows lookup by session_id
 
 ### PubSub Events
@@ -195,7 +195,7 @@ Updated child count from 6 to 9 to reflect:
 ```elixir
 # SessionSupervisor.build_children/2
 [
-  {JidoCoderLib.Agents.ContextManager, [session_id: session_id]}
+  {Jidoka.Agents.ContextManager, [session_id: session_id]}
 ]
 ```
 
@@ -324,5 +324,5 @@ Integration tests updated and passing.
 
 - Feature Planning: `notes/features/phase-3.4-context-manager.md`
 - Main Planning: `notes/planning/01-foundation/phase-03.md`
-- ContextManager: `lib/jido_coder_lib/agents/context_manager.ex`
-- Tests: `test/jido_coder_lib/agents/context_manager_test.exs`
+- ContextManager: `lib/jidoka/agents/context_manager.ex`
+- Tests: `test/jidoka/agents/context_manager_test.exs`

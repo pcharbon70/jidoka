@@ -1,6 +1,6 @@
 # Phase 1: Core Foundation
 
-This phase establishes the foundational infrastructure for the jido_coder_lib application. We create the Elixir application structure, set up the supervision tree, configure Phoenix PubSub for message passing, and establish Registries for process discovery. This foundation is critical as all subsequent phases build upon these core infrastructure components.
+This phase establishes the foundational infrastructure for the jidoka application. We create the Elixir application structure, set up the supervision tree, configure Phoenix PubSub for message passing, and establish Registries for process discovery. This foundation is critical as all subsequent phases build upon these core infrastructure components.
 
 ---
 
@@ -10,10 +10,10 @@ This phase establishes the foundational infrastructure for the jido_coder_lib ap
 
 Initialize a new Elixir application using Mix with the proper directory structure and configuration files.
 
-- [x] 1.1.1 Create new Elixir application with `mix new jido_coder_lib --sup`
+- [x] 1.1.1 Create new Elixir application with `mix new jidoka --sup`
 - [x] 1.1.2 Configure application metadata in mix.exs (description, version, dependencies)
-- [x] 1.1.3 Create directory structure: lib/jido_coder_lib/{agents,session,memory/knowledge,tools,protocol,signals}
-- [x] 1.1.4 Create mirror test directory structure: test/jido_coder_lib/{agents,session,memory,knowledge,tools,protocol}
+- [x] 1.1.3 Create directory structure: lib/jidoka/{agents,session,memory/knowledge,tools,protocol,signals}
+- [x] 1.1.4 Create mirror test directory structure: test/jidoka/{agents,session,memory,knowledge,tools,protocol}
 - [x] 1.1.5 Add required dependencies to mix.exs (jido, phoenix_pubsub, rdf, etc.)
 
 **Implementation Notes:**
@@ -35,16 +35,16 @@ Initialize a new Elixir application using Mix with the proper directory structur
 
 Create the main application module that defines the supervision hierarchy for the entire system.
 
-- [x] 1.2.1 Implement `JidoCoderLib.Application` with `use Application`
+- [x] 1.2.1 Implement `Jidoka.Application` with `use Application`
 - [x] 1.2.2 Define children list for core infrastructure components
 - [x] 1.2.3 Configure `:one_for_one` strategy for top-level supervisor
-- [x] 1.2.4 Create `JidoCoderLib.Supervisor` as the top-level supervisor
+- [x] 1.2.4 Create `Jidoka.Supervisor` as the top-level supervisor
 - [x] 1.2.5 Add dynamic supervisor for protocol connections
 - [x] 1.2.6 Add supervisor configuration to config/config.exs
 
 **Implementation Notes:**
 - Created comprehensive @moduledoc documentation for Application and Supervisor
-- Added DynamicSupervisor named JidoCoderLib.ProtocolSupervisor for protocol connections
+- Added DynamicSupervisor named Jidoka.ProtocolSupervisor for protocol connections
 - Created config/config.exs, dev.exs, test.exs, and prod.exs with environment-specific settings
 - Configuration includes operation_timeout, telemetry, and log_level settings
 
@@ -63,7 +63,7 @@ Create the main application module that defines the supervision hierarchy for th
 Set up Phoenix PubSub for both local and distributed messaging across the system.
 
 - [x] 1.3.1 Add `Phoenix.PubSub` to application children
-- [x] 1.3.2 Create `JidoCoderLib.PubSub` wrapper module
+- [x] 1.3.2 Create `Jidoka.PubSub` wrapper module
 - [x] 1.3.3 Configure PubSub with name `:jido_coder_pubsub`
 - [x] 1.3.4 Define standard topic naming conventions
 - [x] 1.3.5 Create helper functions for subscribing to topics
@@ -84,8 +84,8 @@ Set up Phoenix PubSub for both local and distributed messaging across the system
 
 Configure two registries: one for unique agent registration and one for duplicate topic-based registration.
 
-- [x] 1.4.1 Create `JidoCoderLib.AgentRegistry` (unique keys)
-- [x] 1.4.2 Create `JidoCoderLib.TopicRegistry` (duplicate keys)
+- [x] 1.4.1 Create `Jidoka.AgentRegistry` (unique keys)
+- [x] 1.4.2 Create `Jidoka.TopicRegistry` (duplicate keys)
 - [x] 1.4.3 Add registries to supervision tree
 - [x] 1.4.4 Create registry helper functions
 - [x] 1.4.5 Define registry key naming conventions
@@ -105,7 +105,7 @@ Configure two registries: one for unique agent registration and one for duplicat
 
 Establish a GenServer that owns and manages ETS tables for caching and shared data access.
 
-- [x] 1.5.1 Create `JidoCoderLib.ContextStore` GenServer
+- [x] 1.5.1 Create `Jidoka.ContextStore` GenServer
 - [x] 1.5.2 Create `:file_content` ETS table (set, public, named_table, read_concurrency: true)
 - [x] 1.5.3 Create `:file_metadata` ETS table (set, public, named_table, read_concurrency: true)
 - [x] 1.5.4 Create `:analysis_cache` ETS table (set, public, named_table, read_concurrency: true, write_concurrency: true)
@@ -147,7 +147,7 @@ Create comprehensive configuration structure for the application with environmen
 
 **Implementation Notes:**
 - Created comprehensive config schema with LLM, knowledge_graph, and session sections
-- Added JidoCoderLib.Config validation module with getter functions
+- Added Jidoka.Config validation module with getter functions
 - All 41 config tests passing
 - Total project tests: 125 passing (1 doctest + 124 tests)
 
@@ -174,8 +174,8 @@ Configure Logger and integrate telemetry for observability.
 **Implementation Notes:**
 - Added Logger configuration to config.exs with metadata
 - Environment-specific configs: dev (debug), test (warn), prod (info)
-- Created JidoCoderLib.Telemetry module with event definitions
-- Created JidoCoderLib.TelemetryHandlers module with ETS-based metrics
+- Created Jidoka.Telemetry module with event definitions
+- Created Jidoka.TelemetryHandlers module with ETS-based metrics
 - All 45 new telemetry tests passing
 - Total project tests: 166 passing (1 doctest + 165 tests)
 
@@ -195,7 +195,7 @@ Comprehensive integration tests to verify all core foundation components work to
 - [x] 1.8.8 Test concurrent access to shared resources
 
 **Implementation Notes:**
-- Created `test/jido_coder_lib/integration/` directory for integration tests
+- Created `test/jidoka/integration/` directory for integration tests
 - Implemented 23 integration tests covering all 8 categories
 - Tests use `async: false` due to testing global application state
 - Fixed ContextStore API usage (cache_analysis vs cache_file)
@@ -236,19 +236,19 @@ Comprehensive integration tests to verify all core foundation components work to
 
 **New Files:**
 - `mix.exs` - Application configuration and dependencies
-- `lib/jido_coder_lib.ex` - Main application module
-- `lib/jido_coder_lib/application.ex` - Application callback and supervision tree
-- `lib/jido_coder_lib/pubsub.ex` - PubSub wrapper and helpers
-- `lib/jido_coder_lib/agent_registry.ex` - Agent registry utilities
-- `lib/jido_coder_lib/topic_registry.ex` - Topic registry utilities
-- `lib/jido_coder_lib/context_store.ex` - ETS table owner
-- `lib/jido_coder_lib/config.ex` - Configuration validation
-- `lib/jido_coder_lib/telemetry.ex` - Telemetry event definitions
+- `lib/jidoka.ex` - Main application module
+- `lib/jidoka/application.ex` - Application callback and supervision tree
+- `lib/jidoka/pubsub.ex` - PubSub wrapper and helpers
+- `lib/jidoka/agent_registry.ex` - Agent registry utilities
+- `lib/jidoka/topic_registry.ex` - Topic registry utilities
+- `lib/jidoka/context_store.ex` - ETS table owner
+- `lib/jidoka/config.ex` - Configuration validation
+- `lib/jidoka/telemetry.ex` - Telemetry event definitions
 - `config/config.exs` - Base configuration
 - `config/dev.exs` - Development environment config
 - `config/test.exs` - Test environment config
 - `test/test_helper.exs` - Test setup and helpers
-- `test/jido_coder_lib/integration/phase1_test.exs` - Phase 1 integration tests
+- `test/jidoka/integration/phase1_test.exs` - Phase 1 integration tests
 
 **Dependencies:**
 - None (first phase)

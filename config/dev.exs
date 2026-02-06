@@ -1,7 +1,7 @@
 import Config
 
 # Configuration for development environment
-config :jido_coder_lib,
+config :jidoka,
   # In development, we want more verbose logging
   log_level: :debug,
 
@@ -9,7 +9,7 @@ config :jido_coder_lib,
   operation_timeout: 60_000
 
 # Disable telemetry metrics in development for faster startup
-config :jido_coder_lib,
+config :jidoka,
   enable_telemetry: false
 
 # Logger - Development Configuration
@@ -20,7 +20,7 @@ config :logger,
   metadata: :all
 
 # LLM Provider - Development Configuration
-config :jido_coder_lib, :llm,
+config :jidoka, :llm,
   # Use mock provider by default in development (no API key needed)
   provider: :mock,
   # Fallback to a small model for faster responses
@@ -29,14 +29,14 @@ config :jido_coder_lib, :llm,
   request_timeout: 30_000
 
 # Knowledge Graph - Development Configuration
-config :jido_coder_lib, :knowledge_graph,
+config :jidoka, :knowledge_graph,
   # Use in-memory backend for development
   backend: :native,
   # Disable caching in development to see fresh results
   cache_enabled: false
 
 # Session Management - Development Configuration
-config :jido_coder_lib, :session,
+config :jidoka, :session,
   # Fewer sessions for development
   max_sessions: 10,
   # Longer timeouts for debugging

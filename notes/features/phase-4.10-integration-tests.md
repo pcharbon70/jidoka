@@ -17,7 +17,7 @@ Section 4.10 of the Phase 4 planning document requires comprehensive integration
 
 ## Solution Overview
 
-Create comprehensive integration test suite `test/jido_coder_lib/integration/phase4_test.exs` that tests the memory system as a whole, covering all the scenarios listed in section 4.10.
+Create comprehensive integration test suite `test/jidoka/integration/phase4_test.exs` that tests the memory system as a whole, covering all the scenarios listed in section 4.10.
 
 ## Current Test Status
 
@@ -52,7 +52,7 @@ None needed - building on existing memory system tests.
 
 ### Files to Create
 
-1. **`test/jido_coder_lib/integration/phase4_test.exs`**
+1. **`test/jidoka/integration/phase4_test.exs`**
    - Comprehensive integration tests for the entire memory system
    - Tests all scenarios from section 4.10
 
@@ -77,7 +77,7 @@ None needed - building on existing memory system tests.
 
 ### Step 1: Create Phase4 Integration Test File
 
-Create `test/jido_coder_lib/integration/phase4_test.exs` with proper setup and test organization.
+Create `test/jidoka/integration/phase4_test.exs` with proper setup and test organization.
 
 ### Step 2: Implement STM Lifecycle Tests (4.10.1)
 
@@ -148,7 +148,7 @@ Create `test/jido_coder_lib/integration/phase4_test.exs` with proper setup and t
 The tests will be organized into describe blocks:
 
 ```elixir
-defmodule JidoCoderLib.Integration.Phase4Test do
+defmodule Jidoka.Integration.Phase4Test do
   use ExUnit.Case, async: false  # Integration tests often need sync execution
 
   describe "4.10.1 STM Lifecycle" do
@@ -219,8 +219,8 @@ end
 ### How to Run Tests
 ```bash
 # Run all Phase 4 integration tests
-mix test test/jido_coder_lib/integration/phase4_test.exs
+mix test test/jidoka/integration/phase4_test.exs
 
 # Run specific test group
-mix test test/jido_coder_lib/integration/phase4_test.exs:line_number
+mix test test/jidoka/integration/phase4_test.exs:line_number
 ```

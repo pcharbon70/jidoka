@@ -7,7 +7,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project needs to index Elixir source code into the knowledge graph for semantic querying. The `elixir-ontologies` library already provides comprehensive AST parsing, extraction, and RDF generation capabilities.
+The jidoka project needs to index Elixir source code into the knowledge graph for semantic querying. The `elixir-ontologies` library already provides comprehensive AST parsing, extraction, and RDF generation capabilities.
 
 **Impact:**
 - No way to query codebase structure using SPARQL
@@ -28,7 +28,7 @@ Create a GenServer wrapper around the `elixir-ontologies` library that:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    JidoCoderLib.Indexing.CodeIndexer           │
+│                    Jidoka.Indexing.CodeIndexer           │
 │                           (GenServer)                           │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                   │
@@ -93,10 +93,10 @@ Create a GenServer wrapper around the `elixir-ontologies` library that:
 
 ### Step 1: Create CodeIndexer GenServer Skeleton
 
-**File:** `lib/jido_coder_lib/indexing/code_indexer.ex`
+**File:** `lib/jidoka/indexing/code_indexer.ex`
 
 ```elixir
-defmodule JidoCoderLib.Indexing.CodeIndexer do
+defmodule Jidoka.Indexing.CodeIndexer do
   @moduledoc """
   GenServer wrapper around ElixirOntologies for code indexing.
 
@@ -107,8 +107,8 @@ defmodule JidoCoderLib.Indexing.CodeIndexer do
   use GenServer
   require Logger
 
-  alias JidoCoderLib.Knowledge.{Engine, NamedGraphs}
-  alias JidoCoderLib.Indexing.IndexingStatusTracker
+  alias Jidoka.Knowledge.{Engine, NamedGraphs}
+  alias Jidoka.Indexing.IndexingStatusTracker
 
   # State
   defstruct [
@@ -215,7 +215,7 @@ The `elixir-ontologies` library returns `RDF.Graph` structs. We need to convert 
 defp insert_graph(graph, state) do
   ctx = Engine.context(state.engine_name)
   |> Map.put(:transaction, nil)
-  |> JidoCoderLib.Knowledge.Context.with_permit_all()
+  |> Jidoka.Knowledge.Context.with_permit_all()
 
   # Get the elixir_codebase graph IRI
   {:ok, graph_iri} = NamedGraphs.iri_string(:elixir_codebase)
@@ -244,18 +244,18 @@ defp rdf_to_ast(%RDF.Literal{} = lit), do: {:literal, :simple, RDF.Literal.value
 
 ### Step 5: Add to Supervision Tree
 
-Update `lib/jido_coder_lib/application.ex`:
+Update `lib/jidoka/application.ex`:
 
 ```elixir
 children = [
   # ... existing children
 
   # CodeIndexer for codebase semantic model (Phase 6.2)
-  {JidoCoderLib.Indexing.CodeIndexer,
+  {Jidoka.Indexing.CodeIndexer,
    [
-     name: JidoCoderLib.Indexing.CodeIndexer,
+     name: Jidoka.Indexing.CodeIndexer,
      engine_name: :knowledge_engine,
-     tracker_name: JidoCoderLib.Indexing.IndexingStatusTracker
+     tracker_name: Jidoka.Indexing.IndexingStatusTracker
    ]},
 ]
 ```

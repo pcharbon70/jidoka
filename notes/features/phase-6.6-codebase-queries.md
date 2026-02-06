@@ -31,7 +31,7 @@ The CodeIndexer (Phase 6.2) now indexes Elixir source code into the `:elixir_cod
 
 ## Solution Overview
 
-Create a `JidoCoderLib.Codebase.Queries` module that provides high-level query functions for common codebase questions. This module follows the pattern established by `JidoCoderLib.Knowledge.Queries` (Phase 5.6) but focuses on Elixir code constructs rather than memory types.
+Create a `Jidoka.Codebase.Queries` module that provides high-level query functions for common codebase questions. This module follows the pattern established by `Jidoka.Knowledge.Queries` (Phase 5.6) but focuses on Elixir code constructs rather than memory types.
 
 **Key Design Decisions:**
 
@@ -67,7 +67,7 @@ During implementation, several SPARQL compatibility issues with the triple_store
 
 ## Success Criteria
 
-- [x] 6.6.1 Create `JidoCoderLib.Codebase.Queries` module
+- [x] 6.6.1 Create `Jidoka.Codebase.Queries` module
 - [x] 6.6.2 Implement `find_module/2` for module lookup
 - [x] 6.6.3 Implement `find_function/4` for function lookup
 - [x] 6.6.4 Implement `get_call_graph/2` for call relationships
@@ -97,8 +97,8 @@ During implementation, several SPARQL compatibility issues with the triple_store
 ## Files Created/Modified
 
 ### Created Files
-- `lib/jido_coder_lib/codebase/queries.ex` - Main query interface module
-- `test/jido_coder_lib/codebase/queries_test.exs` - Comprehensive test suite
+- `lib/jidoka/codebase/queries.ex` - Main query interface module
+- `test/jidoka/codebase/queries_test.exs` - Comprehensive test suite
 
 ### Modified Files
-- `lib/jido_coder_lib/indexing/code_indexer.ex` - Fixed base_iri configuration to pass individual options instead of config struct
+- `lib/jidoka/indexing/code_indexer.ex` - Fixed base_iri configuration to pass individual options instead of config struct

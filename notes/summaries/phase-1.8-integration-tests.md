@@ -16,9 +16,9 @@ Implemented comprehensive integration test suite for Phase 1 foundation componen
 
 ### 1. Integration Test Directory Structure
 
-Created `test/jido_coder_lib/integration/` directory for integration tests that must run with `async: false` due to testing global application state.
+Created `test/jidoka/integration/` directory for integration tests that must run with `async: false` due to testing global application state.
 
-### 2. Integration Test Suite (test/jido_coder_lib/integration/phase1_test.exs)
+### 2. Integration Test Suite (test/jidoka/integration/phase1_test.exs)
 
 Implemented 23 integration tests across 8 categories:
 
@@ -108,7 +108,7 @@ Test breakdown:
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `test/jido_coder_lib/integration/phase1_test.exs` | ~395 | Integration tests |
+| `test/jidoka/integration/phase1_test.exs` | ~395 | Integration tests |
 | `notes/features/phase-1.8-integration-tests.md` | ~195 | Planning document |
 | `notes/summaries/phase-1.8-integration-tests.md` | This file | Summary document |
 

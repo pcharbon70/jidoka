@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project requires a SPARQL 1.1 compliant client library to query and update the knowledge graph layer. The existing triple_store backend provides comprehensive SPARQL support, but lacks a clean, high-level API for common operations.
+The jidoka project requires a SPARQL 1.1 compliant client library to query and update the knowledge graph layer. The existing triple_store backend provides comprehensive SPARQL support, but lacks a clean, high-level API for common operations.
 
 **Current Issues:**
 - No unified client interface for SPARQL operations
@@ -25,7 +25,7 @@ The jido_coder_lib project requires a SPARQL 1.1 compliant client library to que
 
 ## Solution Overview
 
-Implement `JidoCoderLib.Knowledge.SPARQLClient` module that wraps the triple_store SPARQL functionality with a clean API.
+Implement `Jidoka.Knowledge.SPARQLClient` module that wraps the triple_store SPARQL functionality with a clean API.
 
 **Key Design Decisions:**
 1. **Wrap triple_store.SPARQL modules** - Leverage existing comprehensive implementation
@@ -36,7 +36,7 @@ Implement `JidoCoderLib.Knowledge.SPARQLClient` module that wraps the triple_sto
 
 **Architecture:**
 ```
-JidoCoderLib.Knowledge.SPARQLClient
+Jidoka.Knowledge.SPARQLClient
 ├── query/3         - SELECT, CONSTRUCT, ASK, DESCRIBE
 ├── update/2        - Generic SPARQL UPDATE
 ├── insert_data/2   - Helper for INSERT DATA
@@ -60,11 +60,11 @@ JidoCoderLib.Knowledge.SPARQLClient
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/knowledge/sparql_client.ex`
+**Primary Module:** `lib/jidoka/knowledge/sparql_client.ex`
 
 **API Design:**
 ```elixir
-defmodule JidoCoderLib.Knowledge.SPARQLClient do
+defmodule Jidoka.Knowledge.SPARQLClient do
   @doc """
   Execute a SPARQL query against the knowledge graph.
 
@@ -150,7 +150,7 @@ end
 
 **Connection Module Structure:**
 ```elixir
-defmodule JidoCoderLib.Knowledge.SPARQLClient.Connection do
+defmodule Jidoka.Knowledge.SPARQLClient.Connection do
   use GenServer
 
   def start_link(opts)
@@ -202,7 +202,7 @@ end
 ## Success Criteria
 
 ### Functional Requirements
-- [ ] 5.1.1 Create `JidoCoderLib.Knowledge.SPARQLClient` module
+- [ ] 5.1.1 Create `Jidoka.Knowledge.SPARQLClient` module
 - [ ] 5.1.2 Implement `query/3` for SELECT queries returning tabular results
 - [ ] 5.1.3 Implement `query/3` for CONSTRUCT queries returning RDF graphs
 - [ ] 5.1.4 Implement `query/3` for ASK queries returning boolean
@@ -241,14 +241,14 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/knowledge/` directory
+- [ ] Create `lib/jidoka/knowledge/` directory
 - [ ] Create `sparql_client.ex` with module definition
 - [ ] Add module documentation with examples
 - [ ] Define @spec types for all public functions
 - [ ] Create basic function stubs
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` (new)
+- `lib/jidoka/knowledge/sparql_client.ex` (new)
 
 ---
 
@@ -264,7 +264,7 @@ end
 - [ ] Add error handling for malformed queries
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` (modify)
+- `lib/jidoka/knowledge/sparql_client.ex` (modify)
 
 ---
 
@@ -279,7 +279,7 @@ end
 - [ ] Add error handling
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` (modify)
+- `lib/jidoka/knowledge/sparql_client.ex` (modify)
 
 ---
 
@@ -293,7 +293,7 @@ end
 - [ ] Add error handling
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` (modify)
+- `lib/jidoka/knowledge/sparql_client.ex` (modify)
 
 ---
 
@@ -308,7 +308,7 @@ end
 - [ ] Add error handling
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` (modify)
+- `lib/jidoka/knowledge/sparql_client.ex` (modify)
 
 ---
 
@@ -324,7 +324,7 @@ end
 - [ ] Add @moduledoc examples
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` (modify)
+- `lib/jidoka/knowledge/sparql_client.ex` (modify)
 
 ---
 
@@ -340,8 +340,8 @@ end
 - [ ] Update SPARQLClient to use connections
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client/connection.ex` (new)
-- `lib/jido_coder_lib/application.ex` (modify)
+- `lib/jidoka/knowledge/sparql_client/connection.ex` (new)
+- `lib/jidoka/application.ex` (modify)
 
 ---
 
@@ -360,8 +360,8 @@ end
 - [ ] Test error cases (malformed queries, empty results)
 
 **Files:**
-- `test/jido_coder_lib/knowledge/sparql_client_test.exs` (new)
-- `test/jido_coder_lib/knowledge/sparql_client/connection_test.exs` (new)
+- `test/jidoka/knowledge/sparql_client_test.exs` (new)
+- `test/jidoka/knowledge/sparql_client/connection_test.exs` (new)
 
 ---
 
@@ -447,4 +447,4 @@ Use RDF.ex's in-memory graph for testing:
 - [SPARQL 1.1 Update](https://www.w3.org/TR/sparql11-update/)
 - [RDF.ex Documentation](https://hexdocs.pm/rdf/)
 - [Triple Store Backend](/home/ducky/code/triple_store)
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)

@@ -25,7 +25,7 @@ Currently, session state is implicitly managed through ETS maps and individual G
 
 ## Solution Overview
 
-Implemented a `JidoCoderLib.Session.State` struct that:
+Implemented a `Jidoka.Session.State` struct that:
 - Encapsulates all session configuration and state
 - Provides type-safe access to session properties
 - Validates state transitions
@@ -40,15 +40,15 @@ Implemented a `JidoCoderLib.Session.State` struct that:
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/session/state.ex` | Session.State struct and functions |
-| `test/jido_coder_lib/session/state_test.exs` | Unit tests |
+| `lib/jidoka/session/state.ex` | Session.State struct and functions |
+| `test/jidoka/session/state_test.exs` | Unit tests |
 
 ### Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Use Session.State struct |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | Update tests for Session.State |
+| `lib/jidoka/agents/session_manager.ex` | Use Session.State struct |
+| `test/jidoka/agents/session_manager_test.exs` | Update tests for Session.State |
 
 ### Session.State Struct
 
@@ -161,10 +161,10 @@ defstruct [
 mix compile
 
 # Run Session.State tests
-mix test test/jido_coder_lib/session/state_test.exs
+mix test test/jidoka/session/state_test.exs
 
 # Run all session-related tests
-mix test test/jido_coder_lib/session/state_test.exs test/jido_coder_lib/agents/session_manager_test.exs
+mix test test/jidoka/session/state_test.exs test/jidoka/agents/session_manager_test.exs
 ```
 
 ---

@@ -15,7 +15,7 @@ Section 4.6 of the Phase 4 planning document requires integrating memory items w
 
 ## Solution Overview
 
-Create an `JidoCoderLib.Memory.Ontology` module that:
+Create an `Jidoka.Memory.Ontology` module that:
 
 1. Maps memory type atoms to Jido Memory Core (jmem) ontology classes
 2. Converts memory maps to RDF triples using the existing RDF library
@@ -65,8 +65,8 @@ Based on `jido-memory-core.ttl` from jido_ai repository:
 
 ### File Locations
 
-- **Module**: `lib/jido_coder_lib/memory/ontology.ex`
-- **Tests**: `test/jido_coder_lib/memory/ontology_test.exs`
+- **Module**: `lib/jidoka/memory/ontology.ex`
+- **Tests**: `test/jidoka/memory/ontology_test.exs`
 - **Planning**: `notes/planning/01-foundation/phase-04.md` (section 4.6)
 
 ### Dependencies
@@ -120,7 +120,7 @@ Based on `jido-memory-core.ttl` from jido_ai repository:
 
 ### Step 1: Create Ontology Module Structure
 
-1. Create `lib/jido_coder_lib/memory/ontology.ex`
+1. Create `lib/jidoka/memory/ontology.ex`
 2. Define module with @moduledoc
 3. Define namespace constants (@jmem_ns, @memory_ns)
 4. Define memory type to class mapping
@@ -242,5 +242,5 @@ session_context_uri = "https://jido.ai/sessions/session_123#context"
 
 ### How to Run Tests
 ```bash
-mix test test/jido_coder_lib/memory/ontology_test.exs
+mix test test/jidoka/memory/ontology_test.exs
 ```

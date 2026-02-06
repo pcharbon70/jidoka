@@ -11,12 +11,12 @@ Implemented the Promotion Engine that evaluates and moves important items from S
 ## Files Created/Modified
 
 ### New Files
-- `lib/jido_coder_lib/memory/promotion_engine.ex` - Main promotion engine module (470 lines)
-- `test/jido_coder_lib/memory/promotion_engine_test.exs` - Comprehensive test suite (466 lines)
+- `lib/jidoka/memory/promotion_engine.ex` - Main promotion engine module (470 lines)
+- `test/jidoka/memory/promotion_engine_test.exs` - Comprehensive test suite (466 lines)
 
 ### Modified Files
-- `lib/jido_coder_lib/memory/short_term/pending_memories.ex` - Updated to make `:type` field optional
-- `test/jido_coder_lib/memory/short_term/pending_memories_test.exs` - Updated validation test
+- `lib/jidoka/memory/short_term/pending_memories.ex` - Updated to make `:type` field optional
+- `test/jidoka/memory/short_term/pending_memories_test.exs` - Updated validation test
 
 ## Implementation Details
 
@@ -109,9 +109,9 @@ All 32 tests passing:
 ## Integration Points
 
 The PromotionEngine integrates with:
-- `JidoCoderLib.Memory.ShortTerm` - Source of pending memories
-- `JidoCoderLib.Memory.ShortTerm.PendingMemories` - Queue interface
-- `JidoCoderLib.Memory.LongTerm.SessionAdapter` - LTM storage
+- `Jidoka.Memory.ShortTerm` - Source of pending memories
+- `Jidoka.Memory.ShortTerm.PendingMemories` - Queue interface
+- `Jidoka.Memory.LongTerm.SessionAdapter` - LTM storage
 
 ## Next Steps
 

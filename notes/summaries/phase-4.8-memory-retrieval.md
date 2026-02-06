@@ -12,11 +12,11 @@ Implemented the Memory Retrieval module that provides search and ranking capabil
 
 ### New Files
 
-1. **`lib/jido_coder_lib/memory/retrieval.ex`** (540 lines)
+1. **`lib/jidoka/memory/retrieval.ex`** (540 lines)
    - Main Retrieval module with comprehensive documentation
    - Core API functions for search, caching, and context building
 
-2. **`test/jido_coder_lib/memory/retrieval_test.exs`** (382 lines)
+2. **`test/jidoka/memory/retrieval_test.exs`** (382 lines)
    - Comprehensive test suite with 28 tests
 
 ### Modified Files
@@ -132,7 +132,7 @@ All 28 tests passing:
 - **Integration** (4 tests): Substring matching, multiple keyword matches
 
 ```bash
-$ mix test test/jido_coder_lib/memory/retrieval_test.exs
+$ mix test test/jidoka/memory/retrieval_test.exs
 ...
 Finished in 1.6 seconds (1.6s async, 0.00s sync)
 28 tests, 0 failures
@@ -163,7 +163,7 @@ Finished in 1.6 seconds (1.6s async, 0.00s sync)
 ## Integration Points
 
 The Retrieval module integrates with:
-- **`JidoCoderLib.Memory.LongTerm.SessionAdapter`** - LTM storage and base queries
+- **`Jidoka.Memory.LongTerm.SessionAdapter`** - LTM storage and base queries
 - **`:ets`** - For retrieval caching
 - **`DateTime`** - For recency scoring
 

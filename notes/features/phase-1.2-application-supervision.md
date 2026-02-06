@@ -24,8 +24,8 @@ The current Application module was a basic placeholder with no children and mini
 
 ## Solution Overview
 
-1. Updated `JidoCoderLib.Application` with proper structure and moduledoc
-2. Created `JidoCoderLib.Supervisor` as the top-level supervisor
+1. Updated `Jidoka.Application` with proper structure and moduledoc
+2. Created `Jidoka.Supervisor` as the top-level supervisor
 3. Added a `DynamicSupervisor` for protocol connections
 4. Created config/config.exs with application configuration
 
@@ -37,19 +37,19 @@ The current Application module was a basic placeholder with no children and mini
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Complete rewrite with documentation |
-| `lib/jido_coder_lib/supervisor.ex` | New file - top-level supervisor module |
+| `lib/jidoka/application.ex` | Complete rewrite with documentation |
+| `lib/jidoka/supervisor.ex` | New file - top-level supervisor module |
 | `config/config.exs` | New file - base configuration |
 | `config/dev.exs` | New file - development environment config |
 | `config/test.exs` | New file - test environment config |
 | `config/prod.exs` | New file - production environment config |
-| `test/jido_coder_lib/application_test.exs` | New file - application tests |
+| `test/jidoka/application_test.exs` | New file - application tests |
 
 ### Supervision Tree Structure
 
 ```
-JidoCoderLib.Supervisor (one_for_one)
-├── JidoCoderLib.ProtocolSupervisor (DynamicSupervisor)
+Jidoka.Supervisor (one_for_one)
+├── Jidoka.ProtocolSupervisor (DynamicSupervisor)
 │   └── Protocol connections (MCP, Phoenix, A2A) - added later
 ├── Phoenix.PubSub - added in Phase 1.3
 ├── AgentRegistry - added in Phase 1.4
@@ -67,14 +67,14 @@ JidoCoderLib.Supervisor (one_for_one)
 - [x] Define children list with ProtocolSupervisor
 
 ### Step 2: Create Supervisor Module ✅
-- [x] Create `JidoCoderLib.Supervisor` module
+- [x] Create `Jidoka.Supervisor` module
 - [x] Add @moduledoc explaining the supervision tree
 - [x] Implement start_link/1
 - [x] Use Supervisor with :one_for_one strategy
 
 ### Step 3: Add Protocol DynamicSupervisor ✅
 - [x] Add DynamicSupervisor to children
-- [x] Configure with name: JidoCoderLib.ProtocolSupervisor
+- [x] Configure with name: Jidoka.ProtocolSupervisor
 - [x] Configure with strategy: :one_for_one
 
 ### Step 4: Update Configuration ✅
@@ -109,9 +109,9 @@ JidoCoderLib.Supervisor (one_for_one)
 - All tests pass
 
 **Changes Made:**
-- Updated `lib/jido_coder_lib/application.ex` with full documentation
-- Created `lib/jido_coder_lib/supervisor.ex` module
-- Added `JidoCoderLib.ProtocolSupervisor` DynamicSupervisor
+- Updated `lib/jidoka/application.ex` with full documentation
+- Created `lib/jidoka/supervisor.ex` module
+- Added `Jidoka.ProtocolSupervisor` DynamicSupervisor
 - Created config directory with all environment configs
 - Added application tests
 

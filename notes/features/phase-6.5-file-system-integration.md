@@ -90,9 +90,9 @@ The watcher polls at regular intervals to:
 
 ### File Location
 
-- Module: `JidoCoderLib.Indexing.FileSystemWatcher`
-- File: `lib/jido_coder_lib/indexing/file_system_watcher.ex`
-- Tests: `test/jido_coder_lib/indexing/file_system_watcher_test.exs`
+- Module: `Jidoka.Indexing.FileSystemWatcher`
+- File: `lib/jidoka/indexing/file_system_watcher.ex`
+- Tests: `test/jidoka/indexing/file_system_watcher_test.exs`
 
 ### Dependencies
 
@@ -106,7 +106,7 @@ The watcher polls at regular intervals to:
 
 ### Step 1: Create FileSystemWatcher GenServer
 
-**File:** `lib/jido_coder_lib/indexing/file_system_watcher.ex`
+**File:** `lib/jidoka/indexing/file_system_watcher.ex`
 
 - [x] 1.1 Create module with GenServer
 - [x] 1.2 Define state struct (watched_dirs, file_mtimes, debounce_timer, indexer_name, poll_interval, debounce_ms)
@@ -119,7 +119,7 @@ The watcher polls at regular intervals to:
 
 ### Step 2: Implement Event Filtering
 
-**File:** `lib/jido_coder_lib/indexing/file_system_watcher.ex`
+**File:** `lib/jidoka/indexing/file_system_watcher.ex`
 
 - [x] 2.1 Add `should_watch_file?/1` - filter by extension (.ex, .exs)
 - [x] 2.2 Add `should_ignore_dir?/1` - filter by path
@@ -128,7 +128,7 @@ The watcher polls at regular intervals to:
 
 ### Step 3: Implement Debouncing
 
-**File:** `lib/jido_coder_lib/indexing/file_system_watcher.ex`
+**File:** `lib/jidoka/indexing/file_system_watcher.ex`
 
 - [x] 3.1 Added debounce state (pending_files, debounce_timer)
 - [x] 3.2 Implemented `handle_changed_files/2` - add to pending and schedule debounce
@@ -138,7 +138,7 @@ The watcher polls at regular intervals to:
 
 ### Step 4: Integrate with CodeIndexer
 
-**File:** `lib/jido_coder_lib/indexing/file_system_watcher.ex`
+**File:** `lib/jidoka/indexing/file_system_watcher.ex`
 
 - [x] 4.1 Call `CodeIndexer.reindex_file/2` for changed files
 - [x] 4.2 Handle successful reindex
@@ -147,7 +147,7 @@ The watcher polls at regular intervals to:
 
 ### Step 5: Write Tests
 
-**File:** `test/jido_coder_lib/indexing/file_system_watcher_test.exs`
+**File:** `test/jidoka/indexing/file_system_watcher_test.exs`
 
 - [x] 5.1 Test watcher starts successfully
 - [x] 5.2 Test watch_directory works
@@ -201,15 +201,15 @@ The watcher polls at regular intervals to:
 
 **How to Test:**
 ```bash
-mix test test/jido_coder_lib/indexing/file_system_watcher_test.exs
+mix test test/jidoka/indexing/file_system_watcher_test.exs
 ```
 
 ---
 
 ## Files Modified
 
-1. **lib/jido_coder_lib/indexing/file_system_watcher.ex** - New file
-2. **test/jido_coder_lib/indexing/file_system_watcher_test.exs** - New file
+1. **lib/jidoka/indexing/file_system_watcher.ex** - New file
+2. **test/jidoka/indexing/file_system_watcher_test.exs** - New file
 
 ---
 

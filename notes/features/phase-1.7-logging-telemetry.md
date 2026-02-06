@@ -30,8 +30,8 @@ The application needs structured logging and telemetry for observability in prod
 
 1. Configure Logger with environment-specific settings and metadata
 2. Add :telemetry dependency (already present via jido dependency)
-3. Create JidoCoderLib.Telemetry module with standard event definitions
-4. Create JidoCoderLib.TelemetryHandlers module for event handling
+3. Create Jidoka.Telemetry module with standard event definitions
+4. Create Jidoka.TelemetryHandlers module for event handling
 5. Attach handlers for key application events
 6. Write tests for logging configuration and telemetry events
 
@@ -57,15 +57,15 @@ Standard configuration per environment:
 Telemetry events follow the pattern: `[:app, :component, :action]`
 
 Standard events to define:
-- `[:jido_coder_lib, :session, :start]` - Session started
-- `[:jido_coder_lib, :session, :stop]` - Session stopped
-- `[:jido_coder_lib, :session, :error]` - Session error
-- `[:jido_coder_lib, :agent, :dispatch]` - Agent action dispatched
-- `[:jido_coder_lib, :agent, :complete]` - Agent action completed
-- `[:jido_coder_lib, :llm, :request]` - LLM request started
-- `[:jido_coder_lib, :llm, :response]` - LLM response received
-- `[:jido_coder_lib, :context, :cache_hit]` - Context cache hit
-- `[:jido_coder_lib, :context, :cache_miss]` - Context cache miss
+- `[:jidoka, :session, :start]` - Session started
+- `[:jidoka, :session, :stop]` - Session stopped
+- `[:jidoka, :session, :error]` - Session error
+- `[:jidoka, :agent, :dispatch]` - Agent action dispatched
+- `[:jidoka, :agent, :complete]` - Agent action completed
+- `[:jidoka, :llm, :request]` - LLM request started
+- `[:jidoka, :llm, :response]` - LLM response received
+- `[:jidoka, :context, :cache_hit]` - Context cache hit
+- `[:jidoka, :context, :cache_miss]` - Context cache miss
 
 ### Telemetry Handlers
 
@@ -83,9 +83,9 @@ Handlers attach to events and can:
 | `config/dev.exs` | Development Logger settings |
 | `config/test.exs` | Test Logger settings |
 | `config/prod.exs` | Production Logger settings |
-| `lib/jido_coder_lib/telemetry.ex` | Event definitions |
-| `lib/jido_coder_lib/telemetry_handlers.ex` | Handler functions |
-| `test/jido_coder_lib/telemetry_test.exs` | Telemetry tests |
+| `lib/jidoka/telemetry.ex` | Event definitions |
+| `lib/jidoka/telemetry_handlers.ex` | Handler functions |
+| `test/jidoka/telemetry_test.exs` | Telemetry tests |
 
 ---
 
@@ -103,13 +103,13 @@ Handlers attach to events and can:
 - [x] Update prod.exs with info level and JSON format
 
 ### Step 3: Create Telemetry Events Module
-- [x] Create JidoCoderLib.Telemetry module
+- [x] Create Jidoka.Telemetry module
 - [x] Define standard event names as constants
 - [x] Document each event's metadata shape
 - [x] Add helper functions for emitting events
 
 ### Step 4: Create Telemetry Handlers Module
-- [x] Create JidoCoderLib.TelemetryHandlers module
+- [x] Create Jidoka.TelemetryHandlers module
 - [x] Add handler attachment functions
 - [x] Implement counter handlers
 - [x] Implement timing handlers
@@ -156,12 +156,12 @@ Handlers attach to events and can:
   - dev.exs: :debug level, verbose format with all metadata
   - test.exs: :warn level, minimal format for fast tests
   - prod.exs: :info level, structured format for log aggregation
-- Created JidoCoderLib.Telemetry module (390 lines)
+- Created Jidoka.Telemetry module (390 lines)
   - Defined all standard event name constants
   - Added comprehensive documentation for each event
   - Implemented execute_with_telemetry/3 helper
   - Implemented execute_with_start_complete/4 helper
-- Created JidoCoderLib.TelemetryHandlers module (410 lines)
+- Created Jidoka.TelemetryHandlers module (410 lines)
   - attach_log_handler/0 and detach_log_handler/0
   - attach_metrics_handler/0 and detach_metrics_handler/0
   - attach_all/0 and detach_all/0 convenience functions

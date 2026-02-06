@@ -51,20 +51,20 @@ Elixir's `Registry` module provides:
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/agent_registry.ex` | Wrapper for unique agent registry |
-| `lib/jido_coder_lib/topic_registry.ex` | Wrapper for duplicate topic registry |
-| `lib/jido_coder_lib/application.ex` | Add registries to supervision tree |
-| `test/jido_coder_lib/agent_registry_test.exs` | Tests for AgentRegistry |
-| `test/jido_coder_lib/topic_registry_test.exs` | Tests for TopicRegistry |
+| `lib/jidoka/agent_registry.ex` | Wrapper for unique agent registry |
+| `lib/jidoka/topic_registry.ex` | Wrapper for duplicate topic registry |
+| `lib/jidoka/application.ex` | Add registries to supervision tree |
+| `test/jidoka/agent_registry_test.exs` | Tests for AgentRegistry |
+| `test/jidoka/topic_registry_test.exs` | Tests for TopicRegistry |
 
 ### Registry Configuration
 
 ```elixir
 # AgentRegistry - Unique keys
-{Registry, keys: :unique, name: JidoCoderLib.AgentRegistry}
+{Registry, keys: :unique, name: Jidoka.AgentRegistry}
 
 # TopicRegistry - Duplicate keys
-{Registry, keys: :duplicate, name: JidoCoderLib.TopicRegistry}
+{Registry, keys: :duplicate, name: Jidoka.TopicRegistry}
 ```
 
 ---
@@ -72,7 +72,7 @@ Elixir's `Registry` module provides:
 ## Implementation Plan
 
 ### Step 1: Create AgentRegistry Module ✅
-- [x] Create `JidoCoderLib.AgentRegistry` wrapper module
+- [x] Create `Jidoka.AgentRegistry` wrapper module
 - [x] Add @moduledoc with usage examples
 - [x] Define registry name constant
 - [x] Implement register/2 for process registration
@@ -81,7 +81,7 @@ Elixir's `Registry` module provides:
 - [x] Implement dispatch/2 for sending messages to registered processes
 
 ### Step 2: Create TopicRegistry Module ✅
-- [x] Create `JidoCoderLib.TopicRegistry` wrapper module
+- [x] Create `Jidoka.TopicRegistry` wrapper module
 - [x] Add @moduledoc with usage examples
 - [x] Define registry name constant
 - [x] Implement register/2 for process registration
@@ -133,16 +133,16 @@ Elixir's `Registry` module provides:
 - All tests passing
 
 **Changes Made:**
-- Created `lib/jido_coder_lib/agent_registry.ex` (181 lines)
-- Created `lib/jido_coder_lib/topic_registry.ex` (217 lines)
-- Updated `lib/jido_coder_lib/application.ex` to add registries to children
-- Created `test/jido_coder_lib/agent_registry_test.exs` (216 lines, 15 tests)
-- Created `test/jido_coder_lib/topic_registry_test.exs` (338 lines, 23 tests)
+- Created `lib/jidoka/agent_registry.ex` (181 lines)
+- Created `lib/jidoka/topic_registry.ex` (217 lines)
+- Updated `lib/jidoka/application.ex` to add registries to children
+- Created `test/jidoka/agent_registry_test.exs` (216 lines, 15 tests)
+- Created `test/jidoka/topic_registry_test.exs` (338 lines, 23 tests)
 
 **How to Test:**
 ```bash
-mix test test/jido_coder_lib/agent_registry_test.exs
-mix test test/jido_coder_lib/topic_registry_test.exs
+mix test test/jidoka/agent_registry_test.exs
+mix test test/jidoka/topic_registry_test.exs
 ```
 
 ---

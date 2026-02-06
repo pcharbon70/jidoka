@@ -18,7 +18,7 @@ Phase 3.8 implements comprehensive integration tests for the multi-session archi
 
 | File | Purpose | Lines |
 |------|---------|-------|
-| `test/jido_coder_lib/integration/phase3_test.exs` | Phase 3 integration tests | 540 |
+| `test/jidoka/integration/phase3_test.exs` | Phase 3 integration tests | 540 |
 | `notes/features/phase-3.8-integration-tests.md` | Feature planning | 180 |
 
 ### Files Modified
@@ -125,7 +125,7 @@ During testing, we discovered that calling `Process.exit(supervisor_pid, :kill)`
 ## Test Structure
 
 ```elixir
-defmodule JidoCoderLib.Integration.Phase3Test do
+defmodule Jidoka.Integration.Phase3Test do
   use ExUnit.Case, async: false
 
   # Helper functions
@@ -234,7 +234,7 @@ defp flush_messages()
 
 - Feature Planning: `notes/features/phase-3.8-integration-tests.md`
 - Main Planning: `notes/planning/01-foundation/phase-03.md`
-- Integration Tests: `test/jido_coder_lib/integration/phase3_test.exs`
+- Integration Tests: `test/jidoka/integration/phase3_test.exs`
 - Phase 3.1: SessionManager implementation
 - Phase 3.2: SessionSupervisor implementation
 - Phase 3.3: Session.State implementation

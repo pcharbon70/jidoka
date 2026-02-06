@@ -94,7 +94,7 @@ Added `delete_module_triples/3` to delete all triples for a module:
 
 ## Files Modified
 
-1. **lib/jido_coder_lib/indexing/code_indexer.ex**
+1. **lib/jidoka/indexing/code_indexer.ex**
    - Added `@default_base_iri` module attribute
    - Added `base_iri` to GenServer state
    - Added `parse_file_for_modules/1` - Parse file for module names
@@ -104,7 +104,7 @@ Added `delete_module_triples/3` to delete all triples for a module:
    - Updated `remove_file_triples/2` - Parse and delete by module IRI
    - Removed `delete_indexing_operation_triples` function
 
-2. **lib/jido_coder_lib/indexing/indexing_status_tracker.ex**
+2. **lib/jidoka/indexing/indexing_status_tracker.ex**
    - Removed `persist_operation` calls from all handlers
    - Removed unused helper functions (`persist_operation`, `operation_iri`, `status_iri`, `graph_iri`, `engine_context`, `escape_string`)
    - Removed unused imports
@@ -138,5 +138,5 @@ Added `delete_module_triples/3` to delete all triples for a module:
 ## Test Results
 
 All 34 tests passing:
-- `test/jido_coder_lib/indexing/code_indexer_test.exs` - All tests pass
-- `test/jido_coder_lib/indexing/indexing_status_tracker_test.exs` - All tests pass
+- `test/jidoka/indexing/code_indexer_test.exs` - All tests pass
+- `test/jidoka/indexing/indexing_status_tracker_test.exs` - All tests pass

@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-While jido_coder_lib has broadcasting infrastructure via `Directives.client_broadcast/2`, there is no standardization of client event types or their payload schemas. Event types are currently arbitrary strings, which can lead to:
+While jidoka has broadcasting infrastructure via `Directives.client_broadcast/2`, there is no standardization of client event types or their payload schemas. Event types are currently arbitrary strings, which can lead to:
 - Inconsistent event naming across agents
 - No validation of event payload structure
 - No single source of truth for what events clients should expect
@@ -25,7 +25,7 @@ While jido_coder_lib has broadcasting infrastructure via `Directives.client_broa
 
 ## Solution Overview
 
-Created a `JidoCoderLib.ClientEvents` module that defines standardized client event types with schemas and helper functions for creating properly structured events.
+Created a `Jidoka.ClientEvents` module that defines standardized client event types with schemas and helper functions for creating properly structured events.
 
 **Key Design Decisions:**
 - Define event types as atoms with schema validation
@@ -42,8 +42,8 @@ Created a `JidoCoderLib.ClientEvents` module that defines standardized client ev
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `lib/jido_coder_lib/client_events.ex` | 660 | Event type definitions and helpers |
-| `test/jido_coder_lib/client_events_test.exs` | 370 | Tests for event creation and validation |
+| `lib/jidoka/client_events.ex` | 660 | Event type definitions and helpers |
+| `test/jidoka/client_events_test.exs` | 370 | Tests for event creation and validation |
 
 ### Event Types Defined
 
@@ -91,7 +91,7 @@ Created a `JidoCoderLib.ClientEvents` module that defines standardized client ev
 ## Implementation Plan
 
 ### Step 1: Create ClientEvents Module ✅
-- [x] 2.6.1 Create `lib/jido_coder_lib/client_events.ex`
+- [x] 2.6.1 Create `lib/jidoka/client_events.ex`
 - [x] 2.6.2 Define event type atoms and schemas
 - [x] 2.6.3 Implement validation helper
 
@@ -151,7 +151,7 @@ Created a `JidoCoderLib.ClientEvents` module that defines standardized client ev
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/client_events_test.exs
+mix test test/jidoka/client_events_test.exs
 ```
 
 ---
@@ -179,6 +179,6 @@ mix test test/jido_coder_lib/client_events_test.exs
 ## References
 
 - Planning Document: `notes/planning/01-foundation/phase-02.md`
-- Existing Directives: `lib/jido_coder_lib/agent/directives.ex`
-- Existing PubSub: `lib/jido_coder_lib/pubsub.ex`
-- BroadcastEvent Signal: `lib/jido_coder_lib/signals/broadcast_event.ex`
+- Existing Directives: `lib/jidoka/agent/directives.ex`
+- Existing PubSub: `lib/jidoka/pubsub.ex`
+- BroadcastEvent Signal: `lib/jidoka/signals/broadcast_event.ex`

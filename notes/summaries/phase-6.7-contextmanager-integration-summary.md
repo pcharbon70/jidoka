@@ -16,7 +16,7 @@ Phase 6.7 integrates the codebase semantic model (from Phases 6.1-6.6) into the 
 
 ### New Module: CodebaseContext
 
-Created `JidoCoderLib.Agents.CodebaseContext`, a GenServer that provides:
+Created `Jidoka.Agents.CodebaseContext`, a GenServer that provides:
 
 1. **Module Info Retrieval**: Get detailed information about indexed modules
 2. **Related Module Discovery**: Find modules related to active files
@@ -41,14 +41,14 @@ Extended `ContextManager.build_context/3` to support `:codebase` include option:
 
 ## Files Created
 
-1. **lib/jido_coder_lib/agents/codebase_context.ex** (~700 lines)
+1. **lib/jidoka/agents/codebase_context.ex** (~700 lines)
    - GenServer with ETS caching
    - Module info retrieval with caching
    - Related module discovery
    - Dependency chain building
    - Project statistics
 
-2. **test/jido_coder_lib/agents/codebase_context_test.exs** (~350 lines)
+2. **test/jidoka/agents/codebase_context_test.exs** (~350 lines)
    - 22 tests covering all functionality
    - Tests for caching behavior
    - Tests for graceful degradation
@@ -56,7 +56,7 @@ Extended `ContextManager.build_context/3` to support `:codebase` include option:
 
 ## Files Modified
 
-1. **lib/jido_coder_lib/agents/context_manager.ex**
+1. **lib/jidoka/agents/context_manager.ex**
    - Added `:codebase` to valid include types
    - Added `build_codebase_context/2` helper function
    - Integrated CodebaseContext for enrichment
@@ -99,7 +99,7 @@ When codebase queries fail:
 ## Test Results
 
 ```
-mix test test/jido_coder_lib/agents/codebase_context_test.exs
+mix test test/jidoka/agents/codebase_context_test.exs
 
 22 tests, 0 failures
 ```
@@ -169,8 +169,8 @@ context.codebase.project_structure #=> %{total_modules: 42, ...}
 
 ## Dependencies
 
-- Depends on: `JidoCoderLib.Codebase.Queries` (Phase 6.6)
-- Depends on: `JidoCoderLib.Agents.ContextManager` (Phase 3.4)
+- Depends on: `Jidoka.Codebase.Queries` (Phase 6.6)
+- Depends on: `Jidoka.Agents.ContextManager` (Phase 3.4)
 - Uses: ETS for caching
 - Error handling: Graceful fallback when codebase not indexed
 

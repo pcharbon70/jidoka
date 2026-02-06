@@ -13,37 +13,37 @@ Implemented section 4.1 of the Phase 4 planning document - the Short-Term Memory
 ### Files Created
 
 **Implementation Files:**
-1. `lib/jido_coder_lib/memory/token_budget.ex` (172 lines)
+1. `lib/jidoka/memory/token_budget.ex` (172 lines)
    - Token budget configuration struct
    - Functions: `new/1`, `available/1`, `should_evict?/2`, `estimate_tokens/1`, `estimate_message_tokens/1`
    - Configurable max_tokens, reserve_percentage, and overhead_threshold
 
-2. `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` (310 lines)
+2. `lib/jidoka/memory/short_term/conversation_buffer.ex` (310 lines)
    - Sliding window buffer with token-aware eviction
    - Functions: `new/1`, `add/2`, `recent/1-2`, `all/1`, `count/1`, `trim/2`, `clear/1`, `find/2`
    - Automatically evicts oldest messages when token budget exceeded
 
-3. `lib/jido_coder_lib/memory/short_term/working_context.ex` (239 lines)
+3. `lib/jidoka/memory/short_term/working_context.ex` (239 lines)
    - Semantic scratchpad for key-value context storage
    - Functions: `new/1`, `put/3`, `get/2-3`, `delete/2`, `put_many/2`, `list/1`, `clear/1`
    - Access tracking for importance scoring
 
-4. `lib/jido_coder_lib/memory/short_term/pending_memories.ex` (349 lines)
+4. `lib/jidoka/memory/short_term/pending_memories.ex` (349 lines)
    - FIFO queue for LTM promotion candidates
    - Functions: `new/1`, `enqueue/2`, `dequeue/1`, `peek/1`, `size/1`, `empty?/1`, `full?/1`, `to_list/1`, `clear/1`, `filter_by_type/2`, `filter_by_importance/2`, `remove_where/2`, `peek_priority/1`
    - Item validation requiring `id`, `type`, `data` fields
 
-5. `lib/jido_coder_lib/memory/short_term.ex` (380 lines)
+5. `lib/jidoka/memory/short_term.ex` (380 lines)
    - Main STM module tying all components together
    - Delegates to ConversationBuffer, WorkingContext, PendingMemories
    - Access logging and summary functions
 
 **Test Files:**
-1. `test/jido_coder_lib/memory/token_budget_test.exs` (27 tests)
-2. `test/jido_coder_lib/memory/short_term/conversation_buffer_test.exs` (20 tests)
-3. `test/jido_coder_lib/memory/short_term/working_context_test.exs` (24 tests)
-4. `test/jido_coder_lib/memory/short_term/pending_memories_test.exs` (21 tests)
-5. `test/jido_coder_lib/memory/short_term_test.exs` (23 tests)
+1. `test/jidoka/memory/token_budget_test.exs` (27 tests)
+2. `test/jidoka/memory/short_term/conversation_buffer_test.exs` (20 tests)
+3. `test/jidoka/memory/short_term/working_context_test.exs` (24 tests)
+4. `test/jidoka/memory/short_term/pending_memories_test.exs` (21 tests)
+5. `test/jidoka/memory/short_term_test.exs` (23 tests)
 
 **Documentation:**
 - `notes/features/phase-4.1-stm-structures.md` - Feature planning document

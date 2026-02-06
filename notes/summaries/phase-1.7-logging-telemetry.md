@@ -8,7 +8,7 @@
 
 ## Overview
 
-Implemented comprehensive logging and telemetry infrastructure for the JidoCoderLib application, including structured logging configuration, standard telemetry event definitions, and event handlers for metrics aggregation.
+Implemented comprehensive logging and telemetry infrastructure for the Jidoka application, including structured logging configuration, standard telemetry event definitions, and event handlers for metrics aggregation.
 
 ---
 
@@ -38,9 +38,9 @@ Implemented comprehensive logging and telemetry infrastructure for the JidoCoder
 - Structured format: `$message\n`
 - Selected metadata for log aggregation: request_id, module, function, pid, application
 
-### 2. Telemetry Events Module (lib/jido_coder_lib/telemetry.ex)
+### 2. Telemetry Events Module (lib/jidoka/telemetry.ex)
 
-Created comprehensive event definitions following `[:jido_coder_lib, :component, :action]` pattern:
+Created comprehensive event definitions following `[:jidoka, :component, :action]` pattern:
 
 **Session Events:**
 - `session_started/0` - Session creation with duration
@@ -74,7 +74,7 @@ Created comprehensive event definitions following `[:jido_coder_lib, :component,
 - `execute_with_telemetry/3` - Execute function with automatic event emission
 - `execute_with_start_complete/4` - Execute with start/complete event pairs
 
-### 3. Telemetry Handlers Module (lib/jido_coder_lib/telemetry_handlers.ex)
+### 3. Telemetry Handlers Module (lib/jidoka/telemetry_handlers.ex)
 
 Created event handling infrastructure:
 
@@ -102,13 +102,13 @@ Created event handling infrastructure:
 
 ### 4. Test Suite
 
-**Telemetry Tests (test/jido_coder_lib/telemetry_test.exs)**
+**Telemetry Tests (test/jidoka/telemetry_test.exs)**
 - 28 tests covering event name definitions
 - Event emission and reception
 - Helper function behavior
 - Error handling in telemetry wrappers
 
-**Telemetry Handlers Tests (test/jido_coder_lib/telemetry_handlers_test.exs)**
+**Telemetry Handlers Tests (test/jidoka/telemetry_handlers_test.exs)**
 - 17 tests covering handler attachment/detachment
 - Metrics aggregation
 - Counter and duration statistics
@@ -162,10 +162,10 @@ Finished in 1.3 seconds (0.00s async, 1.3s sync)
 | `config/dev.exs` | ~7 | Development Logger settings |
 | `config/test.exs` | ~7 | Test Logger settings |
 | `config/prod.exs` | ~7 | Production Logger settings |
-| `lib/jido_coder_lib/telemetry.ex` | ~390 | Event definitions |
-| `lib/jido_coder_lib/telemetry_handlers.ex` | ~410 | Handler functions |
-| `test/jido_coder_lib/telemetry_test.exs` | ~300 | Event tests |
-| `test/jido_coder_lib/telemetry_handlers_test.exs` | ~410 | Handler tests |
+| `lib/jidoka/telemetry.ex` | ~390 | Event definitions |
+| `lib/jidoka/telemetry_handlers.ex` | ~410 | Handler functions |
+| `test/jidoka/telemetry_test.exs` | ~300 | Event tests |
+| `test/jidoka/telemetry_handlers_test.exs` | ~410 | Handler tests |
 
 ---
 

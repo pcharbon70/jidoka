@@ -32,7 +32,7 @@ Import the conversation history ontology for representing interactions.
 
 Create the logger that records all interaction components to the knowledge graph.
 
-- [ ] 7.2.1 Create `JidoCoderLib.Conversation.Logger` module
+- [ ] 7.2.1 Create `Jidoka.Conversation.Logger` module
 - [ ] 7.2.2 Implement `ensure_conversation/2` for conversation creation
 - [ ] 7.2.3 Implement `log_turn/3` for conversation turn logging
 - [ ] 7.2.4 Implement `log_prompt/3` for prompt logging
@@ -83,7 +83,7 @@ Automatically log all interactions as they occur in the LLM agent.
 
 Provide functions for retrieving and querying conversation history.
 
-- [ ] 7.4.1 Create `JidoCoderLib.Conversation.Retrieval` module
+- [ ] 7.4.1 Create `Jidoka.Conversation.Retrieval` module
 - [ ] 7.4.2 Implement `get_recent_turns/3` for recent history
 - [ ] 7.4.3 Implement `get_turn_by_index/3` for specific turns
 - [ ] 7.4.4 Implement `search_conversations/3` for text search
@@ -128,7 +128,7 @@ Use conversation history to enrich the LLM context.
 
 Provide tools for analyzing conversation patterns and content.
 
-- [ ] 7.6.1 Create `JidoCoderLib.Conversation.Analysis` module
+- [ ] 7.6.1 Create `Jidoka.Conversation.Analysis` module
 - [ ] 7.6.2 Implement `tool_frequency/2` for tool usage stats
 - [ ] 7.6.3 Implement `conversation_length/2` for turn counting
 - [ ] 7.6.4 Implement `session_summary/2` for overview
@@ -204,19 +204,19 @@ Comprehensive integration tests verifying the conversation history system.
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/conversation/logger.ex` - Conversation logging
-- `lib/jido_coder_lib/conversation/retrieval.ex` - History retrieval
-- `lib/jido_coder_lib/conversation/analysis.ex` - Analysis utilities
+- `lib/jidoka/conversation/logger.ex` - Conversation logging
+- `lib/jidoka/conversation/retrieval.ex` - History retrieval
+- `lib/jidoka/conversation/analysis.ex` - Analysis utilities
 - `priv/ontologies/conversation-history.ttl` - Conversation ontology
-- `test/jido_coder_lib/conversation/logger_test.exs`
-- `test/jido_coder_lib/conversation/retrieval_test.exs`
-- `test/jido_coder_lib/integration/phase7_test.exs`
+- `test/jidoka/conversation/logger_test.exs`
+- `test/jidoka/conversation/retrieval_test.exs`
+- `test/jidoka/integration/phase7_test.exs`
 
 **Modified Files:**
-- `lib/jido_coder_lib/agents/llm_orchestrator.ex` - Integrate logging
-- `lib/jido_coder_lib/agents/context_manager.ex` - Integrate history retrieval
-- `lib/jido_coder_lib/memory/promotion_engine.ex` - Add conversation promotion
-- `lib/jido_coder_lib/knowledge/named_graphs.ex` - Add conversation-history graph
+- `lib/jidoka/agents/llm_orchestrator.ex` - Integrate logging
+- `lib/jidoka/agents/context_manager.ex` - Integrate history retrieval
+- `lib/jidoka/memory/promotion_engine.ex` - Add conversation promotion
+- `lib/jidoka/knowledge/named_graphs.ex` - Add conversation-history graph
 
 **Dependencies:**
 - Phase 1: Core Foundation

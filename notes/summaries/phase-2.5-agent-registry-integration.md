@@ -8,7 +8,7 @@
 
 ## Overview
 
-This phase implemented unified agent discovery and registry helpers that work seamlessly with both Jido 2.0's built-in registry and the custom `JidoCoderLib.AgentRegistry`.
+This phase implemented unified agent discovery and registry helpers that work seamlessly with both Jido 2.0's built-in registry and the custom `Jidoka.AgentRegistry`.
 
 ---
 
@@ -18,8 +18,8 @@ This phase implemented unified agent discovery and registry helpers that work se
 
 | File | Lines Added | Purpose |
 |------|-------------|---------|
-| `lib/jido_coder_lib/agent.ex` | +330 | Add discovery and registry helpers |
-| `test/jido_coder_lib/agent_test.exs` | +193 | Add tests for new functions |
+| `lib/jidoka/agent.ex` | +330 | Add discovery and registry helpers |
+| `test/jidoka/agent_test.exs` | +193 | Add tests for new functions |
 
 ### Test Coverage
 
@@ -35,19 +35,19 @@ This phase implemented unified agent discovery and registry helpers that work se
 
 **`find_agent/1`** - Unified agent lookup that checks both registries:
 ```elixir
-JidoCoderLib.Agent.find_agent("coordinator")
+Jidoka.Agent.find_agent("coordinator")
 # => {:ok, #PID<0.123.0>} or :error
 ```
 
 **`find_agent_by_id/1`** - Lookup in Jido's registry:
 ```elixir
-JidoCoderLib.Agent.find_agent_by_id("coordinator-main")
+Jidoka.Agent.find_agent_by_id("coordinator-main")
 # => {:ok, #PID<0.123.0>} or :error
 ```
 
 **`find_agent_by_name/1`** - Lookup in custom AgentRegistry:
 ```elixir
-JidoCoderLib.Agent.find_agent_by_name("coordinator")
+Jidoka.Agent.find_agent_by_name("coordinator")
 # => {:ok, #PID<0.123.0>} or :error
 ```
 
@@ -55,19 +55,19 @@ JidoCoderLib.Agent.find_agent_by_name("coordinator")
 
 **`list_agents/0`** - List all agents from both registries (deduplicated):
 ```elixir
-JidoCoderLib.Agent.list_agents()
+Jidoka.Agent.list_agents()
 # => [{"coordinator-main", #PID<0.123.0>}, ...]
 ```
 
 **`list_jido_agents/0`** - List agents from Jido's registry:
 ```elixir
-JidoCoderLib.Agent.list_jido_agents()
+Jidoka.Agent.list_jido_agents()
 # => [{"coordinator-main", #PID<0.123.0>}]
 ```
 
 **`list_registered_agents/0`** - List from custom registry (strips "agent:" prefix):
 ```elixir
-JidoCoderLib.Agent.list_registered_agents()
+Jidoka.Agent.list_registered_agents()
 # => [{"coordinator", #PID<0.123.0>}]
 ```
 
@@ -75,7 +75,7 @@ JidoCoderLib.Agent.list_registered_agents()
 
 **`agent_active?/1`** - Check if agent is alive:
 ```elixir
-JidoCoderLib.Agent.agent_active?("coordinator")
+Jidoka.Agent.agent_active?("coordinator")
 # => true or false
 ```
 
@@ -85,20 +85,20 @@ JidoCoderLib.Agent.agent_active?("coordinator")
 
 **`coordinator/0`** - Get coordinator agent PID:
 ```elixir
-JidoCoderLib.Agent.coordinator()
+Jidoka.Agent.coordinator()
 # => {:ok, #PID<0.123.0>} or :error
 ```
 
 **`coordinator_active?/0`** - Check if coordinator is alive:
 ```elixir
-JidoCoderLib.Agent.coordinator_active?()
+Jidoka.Agent.coordinator_active?()
 # => true or false
 ```
 
 **`jido_instance/0`** - Get Jido instance:
 ```elixir
-JidoCoderLib.Agent.jido_instance()
-# => JidoCoderLib.Jido
+Jidoka.Agent.jido_instance()
+# => Jidoka.Jido
 ```
 
 ---
@@ -107,7 +107,7 @@ JidoCoderLib.Agent.jido_instance()
 
 ### 1. Unified API for Dual Registries
 
-Since jido_coder_lib uses two registries:
+Since jidoka uses two registries:
 - **Jido's built-in registry** for Jido agents (via `Jido.whereis/2`)
 - **Custom AgentRegistry** for general process registration
 
@@ -132,8 +132,8 @@ The `list_jido_agents/0` function handles both map and tuple return formats from
 ### With Existing Code
 
 - **Jido 2.0 Registry:** Uses `Jido.whereis/2` for Jido agent lookup
-- **AgentRegistry:** Uses existing `JidoCoderLib.AgentRegistry` for custom process lookup
-- **Agent Module:** Extends existing `JidoCoderLib.Agent` module from Phase 2.4
+- **AgentRegistry:** Uses existing `Jidoka.AgentRegistry` for custom process lookup
+- **Agent Module:** Extends existing `Jidoka.Agent` module from Phase 2.4
 
 ### Future Integration
 
@@ -150,7 +150,7 @@ The `list_jido_agents/0` function handles both map and tuple return formats from
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/agent_test.exs
+mix test test/jidoka/agent_test.exs
 
 # Run all tests
 mix test
@@ -164,7 +164,7 @@ mix format
 ## Documentation
 
 All new functions include comprehensive `@moduledoc` and `@doc` with examples:
-- `lib/jido_coder_lib/agent.ex` - Updated with registry helpers
+- `lib/jidoka/agent.ex` - Updated with registry helpers
 
 Feature document: `notes/features/phase-2.5-agent-registry-integration.md`
 Planning document: `notes/planning/01-foundation/phase-02.md`

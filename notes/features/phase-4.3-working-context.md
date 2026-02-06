@@ -69,8 +69,8 @@ promoted to in the long-term memory system.
 
 ## Files Modified
 
-1. `lib/jido_coder_lib/memory/short_term/working_context.ex` - Added `list/1` and `suggest_type/3`
-2. `test/jido_coder_lib/memory/short_term/working_context_test.exs` - Added 2 new test blocks
+1. `lib/jidoka/memory/short_term/working_context.ex` - Added `list/1` and `suggest_type/3`
+2. `test/jidoka/memory/short_term/working_context_test.exs` - Added 2 new test blocks
 3. `notes/planning/01-foundation/phase-04.md` - Marked section 4.3 as complete
 
 ## Test Results

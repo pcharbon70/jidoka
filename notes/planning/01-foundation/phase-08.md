@@ -10,7 +10,7 @@ This phase implements the complete Client API and protocol integrations (MCP, Ph
 
 Create a comprehensive API module for clients to interact with the system.
 
-- [ ] 8.1.1 Expand `JidoCoderLib.Client` with full API surface
+- [ ] 8.1.1 Expand `Jidoka.Client` with full API surface
 - [ ] 8.1.2 Implement `send_message/3` for sending messages to sessions
 - [ ] 8.1.3 Implement `analyze_code/3` for code analysis requests
 - [ ] 8.1.4 Implement `get_context/2` for context retrieval
@@ -60,7 +60,7 @@ Establish the complete event protocol for clients.
 
 Create an MCP client for integrating with external MCP servers.
 
-- [ ] 8.3.1 Create `JidoCoderLib.Protocol.MCP.Client` module
+- [ ] 8.3.1 Create `Jidoka.Protocol.MCP.Client` module
 - [ ] 8.3.2 Implement `connect/2` for server connections
 - [ ] 8.3.3 Implement `list_tools/1` for discovering server tools
 - [ ] 8.3.4 Implement `call_tool/3` for executing tools
@@ -85,7 +85,7 @@ Create an MCP client for integrating with external MCP servers.
 
 Create a client for connecting to remote Phoenix Channels.
 
-- [ ] 8.4.1 Create `JidoCoderLib.Protocol.Phoenix.Connection` module
+- [ ] 8.4.1 Create `Jidoka.Protocol.Phoenix.Connection` module
 - [ ] 8.4.2 Implement `start_link/1` for connection initialization
 - [ ] 8.4.3 Implement `join_channel/3` for joining channels
 - [ ] 8.4.4 Implement `push_event/3` for sending events
@@ -108,7 +108,7 @@ Create a client for connecting to remote Phoenix Channels.
 
 Create a gateway for cross-framework agent communication.
 
-- [ ] 8.5.1 Create `JidoCoderLib.Protocol.A2A.Gateway` module
+- [ ] 8.5.1 Create `Jidoka.Protocol.A2A.Gateway` module
 - [ ] 8.5.2 Implement `discover_agent/2` for agent discovery
 - [ ] 8.5.3 Implement `send_message/3` for agent communication
 - [ ] 8.5.4 Implement JSON-RPC 2.0 request handling
@@ -131,7 +131,7 @@ Create a gateway for cross-framework agent communication.
 
 Supervise all protocol connections and handle their lifecycle.
 
-- [ ] 8.6.1 Create `JidoCoderLib.ProtocolSupervisor` module
+- [ ] 8.6.1 Create `Jidoka.ProtocolSupervisor` module
 - [ ] 8.6.2 Configure `:one_for_one` strategy
 - [ ] 8.6.3 Add MCP client children dynamically
 - [ ] 8.6.4 Add Phoenix connection children dynamically
@@ -154,12 +154,12 @@ Supervise all protocol connections and handle their lifecycle.
 
 Define the standard tools that the LLM can invoke.
 
-- [ ] 8.7.1 Create `JidoCoderLib.Tools.ReadFile` action
-- [ ] 8.7.2 Create `JidoCoderLib.Tools.SearchCode` action
-- [ ] 8.7.3 Create `JidoCoderLib.Tools.AnalyzeFunction` action
-- [ ] 8.7.4 Create `JidoCoderLib.Tools.ListFiles` action
-- [ ] 8.7.5 Create `JidoCoderLib.Tools.GetDefinition` action
-- [ ] 8.7.6 Create `JidoCoderLib.Tools.Registry` for tool discovery
+- [ ] 8.7.1 Create `Jidoka.Tools.ReadFile` action
+- [ ] 8.7.2 Create `Jidoka.Tools.SearchCode` action
+- [ ] 8.7.3 Create `Jidoka.Tools.AnalyzeFunction` action
+- [ ] 8.7.4 Create `Jidoka.Tools.ListFiles` action
+- [ ] 8.7.5 Create `Jidoka.Tools.GetDefinition` action
+- [ ] 8.7.6 Create `Jidoka.Tools.Registry` for tool discovery
 - [ ] 8.7.7 Implement tool schema generation for LLM
 
 **Unit Tests for Section 8.7:**
@@ -238,30 +238,30 @@ Comprehensive integration tests verifying the complete system.
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/client.ex` - Complete client API
-- `lib/jido_coder_lib/client_events.ex` - Event documentation
-- `lib/jido_coder_lib/protocol/mcp/client.ex` - MCP client
-- `lib/jido_coder_lib/protocol/mcp/supervisor.ex` - MCP supervisor
-- `lib/jido_coder_lib/protocol/phoenix/connection.ex` - Phoenix client
-- `lib/jido_coder_lib/protocol/a2a/gateway.ex` - A2A gateway
-- `lib/jido_coder_lib/protocol_supervisor.ex` - Protocol supervisor
-- `lib/jido_coder_lib/tools/read_file.ex` - ReadFile action
-- `lib/jido_coder_lib/tools/search_code.ex` - SearchCode action
-- `lib/jido_coder_lib/tools/analyze_function.ex` - AnalyzeFunction action
-- `lib/jido_coder_lib/tools/list_files.ex` - ListFiles action
-- `lib/jido_coder_lib/tools/get_definition.ex` - GetDefinition action
-- `lib/jido_coder_lib/tools/registry.ex` - Tool registry
-- `test/jido_coder_lib/client_test.exs`
-- `test/jido_coder_lib/protocol/mcp_test.exs`
-- `test/jido_coder_lib/protocol/phoenix_test.exs`
-- `test/jido_coder_lib/protocol/a2a_test.exs`
-- `test/jido_coder_lib/tools_test.exs`
-- `test/jido_coder_lib/integration/phase8_test.exs`
+- `lib/jidoka/client.ex` - Complete client API
+- `lib/jidoka/client_events.ex` - Event documentation
+- `lib/jidoka/protocol/mcp/client.ex` - MCP client
+- `lib/jidoka/protocol/mcp/supervisor.ex` - MCP supervisor
+- `lib/jidoka/protocol/phoenix/connection.ex` - Phoenix client
+- `lib/jidoka/protocol/a2a/gateway.ex` - A2A gateway
+- `lib/jidoka/protocol_supervisor.ex` - Protocol supervisor
+- `lib/jidoka/tools/read_file.ex` - ReadFile action
+- `lib/jidoka/tools/search_code.ex` - SearchCode action
+- `lib/jidoka/tools/analyze_function.ex` - AnalyzeFunction action
+- `lib/jidoka/tools/list_files.ex` - ListFiles action
+- `lib/jidoka/tools/get_definition.ex` - GetDefinition action
+- `lib/jidoka/tools/registry.ex` - Tool registry
+- `test/jidoka/client_test.exs`
+- `test/jidoka/protocol/mcp_test.exs`
+- `test/jidoka/protocol/phoenix_test.exs`
+- `test/jidoka/protocol/a2a_test.exs`
+- `test/jidoka/tools_test.exs`
+- `test/jidoka/integration/phase8_test.exs`
 
 **Modified Files:**
-- `lib/jido_coder_lib/application.ex` - Add ProtocolSupervisor
-- `lib/jido_coder_lib/agents/llm_orchestrator.ex` - Complete tool calling
-- `lib/jido_coder_lib/agents/coordinator.ex` - Route protocol events
+- `lib/jidoka/application.ex` - Add ProtocolSupervisor
+- `lib/jidoka/agents/llm_orchestrator.ex` - Complete tool calling
+- `lib/jidoka/agents/coordinator.ex` - Route protocol events
 - `config/config.exs` - Add protocol configuration
 
 **Dependencies:**

@@ -88,10 +88,10 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 ### File Location
 
-- New Module: `JidoCoderLib.Agents.CodebaseContext`
-- File: `lib/jido_coder_lib/agents/codebase_context.ex`
-- Modified: `lib/jido_coder_lib/agents/context_manager.ex`
-- Tests: `test/jido_coder_lib/agents/codebase_context_test.exs`
+- New Module: `Jidoka.Agents.CodebaseContext`
+- File: `lib/jidoka/agents/codebase_context.ex`
+- Modified: `lib/jidoka/agents/context_manager.ex`
+- Tests: `test/jidoka/agents/codebase_context_test.exs`
 
 ### Dependencies
 
@@ -106,7 +106,7 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 ### Step 1: Create CodebaseContext Module
 
-**File:** `lib/jido_coder_lib/agents/codebase_context.ex`
+**File:** `lib/jidoka/agents/codebase_context.ex`
 
 - [x] 1.1 Create module with cache table
 - [x] 1.2 Implement `start_link/1` for cache management
@@ -118,7 +118,7 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 ### Step 2: Integrate with ContextManager
 
-**File:** `lib/jido_coder_lib/agents/context_manager.ex`
+**File:** `lib/jidoka/agents/context_manager.ex`
 
 - [x] 2.1 Add `:codebase` to valid include types
 - [x] 2.2 Add codebase context building to `handle_call`
@@ -128,7 +128,7 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 ### Step 3: Add Context Building Logic
 
-**File:** `lib/jido_coder_lib/agents/codebase_context.ex`
+**File:** `lib/jidoka/agents/codebase_context.ex`
 
 - [x] 3.1 Extract module names from active file paths
 - [x] 3.2 Query module information from codebase
@@ -138,7 +138,7 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 ### Step 4: Implement Caching
 
-**File:** `lib/jido_coder_lib/agents/codebase_context.ex`
+**File:** `lib/jidoka/agents/codebase_context.ex`
 
 - [x] 4.1 Create ETS table for query results
 - [x] 4.2 Cache module info by module name
@@ -148,7 +148,7 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 ### Step 5: Write Tests
 
-**File:** `test/jido_coder_lib/agents/codebase_context_test.exs`
+**File:** `test/jidoka/agents/codebase_context_test.exs`
 
 - [x] 5.1 Test module info retrieval with caching
 - [x] 5.2 Test related module discovery
@@ -200,16 +200,16 @@ Created CodebaseContext module and integrated it with ContextManager:
 
 **How to Test:**
 ```bash
-mix test test/jido_coder_lib/agents/codebase_context_test.exs
+mix test test/jidoka/agents/codebase_context_test.exs
 ```
 
 ---
 
 ## Files Modified
 
-1. **lib/jido_coder_lib/agents/codebase_context.ex** - New file
-2. **lib/jido_coder_lib/agents/context_manager.ex** - Added codebase integration
-3. **test/jido_coder_lib/agents/codebase_context_test.exs** - New file
+1. **lib/jidoka/agents/codebase_context.ex** - New file
+2. **lib/jidoka/agents/context_manager.ex** - Added codebase integration
+3. **test/jidoka/agents/codebase_context_test.exs** - New file
 
 ---
 

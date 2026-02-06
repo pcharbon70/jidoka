@@ -6,7 +6,7 @@
 
 ## Overview
 
-Successfully implemented Elixir Ontology integration for the jido_coder_lib project. This feature enables semantic representation of Elixir code constructs as RDF triples in the knowledge graph, forming the foundation for code indexing and analysis.
+Successfully implemented Elixir Ontology integration for the jidoka project. This feature enables semantic representation of Elixir code constructs as RDF triples in the knowledge graph, forming the foundation for code indexing and analysis.
 
 ## Implementation Summary
 
@@ -22,13 +22,13 @@ Successfully implemented Elixir Ontology integration for the jido_coder_lib proj
    - Classes: Module, Function, Struct, Protocol, Behaviour, Macro, TypeSpec
    - Source: elixir-ontologies package (CC BY 4.0, Pascal Music)
 
-3. **`test/jido_coder_lib/knowledge/elixir_ontology_test.exs`** (283 lines)
+3. **`test/jidoka/knowledge/elixir_ontology_test.exs`** (283 lines)
    - Comprehensive test suite with 42 tests
    - 100% test pass rate
 
 ### Files Modified (1 file)
 
-1. **`lib/jido_coder_lib/knowledge/ontology.ex`** (+256 lines)
+1. **`lib/jidoka/knowledge/ontology.ex`** (+256 lines)
    - Added Elixir namespace constants and class mappings
    - Implemented loading functions
    - Implemented validation functions

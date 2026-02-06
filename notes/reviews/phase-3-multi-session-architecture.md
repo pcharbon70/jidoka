@@ -20,21 +20,21 @@ Phase 3 implements a multi-session architecture that allows multiple isolated wo
 ### Core Implementation
 | File | Lines | Purpose |
 |------|-------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | 458 | Session lifecycle management |
-| `lib/jido_coder_lib/session/supervisor.ex` | 252 | Per-session supervision tree |
-| `lib/jido_coder_lib/session/state.ex` | 462 | Type-safe session state |
-| `lib/jido_coder_lib/agents/context_manager.ex` | 663 | Session-isolated context |
-| `lib/jido_coder_lib/client.ex` | 349 | Public Client API |
+| `lib/jidoka/agents/session_manager.ex` | 458 | Session lifecycle management |
+| `lib/jidoka/session/supervisor.ex` | 252 | Per-session supervision tree |
+| `lib/jidoka/session/state.ex` | 462 | Type-safe session state |
+| `lib/jidoka/agents/context_manager.ex` | 663 | Session-isolated context |
+| `lib/jidoka/client.ex` | 349 | Public Client API |
 
 ### Test Files
 | File | Tests | Purpose |
 |------|-------|---------|
-| `test/jido_coder_lib/agents/session_manager_test.exs` | 23 | SessionManager unit tests |
-| `test/jido_coder_lib/session/supervisor_test.exs` | 11 | SessionSupervisor unit tests |
-| `test/jido_coder_lib/session/state_test.exs` | 65 | Session.State unit tests |
-| `test/jido_coder_lib/agents/context_manager_test.exs` | 48 | ContextManager unit tests |
-| `test/jido_coder_lib/client_test.exs` | 25 | Client API unit tests |
-| `test/jido_coder_lib/integration/phase3_test.exs` | 21 | Integration tests |
+| `test/jidoka/agents/session_manager_test.exs` | 23 | SessionManager unit tests |
+| `test/jidoka/session/supervisor_test.exs` | 11 | SessionSupervisor unit tests |
+| `test/jidoka/session/state_test.exs` | 65 | Session.State unit tests |
+| `test/jidoka/agents/context_manager_test.exs` | 48 | ContextManager unit tests |
+| `test/jidoka/client_test.exs` | 25 | Client API unit tests |
+| `test/jidoka/integration/phase3_test.exs` | 21 | Integration tests |
 
 **Total Phase 3 Tests:** 195 tests (all passing)
 
@@ -57,7 +57,7 @@ None identified.
 
 **Recommendation:** This should be investigated and fixed before production deployment, but is not a blocker for the current phase.
 
-**File:** `lib/jido_coder_lib/agents/session_manager.ex:376-418`
+**File:** `lib/jidoka/agents/session_manager.ex:376-418`
 
 ---
 
@@ -65,9 +65,9 @@ None identified.
 **Location:** Multiple files
 
 **Issues:**
-- `lib/jido_coder_lib/agents/directives.ex:40` - Unused alias `Agent`
-- `lib/jido_coder_lib/client.ex:105` - Unused alias `Agents`
-- `lib/jido_coder_lib/agents/coordinator/actions/*` - Various unused aliases
+- `lib/jidoka/agents/directives.ex:40` - Unused alias `Agent`
+- `lib/jidoka/client.ex:105` - Unused alias `Agents`
+- `lib/jidoka/agents/coordinator/actions/*` - Various unused aliases
 
 **Impact:** Low - These are compiler warnings that don't affect functionality.
 
@@ -76,7 +76,7 @@ None identified.
 ---
 
 ### 3. Potential Race Condition in Session Cleanup
-**Location:** `lib/jido_coder_lib/agents/session_manager.ex:307`
+**Location:** `lib/jidoka/agents/session_manager.ex:307`
 
 **Issue:** Session cleanup is scheduled with `Process.send_after(self(), {:cleanup_session, session_id}, 50)`. This uses a fixed 50ms delay, which may not be sufficient for all cleanup scenarios.
 
@@ -189,7 +189,7 @@ Client API functions have proper `@spec` declarations:
 @spec terminate_session(String.t()) :: :ok | {:error, term()}
 ```
 
-**File:** `lib/jido_coder_lib/client.ex`
+**File:** `lib/jidoka/client.ex`
 
 ---
 

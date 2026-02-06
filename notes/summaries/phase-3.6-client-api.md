@@ -18,29 +18,29 @@ Phase 3.6 implements the Client API module that provides a clean, high-level int
 
 | File | Purpose | Lines |
 |------|---------|-------|
-| `lib/jido_coder_lib/client.ex` | Client API module | 349 |
-| `test/jido_coder_lib/client_test.exs` | Comprehensive tests | 378 |
+| `lib/jidoka/client.ex` | Client API module | 349 |
+| `test/jidoka/client_test.exs` | Comprehensive tests | 378 |
 | `notes/features/phase-3.6-client-api.md` | Feature planning | 220 |
 
 ### Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Added PubSub broadcasting on session lifecycle |
+| `lib/jidoka/agents/session_manager.ex` | Added PubSub broadcasting on session lifecycle |
 | `notes/planning/01-foundation/phase-03.md` | Marked section 3.6 as complete |
 
 ---
 
 ## Client API Module
 
-The `JidoCoderLib.Client` module is a stateless API wrapper that delegates to internal agents:
+The `Jidoka.Client` module is a stateless API wrapper that delegates to internal agents:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                   CLIENT LAYER                              │
 │   TUI │ Web │ API │ Custom - all use Client API             │
 ├─────────────────────────────────────────────────────────────┤
-│                   JidoCoderLib.Client (this module)         │
+│                   Jidoka.Client (this module)         │
 │   - Session lifecycle (create, terminate, list, get_info)    │
 │   - Message routing (send_message)                           │
 │   - Event subscription (subscribe_to_session)                │
@@ -154,13 +154,13 @@ These are broadcast by ContextManager:
 
 ```elixir
 # Basic session
-{:ok, session_id} = JidoCoderLib.Client.create_session()
+{:ok, session_id} = Jidoka.Client.create_session()
 
 # With metadata
-{:ok, session_id} = JidoCoderLib.Client.create_session(metadata: %{project: "my-project"})
+{:ok, session_id} = Jidoka.Client.create_session(metadata: %{project: "my-project"})
 
 # With LLM config
-{:ok, session_id} = JidoCoderLib.Client.create_session(
+{:ok, session_id} = Jidoka.Client.create_session(
   llm_config: %{model: "gpt-4", temperature: 0.7}
 )
 ```
@@ -169,32 +169,32 @@ These are broadcast by ContextManager:
 
 ```elixir
 # List all active sessions
-sessions = JidoCoderLib.Client.list_sessions()
+sessions = Jidoka.Client.list_sessions()
 # => [%{session_id: "session-abc123", status: :active, ...}, ...]
 
 # Get session details
-{:ok, info} = JidoCoderLib.Client.get_session_info(session_id)
+{:ok, info} = Jidoka.Client.get_session_info(session_id)
 # => %{session_id: ..., status: :active, created_at: ..., metadata: ...}
 
 # Terminate a session
-:ok = JidoCoderLib.Client.terminate_session(session_id)
+:ok = Jidoka.Client.terminate_session(session_id)
 ```
 
 ### Sending Messages
 
 ```elixir
 # Send a user message
-{:ok, _history} = JidoCoderLib.Client.send_message(session_id, :user, "Hello, world!")
+{:ok, _history} = Jidoka.Client.send_message(session_id, :user, "Hello, world!")
 
 # Send an assistant message
-{:ok, _history} = JidoCoderLib.Client.send_message(session_id, :assistant, "Hi there!")
+{:ok, _history} = Jidoka.Client.send_message(session_id, :assistant, "Hi there!")
 ```
 
 ### Event Subscription
 
 ```elixir
 # Subscribe to session-specific events
-:ok = JidoCoderLib.Client.subscribe_to_session(session_id)
+:ok = Jidoka.Client.subscribe_to_session(session_id)
 
 # Then in your process
 handle_info({_, {:conversation_added, %{session_id: id, role: role, content: content}}}, state) do
@@ -203,7 +203,7 @@ handle_info({_, {:conversation_added, %{session_id: id, role: role, content: con
 end
 
 # Subscribe to all session lifecycle events
-:ok = JidoCoderLib.Client.subscribe_to_all_sessions()
+:ok = Jidoka.Client.subscribe_to_all_sessions()
 
 handle_info({_, {:session_created, %{session_id: id}}}, state) do
   # Update UI to show new session
@@ -216,7 +216,7 @@ handle_info({_, {:session_terminated, %{session_id: id}}}, state) do
 end
 
 # Unsubscribe when done
-:ok = JidoCoderLib.Client.unsubscribe_from_session(session_id)
+:ok = Jidoka.Client.unsubscribe_from_session(session_id)
 ```
 
 ---
@@ -375,10 +375,10 @@ The Client API will grow to include:
 
 - Feature Planning: `notes/features/phase-3.6-client-api.md`
 - Main Planning: `notes/planning/01-foundation/phase-03.md`
-- Client API: `lib/jido_coder_lib/client.ex`
-- Tests: `test/jido_coder_lib/client_test.exs`
-- SessionManager: `lib/jido_coder_lib/agents/session_manager.ex`
-- ContextManager: `lib/jido_coder_lib/agents/context_manager.ex`
-- PubSub: `lib/jido_coder_lib/pubsub.ex`
+- Client API: `lib/jidoka/client.ex`
+- Tests: `test/jidoka/client_test.exs`
+- SessionManager: `lib/jidoka/agents/session_manager.ex`
+- ContextManager: `lib/jidoka/agents/context_manager.ex`
+- PubSub: `lib/jidoka/pubsub.ex`
 - Phase 3.1: SessionManager implementation
 - Phase 3.4: ContextManager implementation

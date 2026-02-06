@@ -26,7 +26,7 @@ Currently, clients must interact directly with the SessionManager GenServer to m
 
 ## Solution Overview
 
-Create a `JidoCoderLib.Client` module that provides a clean, high-level API for session management. This module:
+Create a `Jidoka.Client` module that provides a clean, high-level API for session management. This module:
 
 1. Wraps SessionManager operations with a clean client-facing API
 2. Provides standard functions for session lifecycle (create, terminate, list, get info)
@@ -50,16 +50,16 @@ Create a `JidoCoderLib.Client` module that provides a clean, high-level API for 
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/client.ex` | Client API module |
-| `test/jido_coder_lib/client_test.exs` | Client API tests |
+| `lib/jidoka/client.ex` | Client API module |
+| `test/jidoka/client_test.exs` | Client API tests |
 
 ### Files to Reference
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Session management operations |
-| `lib/jido_coder_lib/pubsub.ex` | PubSub topic helpers |
-| `lib/jido_coder_lib/agents/context_manager.ex` | Session context management |
+| `lib/jidoka/agents/session_manager.ex` | Session management operations |
+| `lib/jidoka/pubsub.ex` | PubSub topic helpers |
+| `lib/jidoka/agents/context_manager.ex` | Session context management |
 
 ### Client API Functions
 
@@ -95,7 +95,7 @@ Create a `JidoCoderLib.Client` module that provides a clean, high-level API for 
 ## Implementation Plan
 
 ### Step 1: Create Client Module Structure
-- [x] 3.6.1 Create `JidoCoderLib.Client` module
+- [x] 3.6.1 Create `Jidoka.Client` module
 - [x] 3.6.2 Add module documentation with examples
 - [x] 3.6.3 Define aliases (SessionManager, PubSub, ContextManager)
 
@@ -130,7 +130,7 @@ Create a `JidoCoderLib.Client` module that provides a clean, high-level API for 
 
 ## Success Criteria
 
-1. **Client Module:** ✅ `JidoCoderLib.Client` module exists
+1. **Client Module:** ✅ `Jidoka.Client` module exists
 2. **Session Functions:** ✅ All session lifecycle functions work
 3. **Message Routing:** ✅ Messages route to correct session
 4. **Event Subscription:** ✅ Clients can subscribe to events
@@ -159,7 +159,7 @@ Create a `JidoCoderLib.Client` module that provides a clean, high-level API for 
 mix compile
 
 # Run tests (after implementation)
-mix test test/jido_coder_lib/client_test.exs
+mix test test/jidoka/client_test.exs
 
 # Run all tests
 mix test
@@ -201,8 +201,8 @@ mix test
 ## References
 
 - Planning Document: `notes/planning/01-foundation/phase-03.md`
-- SessionManager: `lib/jido_coder_lib/agents/session_manager.ex`
-- PubSub: `lib/jido_coder_lib/pubsub.ex`
-- ContextManager: `lib/jido_coder_lib/agents/context_manager.ex`
+- SessionManager: `lib/jidoka/agents/session_manager.ex`
+- PubSub: `lib/jidoka/pubsub.ex`
+- ContextManager: `lib/jidoka/agents/context_manager.ex`
 - Phase 3.1: SessionManager implementation
 - Phase 3.4: ContextManager implementation

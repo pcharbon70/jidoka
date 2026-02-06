@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib agent system requires a Coordinator agent to manage inter-agent communication and broadcast events to subscribed clients. Without a central coordinator, agents cannot efficiently route messages, aggregate results, or broadcast events to connected clients in a unified manner.
+The jidoka agent system requires a Coordinator agent to manage inter-agent communication and broadcast events to subscribed clients. Without a central coordinator, agents cannot efficiently route messages, aggregate results, or broadcast events to connected clients in a unified manner.
 
 **Impact:**
 - No central point for agent coordination
@@ -70,14 +70,14 @@ Implemented a Coordinator agent using Jido 2.0's `Jido.Agent` framework. The Coo
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/jido.ex` | Jido instance module (required for agents) |
-| `lib/jido_coder_lib/agents/coordinator.ex` | Coordinator agent definition |
-| `lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex` | Handle analysis signals |
-| `lib/jido_coder_lib/agents/coordinator/actions/handle_issue_found.ex` | Handle issue signals |
-| `lib/jido_coder_lib/agents/coordinator/actions/handle_chat_request.ex` | Handle chat signals |
-| `lib/jido_coder_lib/agent_supervisor.ex` | Supervisor for agents |
-| `test/jido_coder_lib/agents/coordinator_test.exs` | Integration tests |
-| `test/jido_coder_lib/agent_supervisor_test.exs` | Supervisor tests |
+| `lib/jidoka/jido.ex` | Jido instance module (required for agents) |
+| `lib/jidoka/agents/coordinator.ex` | Coordinator agent definition |
+| `lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex` | Handle analysis signals |
+| `lib/jidoka/agents/coordinator/actions/handle_issue_found.ex` | Handle issue signals |
+| `lib/jidoka/agents/coordinator/actions/handle_chat_request.ex` | Handle chat signals |
+| `lib/jidoka/agent_supervisor.ex` | Supervisor for agents |
+| `test/jidoka/agents/coordinator_test.exs` | Integration tests |
+| `test/jidoka/agent_supervisor_test.exs` | Supervisor tests |
 
 ### Dependencies
 
@@ -116,7 +116,7 @@ Implemented a Coordinator agent using Jido 2.0's `Jido.Agent` framework. The Coo
 ## Implementation Plan
 
 ### Step 1: Create Coordinator Agent Module
-- [x] 2.2.1 Create `JidoCoderLib.Agents.Coordinator` with schema
+- [x] 2.2.1 Create `Jidoka.Agents.Coordinator` with schema
 - [x] 2.2.2 Define `signal_routes/0` callback
 - [x] 2.2.3 Add `start_link/1` function
 
@@ -126,7 +126,7 @@ Implemented a Coordinator agent using Jido 2.0's `Jido.Agent` framework. The Coo
 - [x] 2.2.6 Create `HandleChatRequest` action
 
 ### Step 3: Create AgentSupervisor
-- [x] 2.2.7 Create `JidoCoderLib.AgentSupervisor` module
+- [x] 2.2.7 Create `Jidoka.AgentSupervisor` module
 - [x] 2.2.8 Configure `:rest_for_one` strategy
 - [x] 2.2.9 Add Coordinator as child
 - [x] 2.2.10 Add to Application supervision tree
@@ -166,8 +166,8 @@ Implemented a Coordinator agent using Jido 2.0's `Jido.Agent` framework. The Coo
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/agents/coordinator_test.exs
-mix test test/jido_coder_lib/agent_supervisor_test.exs
+mix test test/jidoka/agents/coordinator_test.exs
+mix test test/jidoka/agent_supervisor_test.exs
 
 # Start agent manually (for testing)
 iex -S mix
@@ -205,8 +205,8 @@ assert_receive(broadcast_signal, 500)
 ### Jido Instance Requirement
 All AgentServer instances require a `:jido` option pointing to a Jido instance module:
 ```elixir
-defmodule JidoCoderLib.Jido do
-  use Jido, otp_app: :jido_coder_lib
+defmodule Jidoka.Jido do
+  use Jido, otp_app: :jidoka
 end
 ```
 

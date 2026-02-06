@@ -16,14 +16,14 @@ Implemented ContextStore GenServer that owns and manages three ETS tables for hi
 
 | File | Lines | Description |
 |------|-------|-------------|
-| `lib/jido_coder_lib/context_store.ex` | 403 | ContextStore GenServer |
-| `test/jido_coder_lib/context_store_test.exs` | 364 | ContextStore tests |
+| `lib/jidoka/context_store.ex` | 403 | ContextStore GenServer |
+| `test/jidoka/context_store_test.exs` | 364 | ContextStore tests |
 
 ## Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Added ContextStore to children |
+| `lib/jidoka/application.ex` | Added ContextStore to children |
 | `test/test_helper.exs` | Added Application.ensure_all_started |
 
 ---

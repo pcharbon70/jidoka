@@ -12,7 +12,7 @@ Implemented section 4.10 of the Phase 4 planning document: Comprehensive integra
 
 ### Files Created
 
-1. **`test/jido_coder_lib/integration/phase4_test.exs`** (800+ lines)
+1. **`test/jidoka/integration/phase4_test.exs`** (800+ lines)
    - Comprehensive integration test suite with 35 tests
    - Tests organized into 8 describe blocks matching the 8 subsections of 4.10
    - All tests marked `async: false` due to shared ETS tables

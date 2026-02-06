@@ -51,7 +51,7 @@ All operations will be scoped to a specific session_id. This ensures:
 
 ### Module Structure
 
-Create `JidoCoderLib.Memory.LongTerm.SessionAdapter` module with:
+Create `Jidoka.Memory.LongTerm.SessionAdapter` module with:
 
 **Public API:**
 1. `new/1` - Initialize adapter with session_id
@@ -96,8 +96,8 @@ Create `JidoCoderLib.Memory.LongTerm.SessionAdapter` module with:
 
 ## Files to Create
 
-1. `lib/jido_coder_lib/memory/long_term/session_adapter.ex` - Main adapter module
-2. `test/jido_coder_lib/memory/long_term/session_adapter_test.exs` - Test file
+1. `lib/jidoka/memory/long_term/session_adapter.ex` - Main adapter module
+2. `test/jidoka/memory/long_term/session_adapter_test.exs` - Test file
 
 ## Files to Modify
 

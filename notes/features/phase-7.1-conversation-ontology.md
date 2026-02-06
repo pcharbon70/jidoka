@@ -42,8 +42,8 @@ Without the conversation ontology:
 | File | Action | Purpose |
 |------|--------|---------|
 | `priv/ontologies/conversation-history.ttl` | Create | Conversation ontology definition |
-| `lib/jido_coder_lib/knowledge/ontology.ex` | Modify | Add conversation ontology loading and helpers |
-| `test/jido_coder_lib/knowledge/ontology_test.exs` | Modify | Add conversation ontology tests |
+| `lib/jidoka/knowledge/ontology.ex` | Modify | Add conversation ontology loading and helpers |
+| `test/jidoka/knowledge/ontology_test.exs` | Modify | Add conversation ontology tests |
 
 ### Ontology Classes
 
@@ -107,7 +107,7 @@ Without the conversation ontology:
 
 ## Unit Tests
 
-### File: `test/jido_coder_lib/knowledge/ontology_test.exs`
+### File: `test/jidoka/knowledge/ontology_test.exs`
 
 Tests added:
 - `conversation ontology file` - 3 tests for file existence, readability, and prefixes
@@ -145,7 +145,7 @@ All tasks completed successfully. The conversation ontology is now loaded and ac
 **How to Test:**
 ```bash
 # Run ontology tests
-mix test test/jido_coder_lib/knowledge/ontology_test.exs
+mix test test/jidoka/knowledge/ontology_test.exs
 
 # Run all tests
 mix test

@@ -25,15 +25,15 @@ Implemented fixes for all concerns from the Phase 3 review and added key suggest
 
 **Impact:** SessionManager no longer crashes when individual SessionSupervisors are forcefully killed. Other sessions continue running normally.
 
-**File:** `lib/jido_coder_lib/agents/session_manager.ex`
+**File:** `lib/jidoka/agents/session_manager.ex`
 
 ---
 
 ### 2. Removed Unused Alias Warnings (Concern 2)
 
 **Files Fixed:**
-- `lib/jido_coder_lib/client.ex` - Removed unused `Agents` alias
-- `lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex` - Removed unused `Signal` alias
+- `lib/jidoka/client.ex` - Removed unused `Agents` alias
+- `lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex` - Removed unused `Signal` alias
 
 **Impact:** Clean compilation without warnings.
 
@@ -50,7 +50,7 @@ Implemented fixes for all concerns from the Phase 3 review and added key suggest
 
 **Impact:** More robust cleanup that handles slower termination scenarios.
 
-**File:** `lib/jido_coder_lib/agents/session_manager.ex`
+**File:** `lib/jidoka/agents/session_manager.ex`
 
 ---
 
@@ -58,7 +58,7 @@ Implemented fixes for all concerns from the Phase 3 review and added key suggest
 
 **Status:** Module created but not integrated (requires larger refactor)
 
-**Created:** `lib/jido_coder_lib/session/entry.ex`
+**Created:** `lib/jidoka/session/entry.ex`
 
 Provides a typed struct for session ETS entries with helper functions:
 - `new/4` - Create with validation
@@ -77,7 +77,7 @@ Provides a typed struct for session ETS entries with helper functions:
 
 **Status:** Complete ✅
 
-**Created:** `lib/jido_coder_lib/session/persistence.ex`
+**Created:** `lib/jidoka/session/persistence.ex`
 
 **Features:**
 - Save sessions to disk as JSON
@@ -103,7 +103,7 @@ Provides a typed struct for session ETS entries with helper functions:
 
 **Configuration:**
 ```elixir
-config :jido_coder_lib, :persistence_dir, "./priv/sessions"
+config :jidoka, :persistence_dir, "./priv/sessions"
 ```
 
 ---
@@ -137,15 +137,15 @@ All existing tests continue to pass:
 ### Modified Files (3)
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | +31 lines (trap_exit, EXIT handler, improved cleanup) |
-| `lib/jido_coder_lib/client.ex` | +102 lines (persistence API) |
-| `lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex` | -1 line (removed unused alias) |
+| `lib/jidoka/agents/session_manager.ex` | +31 lines (trap_exit, EXIT handler, improved cleanup) |
+| `lib/jidoka/client.ex` | +102 lines (persistence API) |
+| `lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex` | -1 line (removed unused alias) |
 
 ### New Files (4)
 | File | Purpose | Lines |
 |------|---------|-------|
-| `lib/jido_coder_lib/session/entry.ex` | SessionEntry struct | 205 |
-| `lib/jido_coder_lib/session/persistence.ex` | Session persistence | 227 |
+| `lib/jidoka/session/entry.ex` | SessionEntry struct | 205 |
+| `lib/jidoka/session/persistence.ex` | Session persistence | 227 |
 | `notes/features/phase-3-review-fixes-improvements.md` | Feature planning | 409 |
 | `notes/reviews/phase-3-multi-session-architecture.md` | Phase 3 review | 461 |
 

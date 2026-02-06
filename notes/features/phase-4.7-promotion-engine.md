@@ -18,7 +18,7 @@ The promotion engine needs to:
 
 ## Solution Overview
 
-Create a `JidoCoderLib.Memory.PromotionEngine` module that:
+Create a `Jidoka.Memory.PromotionEngine` module that:
 
 1. **Evaluates** pending memory items against promotion criteria
 2. **Promotes** qualified items to LTM via SessionAdapter
@@ -53,15 +53,15 @@ PromotionResult (success/failure, confidence)
 
 ### File Locations
 
-- **Module**: `lib/jido_coder_lib/memory/promotion_engine.ex`
-- **Tests**: `test/jido_coder_lib/memory/promotion_engine_test.exs`
+- **Module**: `lib/jidoka/memory/promotion_engine.ex`
+- **Tests**: `test/jidoka/memory/promotion_engine_test.exs`
 - **Planning**: `notes/planning/01-foundation/phase-04.md` (section 4.7)
 
 ### Dependencies
 
-- `JidoCoderLib.Memory.ShortTerm` - Source of pending memories
-- `JidoCoderLib.Memory.LongTerm.SessionAdapter` - LTM storage
-- `JidoCoderLib.Memory.ShortTerm.PendingMemories` - Queue interface
+- `Jidoka.Memory.ShortTerm` - Source of pending memories
+- `Jidoka.Memory.LongTerm.SessionAdapter` - LTM storage
+- `Jidoka.Memory.ShortTerm.PendingMemories` - Queue interface
 
 ### Promotion Criteria
 
@@ -99,7 +99,7 @@ Confidence = weighted combination of:
 
 ### Step 1: Create PromotionEngine Module Structure
 
-1. Create `lib/jido_coder_lib/memory/promotion_engine.ex`
+1. Create `lib/jidoka/memory/promotion_engine.ex`
 2. Define module with @moduledoc
 3. Define struct for promotion state
 4. Define default configuration constants
@@ -269,5 +269,5 @@ confidence = PromotionEngine.calculate_confidence(item, default: 0.5)
 
 ### How to Run Tests
 ```bash
-mix test test/jido_coder_lib/memory/promotion_engine_test.exs
+mix test test/jidoka/memory/promotion_engine_test.exs
 ```

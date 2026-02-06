@@ -24,7 +24,7 @@ The application needs a message passing backbone for inter-process communication
 ## Solution Overview
 
 1. Add Phoenix.PubSub to the Application supervision tree
-2. Create a JidoCoderLib.PubSub wrapper module with helper functions
+2. Create a Jidoka.PubSub wrapper module with helper functions
 3. Define standard topic naming conventions
 4. Create subscribe/broadcast helper functions
 
@@ -36,9 +36,9 @@ The application needs a message passing backbone for inter-process communication
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Add Phoenix.PubSub to children |
-| `lib/jido_coder_lib/pubsub.ex` | New wrapper module |
-| `test/jido_coder_lib/pubsub_test.exs` | PubSub tests |
+| `lib/jidoka/application.ex` | Add Phoenix.PubSub to children |
+| `lib/jidoka/pubsub.ex` | New wrapper module |
+| `test/jidoka/pubsub_test.exs` | PubSub tests |
 
 ### Topic Naming Conventions
 
@@ -60,7 +60,7 @@ jido.protocol.<protocol>          # Protocol events
 - [x] Configure with name: :jido_coder_pubsub
 
 ### Step 2: Create PubSub Wrapper Module ✅
-- [x] Create JidoCoderLib.PubSub module
+- [x] Create Jidoka.PubSub module
 - [x] Add @moduledoc with usage examples
 - [x] Define topic constants
 
@@ -99,13 +99,13 @@ jido.protocol.<protocol>          # Protocol events
 - All tests passing
 
 **Changes Made:**
-- Updated `lib/jido_coder_lib/application.ex` to include Phoenix.PubSub
-- Created `lib/jido_coder_lib/pubsub.ex` wrapper module
-- Created `test/jido_coder_lib/pubsub_test.exs` with 26 tests
+- Updated `lib/jidoka/application.ex` to include Phoenix.PubSub
+- Created `lib/jidoka/pubsub.ex` wrapper module
+- Created `test/jidoka/pubsub_test.exs` with 26 tests
 
 **How to Test:**
 ```bash
-mix test test/jido_coder_lib/pubsub_test.exs
+mix test test/jidoka/pubsub_test.exs
 ```
 
 ## Progress Log

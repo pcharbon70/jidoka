@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-The `JidoCoderLib.Knowledge.SPARQLClient` module is a thin wrapper around the `TripleStore` library's SPARQL functionality. For an embedded library architecture with direct database references, this wrapper adds unnecessary indirection without providing meaningful abstraction value.
+The `Jidoka.Knowledge.SPARQLClient` module is a thin wrapper around the `TripleStore` library's SPARQL functionality. For an embedded library architecture with direct database references, this wrapper adds unnecessary indirection without providing meaningful abstraction value.
 
 ### Current Issues
 
@@ -19,10 +19,10 @@ The `JidoCoderLib.Knowledge.SPARQLClient` module is a thin wrapper around the `T
 ### Dependencies Found
 
 SPARQLClient is currently used in:
-- `lib/jido_coder_lib/knowledge/queries.ex` - `SPARQLClient.query/4`
-- `lib/jido_coder_lib/knowledge/engine.ex` - `SPARQLClient.update/2` (for graph creation)
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` - `SPARQLClient.update/2`
-- `lib/jido_coder_lib/knowledge/ontology.ex` - `SPARQLClient.query/4` and `SPARQLClient.update/2`
+- `lib/jidoka/knowledge/queries.ex` - `SPARQLClient.query/4`
+- `lib/jidoka/knowledge/engine.ex` - `SPARQLClient.update/2` (for graph creation)
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` - `SPARQLClient.update/2`
+- `lib/jidoka/knowledge/ontology.ex` - `SPARQLClient.query/4` and `SPARQLClient.update/2`
 - Test files: `sparql_client_test.exs`, `triple_store_adapter_test.exs`
 
 ## Solution Overview
@@ -50,17 +50,17 @@ SPARQLClient is currently used in:
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/knowledge/sparql_client.ex` | **DELETE** |
-| `lib/jido_coder_lib/knowledge/queries.ex` | Use `TripleStore.SPARQL.Query.query/3` directly |
-| `lib/jido_coder_lib/knowledge/engine.ex` | Use `TripleStore.update/2` directly |
-| `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` | Use `TripleStore.update/2` directly |
-| `lib/jido_coder_lib/knowledge/ontology.ex` | Use TripleStore APIs directly |
-| `test/jido_coder_lib/knowledge/sparql_client_test.exs` | **DELETE** |
-| `test/jido_coder_lib/knowledge/queries_test.exs` | Update if needed |
+| `lib/jidoka/knowledge/sparql_client.ex` | **DELETE** |
+| `lib/jidoka/knowledge/queries.ex` | Use `TripleStore.SPARQL.Query.query/3` directly |
+| `lib/jidoka/knowledge/engine.ex` | Use `TripleStore.update/2` directly |
+| `lib/jidoka/memory/long_term/triple_store_adapter.ex` | Use `TripleStore.update/2` directly |
+| `lib/jidoka/knowledge/ontology.ex` | Use TripleStore APIs directly |
+| `test/jidoka/knowledge/sparql_client_test.exs` | **DELETE** |
+| `test/jidoka/knowledge/queries_test.exs` | Update if needed |
 
 ### New Helper Module (if needed)
 
-May create `JidoCoderLib.Knowledge.Context` or similar for:
+May create `Jidoka.Knowledge.Context` or similar for:
 - `permit_all(ctx)` - Sets permit_all and returns context
 - Common context preparation
 
@@ -125,8 +125,8 @@ This should remain - it's needed for internal operations with quad schema ACLs.
 - [ ] Test ontology operations
 
 ### Step 7: Delete SPARQLClient Module
-- [ ] Delete `lib/jido_coder_lib/knowledge/sparql_client.ex`
-- [ ] Delete `test/jido_coder_lib/knowledge/sparql_client_test.exs`
+- [ ] Delete `lib/jidoka/knowledge/sparql_client.ex`
+- [ ] Delete `test/jidoka/knowledge/sparql_client_test.exs`
 
 ### Step 8: Run Full Test Suite
 - [ ] Run `mix test` to verify all tests pass

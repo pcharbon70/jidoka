@@ -18,14 +18,14 @@ This phase implemented the SessionManager agent that manages the lifecycle of al
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | 293 | SessionManager GenServer |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | 238 | Unit tests |
+| `lib/jidoka/agents/session_manager.ex` | 293 | SessionManager GenServer |
+| `test/jidoka/agents/session_manager_test.exs` | 238 | Unit tests |
 
 ### Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Added SessionManager to supervision tree |
+| `lib/jidoka/application.ex` | Added SessionManager to supervision tree |
 | `notes/planning/01-foundation/phase-03.md` | Marked section 3.1 complete |
 
 ### Test Coverage
@@ -154,11 +154,11 @@ The structure is ready for Phase 3.2 integration.
 
 ### With Application
 
-SessionManager is added to the supervision tree in `lib/jido_coder_lib/application.ex`:
+SessionManager is added to the supervision tree in `lib/jidoka/application.ex`:
 
 ```elixir
 # SessionManager for multi-session management (Phase 3.1)
-JidoCoderLib.Agents.SessionManager
+Jidoka.Agents.SessionManager
 ```
 
 ### Future Integration
@@ -176,7 +176,7 @@ JidoCoderLib.Agents.SessionManager
 mix compile
 
 # Run SessionManager tests
-mix test test/jido_coder_lib/agents/session_manager_test.exs
+mix test test/jidoka/agents/session_manager_test.exs
 
 # Run all tests
 mix test
@@ -190,7 +190,7 @@ mix format
 ## Documentation
 
 All functions include comprehensive `@moduledoc` and `@doc` with examples:
-- `lib/jido_coder_lib/agents/session_manager.ex` - SessionManager implementation
+- `lib/jidoka/agents/session_manager.ex` - SessionManager implementation
 
 Feature document: `notes/features/phase-3.1-session-manager.md`
 Planning document: `notes/planning/01-foundation/phase-03.md`

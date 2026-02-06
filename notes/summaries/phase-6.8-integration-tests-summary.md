@@ -23,7 +23,7 @@ Phase 6.8 implements comprehensive integration tests for the entire Phase 6 (Cod
    - `module_with_dependencies.ex` - Module with dependencies
    - `syntax_error.ex` - File with syntax errors for error recovery
 
-2. **test/jido_coder_lib/integration/phase6_test.exs** - Integration test suite
+2. **test/jidoka/integration/phase6_test.exs** - Integration test suite
    - 21 comprehensive integration tests
    - Tests for full project indexing
    - Tests for AST to RDF mapping
@@ -116,7 +116,7 @@ Tests verify that:
 ## Test Results
 
 ```
-mix test test/jido_coder_lib/integration/phase6_test.exs --only phase6_integration
+mix test test/jidoka/integration/phase6_test.exs --only phase6_integration
 
 Finished in 5.6 seconds (0.00s async, 5.6s sync)
 21 tests, 0 failures
@@ -143,7 +143,7 @@ All integration tests passing with graceful degradation for modules that may not
 3. **test/support/code_samples/module_with_protocol.ex**
 4. **test/support/code_samples/module_with_dependencies.ex**
 5. **test/support/code_samples/syntax_error.ex**
-6. **test/jido_coder_lib/integration/phase6_test.exs**
+6. **test/jidoka/integration/phase6_test.exs**
 
 ---
 
@@ -153,13 +153,13 @@ All integration tests passing with graceful degradation for modules that may not
 
 ```bash
 # Run all Phase 6 integration tests
-mix test test/jido_coder_lib/integration/phase6_test.exs --only phase6_integration
+mix test test/jidoka/integration/phase6_test.exs --only phase6_integration
 
 # Run all integration tests (Phase 3, 4, 6)
-mix test test/jido_coder_lib/integration/
+mix test test/jidoka/integration/
 
 # Run specific test
-mix test test/jido_coder_lib/integration/phase6_test.exs:123
+mix test test/jidoka/integration/phase6_test.exs:123
 ```
 
 ### Test Example
@@ -195,4 +195,4 @@ end
 - Add stress tests with larger concurrent loads
 - Add more comprehensive protocol/behaviour tests
 - Add macro indexing tests
-- Add test for full jido_coder_lib project indexing
+- Add test for full jidoka project indexing

@@ -1,5 +1,5 @@
 # Set test environment
-Application.put_env(:jido_coder_lib, :env, :test)
+Application.put_env(:jidoka, :env, :test)
 
 # Start ExUnit before cleanup (ExUnit starts the test supervision tree)
 ExUnit.start()
@@ -41,4 +41,4 @@ Enum.each(test_data_dirs, fn dir ->
 end)
 
 # Start the application for tests AFTER cleanup
-Application.ensure_all_started(:jido_coder_lib)
+Application.ensure_all_started(:jidoka)

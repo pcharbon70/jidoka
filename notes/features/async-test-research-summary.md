@@ -18,10 +18,10 @@ After thorough investigation, the "async test issues" were **misdiagnosed**. The
 - Pure unit tests → `async: true` ✓
 
 **Evidence:**
-- `test/jido_coder_lib/memory/integration_test.exs` - Already `async: false`
-- `test/jido_coder_lib/pubsub_test.exs` - Already `async: false`
-- `test/jido_coder_lib/client_test.exs` - Already `async: false`
-- `test/jido_coder_lib/agents/session_manager_test.exs` - Already `async: false`
+- `test/jidoka/memory/integration_test.exs` - Already `async: false`
+- `test/jidoka/pubsub_test.exs` - Already `async: false`
+- `test/jidoka/client_test.exs` - Already `async: false`
+- `test/jidoka/agents/session_manager_test.exs` - Already `async: false`
 - All integration tests - Already `async: false`
 
 ### Finding 2: Real Issue - Multiple Directives Not Handled
@@ -52,16 +52,16 @@ assert emit_directive.signal.data.session_id == nil
 ```
 
 **Affected test files:**
-1. `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
+1. `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
    - Test: "processes analysis complete and returns emit directive"
    - Test: "handles missing optional fields"
 
-2. `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
+2. `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
    - Test: "processes issue found and returns emit directive"
    - Test: "uses default severity when not provided"
    - Test: "handles missing optional fields"
 
-3. `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+3. `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
    - (Needs verification - likely similar issues)
 
 ### Finding 3: Knowledge Engine Database Corruption
@@ -70,18 +70,18 @@ assert emit_directive.signal.data.session_id == nil
 
 **Errors:**
 ```
-** (Mix) Could not start application jido_coder_lib: exited in: JidoCoderLib.Application.start(:normal, [])
+** (Mix) Could not start application jidoka: exited in: Jidoka.Application.start(:normal, [])
     ** (EXIT) an exception was raised:
-        ** (MatchError) no match of right hand side value: {:error, {:shutdown, {:failed_to_start_child, JidoCoderLib.Knowledge.Engine, {:db_open, ~c"Invalid argument: Column family not found: derivation_provenance"}}}}
+        ** (MatchError) no match of right hand side value: {:error, {:shutdown, {:failed_to_start_child, Jidoka.Knowledge.Engine, {:db_open, ~c"Invalid argument: Column family not found: derivation_provenance"}}}}
 ```
 
 **Root cause:** The triple_store dependency's RocksDB schema changed, but old test databases weren't cleaned up.
 
 **Affected test files:**
-- `test/jido_coder_lib/knowledge/engine_test.exs`
-- `test/jido_coder_lib/knowledge/ontology_test.exs`
-- `test/jido_coder_lib/knowledge/named_graphs_test.exs`
-- `test/jido_coder_lib/knowledge/queries_test.exs`
+- `test/jidoka/knowledge/engine_test.exs`
+- `test/jidoka/knowledge/ontology_test.exs`
+- `test/jidoka/knowledge/named_graphs_test.exs`
+- `test/jidoka/knowledge/queries_test.exs`
 
 **Current cleanup (insufficient):**
 ```elixir
@@ -119,9 +119,9 @@ end
 **Action:** Update tests to properly handle multiple directives
 
 **Files to modify:**
-1. `test/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete_test.exs`
-2. `test/jido_coder_lib/agents/coordinator/actions/handle_issue_found_test.exs`
-3. `test/jido_coder_lib/agents/coordinator/actions/handle_chat_request_test.exs`
+1. `test/jidoka/agents/coordinator/actions/handle_analysis_complete_test.exs`
+2. `test/jidoka/agents/coordinator/actions/handle_issue_found_test.exs`
+3. `test/jidoka/agents/coordinator/actions/handle_chat_request_test.exs`
 
 **Pattern to apply:**
 ```elixir
@@ -144,8 +144,8 @@ assert emit_directive.signal.data.field == value
 
 **Files to modify:**
 1. `test/test_helper.exs` - Add on_exit callback
-2. `test/jido_coder_lib/knowledge/engine_test.exs` - Ensure unique data directories
-3. `test/jido_coder_lib/knowledge/ontology_test.exs` - Add setup blocks
+2. `test/jidoka/knowledge/engine_test.exs` - Ensure unique data directories
+3. `test/jidoka/knowledge/ontology_test.exs` - Add setup blocks
 
 **Approach:**
 1. Add more aggressive cleanup in test_helper.exs

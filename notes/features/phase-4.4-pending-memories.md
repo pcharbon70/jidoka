@@ -72,8 +72,8 @@ Removes items that were successfully promoted to long-term memory by ID.
 
 ## Files Modified
 
-1. `lib/jido_coder_lib/memory/short_term/pending_memories.ex` - Added 3 functions + helpers
-2. `test/jido_coder_lib/memory/short_term/pending_memories_test.exs` - Added 3 test blocks
+1. `lib/jidoka/memory/short_term/pending_memories.ex` - Added 3 functions + helpers
+2. `test/jidoka/memory/short_term/pending_memories_test.exs` - Added 3 test blocks
 3. `notes/planning/01-foundation/phase-04.md` - Marked section 4.4 as complete
 
 ## Test Results

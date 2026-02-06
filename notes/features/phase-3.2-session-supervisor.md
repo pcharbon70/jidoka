@@ -41,15 +41,15 @@ The SessionSupervisor will be started dynamically by SessionManager when creatin
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/session/supervisor.ex` | SessionSupervisor module |
-| `test/jido_coder_lib/session/supervisor_test.exs` | Unit tests |
+| `lib/jidoka/session/supervisor.ex` | SessionSupervisor module |
+| `test/jidoka/session/supervisor_test.exs` | Unit tests |
 
 ### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Start SessionSupervisor for each session |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | Update tests for SessionSupervisor integration |
+| `lib/jidoka/agents/session_manager.ex` | Start SessionSupervisor for each session |
+| `test/jidoka/agents/session_manager_test.exs` | Update tests for SessionSupervisor integration |
 
 ### SessionSupervisor API
 
@@ -67,7 +67,7 @@ get_llm_agent_pid(session_id) :: {:ok, pid} | {:error, :not_found}
 ### Registry Keys
 
 - Key pattern: `"session_supervisor:#{session_id}"`
-- Registry: `JidoCoderLib.AgentRegistry`
+- Registry: `Jidoka.AgentRegistry`
 
 ### Supervision Tree
 
@@ -95,7 +95,7 @@ SessionSupervisor (one_for_one)
 ## Implementation Plan
 
 ### Step 1: Create SessionSupervisor Module
-- [ ] 3.2.1 Create `JidoCoderLib.Session.Supervisor` using Supervisor
+- [ ] 3.2.1 Create `Jidoka.Session.Supervisor` using Supervisor
 - [ ] 3.2.2 Define child specification
 - [ ] 3.2.3 Define Registry key pattern
 
@@ -147,7 +147,7 @@ SessionSupervisor (one_for_one)
 mix compile
 
 # Run tests (after implementation)
-mix test test/jido_coder_lib/session/supervisor_test.exs
+mix test test/jidoka/session/supervisor_test.exs
 
 # Run all tests
 mix test

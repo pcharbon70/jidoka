@@ -1,7 +1,7 @@
 import Config
 
-# Configuration for JidoCoderLib application
-config :jido_coder_lib,
+# Configuration for Jidoka application
+config :jidoka,
   # The base timeout for operations in milliseconds
   operation_timeout: 30_000,
 
@@ -15,7 +15,7 @@ config :jido_coder_lib,
   log_level: :info
 
 # LLM Provider Configuration
-config :jido_coder_lib, :llm,
+config :jidoka, :llm,
   # LLM provider: :openai, :anthropic, :ollama, :mock, :none
   provider: System.get_env("LLM_PROVIDER") || :openai,
   # Model to use (provider-specific)
@@ -30,7 +30,7 @@ config :jido_coder_lib, :llm,
   request_timeout: 60_000
 
 # Knowledge Graph Configuration (Phase 5)
-config :jido_coder_lib, :knowledge_engine,
+config :jidoka, :knowledge_engine,
   # Data directory for triple store (relative to application root or absolute)
   data_dir: "data/knowledge_graph",
   # Schema type: :quad (required for multiple named graphs with ACL support)
@@ -48,7 +48,7 @@ config :jido_coder_lib, :knowledge_engine,
   ]
 
 # Legacy Knowledge Graph Configuration (deprecated, kept for compatibility)
-config :jido_coder_lib, :knowledge_graph,
+config :jidoka, :knowledge_graph,
   # Backend: :native (in-memory), :remote_sparql
   backend: System.get_env("KNOWLEDGE_BACKEND") || :native,
   # SPARQL endpoint for remote backend
@@ -61,7 +61,7 @@ config :jido_coder_lib, :knowledge_graph,
   cache_ttl: 300_000
 
 # Session Management Configuration
-config :jido_coder_lib, :session,
+config :jidoka, :session,
   # Maximum number of concurrent sessions
   max_sessions: 100,
   # Session idle timeout in milliseconds (5 minutes)

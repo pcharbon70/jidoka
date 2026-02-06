@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project requires a supervised knowledge graph engine to provide a persistent, queryable RDF quad-store. The existing triple_store backend provides comprehensive functionality, but needs to be wrapped in a GenServer with proper supervision, health checking, and lifecycle management.
+The jidoka project requires a supervised knowledge graph engine to provide a persistent, queryable RDF quad-store. The existing triple_store backend provides comprehensive functionality, but needs to be wrapped in a GenServer with proper supervision, health checking, and lifecycle management.
 
 **Current Issues:**
 - No supervised process for triple store lifecycle
@@ -26,7 +26,7 @@ The jido_coder_lib project requires a supervised knowledge graph engine to provi
 
 ## Solution Overview
 
-Implement `JidoCoderLib.Knowledge.Engine` GenServer that wraps the triple_store backend with proper OTP supervision.
+Implement `Jidoka.Knowledge.Engine` GenServer that wraps the triple_store backend with proper OTP supervision.
 
 **Key Design Decisions:**
 1. **Use existing triple_store** - Leverages comprehensive RDF/SPARQL implementation
@@ -38,7 +38,7 @@ Implement `JidoCoderLib.Knowledge.Engine` GenServer that wraps the triple_store 
 
 **Architecture:**
 ```
-JidoCoderLib.Knowledge.Engine (GenServer)
+Jidoka.Knowledge.Engine (GenServer)
 ├── start_link/1        - Initialize engine with config
 ├── health/0            - Check engine health
 ├── stats/0             - Get store statistics
@@ -70,11 +70,11 @@ JidoCoderLib.Knowledge.Engine (GenServer)
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/knowledge/engine.ex`
+**Primary Module:** `lib/jidoka/knowledge/engine.ex`
 
 **API Design:**
 ```elixir
-defmodule JidoCoderLib.Knowledge.Engine do
+defmodule Jidoka.Knowledge.Engine do
   @moduledoc """
   GenServer wrapper for triple_store backend.
 
@@ -114,7 +114,7 @@ end
 
 **Application Config:**
 ```elixir
-config :jido_coder_lib, :knowledge_engine,
+config :jidoka, :knowledge_engine,
   # Data directory for triple store
   data_dir: "data/knowledge_graph",
   # Enable health checking
@@ -165,7 +165,7 @@ Standard graph names use the `jido:` prefix:
 
 ### Functional Requirements
 - [x] 5.2.1 Select quad-store implementation (RDF.ex with triple_store backend)
-- [x] 5.2.2 Create `JidoCoderLib.Knowledge.Engine` module
+- [x] 5.2.2 Create `Jidoka.Knowledge.Engine` module
 - [x] 5.2.3 Implement `start_link/1` for engine initialization
 - [x] 5.2.4 Configure named graph support
 - [x] 5.2.5 Add engine to supervision tree
@@ -199,14 +199,14 @@ Standard graph names use the `jido:` prefix:
 **Status:** Complete
 
 **Tasks:**
-- [x] Create `lib/jido_coder_lib/knowledge/engine.ex`
+- [x] Create `lib/jidoka/knowledge/engine.ex`
 - [x] Add GenServer use statement
 - [x] Define state struct
 - [x] Add module documentation
 - [x] Add @spec types
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/engine.ex` (new)
+- `lib/jidoka/knowledge/engine.ex` (new)
 
 ---
 
@@ -222,7 +222,7 @@ Standard graph names use the `jido:` prefix:
 - [x] Handle open failures gracefully
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/engine.ex` (modify)
+- `lib/jidoka/knowledge/engine.ex` (modify)
 
 ---
 
@@ -239,7 +239,7 @@ Standard graph names use the `jido:` prefix:
 - [ ] Initialize standard graphs on startup
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/engine.ex` (modify)
+- `lib/jidoka/knowledge/engine.ex` (modify)
 
 ---
 
@@ -255,7 +255,7 @@ Standard graph names use the `jido:` prefix:
 - [ ] Handle health check failures
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/engine.ex` (modify)
+- `lib/jidoka/knowledge/engine.ex` (modify)
 
 ---
 
@@ -270,7 +270,7 @@ Standard graph names use the `jido:` prefix:
 - [ ] Handle backup failures
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/engine.ex` (modify)
+- `lib/jidoka/knowledge/engine.ex` (modify)
 
 ---
 
@@ -286,8 +286,8 @@ Standard graph names use the `jido:` prefix:
 - [ ] Create initial migration (v1: create standard graphs)
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/engine.ex` (modify)
-- `lib/jido_coder_lib/knowledge/migrations.ex` (new)
+- `lib/jidoka/knowledge/engine.ex` (modify)
+- `lib/jidoka/knowledge/migrations.ex` (new)
 
 ---
 
@@ -302,7 +302,7 @@ Standard graph names use the `jido:` prefix:
 - [ ] Add engine configuration to config.exs
 
 **Files:**
-- `lib/jido_coder_lib/application.ex` (modify)
+- `lib/jidoka/application.ex` (modify)
 - `config/config.exs` (modify)
 
 ---
@@ -321,7 +321,7 @@ Standard graph names use the `jido:` prefix:
 - [ ] Test graceful shutdown
 
 **Files:**
-- `test/jido_coder_lib/knowledge/engine_test.exs` (new)
+- `test/jidoka/knowledge/engine_test.exs` (new)
 
 ---
 
@@ -412,5 +412,5 @@ Migrations are versioned and stored in the triple store itself:
 - [TripleStore Documentation](/home/ducky/code/triple_store)
 - [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/)
 - [RDF.ex Documentation](https://hexdocs.pm/rdf/)
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
 - [GenServer Documentation](https://hexdocs.pm/elixir/GenServer.html)

@@ -14,9 +14,9 @@ Implemented reusable SPARQL query helpers for common knowledge graph operations 
 
 ## Implementation Summary
 
-### Module Created: `JidoCoderLib.Knowledge.Queries`
+### Module Created: `Jidoka.Knowledge.Queries`
 
-**Location:** `lib/jido_coder_lib/knowledge/queries.ex`
+**Location:** `lib/jidoka/knowledge/queries.ex`
 
 **Purpose:** High-level query helpers for retrieving memories from the knowledge graph without writing raw SPARQL.
 
@@ -87,7 +87,7 @@ LIMIT 10
 
 ## Tests Created
 
-**Location:** `test/jido_coder_lib/knowledge/queries_test.exs`
+**Location:** `test/jidoka/knowledge/queries_test.exs`
 
 **Total Tests:** 24 tests
 
@@ -148,30 +148,30 @@ The triple_store library's authorization system enforces graph-level access cont
 ## Files Changed
 
 ### Created
-1. `lib/jido_coder_lib/knowledge/queries.ex` - Queries module (~530 lines)
-2. `test/jido_coder_lib/knowledge/queries_test.exs` - Test suite (~500 lines)
+1. `lib/jidoka/knowledge/queries.ex` - Queries module (~530 lines)
+2. `test/jidoka/knowledge/queries_test.exs` - Test suite (~500 lines)
 3. `notes/features/phase-5.6-query-helpers.md` - Feature planning document
 4. `notes/summaries/phase-5.6-query-helpers.md` - This file
 
 ### Modified
-- `lib/jido_coder_lib/knowledge/engine.ex` - Minor changes (reverted)
+- `lib/jidoka/knowledge/engine.ex` - Minor changes (reverted)
 
 ---
 
 ## Dependencies
 
 The Queries module integrates with:
-- `JidoCoderLib.Knowledge.Engine` - For graph context
-- `JidoCoderLib.Knowledge.SPARQLClient` - For SPARQL operations
-- `JidoCoderLib.Knowledge.NamedGraphs` - For graph IRI resolution
-- `JidoCoderLib.Knowledge.Ontology` - For class IRIs
+- `Jidoka.Knowledge.Engine` - For graph context
+- `Jidoka.Knowledge.SPARQLClient` - For SPARQL operations
+- `Jidoka.Knowledge.NamedGraphs` - For graph IRI resolution
+- `Jidoka.Knowledge.Ontology` - For class IRIs
 
 ---
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
-- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jido_coder_lib/notes/summaries/phase-5.4-jido-ontology.md)
-- [Phase 5.5 TripleStoreAdapter](/home/ducky/code/agentjido/jido_coder_lib/notes/summaries/phase-5.5-triple-store-adapter.md)
-- [Engine Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [SPARQLClient Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/sparql_client.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
+- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jidoka/notes/summaries/phase-5.4-jido-ontology.md)
+- [Phase 5.5 TripleStoreAdapter](/home/ducky/code/agentjido/jidoka/notes/summaries/phase-5.5-triple-store-adapter.md)
+- [Engine Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [SPARQLClient Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/sparql_client.ex)

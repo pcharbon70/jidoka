@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-While Jido 2.0 provides comprehensive agent infrastructure, jido_coder_lib agents need shared utilities and patterns for common operations. Without base agent behaviors, each agent would need to duplicate code for:
+While Jido 2.0 provides comprehensive agent infrastructure, jidoka agents need shared utilities and patterns for common operations. Without base agent behaviors, each agent would need to duplicate code for:
 - Task ID generation and tracking
 - Client broadcast creation
 - State management operations
@@ -20,13 +20,13 @@ While Jido 2.0 provides comprehensive agent infrastructure, jido_coder_lib agent
 - Code duplication across agents
 - Inconsistent error handling
 - Difficult to maintain common patterns
-- No standardized way to create jido_coder_lib-specific agent behaviors
+- No standardized way to create jidoka-specific agent behaviors
 
 ---
 
 ## Solution Overview
 
-Implemented a `JidoCoderLib.Agent` module with common utilities that complement Jido 2.0's framework. These utilities:
+Implemented a `Jidoka.Agent` module with common utilities that complement Jido 2.0's framework. These utilities:
 
 1. **Provide agent-level helpers** - Task ID generation, state utilities
 2. **Provide directive helpers** - Standardized client/sesesion broadcasts
@@ -54,10 +54,10 @@ Implemented a `JidoCoderLib.Agent` module with common utilities that complement 
 - Actions use consistent patterns: StateOp.SetState + Directive.Emit
 
 **Recommendations:**
-1. Create `JidoCoderLib.Agent` module with core utilities
-2. Create `JidoCoderLib.Agent.Directives` for common directive patterns
-3. Create `JidoCoderLib.Agent.State` for state management helpers
-4. Focus on jido_coder_lib-specific patterns, not generic agent functionality
+1. Create `Jidoka.Agent` module with core utilities
+2. Create `Jidoka.Agent.Directives` for common directive patterns
+3. Create `Jidoka.Agent.State` for state management helpers
+4. Focus on jidoka-specific patterns, not generic agent functionality
 
 ---
 
@@ -67,12 +67,12 @@ Implemented a `JidoCoderLib.Agent` module with common utilities that complement 
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/agent.ex` | Core agent utilities |
-| `lib/jido_coder_lib/agent/directives.ex` | Common directive helpers |
-| `lib/jido_coder_lib/agent/state.ex` | State management utilities |
-| `test/jido_coder_lib/agent_test.exs` | Core utilities tests |
-| `test/jido_coder_lib/agent/directives_test.exs` | Directive helpers tests |
-| `test/jido_coder_lib/agent/state_test.exs` | State utilities tests |
+| `lib/jidoka/agent.ex` | Core agent utilities |
+| `lib/jidoka/agent/directives.ex` | Common directive helpers |
+| `lib/jidoka/agent/state.ex` | State management utilities |
+| `test/jidoka/agent_test.exs` | Core utilities tests |
+| `test/jidoka/agent/directives_test.exs` | Directive helpers tests |
+| `test/jidoka/agent/state_test.exs` | State utilities tests |
 
 ### Dependencies
 
@@ -81,9 +81,9 @@ Implemented a `JidoCoderLib.Agent` module with common utilities that complement 
 ### Module Structure
 
 ```
-JidoCoderLib.Agent           - Core utilities (task_id, validation, etc.)
-JidoCoderLib.Agent.Directives - Directive helpers (client_broadcast, etc.)
-JidoCoderLib.Agent.State      - State helpers (increment, update, etc.)
+Jidoka.Agent           - Core utilities (task_id, validation, etc.)
+Jidoka.Agent.Directives - Directive helpers (client_broadcast, etc.)
+Jidoka.Agent.State      - State helpers (increment, update, etc.)
 ```
 
 ---
@@ -101,20 +101,20 @@ JidoCoderLib.Agent.State      - State helpers (increment, update, etc.)
 
 ## Implementation Plan
 
-### Step 1: Create JidoCoderLib.Agent Module
-- [x] 2.4.1 Create `lib/jido_coder_lib/agent.ex`
+### Step 1: Create Jidoka.Agent Module
+- [x] 2.4.1 Create `lib/jidoka/agent.ex`
 - [x] 2.4.2 Implement `generate_task_id/2` for unique task IDs
 - [x] 2.4.3 Implement `validate_session_id/1` for session validation
 - [x] 2.4.4 Implement common error handling helpers
 
-### Step 2: Create JidoCoderLib.Agent.Directives Module
-- [x] 2.4.5 Create `lib/jido_coder_lib/agent/directives.ex`
+### Step 2: Create Jidoka.Agent.Directives Module
+- [x] 2.4.5 Create `lib/jidoka/agent/directives.ex`
 - [x] 2.4.6 Implement `client_broadcast/3` for global client events
 - [x] 2.4.7 Implement `session_broadcast/4` for session-specific events
 - [x] 2.4.8 Implement `emit_signal/2` for signal emission
 
-### Step 3: Create JidoCoderLib.Agent.State Module
-- [x] 2.4.9 Create `lib/jido_coder_lib/agent/state.ex`
+### Step 3: Create Jidoka.Agent.State Module
+- [x] 2.4.9 Create `lib/jidoka/agent/state.ex`
 - [x] 2.4.10 Implement `increment_field/3` for numeric state updates
 - [x] 2.4.11 Implement `put_nested/3` for nested state updates
 - [x] 2.4.12 Implement `update_timestamps/2` for timestamp fields
@@ -153,9 +153,9 @@ JidoCoderLib.Agent.State      - State helpers (increment, update, etc.)
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/agent_test.exs
-mix test test/jido_coder_lib/agent/directives_test.exs
-mix test test/jido_coder_lib/agent/state_test.exs
+mix test test/jidoka/agent_test.exs
+mix test test/jidoka/agent/directives_test.exs
+mix test test/jidoka/agent/state_test.exs
 ```
 
 ---
@@ -176,9 +176,9 @@ mix test test/jido_coder_lib/agent/state_test.exs
 
 | Commit | Description |
 |--------|-------------|
-| (pending) | Add JidoCoderLib.Agent core utilities |
-| (pending) | Add JidoCoderLib.Agent.Directives helpers |
-| (pending) | Add JidoCoderLib.Agent.State utilities |
+| (pending) | Add Jidoka.Agent core utilities |
+| (pending) | Add Jidoka.Agent.Directives helpers |
+| (pending) | Add Jidoka.Agent.State utilities |
 | (pending) | Add comprehensive tests |
 
 ---
@@ -187,4 +187,4 @@ mix test test/jido_coder_lib/agent/state_test.exs
 
 - Jido Agent Documentation: hexdocs.pm for jido 2.0.0-rc.1
 - Planning Document: `notes/planning/01-foundation/phase-02.md`
-- Existing Coordinator: `lib/jido_coder_lib/agents/coordinator.ex`
+- Existing Coordinator: `lib/jidoka/agents/coordinator.ex`

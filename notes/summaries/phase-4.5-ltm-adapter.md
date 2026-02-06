@@ -10,9 +10,9 @@ Implemented the Long-Term Memory (LTM) adapter for session-scoped persistence as
 
 ## Implementation Details
 
-### Module: `JidoCoderLib.Memory.LongTerm.SessionAdapter`
+### Module: `Jidoka.Memory.LongTerm.SessionAdapter`
 
-Location: `lib/jido_coder_lib/memory/long_term/session_adapter.ex` (386 lines)
+Location: `lib/jidoka/memory/long_term/session_adapter.ex` (386 lines)
 
 **Struct Definition:**
 ```elixir
@@ -66,7 +66,7 @@ The `query_memories/2` function supports:
 
 ## Test Coverage
 
-**26 tests passing** in `test/jido_coder_lib/memory/long_term/session_adapter_test.exs`
+**26 tests passing** in `test/jidoka/memory/long_term/session_adapter_test.exs`
 
 ### Test Categories:
 
@@ -115,8 +115,8 @@ The `query_memories/2` function supports:
 ## Files Created/Modified
 
 **New Files:**
-1. `lib/jido_coder_lib/memory/long_term/session_adapter.ex` - Main adapter module (386 lines)
-2. `test/jido_coder_lib/memory/long_term/session_adapter_test.exs` - Test suite (280 lines)
+1. `lib/jidoka/memory/long_term/session_adapter.ex` - Main adapter module (386 lines)
+2. `test/jidoka/memory/long_term/session_adapter_test.exs` - Test suite (280 lines)
 
 **Documentation:**
 1. `notes/features/phase-4.5-ltm-adapter.md` - Feature planning document

@@ -72,21 +72,21 @@ Implement fixes in priority order, starting with critical security issues:
 ### Files to Modify
 
 **Security Fixes:**
-- `lib/jido_coder_lib/memory/long_term/session_adapter.ex` - CRITICAL
-- `lib/jido_coder_lib/memory/retrieval.ex` - HIGH
-- `lib/jido_coder_lib/memory/promotion_engine.ex` - HIGH
+- `lib/jidoka/memory/long_term/session_adapter.ex` - CRITICAL
+- `lib/jidoka/memory/retrieval.ex` - HIGH
+- `lib/jidoka/memory/promotion_engine.ex` - HIGH
 
 **Architecture:**
-- `lib/jido_coder_lib/memory/short_term.ex` - HIGH
-- `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` - MEDIUM
-- `lib/jido_coder_lib/session/manager.ex` - HIGH (cleanup integration)
+- `lib/jidoka/memory/short_term.ex` - HIGH
+- `lib/jidoka/memory/short_term/conversation_buffer.ex` - MEDIUM
+- `lib/jidoka/session/manager.ex` - HIGH (cleanup integration)
 
 **New Files:**
-- `lib/jido_coder_lib/memory/validation.ex` - CRITICAL (new)
-- `lib/jido_coder_lib/memory/long_term/session_server.ex` - CRITICAL (new)
-- `lib/jido_coder_lib/memory/short_term/server.ex` - HIGH (new)
-- `lib/jido_coder_lib/memory/type_inference.ex` - MEDIUM (new)
-- `lib/jido_coder_lib/memory/scoring.ex` - LOW (new)
+- `lib/jidoka/memory/validation.ex` - CRITICAL (new)
+- `lib/jidoka/memory/long_term/session_server.ex` - CRITICAL (new)
+- `lib/jidoka/memory/short_term/server.ex` - HIGH (new)
+- `lib/jidoka/memory/type_inference.ex` - MEDIUM (new)
+- `lib/jidoka/memory/scoring.ex` - LOW (new)
 
 **Tests to Update:**
 - All tests using SessionAdapter directly
@@ -138,7 +138,7 @@ Implement fixes in priority order, starting with critical security issues:
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/memory/validation.ex`
+- [ ] Create `lib/jidoka/memory/validation.ex`
 - [ ] Implement `validate_required_fields/2`
 - [ ] Implement `validate_memory_size/1` (100KB limit)
 - [ ] Implement `validate_importance/1`
@@ -150,7 +150,7 @@ Implement fixes in priority order, starting with critical security issues:
 
 **Validation Module API:**
 ```elixir
-defmodule JidoCoderLib.Memory.Validation do
+defmodule Jidoka.Memory.Validation do
   @max_memory_size_bytes 100 * 1024
 
   def validate_required_fields(item, required \\ [:id, :type, :data, :importance])
@@ -169,7 +169,7 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/memory/long_term/session_server.ex`
+- [ ] Create `lib/jidoka/memory/long_term/session_server.ex`
 - [ ] Implement GenServer with ETS table reference (unnamed table)
 - [ ] Implement `persist_memory/2` callback
 - [ ] Implement `query_memories/2` callback
@@ -222,7 +222,7 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/memory/short_term/server.ex`
+- [ ] Create `lib/jidoka/memory/short_term/server.ex`
 - [ ] Implement GenServer wrapping STM struct
 - [ ] Implement all STM operations as GenServer calls
 - [ ] Add Registry for process naming
@@ -269,7 +269,7 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/memory/type_inference.ex`
+- [ ] Create `lib/jidoka/memory/type_inference.ex`
 - [ ] Extract `infer_from_key/2` from WorkingContext
 - [ ] Extract `infer_from_data/1` from PromotionEngine
 - [ ] Update WorkingContext to use TypeInference
@@ -287,7 +287,7 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/memory/scoring.ex`
+- [ ] Create `lib/jidoka/memory/scoring.ex`
 - [ ] Extract `calculate_weighted_score/2` pattern
 - [ ] Update PromotionEngine to use Scoring
 - [ ] Update Retrieval to use Scoring
@@ -379,13 +379,13 @@ end
 - Scoring module extraction
 
 ### Files Modified
-- `lib/jido_coder_lib/memory/validation.ex` (new)
-- `lib/jido_coder_lib/memory/long_term/session_server.ex` (new)
-- `lib/jido_coder_lib/memory/short_term/server.ex` (new/modified)
-- `lib/jido_coder_lib/memory/short_term.ex` (access log bounding)
-- `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` (O(n) eviction)
-- `lib/jido_coder_lib/application.ex` (SessionRegistry added)
-- `lib/jido_coder_lib/memory/long_term/session_adapter.ex` (deprecation, validation)
+- `lib/jidoka/memory/validation.ex` (new)
+- `lib/jidoka/memory/long_term/session_server.ex` (new)
+- `lib/jidoka/memory/short_term/server.ex` (new/modified)
+- `lib/jidoka/memory/short_term.ex` (access log bounding)
+- `lib/jidoka/memory/short_term/conversation_buffer.ex` (O(n) eviction)
+- `lib/jidoka/application.ex` (SessionRegistry added)
+- `lib/jidoka/memory/long_term/session_adapter.ex` (deprecation, validation)
 
 ### Test Results
 - Memory tests: 370 tests, 0 failures
@@ -397,10 +397,10 @@ end
 mix test
 
 # Run specific module tests
-mix test test/jido_coder_lib/memory/
+mix test test/jidoka/memory/
 
 # Run integration tests
-mix test test/jido_coder_lib/integration/
+mix test test/jidoka/integration/
 ```
 
 ---

@@ -10,7 +10,7 @@ This phase implements the two-tier memory system consisting of Short-Term Memory
 
 Create the core data structures for the short-term memory system.
 
-- [x] 4.1.1 Create `JidoCoderLib.Memory.ShortTerm` module
+- [x] 4.1.1 Create `Jidoka.Memory.ShortTerm` module
 - [x] 4.1.2 Create `ConversationBuffer` struct with sliding window
 - [x] 4.1.3 Create `WorkingContext` struct for semantic scratchpad
 - [x] 4.1.4 Create `PendingMemories` struct for promotion queue
@@ -38,7 +38,7 @@ A sliding window buffer that holds recent messages with token-aware eviction.
 
 **Note**: This section was implemented as part of Phase 4.1 (Short-Term Memory Structures).
 
-- [x] 4.2.1 Create `JidoCoderLib.Memory.ShortTerm.ConversationBuffer` module
+- [x] 4.2.1 Create `Jidoka.Memory.ShortTerm.ConversationBuffer` module
 - [x] 4.2.2 Implement `add/2` for adding messages
 - [x] 4.2.3 Implement token-aware eviction when budget exceeded
 - [x] 4.2.4 Return evicted messages for promotion consideration
@@ -66,7 +66,7 @@ A semantic scratchpad for extracted understanding during a session.
 
 **Note**: Core module created in Phase 4.1, with `list/1` and `suggest_type/2` added in Phase 4.3.
 
-- [x] 4.3.1 Create `JidoCoderLib.Memory.ShortTerm.WorkingContext` module
+- [x] 4.3.1 Create `Jidoka.Memory.ShortTerm.WorkingContext` module
 - [x] 4.3.2 Implement `put/3` for storing context items
 - [x] 4.3.3 Implement `get/2` for retrieving context items
 - [x] 4.3.4 Implement access tracking for importance scoring
@@ -94,7 +94,7 @@ A queue for items awaiting promotion to long-term memory.
 
 **Note**: Core module created in Phase 4.1, with additional functions added in Phase 4.4.
 
-- [x] 4.4.1 Create `JidoCoderLib.Memory.ShortTerm.PendingMemories` module
+- [x] 4.4.1 Create `Jidoka.Memory.ShortTerm.PendingMemories` module
 - [x] 4.4.2 Implement `enqueue/2` for adding items
 - [x] 4.4.3 Implement `dequeue/1` for removing items
 - [x] 4.4.4 Implement `ready_for_promotion/2` for filtering
@@ -120,7 +120,7 @@ A queue for items awaiting promotion to long-term memory.
 
 Create the adapter interface for interacting with the long-term memory store.
 
-- [x] 4.5.1 Create `JidoCoderLib.Memory.LongTerm.SessionAdapter` module
+- [x] 4.5.1 Create `Jidoka.Memory.LongTerm.SessionAdapter` module
 - [x] 4.5.2 Implement `new/1` for adapter initialization
 - [x] 4.5.3 Implement `persist_memory/2` for storing memories
 - [x] 4.5.4 Implement `query_memories/2` for retrieving memories
@@ -146,7 +146,7 @@ Create the adapter interface for interacting with the long-term memory store.
 
 Map memory items to Jido ontology classes (Fact, Decision, LessonLearned, etc.).
 
-- [x] 4.6.1 Create `JidoCoderLib.Memory.Ontology` module
+- [x] 4.6.1 Create `Jidoka.Memory.Ontology` module
 - [x] 4.6.2 Define memory type atoms (:fact, :decision, :assumption, etc.)
 - [x] 4.6.3 Implement `to_rdf/1` for converting to RDF triples
 - [x] 4.6.4 Implement `from_rdf/1` for converting from RDF triples
@@ -170,7 +170,7 @@ Map memory items to Jido ontology classes (Fact, Decision, LessonLearned, etc.).
 
 The promotion engine evaluates and moves important items from STM to LTM.
 
-- [x] 4.7.1 Create `JidoCoderLib.Memory.PromotionEngine` module
+- [x] 4.7.1 Create `Jidoka.Memory.PromotionEngine` module
 - [x] 4.7.2 Implement `evaluate_and_promote/3` for batch promotion
 - [x] 4.7.3 Implement implicit promotion based on heuristics
 - [x] 4.7.4 Implement explicit promotion (agent self-determination)
@@ -203,7 +203,7 @@ The promotion engine evaluates and moves important items from STM to LTM.
 
 Retrieve relevant memories from LTM to enrich the context for LLM calls.
 
-- [x] 4.8.1 Create `JidoCoderLib.Memory.Retrieval` module
+- [x] 4.8.1 Create `Jidoka.Memory.Retrieval` module
 - [x] 4.8.2 Implement keyword-based retrieval
 - [x] 4.8.3 Implement similarity-based retrieval
 - [x] 4.8.4 Implement `enrich_context/3` for context building
@@ -290,22 +290,22 @@ Comprehensive integration tests verifying the two-tier memory system.
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/memory/short_term.ex` - STM main module
-- `lib/jido_coder_lib/memory/short_term/conversation_buffer.ex`
-- `lib/jido_coder_lib/memory/short_term/working_context.ex`
-- `lib/jido_coder_lib/memory/short_term/pending_memories.ex`
-- `lib/jido_coder_lib/memory/long_term/session_adapter.ex` - LTM adapter
-- `lib/jido_coder_lib/memory/ontology.ex` - Ontology mapping
-- `lib/jido_coder_lib/memory/promotion_engine.ex` - Promotion logic
-- `lib/jido_coder_lib/memory/retrieval.ex` - Memory retrieval
-- `test/jido_coder_lib/memory/short_term_test.exs`
-- `test/jido_coder_lib/memory/long_term_test.exs`
-- `test/jido_coder_lib/integration/phase4_test.exs`
+- `lib/jidoka/memory/short_term.ex` - STM main module
+- `lib/jidoka/memory/short_term/conversation_buffer.ex`
+- `lib/jidoka/memory/short_term/working_context.ex`
+- `lib/jidoka/memory/short_term/pending_memories.ex`
+- `lib/jidoka/memory/long_term/session_adapter.ex` - LTM adapter
+- `lib/jidoka/memory/ontology.ex` - Ontology mapping
+- `lib/jidoka/memory/promotion_engine.ex` - Promotion logic
+- `lib/jidoka/memory/retrieval.ex` - Memory retrieval
+- `test/jidoka/memory/short_term_test.exs`
+- `test/jidoka/memory/long_term_test.exs`
+- `test/jidoka/integration/phase4_test.exs`
 
 **Modified Files:**
-- `lib/jido_coder_lib/agents/llm_orchestrator.ex` - Integrate STM
-- `lib/jido_coder_lib/agents/context_manager.ex` - Integrate LTM retrieval
-- `lib/jido_coder_lib/session/supervisor.ex` - Initialize memory systems
+- `lib/jidoka/agents/llm_orchestrator.ex` - Integrate STM
+- `lib/jidoka/agents/context_manager.ex` - Integrate LTM retrieval
+- `lib/jidoka/session/supervisor.ex` - Initialize memory systems
 
 **Dependencies:**
 - Phase 1: Core Foundation

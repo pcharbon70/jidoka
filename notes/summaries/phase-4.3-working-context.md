@@ -13,12 +13,12 @@ Implemented the missing functions for section 4.3 of the Phase 4 planning docume
 ### Functions Added
 
 **1. `list/1`** - Return all context items
-- Location: `lib/jido_coder_lib/memory/short_term/working_context.ex:255-257`
+- Location: `lib/jidoka/memory/short_term/working_context.ex:255-257`
 - Returns all key-value pairs as a list of `{key, value}` tuples
 - Useful for inspection, serialization, and passing context to other systems
 
 **2. `suggest_type/3`** - Suggest memory type for LTM promotion
-- Location: `lib/jido_coder_lib/memory/short_term/working_context.ex:259-313`
+- Location: `lib/jidoka/memory/short_term/working_context.ex:259-313`
 - Uses heuristics based on key patterns to suggest memory type
 - Supports 4 memory types: `:fact`, `:analysis`, `:file_context`, `:conversation`
 - Case-insensitive matching
@@ -52,10 +52,10 @@ New tests added:
 ## Files Modified
 
 **Implementation:**
-- `lib/jido_coder_lib/memory/short_term/working_context.ex` - Added 2 functions (59 lines)
+- `lib/jidoka/memory/short_term/working_context.ex` - Added 2 functions (59 lines)
 
 **Tests:**
-- `test/jido_coder_lib/memory/short_term/working_context_test.exs` - Added 2 test blocks (75 lines)
+- `test/jidoka/memory/short_term/working_context_test.exs` - Added 2 test blocks (75 lines)
 
 **Documentation:**
 - `notes/features/phase-4.3-working-context.md` - Feature planning document

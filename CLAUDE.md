@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is **jido_coder_lib** - a research and planning repository for an agentic coding assistant system. The repository contains architectural documentation, agent system definitions, and command definitions for a sophisticated Elixir-based **headless** agentic coding assistant core.
+This is **jidoka** - a research and planning repository for an agentic coding assistant system. The repository contains architectural documentation, agent system definitions, and command definitions for a sophisticated Elixir-based **headless** agentic coding assistant core.
 
 **Important:** This repository primarily contains **documentation and agent/command definitions**, not executable code. The actual implementation is in separate repositories (jido_code_core, and potentially client implementations).
 
 ### Repository Structure
 
 ```
-jido_coder_lib/
+jidoka/
 ├── .claude/
 │   ├── agent-definitions/    # Agent system definitions (elixir-expert, architecture-agent, etc.)
 │   ├── commands/             # Command definitions (plan, execute, review, feature, etc.)

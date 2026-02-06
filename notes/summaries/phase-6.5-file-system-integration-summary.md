@@ -16,7 +16,7 @@ Phase 6.5 implemented a file system watcher that automatically detects changes t
 
 ### 1. FileSystemWatcher GenServer
 
-Created a new GenServer module `JidoCoderLib.Indexing.FileSystemWatcher` that:
+Created a new GenServer module `Jidoka.Indexing.FileSystemWatcher` that:
 - Polls watched directories at configurable intervals (default: 1 second)
 - Tracks file modification times to detect changes
 - Filters files by extension (`.ex`, `.exs`)
@@ -41,13 +41,13 @@ Created a new GenServer module `JidoCoderLib.Indexing.FileSystemWatcher` that:
 
 ## Files Created
 
-1. **lib/jido_coder_lib/indexing/file_system_watcher.ex**
+1. **lib/jidoka/indexing/file_system_watcher.ex**
    - 467 lines
    - GenServer-based file system watcher
    - Polling-based change detection
    - Debouncing and filtering
 
-2. **test/jido_coder_lib/indexing/file_system_watcher_test.exs**
+2. **test/jidoka/indexing/file_system_watcher_test.exs**
    - 388 lines
    - 22 tests covering all functionality
    - Tests for filtering, debouncing, error handling
@@ -80,7 +80,7 @@ Created a new GenServer module `JidoCoderLib.Indexing.FileSystemWatcher` that:
 ### Configuration
 
 - `:name` - GenServer name (default: `__MODULE__`)
-- `:indexer_name` - CodeIndexer name (default: `JidoCoderLib.Indexing.CodeIndexer`)
+- `:indexer_name` - CodeIndexer name (default: `Jidoka.Indexing.CodeIndexer`)
 - `:poll_interval` - Poll interval in ms (default: 1000)
 - `:debounce_ms` - Debounce delay in ms (default: 100)
 

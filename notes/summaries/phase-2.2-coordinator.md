@@ -15,41 +15,41 @@ Implemented the Coordinator agent using Jido 2.0's `Jido.Agent` framework. The C
 ## Files Created
 
 ### Core Implementation
-1. **`lib/jido_coder_lib/jido.ex`** - Jido instance module
+1. **`lib/jidoka/jido.ex`** - Jido instance module
    - Required by all Jido agents for registration and lifecycle management
-   - Uses `use Jido, otp_app: :jido_coder_lib`
+   - Uses `use Jido, otp_app: :jidoka`
 
-2. **`lib/jido_coder_lib/agents/coordinator.ex`** - Coordinator agent
+2. **`lib/jidoka/agents/coordinator.ex`** - Coordinator agent
    - Agent schema with `active_tasks`, `pending_broadcasts`, `event_aggregation` fields
    - `signal_routes/0` callback for automatic signal routing
    - `start_link/1` function for AgentServer startup
 
-3. **`lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex`** - Analysis complete handler
+3. **`lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex`** - Analysis complete handler
    - Processes `jido_coder.analysis.complete` signals
    - Broadcasts to `jido.client.events` topic
    - Aggregates analysis results
 
-4. **`lib/jido_coder_lib/agents/coordinator/actions/handle_issue_found.ex`** - Issue found handler
+4. **`lib/jidoka/agents/coordinator/actions/handle_issue_found.ex`** - Issue found handler
    - Processes `jido_coder.analysis.issue.found` signals
    - Broadcasts to `jido.client.events` topic
    - Tracks issue counts and last issue details
 
-5. **`lib/jido_coder_lib/agents/coordinator/actions/handle_chat_request.ex`** - Chat request handler
+5. **`lib/jidoka/agents/coordinator/actions/handle_chat_request.ex`** - Chat request handler
    - Processes `jido_coder.chat.request` signals
    - Creates active task entries
    - Routes to LLM via session-specific PubSub topics
 
 ### Supervisor
-6. **`lib/jido_coder_lib/agent_supervisor.ex`** - Agent supervisor
+6. **`lib/jidoka/agent_supervisor.ex`** - Agent supervisor
    - `:rest_for_one` strategy for ordered dependencies
    - Coordinator as first child
    - Managed by Application supervision tree
 
 ### Tests
-7. **`test/jido_coder_lib/agents/coordinator_test.exs`** - Coordinator integration tests
+7. **`test/jidoka/agents/coordinator_test.exs`** - Coordinator integration tests
    - 6 tests covering lifecycle, signal routing, and state management
 
-8. **`test/jido_coder_lib/agent_supervisor_test.exs`** - Supervisor tests
+8. **`test/jidoka/agent_supervisor_test.exs`** - Supervisor tests
    - 3 tests covering supervisor strategy and restart behavior
 
 ---
@@ -57,7 +57,7 @@ Implemented the Coordinator agent using Jido 2.0's `Jido.Agent` framework. The C
 ## Key Implementation Decisions
 
 ### 1. Jido Instance Module
-Created `JidoCoderLib.Jido` module using `use Jido, otp_app: :jido_coder_lib`. This is required by `Jido.AgentServer` for:
+Created `Jidoka.Jido` module using `use Jido, otp_app: :jidoka`. This is required by `Jido.AgentServer` for:
 - Agent registration in Jido's registry
 - Scoped agent lifecycle management
 - Agent discovery via `Jido.whereis/2`
@@ -132,15 +132,15 @@ All 9 tests passing:
 # Coordinator is started by Application supervision tree
 
 # Manually for testing
-{:ok, pid} = JidoCoderLib.Agents.Coordinator.start_link(
+{:ok, pid} = Jidoka.Agents.Coordinator.start_link(
   id: "coordinator-main",
-  jido: JidoCoderLib.Jido
+  jido: Jidoka.Jido
 )
 ```
 
 ### Finding the Coordinator
 ```elixir
-pid = Jido.whereis(JidoCoderLib.Jido, "coordinator-main")
+pid = Jido.whereis(Jidoka.Jido, "coordinator-main")
 ```
 
 ### Sending Signals to Coordinator
@@ -154,7 +154,7 @@ Jido.AgentServer.cast(pid, signal)
 
 ### Subscribing to Client Events
 ```elixir
-JidoCoderLib.PubSub.subscribe(JidoCoderLib.PubSub.client_events_topic())
+Jidoka.PubSub.subscribe(Jidoka.PubSub.client_events_topic())
 # Receives Jido.Signal with type "jido_coder.client.broadcast"
 ```
 
@@ -162,7 +162,7 @@ JidoCoderLib.PubSub.subscribe(JidoCoderLib.PubSub.client_events_topic())
 
 ## Issues Resolved
 
-1. **Missing `:jido` option** - Created `JidoCoderLib.Jido` module and passed to AgentServer
+1. **Missing `:jido` option** - Created `Jidoka.Jido` module and passed to AgentServer
 2. **Wrong API usage** - Fixed `Jido.AgentServer.whereis/1` to `Jido.whereis/2`
 3. **Signal.new! API** - Fixed from keyword to positional arguments
 4. **PubSub dispatch config** - Added `:target` option to PubSub dispatch
@@ -206,8 +206,8 @@ JidoCoderLib.PubSub.subscribe(JidoCoderLib.PubSub.client_events_topic())
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/agents/coordinator_test.exs
-mix test test/jido_coder_lib/agent_supervisor_test.exs
+mix test test/jidoka/agents/coordinator_test.exs
+mix test test/jidoka/agent_supervisor_test.exs
 
 # Format
 mix format

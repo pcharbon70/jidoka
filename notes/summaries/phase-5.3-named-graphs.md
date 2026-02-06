@@ -8,17 +8,17 @@
 
 ## Overview
 
-Implemented high-level API for managing named graphs in the knowledge graph engine. The `JidoCoderLib.Knowledge.NamedGraphs` module provides convenience functions for working with standard named graphs without requiring explicit engine references.
+Implemented high-level API for managing named graphs in the knowledge graph engine. The `Jidoka.Knowledge.NamedGraphs` module provides convenience functions for working with standard named graphs without requiring explicit engine references.
 
 ---
 
 ## Implementation Summary
 
-### Module Created: `JidoCoderLib.Knowledge.NamedGraphs`
+### Module Created: `Jidoka.Knowledge.NamedGraphs`
 
-**Location:** `lib/jido_coder_lib/knowledge/named_graphs.ex`
+**Location:** `lib/jidoka/knowledge/named_graphs.ex`
 
-**Purpose:** High-level API wrapper around `JidoCoderLib.Knowledge.Engine` for named graph management.
+**Purpose:** High-level API wrapper around `Jidoka.Knowledge.Engine` for named graph management.
 
 ### Key Features Implemented
 
@@ -54,13 +54,13 @@ Centralized metadata for four standard named graphs:
 
 Uses configurable default engine name via Application environment:
 - Default: `:knowledge_engine`
-- Configurable via `Application.get_env(:jido_coder_lib, :knowledge_engine_name)`
+- Configurable via `Application.get_env(:jidoka, :knowledge_engine_name)`
 
 ---
 
 ## Tests Created
 
-**Location:** `test/jido_coder_lib/knowledge/named_graphs_test.exs`
+**Location:** `test/jidoka/knowledge/named_graphs_test.exs`
 
 **Total Tests:** 30 tests covering:
 - Graph registry definitions (list, get_info, standard_graph?)
@@ -78,7 +78,7 @@ Uses configurable default engine name via Application environment:
 ## Success Criteria Met
 
 ### Functional Requirements
-- ✅ 5.3.1 Create `JidoCoderLib.Knowledge.NamedGraphs` module
+- ✅ 5.3.1 Create `Jidoka.Knowledge.NamedGraphs` module
 - ✅ 5.3.2 Define `long_term_context` graph metadata
 - ✅ 5.3.3 Define `elixir_codebase` graph metadata
 - ✅ 5.3.4 Define `conversation_history` graph metadata
@@ -118,8 +118,8 @@ Tests that require direct engine operations are skipped to avoid RocksDB lock co
 ## Files Changed
 
 ### Created
-1. `lib/jido_coder_lib/knowledge/named_graphs.ex` - Main NamedGraphs module (350 lines)
-2. `test/jido_coder_lib/knowledge/named_graphs_test.exs` - Test suite (230 lines)
+1. `lib/jidoka/knowledge/named_graphs.ex` - Main NamedGraphs module (350 lines)
+2. `test/jidoka/knowledge/named_graphs_test.exs` - Test suite (230 lines)
 3. `notes/features/phase-5.3-named-graphs.md` - Feature planning document
 4. `notes/summaries/phase-5.3-named-graphs.md` - This file
 
@@ -131,7 +131,7 @@ Tests that require direct engine operations are skipped to avoid RocksDB lock co
 ## Integration Notes
 
 The NamedGraphs module integrates with:
-- **JidoCoderLib.Knowledge.Engine** - For graph operations (create_graph, drop_graph, etc.)
+- **Jidoka.Knowledge.Engine** - For graph operations (create_graph, drop_graph, etc.)
 - **RDF.IRI** - For IRI type handling
 - **Application** - For configuration management
 
@@ -150,6 +150,6 @@ The module uses the default `:knowledge_engine` name which is started by the App
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
-- [Engine Implementation](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [SPARQL Client](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/sparql_client.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
+- [Engine Implementation](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [SPARQL Client](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/sparql_client.ex)

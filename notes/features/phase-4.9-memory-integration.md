@@ -64,23 +64,23 @@ SessionManager
 ### File Locations
 
 **New Files:**
-- `lib/jido_coder_lib/signals/memory.ex` - Memory signal type definitions
-- `lib/jido_coder_lib/memory/integration.ex` - Memory integration helpers
-- `test/jido_coder_lib/signals/memory_test.exs` - Signal tests
+- `lib/jidoka/signals/memory.ex` - Memory signal type definitions
+- `lib/jidoka/memory/integration.ex` - Memory integration helpers
+- `test/jidoka/signals/memory_test.exs` - Signal tests
 
 **Modified Files:**
-- `lib/jido_coder_lib/agents/context_manager.ex` - Add STM integration
-- `lib/jido_coder_lib/session/supervisor.ex` - Add LTM adapter initialization
-- `lib/jido_coder_lib/agents/coordinator/actions/handle_chat_request.ex` - Add memory enrichment
+- `lib/jidoka/agents/context_manager.ex` - Add STM integration
+- `lib/jidoka/session/supervisor.ex` - Add LTM adapter initialization
+- `lib/jidoka/agents/coordinator/actions/handle_chat_request.ex` - Add memory enrichment
 
 ### Dependencies
 
-- `JidoCoderLib.Memory.ShortTerm` - STM structures
-- `JidoCoderLib.Memory.LongTerm.SessionAdapter` - LTM adapter
-- `JidoCoderLib.Memory.Retrieval` - Context enrichment
-- `JidoCoderLib.Memory.PromotionEngine` - STM to LTM promotion
+- `Jidoka.Memory.ShortTerm` - STM structures
+- `Jidoka.Memory.LongTerm.SessionAdapter` - LTM adapter
+- `Jidoka.Memory.Retrieval` - Context enrichment
+- `Jidoka.Memory.PromotionEngine` - STM to LTM promotion
 - `Jido.Signals` - Signal types
-- `JidoCoderLib.PubSub` - Event broadcasting
+- `Jidoka.PubSub` - Event broadcasting
 
 ## Success Criteria
 
@@ -99,7 +99,7 @@ SessionManager
 
 ### Step 1: Define Memory Signal Types
 
-Create `lib/jido_coder_lib/signals/memory.ex` with signal type definitions:
+Create `lib/jidoka/signals/memory.ex` with signal type definitions:
 
 1. **Memory promoted signal** - `jido.memory.promoted`
    - Emitted when item is promoted from STM to LTM
@@ -119,7 +119,7 @@ Create `lib/jido_coder_lib/signals/memory.ex` with signal type definitions:
 
 ### Step 2: Create Memory Integration Helpers
 
-Create `lib/jido_coder_lib/memory/integration.ex` with:
+Create `lib/jidoka/memory/integration.ex` with:
 
 1. **Initialize STM for session**
    - `initialize_stm(session_id, opts)` - Creates STM structures
@@ -135,7 +135,7 @@ Create `lib/jido_coder_lib/memory/integration.ex` with:
 
 ### Step 3: Integrate STM into ContextManager
 
-Update `lib/jido_coder_lib/agents/context_manager.ex`:
+Update `lib/jidoka/agents/context_manager.ex`:
 
 1. **Add STM to state**
    - Add `conversation_buffer`, `working_context` fields
@@ -151,7 +151,7 @@ Update `lib/jido_coder_lib/agents/context_manager.ex`:
 
 ### Step 4: Add LTM to Session Initialization
 
-Update `lib/jido_coder_lib/session/supervisor.ex`:
+Update `lib/jidoka/session/supervisor.ex`:
 
 1. **Add SessionAdapter as child**
    - Start SessionAdapter for each session
@@ -300,8 +300,8 @@ end
 
 ### What Works
 - [x] Feature branch created (`feature/phase-4.9-memory-integration`)
-- [x] Memory signal types created (`lib/jido_coder_lib/signals/memory.ex`)
-- [x] Integration helpers created (`lib/jido_coder_lib/memory/integration.ex`)
+- [x] Memory signal types created (`lib/jidoka/signals/memory.ex`)
+- [x] Integration helpers created (`lib/jidoka/memory/integration.ex`)
 - [x] STM integrated into ContextManager with backward compatibility
 - [x] LTM adapter added to Session.Supervisor (on-demand creation)
 - [x] Tests created and passing (19 integration tests)
@@ -313,6 +313,6 @@ end
 
 ### How to Run Tests
 ```bash
-mix test test/jido_coder_lib/memory/integration_test.exs
-mix test test/jido_coder_lib/signals/memory_test.exs
+mix test test/jidoka/memory/integration_test.exs
+mix test test/jidoka/signals/memory_test.exs
 ```

@@ -10,7 +10,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib project currently exists as a basic Elixir application skeleton with minimal configuration. To implement the full architecture defined in the research documents, we need to:
+The jidoka project currently exists as a basic Elixir application skeleton with minimal configuration. To implement the full architecture defined in the research documents, we need to:
 
 1. Establish the complete directory structure for all system components
 2. Configure the application with proper metadata and all required dependencies
@@ -44,7 +44,7 @@ Update the existing Elixir application to:
 ### Directories to Create
 
 ```
-lib/jido_coder_lib/
+lib/jidoka/
 ├── agents/
 ├── session/
 ├── memory/
@@ -58,7 +58,7 @@ lib/jido_coder_lib/
 │   └── a2a/
 └── signals/
 
-test/jido_coder_lib/
+test/jidoka/
 ├── agents/
 ├── session/
 ├── memory/

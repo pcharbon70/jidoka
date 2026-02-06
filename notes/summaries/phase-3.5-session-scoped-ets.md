@@ -18,8 +18,8 @@ Phase 3.5 implements session-scoped ETS cache operations in the ContextStore, al
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/context_store.ex` | Added session_id parameter to all cache operations |
-| `test/jido_coder_lib/context_store_test.exs` | Added 12 new session-scoped tests |
+| `lib/jidoka/context_store.ex` | Added session_id parameter to all cache operations |
+| `test/jidoka/context_store_test.exs` | Added 12 new session-scoped tests |
 
 ### ETS Table Key Changes
 
@@ -163,14 +163,14 @@ session_id = "session-123"
 file_path = "/lib/user_code.ex"
 content = File.read!(file_path)
 
-JidoCoderLib.ContextStore.cache_file(session_id, file_path, content, %{
+Jidoka.ContextStore.cache_file(session_id, file_path, content, %{
   language: :elixir,
   line_count: 42
 })
 
 # Retrieve the file for that session
 {:ok, {cached_content, _mtime, _size}} =
-  JidoCoderLib.ContextStore.get_file(session_id, file_path)
+  Jidoka.ContextStore.get_file(session_id, file_path)
 ```
 
 ### Analysis Caching
@@ -179,7 +179,7 @@ JidoCoderLib.ContextStore.cache_file(session_id, file_path, content, %{
 # Cache analysis results for a session
 ast_result = analyze_syntax(content)
 
-JidoCoderLib.ContextStore.cache_analysis(
+Jidoka.ContextStore.cache_analysis(
   session_id,
   file_path,
   :syntax_tree,
@@ -188,23 +188,23 @@ JidoCoderLib.ContextStore.cache_analysis(
 
 # Retrieve the analysis
 {:ok, ast} =
-  JidoCoderLib.ContextStore.get_analysis(session_id, file_path, :syntax_tree)
+  Jidoka.ContextStore.get_analysis(session_id, file_path, :syntax_tree)
 ```
 
 ### Session Cleanup
 
 ```elixir
 # When a session terminates, clean up all its cache
-JidoCoderLib.ContextStore.clear_session_cache(session_id)
+Jidoka.ContextStore.clear_session_cache(session_id)
 ```
 
 ### Backward Compatibility
 
 ```elixir
 # Old code continues to work unchanged
-JidoCoderLib.ContextStore.cache_file(path, content)
-JidoCoderLib.ContextStore.cache_file(path, content, metadata)
-{:ok, data} = JidoCoderLib.ContextStore.get_file(path)
+Jidoka.ContextStore.cache_file(path, content)
+Jidoka.ContextStore.cache_file(path, content, metadata)
+{:ok, data} = Jidoka.ContextStore.get_file(path)
 ```
 
 ---
@@ -280,7 +280,7 @@ ContextStore.clear_session_cache(session_id)
 
 - Feature Planning: `notes/features/phase-3.5-session-scoped-ets.md`
 - Main Planning: `notes/planning/01-foundation/phase-03.md`
-- ContextStore: `lib/jido_coder_lib/context_store.ex`
-- Tests: `test/jido_coder_lib/context_store_test.exs`
+- ContextStore: `lib/jidoka/context_store.ex`
+- Tests: `test/jidoka/context_store_test.exs`
 - Phase 3.1: SessionManager implementation
 - Phase 3.4: ContextManager implementation

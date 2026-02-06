@@ -12,8 +12,8 @@ Section 4.2 of the Phase 4 planning document specifies implementation of the Con
 
 ### Existing Implementation (from Phase 4.1)
 
-The `JidoCoderLib.Memory.ShortTerm.ConversationBuffer` module at
-`lib/jido_coder_lib/memory/short_term/conversation_buffer.ex` contains:
+The `Jidoka.Memory.ShortTerm.ConversationBuffer` module at
+`lib/jidoka/memory/short_term/conversation_buffer.ex` contains:
 
 | Requirement | Status | Implementation |
 |------------|--------|----------------|
@@ -27,7 +27,7 @@ The `JidoCoderLib.Memory.ShortTerm.ConversationBuffer` module at
 
 ### Test Coverage
 
-From `test/jido_coder_lib/memory/short_term/conversation_buffer_test.exs`:
+From `test/jidoka/memory/short_term/conversation_buffer_test.exs`:
 - 20 tests covering all ConversationBuffer functionality
 - All tests passing
 

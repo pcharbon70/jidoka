@@ -18,7 +18,7 @@ This document summarizes the work completed to address all blockers, concerns, a
    - This ensures only the owning GenServer can write to these tables, preventing cache poisoning
 
 2. **SecureCredentials Module**
-   - Created new `JidoCoderLib.SecureCredentials` GenServer
+   - Created new `Jidoka.SecureCredentials` GenServer
    - Uses private ETS table for credential storage
    - API key format validation per provider (OpenAI, Anthropic, Google, Cohere)
    - Added to application supervision tree
@@ -99,23 +99,23 @@ All tests pass with no compiler warnings from our code (warnings shown are from 
 ## Files Modified
 
 ### Library Files
-- `lib/jido_coder_lib/application.ex` - Added SecureCredentials, restart config, TelemetryHandlers.attach_all
-- `lib/jido_coder_lib/context_store.ex` - Changed ETS to :protected, moved File.stat!, added @spec
-- `lib/jido_coder_lib/telemetry_handlers.ex` - Changed ETS to :protected, fixed race condition, added @spec
-- `lib/jido_coder_lib/secure_credentials.ex` - New file
-- `lib/jido_coder_lib/config.ex` - Updated to use SecureCredentials, added @spec
-- `lib/jido_coder_lib/agent_registry.ex` - Added key validation, added @spec
-- `lib/jido_coder_lib/topic_registry.ex` - Added key validation, standardized API, added @spec
-- `lib/jido_coder_lib/telemetry.ex` - Added @spec and @type definitions
+- `lib/jidoka/application.ex` - Added SecureCredentials, restart config, TelemetryHandlers.attach_all
+- `lib/jidoka/context_store.ex` - Changed ETS to :protected, moved File.stat!, added @spec
+- `lib/jidoka/telemetry_handlers.ex` - Changed ETS to :protected, fixed race condition, added @spec
+- `lib/jidoka/secure_credentials.ex` - New file
+- `lib/jidoka/config.ex` - Updated to use SecureCredentials, added @spec
+- `lib/jidoka/agent_registry.ex` - Added key validation, added @spec
+- `lib/jidoka/topic_registry.ex` - Added key validation, standardized API, added @spec
+- `lib/jidoka/telemetry.ex` - Added @spec and @type definitions
 
 ### Test Files
-- `test/jido_coder_lib/secure_credentials_test.exs` - New file
-- `test/jido_coder_lib/config_test.exs` - Updated for SecureCredentials
-- `test/jido_coder_lib/topic_registry_test.exs` - Updated key patterns
-- `test/jido_coder_lib/context_store_test.exs` - Updated for :protected ETS
-- `test/jido_coder_lib/integration/phase1_test.exs` - Updated child count, fixed warnings
-- `test/jido_coder_lib/telemetry_handlers_test.exs` - Added handler detachment in setup
-- `test/jido_coder_lib/telemetry_test.exs` - Fixed unused variable
+- `test/jidoka/secure_credentials_test.exs` - New file
+- `test/jidoka/config_test.exs` - Updated for SecureCredentials
+- `test/jidoka/topic_registry_test.exs` - Updated key patterns
+- `test/jidoka/context_store_test.exs` - Updated for :protected ETS
+- `test/jidoka/integration/phase1_test.exs` - Updated child count, fixed warnings
+- `test/jidoka/telemetry_handlers_test.exs` - Added handler detachment in setup
+- `test/jidoka/telemetry_test.exs` - Fixed unused variable
 
 ### Documentation Files
 - `notes/fixes/phase-1-review-fixes.md` - Implementation plan and progress

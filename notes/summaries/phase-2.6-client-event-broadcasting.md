@@ -8,7 +8,7 @@
 
 ## Overview
 
-This phase implemented standardized client event types with schema validation and helper functions. The `JidoCoderLib.ClientEvents` module provides a single source of truth for all client events broadcast through the PubSub system.
+This phase implemented standardized client event types with schema validation and helper functions. The `Jidoka.ClientEvents` module provides a single source of truth for all client events broadcast through the PubSub system.
 
 ---
 
@@ -18,8 +18,8 @@ This phase implemented standardized client event types with schema validation an
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `lib/jido_coder_lib/client_events.ex` | 660 | Event type definitions and helpers |
-| `test/jido_coder_lib/client_events_test.exs` | 370 | Tests for event creation and validation |
+| `lib/jidoka/client_events.ex` | 660 | Event type definitions and helpers |
+| `test/jidoka/client_events_test.exs` | 370 | Tests for event creation and validation |
 
 ### Test Coverage
 
@@ -144,10 +144,10 @@ The module works with existing `Directives.client_broadcast/2` and `Directives.s
 
 ### With Existing Code
 
-- `JidoCoderLib.Agent.Directives.client_broadcast/2` - Used for global broadcasts
-- `JidoCoderLib.Agent.Directives.session_broadcast/4` - Used for session broadcasts
-- `JidoCoderLib.Signals.BroadcastEvent` - CloudEvents signal wrapper
-- `JidoCoderLib.PubSub` - Topic management
+- `Jidoka.Agent.Directives.client_broadcast/2` - Used for global broadcasts
+- `Jidoka.Agent.Directives.session_broadcast/4` - Used for session broadcasts
+- `Jidoka.Signals.BroadcastEvent` - CloudEvents signal wrapper
+- `Jidoka.PubSub` - Topic management
 
 ### Future Integration
 
@@ -165,7 +165,7 @@ The module works with existing `Directives.client_broadcast/2` and `Directives.s
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/client_events_test.exs
+mix test test/jidoka/client_events_test.exs
 
 # Run all tests
 mix test
@@ -179,7 +179,7 @@ mix format
 ## Documentation
 
 All functions include comprehensive `@moduledoc` and `@doc` with examples:
-- `lib/jido_coder_lib/client_events.ex` - Event definitions and helpers
+- `lib/jidoka/client_events.ex` - Event definitions and helpers
 
 Feature document: `notes/features/phase-2.6-client-event-broadcasting.md`
 Planning document: `notes/planning/01-foundation/phase-02.md`

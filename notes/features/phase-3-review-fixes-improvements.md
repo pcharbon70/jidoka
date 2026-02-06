@@ -64,27 +64,27 @@ We'll address each concern and suggestion systematically:
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/session/entry.ex` | SessionEntry struct for ETS |
-| `lib/jido_coder_lib/session/persistence.ex` | Session persistence to disk |
+| `lib/jidoka/session/entry.ex` | SessionEntry struct for ETS |
+| `lib/jidoka/session/persistence.ex` | Session persistence to disk |
 
 ### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Fix kill bug, cleanup, telemetry, timeouts |
-| `lib/jido_coder_lib/agents/context_manager.ex` | Improved error messages |
-| `lib/jido_coder_lib/client.ex` | Remove unused alias, persistence API |
-| `lib/jido_coder_lib/agents/directives.ex` | Remove unused alias |
-| `lib/jido_coder_lib/agents/coordinator/actions/*.ex` | Remove unused aliases |
-| `lib/jido_coder_lib/application.ex` | Add persistence dir to config |
+| `lib/jidoka/agents/session_manager.ex` | Fix kill bug, cleanup, telemetry, timeouts |
+| `lib/jidoka/agents/context_manager.ex` | Improved error messages |
+| `lib/jidoka/client.ex` | Remove unused alias, persistence API |
+| `lib/jidoka/agents/directives.ex` | Remove unused alias |
+| `lib/jidoka/agents/coordinator/actions/*.ex` | Remove unused aliases |
+| `lib/jidoka/application.ex` | Add persistence dir to config |
 
 ### Test Files to Create
 
 | File | Purpose |
 |------|---------|
-| `test/jido_coder_lib/session/entry_test.exs` | SessionEntry struct tests |
-| `test/jido_coder_lib/session/persistence_test.exs` | Persistence tests |
-| `test/jido_coder_lib/agents/session_manager_fixes_test.exs` | Bug fix tests |
+| `test/jidoka/session/entry_test.exs` | SessionEntry struct tests |
+| `test/jidoka/session/persistence_test.exs` | Persistence tests |
+| `test/jidoka/agents/session_manager_fixes_test.exs` | Bug fix tests |
 
 ---
 
@@ -139,14 +139,14 @@ We'll address each concern and suggestion systematically:
 ### Part 2: Suggested Improvements (3.4-3.8)
 
 #### 3.4 Create SessionEntry Struct
-- [ ] 3.4.1 Create `lib/jido_coder_lib/session/entry.ex` module
+- [ ] 3.4.1 Create `lib/jidoka/session/entry.ex` module
 - [ ] 3.4.2 Define SessionEntry struct with state, pid, monitor_ref
 - [ ] 3.4.3 Add validation functions
 - [ ] 3.4.4 Update SessionManager to use SessionEntry
 - [ ] 3.4.5 Add tests for SessionEntry
 
 #### 3.5 Implement Session Persistence
-- [ ] 3.5.1 Create `lib/jido_coder_lib/session/persistence.ex` module
+- [ ] 3.5.1 Create `lib/jidoka/session/persistence.ex` module
 - [ ] 3.5.2 Implement save_session/2 function
 - [ ] 3.5.3 Implement load_session/1 function
 - [ ] 3.5.4 Implement list_saved_sessions/0 function
@@ -224,7 +224,7 @@ Addressed all concerns from the Phase 3 review and implemented key suggested imp
 3. SessionManager continues to rely on DOWN messages from monitoring for actual crash handling
 
 **Files Modified:**
-- `lib/jido_coder_lib/agents/session_manager.ex`
+- `lib/jidoka/agents/session_manager.ex`
 
 ---
 
@@ -237,8 +237,8 @@ Addressed all concerns from the Phase 3 review and implemented key suggested imp
 2. Removed unused `Signal` alias from handle_analysis_complete.ex
 
 **Files Modified:**
-- `lib/jido_coder_lib/client.ex`
-- `lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex`
+- `lib/jidoka/client.ex`
+- `lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex`
 
 ---
 
@@ -252,7 +252,7 @@ Addressed all concerns from the Phase 3 review and implemented key suggested imp
 3. Added safety check for already-cleaned sessions
 
 **Files Modified:**
-- `lib/jido_coder_lib/agents/session_manager.ex`
+- `lib/jidoka/agents/session_manager.ex`
 
 ---
 
@@ -260,7 +260,7 @@ Addressed all concerns from the Phase 3 review and implemented key suggested imp
 
 **Status:** Created but not integrated (requires large refactor)
 
-Created `lib/jido_coder_lib/session/entry.ex` with a struct for session ETS entries including:
+Created `lib/jidoka/session/entry.ex` with a struct for session ETS entries including:
 - `state` - The Session.State struct
 - `pid` - The SessionSupervisor PID
 - `monitor_ref` - The process monitor reference
@@ -286,7 +286,7 @@ Helper functions:
 Implemented file-based session persistence using JSON format.
 
 **Files Created:**
-- `lib/jido_coder_lib/session/persistence.ex`
+- `lib/jidoka/session/persistence.ex`
 
 **API Added to Client:**
 - `save_session/1` - Save session state to disk
@@ -297,7 +297,7 @@ Implemented file-based session persistence using JSON format.
 **Configuration:**
 Add to config:
 ```elixir
-config :jido_coder_lib, :persistence_dir, "./priv/sessions"
+config :jidoka, :persistence_dir, "./priv/sessions"
 ```
 
 **File Format:**
@@ -353,13 +353,13 @@ This is valuable for production monitoring but not required for core functionali
 ## Files Changed
 
 ### Modified Files
-- `lib/jido_coder_lib/agents/session_manager.ex` - Bug fixes, cleanup improvement
-- `lib/jido_coder_lib/client.ex` - Removed unused alias, added persistence API
-- `lib/jido_coder_lib/agents/coordinator/actions/handle_analysis_complete.ex` - Removed unused alias
+- `lib/jidoka/agents/session_manager.ex` - Bug fixes, cleanup improvement
+- `lib/jidoka/client.ex` - Removed unused alias, added persistence API
+- `lib/jidoka/agents/coordinator/actions/handle_analysis_complete.ex` - Removed unused alias
 
 ### New Files
-- `lib/jido_coder_lib/session/entry.ex` - SessionEntry struct (for future integration)
-- `lib/jido_coder_lib/session/persistence.ex` - Session persistence module
+- `lib/jidoka/session/entry.ex` - SessionEntry struct (for future integration)
+- `lib/jidoka/session/persistence.ex` - Session persistence module
 
 ---
 
@@ -381,7 +381,7 @@ This is a straightforward refactor that can be done in a focused PR.
 The default persistence directory is `./priv/sessions`. This can be configured via:
 
 ```elixir
-config :jido_coder_lib, :persistence_dir, "/custom/path"
+config :jidoka, :persistence_dir, "/custom/path"
 ```
 
 Applications should ensure the directory exists and is writable.
@@ -404,5 +404,5 @@ Applications should ensure the directory exists and is writable.
 
 - Review Document: `notes/reviews/phase-3-multi-session-architecture.md`
 - Phase 3 Planning: `notes/planning/01-foundation/phase-03.md`
-- SessionManager: `lib/jido_coder_lib/agents/session_manager.ex`
-- Client API: `lib/jido_coder_lib/client.ex`
+- SessionManager: `lib/jidoka/agents/session_manager.ex`
+- Client API: `lib/jidoka/client.ex`

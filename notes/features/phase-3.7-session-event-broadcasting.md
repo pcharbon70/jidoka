@@ -67,8 +67,8 @@ Already implemented:
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/agents/session_manager.ex` | Add broadcast_session_status helper, call after state transitions |
-| `test/jido_coder_lib/agents/session_manager_test.exs` | Add tests for status event broadcasting |
+| `lib/jidoka/agents/session_manager.ex` | Add broadcast_session_status helper, call after state transitions |
+| `test/jidoka/agents/session_manager_test.exs` | Add tests for status event broadcasting |
 
 ---
 
@@ -157,7 +157,7 @@ end
 ## References
 
 - Planning Document: `notes/planning/01-foundation/phase-03.md`
-- SessionManager: `lib/jido_coder_lib/agents/session_manager.ex`
-- Session.State: `lib/jido_coder_lib/session/state.ex`
-- PubSub: `lib/jido_coder_lib/pubsub.ex`
+- SessionManager: `lib/jidoka/agents/session_manager.ex`
+- Session.State: `lib/jidoka/session/state.ex`
+- PubSub: `lib/jidoka/pubsub.ex`
 - Phase 3.6 Summary: `notes/summaries/phase-3.6-client-api.md`

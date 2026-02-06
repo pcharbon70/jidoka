@@ -1,7 +1,7 @@
 import Config
 
 # Configuration for production environment
-config :jido_coder_lib,
+config :jidoka,
   # Production defaults
   log_level: :info,
 
@@ -20,7 +20,7 @@ config :logger,
 
 # LLM Provider - Production Configuration
 # Note: API keys should be set via environment variables
-config :jido_coder_lib, :llm,
+config :jidoka, :llm,
   # Provider and model must be set via environment variables
   provider:
     System.get_env("LLM_PROVIDER") ||
@@ -45,7 +45,7 @@ config :jido_coder_lib, :llm,
   request_timeout: 120_000
 
 # Knowledge Graph - Production Configuration
-config :jido_coder_lib, :knowledge_graph,
+config :jidoka, :knowledge_graph,
   # Production backend - use remote SPARQL for scalability
   backend: System.get_env("KNOWLEDGE_BACKEND", :remote_sparql),
   # SPARQL endpoint must be set
@@ -63,7 +63,7 @@ config :jido_coder_lib, :knowledge_graph,
   cache_ttl: 600_000
 
 # Session Management - Production Configuration
-config :jido_coder_lib, :session,
+config :jidoka, :session,
   # Production session limits
   max_sessions: System.get_env("MAX_SESSIONS", "1000") |> String.to_integer(),
   # Standard timeouts

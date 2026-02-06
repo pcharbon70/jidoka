@@ -10,7 +10,7 @@ This phase implements the Knowledge Graph Layer with SPARQL client, quad-store e
 
 Create a fully qualified SPARQL client for executing queries and updates against the knowledge graph engine.
 
-- [x] 5.1.1 Create `JidoCoderLib.Knowledge.SPARQLClient` module
+- [x] 5.1.1 Create `Jidoka.Knowledge.SPARQLClient` module
 - [x] 5.1.2 Implement `query/3` for SELECT queries
 - [x] 5.1.3 Implement `query/3` for CONSTRUCT queries
 - [x] 5.1.4 Implement `query/3` for ASK queries
@@ -37,7 +37,7 @@ Create a fully qualified SPARQL client for executing queries and updates against
 Configure and start the quad-store backend for storing RDF quads with named graph support.
 
 - [ ] 5.2.1 Select quad-store implementation (RDF.ex with backend)
-- [ ] 5.2.2 Create `JidoCoderLib.Knowledge.Engine` module
+- [ ] 5.2.2 Create `Jidoka.Knowledge.Engine` module
 - [ ] 5.2.3 Implement `start_link/1` for engine initialization
 - [ ] 5.2.4 Configure named graph support
 - [ ] 5.2.5 Add engine to supervision tree
@@ -59,7 +59,7 @@ Configure and start the quad-store backend for storing RDF quads with named grap
 
 Create and manage the standard named graphs used throughout the system.
 
-- [ ] 5.3.1 Create `JidoCoderLib.Knowledge.NamedGraphs` module
+- [ ] 5.3.1 Create `Jidoka.Knowledge.NamedGraphs` module
 - [ ] 5.3.2 Define `jido:long-term-context` graph for memories
 - [ ] 5.3.3 Define `jido:elixir-codebase` graph for code model
 - [ ] 5.3.4 Define `jido:conversation-history` graph for conversations
@@ -107,7 +107,7 @@ Import the Jido ontology into the knowledge graph for memory type definitions.
 
 Replace the placeholder LTM adapter with full SPARQL-based implementation.
 
-- [ ] 5.5.1 Create `JidoCoderLib.Memory.LongTerm.TripleStoreAdapter` module
+- [ ] 5.5.1 Create `Jidoka.Memory.LongTerm.TripleStoreAdapter` module
 - [ ] 5.5.2 Implement `persist_memory/2` using SPARQL INSERT
 - [ ] 5.5.3 Implement `query_memories/2` using SPARQL SELECT
 - [ ] 5.5.4 Implement `update_memory/2` using SPARQL UPDATE
@@ -131,7 +131,7 @@ Replace the placeholder LTM adapter with full SPARQL-based implementation.
 
 Provide reusable SPARQL query templates for common knowledge operations.
 
-- [ ] 5.6.1 Create `JidoCoderLib.Knowledge.Queries` module
+- [ ] 5.6.1 Create `Jidoka.Knowledge.Queries` module
 - [ ] 5.6.2 Implement `find_facts/2` for fact retrieval
 - [ ] 5.6.3 Implement `find_decisions/2` for decision retrieval
 - [ ] 5.6.4 Implement `find_lessons/2` for lesson retrieval
@@ -155,7 +155,7 @@ Provide reusable SPARQL query templates for common knowledge operations.
 
 Set up the knowledge graph layer on application startup.
 
-- [ ] 5.7.1 Create `JidoCoderLib.Knowledge` supervisor
+- [ ] 5.7.1 Create `Jidoka.Knowledge` supervisor
 - [ ] 5.7.2 Add engine to supervision tree
 - [ ] 5.7.3 Add SPARQL client to supervision tree
 - [ ] 5.7.4 Initialize named graphs on startup
@@ -215,20 +215,20 @@ Comprehensive integration tests verifying the knowledge graph layer.
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/knowledge/sparql_client.ex` - SPARQL client
-- `lib/jido_coder_lib/knowledge/engine.ex` - Quad-store engine
-- `lib/jido_coder_lib/knowledge/named_graphs.ex` - Named graph management
-- `lib/jido_coder_lib/knowledge/queries.ex` - Query helpers
-- `lib/jido_coder_lib/knowledge/supervisor.ex` - Knowledge layer supervisor
-- `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` - LTM with SPARQL
+- `lib/jidoka/knowledge/sparql_client.ex` - SPARQL client
+- `lib/jidoka/knowledge/engine.ex` - Quad-store engine
+- `lib/jidoka/knowledge/named_graphs.ex` - Named graph management
+- `lib/jidoka/knowledge/queries.ex` - Query helpers
+- `lib/jidoka/knowledge/supervisor.ex` - Knowledge layer supervisor
+- `lib/jidoka/memory/long_term/triple_store_adapter.ex` - LTM with SPARQL
 - `priv/ontologies/jido.ttl` - Jido ontology file
-- `test/jido_coder_lib/knowledge/sparql_client_test.exs`
-- `test/jido_coder_lib/knowledge/engine_test.exs`
-- `test/jido_coder_lib/integration/phase5_test.exs`
+- `test/jidoka/knowledge/sparql_client_test.exs`
+- `test/jidoka/knowledge/engine_test.exs`
+- `test/jidoka/integration/phase5_test.exs`
 
 **Modified Files:**
-- `lib/jido_coder_lib/application.ex` - Add Knowledge supervisor
-- `lib/jido_coder_lib/memory/long_term/session_adapter.ex` - Use TripleStoreAdapter
+- `lib/jidoka/application.ex` - Add Knowledge supervisor
+- `lib/jidoka/memory/long_term/session_adapter.ex` - Use TripleStoreAdapter
 - `config/config.exs` - Add knowledge graph configuration
 
 **Dependencies:**

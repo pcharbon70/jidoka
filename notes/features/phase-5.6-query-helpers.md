@@ -27,7 +27,7 @@ The TripleStoreAdapter (Phase 5.5) provides low-level SPARQL operations for memo
 
 ## Solution Overview
 
-Implement `JidoCoderLib.Knowledge.Queries` module with reusable SPARQL query helpers for common knowledge operations.
+Implement `Jidoka.Knowledge.Queries` module with reusable SPARQL query helpers for common knowledge operations.
 
 **Key Design Decisions:**
 
@@ -40,7 +40,7 @@ Implement `JidoCoderLib.Knowledge.Queries` module with reusable SPARQL query hel
 **Architecture:**
 
 ```
-JidoCoderLib.Knowledge.Queries
+Jidoka.Knowledge.Queries
 ├── find_facts/2         - Retrieves all jido:Fact memories
 ├── find_decisions/2     - Retrieves all jido:Decision memories
 ├── find_lessons/2       - Retrieves all jido:LessonLearned memories
@@ -94,18 +94,18 @@ LIMIT 10
 
 ### Module Structure
 
-**Primary Module:** `lib/jido_coder_lib/knowledge/queries.ex`
+**Primary Module:** `lib/jidoka/knowledge/queries.ex`
 
 **Dependencies:**
-- `JidoCoderLib.Knowledge.Engine` - For graph context
-- `JidoCoderLib.Knowledge.SPARQLClient` - For SPARQL operations
-- `JidoCoderLib.Knowledge.NamedGraphs` - For graph IRI resolution
-- `JidoCoderLib.Knowledge.Ontology` - For class IRIs
+- `Jidoka.Knowledge.Engine` - For graph context
+- `Jidoka.Knowledge.SPARQLClient` - For SPARQL operations
+- `Jidoka.Knowledge.NamedGraphs` - For graph IRI resolution
+- `Jidoka.Knowledge.Ontology` - For class IRIs
 
 **API Design:**
 
 ```elixir
-defmodule JidoCoderLib.Knowledge.Queries do
+defmodule Jidoka.Knowledge.Queries do
   @moduledoc """
   Reusable SPARQL query helpers for common knowledge operations.
 
@@ -114,7 +114,7 @@ defmodule JidoCoderLib.Knowledge.Queries do
   with consistent structure.
   """
 
-  alias JidoCoderLib.Knowledge.{Engine, SPARQLClient, Ontology, NamedGraphs}
+  alias Jidoka.Knowledge.{Engine, SPARQLClient, Ontology, NamedGraphs}
 
   # Default engine name
   @default_engine :knowledge_engine
@@ -304,13 +304,13 @@ end
 **Status:** Pending
 
 **Tasks:**
-- [ ] Create `lib/jido_coder_lib/knowledge/queries.ex`
+- [ ] Create `lib/jidoka/knowledge/queries.ex`
 - [ ] Define module structure and documentation
 - [ ] Set up module attributes and constants
 - [ ] Add @spec annotations for all functions
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/queries.ex` (new)
+- `lib/jidoka/knowledge/queries.ex` (new)
 
 ---
 
@@ -326,7 +326,7 @@ end
 - [ ] Support options: session_id, min_confidence, limit, offset
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/queries.ex` (modify)
+- `lib/jidoka/knowledge/queries.ex` (modify)
 
 ---
 
@@ -341,7 +341,7 @@ end
 - [ ] Add validation for session_id parameter
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/queries.ex` (modify)
+- `lib/jidoka/knowledge/queries.ex` (modify)
 
 ---
 
@@ -356,7 +356,7 @@ end
 - [ ] Support all common options
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/queries.ex` (modify)
+- `lib/jidoka/knowledge/queries.ex` (modify)
 
 ---
 
@@ -371,7 +371,7 @@ end
 - [ ] Default limit of 10 results
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/queries.ex` (modify)
+- `lib/jidoka/knowledge/queries.ex` (modify)
 
 ---
 
@@ -386,7 +386,7 @@ end
 - [ ] Handle empty results gracefully
 
 **Files:**
-- `lib/jido_coder_lib/knowledge/queries.ex` (modify)
+- `lib/jidoka/knowledge/queries.ex` (modify)
 
 ---
 
@@ -407,7 +407,7 @@ end
 - [ ] Test empty results handling
 
 **Files:**
-- `test/jido_coder_lib/knowledge/queries_test.exs` (new)
+- `test/jidoka/knowledge/queries_test.exs` (new)
 
 ---
 
@@ -430,7 +430,7 @@ end
 
 ### Completed Work
 
-1. **Queries Module Created** (`lib/jido_coder_lib/knowledge/queries.ex`)
+1. **Queries Module Created** (`lib/jidoka/knowledge/queries.ex`)
    - Type-based queries: `find_facts/1`, `find_decisions/1`, `find_lessons/1`
    - Session-scoped queries: `session_memories/2`
    - Generic type query: `memories_by_type/2`
@@ -438,7 +438,7 @@ end
    - Result parsing from SPARQL to memory maps
    - Options-based filtering (session_id, min_confidence, limit, offset)
 
-2. **Test Suite Created** (`test/jido_coder_lib/knowledge/queries_test.exs`)
+2. **Test Suite Created** (`test/jidoka/knowledge/queries_test.exs`)
    - 24 tests covering all query functions
    - Tests for filtering, pagination, and result parsing
    - Empty results handling tests
@@ -461,7 +461,7 @@ end
 
 ### Success Criteria Status
 
-- ✅ 5.6.1 Create `JidoCoderLib.Knowledge.Queries` module
+- ✅ 5.6.1 Create `Jidoka.Knowledge.Queries` module
 - ✅ 5.6.2 Implement `find_facts/2` for fact retrieval
 - ✅ 5.6.3 Implement `find_decisions/2` for decision retrieval
 - ✅ 5.6.4 Implement `find_lessons/2` for lesson retrieval
@@ -532,9 +532,9 @@ All functions return memory maps with consistent structure:
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
-- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jido_coder_lib/notes/summaries/phase-5.4-jido-ontology.md)
-- [Phase 5.5 TripleStoreAdapter](/home/ducky/code/agentjido/jido_coder_lib/notes/summaries/phase-5.5-triple-store-adapter.md)
-- [Engine Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [SPARQLClient Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/sparql_client.ex)
-- [Ontology Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/ontology.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
+- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jidoka/notes/summaries/phase-5.4-jido-ontology.md)
+- [Phase 5.5 TripleStoreAdapter](/home/ducky/code/agentjido/jidoka/notes/summaries/phase-5.5-triple-store-adapter.md)
+- [Engine Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [SPARQLClient Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/sparql_client.ex)
+- [Ontology Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/ontology.ex)

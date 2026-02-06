@@ -38,7 +38,7 @@ Create a GenServer wrapper around the `elixir-ontologies` library for indexing E
 3. Tracks indexing status via `IndexingStatusTracker`
 4. Provides a convenient GenServer API for on-demand indexing
 
-- [x] 6.2.1 Create `JidoCoderLib.Indexing.CodeIndexer` GenServer
+- [x] 6.2.1 Create `Jidoka.Indexing.CodeIndexer` GenServer
 - [x] 6.2.2 Implement `index_project/1` wrapping `ElixirOntologies.analyze_project/2`
 - [x] 6.2.3 Implement `index_file/2` wrapping `ElixirOntologies.analyze_file/2`
 - [x] 6.2.4 Convert RDF.Graph to triple_store quad format
@@ -108,7 +108,7 @@ Connect the code indexer to file system events for automatic updates.
 
 Provide high-level queries for common codebase questions.
 
-- [x] 6.6.1 Create `JidoCoderLib.Codebase.Queries` module
+- [x] 6.6.1 Create `Jidoka.Codebase.Queries` module
 - [x] 6.6.2 Implement `find_module/2` for module lookup
 - [x] 6.6.3 Implement `find_function/3` for function lookup
 - [x] 6.6.4 Implement `get_call_graph/2` for call graph queries
@@ -187,15 +187,15 @@ Comprehensive integration tests verifying the codebase semantic model.
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/indexing/code_indexer.ex` - Code indexing GenServer (wraps elixir-ontologies)
-- `lib/jido_coder_lib/codebase/queries.ex` - Codebase query interface
-- `test/jido_coder_lib/indexing/code_indexer_test.exs`
-- `test/jido_coder_lib/integration/phase6_test.exs`
+- `lib/jidoka/indexing/code_indexer.ex` - Code indexing GenServer (wraps elixir-ontologies)
+- `lib/jidoka/codebase/queries.ex` - Codebase query interface
+- `test/jidoka/indexing/code_indexer_test.exs`
+- `test/jidoka/integration/phase6_test.exs`
 
 **Modified Files:**
-- `lib/jido_coder_lib/knowledge/named_graphs.ex` - Already has elixir-codebase graph defined
-- `lib/jido_coder_lib/agents/context_manager.ex` - Integrate codebase queries
-- `lib/jido_coder_lib/application.ex` - Add CodeIndexer to supervision
+- `lib/jidoka/knowledge/named_graphs.ex` - Already has elixir-codebase graph defined
+- `lib/jidoka/agents/context_manager.ex` - Integrate codebase queries
+- `lib/jidoka/application.ex` - Add CodeIndexer to supervision
 
 **Dependencies:**
 - Phase 1: Core Foundation

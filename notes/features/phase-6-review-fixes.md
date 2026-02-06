@@ -54,24 +54,24 @@ This fix will address all review findings in priority order:
 ### Files to Modify
 
 **Security Fixes:**
-- `lib/jido_coder_lib/codebase/queries.ex` - Add SPARQL escaping
-- `lib/jido_coder_lib/indexing/code_indexer.ex` - Add path validation and timeouts
-- `lib/jido_coder_lib/agents/codebase_context.ex` - Add escaping and limits
+- `lib/jidoka/codebase/queries.ex` - Add SPARQL escaping
+- `lib/jidoka/indexing/code_indexer.ex` - Add path validation and timeouts
+- `lib/jidoka/agents/codebase_context.ex` - Add escaping and limits
 
 **Resource Limits:**
-- `lib/jido_coder_lib/agents/codebase_context.ex` - Add cache size limits
-- `lib/jido_coder_lib/codebase/queries.ex` - Add query result limits
+- `lib/jidoka/agents/codebase_context.ex` - Add cache size limits
+- `lib/jidoka/codebase/queries.ex` - Add query result limits
 
 **New Modules:**
-- `lib/jido_coder_lib/knowledge/sparql_helpers.ex` - SPARQL escaping and query builder
-- `lib/jido_coder_lib/utils/path_validator.ex` - Path validation utilities
-- `lib/jido_coder_lib/knowledge/context_builder.ex` - Shared context building
+- `lib/jidoka/knowledge/sparql_helpers.ex` - SPARQL escaping and query builder
+- `lib/jidoka/utils/path_validator.ex` - Path validation utilities
+- `lib/jidoka/knowledge/context_builder.ex` - Shared context building
 
 **Tests:**
-- `test/jido_coder_lib/codebase/queries_protocol_test.exs` - Protocol query tests
-- `test/jido_coder_lib/codebase/queries_behaviour_test.exs` - Behaviour query tests
-- `test/jido_coder_lib/codebase/queries_struct_test.exs` - Struct query tests
-- `test/jido_coder_lib/knowledge/sparql_helpers_test.exs` - SPARQL helpers tests
+- `test/jidoka/codebase/queries_protocol_test.exs` - Protocol query tests
+- `test/jidoka/codebase/queries_behaviour_test.exs` - Behaviour query tests
+- `test/jidoka/codebase/queries_struct_test.exs` - Struct query tests
+- `test/jidoka/knowledge/sparql_helpers_test.exs` - SPARQL helpers tests
 
 ---
 
@@ -284,12 +284,12 @@ This fix will address all review findings in priority order:
 mix test
 
 # Run security-focused tests
-mix test test/jido_coder_lib/knowledge/sparql_helpers_test.exs
+mix test test/jidoka/knowledge/sparql_helpers_test.exs
 
 # Run new query tests
-mix test test/jido_coder_lib/codebase/queries_protocol_test.exs
-mix test test/jido_coder_lib/codebase/queries_behaviour_test.exs
-mix test test/jido_coder_lib/codebase/queries_struct_test.exs
+mix test test/jidoka/codebase/queries_protocol_test.exs
+mix test test/jidoka/codebase/queries_behaviour_test.exs
+mix test test/jidoka/codebase/queries_struct_test.exs
 ```
 
 ---

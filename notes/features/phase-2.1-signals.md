@@ -9,7 +9,7 @@
 
 ## Problem Statement
 
-The jido_coder_lib agent system requires a CloudEvents-based signal system for inter-agent communication following the CloudEvents v1.0.2 specification. Without a unified signal system, agents cannot communicate reliably, and client events cannot be properly broadcast to connected clients.
+The jidoka agent system requires a CloudEvents-based signal system for inter-agent communication following the CloudEvents v1.0.2 specification. Without a unified signal system, agents cannot communicate reliably, and client events cannot be properly broadcast to connected clients.
 
 **Impact:**
 - No standard way for agents to send/receive messages
@@ -66,12 +66,12 @@ Implement a CloudEvents-based signal system using Jido 2.0's `Jido.Signal` modul
 
 | File | Purpose |
 |------|---------|
-| `lib/jido_coder_lib/signals.ex` | Convenience module for signal creation/dispatch |
-| `lib/jido_coder_lib/signals/file_changed.ex` | File system event signal |
-| `lib/jido_coder_lib/signals/analysis_complete.ex` | Analysis result signal |
-| `lib/jido_coder_lib/signals/broadcast_event.ex` | Client broadcast signal |
-| `lib/jido_coder_lib/signals/chat_request.ex` | User chat request signal |
-| `test/jido_coder_lib/signals_test.exs` | Comprehensive signal tests |
+| `lib/jidoka/signals.ex` | Convenience module for signal creation/dispatch |
+| `lib/jidoka/signals/file_changed.ex` | File system event signal |
+| `lib/jidoka/signals/analysis_complete.ex` | Analysis result signal |
+| `lib/jidoka/signals/broadcast_event.ex` | Client broadcast signal |
+| `lib/jidoka/signals/chat_request.ex` | User chat request signal |
+| `test/jidoka/signals_test.exs` | Comprehensive signal tests |
 
 ### Dependencies
 
@@ -104,13 +104,13 @@ Implement a CloudEvents-based signal system using Jido 2.0's `Jido.Signal` modul
 ## Implementation Plan
 
 ### Step 1: Create Individual Signal Modules ✅
-- [x] 2.1.1 Create `JidoCoderLib.Signals.FileChanged`
-- [x] 2.1.2 Create `JidoCoderLib.Signals.AnalysisComplete`
-- [x] 2.1.3 Create `JidoCoderLib.Signals.BroadcastEvent`
-- [x] 2.1.4 Create `JidoCoderLib.Signals.ChatRequest`
+- [x] 2.1.1 Create `Jidoka.Signals.FileChanged`
+- [x] 2.1.2 Create `Jidoka.Signals.AnalysisComplete`
+- [x] 2.1.3 Create `Jidoka.Signals.BroadcastEvent`
+- [x] 2.1.4 Create `Jidoka.Signals.ChatRequest`
 
 ### Step 2: Create Convenience Module ✅
-- [x] 2.1.5 Create `JidoCoderLib.Signals` with helper functions
+- [x] 2.1.5 Create `Jidoka.Signals` with helper functions
 - [x] 2.1.6 Implement `create_and_dispatch/3` private helper
 - [x] 2.1.7 Implement `dispatch_signal/1` for PubSub integration
 
@@ -152,7 +152,7 @@ Implement a CloudEvents-based signal system using Jido 2.0's `Jido.Signal` modul
 mix compile
 
 # Run tests
-mix test test/jido_coder_lib/signals_test.exs
+mix test test/jidoka/signals_test.exs
 
 # Format
 mix format

@@ -13,20 +13,20 @@ Successfully implemented the CodeIndexer GenServer as an integration layer aroun
 
 ### Files Created (2 files)
 
-1. **`lib/jido_coder_lib/indexing/code_indexer.ex`** (575 lines)
+1. **`lib/jidoka/indexing/code_indexer.ex`** (575 lines)
    - GenServer wrapper around ElixirOntologies library
    - API functions: `index_project/2`, `index_file/2`, `reindex_file/2`, `remove_file/1`, `get_stats/2`
    - Integrates with IndexingStatusTracker for status tracking
    - Converts RDF.Graph to triple_store quad format
    - Inserts triples into `:elixir_codebase` named graph
 
-2. **`test/jido_coder_lib/indexing/code_indexer_test.exs`** (362 lines)
+2. **`test/jidoka/indexing/code_indexer_test.exs`** (362 lines)
    - Comprehensive test suite with 18 tests
    - 100% test pass rate
 
 ### Files Modified (1 file)
 
-1. **`lib/jido_coder_lib/application.ex`** (+8 lines)
+1. **`lib/jidoka/application.ex`** (+8 lines)
    - Added CodeIndexer to supervision tree
    - Configuration: engine_name, tracker_name
 

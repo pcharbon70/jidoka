@@ -6,13 +6,13 @@
 
 ## Overview
 
-Implemented `JidoCoderLib.Codebase.Queries`, a high-level query interface for the indexed Elixir codebase stored in the `:elixir_codebase` named graph. This module provides convenient functions for querying code structure without writing raw SPARQL.
+Implemented `Jidoka.Codebase.Queries`, a high-level query interface for the indexed Elixir codebase stored in the `:elixir_codebase` named graph. This module provides convenient functions for querying code structure without writing raw SPARQL.
 
 ## Implementation Summary
 
 ### Files Created
 
-1. **`lib/jido_coder_lib/codebase/queries.ex`** (1750+ lines)
+1. **`lib/jidoka/codebase/queries.ex`** (1750+ lines)
    - Module query functions: `find_module/2`, `list_modules/1`, `get_module_details/2`
    - Function query functions: `find_function/4`, `list_functions/2`, `find_functions_by_name/2`
    - Relationship query functions: `get_call_graph/2`, `get_dependencies/2`, `get_dependents/2`
@@ -21,14 +21,14 @@ Implemented `JidoCoderLib.Codebase.Queries`, a high-level query interface for th
    - Struct query functions: `find_struct/2`, `list_structs/1`, `get_struct_fields/2`
    - Utility query functions: `search_by_name/2`, `get_index_stats/1`
 
-2. **`test/jido_coder_lib/codebase/queries_test.exs`** (400 lines)
+2. **`test/jidoka/codebase/queries_test.exs`** (400 lines)
    - 28 comprehensive tests covering all query functions
    - Test fixtures for creating and indexing test modules
    - Graph cleanup helpers for isolated test runs
 
 ### Files Modified
 
-1. **`lib/jido_coder_lib/indexing/code_indexer.ex`**
+1. **`lib/jidoka/indexing/code_indexer.ex`**
    - Fixed `base_iri` configuration - was passing `config: config` but `ElixirOntologies.analyze_file/2` expects individual options
    - Changed to pass individual options: `base_iri:`, `include_source_text:`, `include_git_info:`
    - Removed unused `build_config/1` function

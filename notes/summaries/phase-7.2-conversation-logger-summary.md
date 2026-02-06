@@ -16,9 +16,9 @@ Phase 7.2 implemented the Conversation Logger module that records all interactio
 
 | File | Purpose | Lines |
 |------|---------|-------|
-| `lib/jido_coder_lib/conversation.ex` | Main conversation module header with documentation and type definitions | 56 |
-| `lib/jido_coder_lib/conversation/logger.ex` | Core logging functionality for conversations | 558 |
-| `test/jido_coder_lib/conversation/logger_test.exs` | Comprehensive unit tests for the logger | 148 |
+| `lib/jidoka/conversation.ex` | Main conversation module header with documentation and type definitions | 56 |
+| `lib/jidoka/conversation/logger.ex` | Core logging functionality for conversations | 558 |
+| `test/jidoka/conversation/logger_test.exs` | Comprehensive unit tests for the logger | 148 |
 
 **Total:** 762 lines of new code
 
@@ -26,7 +26,7 @@ Phase 7.2 implemented the Conversation Logger module that records all interactio
 
 ## Implementation Details
 
-### Module: JidoCoderLib.Conversation.Logger
+### Module: Jidoka.Conversation.Logger
 
 The Logger module provides the following public API functions:
 
@@ -160,10 +160,10 @@ triples_content = [
 
 ## Dependencies
 
-- `JidoCoderLib.Knowledge.Engine` - Knowledge graph access
-- `JidoCoderLib.Knowledge.Ontology` - Conversation ontology helpers
-- `JidoCoderLib.Knowledge.NamedGraphs` - Named graph management
-- `JidoCoderLib.Knowledge.Context` - Context building with permit_all
+- `Jidoka.Knowledge.Engine` - Knowledge graph access
+- `Jidoka.Knowledge.Ontology` - Conversation ontology helpers
+- `Jidoka.Knowledge.NamedGraphs` - Named graph management
+- `Jidoka.Knowledge.Context` - Context building with permit_all
 - `TripleStore` - SPARQL update operations
 - `Jason` - JSON encoding for parameters/results
 
@@ -183,7 +183,7 @@ This implementation enables:
 
 ```bash
 # Run logger tests only
-mix test test/jido_coder_lib/conversation/logger_test.exs
+mix test test/jidoka/conversation/logger_test.exs
 
 # Run all tests
 mix test

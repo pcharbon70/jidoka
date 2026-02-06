@@ -19,16 +19,16 @@ Implemented two Elixir Registry instances for process discovery and management:
 
 | File | Lines | Description |
 |------|-------|-------------|
-| `lib/jido_coder_lib/agent_registry.ex` | 181 | Unique key registry wrapper |
-| `lib/jido_coder_lib/topic_registry.ex` | 217 | Duplicate key registry wrapper |
-| `test/jido_coder_lib/agent_registry_test.exs` | 216 | AgentRegistry tests |
-| `test/jido_coder_lib/topic_registry_test.exs` | 338 | TopicRegistry tests |
+| `lib/jidoka/agent_registry.ex` | 181 | Unique key registry wrapper |
+| `lib/jidoka/topic_registry.ex` | 217 | Duplicate key registry wrapper |
+| `test/jidoka/agent_registry_test.exs` | 216 | AgentRegistry tests |
+| `test/jidoka/topic_registry_test.exs` | 338 | TopicRegistry tests |
 
 ## Files Modified
 
 | File | Changes |
 |------|---------|
-| `lib/jido_coder_lib/application.ex` | Added AgentRegistry and TopicRegistry to children |
+| `lib/jidoka/application.ex` | Added AgentRegistry and TopicRegistry to children |
 
 ---
 
@@ -66,9 +66,9 @@ Key pattern: `"topic:<category>:<name>"` (e.g., `"topic:signal:file_changed"`)
 ```elixir
 children = [
   {Phoenix.PubSub, name: :jido_coder_pubsub},
-  {Registry, keys: :unique, name: JidoCoderLib.AgentRegistry},
-  {Registry, keys: :duplicate, name: JidoCoderLib.TopicRegistry},
-  {DynamicSupervisor, name: JidoCoderLib.ProtocolSupervisor, strategy: :one_for_one}
+  {Registry, keys: :unique, name: Jidoka.AgentRegistry},
+  {Registry, keys: :duplicate, name: Jidoka.TopicRegistry},
+  {DynamicSupervisor, name: Jidoka.ProtocolSupervisor, strategy: :one_for_one}
 ]
 ```
 

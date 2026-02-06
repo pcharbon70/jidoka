@@ -24,7 +24,7 @@ Phase 7.1 implements the loading and integration of the Conversation History ont
 
 ### Files Modified
 
-1. **`lib/jido_coder_lib/knowledge/ontology.ex`**
+1. **`lib/jidoka/knowledge/ontology.ex`**
    - Added conversation namespace constant (`@conv_namespace`)
    - Added conversation ontology IRI (`@conv_ontology_iri`)
    - Added conversation classes map (`@conv_classes`) with 6 classes
@@ -38,7 +38,7 @@ Phase 7.1 implements the loading and integration of the Conversation History ont
    - Added 3 class list/helper functions
    - Added 6 individual creator functions
 
-2. **`test/jido_coder_lib/knowledge/ontology_test.exs`**
+2. **`test/jidoka/knowledge/ontology_test.exs`**
    - Added 26 new tests for conversation ontology
    - Tests cover file existence, loading, validation, class helpers, and individual creators
 

@@ -43,10 +43,10 @@ Create a comprehensive integration test suite that exercises all core foundation
 
 ### Test Structure
 
-Integration tests will be placed in `test/jido_coder_lib/integration/` directory:
+Integration tests will be placed in `test/jidoka/integration/` directory:
 
 ```
-test/jido_coder_lib/integration/
+test/jidoka/integration/
 ├── phase1_test.exs          # Main integration test file
 └── test_helper.exs          # Integration test helpers
 ```
@@ -114,7 +114,7 @@ test/jido_coder_lib/integration/
 ## Implementation Plan
 
 ### Step 1: Create Integration Test Structure
-- [ ] Create test/jido_coder_lib/integration/ directory
+- [ ] Create test/jidoka/integration/ directory
 - [ ] Create phase1_test.exs file
 - [ ] Create integration test helpers
 
@@ -176,7 +176,7 @@ test/jido_coder_lib/integration/
 - Reviewed existing unit tests
 
 ### 2025-01-21 - Implementation Complete
-- Created integration test directory: `test/jido_coder_lib/integration/`
+- Created integration test directory: `test/jidoka/integration/`
 - Implemented `phase1_test.exs` with 23 integration tests covering:
   - Application Lifecycle (4 tests) - startup, children verification
   - PubSub Integration (3 tests) - subscribe, broadcast, multiple subscribers

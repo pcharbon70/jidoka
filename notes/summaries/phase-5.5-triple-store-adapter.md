@@ -14,9 +14,9 @@ Implemented SPARQL-based TripleStoreAdapter for long-term memory storage in the 
 
 ## Implementation Summary
 
-### Module Created: `JidoCoderLib.Memory.LongTerm.TripleStoreAdapter`
+### Module Created: `Jidoka.Memory.LongTerm.TripleStoreAdapter`
 
-**Location:** `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex`
+**Location:** `lib/jidoka/memory/long_term/triple_store_adapter.ex`
 
 **Purpose:** SPARQL-based adapter for long-term memory storage in the knowledge graph.
 
@@ -67,7 +67,7 @@ Implemented SPARQL-based TripleStoreAdapter for long-term memory storage in the 
 
 ## Tests Created
 
-**Location:** `test/jido_coder_lib/memory/long_term/triple_store_adapter_test.exs`
+**Location:** `test/jidoka/memory/long_term/triple_store_adapter_test.exs`
 
 **Total Tests:** 42 tests
 
@@ -131,8 +131,8 @@ Implemented SPARQL-based TripleStoreAdapter for long-term memory storage in the 
 ## Files Changed
 
 ### Created
-1. `lib/jido_coder_lib/memory/long_term/triple_store_adapter.ex` - TripleStoreAdapter module (868 lines)
-2. `test/jido_coder_lib/memory/long_term/triple_store_adapter_test.exs` - Test suite (642 lines)
+1. `lib/jidoka/memory/long_term/triple_store_adapter.ex` - TripleStoreAdapter module (868 lines)
+2. `test/jidoka/memory/long_term/triple_store_adapter_test.exs` - Test suite (642 lines)
 3. `notes/features/phase-5.5-triple-store-adapter.md` - Feature planning document
 4. `notes/summaries/phase-5.5-triple-store-adapter.md` - This file
 
@@ -144,11 +144,11 @@ Implemented SPARQL-based TripleStoreAdapter for long-term memory storage in the 
 ## Integration Notes
 
 The TripleStoreAdapter integrates with:
-- **JidoCoderLib.Knowledge.Engine** - For graph context and execution
-- **JidoCoderLib.Knowledge.SPARQLClient** - For SPARQL operations
-- **JidoCoderLib.Knowledge.NamedGraphs** - For graph IRI resolution
-- **JidoCoderLib.Knowledge.Ontology** - For class IRIs and helpers
-- **JidoCoderLib.Memory.Validation** - For input validation
+- **Jidoka.Knowledge.Engine** - For graph context and execution
+- **Jidoka.Knowledge.SPARQLClient** - For SPARQL operations
+- **Jidoka.Knowledge.NamedGraphs** - For graph IRI resolution
+- **Jidoka.Knowledge.Ontology** - For class IRIs and helpers
+- **Jidoka.Memory.Validation** - For input validation
 - **RDF** - For RDF data structures
 
 ### Key Technical Decisions
@@ -193,9 +193,9 @@ The triple_store dependency has known SPARQL parser issues affecting:
 
 ## References
 
-- [Phase 5 Plan](/home/ducky/code/agentjido/jido_coder_lib/notes/planning/01-foundation/phase-05.md)
-- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jido_coder_lib/notes/summaries/phase-5.4-jido-ontology.md)
-- [Engine Implementation](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/engine.ex)
-- [SPARQLClient Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/sparql_client.ex)
-- [Ontology Module](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/knowledge/ontology.ex)
-- [SessionAdapter Implementation](/home/ducky/code/agentjido/jido_coder_lib/lib/jido_coder_lib/memory/long_term/session_adapter.ex)
+- [Phase 5 Plan](/home/ducky/code/agentjido/jidoka/notes/planning/01-foundation/phase-05.md)
+- [Phase 5.4 Jido Ontology](/home/ducky/code/agentjido/jidoka/notes/summaries/phase-5.4-jido-ontology.md)
+- [Engine Implementation](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/engine.ex)
+- [SPARQLClient Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/sparql_client.ex)
+- [Ontology Module](/home/ducky/code/agentjido/jidoka/lib/jidoka/knowledge/ontology.ex)
+- [SessionAdapter Implementation](/home/ducky/code/agentjido/jidoka/lib/jidoka/memory/long_term/session_adapter.ex)

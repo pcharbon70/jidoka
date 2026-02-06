@@ -10,7 +10,7 @@ This phase implements the base agent system including signal definitions, the Co
 
 Define the signal types and routing logic for inter-agent communication following the CloudEvents specification.
 
-- [x] 2.1.1 Create `JidoCoderLib.Signals` module with signal constructors
+- [x] 2.1.1 Create `Jidoka.Signals` module with signal constructors
 - [x] 2.1.2 Define `file_changed/2` signal for file system events
 - [x] 2.1.3 Define `analysis_complete/2` signal for analysis results
 - [x] 2.1.4 Define `broadcast_event/2` signal for client events
@@ -35,7 +35,7 @@ Define the signal types and routing logic for inter-agent communication followin
 
 The Coordinator agent manages inter-agent communication and broadcasts events to subscribed clients.
 
-- [x] 2.2.1 Create `JidoCoderLib.Agents.Coordinator` using `Jido.Agent`
+- [x] 2.2.1 Create `Jidoka.Agents.Coordinator` using `Jido.Agent`
 - [x] 2.2.2 Define agent actions (RouteTask, AggregateFindings, BroadcastEvent)
 - [x] 2.2.3 Define agent schema (active_tasks, pending_broadcasts, event_aggregation)
 - [x] 2.2.4 Implement `start_link/1` with Jido.Agent.Server
@@ -60,7 +60,7 @@ The Coordinator agent manages inter-agent communication and broadcasts events to
 
 Implement a supervisor that manages the lifecycle of global agents (Coordinator, CodeAnalyzer, IssueDetector).
 
-- [x] 2.3.1 Create `JidoCoderLib.AgentSupervisor` using `Supervisor`
+- [x] 2.3.1 Create `Jidoka.AgentSupervisor` using `Supervisor`
 - [x] 2.3.2 Configure `:rest_for_one` strategy for ordered dependencies
 - [x] 2.3.3 Add Coordinator as first child
 - [x] 2.3.4 Add placeholder children for CodeAnalyzer, IssueDetector (pending future agents)
@@ -82,9 +82,9 @@ Implement a supervisor that manages the lifecycle of global agents (Coordinator,
 
 Create shared functionality that all agents can leverage for consistent behavior.
 
-- [x] 2.4.1 Create `JidoCoderLib.Agent` utilities module
-- [x] 2.4.2 Implement `JidoCoderLib.Agent.Directives` for common directive patterns
-- [x] 2.4.3 Implement `JidoCoderLib.Agent.State` for state management utilities
+- [x] 2.4.1 Create `Jidoka.Agent` utilities module
+- [x] 2.4.2 Implement `Jidoka.Agent.Directives` for common directive patterns
+- [x] 2.4.3 Implement `Jidoka.Agent.State` for state management utilities
 - [x] 2.4.4 Implement task ID generation helpers
 - [x] 2.4.5 Implement session validation helpers
 - [x] 2.4.6 Implement client broadcast directive helpers
@@ -120,7 +120,7 @@ Ensure agents can be discovered and communicated with via the Registry.
 
 **Completed:** 2025-01-23
 
-**Note:** Agent registration is handled by Jido 2.0's built-in registry via `Jido.whereis/2` and the existing `JidoCoderLib.AgentRegistry`. This phase added unified discovery helpers that work with both registries.
+**Note:** Agent registration is handled by Jido 2.0's built-in registry via `Jido.whereis/2` and the existing `Jidoka.AgentRegistry`. This phase added unified discovery helpers that work with both registries.
 
 ---
 
@@ -147,7 +147,7 @@ Establish the standard event types that are broadcast to connected clients.
 
 **Completed:** 2025-01-23
 
-**Note:** Created `JidoCoderLib.ClientEvents` module with standardized event type definitions, schema validation, and helper functions. Events are broadcast using existing `Directives.client_broadcast/2` infrastructure.
+**Note:** Created `Jidoka.ClientEvents` module with standardized event type definitions, schema validation, and helper functions. Events are broadcast using existing `Directives.client_broadcast/2` infrastructure.
 
 ---
 
@@ -192,19 +192,19 @@ Comprehensive integration tests verifying the agent layer base functionality.
 ## Critical Files
 
 **New Files:**
-- `lib/jido_coder_lib/signals.ex` - Signal definitions and constructors
-- `lib/jido_coder_lib/agents/coordinator.ex` - Coordinator agent
-- `lib/jido_coder_lib/agents/coordinator_server.ex` - Coordinator server implementation
-- `lib/jido_coder_lib/agent_supervisor.ex` - Agent supervisor
-- `lib/jido_coder_lib/agent.ex` - Base agent behaviour
-- `lib/jido_coder_lib/client_events.ex` - Client event definitions
-- `test/jido_coder_lib/agents/coordinator_test.exs` - Coordinator tests
-- `test/jido_coder_lib/signals_test.exs` - Signal tests
-- `test/jido_coder_lib/integration/phase2_test.exs` - Phase 2 integration tests
+- `lib/jidoka/signals.ex` - Signal definitions and constructors
+- `lib/jidoka/agents/coordinator.ex` - Coordinator agent
+- `lib/jidoka/agents/coordinator_server.ex` - Coordinator server implementation
+- `lib/jidoka/agent_supervisor.ex` - Agent supervisor
+- `lib/jidoka/agent.ex` - Base agent behaviour
+- `lib/jidoka/client_events.ex` - Client event definitions
+- `test/jidoka/agents/coordinator_test.exs` - Coordinator tests
+- `test/jidoka/signals_test.exs` - Signal tests
+- `test/jidoka/integration/phase2_test.exs` - Phase 2 integration tests
 
 **Modified Files:**
-- `lib/jido_coder_lib/application.ex` - Add AgentSupervisor to children
-- `lib/jido_coder_lib/pubsub.ex` - Add agent-specific topic helpers
+- `lib/jidoka/application.ex` - Add AgentSupervisor to children
+- `lib/jidoka/pubsub.ex` - Add agent-specific topic helpers
 - `config/config.exs` - Add agent configuration
 
 **Dependencies:**
