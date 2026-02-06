@@ -9,6 +9,7 @@
                         'Elixir.ElixirOntologies.Analyzer.FileAnalyzer',
                         'Elixir.ElixirOntologies.Analyzer.FileAnalyzer.ModuleAnalysis',
                         'Elixir.ElixirOntologies.Analyzer.FileAnalyzer.Result',
+                        'Elixir.ElixirOntologies.Analyzer.FileCommitMap',
                         'Elixir.ElixirOntologies.Analyzer.FileReader',
                         'Elixir.ElixirOntologies.Analyzer.FileReader.Result',
                         'Elixir.ElixirOntologies.Analyzer.Git',

@@ -93,8 +93,10 @@ defmodule Jidoka.Application do
       Jidoka.Agents.SessionManager,
       # Telemetry event handlers (started manually, not a child process)
       # Jidoka.TelemetryHandlers.attach_all() is called in Application.start
-      # Dynamic supervisor for protocol connections
-      {DynamicSupervisor, name: Jidoka.ProtocolSupervisor, strategy: :one_for_one}
+      # Protocol connections (Phase 8)
+      {DynamicSupervisor, name: Jidoka.ProtocolSupervisor, strategy: :one_for_one},
+      # MCP Connection Supervisor (Phase 8.3)
+      {Jidoka.Protocol.MCP.ConnectionSupervisor, []}
     ]
 
     # Use one_for_one strategy with restart intensity limits

@@ -71,6 +71,15 @@ config :jidoka, :session,
   # Session cleanup interval in milliseconds (1 minute)
   cleanup_interval: 60_000
 
+# MCP (Model Context Protocol) Configuration (Phase 8.3)
+# Configure MCP servers here, e.g.:
+# config :jidoka, :mcp_servers,
+#   filesystem: [
+#     transport: {:stdio, command: "npx -y @modelcontextprotocol/server-filesystem /path/to/allowed"},
+#     name: :mcp_filesystem
+#   ]
+config :jidoka, :mcp_servers, %{}
+
 # Logger Configuration
 config :logger,
   backends: [:console],
