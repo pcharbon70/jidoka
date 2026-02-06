@@ -1,0 +1,262 @@
+{
+  "alias_of": null,
+  "base_url": null,
+  "config_schema": null,
+  "doc": "https://docs.privatemode.ai/api/overview",
+  "env": [
+    "PRIVATEMODE_API_KEY",
+    "PRIVATEMODE_ENDPOINT"
+  ],
+  "exclude_models": null,
+  "extra": null,
+  "id": "privatemode_ai",
+  "models": {
+    "gemma-3-27b": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gemma",
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gemma-3-27b",
+      "knowledge": "2024-08",
+      "last_updated": "2025-03-12",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 8192
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Gemma 3 27B",
+      "provider": "privatemode_ai",
+      "provider_model_id": null,
+      "release_date": "2025-03-12",
+      "tags": null
+    },
+    "gpt-oss-120b": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "gpt-oss",
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gpt-oss-120b",
+      "knowledge": "2025-08",
+      "last_updated": "2025-08-14",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "gpt-oss-120b",
+      "provider": "privatemode_ai",
+      "provider_model_id": null,
+      "release_date": "2025-08-04",
+      "tags": null
+    },
+    "qwen3-coder-30b-a3b": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "qwen",
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "qwen3-coder-30b-a3b",
+      "knowledge": "2025-04",
+      "last_updated": "2025-04",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 32768
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Qwen3-Coder 30B-A3B",
+      "provider": "privatemode_ai",
+      "provider_model_id": null,
+      "release_date": "2025-04",
+      "tags": null
+    },
+    "qwen3-embedding-4b": {
+      "aliases": [],
+      "capabilities": null,
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "qwen",
+        "open_weights": true,
+        "structured_output": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "qwen3-embedding-4b",
+      "knowledge": "2025-06",
+      "last_updated": "2025-06-06",
+      "lifecycle": null,
+      "limits": {
+        "context": 32000,
+        "output": 2560
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Qwen3-Embedding 4B",
+      "provider": "privatemode_ai",
+      "provider_model_id": null,
+      "release_date": "2025-06-06",
+      "tags": null
+    },
+    "whisper-large-v3": {
+      "aliases": [],
+      "capabilities": null,
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "whisper",
+        "open_weights": true,
+        "structured_output": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "whisper-large-v3",
+      "knowledge": "2023-09",
+      "last_updated": "2023-09-01",
+      "lifecycle": null,
+      "limits": {
+        "output": 4096
+      },
+      "modalities": {
+        "input": [
+          "audio"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Whisper large-v3",
+      "provider": "privatemode_ai",
+      "provider_model_id": null,
+      "release_date": "2023-09-01",
+      "tags": null
+    }
+  },
+  "name": "Privatemode AI"
+}

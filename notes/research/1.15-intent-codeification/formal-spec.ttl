@@ -1,0 +1,67 @@
+@prefix : <http://www.example.org/ontology/formal_spec#> .
+@prefix foundational: <http://www.example.org/ontology/foundational#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/ontology/formal_spec> a owl:Ontology ;
+    rdfs:label "Formal Specification Ontology" ;
+    rdfs:comment "Ontology for concepts related to formal specification languages." ;
+    owl:imports <http://www.example.org/ontology/foundational> .
+
+:FormalSpecification a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "Formal Specification" .
+
+:Schema a owl:Class ; # e.g., Z Schema
+    rdfs:subClassOf :FormalSpecification ;
+    rdfs:label "Schema" .
+
+:Module a owl:Class ; # e.g., TLA+ or Alloy Module
+    rdfs:subClassOf :FormalSpecification ;
+    rdfs:label "Module" .
+
+:StateVariable a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "State Variable" .
+
+:Operation a owl:Class ; # e.g., Z Operation, TLA+ Action
+    rdfs:subClassOf foundational:Event ;
+    rdfs:label "Operation" .
+
+:Precondition a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "Precondition" .
+
+:Postcondition a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "Postcondition" .
+
+:Invariant a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "Invariant" .
+
+:definesOperation a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (:Schema :Module) ] ;
+    rdfs:range :Operation ;
+    rdfs:label "defines operation" .
+
+:hasPrecondition a owl:ObjectProperty ;
+    rdfs:domain :Operation ;
+    rdfs:range :Precondition ;
+    rdfs:label "has precondition" .
+
+:hasPostcondition a owl:ObjectProperty ;
+    rdfs:domain :Operation ;
+    rdfs:range :Postcondition ;
+    rdfs:label "has postcondition" .
+
+:maintainsInvariant a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (:Schema :Module :Operation) ] ;
+    rdfs:range :Invariant ;
+    rdfs:label "maintains invariant" .
+
+:hasStateVariable a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (:Schema :Module) ] ;
+    rdfs:range :StateVariable ;
+    rdfs:label "has state variable" .

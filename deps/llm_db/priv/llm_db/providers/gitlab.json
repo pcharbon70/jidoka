@@ -1,0 +1,186 @@
+{
+  "alias_of": null,
+  "base_url": null,
+  "config_schema": null,
+  "doc": "https://docs.gitlab.com/user/duo_agent_platform/",
+  "env": [
+    "GITLAB_TOKEN"
+  ],
+  "exclude_models": null,
+  "extra": null,
+  "id": "gitlab",
+  "models": {
+    "duo-chat-haiku-4-5": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0,
+        "cache_write": 0,
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "claude-haiku",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "duo-chat-haiku-4-5",
+      "knowledge": null,
+      "last_updated": "2026-01-08",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 4096
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Agentic Chat (Claude Haiku 4.5)",
+      "provider": "gitlab",
+      "provider_model_id": null,
+      "release_date": "2026-01-08",
+      "tags": null
+    },
+    "duo-chat-opus-4-5": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0,
+        "cache_write": 0,
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "claude-opus",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "duo-chat-opus-4-5",
+      "knowledge": null,
+      "last_updated": "2026-01-08",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 4096
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Agentic Chat (Claude Opus 4.5)",
+      "provider": "gitlab",
+      "provider_model_id": null,
+      "release_date": "2026-01-08",
+      "tags": null
+    },
+    "duo-chat-sonnet-4-5": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0,
+        "cache_write": 0,
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "claude-sonnet",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "duo-chat-sonnet-4-5",
+      "knowledge": null,
+      "last_updated": "2026-01-08",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 4096
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Agentic Chat (Claude Sonnet 4.5)",
+      "provider": "gitlab",
+      "provider_model_id": null,
+      "release_date": "2026-01-08",
+      "tags": null
+    }
+  },
+  "name": "GitLab Duo"
+}

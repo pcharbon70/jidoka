@@ -1,0 +1,66 @@
+@prefix : <http://www.example.org/ontology/core_se#> .
+@prefix foundational: <http://www.example.org/ontology/foundational#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/ontology/core_se> a owl:Ontology ;
+    rdfs:label "Core Software Engineering Ontology" ;
+    rdfs:comment "Core concepts for Software Engineering." ;
+    owl:imports <http://www.example.org/ontology/foundational> .
+
+:SoftwareArtifact a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "Software Artifact" .
+
+:SoftwareSystem a owl:Class ;
+    rdfs:subClassOf :SoftwareArtifact ;
+    rdfs:label "Software System" .
+
+:SoftwareComponent a owl:Class ;
+    rdfs:subClassOf :SoftwareArtifact ;
+    rdfs:label "Software Component" .
+
+:Requirement a owl:Class ;
+    rdfs:subClassOf foundational:InformationEntity ;
+    rdfs:label "Requirement" .
+
+:FunctionalRequirement a owl:Class ;
+    rdfs:subClassOf :Requirement ;
+    rdfs:label "Functional Requirement" .
+
+:NonFunctionalRequirement a owl:Class ;
+    rdfs:subClassOf :Requirement ;
+    rdfs:label "Non-Functional Requirement" .
+
+:SoftwareProcess a owl:Class ;
+    rdfs:subClassOf foundational:Event ;
+    rdfs:label "Software Process" .
+
+:DevelopmentActivity a owl:Class ;
+    rdfs:subClassOf foundational:Event ;
+    rdfs:label "Development Activity" .
+
+:Stakeholder a owl:Class ;
+    rdfs:subClassOf foundational:Agent ;
+    rdfs:label "Stakeholder" .
+
+:hasSubcomponent a owl:ObjectProperty ;
+    rdfs:domain :SoftwareSystem ;
+    rdfs:range :SoftwareComponent ;
+    rdfs:label "has subcomponent" .
+
+:satisfies a owl:ObjectProperty ;
+    rdfs:domain :SoftwareArtifact ;
+    rdfs:range :Requirement ;
+    rdfs:label "satisfies" .
+
+:elicitedBy a owl:ObjectProperty ;
+    rdfs:domain :Requirement ;
+    rdfs:range :Stakeholder ;
+    rdfs:label "elicited by" .
+
+:specifiesInputFor a owl:ObjectProperty ;
+    rdfs:domain :Requirement ;
+    rdfs:range :DevelopmentActivity ;
+    rdfs:label "specifies input for" .

@@ -1,0 +1,55 @@
+@prefix : <http://www.example.org/ontology/linking_instantiation#> .
+@prefix core_se: <http://www.example.org/ontology/core_se#> .
+@prefix formal_spec: <http://www.example.org/ontology/formal_spec#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/ontology/linking_instantiation> a owl:Ontology ;
+    rdfs:label "Linking and Instantiation Ontology" ;
+    rdfs:comment "Ontology for linking Core SE concepts with Formal Specification concepts." ;
+    owl:imports <http://www.example.org/ontology/core_se> ;
+    owl:imports <http://www.example.org/ontology/formal_spec> .
+
+:formalizedBy a owl:ObjectProperty ;
+    rdfs:domain core_se:Requirement ;
+    rdfs:range formal_spec:FormalSpecification ;
+    rdfs:label "formalized by" ;
+    rdfs:comment "Links a requirement to its formal specification." .
+
+:hasFormalModel a owl:ObjectProperty ;
+    rdfs:domain core_se:SoftwareArtifact ;
+    rdfs:range formal_spec:FormalSpecification ;
+    rdfs:label "has formal model" ;
+    rdfs:comment "A software artifact can have an associated formal model." .
+
+:verifiedBy a owl:ObjectProperty ;
+    rdfs:domain core_se:SoftwareArtifact ;
+    rdfs:range formal_spec:FormalSpecification ;
+    rdfs:label "verified by" ;
+    rdfs:comment "A software artifact can be verified by a formal specification." .
+
+# A more specific linking property for Functional Requirements often mapped to Operations
+:formalizedByOperation a owl:ObjectProperty ;
+    rdfs:subPropertyOf :formalizedBy ;
+    rdfs:domain core_se:FunctionalRequirement ;
+    rdfs:range formal_spec:Operation ;
+    rdfs:label "formalized by operation" .
+
+# A property to link a Formal Specification to the text that defines it (e.g., the Z/TLA+ code itself)
+:hasSpecificationText a owl:DatatypeProperty ;
+    rdfs:domain formal_spec:FormalSpecification ;
+    rdfs:range xsd:string ;
+    rdfs:label "has specification text" .
+
+# A property to link a Pre/Postcondition/Invariant to its logical expression
+:hasLogicalExpression a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (formal_spec:Precondition formal_spec:Postcondition formal_spec:Invariant) ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "has logical expression" .
+
+# A property to link a StateVariable to its type
+:hasVariableType a owl:DatatypeProperty ;
+    rdfs:domain formal_spec:StateVariable ;
+    rdfs:range xsd:string ;
+    rdfs:label "has variable type" .

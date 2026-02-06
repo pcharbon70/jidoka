@@ -1,0 +1,165 @@
+@prefix : <https://jido.ai/ontology/conversation-history#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix jido: <https://jido.ai/ontology#> . # Base URI for Jido ontologies
+# @prefix jido_action: <https://jido.ai/ontology/action#> . # Placeholder if Jido Actions are formally modeled
+
+<https://jido.ai/ontology/conversation-history> a owl:Ontology ;
+    rdfs:label "Jido Conversation History Ontology" ;
+    rdfs:comment "An ontology for representing detailed conversation history within Jido work-sessions, including prompts, tool usage, and answers." ;
+    owl:versionInfo "1.0.0" ;
+    # Consider importing Jido core if WorkSession is directly referenced.
+    # owl:imports <https://jido.ai/ontology/jido-core.ttl> ;
+    .
+
+# --- Core Classes ---
+
+:Conversation a owl:Class ;
+    rdfs:label "Conversation" ;
+    rdfs:comment "Represents a sequence of conversation turns within a specific work-session." ;
+    rdfs:subClassOf jido:MemoryItem ; # A conversation is a type of persistent memory.
+    .
+
+:ConversationTurn a owl:Class ;
+    rdfs:label "Conversation Turn" ;
+    rdfs:comment "A single prompt-answer cycle, including any intermediate tool invocations and their results." ;
+    rdfs:subClassOf jido:MemoryItem ; # Each turn is also a distinct memory item.
+    .
+
+:Prompt a owl:Class ;
+    rdfs:label "Prompt" ;
+    rdfs:comment "The user's input text for a conversation turn." ;
+    .
+
+:Answer a owl:Class ;
+    rdfs:label "Answer" ;
+    rdfs:comment "The assistant's final textual response to a prompt in a conversation turn." ;
+    .
+
+:ToolInvocation a owl:Class ;
+    rdfs:label "Tool Invocation" ;
+    rdfs:comment "Represents a single call to a tool by the assistant during a conversation turn." ;
+    rdfs:subClassOf jido:MemoryItem . # Tool invocations are also memory items.
+
+:ToolResult a owl:Class ;
+    rdfs:label "Tool Result" ;
+    rdfs:comment "Represents the outcome of a tool invocation." ;
+    rdfs:subClassOf jido:MemoryItem . # Tool results are memory items.
+
+# --- Object Properties ---
+
+:associatedWithSession a owl:ObjectProperty ;
+    rdfs:label "associated with session" ;
+    rdfs:comment "Links a conversation to the work-session in which it occurred." ;
+    rdfs:domain :Conversation ;
+    rdfs:range jido:WorkSession ;
+    .
+
+:hasTurn a owl:ObjectProperty ;
+    rdfs:label "has turn" ;
+    rdfs:comment "Links a conversation to one of its constituent turns." ;
+    rdfs:domain :Conversation ;
+    rdfs:range :ConversationTurn ;
+    .
+
+:partOfConversation a owl:ObjectProperty ; # Inverse of hasTurn
+    rdfs:label "part of conversation" ;
+    rdfs:domain :ConversationTurn ;
+    rdfs:range :Conversation ;
+    owl:inverseOf :hasTurn ;
+    .
+
+:hasPrompt a owl:ObjectProperty ;
+    rdfs:label "has prompt" ;
+    rdfs:comment "Links a conversation turn to its user prompt." ;
+    rdfs:domain :ConversationTurn ;
+    rdfs:range :Prompt ;
+    .
+
+:hasAnswer a owl:ObjectProperty ;
+    rdfs:label "has answer" ;
+    rdfs:comment "Links a conversation turn to its final assistant answer." ;
+    rdfs:domain :ConversationTurn ;
+    rdfs:range :Answer ;
+    .
+
+:involvesToolInvocation a owl:ObjectProperty ;
+    rdfs:label "involves tool invocation" ;
+    rdfs:comment "Links a conversation turn to a tool invocation that occurred during it." ;
+    rdfs:domain :ConversationTurn ;
+    rdfs:range :ToolInvocation ;
+    .
+
+:hasResult a owl:ObjectProperty ;
+    rdfs:label "has result" ;
+    rdfs:comment "Links a tool invocation to its result." ;
+    rdfs:domain :ToolInvocation ;
+    rdfs:range :ToolResult ;
+    .
+
+:usesTool a owl:ObjectProperty ;
+    rdfs:label "uses tool" ;
+    rdfs:comment "Links a tool invocation to the definition of the tool that was used." ;
+    rdfs:domain :ToolInvocation ;
+    # The range depends on how Jido models tools/actions.
+    # If Jido.Actions are formalized, that would be ideal.
+    # For now, we can use a generic capability or a string identifier for the tool.
+    # rdfs:range jido:Capability ; # Placeholder, adjust based on Jido's tool model.
+    # If tools are Jido.Actions, and if Jido.Action is a class:
+    # rdfs:range jido:Action ; # Assuming jido:Action exists or is defined.
+    # A pragmatic approach if a formal ontology for tools isn't available:
+    rdfs:range rdfs:Resource ; # Or a specific class for tool identifiers if created.
+    .
+
+# --- Data Properties ---
+
+:promptText a owl:DatatypeProperty ;
+    rdfs:label "prompt text" ;
+    rdfs:comment "The textual content of the user's prompt." ;
+    rdfs:domain :Prompt ;
+    rdfs:range xsd:string ;
+    .
+
+:answerText a owl:DatatypeProperty ;
+    rdfs:label "answer text" ;
+    rdfs:comment "The textual content of the assistant's answer." ;
+    rdfs:domain :Answer ;
+    rdfs:range xsd:string ;
+    .
+
+:invocationParameters a owl:DatatypeProperty ;
+    rdfs:label "invocation parameters" ;
+    rdfs:comment "The parameters passed to the tool during invocation, serialized as a JSON string." ;
+    rdfs:domain :ToolInvocation ;
+    rdfs:range xsd:string ;
+    .
+
+:resultData a owl:DatatypeProperty ;
+    rdfs:label "result data" ;
+    rdfs:comment "The data returned by the tool, serialized as a JSON string." ;
+    rdfs:domain :ToolResult ;
+    rdfs:range xsd:string ;
+    .
+
+:timestamp a owl:DatatypeProperty ;
+    rdfs:label "timestamp" ;
+    rdfs:comment "The timestamp of when an event (prompt, answer, tool invocation, result) occurred." ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :Prompt :Answer :ToolInvocation :ToolResult ) ] ;
+    rdfs:range xsd:dateTime ;
+    .
+
+:turnIndex a owl:DatatypeProperty ;
+    rdfs:label "turn index" ;
+    rdfs:comment "The zero-based index of the conversation turn within its parent conversation, ensuring order." ;
+    rdfs:domain :ConversationTurn ;
+    rdfs:range xsd:integer ;
+    .
+
+:toolName a owl:DatatypeProperty ; # Alternative/Complement to usesTool if tools are simple strings
+    rdfs:label "tool name" ;
+    rdfs:comment "The name or identifier of the tool invoked." ;
+    rdfs:domain :ToolInvocation ;
+    rdfs:range xsd:string ;
+    .

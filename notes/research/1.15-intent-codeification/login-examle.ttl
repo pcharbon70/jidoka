@@ -1,0 +1,90 @@
+@prefix : <http://www.example.org/ontology/instance/example#> .
+@prefix core_se: <http://www.example.org/ontology/core_se#> .
+@prefix formal_spec: <http://www.example.org/ontology/formal_spec#> .
+@prefix linking: <http://www.example.org/ontology/linking_instantiation#> .
+@prefix foundational: <http://www.example.org/ontology/foundational#> . # For foundational types if needed directly
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/ontology/instance/example> a owl:Ontology ;
+    rdfs:label "Example Instance Data for User Login" ;
+    owl:imports <http://www.example.org/ontology/core_se> ;
+    owl:imports <http://www.example.org/ontology/formal_spec> ;
+    owl:imports <http://www.example.org/ontology/linking_instantiation> .
+
+# --- Core SE Instances ---
+:MyApp a core_se:SoftwareSystem ;
+    rdfs:label "My Application" .
+
+:Req_UserLogin a core_se:FunctionalRequirement ;
+    rdfs:label "User Login Requirement" ;
+    rdfs:comment "The system must allow users to authenticate with a username and password." ;
+    linking:formalizedBy :UserLoginSchema .
+
+# --- Formal Specification Instances ---
+:UserLoginSchema a formal_spec:Schema ;
+    rdfs:label "User Login Z-Schema" ;
+    linking:hasSpecificationText """
+    ---- UserLoginSchema ----
+    | username : USERNAME
+    | password : PASSWORD
+    | current_session : SESSION
+    | user_db : USERNAME -> PASSWORD_HASH
+    |----
+    | KnownUser == dom(user_db)
+    -----
+    Login
+    Changed current_session, user_db?
+    username? : USERNAME
+    password? : PASSWORD
+    ---
+    username? dom user_db
+    password? = user_db(username?)
+    current_session' = CreateSession(username?)
+    user_db' = user_db
+    -----
+    """ .
+
+:DoLoginOp a formal_spec:Operation ;
+    rdfs:label "DoLogin Operation" .
+
+:UserExistsPrecond a formal_spec:Precondition ;
+    rdfs:label "User Exists Precondition for Login" ;
+    linking:hasLogicalExpression "username? dom user_db" .
+
+:PasswordCorrectPrecond a formal_spec:Precondition ;
+    rdfs:label "Password Correct Precondition for Login" ;
+    linking:hasLogicalExpression "password? = user_db(username?)" .
+
+:SessionEstablishedPostcond a formal_spec:Postcondition ;
+    rdfs:label "Session Established Postcondition for Login" ;
+    linking:hasLogicalExpression "current_session' = CreateSession(username?)" .
+
+# --- Linking Instances ---
+:UserLoginSchema formal_spec:definesOperation :DoLoginOp .
+:DoLoginOp formal_spec:hasPrecondition :UserExistsPrecond .
+:DoLoginOp formal_spec:hasPrecondition :PasswordCorrectPrecond .
+:DoLoginOp formal_spec:hasPostcondition :SessionEstablishedPostcond .
+
+# --- State Variable Instances (implicitly defined in UserLoginSchema text, could be explicit) ---
+:username_var a formal_spec:StateVariable ;
+    rdfs:label "username state variable" ;
+    linking:hasVariableType "USERNAME" .
+
+:password_var a formal_spec:StateVariable ;
+    rdfs:label "password state variable" ;
+    linking:hasVariableType "PASSWORD" .
+
+:current_session_var a formal_spec:StateVariable ;
+    rdfs:label "current_session state variable" ;
+    linking:hasVariableType "SESSION" .
+
+:user_db_var a formal_spec:StateVariable ;
+    rdfs:label "user_db state variable" ;
+    linking:hasVariableType "USERNAME -> PASSWORD_HASH" .
+
+:UserLoginSchema formal_spec:hasStateVariable :username_var, :password_var, :current_session_var, :user_db_var .
+
+# --- Satisfaction Link ---
+:MyApp core_se:satisfies :Req_UserLogin .

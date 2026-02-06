@@ -1,0 +1,259 @@
+# =============================================================================
+# Jido Core Ontology
+# =============================================================================
+#
+# This ontology defines the core classes and properties for the Jido agentic
+# coding assistant system. It provides semantic structure for memory types,
+# work sessions, and provenance tracking.
+#
+# Version: 1.0.0
+# Created: 2025-01-26
+# License: MIT
+# Namespace: https://jido.ai/ontologies/core#
+#
+# =============================================================================
+
+@prefix jido: <https://jido.ai/ontologies/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# =============================================================================
+# Ontology Declaration
+# =============================================================================
+
+<https://jido.ai/ontologies/core> a owl:Ontology ;
+    owl:versionIRI <https://jido.ai/ontologies/core/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    dc:title "Jido Core Ontology"@en ;
+    dc:description """Core ontology for the Jido agentic coding assistant system.
+    Defines memory types, work sessions, and provenance structures for storing
+    and reasoning about development knowledge."""@en ;
+    dc:creator "Jido Project" ;
+    dc:date "2025-01-26"^^xsd:date ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:abstract """This ontology provides the semantic foundation for Jido's
+    memory system, defining three core memory types (Fact, Decision, LessonLearned)
+    and the WorkSession class that groups memories by development session."""@en .
+
+# =============================================================================
+# Ontology Version Tracking
+# =============================================================================
+
+<https://jido.ai/ontologies/core> dcterms:version "1.0.0"^^xsd:string ;
+    dcterms:modified "2025-01-26"^^xsd:date .
+
+# =============================================================================
+# Memory Classes
+# =============================================================================
+
+# Base class for all memory types
+jido:Memory a owl:Class ;
+    rdfs:label "Memory"@en ;
+    rdfs:comment """Base class for all memory types stored in the long-term
+    context. Memories are information items extracted from work sessions that
+    have lasting value for future development work."""@en ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# Fact - Factual information from work sessions
+jido:Fact a owl:Class ;
+    rdfs:label "Fact"@en ;
+    rdfs:comment """Factual information extracted from work sessions. Facts
+    represent objective truths about the codebase, project structure, or
+    development environment. Examples include module locations, function
+    signatures, configuration values, and architectural decisions that have
+    been implemented."""@en ;
+    rdfs:subClassOf jido:Memory ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty jido:confidence ;
+        owl:someValuesFrom xsd:decimal
+    ] ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# Decision - Decisions made during development
+jido:Decision a owl:Class ;
+    rdfs:label "Decision"@en ;
+    rdfs:comment """Decisions made during development work. Decisions capture
+    the reasoning behind choices, alternatives considered, and the rationale
+    for the final choice. They help future work understand why certain
+    approaches were taken."""@en ;
+    rdfs:subClassOf jido:Memory ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty jido:rationale ;
+        owl:someValuesFrom xsd:string
+    ] ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# Lesson Learned - Lessons from experiences
+jido:LessonLearned a owl:Class ;
+    rdfs:label "Lesson Learned"@en ;
+    rdfs:comment """Lessons learned from experiences and outcomes. Lessons
+    capture insights gained from problems solved, mistakes made, or successful
+    patterns discovered. They form the basis for improved future performance."""@en ;
+    rdfs:subClassOf jido:Memory ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty jido:context ;
+        owl:someValuesFrom xsd:string
+    ] ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# =============================================================================
+# Work Session Class
+# =============================================================================
+
+jido:WorkSession a owl:Class ;
+    rdfs:label "Work Session"@en ;
+    rdfs:comment """Represents a coding work session with associated memories.
+    A work session is a temporal boundary around a period of development work,
+    grouping all memories created during that period. Sessions enable
+    memory retrieval by temporal context and support provenance tracking."""@en ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty jido:sessionId ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty prov:startedAtTime ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# =============================================================================
+# Object Properties
+# =============================================================================
+
+# hasMemory - Links WorkSession to Memory instances
+jido:hasMemory a owl:ObjectProperty ;
+    rdfs:label "has memory"@en ;
+    rdfs:comment """Links a WorkSession to Memory instances created during
+    that session. This is the primary relationship for organizing memories
+    by their temporal origin."""@en ;
+    rdfs:domain jido:WorkSession ;
+    rdfs:range jido:Memory ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# memoryType - Links Memory to its specific type class
+jido:memoryType a owl:ObjectProperty ;
+    rdfs:label "memory type"@en ;
+    rdfs:comment """Indicates the specific type of a Memory instance (Fact,
+    Decision, or LessonLearned). This property enables type-based queries and
+    filtering."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range owl:Class ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# sourceSession - Links Memory to its originating WorkSession
+jido:sourceSession a owl:ObjectProperty ;
+    rdfs:label "source session"@en ;
+    rdfs:comment """Links a Memory to the WorkSession during which it was
+    created. Provides provenance and enables retrieval of all memories from
+    a specific session."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range jido:WorkSession ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# relatedTo - Links related memories
+jido:relatedTo a owl:ObjectProperty ;
+    rdfs:label "related to"@en ;
+    rdfs:comment """Links related memories together. Enables creating
+    networks of related information for better context retrieval."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range jido:Memory ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# =============================================================================
+# Datatype Properties
+# =============================================================================
+
+# sessionId - Unique identifier for WorkSession
+jido:sessionId a owl:DatatypeProperty ;
+    rdfs:label "session ID"@en ;
+    rdfs:comment """Unique identifier for a WorkSession. Typically a UUID
+    or similar unique string."""@en ;
+    rdfs:domain jido:WorkSession ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# content - Textual content of a Memory
+jido:content a owl:DatatypeProperty ;
+    rdfs:label "content"@en ;
+    rdfs:comment """The textual content of a Memory. Contains the actual
+    information being stored (the fact, decision description, or lesson)."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# confidence - Confidence score for Memory
+jido:confidence a owl:DatatypeProperty ;
+    rdfs:label "confidence"@en ;
+    rdfs:comment """Confidence score for a Memory, expressed as a decimal
+    between 0.0 and 1.0. Higher values indicate greater certainty about
+    the memory's accuracy or relevance."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range xsd:decimal ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# timestamp - When a Memory was created
+jido:timestamp a owl:DatatypeProperty ;
+    rdfs:label "timestamp"@en ;
+    rdfs:comment """Timestamp indicating when a Memory was created. Expressed
+    as an xsd:dateTime in UTC."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# rationale - Reasoning behind a Decision
+jido:rationale a owl:DatatypeProperty ;
+    rdfs:label "rationale"@en ;
+    rdfs:comment """The reasoning behind a Decision. Explains why the choice
+    was made, what alternatives were considered, and the factors that
+    influenced the decision."""@en ;
+    rdfs:domain jido:Decision ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# context - Context information for LessonLearned
+jido:context a owl:DatatypeProperty ;
+    rdfs:label "context"@en ;
+    rdfs:comment """Context information for a LessonLearned. Describes the
+    situation or problem that led to the lesson, providing important context
+    for applying the lesson in future situations."""@en ;
+    rdfs:domain jido:LessonLearned ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# tags - Tags for categorizing memories
+jido:tags a owl:DatatypeProperty ;
+    rdfs:label "tags"@en ;
+    rdfs:comment """Tags for categorizing and filtering memories. Stored as
+    a comma-separated string of tag values."""@en ;
+    rdfs:domain jido:Memory ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/core> .
+
+# =============================================================================
+# Named Individuals (Example)
+# =============================================================================
+
+# Example WorkSession (for testing and documentation)
+<https://jido.ai/sessions#example> a jido:WorkSession ;
+    jido:sessionId "example-session-001" ;
+    prov:startedAtTime "2025-01-26T00:00:00Z"^^xsd:dateTime ;
+    prov:endedAtTime "2025-01-26T01:00:00Z"^^xsd:dateTime .
+
+# Example Fact
+<https://jido.ai/memories#fact-example> a jido:Fact ;
+    jido:content "Named graphs segregate triples in the knowledge graph" ;
+    jido:confidence "1.0"^^xsd:decimal ;
+    jido:timestamp "2025-01-26T00:30:00Z"^^xsd:dateTime ;
+    jido:sourceSession <https://jido.ai/sessions#example> .

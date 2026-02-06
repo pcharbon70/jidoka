@@ -1,0 +1,51 @@
+@prefix : <http://www.example.org/ontology/foundational#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/ontology/foundational> a owl:Ontology ;
+    rdfs:label "Foundational Ontology" ;
+    rdfs:comment "A simplified foundational ontology providing base concepts." .
+
+:Object a owl:Class ;
+    rdfs:label "Object" ;
+    rdfs:comment "An endurant entity." .
+
+:Event a owl:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "A perdurant entity; something that happens in time." .
+
+:Agent a owl:Class ;
+    rdfs:subClassOf :Object ;
+    rdfs:label "Agent" ;
+    rdfs:comment "An object that acts." .
+
+:Role a owl:Class ;
+    rdfs:label "Role" ;
+    rdfs:comment "A manner in which an agent participates." .
+
+:InformationEntity a owl:Class ;
+    rdfs:subClassOf :Object ;
+    rdfs:label "Information Entity" ;
+    rdfs:comment "An object that conveys meaning." .
+
+:participatesIn a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Event ;
+    rdfs:label "participates in" .
+
+:hasRole a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Role ;
+    rdfs:label "has role" .
+
+:represents a owl:ObjectProperty ;
+    rdfs:domain :InformationEntity ;
+    rdfs:range :Object ;
+    rdfs:label "represents" .
+
+:hasParticipant a owl:ObjectProperty ;
+    rdfs:domain :Event ;
+    rdfs:range :Agent ;
+    rdfs:label "has participant" ;
+    owl:inverseOf :participatesIn .

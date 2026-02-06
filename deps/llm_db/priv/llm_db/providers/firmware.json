@@ -1,0 +1,1045 @@
+{
+  "alias_of": null,
+  "base_url": null,
+  "config_schema": null,
+  "doc": "https://docs.firmware.ai",
+  "env": [
+    "FIRMWARE_API_KEY"
+  ],
+  "exclude_models": null,
+  "extra": null,
+  "id": "firmware",
+  "models": {
+    "claude-haiku-4-5-20251001": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "claude-haiku",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "claude-haiku-4-5-20251001",
+      "knowledge": "2025-02-28",
+      "last_updated": "2025-10-15",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 64000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Haiku 4.5",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-10-15",
+      "tags": null
+    },
+    "claude-opus-4-5": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "claude-opus",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "claude-opus-4-5",
+      "knowledge": "2025-03-31",
+      "last_updated": "2025-11-24",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 64000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Opus 4.5 (latest)",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-11-24",
+      "tags": null
+    },
+    "claude-sonnet-4-5-20250929": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "claude-sonnet",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "claude-sonnet-4-5-20250929",
+      "knowledge": "2025-07-31",
+      "last_updated": "2025-09-29",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 64000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Sonnet 4.5",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-09-29",
+      "tags": null
+    },
+    "deepseek-chat": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "deepseek",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "deepseek-chat",
+      "knowledge": "2024-07",
+      "last_updated": "2025-09-29",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 8192
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "DeepSeek Chat",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2024-12-26",
+      "tags": null
+    },
+    "deepseek-coder": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "deepseek",
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "deepseek-coder",
+      "knowledge": null,
+      "last_updated": "2024-01-26",
+      "lifecycle": null,
+      "limits": {
+        "context": 16384,
+        "output": 8192
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "DeepSeek Coder",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2024-01-25",
+      "tags": null
+    },
+    "deepseek-reasoner": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "deepseek-thinking",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "deepseek-reasoner",
+      "knowledge": "2024-07",
+      "last_updated": "2025-09-29",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "DeepSeek Reasoner",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-01-20",
+      "tags": null
+    },
+    "gemini-2.5-flash": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gemini-flash",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gemini-2.5-flash",
+      "knowledge": "2025-01",
+      "last_updated": "2025-07-17",
+      "lifecycle": null,
+      "limits": {
+        "context": 1048576,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Gemini 2.5 Flash",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-07-17",
+      "tags": null
+    },
+    "gemini-2.5-pro": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gemini-pro",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gemini-2.5-pro",
+      "knowledge": "2025-01",
+      "last_updated": "2025-06-05",
+      "lifecycle": null,
+      "limits": {
+        "context": 1048576,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Gemini 2.5 Pro",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-03-20",
+      "tags": null
+    },
+    "gemini-3-flash-preview": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gemini-flash",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gemini-3-flash-preview",
+      "knowledge": "2025-01",
+      "last_updated": "2025-12-17",
+      "lifecycle": null,
+      "limits": {
+        "context": 1048576,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Gemini 3 Flash Preview",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-12-17",
+      "tags": null
+    },
+    "gemini-3-pro-preview": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gemini-pro",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gemini-3-pro-preview",
+      "knowledge": "2025-01",
+      "last_updated": "2025-11-18",
+      "lifecycle": null,
+      "limits": {
+        "context": 1000000,
+        "output": 64000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video",
+          "audio",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Gemini 3 Pro Preview",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-11-18",
+      "tags": null
+    },
+    "gpt-4o": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gpt",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gpt-4o",
+      "knowledge": "2023-09",
+      "last_updated": "2024-08-06",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 16384
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT-4o",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2024-05-13",
+      "tags": null
+    },
+    "gpt-5": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gpt",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": false
+      },
+      "family": null,
+      "id": "gpt-5",
+      "knowledge": "2024-09-30",
+      "last_updated": "2025-08-07",
+      "lifecycle": null,
+      "limits": {
+        "context": 400000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT-5",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-08-07",
+      "tags": null
+    },
+    "gpt-5-mini": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0,
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gpt-mini",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": false
+      },
+      "family": null,
+      "id": "gpt-5-mini",
+      "knowledge": "2024-05-30",
+      "last_updated": "2025-08-07",
+      "lifecycle": null,
+      "limits": {
+        "context": 400000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT-5 Mini",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-08-07",
+      "tags": null
+    },
+    "gpt-5-nano": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0,
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gpt-nano",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": false
+      },
+      "family": null,
+      "id": "gpt-5-nano",
+      "knowledge": "2024-05-30",
+      "last_updated": "2025-08-07",
+      "lifecycle": null,
+      "limits": {
+        "context": 400000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT-5 Nano",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-08-07",
+      "tags": null
+    },
+    "gpt-5.2": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "gpt",
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "gpt-5.2",
+      "knowledge": "2025-08-31",
+      "last_updated": "2025-12-11",
+      "lifecycle": null,
+      "limits": {
+        "context": 400000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT-5.2",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-12-11",
+      "tags": null
+    },
+    "grok-4-fast-non-reasoning": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "grok",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "grok-4-fast-non-reasoning",
+      "knowledge": "2025-07",
+      "last_updated": "2025-09-19",
+      "lifecycle": null,
+      "limits": {
+        "context": 2000000,
+        "output": 30000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Grok 4 Fast (Non-Reasoning)",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-09-19",
+      "tags": null
+    },
+    "grok-4-fast-reasoning": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "grok",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "grok-4-fast-reasoning",
+      "knowledge": "2025-07",
+      "last_updated": "2025-09-19",
+      "lifecycle": null,
+      "limits": {
+        "context": 2000000,
+        "output": 30000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Grok 4 Fast (Reasoning)",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-09-19",
+      "tags": null
+    },
+    "grok-code-fast-1": {
+      "aliases": [],
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "grok",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "grok-code-fast-1",
+      "knowledge": "2023-10",
+      "last_updated": "2025-08-28",
+      "lifecycle": null,
+      "limits": {
+        "context": 256000,
+        "output": 10000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Grok Code Fast 1",
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "2025-08-28",
+      "tags": null
+    }
+  },
+  "name": "Firmware"
+}

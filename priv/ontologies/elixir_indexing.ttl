@@ -1,0 +1,270 @@
+# =============================================================================
+# Elixir Indexing Ontology
+# =============================================================================
+#
+# This ontology defines classes and properties for tracking code indexing
+# operations in the Jido system. It extends the Jido Core Ontology with
+# specific concepts for managing the status of codebase indexing operations.
+#
+# Version: 1.0.0
+# Created: 2026-02-02
+# License: MIT
+# Namespace: https://jido.ai/ontologies/elixir-indexing#
+#
+# =============================================================================
+
+@prefix jido_idx: <https://jido.ai/ontologies/elixir-indexing#> .
+@prefix jido: <https://jido.ai/ontologies/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# =============================================================================
+# Ontology Declaration
+# =============================================================================
+
+<https://jido.ai/ontologies/elixir-indexing> a owl:Ontology ;
+    owl:versionIRI <https://jido.ai/ontologies/elixir-indexing/1.0.0> ;
+    owl:versionInfo "1.0.0" ;
+    dc:title "Elixir Indexing Ontology"@en ;
+    dc:description """Ontology for tracking code indexing operations in the Jido
+    system. Defines status tracking for indexing files, projects, and operations."""@en ;
+    dc:creator "Jido Project" ;
+    dc:date "2026-02-02"^^xsd:date ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcterms:abstract """This ontology provides the semantic structure for tracking
+    the status of code indexing operations, including which files have been indexed,
+    when they were last updated, and any errors that occurred during indexing."""@en ;
+    rdfs:seeAlso <https://jido.ai/ontologies/core> .
+
+# =============================================================================
+# Ontology Version Tracking
+# =============================================================================
+
+<https://jido.ai/ontologies/elixir-indexing> dcterms:version "1.0.0"^^xsd:string ;
+    dcterms:modified "2026-02-02"^^xsd:date .
+
+# =============================================================================
+# Indexing Status Classes
+# =============================================================================
+
+# Base class for all indexing statuses
+jido_idx:IndexingStatus a owl:Class ;
+    rdfs:label "Indexing Status"@en ;
+    rdfs:comment """Base class for all indexing status values. Indexing operations
+    progress through different states from pending to completion or failure."""@en ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# Pending - Operation is queued to begin
+jido_idx:Pending a owl:Class ;
+    rdfs:label "Pending"@en ;
+    rdfs:comment """An indexing operation that is queued and waiting to begin.
+    The operation has been registered but not yet started processing."""@en ;
+    rdfs:subClassOf jido_idx:IndexingStatus ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# InProgress - Operation is currently being processed
+jido_idx:InProgress a owl:Class ;
+    rdfs:label "In Progress"@en ;
+    rdfs:comment """An indexing operation that is currently being processed.
+    The file is being parsed, analyzed, and triples are being generated."""@en ;
+    rdfs:subClassOf jido_idx:IndexingStatus ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# Completed - Operation finished successfully
+jido_idx:Completed a owl:Class ;
+    rdfs:label "Completed"@en ;
+    rdfs:comment """An indexing operation that completed successfully. All triples
+    have been generated and persisted to the knowledge graph."""@en ;
+    rdfs:subClassOf jido_idx:IndexingStatus ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# Failed - Operation failed with an error
+jido_idx:Failed a owl:Class ;
+    rdfs:label "Failed"@en ;
+    rdfs:comment """An indexing operation that failed to complete. Contains error
+    information for debugging and potential retry."""@en ;
+    rdfs:subClassOf jido_idx:IndexingStatus ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# =============================================================================
+# Indexing Operation Class
+# =============================================================================
+
+jido_idx:IndexingOperation a owl:Class ;
+    rdfs:label "Indexing Operation"@en ;
+    rdfs:comment """Represents a single file indexing operation. Tracks the status,
+    timing, and results of parsing and indexing a source file into the knowledge
+    graph."""@en ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty jido_idx:filePath ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty jido_idx:hasStatus ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty prov:startedAtTime ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# =============================================================================
+# Project Index Summary Class
+# =============================================================================
+
+jido_idx:ProjectIndex a owl:Class ;
+    rdfs:label "Project Index"@en ;
+    rdfs:comment """Aggregates indexing information for an entire project.
+    Provides summary statistics and overall status for all indexing operations
+    within a project directory."""@en ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# =============================================================================
+# Object Properties
+# =============================================================================
+
+# hasStatus - Links operation to its current status
+jido_idx:hasStatus a owl:ObjectProperty ;
+    rdfs:label "has status"@en ;
+    rdfs:comment """Links an indexing operation to its current status value.
+    The status indicates where the operation is in its lifecycle."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range jido_idx:IndexingStatus ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# forProject - Links operation to its project
+jido_idx:forProject a owl:ObjectProperty ;
+    rdfs:label "for project"@en ;
+    rdfs:comment """Links an indexing operation to the project index it belongs to.
+    Enables grouping operations by project root directory."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range jido_idx:ProjectIndex ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# hasOperation - Links project to its operations
+jido_idx:hasOperation a owl:ObjectProperty ;
+    rdfs:label "has operation"@en ;
+    rdfs:comment """Links a project index to its constituent indexing operations.
+    Inverse of forProject."""@en ;
+    rdfs:domain jido_idx:ProjectIndex ;
+    rdfs:range jido_idx:IndexingOperation ;
+    owl:inverseOf jido_idx:forProject ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# =============================================================================
+# Datatype Properties
+# =============================================================================
+
+# filePath - Path to the file being indexed
+jido_idx:filePath a owl:DatatypeProperty ;
+    rdfs:label "file path"@en ;
+    rdfs:comment """Absolute or relative path to the source file being indexed.
+    This property uniquely identifies the target of the indexing operation."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# projectRoot - Root directory of the project
+jido_idx:projectRoot a owl:DatatypeProperty ;
+    rdfs:label "project root"@en ;
+    rdfs:comment """Root directory path of the project containing the indexed file.
+    Used to group operations by project and for project-level queries."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# tripleCount - Number of triples generated
+jido_idx:tripleCount a owl:DatatypeProperty ;
+    rdfs:label "triple count"@en ;
+    rdfs:comment """Number of RDF triples generated during indexing. Indicates
+    the size/complexity of the indexed code."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# errorMessage - Error message for failed operations
+jido_idx:errorMessage a owl:DatatypeProperty ;
+    rdfs:label "error message"@en ;
+    rdfs:comment """Human-readable error message describing why an indexing
+    operation failed. Only present for operations with Failed status."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# completedAt - When the operation finished
+jido_idx:completedAt a owl:DatatypeProperty ;
+    rdfs:label "completed at"@en ;
+    rdfs:comment """Timestamp indicating when the indexing operation completed
+    (either successfully or with failure). Expressed as xsd:dateTime in UTC."""@en ;
+    rdfs:domain jido_idx:IndexingOperation ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# totalFiles - Total files in project
+jido_idx:totalFiles a owl:DatatypeProperty ;
+    rdfs:label "total files"@en ;
+    rdfs:comment """Total number of files discovered in the project that are
+    candidates for indexing."""@en ;
+    rdfs:domain jido_idx:ProjectIndex ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# indexedFiles - Files successfully indexed
+jido_idx:indexedFiles a owl:DatatypeProperty ;
+    rdfs:label "indexed files"@en ;
+    rdfs:comment """Number of files that have been successfully indexed.
+    Subset of totalFiles."""@en ;
+    rdfs:domain jido_idx:ProjectIndex ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# failedFiles - Files that failed to index
+jido_idx:failedFiles a owl:DatatypeProperty ;
+    rdfs:label "failed files"@en ;
+    rdfs:comment """Number of files that failed to index due to errors.
+    Subset of totalFiles."""@en ;
+    rdfs:domain jido_idx:ProjectIndex ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# lastIndexedAt - Last time any file was indexed
+jido_idx:lastIndexedAt a owl:DatatypeProperty ;
+    rdfs:label "last indexed at"@en ;
+    rdfs:comment """Timestamp of the most recent indexing operation for this
+    project. Indicates freshness of the project index."""@en ;
+    rdfs:domain jido_idx:ProjectIndex ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+# =============================================================================
+# Named Individuals (Status Instances)
+# =============================================================================
+
+# Status instances for use in triples
+jido_idx:status_pending a jido_idx:Pending ;
+    rdfs:label "Pending Status"@en ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+jido_idx:status_in_progress a jido_idx:InProgress ;
+    rdfs:label "In Progress Status"@en ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+jido_idx:status_completed a jido_idx:Completed ;
+    rdfs:label "Completed Status"@en ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
+
+jido_idx:status_failed a jido_idx:Failed ;
+    rdfs:label "Failed Status"@en ;
+    rdfs:isDefinedBy <https://jido.ai/ontologies/elixir-indexing> .
