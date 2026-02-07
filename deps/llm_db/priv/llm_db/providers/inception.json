@@ -12,6 +12,7 @@
   "models": {
     "mercury": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -62,6 +63,7 @@
       },
       "model": null,
       "name": "Mercury",
+      "pricing": null,
       "provider": "inception",
       "provider_model_id": null,
       "release_date": "2025-06-26",
@@ -69,6 +71,7 @@
     },
     "mercury-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -119,11 +122,13 @@
       },
       "model": null,
       "name": "Mercury Coder",
+      "pricing": null,
       "provider": "inception",
       "provider_model_id": null,
       "release_date": "2025-02-26",
       "tags": null
     }
   },
-  "name": "Inception"
+  "name": "Inception",
+  "pricing_defaults": null
 }

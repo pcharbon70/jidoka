@@ -200,7 +200,11 @@ defmodule ReqLLM.Providers.Anthropic do
 
   defp prepare_json_schema_request(model_spec, prompt, compiled_schema, opts) do
     json_schema = ReqLLM.Schema.to_json(compiled_schema.schema)
-    json_schema = enforce_strict_schema_requirements(json_schema)
+
+    json_schema =
+      json_schema
+      |> strip_constraints_recursive()
+      |> enforce_strict_schema_requirements()
 
     opts_with_format =
       opts
@@ -233,7 +237,11 @@ defmodule ReqLLM.Providers.Anthropic do
   @spec prepare_strict_tool_request(LLMDB.Model.t() | String.t(), any(), any(), keyword()) ::
           {:ok, Req.Request.t()} | {:error, any()}
   defp prepare_strict_tool_request(model_spec, prompt, compiled_schema, opts) do
-    schema = enforce_strict_schema_requirements(compiled_schema.schema)
+    schema =
+      compiled_schema.schema
+      |> ReqLLM.Schema.to_json()
+      |> strip_constraints_recursive()
+      |> enforce_strict_schema_requirements()
 
     case ReqLLM.Tool.new(
            name: "structured_output",
@@ -310,12 +318,32 @@ defmodule ReqLLM.Providers.Anthropic do
   @impl ReqLLM.Provider
   def extract_usage(body, _model) when is_map(body) do
     case body do
-      %{"usage" => usage} -> {:ok, usage}
-      _ -> {:error, :no_usage_found}
+      %{"usage" => usage} ->
+        usage = maybe_add_anthropic_tool_usage(usage)
+        {:ok, usage}
+
+      _ ->
+        {:error, :no_usage_found}
     end
   end
 
   def extract_usage(_, _), do: {:error, :invalid_body}
+
+  defp maybe_add_anthropic_tool_usage(usage) when is_map(usage) do
+    server_tool_use = Map.get(usage, "server_tool_use") || Map.get(usage, :server_tool_use) || %{}
+
+    web_search =
+      Map.get(server_tool_use, "web_search_requests") ||
+        Map.get(server_tool_use, :web_search_requests)
+
+    if is_number(web_search) and web_search > 0 do
+      Map.put(usage, :tool_usage, ReqLLM.Usage.Tool.build(:web_search, web_search))
+    else
+      usage
+    end
+  end
+
+  defp maybe_add_anthropic_tool_usage(usage), do: usage
 
   # ========================================================================
   # Shared Request Building Helpers (used by both Req and Finch paths)
@@ -1220,6 +1248,26 @@ defmodule ReqLLM.Providers.Anthropic do
   end
 
   defp enforce_strict_schema_requirements(schema), do: schema
+
+  defp strip_constraints_recursive(schema) when is_map(schema) do
+    schema
+    |> Map.drop(["minimum", "maximum", "minLength", "maxLength"])
+    |> Map.new(fn
+      {"properties", props} when is_map(props) ->
+        {"properties", Map.new(props, fn {k, v} -> {k, strip_constraints_recursive(v)} end)}
+
+      {"items", items} when is_map(items) ->
+        {"items", strip_constraints_recursive(items)}
+
+      {k, v} when is_map(v) ->
+        {k, strip_constraints_recursive(v)}
+
+      {k, v} ->
+        {k, v}
+    end)
+  end
+
+  defp strip_constraints_recursive(value), do: value
 
   defp maybe_add_output_format(body, opts) do
     provider_opts = get_option(opts, :provider_options, [])

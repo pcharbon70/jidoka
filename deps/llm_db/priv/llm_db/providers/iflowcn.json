@@ -12,6 +12,7 @@
   "models": {
     "deepseek-r1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "DeepSeek-R1",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -67,6 +69,7 @@
     },
     "deepseek-v3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2024-12-26",
@@ -122,6 +126,7 @@
     },
     "deepseek-v3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,6 +175,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3.2-Exp",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -177,6 +183,7 @@
     },
     "glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -225,6 +232,7 @@
       },
       "model": null,
       "name": "GLM-4.6",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -232,6 +240,7 @@
     },
     "kimi-k2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -280,6 +289,7 @@
       },
       "model": null,
       "name": "Kimi-K2",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -287,6 +297,7 @@
     },
     "kimi-k2-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -335,6 +346,7 @@
       },
       "model": null,
       "name": "Kimi-K2-0905",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -342,6 +354,7 @@
     },
     "qwen3-235b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -390,6 +403,7 @@
       },
       "model": null,
       "name": "Qwen3-235B-A22B",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -397,6 +411,7 @@
     },
     "qwen3-235b-a22b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -445,6 +460,7 @@
       },
       "model": null,
       "name": "Qwen3-235B-A22B-Instruct",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-07-01",
@@ -452,6 +468,7 @@
     },
     "qwen3-235b-a22b-thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -500,6 +517,7 @@
       },
       "model": null,
       "name": "Qwen3-235B-A22B-Thinking",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-07-01",
@@ -507,6 +525,7 @@
     },
     "qwen3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -555,6 +574,7 @@
       },
       "model": null,
       "name": "Qwen3-32B",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -562,6 +582,7 @@
     },
     "qwen3-coder-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -610,6 +631,7 @@
       },
       "model": null,
       "name": "Qwen3-Coder-Plus",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-07-01",
@@ -617,6 +639,7 @@
     },
     "qwen3-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -665,6 +688,7 @@
       },
       "model": null,
       "name": "Qwen3-Max",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -672,6 +696,7 @@
     },
     "qwen3-max-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -720,6 +745,7 @@
       },
       "model": null,
       "name": "Qwen3-Max-Preview",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -727,6 +753,7 @@
     },
     "qwen3-vl-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -776,11 +803,13 @@
       },
       "model": null,
       "name": "Qwen3-VL-Plus",
+      "pricing": null,
       "provider": "iflowcn",
       "provider_model_id": null,
       "release_date": "2025-01-01",
       "tags": null
     }
   },
-  "name": "iFlow"
+  "name": "iFlow",
+  "pricing_defaults": null
 }

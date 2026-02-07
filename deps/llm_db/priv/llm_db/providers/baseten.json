@@ -12,6 +12,7 @@
   "models": {
     "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "baseten",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -67,6 +69,7 @@
     },
     "deepseek-ai/DeepSeek-V3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -118,6 +121,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.2",
+      "pricing": null,
       "provider": "baseten",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -125,6 +129,7 @@
     },
     "moonshotai/Kimi-K2-Instruct-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -173,6 +178,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct 0905",
+      "pricing": null,
       "provider": "baseten",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -180,6 +186,7 @@
     },
     "moonshotai/Kimi-K2-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -231,6 +238,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "baseten",
       "provider_model_id": null,
       "release_date": "2025-11-06",
@@ -238,6 +246,7 @@
     },
     "zai-org/GLM-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -286,6 +295,7 @@
       },
       "model": null,
       "name": "GLM 4.6",
+      "pricing": null,
       "provider": "baseten",
       "provider_model_id": null,
       "release_date": "2025-09-16",
@@ -293,6 +303,7 @@
     },
     "zai-org/GLM-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -344,11 +355,13 @@
       },
       "model": null,
       "name": "GLM-4.7",
+      "pricing": null,
       "provider": "baseten",
       "provider_model_id": null,
       "release_date": "2025-12-22",
       "tags": null
     }
   },
-  "name": "Baseten"
+  "name": "Baseten",
+  "pricing_defaults": null
 }

@@ -12,6 +12,7 @@
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Instruct 2507",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -67,6 +69,7 @@
     },
     "Qwen/Qwen3-235B-A22B-Thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Thinking 2507",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -122,6 +126,7 @@
     },
     "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,6 +175,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -177,6 +183,7 @@
     },
     "deepseek-ai/DeepSeek-R1-0528": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -225,6 +232,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 0528",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -232,6 +240,7 @@
     },
     "deepseek-ai/DeepSeek-V3-0324": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -280,6 +289,7 @@
       },
       "model": null,
       "name": "DeepSeek V3 0324",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -287,6 +297,7 @@
     },
     "deepseek-ai/DeepSeek-V3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -335,6 +346,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -342,6 +354,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -390,6 +403,7 @@
       },
       "model": null,
       "name": "GPT OSS 120B",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-08-23",
@@ -397,6 +411,7 @@
     },
     "zai-org/GLM-4.5-Air": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -445,6 +460,7 @@
       },
       "model": null,
       "name": "GLM 4.5 Air",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -452,6 +468,7 @@
     },
     "zai-org/GLM-4.5-FP8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -500,11 +517,13 @@
       },
       "model": null,
       "name": "GLM 4.5 FP8",
+      "pricing": null,
       "provider": "submodel",
       "provider_model_id": null,
       "release_date": "2025-07-28",
       "tags": null
     }
   },
-  "name": "submodel"
+  "name": "submodel",
+  "pricing_defaults": null
 }

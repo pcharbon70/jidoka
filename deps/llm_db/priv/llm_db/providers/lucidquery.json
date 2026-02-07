@@ -12,6 +12,7 @@
   "models": {
     "lucidnova-rf1-100b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "LucidNova RF1 100B",
+      "pricing": null,
       "provider": "lucidquery",
       "provider_model_id": null,
       "release_date": "2024-12-28",
@@ -67,6 +69,7 @@
     },
     "lucidquery-nexus-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,11 +118,13 @@
       },
       "model": null,
       "name": "LucidQuery Nexus Coder",
+      "pricing": null,
       "provider": "lucidquery",
       "provider_model_id": null,
       "release_date": "2025-09-01",
       "tags": null
     }
   },
-  "name": "LucidQuery AI"
+  "name": "LucidQuery AI",
+  "pricing_defaults": null
 }

@@ -12,6 +12,7 @@
   "models": {
     "baichuan/baichuan-m2-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.07,
@@ -44,6 +45,7 @@
       },
       "model": null,
       "name": "baichuan-m2-32b",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-08-13",
@@ -51,6 +53,7 @@
     },
     "baidu/ernie-4.5-21B-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -99,6 +102,7 @@
       },
       "model": null,
       "name": "ERNIE 4.5 21B A3B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-06-30",
@@ -106,6 +110,7 @@
     },
     "baidu/ernie-4.5-21B-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -158,6 +163,7 @@
       },
       "model": null,
       "name": "ERNIE-4.5-21B-A3B-Thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -165,6 +171,7 @@
     },
     "baidu/ernie-4.5-300b-a47b-paddle": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.28,
@@ -196,6 +203,7 @@
       },
       "model": null,
       "name": "ERNIE 4.5 300B A47B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-06-30",
@@ -203,6 +211,7 @@
     },
     "baidu/ernie-4.5-vl-28b-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -251,6 +260,7 @@
       },
       "model": null,
       "name": "ERNIE 4.5 VL 28B A3B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-06-30",
@@ -258,6 +268,7 @@
     },
     "baidu/ernie-4.5-vl-28b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -308,6 +319,7 @@
       },
       "model": null,
       "name": "ERNIE-4.5-VL-28B-A3B-Thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-11-26",
@@ -315,6 +327,7 @@
     },
     "baidu/ernie-4.5-vl-424b-a47b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -367,6 +380,7 @@
       },
       "model": null,
       "name": "ERNIE 4.5 VL 424B A47B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-06-30",
@@ -374,6 +388,7 @@
     },
     "deepseek/deepseek-ocr": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.03,
@@ -406,13 +421,54 @@
       },
       "model": null,
       "name": "DeepSeek-OCR",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-24",
       "tags": null
     },
+    "deepseek/deepseek-ocr-2": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": null,
+      "cost": {
+        "input": 0.03,
+        "output": 0.03
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": true
+      },
+      "family": null,
+      "id": "deepseek/deepseek-ocr-2",
+      "knowledge": null,
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 8192,
+        "output": 8192
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "deepseek/deepseek-ocr-2",
+      "pricing": null,
+      "provider": "novita_ai",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
     "deepseek/deepseek-prover-v2-671b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.7,
@@ -443,6 +499,7 @@
       },
       "model": null,
       "name": "Deepseek Prover V2 671B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-30",
@@ -450,6 +507,7 @@
     },
     "deepseek/deepseek-r1-0528": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -500,6 +558,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 0528",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-05-28",
@@ -507,6 +566,7 @@
     },
     "deepseek/deepseek-r1-0528-qwen3-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -558,6 +618,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 0528 Qwen3 8B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-05-29",
@@ -565,6 +626,7 @@
     },
     "deepseek/deepseek-r1-distill-llama-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -618,6 +680,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 Distill LLama 70B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-01-27",
@@ -625,6 +688,7 @@
     },
     "deepseek/deepseek-r1-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -672,6 +736,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 (Turbo)\t",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-03-05",
@@ -679,6 +744,7 @@
     },
     "deepseek/deepseek-v3-0324": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -729,6 +795,7 @@
       },
       "model": null,
       "name": "DeepSeek V3 0324",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-03-25",
@@ -736,6 +803,7 @@
     },
     "deepseek/deepseek-v3-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -783,6 +851,7 @@
       },
       "model": null,
       "name": "DeepSeek V3 (Turbo)\t",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-03-05",
@@ -790,6 +859,7 @@
     },
     "deepseek/deepseek-v3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -840,6 +910,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-08-21",
@@ -847,6 +918,7 @@
     },
     "deepseek/deepseek-v3.1-terminus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -897,6 +969,7 @@
       },
       "model": null,
       "name": "Deepseek V3.1 Terminus",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-22",
@@ -904,6 +977,7 @@
     },
     "deepseek/deepseek-v3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -957,6 +1031,7 @@
       },
       "model": null,
       "name": "Deepseek V3.2",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -964,6 +1039,7 @@
     },
     "deepseek/deepseek-v3.2-exp": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1012,6 +1088,7 @@
       },
       "model": null,
       "name": "Deepseek V3.2 Exp",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -1019,6 +1096,7 @@
     },
     "google/gemma-3-27b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.119,
@@ -1051,6 +1129,7 @@
       },
       "model": null,
       "name": "Gemma 3 27B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-03-25",
@@ -1058,6 +1137,7 @@
     },
     "gryphe/mythomax-l2-13b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.09,
@@ -1088,6 +1168,7 @@
       },
       "model": null,
       "name": "Mythomax L2 13B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-04-25",
@@ -1095,6 +1176,7 @@
     },
     "kwaipilot/kat-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1143,6 +1225,7 @@
       },
       "model": null,
       "name": "KAT-Coder-Pro V1(Free)",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -1150,6 +1233,7 @@
     },
     "kwaipilot/kat-coder-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1199,6 +1283,7 @@
       },
       "model": null,
       "name": "Kat Coder Pro",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2026-01-05",
@@ -1206,6 +1291,7 @@
     },
     "meta-llama/llama-3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.51,
@@ -1238,6 +1324,7 @@
       },
       "model": null,
       "name": "Llama3 70B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-04-25",
@@ -1245,6 +1332,7 @@
     },
     "meta-llama/llama-3-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.04,
@@ -1276,6 +1364,7 @@
       },
       "model": null,
       "name": "Llama 3 8B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-04-25",
@@ -1283,6 +1372,7 @@
     },
     "meta-llama/llama-3.1-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -1314,6 +1404,7 @@
       },
       "model": null,
       "name": "Llama 3.1 8B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-07-24",
@@ -1321,6 +1412,7 @@
     },
     "meta-llama/llama-3.3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1369,6 +1461,7 @@
       },
       "model": null,
       "name": "Llama 3.3 70B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-12-07",
@@ -1376,6 +1469,7 @@
     },
     "meta-llama/llama-4-maverick-17b-128e-instruct-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.27,
@@ -1407,6 +1501,7 @@
       },
       "model": null,
       "name": "Llama 4 Maverick Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-06",
@@ -1414,6 +1509,7 @@
     },
     "meta-llama/llama-4-scout-17b-16e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.18,
@@ -1445,6 +1541,7 @@
       },
       "model": null,
       "name": "Llama 4 Scout Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-06",
@@ -1452,6 +1549,7 @@
     },
     "microsoft/wizardlm-2-8x22b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.62,
@@ -1482,6 +1580,7 @@
       },
       "model": null,
       "name": "Wizardlm 2 8x22B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-04-24",
@@ -1489,6 +1588,7 @@
     },
     "minimax/minimax-m2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1541,6 +1641,7 @@
       },
       "model": null,
       "name": "MiniMax-M2",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-27",
@@ -1548,6 +1649,7 @@
     },
     "minimax/minimax-m2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1601,6 +1703,7 @@
       },
       "model": null,
       "name": "Minimax M2.1",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-12-23",
@@ -1608,6 +1711,7 @@
     },
     "minimaxai/minimax-m1-80k": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1656,6 +1760,7 @@
       },
       "model": null,
       "name": "MiniMax M1",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -1663,6 +1768,7 @@
     },
     "mistralai/mistral-nemo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.04,
@@ -1695,6 +1801,7 @@
       },
       "model": null,
       "name": "Mistral Nemo",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-07-30",
@@ -1702,6 +1809,7 @@
     },
     "moonshotai/kimi-k2-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1751,6 +1859,7 @@
       },
       "model": null,
       "name": "Kimi K2 0905",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -1758,6 +1867,7 @@
     },
     "moonshotai/kimi-k2-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1806,6 +1916,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-07-11",
@@ -1813,6 +1924,7 @@
     },
     "moonshotai/kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1865,13 +1977,79 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-11-07",
       "tags": null
     },
+    "moonshotai/kimi-k2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.1,
+        "input": 0.6,
+        "output": 3
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "kimi",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "moonshotai/kimi-k2.5",
+      "knowledge": "2025-01",
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2.5",
+      "pricing": null,
+      "provider": "novita_ai",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
     "nousresearch/hermes-2-pro-llama-3-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.14,
@@ -1903,6 +2081,7 @@
       },
       "model": null,
       "name": "Hermes 2 Pro Llama 3 8B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-06-27",
@@ -1910,6 +2089,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1959,6 +2139,7 @@
       },
       "model": null,
       "name": "OpenAI GPT OSS 120B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-08-06",
@@ -1966,6 +2147,7 @@
     },
     "openai/gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2019,6 +2201,7 @@
       },
       "model": null,
       "name": "OpenAI: GPT OSS 20B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-08-06",
@@ -2026,6 +2209,7 @@
     },
     "paddlepaddle/paddleocr-vl": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -2057,6 +2241,7 @@
       },
       "model": null,
       "name": "PaddleOCR-VL",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-22",
@@ -2064,6 +2249,7 @@
     },
     "qwen/qwen-2.5-72b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2113,6 +2299,7 @@
       },
       "model": null,
       "name": "Qwen 2.5 72B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-10-15",
@@ -2120,6 +2307,7 @@
     },
     "qwen/qwen-mt-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.25,
@@ -2150,6 +2338,7 @@
       },
       "model": null,
       "name": "Qwen MT Plus",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-03",
@@ -2157,6 +2346,7 @@
     },
     "qwen/qwen2.5-7b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2205,6 +2395,7 @@
       },
       "model": null,
       "name": "Qwen2.5 7B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -2212,6 +2403,7 @@
     },
     "qwen/qwen2.5-vl-72b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.8,
@@ -2245,6 +2437,7 @@
       },
       "model": null,
       "name": "Qwen2.5 VL 72B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-03-25",
@@ -2252,6 +2445,7 @@
     },
     "qwen/qwen3-235b-a22b-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2303,6 +2497,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-29",
@@ -2310,6 +2505,7 @@
     },
     "qwen/qwen3-235b-a22b-instruct-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2359,6 +2555,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Instruct 2507",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-07-22",
@@ -2366,6 +2563,7 @@
     },
     "qwen/qwen3-235b-a22b-thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2414,6 +2612,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22b Thinking 2507",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-07-25",
@@ -2421,6 +2620,7 @@
     },
     "qwen/qwen3-30b-a3b-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2472,6 +2672,7 @@
       },
       "model": null,
       "name": "Qwen3 30B A3B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-29",
@@ -2479,6 +2680,7 @@
     },
     "qwen/qwen3-32b-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2530,6 +2732,7 @@
       },
       "model": null,
       "name": "Qwen3 32B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-29",
@@ -2537,6 +2740,7 @@
     },
     "qwen/qwen3-4b-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2588,6 +2792,7 @@
       },
       "model": null,
       "name": "Qwen3 4B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-29",
@@ -2595,6 +2800,7 @@
     },
     "qwen/qwen3-8b-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2646,6 +2852,7 @@
       },
       "model": null,
       "name": "Qwen3 8B",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-04-29",
@@ -2653,6 +2860,7 @@
     },
     "qwen/qwen3-coder-30b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2701,6 +2909,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 30b A3B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-09",
@@ -2708,6 +2917,7 @@
     },
     "qwen/qwen3-coder-480b-a35b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2757,13 +2967,73 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-07-23",
       "tags": null
     },
+    "qwen/qwen3-coder-next": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.2,
+        "output": 1.5
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "qwen",
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "qwen/qwen3-coder-next",
+      "knowledge": null,
+      "last_updated": "2026-02-03",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Qwen3 Coder Next",
+      "pricing": null,
+      "provider": "novita_ai",
+      "provider_model_id": null,
+      "release_date": "2026-02-03",
+      "tags": null
+    },
     "qwen/qwen3-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2813,6 +3083,7 @@
       },
       "model": null,
       "name": "Qwen3 Max",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -2820,6 +3091,7 @@
     },
     "qwen/qwen3-next-80b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2868,6 +3140,7 @@
       },
       "model": null,
       "name": "Qwen3 Next 80B A3B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-10",
@@ -2875,6 +3148,7 @@
     },
     "qwen/qwen3-next-80b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2923,6 +3197,7 @@
       },
       "model": null,
       "name": "Qwen3 Next 80B A3B Thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-10",
@@ -2930,6 +3205,7 @@
     },
     "qwen/qwen3-omni-30b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2985,6 +3261,7 @@
       },
       "model": null,
       "name": "Qwen3 Omni 30B A3B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -2992,6 +3269,7 @@
     },
     "qwen/qwen3-omni-30b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3045,6 +3323,7 @@
       },
       "model": null,
       "name": "Qwen3 Omni 30B A3B Thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -3052,6 +3331,7 @@
     },
     "qwen/qwen3-vl-235b-a22b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3102,6 +3382,7 @@
       },
       "model": null,
       "name": "Qwen3 VL 235B A22B Instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -3109,6 +3390,7 @@
     },
     "qwen/qwen3-vl-235b-a22b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3162,6 +3444,7 @@
       },
       "model": null,
       "name": "Qwen3 VL 235B A22B Thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -3169,6 +3452,7 @@
     },
     "qwen/qwen3-vl-30b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3219,6 +3503,7 @@
       },
       "model": null,
       "name": "qwen/qwen3-vl-30b-a3b-instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-11",
@@ -3226,6 +3511,7 @@
     },
     "qwen/qwen3-vl-30b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3276,6 +3562,7 @@
       },
       "model": null,
       "name": "qwen/qwen3-vl-30b-a3b-thinking",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-11",
@@ -3283,6 +3570,7 @@
     },
     "qwen/qwen3-vl-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3333,6 +3621,7 @@
       },
       "model": null,
       "name": "qwen/qwen3-vl-8b-instruct",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-17",
@@ -3340,6 +3629,7 @@
     },
     "sao10k/L3-8B-Stheno-v3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3387,6 +3677,7 @@
       },
       "model": null,
       "name": "L3 8B Stheno V3.2",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-11-29",
@@ -3394,6 +3685,7 @@
     },
     "sao10k/l3-70b-euryale-v2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3441,6 +3733,7 @@
       },
       "model": null,
       "name": "L3 70B Euryale V2.1\t",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-06-18",
@@ -3448,6 +3741,7 @@
     },
     "sao10k/l3-8b-lunaris": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.05,
@@ -3479,6 +3773,7 @@
       },
       "model": null,
       "name": "Sao10k L3 8B Lunaris\t",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-11-28",
@@ -3486,6 +3781,7 @@
     },
     "sao10k/l31-70b-euryale-v2.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3533,6 +3829,7 @@
       },
       "model": null,
       "name": "L31 70B Euryale V2.2",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2024-09-19",
@@ -3540,6 +3837,7 @@
     },
     "skywork/r1v4-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.2,
@@ -3573,6 +3871,7 @@
       },
       "model": null,
       "name": "Skywork R1V4-Lite",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -3580,6 +3879,7 @@
     },
     "xiaomimimo/mimo-v2-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3630,6 +3930,7 @@
       },
       "model": null,
       "name": "XiaomiMiMo/MiMo-V2-Flash",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-12-19",
@@ -3637,6 +3938,7 @@
     },
     "zai-org/autoglm-phone-9b-multilingual": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.035,
@@ -3668,6 +3970,7 @@
       },
       "model": null,
       "name": "AutoGLM-Phone-9B-Multilingual",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-12-10",
@@ -3675,6 +3978,7 @@
     },
     "zai-org/glm-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3727,6 +4031,7 @@
       },
       "model": null,
       "name": "GLM-4.5",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -3734,6 +4039,7 @@
     },
     "zai-org/glm-4.5-air": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3782,6 +4088,7 @@
       },
       "model": null,
       "name": "GLM 4.5 Air",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-10-13",
@@ -3789,6 +4096,7 @@
     },
     "zai-org/glm-4.5v": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3841,6 +4149,7 @@
       },
       "model": null,
       "name": "GLM 4.5V",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-08-11",
@@ -3848,6 +4157,7 @@
     },
     "zai-org/glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3901,6 +4211,7 @@
       },
       "model": null,
       "name": "GLM 4.6",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -3908,6 +4219,7 @@
     },
     "zai-org/glm-4.6v": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3960,6 +4272,7 @@
       },
       "model": null,
       "name": "GLM 4.6V",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-12-08",
@@ -3967,6 +4280,7 @@
     },
     "zai-org/glm-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4020,11 +4334,72 @@
       },
       "model": null,
       "name": "GLM-4.7",
+      "pricing": null,
       "provider": "novita_ai",
       "provider_model_id": null,
       "release_date": "2025-12-22",
       "tags": null
+    },
+    "zai-org/glm-4.7-flash": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.01,
+        "input": 0.07,
+        "output": 0.4
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "glm",
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "zai-org/glm-4.7-flash",
+      "knowledge": "2025-04",
+      "last_updated": "2026-01-19",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GLM-4.7-Flash",
+      "pricing": null,
+      "provider": "novita_ai",
+      "provider_model_id": null,
+      "release_date": "2026-01-19",
+      "tags": null
     }
   },
-  "name": "NovitaAI"
+  "name": "NovitaAI",
+  "pricing_defaults": null
 }

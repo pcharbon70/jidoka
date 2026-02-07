@@ -19,23 +19,27 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
 
   use GenServer
 
-  defstruct [
-    :signals_table,
-    :causes_table,
-    :effects_table,
-    :conversations_table,
-    :checkpoints_table,
-    :dlq_table
-  ]
+  alias Jido.Signal.ID
+  alias Jido.Signal.Telemetry
 
-  @type t :: %__MODULE__{
-          signals_table: atom(),
-          causes_table: atom(),
-          effects_table: atom(),
-          conversations_table: atom(),
-          checkpoints_table: atom(),
-          dlq_table: atom()
-        }
+  @schema Zoi.struct(
+            __MODULE__,
+            %{
+              signals_table: Zoi.atom() |> Zoi.nullable() |> Zoi.optional(),
+              causes_table: Zoi.atom() |> Zoi.nullable() |> Zoi.optional(),
+              effects_table: Zoi.atom() |> Zoi.nullable() |> Zoi.optional(),
+              conversations_table: Zoi.atom() |> Zoi.nullable() |> Zoi.optional(),
+              checkpoints_table: Zoi.atom() |> Zoi.nullable() |> Zoi.optional(),
+              dlq_table: Zoi.atom() |> Zoi.nullable() |> Zoi.optional()
+            }
+          )
+
+  @type t :: unquote(Zoi.type_spec(@schema))
+  @enforce_keys Zoi.Struct.enforce_keys(@schema)
+  defstruct Zoi.Struct.struct_fields(@schema)
+
+  @doc "Returns the Zoi schema for ETS adapter"
+  def schema, do: @schema
 
   # Client API
 
@@ -138,9 +142,25 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
 
   @doc """
   Cleans up all ETS tables used by this adapter instance.
+
+  Returns `:ok` if the adapter process is already gone.
   """
-  def cleanup(pid) do
-    GenServer.call(pid, :cleanup)
+  def cleanup(pid_or_name) do
+    case GenServer.whereis(pid_or_name) do
+      nil ->
+        :ok
+
+      _pid ->
+        try do
+          GenServer.call(pid_or_name, :cleanup)
+        catch
+          :exit, :noproc -> :ok
+          :exit, {:noproc, _} -> :ok
+          :exit, :normal -> :ok
+          :exit, :shutdown -> :ok
+          :exit, {:shutdown, _} -> :ok
+        end
+    end
   end
 
   # Server Callbacks
@@ -316,7 +336,7 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
 
   @impl GenServer
   def handle_call({:put_checkpoint, subscription_id, checkpoint}, _from, adapter) do
-    :telemetry.execute(
+    Telemetry.execute(
       [:jido, :signal, :journal, :checkpoint, :put],
       %{},
       %{subscription_id: subscription_id}
@@ -331,7 +351,7 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
     reply =
       case :ets.lookup(adapter.checkpoints_table, subscription_id) do
         [{^subscription_id, checkpoint}] ->
-          :telemetry.execute(
+          Telemetry.execute(
             [:jido, :signal, :journal, :checkpoint, :get],
             %{},
             %{subscription_id: subscription_id, found: true}
@@ -340,7 +360,7 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
           {:ok, checkpoint}
 
         [] ->
-          :telemetry.execute(
+          Telemetry.execute(
             [:jido, :signal, :journal, :checkpoint, :get],
             %{},
             %{subscription_id: subscription_id, found: false}
@@ -360,7 +380,7 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
 
   @impl GenServer
   def handle_call({:put_dlq_entry, subscription_id, signal, reason, metadata}, _from, adapter) do
-    entry_id = Jido.Signal.ID.generate!()
+    entry_id = ID.generate!()
 
     entry = %{
       id: entry_id,
@@ -373,7 +393,7 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
 
     true = :ets.insert(adapter.dlq_table, {entry_id, entry})
 
-    :telemetry.execute(
+    Telemetry.execute(
       [:jido, :signal, :journal, :dlq, :put],
       %{},
       %{subscription_id: subscription_id, entry_id: entry_id}
@@ -390,7 +410,7 @@ defmodule Jido.Signal.Journal.Adapters.ETS do
       |> Enum.filter(fn entry -> entry.subscription_id == subscription_id end)
       |> Enum.sort_by(fn entry -> entry.inserted_at end, DateTime)
 
-    :telemetry.execute(
+    Telemetry.execute(
       [:jido, :signal, :journal, :dlq, :get],
       %{count: length(entries)},
       %{subscription_id: subscription_id}

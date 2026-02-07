@@ -1,6 +1,6 @@
 defmodule Jido.Discovery do
   @moduledoc """
-  Fast, persistent catalog of Jido components (Actions, Sensors, Agents, Skills, Demos).
+  Fast, persistent catalog of Jido components (Actions, Sensors, Agents, Plugins, Demos).
 
   Discovery uses `:persistent_term` for optimal read performance. The catalog is built
   asynchronously during application startup and can be refreshed on demand.
@@ -12,7 +12,7 @@ defmodule Jido.Discovery do
   - **Actions** - Discrete units of work (`__action_metadata__/0`)
   - **Sensors** - Event monitoring components (`__sensor_metadata__/0`)
   - **Agents** - Autonomous workers (`__agent_metadata__/0`)
-  - **Skills** - Reusable capability packs (`__skill_metadata__/0`)
+  - **Plugins** - Reusable capability packs (`__plugin_metadata__/0`)
   - **Demos** - Example implementations (`__jido_demo__/0`)
 
   ## Component Metadata
@@ -66,7 +66,7 @@ defmodule Jido.Discovery do
 
   @catalog_key :jido_discovery_catalog
 
-  @type component_type :: :actions | :sensors | :agents | :skills | :demos
+  @type component_type :: :actions | :sensors | :agents | :plugins | :demos
   @type component_metadata :: %{
           module: module(),
           name: String.t(),
@@ -89,11 +89,6 @@ defmodule Jido.Discovery do
     Task.async(fn ->
       catalog = build_catalog()
       :persistent_term.put(@catalog_key, catalog)
-
-      Logger.info(
-        "[Jido.Discovery] Catalog initialized with #{count_components(catalog)} components"
-      )
-
       :ok
     end)
   end
@@ -105,10 +100,8 @@ defmodule Jido.Discovery do
   """
   @spec refresh() :: :ok
   def refresh do
-    Logger.info("[Jido.Discovery] Refreshing catalog...")
     catalog = build_catalog()
     :persistent_term.put(@catalog_key, catalog)
-    Logger.info("[Jido.Discovery] Catalog refreshed with #{count_components(catalog)} components")
     :ok
   end
 
@@ -152,10 +145,10 @@ defmodule Jido.Discovery do
   def list_agents(opts \\ []), do: list(:agents, opts)
 
   @doc """
-  Lists all Skills with optional filtering and pagination.
+  Lists all Plugins with optional filtering and pagination.
   """
-  @spec list_skills(keyword()) :: [component_metadata()]
-  def list_skills(opts \\ []), do: list(:skills, opts)
+  @spec list_plugins(keyword()) :: [component_metadata()]
+  def list_plugins(opts \\ []), do: list(:plugins, opts)
 
   @doc """
   Lists all Demos with optional filtering and pagination.
@@ -184,10 +177,10 @@ defmodule Jido.Discovery do
   def get_agent_by_slug(slug), do: get_by_slug(:agents, slug)
 
   @doc """
-  Retrieves a Skill by its slug.
+  Retrieves a Plugin by its slug.
   """
-  @spec get_skill_by_slug(String.t()) :: component_metadata() | nil
-  def get_skill_by_slug(slug), do: get_by_slug(:skills, slug)
+  @spec get_plugin_by_slug(String.t()) :: component_metadata() | nil
+  def get_plugin_by_slug(slug), do: get_by_slug(:plugins, slug)
 
   @doc """
   Retrieves a Demo by its slug.
@@ -234,17 +227,10 @@ defmodule Jido.Discovery do
         actions: discover_components(:__action_metadata__),
         sensors: discover_components(:__sensor_metadata__),
         agents: discover_components(:__agent_metadata__),
-        skills: discover_components(:__skill_metadata__),
+        plugins: discover_components(:__plugin_metadata__),
         demos: discover_components(:__jido_demo__)
       }
     }
-  end
-
-  defp count_components(catalog) do
-    catalog.components
-    |> Map.values()
-    |> Enum.map(&length/1)
-    |> Enum.sum()
   end
 
   defp discover_components(metadata_fun) do

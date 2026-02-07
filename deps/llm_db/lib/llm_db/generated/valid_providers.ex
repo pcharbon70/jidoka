@@ -10,6 +10,7 @@ defmodule LLMDB.Generated.ValidProviders do
   """
 
   @providers [
+    :"302ai",
     :abacus,
     :aihubmix,
     :alibaba,
@@ -20,6 +21,7 @@ defmodule LLMDB.Generated.ValidProviders do
     :azure_cognitive_services,
     :bailing,
     :baseten,
+    :berget,
     :cerebras,
     :chutes,
     :cloudflare_ai_gateway,
@@ -51,13 +53,17 @@ defmodule LLMDB.Generated.ValidProviders do
     :lucidquery,
     :minimax,
     :minimax_cn,
+    :minimax_cn_coding_plan,
+    :minimax_coding_plan,
     :mistral,
+    :moark,
     :modelscope,
     :moonshotai,
     :moonshotai_cn,
     :morph,
     :nano_gpt,
     :nebius,
+    :nova,
     :novita_ai,
     :nvidia,
     :ollama_cloud,

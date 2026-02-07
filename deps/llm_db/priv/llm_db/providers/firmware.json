@@ -10,8 +10,9 @@
   "extra": null,
   "id": "firmware",
   "models": {
-    "claude-haiku-4-5-20251001": {
+    "claude-haiku-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -42,7 +43,7 @@
         "temperature": true
       },
       "family": null,
-      "id": "claude-haiku-4-5-20251001",
+      "id": "claude-haiku-4-5",
       "knowledge": "2025-02-28",
       "last_updated": "2025-10-15",
       "lifecycle": null,
@@ -62,6 +63,7 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -69,6 +71,7 @@
     },
     "claude-opus-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -119,13 +122,15 @@
       },
       "model": null,
       "name": "Claude Opus 4.5 (latest)",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-11-24",
       "tags": null
     },
-    "claude-sonnet-4-5-20250929": {
+    "claude-sonnet-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -156,7 +161,7 @@
         "temperature": true
       },
       "family": null,
-      "id": "claude-sonnet-4-5-20250929",
+      "id": "claude-sonnet-4-5",
       "knowledge": "2025-07-31",
       "last_updated": "2025-09-29",
       "lifecycle": null,
@@ -176,6 +181,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -183,6 +189,7 @@
     },
     "deepseek-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -231,68 +238,15 @@
       },
       "model": null,
       "name": "DeepSeek Chat",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2024-12-26",
       "tags": null
     },
-    "deepseek-coder": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0,
-        "output": 0
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "deepseek",
-        "open_weights": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "deepseek-coder",
-      "knowledge": null,
-      "last_updated": "2024-01-26",
-      "lifecycle": null,
-      "limits": {
-        "context": 16384,
-        "output": 8192
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "DeepSeek Coder",
-      "provider": "firmware",
-      "provider_model_id": null,
-      "release_date": "2024-01-25",
-      "tags": null
-    },
     "deepseek-reasoner": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -344,6 +298,7 @@
       },
       "model": null,
       "name": "DeepSeek Reasoner",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -351,6 +306,7 @@
     },
     "gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -403,6 +359,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-07-17",
@@ -410,6 +367,7 @@
     },
     "gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -462,6 +420,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -469,6 +428,7 @@
     },
     "gemini-3-flash-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -522,6 +482,7 @@
       },
       "model": null,
       "name": "Gemini 3 Flash Preview",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-12-17",
@@ -529,6 +490,7 @@
     },
     "gemini-3-pro-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -582,6 +544,7 @@
       },
       "model": null,
       "name": "Gemini 3 Pro Preview",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -589,6 +552,7 @@
     },
     "gpt-4o": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -639,6 +603,7 @@
       },
       "model": null,
       "name": "GPT-4o",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2024-05-13",
@@ -646,6 +611,7 @@
     },
     "gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -696,6 +662,7 @@
       },
       "model": null,
       "name": "GPT-5",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -703,6 +670,7 @@
     },
     "gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -754,6 +722,7 @@
       },
       "model": null,
       "name": "GPT-5 Mini",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -761,6 +730,7 @@
     },
     "gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -812,6 +782,7 @@
       },
       "model": null,
       "name": "GPT-5 Nano",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -819,6 +790,7 @@
     },
     "gpt-5.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -868,13 +840,73 @@
       },
       "model": null,
       "name": "GPT-5.2",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-12-11",
       "tags": null
     },
+    "gpt-oss-120b": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "gpt-oss",
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "gpt-oss-120b",
+      "knowledge": null,
+      "last_updated": "1970-01-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 131072,
+        "output": 32768
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT OSS 120B",
+      "pricing": null,
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "1970-01-01",
+      "tags": null
+    },
     "grok-4-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -924,6 +956,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast (Non-Reasoning)",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -931,6 +964,7 @@
     },
     "grok-4-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -980,6 +1014,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast (Reasoning)",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -987,6 +1022,7 @@
     },
     "grok-code-fast-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1035,11 +1071,241 @@
       },
       "model": null,
       "name": "Grok Code Fast 1",
+      "pricing": null,
       "provider": "firmware",
       "provider_model_id": null,
       "release_date": "2025-08-28",
       "tags": null
+    },
+    "kimi-k2-thinking": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.6,
+        "output": 2.5
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "kimi-k2-thinking",
+      "knowledge": null,
+      "last_updated": "1970-01-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 262000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2 Thinking",
+      "pricing": null,
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "1970-01-01",
+      "tags": null
+    },
+    "kimi-k2-thinking-turbo": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 1.15,
+        "output": 8
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "kimi-k2-thinking-turbo",
+      "knowledge": null,
+      "last_updated": "1970-01-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 262000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2 Thinking Turbo",
+      "pricing": null,
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "1970-01-01",
+      "tags": null
+    },
+    "kimi-k2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.1,
+        "output": 3
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "kimi-k2.5",
+      "knowledge": null,
+      "last_updated": "1970-01-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 262000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi-K2.5",
+      "pricing": null,
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "1970-01-01",
+      "tags": null
+    },
+    "zai-glm-4.7": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "open_weights": true,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "zai-glm-4.7",
+      "knowledge": null,
+      "last_updated": "1970-01-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 131072,
+        "output": 40000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Z.AI GLM-4.7",
+      "pricing": null,
+      "provider": "firmware",
+      "provider_model_id": null,
+      "release_date": "1970-01-01",
+      "tags": null
     }
   },
-  "name": "Firmware"
+  "name": "Firmware",
+  "pricing_defaults": null
 }

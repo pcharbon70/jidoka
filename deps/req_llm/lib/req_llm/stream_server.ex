@@ -463,15 +463,12 @@ defmodule ReqLLM.StreamServer do
   end
 
   @impl GenServer
-  def handle_info({ref, result}, state) when is_reference(ref) do
-    Logger.debug("HTTP task completed with result: #{inspect(result)}")
+  def handle_info({ref, _result}, state) when is_reference(ref) do
     {:noreply, state}
   end
 
   @impl GenServer
   def handle_info({:EXIT, pid, reason}, %{http_task: pid} = state) do
-    Logger.debug("HTTP task #{inspect(pid)} exited: #{inspect(reason)}")
-
     new_state =
       case reason do
         :normal -> finalize_stream_with_fixture(state)
@@ -491,8 +488,6 @@ defmodule ReqLLM.StreamServer do
 
   @impl GenServer
   def handle_info({:DOWN, _ref, :process, pid, reason}, %{http_task: pid} = state) do
-    Logger.debug("HTTP task #{inspect(pid)} terminated: #{inspect(reason)}")
-
     new_state =
       case reason do
         :normal -> finalize_stream_with_fixture(state)
@@ -901,122 +896,10 @@ defmodule ReqLLM.StreamServer do
   # Normalize streaming usage data from provider format to ReqLLM format
   # This mirrors the logic in ReqLLM.Step.Usage.fallback_extract_usage/1
   defp normalize_streaming_usage(usage, model) when is_map(usage) do
-    case usage do
-      %{"prompt_tokens" => input, "completion_tokens" => output} ->
-        reasoning = reasoning_from_usage(usage)
-        cached_input = cached_from_usage(usage)
-        cache_creation = cache_creation_from_usage(usage)
-
-        %{
-          input: input,
-          output: output,
-          reasoning: reasoning,
-          cached_input: cached_input,
-          cache_creation: cache_creation
-        }
-        |> add_token_aliases()
-        |> add_cost_calculation_if_available(usage)
-        |> calculate_cost_if_model_available(model)
-
-      %{"input_tokens" => input, "output_tokens" => output} ->
-        reasoning = reasoning_from_usage(usage)
-        cached_input = cached_from_usage(usage)
-        cache_creation = cache_creation_from_usage(usage)
-
-        %{
-          input: input,
-          output: output,
-          reasoning: reasoning,
-          cached_input: cached_input,
-          cache_creation: cache_creation
-        }
-        |> add_token_aliases()
-        |> add_cost_calculation_if_available(usage)
-        |> calculate_cost_if_model_available(model)
-
-      %{input_tokens: input, output_tokens: output} ->
-        reasoning = Map.get(usage, :reasoning_tokens, 0)
-        # Prefer cache_read_input_tokens over legacy cached_tokens
-        cached_input =
-          Map.get(usage, :cache_read_input_tokens) ||
-            Map.get(usage, :cached_tokens, 0)
-
-        cache_creation = Map.get(usage, :cache_creation_input_tokens, 0)
-
-        %{
-          input: input,
-          output: output,
-          reasoning: reasoning,
-          cached_input: cached_input,
-          cache_creation: cache_creation
-        }
-        |> add_token_aliases()
-        |> add_cost_calculation_if_available(usage)
-        |> calculate_cost_if_model_available(model)
-
-      _ ->
-        usage
-    end
+    usage
+    |> ReqLLM.Usage.Normalize.normalize()
+    |> ReqLLM.Usage.Cost.apply(model, original_usage: usage, preserve_total_cost: true)
   end
 
   defp normalize_streaming_usage(usage, _model), do: usage
-
-  defp reasoning_from_usage(usage) do
-    get_in(usage, ["completion_tokens_details", "reasoning_tokens"]) ||
-      get_in(usage, ["output_tokens_details", "reasoning_tokens"]) ||
-      Map.get(usage, "reasoning_tokens", 0) ||
-      Map.get(usage, "reasoning_output_tokens", 0)
-  end
-
-  defp cached_from_usage(usage) do
-    # Anthropic/Azure/Vertex format
-    # AWS Bedrock formats (camelCase)
-    # OpenAI formats (nested)
-    # Legacy
-    Map.get(usage, "cache_read_input_tokens") ||
-      Map.get(usage, "cacheReadInputTokens") ||
-      Map.get(usage, "cacheReadInputTokenCount") ||
-      get_in(usage, ["prompt_tokens_details", "cached_tokens"]) ||
-      get_in(usage, ["input_tokens_details", "cached_tokens"]) ||
-      Map.get(usage, "cached_tokens", 0)
-  end
-
-  defp cache_creation_from_usage(usage) do
-    # Anthropic/Azure/Vertex format
-    # AWS Bedrock formats (camelCase)
-    # Fallback
-    Map.get(usage, "cache_creation_input_tokens") ||
-      Map.get(usage, "cacheWriteInputTokens") ||
-      Map.get(usage, "cacheWriteInputTokenCount") ||
-      Map.get(usage, "cache_write_input_tokens", 0)
-  end
-
-  defp add_token_aliases(usage) do
-    usage
-    |> Map.put(:input_tokens, usage.input)
-    |> Map.put(:output_tokens, usage.output)
-    |> Map.put(:total_tokens, usage.input + usage.output)
-  end
-
-  defp add_cost_calculation_if_available(normalized_usage, original_usage) do
-    # If the original usage had cost information, preserve it
-    # This might come from providers that calculate costs themselves
-    case original_usage do
-      %{total_cost: cost} when is_number(cost) ->
-        Map.put(normalized_usage, :total_cost, cost)
-
-      %{"total_cost" => cost} when is_number(cost) ->
-        Map.put(normalized_usage, :total_cost, cost)
-
-      _ ->
-        normalized_usage
-    end
-  end
-
-  defp calculate_cost_if_model_available(usage, %LLMDB.Model{cost: cost_map})
-       when is_map(cost_map) do
-    ReqLLM.Cost.add_cost_to_usage(usage, cost_map)
-  end
-
-  defp calculate_cost_if_model_available(usage, _), do: usage
 end

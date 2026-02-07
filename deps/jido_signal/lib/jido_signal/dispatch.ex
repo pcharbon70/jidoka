@@ -116,6 +116,7 @@ defmodule Jido.Signal.Dispatch do
   """
 
   alias Jido.Signal.Error
+  alias Jido.Signal.Telemetry
 
   @type adapter ::
           :pid
@@ -155,19 +156,6 @@ defmodule Jido.Signal.Dispatch do
     webhook: Jido.Signal.Dispatch.Webhook,
     nil: nil
   }
-
-  # Future Idea
-  # use TypedStruct
-
-  # typedstruct do
-  #   @typedoc "A dispatch configuration for sending signals"
-
-  #   field :signals, Jido.Signal.t() | [Jido.Signal.t()], default: [], doc: "List of signals to be dispatched"
-  #   field :targets, [dispatch_config()], default: [], doc: "List of dispatch_config tuples"
-  #   field :mode, :sync | :async, default: :sync, doc: ":sync or :async"
-  #   field :opts, Keyword.t(), default: [], doc: "General options including batch settings"
-  #   field :validated, boolean(), default: false, doc: "Whether targets have been validated"
-  # end
 
   @doc """
   Validates a dispatch configuration without executing the dispatch.
@@ -542,24 +530,19 @@ defmodule Jido.Signal.Dispatch do
   end
 
   defp validate_single_config({adapter, opts}) when is_atom(adapter) and is_list(opts) do
-    case resolve_adapter(adapter) do
-      {:ok, adapter_module} ->
-        if adapter_module == nil do
-          {:ok, {adapter, opts}}
-        else
-          case adapter_module.validate_opts(opts) do
-            {:ok, validated_opts} ->
-              # Mark as validated to skip re-validation
-              {:ok, {adapter, Keyword.put(validated_opts, :__validated__, true)}}
-
-            {:error, reason} ->
-              normalize_validation_error(reason, adapter, {adapter, opts})
-          end
-        end
-
-      {:error, reason} ->
-        normalize_validation_error(reason, adapter, {adapter, opts})
+    with {:ok, adapter_module} <- resolve_adapter(adapter),
+         {:ok, validated_opts} <- validate_adapter_opts(adapter_module, opts, adapter) do
+      {:ok, {adapter, Keyword.put(validated_opts, :__validated__, true)}}
+    else
+      {:error, reason} -> normalize_validation_error(reason, adapter, {adapter, opts})
     end
+  end
+
+  # Validates options with the adapter module, handling nil adapter case
+  defp validate_adapter_opts(nil, opts, _adapter), do: {:ok, opts}
+
+  defp validate_adapter_opts(adapter_module, opts, _adapter) do
+    adapter_module.validate_opts(opts)
   end
 
   defp dispatch_single(_signal, {nil, _opts}), do: :ok
@@ -579,7 +562,7 @@ defmodule Jido.Signal.Dispatch do
       target: get_target_from_opts(opts)
     }
 
-    :telemetry.execute([:jido, :dispatch, :start], %{}, metadata)
+    Telemetry.execute([:jido, :dispatch, :start], %{}, metadata)
 
     result = do_dispatch_single(signal, {adapter, opts})
 
@@ -591,9 +574,9 @@ defmodule Jido.Signal.Dispatch do
     metadata = Map.put(metadata, :success?, success)
 
     if success do
-      :telemetry.execute([:jido, :dispatch, :stop], measurements, metadata)
+      Telemetry.execute([:jido, :dispatch, :stop], measurements, metadata)
     else
-      :telemetry.execute([:jido, :dispatch, :exception], measurements, metadata)
+      Telemetry.execute([:jido, :dispatch, :exception], measurements, metadata)
     end
 
     result

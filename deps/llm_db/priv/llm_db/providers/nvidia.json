@@ -12,6 +12,7 @@
   "models": {
     "black-forest-labs/flux.1-dev": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -42,6 +43,7 @@
       },
       "model": null,
       "name": "FLUX.1-dev",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-08-01",
@@ -49,6 +51,7 @@
     },
     "deepseek-ai/deepseek-coder-6.7b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -97,6 +100,7 @@
       },
       "model": null,
       "name": "Deepseek Coder 6.7b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2023-10-29",
@@ -104,6 +108,7 @@
     },
     "deepseek-ai/deepseek-r1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -156,6 +161,7 @@
       },
       "model": null,
       "name": "Deepseek R1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -163,6 +169,7 @@
     },
     "deepseek-ai/deepseek-r1-0528": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -211,6 +218,7 @@
       },
       "model": null,
       "name": "Deepseek R1 0528",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-05-28",
@@ -218,6 +226,7 @@
     },
     "deepseek-ai/deepseek-v3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -266,6 +275,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-08-20",
@@ -273,6 +283,7 @@
     },
     "deepseek-ai/deepseek-v3.1-terminus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -321,13 +332,72 @@
       },
       "model": null,
       "name": "DeepSeek V3.1 Terminus",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-09-22",
       "tags": null
     },
+    "deepseek-ai/deepseek-v3.2": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "deepseek",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "deepseek-ai/deepseek-v3.2",
+      "knowledge": "2024-07",
+      "last_updated": "2025-12-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 163840,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "DeepSeek V3.2",
+      "pricing": null,
+      "provider": "nvidia",
+      "provider_model_id": null,
+      "release_date": "2025-12-01",
+      "tags": null
+    },
     "google/codegemma-1.1-7b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -359,6 +429,7 @@
       },
       "model": null,
       "name": "Codegemma 1.1 7b",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-04-30",
@@ -366,6 +437,7 @@
     },
     "google/codegemma-7b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -397,6 +469,7 @@
       },
       "model": null,
       "name": "Codegemma 7b",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-03-21",
@@ -404,6 +477,7 @@
     },
     "google/gemma-2-27b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -452,6 +526,7 @@
       },
       "model": null,
       "name": "Gemma 2 27b It",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-06-24",
@@ -459,6 +534,7 @@
     },
     "google/gemma-2-2b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -507,6 +583,7 @@
       },
       "model": null,
       "name": "Gemma 2 2b It",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-07-16",
@@ -514,6 +591,7 @@
     },
     "google/gemma-3-12b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -562,6 +640,7 @@
       },
       "model": null,
       "name": "Gemma 3 12b It",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-01",
@@ -569,6 +648,7 @@
     },
     "google/gemma-3-1b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -618,6 +698,7 @@
       },
       "model": null,
       "name": "Gemma 3 1b It",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-10",
@@ -625,6 +706,7 @@
     },
     "google/gemma-3-27b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -674,6 +756,7 @@
       },
       "model": null,
       "name": "Gemma-3-27B-IT",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -681,6 +764,7 @@
     },
     "google/gemma-3n-e2b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -730,6 +814,7 @@
       },
       "model": null,
       "name": "Gemma 3n E2b It",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-06-12",
@@ -737,6 +822,7 @@
     },
     "google/gemma-3n-e4b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -786,6 +872,7 @@
       },
       "model": null,
       "name": "Gemma 3n E4b It",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-06-03",
@@ -793,6 +880,7 @@
     },
     "meta/codellama-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -824,6 +912,7 @@
       },
       "model": null,
       "name": "Codellama 70b",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-01-29",
@@ -831,6 +920,7 @@
     },
     "meta/llama-3.1-405b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -879,6 +969,7 @@
       },
       "model": null,
       "name": "Llama 3.1 405b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-07-16",
@@ -886,6 +977,7 @@
     },
     "meta/llama-3.1-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -934,6 +1026,7 @@
       },
       "model": null,
       "name": "Llama 3.1 70b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-07-16",
@@ -941,6 +1034,7 @@
     },
     "meta/llama-3.2-11b-vision-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -990,6 +1084,7 @@
       },
       "model": null,
       "name": "Llama 3.2 11b Vision Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -997,6 +1092,7 @@
     },
     "meta/llama-3.2-1b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1045,6 +1141,7 @@
       },
       "model": null,
       "name": "Llama 3.2 1b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -1052,6 +1149,7 @@
     },
     "meta/llama-3.3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1100,6 +1198,7 @@
       },
       "model": null,
       "name": "Llama 3.3 70b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-11-26",
@@ -1107,6 +1206,7 @@
     },
     "meta/llama-4-maverick-17b-128e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1156,6 +1256,7 @@
       },
       "model": null,
       "name": "Llama 4 Maverick 17b 128e Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-04-01",
@@ -1163,6 +1264,7 @@
     },
     "meta/llama-4-scout-17b-16e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1212,6 +1314,7 @@
       },
       "model": null,
       "name": "Llama 4 Scout 17b 16e Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-04-02",
@@ -1219,6 +1322,7 @@
     },
     "meta/llama3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1267,6 +1371,7 @@
       },
       "model": null,
       "name": "Llama3 70b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-04-17",
@@ -1274,6 +1379,7 @@
     },
     "meta/llama3-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1322,6 +1428,7 @@
       },
       "model": null,
       "name": "Llama3 8b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-04-17",
@@ -1329,6 +1436,7 @@
     },
     "microsoft/phi-3-medium-128k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1378,6 +1486,7 @@
       },
       "model": null,
       "name": "Phi 3 Medium 128k Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-05-07",
@@ -1385,6 +1494,7 @@
     },
     "microsoft/phi-3-medium-4k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1434,6 +1544,7 @@
       },
       "model": null,
       "name": "Phi 3 Medium 4k Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-05-07",
@@ -1441,6 +1552,7 @@
     },
     "microsoft/phi-3-small-128k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1490,6 +1602,7 @@
       },
       "model": null,
       "name": "Phi 3 Small 128k Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-05-07",
@@ -1497,6 +1610,7 @@
     },
     "microsoft/phi-3-small-8k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1546,6 +1660,7 @@
       },
       "model": null,
       "name": "Phi 3 Small 8k Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-05-07",
@@ -1553,6 +1668,7 @@
     },
     "microsoft/phi-3-vision-128k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1602,6 +1718,7 @@
       },
       "model": null,
       "name": "Phi 3 Vision 128k Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-05-19",
@@ -1609,6 +1726,7 @@
     },
     "microsoft/phi-3.5-moe-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1657,6 +1775,7 @@
       },
       "model": null,
       "name": "Phi 3.5 Moe Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-08-17",
@@ -1664,6 +1783,7 @@
     },
     "microsoft/phi-3.5-vision-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1713,6 +1833,7 @@
       },
       "model": null,
       "name": "Phi 3.5 Vision Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-08-16",
@@ -1720,6 +1841,7 @@
     },
     "microsoft/phi-4-mini-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1770,6 +1892,7 @@
       },
       "model": null,
       "name": "Phi-4-Mini",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -1777,6 +1900,7 @@
     },
     "minimaxai/minimax-m2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1825,13 +1949,72 @@
       },
       "model": null,
       "name": "MiniMax-M2",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-10-27",
       "tags": null
     },
+    "minimaxai/minimax-m2.1": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "minimax",
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "minimaxai/minimax-m2.1",
+      "knowledge": null,
+      "last_updated": "2025-12-23",
+      "lifecycle": null,
+      "limits": {
+        "context": 204800,
+        "output": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "MiniMax-M2.1",
+      "pricing": null,
+      "provider": "nvidia",
+      "provider_model_id": null,
+      "release_date": "2025-12-23",
+      "tags": null
+    },
     "mistralai/codestral-22b-instruct-v0.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1880,6 +2063,7 @@
       },
       "model": null,
       "name": "Codestral 22b Instruct V0.1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-05-29",
@@ -1887,6 +2071,7 @@
     },
     "mistralai/devstral-2-123b-instruct-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1936,6 +2121,7 @@
       },
       "model": null,
       "name": "Devstral-2-123B-Instruct-2512",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-12-08",
@@ -1943,6 +2129,7 @@
     },
     "mistralai/mamba-codestral-7b-v0.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -1974,6 +2161,7 @@
       },
       "model": null,
       "name": "Mamba Codestral 7b V0.1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-07-16",
@@ -1981,6 +2169,7 @@
     },
     "mistralai/ministral-14b-instruct-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2031,6 +2220,7 @@
       },
       "model": null,
       "name": "Ministral 3 14B Instruct 2512",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -2038,6 +2228,7 @@
     },
     "mistralai/mistral-large-2-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2086,6 +2277,7 @@
       },
       "model": null,
       "name": "Mistral Large 2 Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-07-24",
@@ -2093,6 +2285,7 @@
     },
     "mistralai/mistral-large-3-675b-instruct-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2143,6 +2336,7 @@
       },
       "model": null,
       "name": "Mistral Large 3 675B Instruct 2512",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-12-02",
@@ -2150,6 +2344,7 @@
     },
     "mistralai/mistral-small-3.1-24b-instruct-2503": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2198,6 +2393,7 @@
       },
       "model": null,
       "name": "Mistral Small 3.1 24b Instruct 2503",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-11",
@@ -2205,6 +2401,7 @@
     },
     "moonshotai/kimi-k2-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2253,6 +2450,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2260,6 +2458,7 @@
     },
     "moonshotai/kimi-k2-instruct-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2308,6 +2507,7 @@
       },
       "model": null,
       "name": "Kimi K2 0905",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -2315,6 +2515,7 @@
     },
     "moonshotai/kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2367,13 +2568,77 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-11",
       "tags": null
     },
+    "moonshotai/kimi-k2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "kimi",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "moonshotai/kimi-k2.5",
+      "knowledge": "2025-07",
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2.5",
+      "pricing": null,
+      "provider": "nvidia",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
     "nvidia/cosmos-nemotron-34b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2428,6 +2693,7 @@
       },
       "model": null,
       "name": "Cosmos Nemotron 34B",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-01-01",
@@ -2435,6 +2701,7 @@
     },
     "nvidia/llama-3.1-nemotron-51b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2483,6 +2750,7 @@
       },
       "model": null,
       "name": "Llama 3.1 Nemotron 51b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-09-22",
@@ -2490,6 +2758,7 @@
     },
     "nvidia/llama-3.1-nemotron-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2538,6 +2807,7 @@
       },
       "model": null,
       "name": "Llama 3.1 Nemotron 70b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-10-12",
@@ -2545,6 +2815,7 @@
     },
     "nvidia/llama-3.1-nemotron-ultra-253b-v1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2593,6 +2864,7 @@
       },
       "model": null,
       "name": "Llama-3.1-Nemotron-Ultra-253B-v1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-07-01",
@@ -2600,6 +2872,7 @@
     },
     "nvidia/llama-3.3-nemotron-super-49b-v1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -2631,6 +2904,7 @@
       },
       "model": null,
       "name": "Llama 3.3 Nemotron Super 49b V1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-16",
@@ -2638,6 +2912,7 @@
     },
     "nvidia/llama-3.3-nemotron-super-49b-v1.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -2669,6 +2944,7 @@
       },
       "model": null,
       "name": "Llama 3.3 Nemotron Super 49b V1.5",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-16",
@@ -2676,6 +2952,7 @@
     },
     "nvidia/llama-embed-nemotron-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -2707,6 +2984,7 @@
       },
       "model": null,
       "name": "Llama Embed Nemotron 8B",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-18",
@@ -2714,6 +2992,7 @@
     },
     "nvidia/llama3-chatqa-1.5-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2762,6 +3041,7 @@
       },
       "model": null,
       "name": "Llama3 Chatqa 1.5 70b",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-04-28",
@@ -2769,6 +3049,7 @@
     },
     "nvidia/nemoretriever-ocr-v1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -2799,6 +3080,7 @@
       },
       "model": null,
       "name": "NeMo Retriever OCR v1",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-01-01",
@@ -2806,6 +3088,7 @@
     },
     "nvidia/nemotron-3-nano-30b-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2854,6 +3137,7 @@
       },
       "model": null,
       "name": "nemotron-3-nano-30b-a3b",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-12",
@@ -2861,6 +3145,7 @@
     },
     "nvidia/nemotron-4-340b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2909,6 +3194,7 @@
       },
       "model": null,
       "name": "Nemotron 4 340b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-06-13",
@@ -2916,6 +3202,7 @@
     },
     "nvidia/nvidia-nemotron-nano-9b-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2964,6 +3251,7 @@
       },
       "model": null,
       "name": "nvidia-nemotron-nano-9b-v2",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-08-18",
@@ -2971,6 +3259,7 @@
     },
     "nvidia/parakeet-tdt-0.6b-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -3001,6 +3290,7 @@
       },
       "model": null,
       "name": "Parakeet TDT 0.6B v2",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-01-01",
@@ -3008,6 +3298,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3060,6 +3351,7 @@
       },
       "model": null,
       "name": "GPT-OSS-120B",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-08-04",
@@ -3067,6 +3359,7 @@
     },
     "openai/whisper-large-v3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0,
@@ -3097,6 +3390,7 @@
       },
       "model": null,
       "name": "Whisper Large v3",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2023-09-01",
@@ -3104,6 +3398,7 @@
     },
     "qwen/qwen2.5-coder-32b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3152,6 +3447,7 @@
       },
       "model": null,
       "name": "Qwen2.5 Coder 32b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-11-06",
@@ -3159,6 +3455,7 @@
     },
     "qwen/qwen2.5-coder-7b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3207,6 +3504,7 @@
       },
       "model": null,
       "name": "Qwen2.5 Coder 7b Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-09-17",
@@ -3214,6 +3512,7 @@
     },
     "qwen/qwen3-235b-a22b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3262,6 +3561,7 @@
       },
       "model": null,
       "name": "Qwen3-235B-A22B",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -3269,6 +3569,7 @@
     },
     "qwen/qwen3-coder-480b-a35b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3317,6 +3618,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -3324,6 +3626,7 @@
     },
     "qwen/qwen3-next-80b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3372,6 +3675,7 @@
       },
       "model": null,
       "name": "Qwen3-Next-80B-A3B-Instruct",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -3379,6 +3683,7 @@
     },
     "qwen/qwen3-next-80b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3427,6 +3732,7 @@
       },
       "model": null,
       "name": "Qwen3-Next-80B-A3B-Thinking",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -3434,6 +3740,7 @@
     },
     "qwen/qwq-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3486,11 +3793,73 @@
       },
       "model": null,
       "name": "Qwq 32b",
+      "pricing": null,
       "provider": "nvidia",
       "provider_model_id": null,
       "release_date": "2025-03-05",
       "tags": null
+    },
+    "z-ai/glm4.7": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "glm",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "z-ai/glm4.7",
+      "knowledge": "2025-04",
+      "last_updated": "2025-12-22",
+      "lifecycle": null,
+      "limits": {
+        "context": 204800,
+        "output": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GLM-4.7",
+      "pricing": null,
+      "provider": "nvidia",
+      "provider_model_id": null,
+      "release_date": "2025-12-22",
+      "tags": null
     }
   },
-  "name": "Nvidia"
+  "name": "Nvidia",
+  "pricing_defaults": null
 }

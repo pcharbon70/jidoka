@@ -14,6 +14,7 @@
   "models": {
     "gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -64,6 +65,7 @@
       },
       "model": null,
       "name": "GPT OSS 120B",
+      "pricing": null,
       "provider": "cerebras",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -71,6 +73,7 @@
     },
     "qwen-3-235b-a22b-instruct-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -121,6 +124,7 @@
       },
       "model": null,
       "name": "Qwen 3 235B Instruct",
+      "pricing": null,
       "provider": "cerebras",
       "provider_model_id": null,
       "release_date": "2025-07-22",
@@ -128,6 +132,7 @@
     },
     "qwen-3-coder-480b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -159,6 +164,7 @@
       "modalities": null,
       "model": null,
       "name": null,
+      "pricing": null,
       "provider": "cerebras",
       "provider_model_id": null,
       "release_date": null,
@@ -166,6 +172,7 @@
     },
     "zai-glm-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -215,11 +222,13 @@
       },
       "model": null,
       "name": "Z.AI GLM-4.7",
+      "pricing": null,
       "provider": "cerebras",
       "provider_model_id": null,
       "release_date": "2026-01-10",
       "tags": null
     }
   },
-  "name": "Cerebras"
+  "name": "Cerebras",
+  "pricing_defaults": null
 }

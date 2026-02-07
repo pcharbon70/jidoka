@@ -12,6 +12,7 @@
   "models": {
     "claude-4-5-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -62,6 +63,7 @@
       },
       "model": null,
       "name": "Claude 4.5 Sonnet",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -69,6 +71,7 @@
     },
     "claude-sonnet-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -119,6 +122,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -126,6 +130,7 @@
     },
     "deepseek-v3-0324": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -174,6 +179,7 @@
       },
       "model": null,
       "name": "DeepSeek V3 0324",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-03-24",
@@ -181,6 +187,7 @@
     },
     "devstral-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -228,6 +235,7 @@
       },
       "model": null,
       "name": "Devstral 2 2512",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-12-09",
@@ -235,6 +243,7 @@
     },
     "devstral-small-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -283,6 +292,7 @@
       },
       "model": null,
       "name": "Devstral Small 2 2512",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-12-09",
@@ -290,6 +300,7 @@
     },
     "gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -339,6 +350,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -346,6 +358,7 @@
     },
     "gpt-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -395,6 +408,7 @@
       },
       "model": null,
       "name": "GPT 4.1",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -402,6 +416,7 @@
     },
     "gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -450,6 +465,7 @@
       },
       "model": null,
       "name": "GPT Oss 120b",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -457,6 +473,7 @@
     },
     "intellect-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -504,6 +521,7 @@
       },
       "model": null,
       "name": "INTELLECT 3",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-11-26",
@@ -511,6 +529,7 @@
     },
     "kimi-k2-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -559,6 +578,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-07-11",
@@ -566,6 +586,7 @@
     },
     "kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -616,6 +637,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-12-08",
@@ -623,6 +645,7 @@
     },
     "llama-3.1-405b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -671,6 +694,7 @@
       },
       "model": null,
       "name": "Llama 3.1 405B Instruct",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -678,6 +702,7 @@
     },
     "nova-pro-v1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -727,6 +752,7 @@
       },
       "model": null,
       "name": "Nova Pro 1.0",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2024-12-03",
@@ -734,6 +760,7 @@
     },
     "qwen3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -782,6 +809,7 @@
       },
       "model": null,
       "name": "Qwen3 32B",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-04-29",
@@ -789,6 +817,7 @@
     },
     "qwen3-coder-480b-a35b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -837,6 +866,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-07-25",
@@ -844,6 +874,7 @@
     },
     "qwen3-next-80b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -891,11 +922,13 @@
       },
       "model": null,
       "name": "Qwen3 Next 80B A3B Thinking",
+      "pricing": null,
       "provider": "cortecs",
       "provider_model_id": null,
       "release_date": "2025-09-11",
       "tags": null
     }
   },
-  "name": "Cortecs"
+  "name": "Cortecs",
+  "pricing_defaults": null
 }

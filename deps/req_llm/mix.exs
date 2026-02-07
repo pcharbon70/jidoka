@@ -1,7 +1,7 @@
 defmodule ReqLLM.MixProject do
   use Mix.Project
 
-  @version "1.3.0"
+  @version "1.5.1"
   @source_url "https://github.com/agentjido/req_llm"
 
   def project do
@@ -39,8 +39,11 @@ defmodule ReqLLM.MixProject do
           "CHANGELOG.md",
           "CONTRIBUTING.md",
           "guides/getting-started.md",
+          "guides/configuration.md",
           "guides/core-concepts.md",
           "guides/data-structures.md",
+          "guides/usage-and-billing.md",
+          "guides/image-generation.md",
           "guides/model-metadata.md",
           "guides/mix-tasks.md",
           "guides/fixture-testing.md",
@@ -52,6 +55,7 @@ defmodule ReqLLM.MixProject do
           "guides/xai.md",
           "guides/groq.md",
           "guides/openrouter.md",
+          "guides/ollama.md",
           "guides/amazon_bedrock.md",
           "guides/cerebras.md",
           "guides/meta.md",
@@ -64,8 +68,11 @@ defmodule ReqLLM.MixProject do
           ],
           Guides: [
             "guides/getting-started.md",
+            "guides/configuration.md",
             "guides/core-concepts.md",
             "guides/data-structures.md",
+            "guides/usage-and-billing.md",
+            "guides/image-generation.md",
             "guides/model-metadata.md"
           ],
           "Development & Testing": [
@@ -81,6 +88,7 @@ defmodule ReqLLM.MixProject do
             "guides/xai.md",
             "guides/groq.md",
             "guides/openrouter.md",
+            "guides/ollama.md",
             "guides/amazon_bedrock.md",
             "guides/cerebras.md",
             "guides/meta.md",
@@ -167,11 +175,10 @@ defmodule ReqLLM.MixProject do
       {:ex_aws_auth, "~> 1.3"},
       {:server_sent_events, "~> 0.2"},
       {:splode, "~> 0.3.0"},
-      {:typed_struct, "~> 0.3.0"},
       {:uniq, "~> 0.6"},
       {:zoi, "~> 0.14"},
       {:jsv, "~> 0.11"},
-      {:llm_db, "~> 2026.0"},
+      {:llm_db, "~> 2026.1"},
 
       # Dev/test dependencies
       {:bandit, "~> 1.8", only: :dev, runtime: false},

@@ -12,6 +12,7 @@
   "models": {
     "codestral-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Codestral",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-05-29",
@@ -67,6 +69,7 @@
     },
     "devstral-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -86,8 +89,8 @@
         }
       },
       "cost": {
-        "input": 0,
-        "output": 0
+        "input": 0.4,
+        "output": 2
       },
       "deprecated": false,
       "extra": {
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "Devstral 2",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-12-09",
@@ -122,6 +126,7 @@
     },
     "devstral-medium-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,6 +175,7 @@
       },
       "model": null,
       "name": "Devstral Medium",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-07-10",
@@ -177,6 +183,7 @@
     },
     "devstral-medium-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -225,6 +232,7 @@
       },
       "model": null,
       "name": "Devstral 2",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-12-02",
@@ -232,6 +240,7 @@
     },
     "devstral-small-2505": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -280,6 +289,7 @@
       },
       "model": null,
       "name": "Devstral Small 2505",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -287,6 +297,7 @@
     },
     "devstral-small-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -335,6 +346,7 @@
       },
       "model": null,
       "name": "Devstral Small",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-07-10",
@@ -342,6 +354,7 @@
     },
     "labs-devstral-small-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -391,6 +404,7 @@
       },
       "model": null,
       "name": "Devstral Small 2",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-12-09",
@@ -398,6 +412,7 @@
     },
     "magistral-medium-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -446,6 +461,7 @@
       },
       "model": null,
       "name": "Magistral Medium",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-03-17",
@@ -453,6 +469,7 @@
     },
     "magistral-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -501,6 +518,7 @@
       },
       "model": null,
       "name": "Magistral Small",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-03-17",
@@ -508,6 +526,7 @@
     },
     "ministral-3b-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -556,6 +575,7 @@
       },
       "model": null,
       "name": "Ministral 3B",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-10-01",
@@ -563,6 +583,7 @@
     },
     "ministral-8b-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -611,6 +632,7 @@
       },
       "model": null,
       "name": "Ministral 8B",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-10-01",
@@ -618,6 +640,7 @@
     },
     "mistral-embed": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -649,6 +672,7 @@
       },
       "model": null,
       "name": "Mistral Embed",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2023-12-11",
@@ -656,6 +680,7 @@
     },
     "mistral-large-2411": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -704,6 +729,7 @@
       },
       "model": null,
       "name": "Mistral Large 2.1",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -711,6 +737,7 @@
     },
     "mistral-large-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -760,6 +787,7 @@
       },
       "model": null,
       "name": "Mistral Large 3",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -767,6 +795,7 @@
     },
     "mistral-large-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -816,6 +845,7 @@
       },
       "model": null,
       "name": "Mistral Large",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -823,6 +853,7 @@
     },
     "mistral-medium-2505": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -872,6 +903,7 @@
       },
       "model": null,
       "name": "Mistral Medium 3",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -879,6 +911,7 @@
     },
     "mistral-medium-2508": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -928,6 +961,7 @@
       },
       "model": null,
       "name": "Mistral Medium 3.1",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-08-12",
@@ -935,6 +969,7 @@
     },
     "mistral-medium-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -984,6 +1019,7 @@
       },
       "model": null,
       "name": "Mistral Medium",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -991,6 +1027,7 @@
     },
     "mistral-nemo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1039,6 +1076,7 @@
       },
       "model": null,
       "name": "Mistral Nemo",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-07-01",
@@ -1046,6 +1084,7 @@
     },
     "mistral-small-2506": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1095,6 +1134,7 @@
       },
       "model": null,
       "name": "Mistral Small 3.2",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2025-06-20",
@@ -1102,6 +1142,7 @@
     },
     "mistral-small-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1151,6 +1192,7 @@
       },
       "model": null,
       "name": "Mistral Small",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-09-01",
@@ -1158,6 +1200,7 @@
     },
     "open-mistral-7b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1206,6 +1249,7 @@
       },
       "model": null,
       "name": "Mistral 7B",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2023-09-27",
@@ -1213,6 +1257,7 @@
     },
     "open-mixtral-8x22b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1261,6 +1306,7 @@
       },
       "model": null,
       "name": "Mixtral 8x22B",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-04-17",
@@ -1268,6 +1314,7 @@
     },
     "open-mixtral-8x7b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1316,6 +1363,7 @@
       },
       "model": null,
       "name": "Mixtral 8x7B",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2023-12-11",
@@ -1323,6 +1371,7 @@
     },
     "pixtral-12b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1372,6 +1421,7 @@
       },
       "model": null,
       "name": "Pixtral 12B",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-09-01",
@@ -1379,6 +1429,7 @@
     },
     "pixtral-large-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1428,11 +1479,13 @@
       },
       "model": null,
       "name": "Pixtral Large",
+      "pricing": null,
       "provider": "mistral",
       "provider_model_id": null,
       "release_date": "2024-11-01",
       "tags": null
     }
   },
-  "name": "Mistral"
+  "name": "Mistral",
+  "pricing_defaults": null
 }

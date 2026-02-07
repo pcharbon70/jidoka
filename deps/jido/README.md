@@ -43,7 +43,6 @@ Jido is the core package of the Jido ecosystem. The ecosystem is built around th
 | [jido_signal](https://github.com/agentjido/jido_signal) | CloudEvents-based message envelope and supporting utilities for routing and pub/sub messaging |
 | [jido](https://github.com/agentjido/jido)               | Core agent framework with state management, directives, and runtime                           |
 | [jido_ai](https://github.com/agentjido/jido_ai)         | AI/LLM integration for agents                                                                 |
-| [jido_coder](https://github.com/agentjido/jido_coder)   | AI coding agent with file operations, git integration, and test execution                     |
 
 For demos and examples of what you can build with the Jido Ecosystem, see [https://agentjido.xyz](https://agentjido.xyz).
 
@@ -79,9 +78,9 @@ Jido isn't "better GenServer" - it's a formalized agent pattern built *on* GenSe
 - Signal routing with configurable strategies
 - Instance-scoped supervision for multi-tenant deployments
 
-### Composable Skills
-- Reusable behavior modules that extend agents
-- State isolation per skill with automatic schema merging
+### Composable Plugins
+- Reusable capability modules that extend agents
+- State isolation per plugin with automatic schema merging
 - Lifecycle hooks for initialization and signal handling
 
 ### Execution Strategies
@@ -273,11 +272,13 @@ State operations are internal state transitions handled by the strategy layer du
 - [Signals & Routing](guides/signals.md) - Signal-based communication
 - [Agent Directives](guides/directives.md) - Effect descriptions for the runtime
 - [Runtime and AgentServer](guides/runtime.md) - Process-based agent execution
-- [Skills](guides/skills.md) - Composable capability bundles
+- [Persistence & Storage](guides/storage.md) - Hibernate, thaw, and InstanceManager lifecycle
+- [Plugins](guides/plugins.md) - Composable capability bundles
 - [Strategies](guides/strategies.md) - Execution strategies (Direct, FSM)
 
 **Advanced:**
 - [FSM Strategy Deep Dive](guides/fsm-strategy.livemd) - State machine workflows
+- [Worker Pools](guides/worker-pools.md) - Pre-warmed agent pools for throughput
 - [Testing Agents](guides/testing.md) - Testing patterns and best practices
 
 **API Reference:** [hexdocs.pm/jido](https://hexdocs.pm/jido)

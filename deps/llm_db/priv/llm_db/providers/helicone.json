@@ -12,6 +12,7 @@
   "models": {
     "chatgpt-4o-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -62,6 +63,7 @@
       },
       "model": null,
       "name": "OpenAI ChatGPT-4o",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-08-14",
@@ -69,6 +71,7 @@
     },
     "claude-3-haiku-20240307": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -120,6 +123,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude 3 Haiku",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-03-07",
@@ -127,6 +131,7 @@
     },
     "claude-3.5-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -178,6 +183,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude 3.5 Haiku",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -185,6 +191,7 @@
     },
     "claude-3.5-sonnet-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -236,6 +243,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude 3.5 Sonnet v2",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -243,6 +251,7 @@
     },
     "claude-3.7-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -294,6 +303,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude 3.7 Sonnet",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -301,6 +311,7 @@
     },
     "claude-4.5-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -352,6 +363,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude 4.5 Haiku",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-10-01",
@@ -359,6 +371,7 @@
     },
     "claude-4.5-opus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -410,6 +423,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Opus 4.5",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-11-24",
@@ -417,6 +431,7 @@
     },
     "claude-4.5-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -468,6 +483,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -475,6 +491,7 @@
     },
     "claude-haiku-4-5-20251001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -526,6 +543,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude 4.5 Haiku (20251001)",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-10-01",
@@ -533,6 +551,7 @@
     },
     "claude-opus-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -584,6 +603,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Opus 4",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-05-14",
@@ -591,6 +611,7 @@
     },
     "claude-opus-4-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -642,6 +663,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Opus 4.1",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -649,6 +671,7 @@
     },
     "claude-opus-4-1-20250805": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -700,6 +723,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Opus 4.1 (20250805)",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -707,6 +731,7 @@
     },
     "claude-sonnet-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -758,6 +783,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Sonnet 4",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-05-14",
@@ -765,6 +791,7 @@
     },
     "claude-sonnet-4-5-20250929": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -816,6 +843,7 @@
       },
       "model": null,
       "name": "Anthropic: Claude Sonnet 4.5 (20250929)",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -823,6 +851,7 @@
     },
     "codex-mini-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -873,6 +902,7 @@
       },
       "model": null,
       "name": "OpenAI Codex Mini Latest",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -880,6 +910,7 @@
     },
     "deepseek-r1-distill-llama-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -928,6 +959,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 Distill Llama 70B",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -935,6 +967,7 @@
     },
     "deepseek-reasoner": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "cache_read": 0.07,
@@ -967,6 +1000,7 @@
       },
       "model": null,
       "name": "DeepSeek Reasoner",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -974,6 +1008,7 @@
     },
     "deepseek-tng-r1t2-chimera": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1022,6 +1057,7 @@
       },
       "model": null,
       "name": "DeepSeek TNG R1T2 Chimera",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-07-02",
@@ -1029,6 +1065,7 @@
     },
     "deepseek-v3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1078,6 +1115,7 @@
       },
       "model": null,
       "name": "DeepSeek V3",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-12-26",
@@ -1085,6 +1123,7 @@
     },
     "deepseek-v3.1-terminus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1134,6 +1173,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1 Terminus",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-22",
@@ -1141,6 +1181,7 @@
     },
     "deepseek-v3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1189,6 +1230,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.2",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-22",
@@ -1196,6 +1238,7 @@
     },
     "ernie-4.5-21b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1248,6 +1291,7 @@
       },
       "model": null,
       "name": "Baidu Ernie 4.5 21B A3B Thinking",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-03-16",
@@ -1255,6 +1299,7 @@
     },
     "gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1306,6 +1351,7 @@
       },
       "model": null,
       "name": "Google Gemini 2.5 Flash",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -1313,6 +1359,7 @@
     },
     "gemini-2.5-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1364,6 +1411,7 @@
       },
       "model": null,
       "name": "Google Gemini 2.5 Flash Lite",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-07-22",
@@ -1371,6 +1419,7 @@
     },
     "gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1422,6 +1471,7 @@
       },
       "model": null,
       "name": "Google Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -1429,6 +1479,7 @@
     },
     "gemini-3-pro-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1481,6 +1532,7 @@
       },
       "model": null,
       "name": "Google Gemini 3 Pro Preview",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -1488,6 +1540,7 @@
     },
     "gemma-3-12b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.049999999999999996,
@@ -1520,6 +1573,7 @@
       },
       "model": null,
       "name": "Google Gemma 3 12B",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -1527,6 +1581,7 @@
     },
     "gemma2-9b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.01,
@@ -1558,6 +1613,7 @@
       },
       "model": null,
       "name": "Google Gemma 2",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-25",
@@ -1565,6 +1621,7 @@
     },
     "glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1613,6 +1670,7 @@
       },
       "model": null,
       "name": "Zai GLM-4.6",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -1620,6 +1678,7 @@
     },
     "gpt-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1670,6 +1729,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-4.1",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1677,6 +1737,7 @@
     },
     "gpt-4.1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1727,6 +1788,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-4.1 Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1734,6 +1796,7 @@
     },
     "gpt-4.1-mini-2025-04-14": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1784,6 +1847,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-4.1 Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1791,6 +1855,7 @@
     },
     "gpt-4.1-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1841,6 +1906,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-4.1 Nano",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1848,6 +1914,7 @@
     },
     "gpt-4o": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1898,6 +1965,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-4o",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-05-13",
@@ -1905,6 +1973,7 @@
     },
     "gpt-4o-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1955,6 +2024,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-4o-mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -1962,6 +2032,7 @@
     },
     "gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2012,6 +2083,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-5",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2019,6 +2091,7 @@
     },
     "gpt-5-chat-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2069,6 +2142,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-5 Chat Latest",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-09-30",
@@ -2076,6 +2150,7 @@
     },
     "gpt-5-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2125,6 +2200,7 @@
       },
       "model": null,
       "name": "OpenAI: GPT-5 Codex",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2132,6 +2208,7 @@
     },
     "gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2182,6 +2259,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-5 Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2189,6 +2267,7 @@
     },
     "gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2239,6 +2318,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-5 Nano",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2246,6 +2326,7 @@
     },
     "gpt-5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 15,
@@ -2277,6 +2358,7 @@
       },
       "model": null,
       "name": "OpenAI: GPT-5 Pro",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2284,6 +2366,7 @@
     },
     "gpt-5.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2335,6 +2418,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-5.1",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2342,6 +2426,7 @@
     },
     "gpt-5.1-chat-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2393,6 +2478,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-5.1 Chat",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2400,6 +2486,7 @@
     },
     "gpt-5.1-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2451,6 +2538,7 @@
       },
       "model": null,
       "name": "OpenAI: GPT-5.1 Codex",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2458,6 +2546,7 @@
     },
     "gpt-5.1-codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2509,6 +2598,7 @@
       },
       "model": null,
       "name": "OpenAI: GPT-5.1 Codex Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -2516,6 +2606,7 @@
     },
     "gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2564,6 +2655,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-OSS 120b",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -2571,6 +2663,7 @@
     },
     "gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2619,6 +2712,7 @@
       },
       "model": null,
       "name": "OpenAI GPT-OSS 20b",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -2626,6 +2720,7 @@
     },
     "grok-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2675,6 +2770,7 @@
       },
       "model": null,
       "name": "xAI Grok 3",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -2682,6 +2778,7 @@
     },
     "grok-3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2731,6 +2828,7 @@
       },
       "model": null,
       "name": "xAI Grok 3 Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -2738,6 +2836,7 @@
     },
     "grok-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2787,6 +2886,7 @@
       },
       "model": null,
       "name": "xAI Grok 4",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-09",
@@ -2794,6 +2894,7 @@
     },
     "grok-4-1-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2845,6 +2946,7 @@
       },
       "model": null,
       "name": "xAI Grok 4.1 Fast Non-Reasoning",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-11-17",
@@ -2852,6 +2954,7 @@
     },
     "grok-4-1-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2902,6 +3005,7 @@
       },
       "model": null,
       "name": "xAI Grok 4.1 Fast Reasoning",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-11-17",
@@ -2909,6 +3013,7 @@
     },
     "grok-4-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2960,6 +3065,7 @@
       },
       "model": null,
       "name": "xAI Grok 4 Fast Non-Reasoning",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -2967,6 +3073,7 @@
     },
     "grok-4-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3017,6 +3124,7 @@
       },
       "model": null,
       "name": "xAI: Grok 4 Fast Reasoning",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-01",
@@ -3024,6 +3132,7 @@
     },
     "grok-code-fast-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3073,6 +3182,7 @@
       },
       "model": null,
       "name": "xAI Grok Code Fast 1",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-08-25",
@@ -3080,6 +3190,7 @@
     },
     "hermes-2-pro-llama-3-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3128,6 +3239,7 @@
       },
       "model": null,
       "name": "Hermes 2 Pro Llama 3 8B",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-05-27",
@@ -3135,6 +3247,7 @@
     },
     "kimi-k2-0711": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3183,6 +3296,7 @@
       },
       "model": null,
       "name": "Kimi K2 (07/11)",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -3190,6 +3304,7 @@
     },
     "kimi-k2-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3239,6 +3354,7 @@
       },
       "model": null,
       "name": "Kimi K2 (09/05)",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -3246,6 +3362,7 @@
     },
     "kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3294,6 +3411,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-11-06",
@@ -3301,6 +3419,7 @@
     },
     "llama-3.1-8b-instant": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3349,6 +3468,7 @@
       },
       "model": null,
       "name": "Meta Llama 3.1 8B Instant",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-01",
@@ -3356,6 +3476,7 @@
     },
     "llama-3.1-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3404,6 +3525,7 @@
       },
       "model": null,
       "name": "Meta Llama 3.1 8B Instruct",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3411,6 +3533,7 @@
     },
     "llama-3.1-8b-instruct-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3459,6 +3582,7 @@
       },
       "model": null,
       "name": "Meta Llama 3.1 8B Instruct Turbo",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3466,6 +3590,7 @@
     },
     "llama-3.3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3514,6 +3639,7 @@
       },
       "model": null,
       "name": "Meta Llama 3.3 70B Instruct",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -3521,6 +3647,7 @@
     },
     "llama-3.3-70b-versatile": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3569,6 +3696,7 @@
       },
       "model": null,
       "name": "Meta Llama 3.3 70B Versatile",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -3576,6 +3704,7 @@
     },
     "llama-4-maverick": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3625,6 +3754,7 @@
       },
       "model": null,
       "name": "Meta Llama 4 Maverick 17B 128E",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -3632,6 +3762,7 @@
     },
     "llama-4-scout": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3681,6 +3812,7 @@
       },
       "model": null,
       "name": "Meta Llama 4 Scout 17B 16E",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -3688,6 +3820,7 @@
     },
     "llama-guard-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.21,
@@ -3720,6 +3853,7 @@
       },
       "model": null,
       "name": "Meta Llama Guard 4 12B",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -3727,6 +3861,7 @@
     },
     "llama-prompt-guard-2-22m": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.01,
@@ -3758,6 +3893,7 @@
       },
       "model": null,
       "name": "Meta Llama Prompt Guard 2 22M",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-10-01",
@@ -3765,6 +3901,7 @@
     },
     "llama-prompt-guard-2-86m": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.01,
@@ -3796,6 +3933,7 @@
       },
       "model": null,
       "name": "Meta Llama Prompt Guard 2 86M",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-10-01",
@@ -3803,6 +3941,7 @@
     },
     "mistral-large-2411": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3851,6 +3990,7 @@
       },
       "model": null,
       "name": "Mistral-Large",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-24",
@@ -3858,6 +3998,7 @@
     },
     "mistral-nemo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 20,
@@ -3890,6 +4031,7 @@
       },
       "model": null,
       "name": "Mistral Nemo",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -3897,6 +4039,7 @@
     },
     "mistral-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 75,
@@ -3929,6 +4072,7 @@
       },
       "model": null,
       "name": "Mistral Small",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-02-26",
@@ -3936,6 +4080,7 @@
     },
     "o1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "cache_read": 7.5,
@@ -3968,6 +4113,7 @@
       },
       "model": null,
       "name": "OpenAI: o1",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -3975,6 +4121,7 @@
     },
     "o1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "cache_read": 0.55,
@@ -4007,6 +4154,7 @@
       },
       "model": null,
       "name": "OpenAI: o1-mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -4014,6 +4162,7 @@
     },
     "o3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4064,6 +4213,7 @@
       },
       "model": null,
       "name": "OpenAI o3",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -4071,6 +4221,7 @@
     },
     "o3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4120,6 +4271,7 @@
       },
       "model": null,
       "name": "OpenAI o3 Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2023-10-01",
@@ -4127,6 +4279,7 @@
     },
     "o3-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4176,6 +4329,7 @@
       },
       "model": null,
       "name": "OpenAI o3 Pro",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -4183,6 +4337,7 @@
     },
     "o4-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4233,6 +4388,7 @@
       },
       "model": null,
       "name": "OpenAI o4 Mini",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-06-01",
@@ -4240,6 +4396,7 @@
     },
     "qwen2.5-coder-7b-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.03,
@@ -4271,6 +4428,7 @@
       },
       "model": null,
       "name": "Qwen2.5 Coder 7B fast",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2024-09-15",
@@ -4278,6 +4436,7 @@
     },
     "qwen3-235b-a22b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4332,6 +4491,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Thinking",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-07-25",
@@ -4339,6 +4499,7 @@
     },
     "qwen3-30b-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4388,6 +4549,7 @@
       },
       "model": null,
       "name": "Qwen3 30B A3B",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-06-01",
@@ -4395,6 +4557,7 @@
     },
     "qwen3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4443,6 +4606,7 @@
       },
       "model": null,
       "name": "Qwen3 32B",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-04-28",
@@ -4450,6 +4614,7 @@
     },
     "qwen3-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4501,6 +4666,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct Turbo",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -4508,6 +4674,7 @@
     },
     "qwen3-coder-30b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4556,6 +4723,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 30B A3B Instruct",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-07-31",
@@ -4563,6 +4731,7 @@
     },
     "qwen3-next-80b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4613,6 +4782,7 @@
       },
       "model": null,
       "name": "Qwen3 Next 80B A3B Instruct",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -4620,6 +4790,7 @@
     },
     "qwen3-vl-235b-a22b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4670,6 +4841,7 @@
       },
       "model": null,
       "name": "Qwen3 VL 235B A22B Instruct",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-09-23",
@@ -4677,6 +4849,7 @@
     },
     "sonar": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1,
@@ -4708,6 +4881,7 @@
       },
       "model": null,
       "name": "Perplexity Sonar",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-27",
@@ -4715,6 +4889,7 @@
     },
     "sonar-deep-research": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4767,6 +4942,7 @@
       },
       "model": null,
       "name": "Perplexity Sonar Deep Research",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-27",
@@ -4774,6 +4950,7 @@
     },
     "sonar-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 3,
@@ -4805,6 +4982,7 @@
       },
       "model": null,
       "name": "Perplexity Sonar Pro",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-27",
@@ -4812,6 +4990,7 @@
     },
     "sonar-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4864,6 +5043,7 @@
       },
       "model": null,
       "name": "Perplexity Sonar Reasoning",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-27",
@@ -4871,6 +5051,7 @@
     },
     "sonar-reasoning-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4923,11 +5104,13 @@
       },
       "model": null,
       "name": "Perplexity Sonar Reasoning Pro",
+      "pricing": null,
       "provider": "helicone",
       "provider_model_id": null,
       "release_date": "2025-01-27",
       "tags": null
     }
   },
-  "name": "Helicone"
+  "name": "Helicone",
+  "pricing_defaults": null
 }

@@ -40,32 +40,26 @@ defmodule Zoi.Types.KeyValue do
 
   defp do_parse_pairs(
          input_pairs,
-         %_{fields: schema_fields, strict: strict?, coerce: coerce?, empty_values: empty_values},
+         %_{
+           fields: schema_fields,
+           unrecognized_keys: unrecognized_keys,
+           coerce: coerce?,
+           empty_values: empty_values
+         },
          opts
        )
        when is_list(schema_fields) do
     coerce? = Keyword.get(opts, :coerce, coerce?)
     normalize_key = normalize_key_fun(coerce?)
 
-    input_lookup =
-      input_pairs
-      |> Map.new(fn {k, v} -> {normalize_key.(k), v} end)
+    input_lookup = Map.new(input_pairs, fn {k, v} -> {normalize_key.(k), v} end)
 
     schema_keyset =
       schema_fields
       |> Enum.map(fn {k, _schema} -> normalize_key.(k) end)
       |> MapSet.new()
 
-    unknown_key_errors =
-      if strict? do
-        input_pairs
-        |> Stream.map(fn {k, _} -> normalize_key.(k) end)
-        |> Stream.reject(&MapSet.member?(schema_keyset, &1))
-        |> Enum.uniq()
-        |> Enum.map(&Zoi.Error.unrecognized_key/1)
-      else
-        []
-      end
+    unknown_pairs = reject_known_pairs(input_pairs, schema_keyset, normalize_key)
 
     {parsed, collected_errors} =
       Enum.reduce(schema_fields, {[], []}, fn {field_key, field_schema}, {parsed, errors} ->
@@ -97,7 +91,33 @@ defmodule Zoi.Types.KeyValue do
         end
       end)
 
-    errors = Zoi.Errors.merge(collected_errors, unknown_key_errors)
+    {parsed, errors} =
+      case unrecognized_keys do
+        :strip ->
+          {parsed, collected_errors}
+
+        :error ->
+          errors =
+            unknown_pairs
+            |> Enum.map(fn {k, _} -> normalize_key.(k) end)
+            |> Enum.uniq()
+            |> Enum.map(&Zoi.Error.unrecognized_key/1)
+
+          {parsed, Zoi.Errors.merge(collected_errors, errors)}
+
+        :preserve ->
+          {unknown_pairs ++ parsed, collected_errors}
+
+        {:preserve, {key_schema, value_schema}} ->
+          validate_preserve_schema(
+            unknown_pairs,
+            key_schema,
+            value_schema,
+            parsed,
+            collected_errors,
+            opts
+          )
+      end
 
     if errors == [] do
       {:ok, parsed}
@@ -145,6 +165,25 @@ defmodule Zoi.Types.KeyValue do
   defp normalize_key_fun(true), do: &to_string/1
   defp normalize_key_fun(false), do: &Function.identity/1
 
+  defp reject_known_pairs(input_pairs, schema_keyset, normalize_key) do
+    Enum.reject(input_pairs, fn {k, _} ->
+      MapSet.member?(schema_keyset, normalize_key.(k))
+    end)
+  end
+
   defp default?(%Zoi.Types.Default{}), do: true
   defp default?(_), do: false
+
+  defp validate_preserve_schema(unknown_pairs, key_schema, value_schema, parsed, errors, opts) do
+    unknown_map = Map.new(unknown_pairs)
+    temp_schema = Zoi.map(key_schema, value_schema)
+
+    case Zoi.Type.parse(temp_schema, unknown_map, opts) do
+      {:ok, validated_map} ->
+        {Map.to_list(validated_map) ++ parsed, errors}
+
+      {:error, new_errors, _partial} ->
+        {parsed, Zoi.Errors.merge(errors, new_errors)}
+    end
+  end
 end

@@ -200,10 +200,8 @@ defmodule ReqLLM.Providers.Azure.Anthropic do
         "azure-anthropic"
       end
 
-    anthropic_model = %LLMDB.Model{
-      id: model_id,
-      provider: :anthropic
-    }
+    model_id = ReqLLM.ModelId.normalize(model_id, "azure-anthropic")
+    anthropic_model = LLMDB.Model.new!(%{id: model_id, provider: :anthropic})
 
     case Anthropic.Response.decode_response(body, anthropic_model) do
       {:ok, response} ->

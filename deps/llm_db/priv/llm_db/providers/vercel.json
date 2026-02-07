@@ -12,6 +12,7 @@
   "models": {
     "alibaba/qwen-3-14b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Qwen3-14B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -67,6 +69,7 @@
     },
     "alibaba/qwen-3-235b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Instruct 2507",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -122,6 +126,7 @@
     },
     "alibaba/qwen-3-30b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,6 +175,7 @@
       },
       "model": null,
       "name": "Qwen3-30B-A3B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -177,6 +183,7 @@
     },
     "alibaba/qwen-3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -225,6 +232,7 @@
       },
       "model": null,
       "name": "Qwen 3.32B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -232,6 +240,7 @@
     },
     "alibaba/qwen3-235b-a22b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -282,6 +291,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Thinking 2507",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -289,6 +299,7 @@
     },
     "alibaba/qwen3-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -337,6 +348,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -344,6 +356,7 @@
     },
     "alibaba/qwen3-coder-30b-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -392,6 +405,7 @@
       },
       "model": null,
       "name": "Qwen 3 Coder 30B A3B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -399,6 +413,7 @@
     },
     "alibaba/qwen3-coder-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -447,6 +462,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder Plus",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -454,6 +470,7 @@
     },
     "alibaba/qwen3-embedding-0.6b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.01,
@@ -485,6 +502,7 @@
       },
       "model": null,
       "name": "Qwen3 Embedding 0.6B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-11-14",
@@ -492,6 +510,7 @@
     },
     "alibaba/qwen3-embedding-4b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -523,6 +542,7 @@
       },
       "model": null,
       "name": "Qwen3 Embedding 4B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06-05",
@@ -530,6 +550,7 @@
     },
     "alibaba/qwen3-embedding-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.05,
@@ -561,6 +582,7 @@
       },
       "model": null,
       "name": "Qwen3 Embedding 8B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06-05",
@@ -568,6 +590,7 @@
     },
     "alibaba/qwen3-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -616,6 +639,7 @@
       },
       "model": null,
       "name": "Qwen3 Max",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-23",
@@ -623,6 +647,7 @@
     },
     "alibaba/qwen3-max-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -672,13 +697,73 @@
       },
       "model": null,
       "name": "Qwen3 Max Preview",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-23",
       "tags": null
     },
+    "alibaba/qwen3-max-thinking": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.24,
+        "input": 1.2,
+        "output": 6
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "qwen",
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "alibaba/qwen3-max-thinking",
+      "knowledge": "2025-01",
+      "last_updated": "2025-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 256000,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Qwen 3 Max Thinking",
+      "pricing": null,
+      "provider": "vercel",
+      "provider_model_id": null,
+      "release_date": "2025-01",
+      "tags": null
+    },
     "alibaba/qwen3-next-80b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -727,6 +812,7 @@
       },
       "model": null,
       "name": "Qwen3 Next 80B A3B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-12",
@@ -734,6 +820,7 @@
     },
     "alibaba/qwen3-next-80b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -782,6 +869,7 @@
       },
       "model": null,
       "name": "Qwen3 Next 80B A3B Thinking",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-12",
@@ -789,6 +877,7 @@
     },
     "alibaba/qwen3-vl-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -838,6 +927,7 @@
       },
       "model": null,
       "name": "Qwen3 VL Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -845,6 +935,7 @@
     },
     "alibaba/qwen3-vl-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -894,6 +985,7 @@
       },
       "model": null,
       "name": "Qwen3 VL Thinking",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-24",
@@ -901,6 +993,7 @@
     },
     "amazon/nova-2-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -954,6 +1047,7 @@
       },
       "model": null,
       "name": "Nova 2 Lite",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -961,6 +1055,7 @@
     },
     "amazon/nova-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1012,6 +1107,7 @@
       },
       "model": null,
       "name": "Nova Lite",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-03",
@@ -1019,6 +1115,7 @@
     },
     "amazon/nova-micro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1068,6 +1165,7 @@
       },
       "model": null,
       "name": "Nova Micro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-03",
@@ -1075,6 +1173,7 @@
     },
     "amazon/nova-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1126,6 +1225,7 @@
       },
       "model": null,
       "name": "Nova Pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-03",
@@ -1133,6 +1233,7 @@
     },
     "amazon/titan-embed-text-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -1164,6 +1265,7 @@
       },
       "model": null,
       "name": "Titan Text Embeddings V2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-04",
@@ -1171,6 +1273,7 @@
     },
     "anthropic/claude-3-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1223,6 +1326,7 @@
       },
       "model": null,
       "name": "Claude Haiku 3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-03-13",
@@ -1230,6 +1334,7 @@
     },
     "anthropic/claude-3-opus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1282,6 +1387,7 @@
       },
       "model": null,
       "name": "Claude Opus 3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-02-29",
@@ -1289,6 +1395,7 @@
     },
     "anthropic/claude-3.5-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1341,6 +1448,7 @@
       },
       "model": null,
       "name": "Claude Haiku 3.5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -1348,6 +1456,7 @@
     },
     "anthropic/claude-3.5-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1400,6 +1509,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 3.5 v2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -1407,6 +1517,7 @@
     },
     "anthropic/claude-3.5-sonnet-20240620": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1457,6 +1568,7 @@
       },
       "model": null,
       "name": "Claude 3.5 Sonnet (2024-06-20)",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-06-20",
@@ -1464,6 +1576,7 @@
     },
     "anthropic/claude-3.7-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1516,6 +1629,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 3.7",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -1523,6 +1637,7 @@
     },
     "anthropic/claude-haiku-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1551,6 +1666,7 @@
       "extra": {
         "attachment": true,
         "family": "claude-haiku",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -1575,6 +1691,7 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -1582,6 +1699,7 @@
     },
     "anthropic/claude-opus-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1634,6 +1752,7 @@
       },
       "model": null,
       "name": "Claude Opus 4",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -1641,6 +1760,7 @@
     },
     "anthropic/claude-opus-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1693,6 +1813,7 @@
       },
       "model": null,
       "name": "Claude Opus 4",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -1700,6 +1821,7 @@
     },
     "anthropic/claude-opus-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1728,6 +1850,7 @@
       "extra": {
         "attachment": true,
         "family": "claude-opus",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -1752,13 +1875,77 @@
       },
       "model": null,
       "name": "Claude Opus 4.5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-11-24",
       "tags": null
     },
+    "anthropic/claude-opus-4.6": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.5,
+        "cache_write": 6.25,
+        "input": 5,
+        "output": 25
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "claude-opus",
+        "interleaved": true,
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "anthropic/claude-opus-4.6",
+      "knowledge": "2025-05",
+      "last_updated": "2026-02",
+      "lifecycle": null,
+      "limits": {
+        "context": 1000000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Opus 4.6",
+      "pricing": null,
+      "provider": "vercel",
+      "provider_model_id": null,
+      "release_date": "2026-02",
+      "tags": null
+    },
     "anthropic/claude-sonnet-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1811,6 +1998,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -1818,6 +2006,7 @@
     },
     "anthropic/claude-sonnet-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1870,13 +2059,72 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-29",
       "tags": null
     },
+    "arcee-ai/trinity-large-preview": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.25,
+        "output": 1
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "trinity",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "arcee-ai/trinity-large-preview",
+      "knowledge": "2024-10",
+      "last_updated": "2025-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 131000,
+        "output": 131000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Trinity Large Preview",
+      "pricing": null,
+      "provider": "vercel",
+      "provider_model_id": null,
+      "release_date": "2025-01",
+      "tags": null
+    },
     "arcee-ai/trinity-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.05,
@@ -1908,6 +2156,7 @@
       },
       "model": null,
       "name": "Trinity Mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12",
@@ -1915,6 +2164,7 @@
     },
     "bfl/flux-kontext-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1942,6 +2192,7 @@
       },
       "model": null,
       "name": "FLUX.1 Kontext Max",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06",
@@ -1949,6 +2200,7 @@
     },
     "bfl/flux-kontext-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1976,6 +2228,7 @@
       },
       "model": null,
       "name": "FLUX.1 Kontext Pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06",
@@ -1983,6 +2236,7 @@
     },
     "bfl/flux-pro-1.0-fill": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -2010,6 +2264,7 @@
       },
       "model": null,
       "name": "FLUX.1 Fill [pro]",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10",
@@ -2017,6 +2272,7 @@
     },
     "bfl/flux-pro-1.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -2044,6 +2300,7 @@
       },
       "model": null,
       "name": "FLUX1.1 [pro]",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10",
@@ -2051,6 +2308,7 @@
     },
     "bfl/flux-pro-1.1-ultra": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -2078,6 +2336,7 @@
       },
       "model": null,
       "name": "FLUX1.1 [pro] Ultra",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-11",
@@ -2085,6 +2344,7 @@
     },
     "bytedance/seed-1.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2134,6 +2394,7 @@
       },
       "model": null,
       "name": "Seed 1.6",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09",
@@ -2141,6 +2402,7 @@
     },
     "bytedance/seed-1.8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2191,6 +2453,7 @@
       },
       "model": null,
       "name": "Seed 1.8",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-10",
@@ -2198,6 +2461,7 @@
     },
     "cohere/command-a": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2246,6 +2510,7 @@
       },
       "model": null,
       "name": "Command A",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-13",
@@ -2253,6 +2518,7 @@
     },
     "cohere/embed-v4.0": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.12,
@@ -2284,6 +2550,7 @@
       },
       "model": null,
       "name": "Embed v4.0",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-15",
@@ -2291,6 +2558,7 @@
     },
     "deepseek/deepseek-r1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2339,6 +2607,7 @@
       },
       "model": null,
       "name": "DeepSeek-R1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -2346,6 +2615,7 @@
     },
     "deepseek/deepseek-v3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2394,6 +2664,7 @@
       },
       "model": null,
       "name": "DeepSeek V3 0324",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-26",
@@ -2401,6 +2672,7 @@
     },
     "deepseek/deepseek-v3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2449,6 +2721,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3.1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-21",
@@ -2456,6 +2729,7 @@
     },
     "deepseek/deepseek-v3.1-terminus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2504,6 +2778,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1 Terminus",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-22",
@@ -2511,6 +2786,7 @@
     },
     "deepseek/deepseek-v3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "cache_read": 0.22,
@@ -2543,6 +2819,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -2550,6 +2827,7 @@
     },
     "deepseek/deepseek-v3.2-exp": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2598,6 +2876,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.2 Exp",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -2605,6 +2884,7 @@
     },
     "deepseek/deepseek-v3.2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2632,6 +2912,7 @@
       "extra": {
         "attachment": false,
         "family": "deepseek-thinking",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -2654,6 +2935,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.2 Thinking",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -2661,6 +2943,7 @@
     },
     "google/gemini-2.0-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2715,6 +2998,7 @@
       },
       "model": null,
       "name": "Gemini 2.0 Flash",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -2722,6 +3006,7 @@
     },
     "google/gemini-2.0-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2775,6 +3060,7 @@
       },
       "model": null,
       "name": "Gemini 2.0 Flash Lite",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -2782,6 +3068,7 @@
     },
     "google/gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2837,6 +3124,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -2844,6 +3132,7 @@
     },
     "google/gemini-2.5-flash-image": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.3,
@@ -2876,6 +3165,7 @@
       },
       "model": null,
       "name": "Nano Banana (Gemini 2.5 Flash Image)",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -2883,6 +3173,7 @@
     },
     "google/gemini-2.5-flash-image-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.3,
@@ -2915,6 +3206,7 @@
       },
       "model": null,
       "name": "Nano Banana Preview (Gemini 2.5 Flash Image Preview)",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -2922,6 +3214,7 @@
     },
     "google/gemini-2.5-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2975,6 +3268,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash Lite",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -2982,6 +3276,7 @@
     },
     "google/gemini-2.5-flash-lite-preview-09-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3035,6 +3330,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash Lite Preview 09-25",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-25",
@@ -3042,6 +3338,7 @@
     },
     "google/gemini-2.5-flash-preview-09-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3096,6 +3393,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash Preview 09-25",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-25",
@@ -3103,6 +3401,7 @@
     },
     "google/gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3157,6 +3456,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -3164,6 +3464,7 @@
     },
     "google/gemini-3-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3215,6 +3516,7 @@
       },
       "model": null,
       "name": "Gemini 3 Flash",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-17",
@@ -3222,6 +3524,7 @@
     },
     "google/gemini-3-pro-image": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 2,
@@ -3254,6 +3557,7 @@
       },
       "model": null,
       "name": "Nano Banana Pro (Gemini 3 Pro Image)",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09",
@@ -3261,6 +3565,7 @@
     },
     "google/gemini-3-pro-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3314,6 +3619,7 @@
       },
       "model": null,
       "name": "Gemini 3 Pro Preview",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -3321,6 +3627,7 @@
     },
     "google/gemini-embedding-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.15,
@@ -3352,6 +3659,7 @@
       },
       "model": null,
       "name": "Gemini Embedding 001",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-20",
@@ -3359,6 +3667,7 @@
     },
     "google/imagen-4.0-fast-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -3386,6 +3695,7 @@
       },
       "model": null,
       "name": "Imagen 4 Fast",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06",
@@ -3393,6 +3703,7 @@
     },
     "google/imagen-4.0-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -3420,6 +3731,7 @@
       },
       "model": null,
       "name": "Imagen 4",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -3427,6 +3739,7 @@
     },
     "google/imagen-4.0-ultra-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -3454,6 +3767,7 @@
       },
       "model": null,
       "name": "Imagen 4 Ultra",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-24",
@@ -3461,6 +3775,7 @@
     },
     "google/text-embedding-005": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.03,
@@ -3492,6 +3807,7 @@
       },
       "model": null,
       "name": "Text Embedding 005",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-08",
@@ -3499,6 +3815,7 @@
     },
     "google/text-multilingual-embedding-002": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.03,
@@ -3530,6 +3847,7 @@
       },
       "model": null,
       "name": "Text Multilingual Embedding 002",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-03",
@@ -3537,6 +3855,7 @@
     },
     "inception/mercury-coder-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3585,6 +3904,7 @@
       },
       "model": null,
       "name": "Mercury Coder Small Beta",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-26",
@@ -3592,6 +3912,7 @@
     },
     "kwaipilot/kat-coder-pro-v1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3641,6 +3962,7 @@
       },
       "model": null,
       "name": "KAT-Coder-Pro V1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-10-24",
@@ -3648,6 +3970,7 @@
     },
     "meituan/longcat-flash-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3693,6 +4016,7 @@
       },
       "model": null,
       "name": "LongCat Flash Chat",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-30",
@@ -3700,6 +4024,7 @@
     },
     "meituan/longcat-flash-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3748,6 +4073,7 @@
       },
       "model": null,
       "name": "LongCat Flash Thinking",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-23",
@@ -3755,6 +4081,7 @@
     },
     "meta/llama-3.1-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3803,6 +4130,7 @@
       },
       "model": null,
       "name": "Llama 3.1 70B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3810,6 +4138,7 @@
     },
     "meta/llama-3.1-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3858,6 +4187,7 @@
       },
       "model": null,
       "name": "Llama 3.1 8B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3865,6 +4195,7 @@
     },
     "meta/llama-3.2-11b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3914,6 +4245,7 @@
       },
       "model": null,
       "name": "Llama 3.2 11B Vision Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09-25",
@@ -3921,6 +4253,7 @@
     },
     "meta/llama-3.2-1b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -3952,6 +4285,7 @@
       },
       "model": null,
       "name": "Llama 3.2 1B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -3959,6 +4293,7 @@
     },
     "meta/llama-3.2-3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.15,
@@ -3990,6 +4325,7 @@
       },
       "model": null,
       "name": "Llama 3.2 3B Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -3997,6 +4333,7 @@
     },
     "meta/llama-3.2-90b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4046,6 +4383,7 @@
       },
       "model": null,
       "name": "Llama 3.2 90B Vision Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09-25",
@@ -4053,6 +4391,7 @@
     },
     "meta/llama-3.3-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4101,6 +4440,7 @@
       },
       "model": null,
       "name": "Llama-3.3-70B-Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -4108,6 +4448,7 @@
     },
     "meta/llama-4-maverick": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4157,6 +4498,7 @@
       },
       "model": null,
       "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -4164,6 +4506,7 @@
     },
     "meta/llama-4-scout": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4213,6 +4556,7 @@
       },
       "model": null,
       "name": "Llama-4-Scout-17B-16E-Instruct-FP8",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -4220,6 +4564,7 @@
     },
     "minimax/minimax-m2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4248,6 +4593,7 @@
       "extra": {
         "attachment": false,
         "family": "minimax",
+        "interleaved": true,
         "open_weights": true,
         "temperature": true
       },
@@ -4270,6 +4616,7 @@
       },
       "model": null,
       "name": "MiniMax M2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-10-27",
@@ -4277,6 +4624,7 @@
     },
     "minimax/minimax-m2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4305,6 +4653,7 @@
       "extra": {
         "attachment": false,
         "family": "minimax",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -4327,6 +4676,7 @@
       },
       "model": null,
       "name": "MiniMax M2.1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-10-27",
@@ -4334,6 +4684,7 @@
     },
     "minimax/minimax-m2.1-lightning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4384,6 +4735,7 @@
       },
       "model": null,
       "name": "MiniMax M2.1 Lightning",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-10-27",
@@ -4391,6 +4743,7 @@
     },
     "mistral/codestral": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4439,6 +4792,7 @@
       },
       "model": null,
       "name": "Codestral",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-05-29",
@@ -4446,6 +4800,7 @@
     },
     "mistral/codestral-embed": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.15,
@@ -4477,6 +4832,7 @@
       },
       "model": null,
       "name": "Codestral Embed",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-28",
@@ -4484,6 +4840,7 @@
     },
     "mistral/devstral-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4529,6 +4886,7 @@
       },
       "model": null,
       "name": "Devstral 2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-09",
@@ -4536,6 +4894,7 @@
     },
     "mistral/devstral-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4584,6 +4943,7 @@
       },
       "model": null,
       "name": "Devstral Small 1.1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -4591,6 +4951,7 @@
     },
     "mistral/devstral-small-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4636,6 +4997,7 @@
       },
       "model": null,
       "name": "Devstral Small 2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -4643,6 +5005,7 @@
     },
     "mistral/magistral-medium": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4691,6 +5054,7 @@
       },
       "model": null,
       "name": "Magistral Medium",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-17",
@@ -4698,6 +5062,7 @@
     },
     "mistral/magistral-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4746,6 +5111,7 @@
       },
       "model": null,
       "name": "Magistral Small",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-03-17",
@@ -4753,6 +5119,7 @@
     },
     "mistral/ministral-14b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.2,
@@ -4786,6 +5153,7 @@
       },
       "model": null,
       "name": "Ministral 14B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -4793,6 +5161,7 @@
     },
     "mistral/ministral-3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4841,6 +5210,7 @@
       },
       "model": null,
       "name": "Ministral 3B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10-01",
@@ -4848,6 +5218,7 @@
     },
     "mistral/ministral-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4896,6 +5267,7 @@
       },
       "model": null,
       "name": "Ministral 8B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10-01",
@@ -4903,6 +5275,7 @@
     },
     "mistral/mistral-embed": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -4934,6 +5307,7 @@
       },
       "model": null,
       "name": "Mistral Embed",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2023-12-11",
@@ -4941,6 +5315,7 @@
     },
     "mistral/mistral-large-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.5,
@@ -4973,6 +5348,7 @@
       },
       "model": null,
       "name": "Mistral Large 3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-02",
@@ -4980,6 +5356,7 @@
     },
     "mistral/mistral-medium": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5029,6 +5406,7 @@
       },
       "model": null,
       "name": "Mistral Medium 3.1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -5036,6 +5414,7 @@
     },
     "mistral/mistral-nemo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5084,6 +5463,7 @@
       },
       "model": null,
       "name": "Mistral Nemo",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-07-01",
@@ -5091,6 +5471,7 @@
     },
     "mistral/mistral-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5140,6 +5521,7 @@
       },
       "model": null,
       "name": "Mistral Small",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09-01",
@@ -5147,6 +5529,7 @@
     },
     "mistral/mixtral-8x22b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5195,6 +5578,7 @@
       },
       "model": null,
       "name": "Mixtral 8x22B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-04-17",
@@ -5202,6 +5586,7 @@
     },
     "mistral/pixtral-12b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5251,6 +5636,7 @@
       },
       "model": null,
       "name": "Pixtral 12B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09-01",
@@ -5258,6 +5644,7 @@
     },
     "mistral/pixtral-large": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5307,6 +5694,7 @@
       },
       "model": null,
       "name": "Pixtral Large",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -5314,6 +5702,7 @@
     },
     "moonshotai/kimi-k2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5363,6 +5752,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-14",
@@ -5370,6 +5760,7 @@
     },
     "moonshotai/kimi-k2-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.6,
@@ -5401,6 +5792,7 @@
       },
       "model": null,
       "name": "Kimi K2 0905",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -5408,6 +5800,7 @@
     },
     "moonshotai/kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5435,6 +5828,7 @@
       "extra": {
         "attachment": false,
         "family": "kimi-thinking",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -5457,6 +5851,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-11-06",
@@ -5464,6 +5859,7 @@
     },
     "moonshotai/kimi-k2-thinking-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5491,6 +5887,7 @@
       "extra": {
         "attachment": false,
         "family": "kimi-thinking",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -5513,6 +5910,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking Turbo",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-11-06",
@@ -5520,6 +5918,7 @@
     },
     "moonshotai/kimi-k2-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5568,13 +5967,75 @@
       },
       "model": null,
       "name": "Kimi K2 Turbo",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-05",
       "tags": null
     },
+    "moonshotai/kimi-k2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.6,
+        "output": 1.2
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "kimi",
+        "interleaved": true,
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "moonshotai/kimi-k2.5",
+      "knowledge": "2025-01",
+      "last_updated": "2026-01-26",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2.5",
+      "pricing": null,
+      "provider": "vercel",
+      "provider_model_id": null,
+      "release_date": "2026-01-26",
+      "tags": null
+    },
     "morph/morph-v3-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.8,
@@ -5606,6 +6067,7 @@
       },
       "model": null,
       "name": "Morph v3 Fast",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-08-15",
@@ -5613,6 +6075,7 @@
     },
     "morph/morph-v3-large": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.9,
@@ -5644,6 +6107,7 @@
       },
       "model": null,
       "name": "Morph v3 Large",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-08-15",
@@ -5651,6 +6115,7 @@
     },
     "nvidia/nemotron-3-nano-30b-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5703,6 +6168,7 @@
       },
       "model": null,
       "name": "Nemotron 3 Nano 30B A3B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12",
@@ -5710,6 +6176,7 @@
     },
     "nvidia/nemotron-nano-12b-v2-vl": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5759,6 +6226,7 @@
       },
       "model": null,
       "name": "Nvidia Nemotron Nano 12B V2 VL",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12",
@@ -5766,6 +6234,7 @@
     },
     "nvidia/nemotron-nano-9b-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5814,6 +6283,7 @@
       },
       "model": null,
       "name": "Nvidia Nemotron Nano 9B V2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-18",
@@ -5821,6 +6291,7 @@
     },
     "openai/codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5872,6 +6343,7 @@
       },
       "model": null,
       "name": "Codex Mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-16",
@@ -5879,6 +6351,7 @@
     },
     "openai/gpt-3.5-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.5,
@@ -5910,6 +6383,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2023-03-01",
@@ -5917,6 +6391,7 @@
     },
     "openai/gpt-3.5-turbo-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1.5,
@@ -5948,6 +6423,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo Instruct",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2023-03-01",
@@ -5955,6 +6431,7 @@
     },
     "openai/gpt-4-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6005,6 +6482,7 @@
       },
       "model": null,
       "name": "GPT-4 Turbo",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2023-11-06",
@@ -6012,6 +6490,7 @@
     },
     "openai/gpt-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6063,6 +6542,7 @@
       },
       "model": null,
       "name": "GPT-4.1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -6070,6 +6550,7 @@
     },
     "openai/gpt-4.1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6121,6 +6602,7 @@
       },
       "model": null,
       "name": "GPT-4.1 mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -6128,6 +6610,7 @@
     },
     "openai/gpt-4.1-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6179,6 +6662,7 @@
       },
       "model": null,
       "name": "GPT-4.1 nano",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -6186,6 +6670,7 @@
     },
     "openai/gpt-4o": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6237,6 +6722,7 @@
       },
       "model": null,
       "name": "GPT-4o",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-05-13",
@@ -6244,6 +6730,7 @@
     },
     "openai/gpt-4o-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6295,13 +6782,56 @@
       },
       "model": null,
       "name": "GPT-4o mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-07-18",
       "tags": null
     },
+    "openai/gpt-4o-mini-search-preview": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": null,
+      "cost": {
+        "input": 0.15,
+        "output": 0.6
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "gpt-mini",
+        "open_weights": false,
+        "structured_output": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "openai/gpt-4o-mini-search-preview",
+      "knowledge": "2023-09",
+      "last_updated": "2025-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 128000,
+        "output": 16384
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GPT 4o Mini Search Preview",
+      "pricing": null,
+      "provider": "vercel",
+      "provider_model_id": null,
+      "release_date": "2025-01",
+      "tags": null
+    },
     "openai/gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6321,7 +6851,7 @@
         }
       },
       "cost": {
-        "cache_read": 0.13,
+        "cache_read": 0.125,
         "input": 1.25,
         "output": 10
       },
@@ -6353,6 +6883,7 @@
       },
       "model": null,
       "name": "GPT-5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6360,6 +6891,7 @@
     },
     "openai/gpt-5-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6412,6 +6944,7 @@
       },
       "model": null,
       "name": "GPT-5 Chat",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6419,6 +6952,7 @@
     },
     "openai/gpt-5-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6470,6 +7004,7 @@
       },
       "model": null,
       "name": "GPT-5-Codex",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-15",
@@ -6477,6 +7012,7 @@
     },
     "openai/gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6496,7 +7032,7 @@
         }
       },
       "cost": {
-        "cache_read": 0.03,
+        "cache_read": 0.025,
         "input": 0.25,
         "output": 2
       },
@@ -6528,6 +7064,7 @@
       },
       "model": null,
       "name": "GPT-5 Mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6535,6 +7072,7 @@
     },
     "openai/gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6554,7 +7092,7 @@
         }
       },
       "cost": {
-        "cache_read": 0.01,
+        "cache_read": 0.005,
         "input": 0.05,
         "output": 0.4
       },
@@ -6586,6 +7124,7 @@
       },
       "model": null,
       "name": "GPT-5 Nano",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6593,6 +7132,7 @@
     },
     "openai/gpt-5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6644,6 +7184,7 @@
       },
       "model": null,
       "name": "GPT-5 pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6651,6 +7192,7 @@
     },
     "openai/gpt-5.1-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6702,6 +7244,7 @@
       },
       "model": null,
       "name": "GPT-5.1-Codex",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6709,6 +7252,7 @@
     },
     "openai/gpt-5.1-codex-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6760,6 +7304,7 @@
       },
       "model": null,
       "name": "GPT 5.1 Codex Max",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6767,6 +7312,7 @@
     },
     "openai/gpt-5.1-codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6818,6 +7364,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Codex mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-16",
@@ -6825,6 +7372,7 @@
     },
     "openai/gpt-5.1-instant": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6877,6 +7425,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Instant",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6884,6 +7433,7 @@
     },
     "openai/gpt-5.1-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6936,6 +7486,7 @@
       },
       "model": null,
       "name": "GPT 5.1 Thinking",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -6943,6 +7494,7 @@
     },
     "openai/gpt-5.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6994,6 +7546,7 @@
       },
       "model": null,
       "name": "GPT-5.2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -7001,6 +7554,7 @@
     },
     "openai/gpt-5.2-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7052,6 +7606,7 @@
       },
       "model": null,
       "name": "GPT-5.2 Chat",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -7059,6 +7614,7 @@
     },
     "openai/gpt-5.2-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7110,6 +7666,7 @@
       },
       "model": null,
       "name": "GPT-5.2-Codex",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12",
@@ -7117,6 +7674,7 @@
     },
     "openai/gpt-5.2-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7167,6 +7725,7 @@
       },
       "model": null,
       "name": "GPT 5.2 ",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -7174,6 +7733,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7222,6 +7782,7 @@
       },
       "model": null,
       "name": "GPT OSS 120B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -7229,6 +7790,7 @@
     },
     "openai/gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7277,6 +7839,7 @@
       },
       "model": null,
       "name": "GPT OSS 20B",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -7284,6 +7847,7 @@
     },
     "openai/gpt-oss-safeguard-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7333,6 +7897,7 @@
       },
       "model": null,
       "name": "gpt-oss-safeguard-20b",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-01",
@@ -7340,6 +7905,7 @@
     },
     "openai/o1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7391,6 +7957,7 @@
       },
       "model": null,
       "name": "o1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-05",
@@ -7398,6 +7965,7 @@
     },
     "openai/o3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7449,6 +8017,7 @@
       },
       "model": null,
       "name": "o3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -7456,6 +8025,7 @@
     },
     "openai/o3-deep-research": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7507,6 +8077,7 @@
       },
       "model": null,
       "name": "o3-deep-research",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-06-26",
@@ -7514,6 +8085,7 @@
     },
     "openai/o3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7564,6 +8136,7 @@
       },
       "model": null,
       "name": "o3-mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-12-20",
@@ -7571,6 +8144,7 @@
     },
     "openai/o3-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7621,6 +8195,7 @@
       },
       "model": null,
       "name": "o3 Pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -7628,6 +8203,7 @@
     },
     "openai/o4-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7679,6 +8255,7 @@
       },
       "model": null,
       "name": "o4-mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -7686,6 +8263,7 @@
     },
     "openai/text-embedding-3-large": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.13,
@@ -7717,6 +8295,7 @@
       },
       "model": null,
       "name": "text-embedding-3-large",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -7724,6 +8303,7 @@
     },
     "openai/text-embedding-3-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -7755,6 +8335,7 @@
       },
       "model": null,
       "name": "text-embedding-3-small",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -7762,6 +8343,7 @@
     },
     "openai/text-embedding-ada-002": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -7793,6 +8375,7 @@
       },
       "model": null,
       "name": "text-embedding-ada-002",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2022-12-15",
@@ -7800,6 +8383,7 @@
     },
     "perplexity/sonar": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7849,6 +8433,7 @@
       },
       "model": null,
       "name": "Sonar",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -7856,6 +8441,7 @@
     },
     "perplexity/sonar-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7905,6 +8491,7 @@
       },
       "model": null,
       "name": "Sonar Pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -7912,6 +8499,7 @@
     },
     "perplexity/sonar-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -7964,6 +8552,7 @@
       },
       "model": null,
       "name": "Sonar Reasoning",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -7971,6 +8560,7 @@
     },
     "perplexity/sonar-reasoning-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8023,6 +8613,7 @@
       },
       "model": null,
       "name": "Sonar Reasoning Pro",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -8030,6 +8621,7 @@
     },
     "prime-intellect/intellect-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8078,6 +8670,7 @@
       },
       "model": null,
       "name": "INTELLECT 3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-11-26",
@@ -8085,6 +8678,7 @@
     },
     "recraft/recraft-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -8112,6 +8706,7 @@
       },
       "model": null,
       "name": "Recraft V2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-03",
@@ -8119,6 +8714,7 @@
     },
     "recraft/recraft-v3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -8146,6 +8742,7 @@
       },
       "model": null,
       "name": "Recraft V3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-10",
@@ -8153,6 +8750,7 @@
     },
     "vercel/v0-1.0-md": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8202,6 +8800,7 @@
       },
       "model": null,
       "name": "v0-1.0-md",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -8209,6 +8808,7 @@
     },
     "vercel/v0-1.5-md": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8258,6 +8858,7 @@
       },
       "model": null,
       "name": "v0-1.5-md",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-06-09",
@@ -8265,6 +8866,7 @@
     },
     "voyage/voyage-3-large": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.18,
@@ -8296,6 +8898,7 @@
       },
       "model": null,
       "name": "voyage-3-large",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -8303,6 +8906,7 @@
     },
     "voyage/voyage-3.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.06,
@@ -8334,6 +8938,7 @@
       },
       "model": null,
       "name": "voyage-3.5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-20",
@@ -8341,6 +8946,7 @@
     },
     "voyage/voyage-3.5-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -8372,6 +8978,7 @@
       },
       "model": null,
       "name": "voyage-3.5-lite",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-05-20",
@@ -8379,6 +8986,7 @@
     },
     "voyage/voyage-code-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.12,
@@ -8410,6 +9018,7 @@
       },
       "model": null,
       "name": "voyage-code-2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-01",
@@ -8417,6 +9026,7 @@
     },
     "voyage/voyage-code-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.18,
@@ -8448,6 +9058,7 @@
       },
       "model": null,
       "name": "voyage-code-3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -8455,6 +9066,7 @@
     },
     "voyage/voyage-finance-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.12,
@@ -8486,6 +9098,7 @@
       },
       "model": null,
       "name": "voyage-finance-2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-03",
@@ -8493,6 +9106,7 @@
     },
     "voyage/voyage-law-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.12,
@@ -8524,6 +9138,7 @@
       },
       "model": null,
       "name": "voyage-law-2",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-03",
@@ -8531,6 +9146,7 @@
     },
     "xai/grok-2-vision": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8581,6 +9197,7 @@
       },
       "model": null,
       "name": "Grok 2 Vision",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2024-08-20",
@@ -8588,6 +9205,7 @@
     },
     "xai/grok-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8637,6 +9255,7 @@
       },
       "model": null,
       "name": "Grok 3",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-17",
@@ -8644,6 +9263,7 @@
     },
     "xai/grok-3-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8693,6 +9313,7 @@
       },
       "model": null,
       "name": "Grok 3 Fast",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-17",
@@ -8700,6 +9321,7 @@
     },
     "xai/grok-3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8750,6 +9372,7 @@
       },
       "model": null,
       "name": "Grok 3 Mini",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-17",
@@ -8757,6 +9380,7 @@
     },
     "xai/grok-3-mini-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8807,6 +9431,7 @@
       },
       "model": null,
       "name": "Grok 3 Mini Fast",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-02-17",
@@ -8814,6 +9439,7 @@
     },
     "xai/grok-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8864,6 +9490,7 @@
       },
       "model": null,
       "name": "Grok 4",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-09",
@@ -8871,6 +9498,7 @@
     },
     "xai/grok-4-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8921,6 +9549,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast (Non-Reasoning)",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -8928,6 +9557,7 @@
     },
     "xai/grok-4-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -8977,6 +9607,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast Reasoning",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-09",
@@ -8984,6 +9615,7 @@
     },
     "xai/grok-4.1-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9033,6 +9665,7 @@
       },
       "model": null,
       "name": "Grok 4.1 Fast Non-Reasoning",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-09",
@@ -9040,6 +9673,7 @@
     },
     "xai/grok-4.1-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9089,6 +9723,7 @@
       },
       "model": null,
       "name": "Grok 4.1 Fast Reasoning",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-09",
@@ -9096,6 +9731,7 @@
     },
     "xai/grok-code-fast-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9145,6 +9781,7 @@
       },
       "model": null,
       "name": "Grok Code Fast 1",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-28",
@@ -9152,6 +9789,7 @@
     },
     "xiaomi/mimo-v2-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9200,6 +9838,7 @@
       },
       "model": null,
       "name": "MiMo V2 Flash",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-17",
@@ -9207,6 +9846,7 @@
     },
     "zai/glm-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9233,6 +9873,7 @@
       "extra": {
         "attachment": false,
         "family": "glm",
+        "interleaved": true,
         "open_weights": true,
         "temperature": true
       },
@@ -9255,6 +9896,7 @@
       },
       "model": null,
       "name": "GLM 4.5",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -9262,6 +9904,7 @@
     },
     "zai/glm-4.5-air": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9310,6 +9953,7 @@
       },
       "model": null,
       "name": "GLM 4.5 Air",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -9317,6 +9961,7 @@
     },
     "zai/glm-4.5v": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9366,6 +10011,7 @@
       },
       "model": null,
       "name": "GLM 4.5V",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-08-11",
@@ -9373,6 +10019,7 @@
     },
     "zai/glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9399,6 +10046,7 @@
       "extra": {
         "attachment": false,
         "family": "glm",
+        "interleaved": true,
         "open_weights": true,
         "temperature": true
       },
@@ -9421,6 +10069,7 @@
       },
       "model": null,
       "name": "GLM 4.6",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -9428,6 +10077,7 @@
     },
     "zai/glm-4.6v": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9479,6 +10129,7 @@
       },
       "model": null,
       "name": "GLM-4.6V",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -9486,6 +10137,7 @@
     },
     "zai/glm-4.6v-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9533,6 +10185,7 @@
       },
       "model": null,
       "name": "GLM-4.6V-Flash",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -9540,6 +10193,7 @@
     },
     "zai/glm-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -9567,6 +10221,7 @@
       "extra": {
         "attachment": false,
         "family": "glm",
+        "interleaved": true,
         "open_weights": false,
         "temperature": true
       },
@@ -9589,11 +10244,72 @@
       },
       "model": null,
       "name": "GLM 4.7",
+      "pricing": null,
       "provider": "vercel",
       "provider_model_id": null,
       "release_date": "2025-12-22",
       "tags": null
+    },
+    "zai/glm-4.7-flashx": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.01,
+        "input": 0.06,
+        "output": 0.4
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "glm-flash",
+        "interleaved": true,
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "zai/glm-4.7-flashx",
+      "knowledge": "2025-01",
+      "last_updated": "2025-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GLM 4.7 FlashX",
+      "pricing": null,
+      "provider": "vercel",
+      "provider_model_id": null,
+      "release_date": "2025-01",
+      "tags": null
     }
   },
-  "name": "Vercel AI Gateway"
+  "name": "Vercel AI Gateway",
+  "pricing_defaults": null
 }

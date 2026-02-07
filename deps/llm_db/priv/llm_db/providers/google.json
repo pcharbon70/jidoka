@@ -39,6 +39,7 @@
   "models": {
     "aqa": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -64,6 +65,7 @@
       "modalities": null,
       "model": null,
       "name": "Model that performs Attributed Question Answering.",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -71,6 +73,7 @@
     },
     "deep-research-pro-preview-12-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -99,6 +102,7 @@
       "modalities": null,
       "model": null,
       "name": "Deep Research Pro Preview (Dec-12-2025)",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -106,6 +110,7 @@
     },
     "gemini-2.0-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -171,6 +176,7 @@
       },
       "model": null,
       "name": "Gemini 2.0 Flash",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -178,6 +184,7 @@
     },
     "gemini-2.0-flash-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -207,41 +214,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.0 Flash 001",
-      "provider": "google",
-      "provider_model_id": null,
-      "release_date": null,
-      "tags": null
-    },
-    "gemini-2.0-flash-exp": {
-      "aliases": [],
-      "capabilities": null,
-      "cost": null,
-      "deprecated": false,
-      "extra": {
-        "description": "Gemini 2.0 Flash Experimental",
-        "max_temperature": 2,
-        "supported_generation_methods": [
-          "generateContent",
-          "countTokens",
-          "bidiGenerateContent"
-        ],
-        "temperature": 1,
-        "top_k": 40,
-        "top_p": 0.95,
-        "version": "2.0"
-      },
-      "family": null,
-      "id": "gemini-2.0-flash-exp",
-      "knowledge": null,
-      "last_updated": null,
-      "lifecycle": null,
-      "limits": {
-        "context": 1048576,
-        "output": 8192
-      },
-      "modalities": null,
-      "model": null,
-      "name": "Gemini 2.0 Flash Experimental",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -249,6 +222,7 @@
     },
     "gemini-2.0-flash-exp-image-generation": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -277,6 +251,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.0 Flash (Image Generation) Experimental",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -284,6 +259,7 @@
     },
     "gemini-2.0-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -348,6 +324,7 @@
       },
       "model": null,
       "name": "Gemini 2.0 Flash-Lite",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -355,6 +332,7 @@
     },
     "gemini-2.0-flash-lite-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -384,78 +362,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.0 Flash-Lite 001",
-      "provider": "google",
-      "provider_model_id": null,
-      "release_date": null,
-      "tags": null
-    },
-    "gemini-2.0-flash-lite-preview": {
-      "aliases": [],
-      "capabilities": null,
-      "cost": null,
-      "deprecated": false,
-      "extra": {
-        "description": "Preview release (February 5th, 2025) of Gemini 2.0 Flash-Lite",
-        "max_temperature": 2,
-        "supported_generation_methods": [
-          "generateContent",
-          "countTokens",
-          "createCachedContent",
-          "batchGenerateContent"
-        ],
-        "temperature": 1,
-        "top_k": 40,
-        "top_p": 0.95,
-        "version": "preview-02-05"
-      },
-      "family": null,
-      "id": "gemini-2.0-flash-lite-preview",
-      "knowledge": null,
-      "last_updated": null,
-      "lifecycle": null,
-      "limits": {
-        "context": 1048576,
-        "output": 8192
-      },
-      "modalities": null,
-      "model": null,
-      "name": "Gemini 2.0 Flash-Lite Preview",
-      "provider": "google",
-      "provider_model_id": null,
-      "release_date": null,
-      "tags": null
-    },
-    "gemini-2.0-flash-lite-preview-02-05": {
-      "aliases": [],
-      "capabilities": null,
-      "cost": null,
-      "deprecated": false,
-      "extra": {
-        "description": "Preview release (February 5th, 2025) of Gemini 2.0 Flash-Lite",
-        "max_temperature": 2,
-        "supported_generation_methods": [
-          "generateContent",
-          "countTokens",
-          "createCachedContent",
-          "batchGenerateContent"
-        ],
-        "temperature": 1,
-        "top_k": 40,
-        "top_p": 0.95,
-        "version": "preview-02-05"
-      },
-      "family": null,
-      "id": "gemini-2.0-flash-lite-preview-02-05",
-      "knowledge": null,
-      "last_updated": null,
-      "lifecycle": null,
-      "limits": {
-        "context": 1048576,
-        "output": 8192
-      },
-      "modalities": null,
-      "model": null,
-      "name": "Gemini 2.0 Flash-Lite Preview 02-05",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -463,6 +370,7 @@
     },
     "gemini-2.5-computer-use-preview-10-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -491,6 +399,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.5 Computer Use Preview 10-2025",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -498,6 +407,7 @@
     },
     "gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -517,7 +427,7 @@
         }
       },
       "cost": {
-        "cache_read": 0.075,
+        "cache_read": 0.03,
         "input": 0.3,
         "input_audio": 1,
         "output": 2.5
@@ -565,6 +475,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -572,6 +483,7 @@
     },
     "gemini-2.5-flash-image": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -596,7 +508,6 @@
       },
       "cost": {
         "cache_read": 0.075,
-        "image": 1238.0,
         "input": 0.3,
         "output": 2.5,
         "reasoning": 0.0,
@@ -641,6 +552,19 @@
       },
       "model": null,
       "name": "Nano Banana",
+      "pricing": {
+        "components": [
+          {
+            "id": "image.generated",
+            "kind": "image",
+            "per": 1,
+            "rate": 0.039,
+            "unit": "image"
+          }
+        ],
+        "currency": "USD",
+        "merge": "merge_by_id"
+      },
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-10-07",
@@ -648,6 +572,7 @@
     },
     "gemini-2.5-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -671,8 +596,7 @@
         }
       },
       "cost": {
-        "cache_read": 0.025,
-        "image": 0.0,
+        "cache_read": 0.01,
         "input": 0.1,
         "output": 0.4,
         "reasoning": 0.0,
@@ -722,6 +646,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash-Lite",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-07-22",
@@ -729,6 +654,7 @@
     },
     "gemini-2.5-flash-native-audio-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -757,6 +683,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.5 Flash Native Audio Latest",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -764,6 +691,7 @@
     },
     "gemini-2.5-flash-native-audio-preview-09-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -792,6 +720,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.5 Flash Native Audio Preview 09-2025",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -799,6 +728,7 @@
     },
     "gemini-2.5-flash-native-audio-preview-12-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -827,6 +757,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini 2.5 Flash Native Audio Preview 12-2025",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -834,6 +765,7 @@
     },
     "gemini-2.5-flash-preview-05-20": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -888,6 +820,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash Preview 05-20",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-05-20",
@@ -895,6 +828,7 @@
     },
     "gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -914,9 +848,9 @@
         }
       },
       "cost": {
-        "cache_read": 0.31,
+        "cache_read": 0.125,
         "input": 1.25,
-        "output": 10
+        "output": 10.0
       },
       "deprecated": false,
       "extra": {
@@ -961,6 +895,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-03-20",
@@ -968,6 +903,7 @@
     },
     "gemini-3-flash-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1034,6 +970,7 @@
       },
       "model": null,
       "name": "Gemini 3 Flash Preview",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-12-17",
@@ -1041,8 +978,12 @@
     },
     "gemini-3-pro-image-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
-      "cost": null,
+      "cost": {
+        "input": 2.0,
+        "output": 12.0
+      },
       "deprecated": false,
       "extra": {
         "description": "Gemini 3 Pro Image Preview",
@@ -1070,6 +1011,38 @@
       "modalities": null,
       "model": null,
       "name": "Nano Banana Pro",
+      "pricing": {
+        "components": [
+          {
+            "id": "image.input",
+            "kind": "image",
+            "notes": "560 tokens per input image",
+            "per": 1,
+            "rate": 0.0011,
+            "unit": "image"
+          },
+          {
+            "id": "image.output.1024x1024-2048x2048",
+            "kind": "image",
+            "notes": "1K/2K output image (1120 tokens)",
+            "per": 1,
+            "rate": 0.134,
+            "size_class": "1024x1024-2048x2048",
+            "unit": "image"
+          },
+          {
+            "id": "image.output.4096x4096",
+            "kind": "image",
+            "notes": "4K output image (2000 tokens)",
+            "per": 1,
+            "rate": 0.24,
+            "size_class": "4096x4096",
+            "unit": "image"
+          }
+        ],
+        "currency": "USD",
+        "merge": "merge_by_id"
+      },
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1077,6 +1050,7 @@
     },
     "gemini-3-pro-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1143,6 +1117,7 @@
       },
       "model": null,
       "name": "Gemini 3 Pro Preview",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -1150,6 +1125,7 @@
     },
     "gemini-embedding-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": {
@@ -1177,7 +1153,7 @@
         }
       },
       "cost": {
-        "input": 1.0e-5,
+        "input": 0.15,
         "output": 0
       },
       "deprecated": false,
@@ -1218,6 +1194,7 @@
       },
       "model": null,
       "name": "Gemini Embedding 001",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": "models/gemini-embedding-001",
       "release_date": "2024-03-07",
@@ -1225,6 +1202,7 @@
     },
     "gemini-exp-1206": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1255,6 +1233,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini Experimental 1206",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1262,6 +1241,7 @@
     },
     "gemini-flash-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1329,6 +1309,7 @@
       },
       "model": null,
       "name": "Gemini Flash Latest",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": "2025-09-25",
@@ -1336,6 +1317,7 @@
     },
     "gemini-pro-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1366,6 +1348,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini Pro Latest",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1373,6 +1356,7 @@
     },
     "gemini-robotics-er-1.5-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1401,6 +1385,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemini Robotics-ER 1.5 Preview",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1408,6 +1393,7 @@
     },
     "gemma-3-12b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1433,6 +1419,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemma 3 12B",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1440,6 +1427,7 @@
     },
     "gemma-3-1b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1465,6 +1453,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemma 3 1B",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1472,6 +1461,7 @@
     },
     "gemma-3-27b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1497,6 +1487,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemma 3 27B",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1504,6 +1495,7 @@
     },
     "gemma-3-4b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1529,6 +1521,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemma 3 4B",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1536,6 +1529,7 @@
     },
     "gemma-3n-e2b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1561,6 +1555,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemma 3n E2B",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1568,6 +1563,7 @@
     },
     "gemma-3n-e4b-it": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1593,6 +1589,7 @@
       "modalities": null,
       "model": null,
       "name": "Gemma 3n E4B",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1600,6 +1597,7 @@
     },
     "imagen-4.0-fast-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1622,6 +1620,7 @@
       "modalities": null,
       "model": null,
       "name": "Imagen 4 Fast",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1629,6 +1628,7 @@
     },
     "imagen-4.0-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1651,6 +1651,7 @@
       "modalities": null,
       "model": null,
       "name": "Imagen 4",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1658,6 +1659,7 @@
     },
     "imagen-4.0-generate-preview-06-06": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1680,6 +1682,7 @@
       "modalities": null,
       "model": null,
       "name": "Imagen 4 (Preview)",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1687,6 +1690,7 @@
     },
     "imagen-4.0-ultra-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1709,6 +1713,7 @@
       "modalities": null,
       "model": null,
       "name": "Imagen 4 Ultra",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1716,6 +1721,7 @@
     },
     "imagen-4.0-ultra-generate-preview-06-06": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1738,6 +1744,7 @@
       "modalities": null,
       "model": null,
       "name": "Imagen 4 Ultra (Preview)",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1745,6 +1752,7 @@
     },
     "nano-banana-pro-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1774,6 +1782,7 @@
       "modalities": null,
       "model": null,
       "name": "Nano Banana Pro",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1781,6 +1790,7 @@
     },
     "text-embedding-004": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1803,6 +1813,7 @@
       "modalities": null,
       "model": null,
       "name": "Text Embedding 004",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1810,6 +1821,7 @@
     },
     "veo-2.0-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1832,6 +1844,7 @@
       "modalities": null,
       "model": null,
       "name": "Veo 2",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1839,6 +1852,7 @@
     },
     "veo-3.0-fast-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1861,6 +1875,7 @@
       "modalities": null,
       "model": null,
       "name": "Veo 3 fast",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1868,6 +1883,7 @@
     },
     "veo-3.0-generate-001": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1890,6 +1906,7 @@
       "modalities": null,
       "model": null,
       "name": "Veo 3",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1897,6 +1914,7 @@
     },
     "veo-3.1-fast-generate-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1919,6 +1937,7 @@
       "modalities": null,
       "model": null,
       "name": "Veo 3.1 fast",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
@@ -1926,6 +1945,7 @@
     },
     "veo-3.1-generate-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": null,
       "deprecated": false,
@@ -1948,11 +1968,25 @@
       "modalities": null,
       "model": null,
       "name": "Veo 3.1",
+      "pricing": null,
       "provider": "google",
       "provider_model_id": null,
       "release_date": null,
       "tags": null
     }
   },
-  "name": "Google"
+  "name": "Google",
+  "pricing_defaults": {
+    "components": [
+      {
+        "id": "tool.web_search",
+        "kind": "tool",
+        "per": 1000,
+        "rate": 35.0,
+        "tool": "web_search",
+        "unit": "call"
+      }
+    ],
+    "currency": "USD"
+  }
 }

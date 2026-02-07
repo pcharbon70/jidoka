@@ -59,18 +59,37 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
   require Logger
   require ReqLLM.Debug, as: Debug
 
+  @builtin_tool_types ~w(web_search web_search_preview file_search mcp x_search)
+  @tool_usage_type_atoms %{
+    "web_search" => :web_search,
+    "web_search_preview" => :web_search_preview,
+    "file_search" => :file_search,
+    "mcp" => :mcp,
+    "x_search" => :x_search
+  }
+  @tool_call_atom_keys %{
+    "web_search_call" => :web_search_call,
+    "web_search_preview_call" => :web_search_preview_call,
+    "file_search_call" => :file_search_call,
+    "mcp_call" => :mcp_call,
+    "x_search_call" => :x_search_call
+  }
+
   @impl true
   def path, do: "/responses"
 
   @impl true
   def encode_body(request) do
+    body = build_body(request)
+    Map.put(request, :body, Jason.encode!(body))
+  end
+
+  def build_body(request) do
     context = request.options[:context] || %ReqLLM.Context{messages: []}
     model_name = request.options[:model] || request.options[:id]
     opts = request.options
 
-    body = build_request_body(context, model_name, opts, request)
-
-    Map.put(request, :body, Jason.encode!(body))
+    build_request_body(context, model_name, opts, request)
   end
 
   @impl true
@@ -151,36 +170,7 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
         []
 
       "response.completed" ->
-        usage_data = get_in(data, ["response", "usage"])
-        response_id = get_in(data, ["response", "id"])
-
-        meta = %{terminal?: true, finish_reason: :stop}
-
-        meta =
-          if response_id do
-            Map.put(meta, :response_id, response_id)
-          else
-            meta
-          end
-
-        meta =
-          if usage_data do
-            raw_usage = %{
-              input_tokens: usage_data["input_tokens"] || 0,
-              output_tokens: usage_data["output_tokens"] || 0,
-              total_tokens:
-                usage_data["total_tokens"] ||
-                  (usage_data["input_tokens"] || 0) + (usage_data["output_tokens"] || 0)
-            }
-
-            response_data = data["response"] || %{}
-            usage = normalize_responses_usage(raw_usage, response_data)
-            Map.put(meta, :usage, usage)
-          else
-            meta
-          end
-
-        [ReqLLM.StreamChunk.meta(meta)]
+        capture_completion_metadata(data, %{terminal?: true, finish_reason: :stop})
 
       "response.incomplete" ->
         reason =
@@ -188,12 +178,10 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
             data["reason"] ||
             "incomplete"
 
-        [
-          ReqLLM.StreamChunk.meta(%{
-            terminal?: true,
-            finish_reason: normalize_finish_reason(reason)
-          })
-        ]
+        capture_completion_metadata(data, %{
+          terminal?: true,
+          finish_reason: normalize_finish_reason(reason)
+        })
 
       _ ->
         []
@@ -201,6 +189,293 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
   end
 
   def decode_stream_event(_event, _model), do: []
+
+  def decode_stream_event(event, model, state) do
+    state = ensure_stream_state(state)
+    {event_type, data} = stream_event_type(event)
+    state = track_tool_call(state, event_type, data)
+    chunks = decode_stream_event(event, model)
+    {updated_chunks, updated_state} = merge_tool_usage_into_chunks(chunks, state)
+    {updated_chunks, updated_state}
+  end
+
+  def init_stream_state do
+    %{tool_call_ids: %{}, usage_emitted?: false}
+  end
+
+  defp capture_completion_metadata(data, meta) do
+    usage_data = get_in(data, ["response", "usage"])
+    response_id = get_in(data, ["response", "id"])
+
+    meta =
+      if response_id do
+        Map.put(meta, :response_id, response_id)
+      else
+        meta
+      end
+
+    meta =
+      if usage_data do
+        raw_usage = %{
+          input_tokens: usage_data["input_tokens"] || 0,
+          output_tokens: usage_data["output_tokens"] || 0,
+          total_tokens:
+            usage_data["total_tokens"] ||
+              (usage_data["input_tokens"] || 0) + (usage_data["output_tokens"] || 0)
+        }
+
+        response_data = data["response"] || %{}
+        usage = normalize_responses_usage(raw_usage, response_data)
+        Map.put(meta, :usage, usage)
+      else
+        meta
+      end
+
+    [ReqLLM.StreamChunk.meta(meta)]
+  end
+
+  defp ensure_stream_state(nil), do: init_stream_state()
+  defp ensure_stream_state(state), do: state
+
+  defp stream_event_type(%{data: data} = event) when is_map(data) do
+    type = Map.get(event, :event) || Map.get(event, "event") || data["event"] || data["type"]
+    {type, data}
+  end
+
+  defp stream_event_type(_event), do: {nil, nil}
+
+  defp track_tool_call(state, "response.output_item.added", %{"item" => item})
+       when is_map(item) do
+    maybe_add_tool_call_from_item(state, item)
+  end
+
+  defp track_tool_call(state, "response.output_item.added", %{item: item}) when is_map(item) do
+    maybe_add_tool_call_from_item(state, item)
+  end
+
+  defp track_tool_call(state, "response.output_item.done", %{"item" => item}) when is_map(item) do
+    maybe_add_tool_call_from_item(state, item)
+  end
+
+  defp track_tool_call(state, "response.output_item.done", %{item: item}) when is_map(item) do
+    maybe_add_tool_call_from_item(state, item)
+  end
+
+  defp track_tool_call(state, event_type, data) when is_binary(event_type) and is_map(data) do
+    case tool_call_type_from_event(event_type) do
+      nil ->
+        state
+
+      call_type ->
+        tool = tool_usage_key_from_call_type(call_type)
+        maybe_add_tool_call_id(state, tool, extract_tool_call_id(data, call_type))
+    end
+  end
+
+  defp track_tool_call(state, _event_type, _data), do: state
+
+  defp maybe_add_tool_call_from_item(state, item) do
+    item_type = item["type"] || item[:type]
+    item_type = if is_atom(item_type), do: Atom.to_string(item_type), else: item_type
+
+    if is_binary(item_type) do
+      case tool_usage_key_from_call_type(item_type) do
+        nil ->
+          state
+
+        tool ->
+          maybe_add_tool_call_id(state, tool, extract_tool_call_id(item, item_type))
+      end
+    else
+      state
+    end
+  end
+
+  defp tool_call_type_from_event(event_type) when is_binary(event_type) do
+    case Regex.run(~r/^response\.([^.]+)\./, event_type) do
+      [_, call_type] ->
+        if String.ends_with?(call_type, "_call"), do: call_type
+
+      _ ->
+        nil
+    end
+  end
+
+  defp tool_usage_key_from_call_type(call_type) when is_binary(call_type) do
+    if String.ends_with?(call_type, "_call") do
+      base = String.replace_suffix(call_type, "_call", "")
+      tool_usage_key(base)
+    end
+  end
+
+  defp tool_usage_key(base_type) when is_binary(base_type) do
+    Map.get(@tool_usage_type_atoms, base_type, base_type)
+  end
+
+  defp extract_tool_call_id(data, call_type) when is_map(data) do
+    call_type = if is_atom(call_type), do: Atom.to_string(call_type), else: call_type
+
+    data["id"] || data[:id] || data["call_id"] || data[:call_id] || data["item_id"] ||
+      data[:item_id] || get_in(data, ["item", "id"]) || get_in(data, [:item, :id]) ||
+      extract_tool_call_id_from_payload(data, call_type)
+  end
+
+  defp extract_tool_call_id_from_payload(data, call_type) do
+    call_data = Map.get(data, call_type) || maybe_get_call_atom_key(data, call_type)
+
+    if is_map(call_data) do
+      call_data["id"] || call_data[:id] || call_data["call_id"] || call_data[:call_id]
+    end
+  end
+
+  defp maybe_get_call_atom_key(data, call_type) do
+    atom_key = Map.get(@tool_call_atom_keys, call_type)
+
+    if atom_key do
+      Map.get(data, atom_key)
+    end
+  end
+
+  defp maybe_add_tool_call_id(state, nil, _id), do: state
+  defp maybe_add_tool_call_id(state, _tool, nil), do: state
+
+  defp maybe_add_tool_call_id(state, tool, id) do
+    tool_call_ids = Map.get(state, :tool_call_ids, %{})
+    updated_ids = add_tool_call_id(tool_call_ids, tool, id)
+    %{state | tool_call_ids: updated_ids}
+  end
+
+  defp add_tool_call_id(tool_call_ids, tool, id) when is_map(tool_call_ids) do
+    ids = Map.get(tool_call_ids, tool, MapSet.new())
+
+    updated_ids =
+      if is_struct(ids, MapSet) do
+        MapSet.put(ids, id)
+      else
+        MapSet.new([id])
+      end
+
+    Map.put(tool_call_ids, tool, updated_ids)
+  end
+
+  defp add_tool_call_id(tool_call_ids, _tool, _id), do: tool_call_ids
+
+  defp merge_tool_usage_into_chunks(chunks, state) do
+    counts = tool_call_counts(state)
+
+    {updated_chunks, usage_emitted?} =
+      Enum.map_reduce(chunks, Map.get(state, :usage_emitted?, false), fn
+        %ReqLLM.StreamChunk{type: :meta, metadata: meta} = chunk, emitted? ->
+          {updated_meta, updated_emitted?} =
+            maybe_merge_tool_usage(meta || %{}, counts, emitted?)
+
+          {%{chunk | metadata: updated_meta}, updated_emitted?}
+
+        chunk, emitted? ->
+          {chunk, emitted?}
+      end)
+
+    {updated_chunks, %{state | usage_emitted?: usage_emitted?}}
+  end
+
+  defp tool_call_counts(state) do
+    tool_call_ids = Map.get(state, :tool_call_ids, %{})
+
+    Enum.reduce(tool_call_ids, %{}, fn {tool, ids}, acc ->
+      count =
+        if is_struct(ids, MapSet) do
+          MapSet.size(ids)
+        else
+          0
+        end
+
+      if count > 0, do: Map.put(acc, tool, count), else: acc
+    end)
+  end
+
+  defp maybe_merge_tool_usage(meta, counts, emitted?)
+       when is_map(meta) and is_map(counts) and map_size(counts) > 0 do
+    cond do
+      Map.has_key?(meta, :usage) or Map.has_key?(meta, "usage") ->
+        usage = Map.get(meta, :usage) || Map.get(meta, "usage") || %{}
+        updated_usage = merge_tool_usage_counts(usage, counts)
+        {Map.put(meta, :usage, updated_usage), true}
+
+      Map.get(meta, :terminal?) == true and not emitted? ->
+        updated_usage = merge_tool_usage_counts(%{}, counts)
+        {Map.put(meta, :usage, updated_usage), true}
+
+      true ->
+        {meta, emitted?}
+    end
+  end
+
+  defp maybe_merge_tool_usage(meta, _counts, emitted?), do: {meta, emitted?}
+
+  defp merge_tool_usage_counts(usage, counts) when is_map(usage) and is_map(counts) do
+    Enum.reduce(counts, usage, fn {tool, count}, acc ->
+      merge_tool_usage_count(acc, tool, count)
+    end)
+  end
+
+  defp merge_tool_usage_counts(usage, _counts), do: usage
+
+  defp merge_tool_usage_count(usage, tool, count)
+       when is_map(usage) and is_number(count) and count > 0 do
+    tool_usage = Map.get(usage, :tool_usage) || Map.get(usage, "tool_usage") || %{}
+    existing = tool_usage_entry(tool_usage, tool) || %{}
+    existing_count = Map.get(existing, :count) || Map.get(existing, "count") || 0
+    final_count = max(existing_count, count)
+    key = tool_usage_key_for_merge(tool_usage, tool)
+    updated_tool_usage = Map.put(tool_usage, key, %{count: final_count, unit: :call})
+    Map.put(usage, :tool_usage, updated_tool_usage)
+  end
+
+  defp merge_tool_usage_count(usage, _tool, _count), do: usage
+
+  defp tool_usage_entry(tool_usage, tool) when is_map(tool_usage) do
+    cond do
+      Map.has_key?(tool_usage, tool) ->
+        Map.get(tool_usage, tool)
+
+      is_atom(tool) and Map.has_key?(tool_usage, Atom.to_string(tool)) ->
+        Map.get(tool_usage, Atom.to_string(tool))
+
+      is_binary(tool) ->
+        atom_key = Map.get(@tool_usage_type_atoms, tool)
+
+        if atom_key && Map.has_key?(tool_usage, atom_key) do
+          Map.get(tool_usage, atom_key)
+        end
+
+      true ->
+        nil
+    end
+  end
+
+  defp tool_usage_entry(_tool_usage, _tool), do: nil
+
+  defp tool_usage_key_for_merge(tool_usage, tool) when is_map(tool_usage) do
+    cond do
+      Map.has_key?(tool_usage, tool) ->
+        tool
+
+      is_atom(tool) and Map.has_key?(tool_usage, Atom.to_string(tool)) ->
+        Atom.to_string(tool)
+
+      is_binary(tool) ->
+        atom_key = Map.get(@tool_usage_type_atoms, tool)
+
+        if atom_key && Map.has_key?(tool_usage, atom_key) do
+          atom_key
+        else
+          tool
+        end
+
+      true ->
+        tool
+    end
+  end
 
   # ========================================================================
   # Shared Request Building Helpers (used by both encode_body and attach_stream)
@@ -304,7 +579,7 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
     reasoning = encode_reasoning_effort(opts_map[:reasoning_effort])
     service_tier = opts_map[:service_tier] || provider_opts[:service_tier]
 
-    text_format = encode_text_format(provider_opts[:response_format])
+    text_format = encode_text_format(provider_opts[:response_format], provider_opts[:verbosity])
 
     final_input =
       if previous_response_id == nil and reasoning_items != [] do
@@ -572,17 +847,28 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
 
   defp extract_tool_outputs_from_messages(tool_messages) do
     Enum.map(tool_messages, fn msg ->
-      output_text =
-        msg.content
-        |> Enum.find_value(fn part ->
-          if part.type == :text, do: part.text
-        end) || ""
+      output =
+        case ReqLLM.ToolResult.output_from_message(msg) do
+          nil -> extract_tool_output_text(msg.content)
+          value -> value
+        end
 
       %{
         call_id: msg.tool_call_id,
-        output: output_text
+        output: output
       }
     end)
+  end
+
+  defp extract_tool_output_text(content_parts) do
+    content_parts
+    |> Enum.find_value(fn part ->
+      if part.type == :text, do: part.text
+    end)
+    |> case do
+      nil -> ""
+      text -> text
+    end
   end
 
   defp encode_tool_outputs(outputs) when is_list(outputs) do
@@ -636,15 +922,13 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
   end
 
   defp ensure_deep_research_tool_present(nil) do
-    Logger.info(
-      "Auto-injecting web_search_preview tool for deep research model (no tools provided)"
-    )
+    Logger.info("Auto-injecting web_search tool for deep research model (no tools provided)")
 
-    [%{"type" => "web_search_preview"}]
+    [%{"type" => "web_search"}]
   end
 
   defp ensure_deep_research_tool_present(tools) when is_list(tools) do
-    deep_tools = ["web_search_preview", "mcp", "file_search"]
+    deep_tools = ["web_search", "web_search_preview", "mcp", "file_search"]
 
     has_deep_tool? =
       Enum.any?(tools, fn t ->
@@ -655,10 +939,10 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
       tools
     else
       Logger.info(
-        "Auto-injecting web_search_preview tool for deep research model (tools: #{inspect(Enum.map(tools, & &1["type"]))})"
+        "Auto-injecting web_search tool for deep research model (tools: #{inspect(Enum.map(tools, & &1["type"]))})"
       )
 
-      [%{"type" => "web_search_preview"} | tools]
+      [%{"type" => "web_search"} | tools]
     end
   end
 
@@ -677,34 +961,43 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
   end
 
   defp encode_tool_for_responses_api(tool_schema) when is_map(tool_schema) do
-    function_def = tool_schema["function"] || tool_schema[:function]
+    tool_type = tool_schema["type"] || tool_schema[:type]
+    tool_type = if is_atom(tool_type), do: Atom.to_string(tool_type), else: tool_type
 
-    if function_def do
-      name = function_def["name"] || function_def[:name]
-      description = function_def["description"] || function_def[:description]
-      raw_params = function_def["parameters"] || function_def[:parameters]
-      params = normalize_parameters_for_strict(raw_params)
-
-      %{
-        "type" => "function",
-        "name" => name,
-        "description" => description,
-        "parameters" => params,
-        "strict" => true
-      }
+    if tool_type in @builtin_tool_types do
+      tool_schema
+      |> stringify_keys()
+      |> Map.put("type", tool_type)
     else
-      name = tool_schema["name"] || tool_schema[:name]
-      description = tool_schema["description"] || tool_schema[:description]
-      raw_params = tool_schema["parameters"] || tool_schema[:parameters]
-      params = normalize_parameters_for_strict(raw_params)
+      function_def = tool_schema["function"] || tool_schema[:function]
 
-      %{
-        "type" => "function",
-        "name" => name,
-        "description" => description,
-        "parameters" => params,
-        "strict" => true
-      }
+      if function_def do
+        name = function_def["name"] || function_def[:name]
+        description = function_def["description"] || function_def[:description]
+        raw_params = function_def["parameters"] || function_def[:parameters]
+        params = normalize_parameters_for_strict(raw_params)
+
+        %{
+          "type" => "function",
+          "name" => name,
+          "description" => description,
+          "parameters" => params,
+          "strict" => true
+        }
+      else
+        name = tool_schema["name"] || tool_schema[:name]
+        description = tool_schema["description"] || tool_schema[:description]
+        raw_params = tool_schema["parameters"] || tool_schema[:parameters]
+        params = normalize_parameters_for_strict(raw_params)
+
+        %{
+          "type" => "function",
+          "name" => name,
+          "description" => description,
+          "parameters" => params,
+          "strict" => true
+        }
+      end
     end
   end
 
@@ -768,33 +1061,46 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
   defp encode_reasoning_effort(_), do: nil
 
   @doc false
-  def encode_text_format(nil), do: nil
+  def encode_text_format(response_format, verbosity \\ nil)
 
-  def encode_text_format(response_format) when is_map(response_format) do
-    # Extract type - could be atom or string key
+  def encode_text_format(nil, nil), do: nil
+
+  def encode_text_format(nil, verbosity) do
+    %{"verbosity" => normalize_verbosity(verbosity)}
+  end
+
+  def encode_text_format(response_format, verbosity) when is_map(response_format) do
     type = response_format[:type] || response_format["type"]
 
-    case type do
-      "json_schema" ->
-        json_schema = response_format[:json_schema] || response_format["json_schema"]
-        # Schema.to_json handles both keyword lists (converts) and maps (pass-through)
-        schema = ReqLLM.Schema.to_json(json_schema[:schema] || json_schema["schema"])
+    base =
+      case type do
+        "json_schema" ->
+          json_schema = response_format[:json_schema] || response_format["json_schema"]
+          schema = ReqLLM.Schema.to_json(json_schema[:schema] || json_schema["schema"])
 
-        # ResponsesAPI expects a flattened structure:
-        # text.format.{type, name, strict, schema} instead of text.format.json_schema.{name, strict, schema}
-        %{
-          "format" => %{
-            "type" => "json_schema",
-            "name" => json_schema[:name] || json_schema["name"],
-            "strict" => json_schema[:strict] || json_schema["strict"],
-            "schema" => schema
+          %{
+            "format" => %{
+              "type" => "json_schema",
+              "name" => json_schema[:name] || json_schema["name"],
+              "strict" => json_schema[:strict] || json_schema["strict"],
+              "schema" => schema
+            }
           }
-        }
 
-      _ ->
-        nil
+        _ ->
+          %{}
+      end
+
+    case {base, verbosity} do
+      {b, nil} when map_size(b) == 0 -> nil
+      {b, v} when map_size(b) == 0 -> %{"verbosity" => normalize_verbosity(v)}
+      {b, nil} -> b
+      {b, v} -> Map.put(b, "verbosity", normalize_verbosity(v))
     end
   end
+
+  defp normalize_verbosity(v) when is_atom(v), do: Atom.to_string(v)
+  defp normalize_verbosity(v) when is_binary(v), do: v
 
   defp decode_responses_success({req, resp}) do
     body = ReqLLM.Provider.Utils.ensure_parsed_body(resp.body)
@@ -1086,9 +1392,18 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
       get_in(response_data, ["usage", "input_tokens_details", "cached_tokens"]) ||
         get_in(response_data, ["usage", "prompt_tokens_details", "cached_tokens"]) || 0
 
-    usage
-    |> Map.put(:cached_tokens, cached_tokens)
-    |> Map.put(:reasoning_tokens, reasoning_tokens)
+    usage =
+      usage
+      |> Map.put(:cached_tokens, cached_tokens)
+      |> Map.put(:reasoning_tokens, reasoning_tokens)
+
+    tool_call_counts = extract_tool_call_counts(response_data)
+
+    if map_size(tool_call_counts) > 0 do
+      merge_tool_usage_counts(usage, tool_call_counts)
+    else
+      usage
+    end
   end
 
   # The Responses API returns "completed" status even when tool calls are present.
@@ -1111,6 +1426,92 @@ defmodule ReqLLM.Providers.OpenAI.ResponsesAPI do
         :stop
     end
   end
+
+  defp extract_tool_call_counts(response_data) do
+    output_counts = count_tool_calls_from_output(response_data)
+    usage_counts = extract_tool_calls_from_usage(response_data)
+    merge_tool_counts(output_counts, usage_counts)
+  end
+
+  defp count_tool_calls_from_output(response_data) do
+    output = response_data["output"] || response_data[:output] || []
+
+    Enum.reduce(output, %{}, fn item, acc ->
+      item_type = item["type"] || item[:type]
+      item_type = if is_atom(item_type), do: Atom.to_string(item_type), else: item_type
+
+      if is_binary(item_type) do
+        tool = tool_usage_key_from_call_type(item_type)
+
+        if tool do
+          Map.update(acc, tool, 1, &(&1 + 1))
+        else
+          acc
+        end
+      else
+        acc
+      end
+    end)
+  end
+
+  defp extract_tool_calls_from_usage(response_data) do
+    usage = response_data["usage"] || response_data[:usage] || %{}
+
+    details =
+      Map.get(usage, "server_side_tool_usage_details") ||
+        Map.get(usage, :server_side_tool_usage_details) ||
+        Map.get(usage, "server_side_tool_usage") ||
+        Map.get(usage, :server_side_tool_usage) ||
+        %{}
+
+    server_tool_use = Map.get(usage, "server_tool_use") || Map.get(usage, :server_tool_use) || %{}
+
+    counts_from_details = extract_tool_counts_from_map(details, "_calls")
+    counts_from_requests = extract_tool_counts_from_map(server_tool_use, "_requests")
+    merge_tool_counts(counts_from_details, counts_from_requests)
+  end
+
+  defp extract_tool_counts_from_map(map, suffix) when is_map(map) and is_binary(suffix) do
+    Enum.reduce(map, %{}, fn {key, value}, acc ->
+      key_string =
+        cond do
+          is_binary(key) -> key
+          is_atom(key) -> Atom.to_string(key)
+          true -> to_string(key)
+        end
+
+      cond do
+        not String.ends_with?(key_string, suffix) ->
+          acc
+
+        not (is_number(value) and value > 0) ->
+          acc
+
+        true ->
+          base = String.replace_suffix(key_string, suffix, "")
+          tool = tool_usage_key(base)
+          update_tool_count(acc, tool, value)
+      end
+    end)
+  end
+
+  defp extract_tool_counts_from_map(_map, _suffix), do: %{}
+
+  defp merge_tool_counts(left, right) when is_map(left) and is_map(right) do
+    Enum.reduce(right, left, fn {tool, count}, acc ->
+      update_tool_count(acc, tool, count)
+    end)
+  end
+
+  defp merge_tool_counts(left, _right), do: left
+
+  defp update_tool_count(counts, tool, count)
+       when is_map(counts) and is_number(count) and count > 0 do
+    existing = Map.get(counts, tool, 0)
+    Map.put(counts, tool, max(existing, count))
+  end
+
+  defp update_tool_count(counts, _tool, _count), do: counts
 
   defp normalize_finish_reason("stop"), do: :stop
   defp normalize_finish_reason("length"), do: :length

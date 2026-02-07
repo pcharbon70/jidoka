@@ -73,6 +73,8 @@ defmodule Jido.Agent.InstanceManager do
 
   require Logger
 
+  alias Jido.Agent.Persistence
+
   @type manager_name :: atom()
   @type key :: term()
 
@@ -122,11 +124,6 @@ defmodule Jido.Agent.InstanceManager do
   def init(opts) do
     name = Keyword.fetch!(opts, :name)
 
-    children = [
-      {Registry, keys: :unique, name: registry_name(name)},
-      {DynamicSupervisor, strategy: :one_for_one, name: dynamic_supervisor_name(name)}
-    ]
-
     # Store config in persistent_term for fast access
     config = %{
       name: name,
@@ -137,6 +134,12 @@ defmodule Jido.Agent.InstanceManager do
     }
 
     :persistent_term.put({__MODULE__, name}, config)
+
+    children = [
+      {Registry, keys: :unique, name: registry_name(name)},
+      {DynamicSupervisor, strategy: :one_for_one, name: dynamic_supervisor_name(name)},
+      {Jido.Agent.InstanceManager.Cleanup, name}
+    ]
 
     Supervisor.init(children, strategy: :one_for_all)
   end
@@ -190,8 +193,15 @@ defmodule Jido.Agent.InstanceManager do
   @spec lookup(manager_name(), key()) :: {:ok, pid()} | :error
   def lookup(manager, key) do
     case Registry.lookup(registry_name(manager), key) do
-      [{pid, _}] -> {:ok, pid}
-      [] -> :error
+      [{pid, _}] ->
+        if Process.alive?(pid) do
+          {:ok, pid}
+        else
+          :error
+        end
+
+      [] ->
+        :error
     end
   end
 
@@ -268,6 +278,8 @@ defmodule Jido.Agent.InstanceManager do
     base_opts =
       [
         agent: agent_or_nil || config.agent,
+        # When thawing from persistence we pass a struct, so keep the module explicit.
+        agent_module: config.agent,
         id: key_to_id(key),
         name: {:via, Registry, {registry_name(config.name), key}},
         # Instance manager lifecycle options
@@ -286,13 +298,14 @@ defmodule Jido.Agent.InstanceManager do
         Keyword.put(base_opts, :initial_state, initial_state)
       end
 
-    {Jido.AgentServer, base_opts}
+    # Avoid immediate restarts on normal shutdown/idle timeout; allow restarts on crashes.
+    Supervisor.child_spec({Jido.AgentServer, base_opts}, restart: :transient)
   end
 
   defp maybe_thaw(%{persistence: nil}, _key), do: nil
 
   defp maybe_thaw(%{persistence: persistence, agent: agent_module}, key) do
-    case Jido.Agent.Persistence.thaw(persistence, agent_module, key) do
+    case Persistence.thaw(persistence, agent_module, key) do
       {:ok, agent} ->
         Logger.debug("InstanceManager thawed agent for key #{inspect(key)}")
         agent

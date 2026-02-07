@@ -98,14 +98,12 @@ defmodule Jidoka.Application do
       # Telemetry event handlers (started manually, not a child process)
       # Jidoka.TelemetryHandlers.attach_all() is called in Application.start
       # Protocol connections (Phase 8)
-      {DynamicSupervisor, name: Jidoka.ProtocolSupervisor, strategy: :one_for_one},
-      # MCP Connection Supervisor (Phase 8.3)
-      {Jidoka.Protocol.MCP.ConnectionSupervisor, []},
-      # Phoenix Connection Supervisor (Phase 8.4)
-      {Jidoka.Protocol.Phoenix.ConnectionSupervisor, []},
-      # A2A Connection Supervisor (Phase 8.5)
-      {Jidoka.Protocol.A2A.ConnectionSupervisor, []}
+      # ProtocolSupervisor manages all protocol connection supervisors (Phase 8.6)
+      {Jidoka.ProtocolSupervisor, []}
     ]
+
+    # After starting the main supervisor, start protocol children
+    # This is done via ProtocolSupervisor.start_configured_protocols()
 
     # Use one_for_one strategy with restart intensity limits
     # max_restarts: 3, max_seconds: 5 means if 3 children restart within 5 seconds,
@@ -122,6 +120,9 @@ defmodule Jidoka.Application do
     # Attach telemetry handlers after supervisor starts
     # TelemetryHandlers is not a GenServer, so it doesn't go in the supervision tree
     Jidoka.TelemetryHandlers.attach_all()
+
+    # Start configured protocol connections (Phase 8.6)
+    Jidoka.ProtocolSupervisor.start_configured_protocols()
 
     {:ok, self()}
   end

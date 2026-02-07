@@ -12,6 +12,7 @@
   "models": {
     "sonar": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1,
@@ -43,6 +44,7 @@
       },
       "model": null,
       "name": "Sonar",
+      "pricing": null,
       "provider": "perplexity",
       "provider_model_id": null,
       "release_date": "2024-01-01",
@@ -50,6 +52,7 @@
     },
     "sonar-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 3,
@@ -82,6 +85,7 @@
       },
       "model": null,
       "name": "Sonar Pro",
+      "pricing": null,
       "provider": "perplexity",
       "provider_model_id": null,
       "release_date": "2024-01-01",
@@ -89,6 +93,7 @@
     },
     "sonar-reasoning-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -142,11 +147,13 @@
       },
       "model": null,
       "name": "Sonar Reasoning Pro",
+      "pricing": null,
       "provider": "perplexity",
       "provider_model_id": null,
       "release_date": "2024-01-01",
       "tags": null
     }
   },
-  "name": "Perplexity"
+  "name": "Perplexity",
+  "pricing_defaults": null
 }

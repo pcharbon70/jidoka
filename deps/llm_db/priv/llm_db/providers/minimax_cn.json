@@ -12,6 +12,7 @@
   "models": {
     "MiniMax-M2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "MiniMax-M2",
+      "pricing": null,
       "provider": "minimax_cn",
       "provider_model_id": null,
       "release_date": "2025-10-27",
@@ -67,6 +69,7 @@
     },
     "MiniMax-M2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,11 +118,13 @@
       },
       "model": null,
       "name": "MiniMax-M2.1",
+      "pricing": null,
       "provider": "minimax_cn",
       "provider_model_id": null,
       "release_date": "2025-12-23",
       "tags": null
     }
   },
-  "name": "MiniMax (China)"
+  "name": "MiniMax (minimaxi.com)",
+  "pricing_defaults": null
 }

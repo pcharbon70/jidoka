@@ -246,6 +246,11 @@ defmodule ReqLLM.Providers.Azure do
     max_completion_tokens: [
       type: :any,
       doc: "Maximum completion tokens (OpenAI reasoning models)"
+    ],
+    verbosity: [
+      type: {:or, [:atom, :string]},
+      doc:
+        "Constrains the verbosity of the model's response. Supported values: 'low', 'medium', 'high'. Defaults to 'medium'. (OpenAI models only)"
     ]
   ]
 
@@ -700,9 +705,21 @@ defmodule ReqLLM.Providers.Azure do
   """
   @impl ReqLLM.Provider
   def decode_stream_event(event, model) do
+    {chunks, _state} = decode_stream_event(event, model, nil)
+    chunks
+  end
+
+  @impl ReqLLM.Provider
+  def decode_stream_event(event, model, state) do
     model_id = effective_model_id(model)
     formatter = get_formatter(model_id, model)
-    formatter.decode_stream_event(event, model)
+
+    if function_exported?(formatter, :decode_stream_event, 3) do
+      formatter.decode_stream_event(event, model, state)
+    else
+      chunks = formatter.decode_stream_event(event, model)
+      {chunks, state}
+    end
   end
 
   @doc """

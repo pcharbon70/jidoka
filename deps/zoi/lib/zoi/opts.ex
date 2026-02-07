@@ -8,14 +8,32 @@ defmodule Zoi.Opts do
     opts =
       Zoi.Types.Keyword.new(
         [
+          unrecognized_keys:
+            Zoi.Types.Union.new(
+              [
+                Zoi.Types.Enum.new([:strip, :error, :preserve]),
+                Zoi.Types.Tuple.new(
+                  {Zoi.Types.Literal.new(:preserve, []),
+                   Zoi.Types.Tuple.new({Zoi.Types.Any.new(), Zoi.Types.Any.new()}, [])},
+                  []
+                )
+              ],
+              description: """
+              How to handle unrecognized keys:
+              - `:strip` (default) - removes unrecognized keys
+              - `:error` - returns error on unrecognized keys
+              - `:preserve` - keeps unrecognized keys as-is
+              - `{:preserve, {key_schema, value_schema}}` - preserves and validates both keys and values
+              """
+            ),
           strict:
             Zoi.Types.Boolean.new(
-              description: "If strue, unrecognized keys will cause validation to fail."
-            )
-            |> Zoi.Types.Default.new(false),
+              description: "If true, unrecognized keys will cause validation to fail.",
+              deprecated: "Use :unrecognized_keys option instead."
+            ),
           empty_values: empty_values()
         ],
-        strict: true
+        unrecognized_keys: :error
       )
       |> with_coerce()
 
@@ -30,9 +48,10 @@ defmodule Zoi.Opts do
         example: example(),
         metadata: metadata(),
         error: error(),
-        typespec: typespec()
+        typespec: typespec(),
+        deprecated: deprecated()
       ],
-      strict: true
+      unrecognized_keys: :error
     )
   end
 
@@ -66,6 +85,10 @@ defmodule Zoi.Opts do
     Zoi.Types.Macro.new(description: "Custom typespec to override generated type.")
   end
 
+  defp deprecated() do
+    Zoi.Types.String.new(description: "Deprecation message to warn when this option is used.")
+  end
+
   defp empty_values() do
     Zoi.Types.Array.new(Zoi.Types.Any.new(),
       description: "List of values to treat as empty and skip during parsing."
@@ -76,7 +99,7 @@ defmodule Zoi.Opts do
 
   @spec constraint_schema(Zoi.Type.t(), keyword()) :: Zoi.Type.t()
   def constraint_schema(internal_schema, opts \\ []) do
-    custom_opts = Zoi.Types.Keyword.new([error: error()], strict: true)
+    custom_opts = Zoi.Types.Keyword.new([error: error()], unrecognized_keys: :error)
 
     Zoi.Types.Union.new(
       [

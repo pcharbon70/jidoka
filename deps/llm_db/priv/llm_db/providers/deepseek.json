@@ -12,6 +12,7 @@
   "models": {
     "deepseek-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -61,6 +62,7 @@
       },
       "model": null,
       "name": "DeepSeek Chat",
+      "pricing": null,
       "provider": "deepseek",
       "provider_model_id": null,
       "release_date": "2024-12-26",
@@ -68,6 +70,7 @@
     },
     "deepseek-reasoner": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -120,11 +123,13 @@
       },
       "model": null,
       "name": "DeepSeek Reasoner",
+      "pricing": null,
       "provider": "deepseek",
       "provider_model_id": null,
       "release_date": "2025-01-20",
       "tags": null
     }
   },
-  "name": "DeepSeek"
+  "name": "DeepSeek",
+  "pricing_defaults": null
 }

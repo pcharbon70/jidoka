@@ -81,7 +81,7 @@ defmodule Jido.Action.Schema do
     * Map representing the JSON Schema
   """
   @spec to_json_schema(t()) :: map()
-  def to_json_schema([]), do: %{}
+  def to_json_schema([]), do: %{"type" => "object", "properties" => %{}, "required" => []}
   def to_json_schema(schema) when is_list(schema), do: nimble_to_json_schema(schema)
   def to_json_schema(schema), do: Zoi.to_json_schema(schema)
 
@@ -221,14 +221,56 @@ defmodule Jido.Action.Schema do
 
   defp nimble_type_to_json(:string), do: %{"type" => "string"}
   defp nimble_type_to_json(:integer), do: %{"type" => "integer"}
-  defp nimble_type_to_json(:number), do: %{"type" => "integer"}
+  defp nimble_type_to_json(:number), do: %{"type" => "number"}
   defp nimble_type_to_json(:boolean), do: %{"type" => "boolean"}
   defp nimble_type_to_json(:float), do: %{"type" => "number"}
-  defp nimble_type_to_json({:list, _}), do: %{"type" => "array"}
+  defp nimble_type_to_json(:non_neg_integer), do: %{"type" => "integer", "minimum" => 0}
+  defp nimble_type_to_json(:pos_integer), do: %{"type" => "integer", "minimum" => 1}
+
+  defp nimble_type_to_json(:timeout) do
+    %{
+      "oneOf" => [
+        %{"type" => "integer", "minimum" => 0},
+        %{"type" => "string", "enum" => ["infinity"]}
+      ]
+    }
+  end
+
+  defp nimble_type_to_json({:list, subtype}) do
+    %{"type" => "array", "items" => nimble_type_to_json(subtype)}
+  end
+
+  defp nimble_type_to_json({:in, choices}) when is_list(choices) do
+    inferred_type = infer_enum_type(choices)
+    enum_values = normalize_enum_values(choices, inferred_type)
+    base = %{"enum" => enum_values}
+    if inferred_type, do: Map.put(base, "type", inferred_type), else: base
+  end
+
   defp nimble_type_to_json(:keyword_list), do: %{"type" => "object"}
   defp nimble_type_to_json(:map), do: %{"type" => "object"}
   defp nimble_type_to_json({:map, _}), do: %{"type" => "object"}
   defp nimble_type_to_json(_), do: %{"type" => "string"}
+
+  defp infer_enum_type(choices) do
+    cond do
+      Enum.all?(choices, &is_integer/1) -> "integer"
+      Enum.all?(choices, &is_float/1) -> "number"
+      Enum.all?(choices, &is_number/1) -> "number"
+      Enum.all?(choices, &is_boolean/1) -> "boolean"
+      Enum.all?(choices, &(is_binary(&1) or is_atom(&1))) -> "string"
+      true -> nil
+    end
+  end
+
+  defp normalize_enum_values(choices, "string") do
+    Enum.map(choices, fn
+      v when is_atom(v) -> Atom.to_string(v)
+      v -> v
+    end)
+  end
+
+  defp normalize_enum_values(choices, _type), do: choices
 
   defp maybe_add_description(schema, nil), do: schema
   defp maybe_add_description(schema, desc), do: Map.put(schema, "description", desc)

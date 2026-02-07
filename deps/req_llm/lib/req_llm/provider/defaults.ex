@@ -30,6 +30,7 @@ defmodule ReqLLM.Provider.Defaults do
 
   - `prepare_request/4` - Standard chat/object/embedding request preparation
   - `attach/3` - OAuth Bearer authentication and standard pipeline steps
+  - `build_body/1` - OpenAI-compatible request body construction
   - `encode_body/1` - OpenAI-compatible request body encoding
   - `decode_response/1` - Standard response decoding with error handling
   - `extract_usage/2` - Usage extraction from standard `usage` field
@@ -47,6 +48,7 @@ defmodule ReqLLM.Provider.Defaults do
   - `prepare_object_request/4`
   - `prepare_embedding_request/4`
   - `default_attach/3`
+  - `default_build_body/1`
   - `default_encode_body/1`
   - `default_decode_response/1`
   - `default_extract_usage/2`
@@ -58,23 +60,27 @@ defmodule ReqLLM.Provider.Defaults do
   ## Customization Examples
 
       # Override just the body encoding while keeping everything else
+      def build_body(request) do
+        request
+        |> ReqLLM.Provider.Defaults.default_build_body()
+        |> Map.put(:my_provider_field, request.options[:my_provider_field])
+      end
+
       def encode_body(request) do
         request
-        |> ReqLLM.Provider.Defaults.default_encode_body()
+        |> ReqLLM.Provider.Defaults.encode_body_from_map(build_body(request))
         |> add_custom_headers()
       end
 
       # Use runtime functions directly for testing
       test "encoding produces correct format" do
         request = build_test_request()
-        encoded = ReqLLM.Provider.Defaults.default_encode_body(request)
-        assert encoded.body =~ ~s("model":")
+        body = ReqLLM.Provider.Defaults.default_build_body(request)
+        assert body[:model]
       end
   """
 
   import ReqLLM.Provider.Utils, only: [maybe_put: 3, ensure_parsed_body: 1]
-
-  require Logger
 
   @doc """
   Provides default implementations for common provider patterns.
@@ -111,7 +117,18 @@ defmodule ReqLLM.Provider.Defaults do
       """
       @impl ReqLLM.Provider
       def encode_body(request) do
-        ReqLLM.Provider.Defaults.default_encode_body(request)
+        body = build_body(request)
+        ReqLLM.Provider.Defaults.encode_body_from_map(request, body)
+      end
+
+      @doc """
+      Default implementation of build_body/1.
+
+      Builds request body using OpenAI-compatible format for chat and embedding operations.
+      """
+      @impl ReqLLM.Provider
+      def build_body(request) do
+        ReqLLM.Provider.Defaults.default_build_body(request)
       end
 
       @doc """
@@ -173,6 +190,7 @@ defmodule ReqLLM.Provider.Defaults do
       # Make all default implementations overridable
       defoverridable prepare_request: 4,
                      attach: 3,
+                     build_body: 1,
                      encode_body: 1,
                      decode_response: 1,
                      extract_usage: 2,
@@ -343,6 +361,7 @@ defmodule ReqLLM.Provider.Defaults do
   @spec filter_req_opts(keyword()) :: keyword()
   def filter_req_opts(opts) do
     internal_keys = [
+      :api_key,
       :on_unsupported,
       :context,
       :text,
@@ -425,25 +444,38 @@ defmodule ReqLLM.Provider.Defaults do
   """
   @spec default_encode_body(Req.Request.t()) :: Req.Request.t()
   def default_encode_body(request) do
-    body =
-      case request.options[:operation] do
-        :embedding ->
-          encode_embedding_body(request)
+    body = default_build_body(request)
 
-        _ ->
-          encode_chat_body(request)
-      end
+    encode_body_from_map(request, body)
+  end
 
-    try do
-      encoded_body = Jason.encode!(body)
+  @doc """
+  Default body building for OpenAI-compatible APIs.
+  """
+  @spec default_build_body(Req.Request.t()) :: map()
+  def default_build_body(request) do
+    case request.options[:operation] do
+      :embedding ->
+        encode_embedding_body(request)
 
-      request
-      |> Req.Request.put_header("content-type", "application/json")
-      |> Map.put(:body, encoded_body)
-    rescue
-      error ->
-        reraise error, __STACKTRACE__
+      _ ->
+        encode_chat_body(request)
     end
+  end
+
+  @doc """
+  Encode a request body map as JSON and attach it to the Req request.
+  """
+  @spec encode_body_from_map(Req.Request.t(), map()) :: Req.Request.t()
+  def encode_body_from_map(request, body) do
+    encoded_body = Jason.encode!(body)
+
+    request
+    |> Req.Request.put_header("content-type", "application/json")
+    |> Map.put(:body, encoded_body)
+  rescue
+    error ->
+      reraise error, __STACKTRACE__
   end
 
   @doc """
@@ -591,7 +623,8 @@ defmodule ReqLLM.Provider.Defaults do
          tool_calls: tc,
          tool_call_id: tcid,
          name: name,
-         reasoning_details: rd
+         reasoning_details: rd,
+         metadata: metadata
        }) do
     base_message = %{
       role: to_string(r),
@@ -603,10 +636,12 @@ defmodule ReqLLM.Provider.Defaults do
     |> maybe_add_field(:tool_call_id, tcid)
     |> maybe_add_field(:name, name)
     |> maybe_add_field(:reasoning_details, rd)
+    |> maybe_add_field(:metadata, metadata)
   end
 
   defp maybe_add_field(message, _key, nil), do: message
   defp maybe_add_field(message, _key, []), do: message
+  defp maybe_add_field(message, _key, %{} = value) when map_size(value) == 0, do: message
   defp maybe_add_field(message, key, value), do: Map.put(message, key, value)
 
   defp encode_openai_content(content) when is_binary(content), do: content
@@ -703,6 +738,42 @@ defmodule ReqLLM.Provider.Defaults do
   end
 
   defp merge_content_metadata(base, _), do: base
+
+  @image_mimes ~w(image/jpeg image/png image/gif image/webp)
+
+  @doc """
+  Validates that a context contains only image file attachments.
+
+  Returns `:ok` if all file attachments are images (JPEG, PNG, GIF, WebP),
+  or `{:error, reason}` with a descriptive message if non-image files are found.
+
+  This is used by providers like OpenAI and xAI that only support image attachments
+  via their Chat Completions API.
+  """
+  @spec validate_image_only_attachments(ReqLLM.Context.t()) :: :ok | {:error, String.t()}
+  def validate_image_only_attachments(%ReqLLM.Context{messages: messages}) do
+    non_image_parts =
+      messages
+      |> Enum.flat_map(fn msg -> msg.content || [] end)
+      |> Enum.filter(fn part ->
+        part.type == :file and part.media_type not in @image_mimes
+      end)
+
+    case non_image_parts do
+      [] ->
+        :ok
+
+      parts ->
+        mimes = parts |> Enum.map(& &1.media_type) |> Enum.uniq() |> Enum.join(", ")
+
+        {:error,
+         "This provider only supports image attachments (JPEG, PNG, GIF, WebP). " <>
+           "Found unsupported file types: #{mimes}. " <>
+           "Consider using Anthropic or Google for document support."}
+    end
+  end
+
+  def validate_image_only_attachments(_), do: :ok
 
   @doc """
   Decodes OpenAI-format response body to ReqLLM.Response.
@@ -885,6 +956,13 @@ defmodule ReqLLM.Provider.Defaults do
     end
   end
 
+  # Mistral API omits "type" field - add it and delegate
+  defp decode_openai_tool_call(
+         %{"id" => _, "function" => %{"name" => _, "arguments" => _}} = call
+       ) do
+    decode_openai_tool_call(Map.put(call, "type", "function"))
+  end
+
   defp decode_openai_tool_call(_), do: nil
 
   defp decode_openai_delta(%{"content" => content}) when is_binary(content) and content != "" do
@@ -938,6 +1016,14 @@ defmodule ReqLLM.Provider.Defaults do
        })
        when is_binary(name) do
     ReqLLM.StreamChunk.tool_call(name, %{}, %{id: id, index: index})
+  end
+
+  # Mistral API omits "type" field - add it and delegate (must come before partial handlers)
+  defp decode_openai_tool_call_delta(
+         %{"id" => _, "function" => %{"name" => _, "arguments" => _}} = call
+       )
+       when not is_map_key(call, "type") do
+    decode_openai_tool_call_delta(Map.put(call, "type", "function"))
   end
 
   # Handle partial argument chunks by storing them as metadata
@@ -1043,13 +1129,24 @@ defmodule ReqLLM.Provider.Defaults do
 
     cached_tokens = get_in(usage, ["prompt_tokens_details", "cached_tokens"]) || 0
 
-    %{
+    base = %{
       input_tokens: input,
       output_tokens: output,
       total_tokens: total,
       cached_tokens: cached_tokens,
       reasoning_tokens: reasoning_tokens
     }
+
+    extra =
+      Map.drop(usage, [
+        "prompt_tokens",
+        "completion_tokens",
+        "total_tokens",
+        "prompt_tokens_details",
+        "completion_tokens_details"
+      ])
+
+    Map.merge(base, extra)
   end
 
   defp parse_openai_usage(_, _choices),

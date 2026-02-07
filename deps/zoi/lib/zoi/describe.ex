@@ -119,6 +119,7 @@ defmodule Zoi.Describe do
     description =
       schema
       |> check_required()
+      |> check_deprecated(schema)
       |> check_description(schema)
 
     if description == "" do
@@ -136,6 +137,17 @@ defmodule Zoi.Describe do
     end
   end
 
+  defp check_deprecated(str, %Zoi.Types.Default{inner: inner}) do
+    check_deprecated(str, inner)
+  end
+
+  defp check_deprecated(str, schema) do
+    case Meta.deprecated(schema.meta) do
+      nil -> str
+      message -> str <> "*This option is deprecated. #{String.trim(message)}* "
+    end
+  end
+
   defp check_description(str, %Zoi.Types.Default{inner: inner, value: value}) do
     check_description(str, inner) <> " The default value is `#{inspect(value)}`."
   end
@@ -143,7 +155,17 @@ defmodule Zoi.Describe do
   defp check_description(str, schema) do
     case schema.meta.description do
       nil -> str
-      description -> str <> description
+      description -> str <> indent_doc(description)
+    end
+  end
+
+  defp indent_doc(text) do
+    text
+    |> String.trim_trailing()
+    |> String.split("\n")
+    |> case do
+      [single_line] -> single_line
+      [head | tail] -> Enum.join([head | Enum.map(tail, &("  " <> &1))], "\n")
     end
   end
 end

@@ -12,6 +12,7 @@
   "models": {
     "anthropic--claude-3-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -64,6 +65,7 @@
       },
       "model": null,
       "name": "anthropic--claude-3-haiku",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2024-03-13",
@@ -71,6 +73,7 @@
     },
     "anthropic--claude-3-opus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -123,6 +126,7 @@
       },
       "model": null,
       "name": "anthropic--claude-3-opus",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2024-02-29",
@@ -130,6 +134,7 @@
     },
     "anthropic--claude-3-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -182,6 +187,7 @@
       },
       "model": null,
       "name": "anthropic--claude-3-sonnet",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2024-03-04",
@@ -189,6 +195,7 @@
     },
     "anthropic--claude-3.5-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -241,6 +248,7 @@
       },
       "model": null,
       "name": "anthropic--claude-3.5-sonnet",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -248,6 +256,7 @@
     },
     "anthropic--claude-3.7-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -300,6 +309,7 @@
       },
       "model": null,
       "name": "anthropic--claude-3.7-sonnet",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-02-24",
@@ -307,6 +317,7 @@
     },
     "anthropic--claude-4-opus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -359,6 +370,7 @@
       },
       "model": null,
       "name": "anthropic--claude-4-opus",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -366,6 +378,7 @@
     },
     "anthropic--claude-4-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -418,6 +431,7 @@
       },
       "model": null,
       "name": "anthropic--claude-4-sonnet",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -425,6 +439,7 @@
     },
     "anthropic--claude-4.5-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -477,6 +492,7 @@
       },
       "model": null,
       "name": "anthropic--claude-4.5-haiku",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-10-01",
@@ -484,6 +500,7 @@
     },
     "anthropic--claude-4.5-opus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -536,6 +553,7 @@
       },
       "model": null,
       "name": "anthropic--claude-4.5-opus",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-11-24",
@@ -543,6 +561,7 @@
     },
     "anthropic--claude-4.5-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -595,6 +614,7 @@
       },
       "model": null,
       "name": "anthropic--claude-4.5-sonnet",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -602,6 +622,7 @@
     },
     "gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -657,6 +678,7 @@
       },
       "model": null,
       "name": "gemini-2.5-flash",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-03-25",
@@ -664,6 +686,7 @@
     },
     "gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -718,6 +741,7 @@
       },
       "model": null,
       "name": "gemini-2.5-pro",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-03-25",
@@ -725,6 +749,7 @@
     },
     "gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -776,6 +801,7 @@
       },
       "model": null,
       "name": "gpt-5",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -783,6 +809,7 @@
     },
     "gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -834,6 +861,7 @@
       },
       "model": null,
       "name": "gpt-5-mini",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -841,6 +869,7 @@
     },
     "gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -892,11 +921,13 @@
       },
       "model": null,
       "name": "gpt-5-nano",
+      "pricing": null,
       "provider": "sap_ai_core",
       "provider_model_id": null,
       "release_date": "2025-08-07",
       "tags": null
     }
   },
-  "name": "SAP AI Core"
+  "name": "SAP AI Core",
+  "pricing_defaults": null
 }

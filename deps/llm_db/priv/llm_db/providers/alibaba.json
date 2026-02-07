@@ -12,6 +12,7 @@
   "models": {
     "qvq-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -61,6 +62,7 @@
       },
       "model": null,
       "name": "QVQ Max",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-03-25",
@@ -68,6 +70,7 @@
     },
     "qwen-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -116,6 +119,7 @@
       },
       "model": null,
       "name": "Qwen Flash",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -123,6 +127,7 @@
     },
     "qwen-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -171,6 +176,7 @@
       },
       "model": null,
       "name": "Qwen Max",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-04-03",
@@ -178,6 +184,7 @@
     },
     "qwen-mt-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 2.46,
@@ -209,6 +216,7 @@
       },
       "model": null,
       "name": "Qwen-MT Plus",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-01",
@@ -216,6 +224,7 @@
     },
     "qwen-mt-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.16,
@@ -247,6 +256,7 @@
       },
       "model": null,
       "name": "Qwen-MT Turbo",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-01",
@@ -254,6 +264,7 @@
     },
     "qwen-omni-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -308,6 +319,7 @@
       },
       "model": null,
       "name": "Qwen-Omni Turbo",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-01-19",
@@ -315,6 +327,7 @@
     },
     "qwen-omni-turbo-realtime": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -368,6 +381,7 @@
       },
       "model": null,
       "name": "Qwen-Omni Turbo Realtime",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-05-08",
@@ -375,6 +389,7 @@
     },
     "qwen-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -424,6 +439,7 @@
       },
       "model": null,
       "name": "Qwen Plus",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -431,6 +447,7 @@
     },
     "qwen-plus-character-ja": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -479,6 +496,7 @@
       },
       "model": null,
       "name": "Qwen Plus Character (Japanese)",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-01",
@@ -486,6 +504,7 @@
     },
     "qwen-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -535,6 +554,7 @@
       },
       "model": null,
       "name": "Qwen Turbo",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -542,6 +562,7 @@
     },
     "qwen-vl-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -591,6 +612,7 @@
       },
       "model": null,
       "name": "Qwen-VL Max",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-04-08",
@@ -598,6 +620,7 @@
     },
     "qwen-vl-ocr": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.72,
@@ -630,6 +653,7 @@
       },
       "model": null,
       "name": "Qwen-VL OCR",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-10-28",
@@ -637,6 +661,7 @@
     },
     "qwen-vl-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -686,6 +711,7 @@
       },
       "model": null,
       "name": "Qwen-VL Plus",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -693,6 +719,7 @@
     },
     "qwen2-5-14b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -741,6 +768,7 @@
       },
       "model": null,
       "name": "Qwen2.5 14B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -748,6 +776,7 @@
     },
     "qwen2-5-32b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -796,6 +825,7 @@
       },
       "model": null,
       "name": "Qwen2.5 32B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -803,6 +833,7 @@
     },
     "qwen2-5-72b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -851,6 +882,7 @@
       },
       "model": null,
       "name": "Qwen2.5 72B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -858,6 +890,7 @@
     },
     "qwen2-5-7b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -906,6 +939,7 @@
       },
       "model": null,
       "name": "Qwen2.5 7B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -913,6 +947,7 @@
     },
     "qwen2-5-omni-7b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -966,6 +1001,7 @@
       },
       "model": null,
       "name": "Qwen2.5-Omni 7B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-12",
@@ -973,6 +1009,7 @@
     },
     "qwen2-5-vl-72b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1022,6 +1059,7 @@
       },
       "model": null,
       "name": "Qwen2.5-VL 72B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -1029,6 +1067,7 @@
     },
     "qwen2-5-vl-7b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1078,6 +1117,7 @@
       },
       "model": null,
       "name": "Qwen2.5-VL 7B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2024-09",
@@ -1085,6 +1125,7 @@
     },
     "qwen3-14b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1134,6 +1175,7 @@
       },
       "model": null,
       "name": "Qwen3 14B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1141,6 +1183,7 @@
     },
     "qwen3-235b-a22b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1190,6 +1233,7 @@
       },
       "model": null,
       "name": "Qwen3 235B-A22B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1197,6 +1241,7 @@
     },
     "qwen3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1246,6 +1291,7 @@
       },
       "model": null,
       "name": "Qwen3 32B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1253,6 +1299,7 @@
     },
     "qwen3-8b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1302,6 +1349,7 @@
       },
       "model": null,
       "name": "Qwen3 8B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1309,6 +1357,7 @@
     },
     "qwen3-asr-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.035,
@@ -1340,6 +1389,7 @@
       },
       "model": null,
       "name": "Qwen3-ASR Flash",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09-08",
@@ -1347,6 +1397,7 @@
     },
     "qwen3-coder-30b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1395,6 +1446,7 @@
       },
       "model": null,
       "name": "Qwen3-Coder 30B-A3B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1402,6 +1454,7 @@
     },
     "qwen3-coder-480b-a35b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1450,6 +1503,7 @@
       },
       "model": null,
       "name": "Qwen3-Coder 480B-A35B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1457,6 +1511,7 @@
     },
     "qwen3-coder-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1505,6 +1560,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder Flash",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -1512,6 +1568,7 @@
     },
     "qwen3-coder-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1560,6 +1617,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder Plus",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -1567,6 +1625,7 @@
     },
     "qwen3-livetranslate-flash-realtime": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 10,
@@ -1604,6 +1663,7 @@
       },
       "model": null,
       "name": "Qwen3-LiveTranslate Flash Realtime",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09-22",
@@ -1611,6 +1671,7 @@
     },
     "qwen3-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1659,6 +1720,7 @@
       },
       "model": null,
       "name": "Qwen3 Max",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09-23",
@@ -1666,6 +1728,7 @@
     },
     "qwen3-next-80b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1714,6 +1777,7 @@
       },
       "model": null,
       "name": "Qwen3-Next 80B-A3B Instruct",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09",
@@ -1721,6 +1785,7 @@
     },
     "qwen3-next-80b-a3b-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1769,6 +1834,7 @@
       },
       "model": null,
       "name": "Qwen3-Next 80B-A3B (Thinking)",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09",
@@ -1776,6 +1842,7 @@
     },
     "qwen3-omni-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1830,6 +1897,7 @@
       },
       "model": null,
       "name": "Qwen3-Omni Flash",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09-15",
@@ -1837,6 +1905,7 @@
     },
     "qwen3-omni-flash-realtime": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1891,6 +1960,7 @@
       },
       "model": null,
       "name": "Qwen3-Omni Flash Realtime",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09-15",
@@ -1898,6 +1968,7 @@
     },
     "qwen3-vl-235b-a22b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1948,6 +2019,7 @@
       },
       "model": null,
       "name": "Qwen3-VL 235B-A22B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -1955,6 +2027,7 @@
     },
     "qwen3-vl-30b-a3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2005,6 +2078,7 @@
       },
       "model": null,
       "name": "Qwen3-VL 30B-A3B",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-04",
@@ -2012,6 +2086,7 @@
     },
     "qwen3-vl-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2062,6 +2137,7 @@
       },
       "model": null,
       "name": "Qwen3-VL Plus",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-09-23",
@@ -2069,6 +2145,7 @@
     },
     "qwq-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2117,11 +2194,13 @@
       },
       "model": null,
       "name": "QwQ Plus",
+      "pricing": null,
       "provider": "alibaba",
       "provider_model_id": null,
       "release_date": "2025-03-05",
       "tags": null
     }
   },
-  "name": "Alibaba"
+  "name": "Alibaba",
+  "pricing_defaults": null
 }

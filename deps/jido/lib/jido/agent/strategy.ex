@@ -76,6 +76,7 @@ defmodule Jido.Agent.Strategy do
   `:__strategy__`. Use `Jido.Agent.Strategy.State` helpers to manage it.
   """
 
+  alias Jido.Action.Tool, as: ActionTool
   alias Jido.Agent
   alias Jido.Agent.Strategy.State, as: StratState
 
@@ -108,14 +109,23 @@ defmodule Jido.Agent.Strategy do
     - `details` - Additional strategy-specific metadata
     """
 
-    @type t :: %__MODULE__{
-            status: Jido.Agent.Strategy.status(),
-            done?: boolean(),
-            result: term() | nil,
-            details: map()
-          }
+    @schema Zoi.struct(
+              __MODULE__,
+              %{
+                status: Zoi.atom(description: "Coarse execution status"),
+                done?: Zoi.boolean(description: "Whether strategy reached terminal state"),
+                result:
+                  Zoi.any(description: "Main output if strategy produces one") |> Zoi.optional(),
+                details:
+                  Zoi.map(Zoi.atom(), Zoi.any(), description: "Strategy-specific metadata")
+                  |> Zoi.default(%{})
+              },
+              coerce: true
+            )
 
-    defstruct [:status, :done?, :result, details: %{}]
+    @type t :: unquote(Zoi.type_spec(@schema))
+    @enforce_keys Zoi.Struct.enforce_keys(@schema)
+    defstruct Zoi.Struct.struct_fields(@schema)
 
     @doc "Returns true if the strategy has reached a terminal state."
     @spec terminal?(t()) :: boolean()
@@ -129,8 +139,23 @@ defmodule Jido.Agent.Strategy do
   # Deprecated: use Snapshot instead
   defmodule Public do
     @moduledoc false
-    defstruct [:status, :done?, :result, meta: %{}]
-    @type t :: Jido.Agent.Strategy.Snapshot.t()
+
+    @schema Zoi.struct(
+              __MODULE__,
+              %{
+                status: Zoi.atom(description: "Execution status"),
+                done?: Zoi.boolean(description: "Whether strategy reached terminal state"),
+                result: Zoi.any(description: "Main output") |> Zoi.optional(),
+                meta:
+                  Zoi.map(Zoi.atom(), Zoi.any(), description: "Additional metadata")
+                  |> Zoi.default(%{})
+              },
+              coerce: true
+            )
+
+    @type t :: unquote(Zoi.type_spec(@schema))
+    @enforce_keys Zoi.Struct.enforce_keys(@schema)
+    defstruct Zoi.Struct.struct_fields(@schema)
   end
 
   @doc """
@@ -331,7 +356,8 @@ defmodule Jido.Agent.Strategy do
     params =
       case spec && spec[:schema] do
         nil ->
-          atomize_string_keys(instr.params)
+          # No schema - leave keys as-is to prevent atom table exhaustion
+          instr.params
 
         schema ->
           normalize_with_schema(instr.params, schema, instr.action)
@@ -341,11 +367,11 @@ defmodule Jido.Agent.Strategy do
   end
 
   defp normalize_with_schema(params, schema, action) do
-    atomized = atomize_string_keys(params)
-
     cond do
       is_struct(schema) ->
-        case Zoi.parse(schema, atomized) do
+        # Zoi with coerce: true handles string->atom conversion safely
+        # Only schema-defined keys become atoms; unknown keys are stripped
+        case Zoi.parse(schema, params) do
           {:ok, v} ->
             v
 
@@ -354,33 +380,12 @@ defmodule Jido.Agent.Strategy do
         end
 
       is_list(schema) ->
-        Jido.Action.Tool.convert_params_using_schema(params, schema)
+        # ActionTool preserves unknown keys as strings (atom-safe)
+        ActionTool.convert_params_using_schema(params, schema)
 
       true ->
-        atomized
-    end
-  end
-
-  defp atomize_string_keys(%{} = map) do
-    for {k, v} <- map, into: %{} do
-      key =
-        cond do
-          is_atom(k) -> k
-          is_binary(k) -> safe_to_atom(k)
-          true -> k
-        end
-
-      {key, v}
-    end
-  end
-
-  defp atomize_string_keys(other), do: other
-
-  defp safe_to_atom(str) when is_binary(str) do
-    try do
-      String.to_existing_atom(str)
-    rescue
-      ArgumentError -> String.to_atom(str)
+        # No schema - leave keys as-is to prevent atom table exhaustion
+        params
     end
   end
 
@@ -401,9 +406,15 @@ defmodule Jido.Agent.Strategy do
       @impl true
       @spec snapshot(Jido.Agent.t(), Jido.Agent.Strategy.context()) ::
               Jido.Agent.Strategy.Snapshot.t()
-      def snapshot(agent, _ctx), do: Jido.Agent.Strategy.default_snapshot(agent)
+      def snapshot(agent, _ctx), do: unquote(__MODULE__).default_snapshot(agent)
 
       defoverridable init: 2, tick: 2, snapshot: 2
     end
+  end
+end
+
+defimpl Inspect, for: Jido.Agent.Strategy.Snapshot do
+  def inspect(snapshot, _opts) do
+    "#Snapshot<:#{snapshot.status} done?=#{snapshot.done?}>"
   end
 end

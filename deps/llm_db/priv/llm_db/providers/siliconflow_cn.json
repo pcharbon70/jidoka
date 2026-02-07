@@ -12,6 +12,7 @@
   "models": {
     "ByteDance-Seed/Seed-OSS-36B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -61,6 +62,7 @@
       },
       "model": null,
       "name": "ByteDance-Seed/Seed-OSS-36B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-04",
@@ -68,6 +70,7 @@
     },
     "Kwaipilot/KAT-Dev": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -117,6 +120,7 @@
       },
       "model": null,
       "name": "Kwaipilot/KAT-Dev",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-27",
@@ -124,6 +128,7 @@
     },
     "MiniMaxAI/MiniMax-M1-80k": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -173,6 +178,7 @@
       },
       "model": null,
       "name": "MiniMaxAI/MiniMax-M1-80k",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -180,6 +186,7 @@
     },
     "MiniMaxAI/MiniMax-M2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -229,13 +236,538 @@
       },
       "model": null,
       "name": "MiniMaxAI/MiniMax-M2",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-28",
       "tags": null
     },
+    "Pro/MiniMaxAI/MiniMax-M2.1": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.3,
+        "output": 1.2
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "minimax",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/MiniMaxAI/MiniMax-M2.1",
+      "knowledge": null,
+      "last_updated": "2025-12-23",
+      "lifecycle": null,
+      "limits": {
+        "context": 197000,
+        "output": 131000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/MiniMaxAI/MiniMax-M2.1",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-12-23",
+      "tags": null
+    },
+    "Pro/deepseek-ai/DeepSeek-R1": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.5,
+        "output": 2.18
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "deepseek-thinking",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/deepseek-ai/DeepSeek-R1",
+      "knowledge": null,
+      "last_updated": "2025-11-25",
+      "lifecycle": null,
+      "limits": {
+        "context": 164000,
+        "output": 164000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/deepseek-ai/DeepSeek-R1",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-05-28",
+      "tags": null
+    },
+    "Pro/deepseek-ai/DeepSeek-V3": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.25,
+        "output": 1
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "deepseek",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/deepseek-ai/DeepSeek-V3",
+      "knowledge": null,
+      "last_updated": "2025-11-25",
+      "lifecycle": null,
+      "limits": {
+        "context": 164000,
+        "output": 164000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/deepseek-ai/DeepSeek-V3",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2024-12-26",
+      "tags": null
+    },
+    "Pro/deepseek-ai/DeepSeek-V3.1-Terminus": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.27,
+        "output": 1
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "deepseek",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/deepseek-ai/DeepSeek-V3.1-Terminus",
+      "knowledge": null,
+      "last_updated": "2025-11-25",
+      "lifecycle": null,
+      "limits": {
+        "context": 164000,
+        "output": 164000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/deepseek-ai/DeepSeek-V3.1-Terminus",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-09-29",
+      "tags": null
+    },
+    "Pro/deepseek-ai/DeepSeek-V3.2": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.27,
+        "output": 0.42
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "deepseek",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/deepseek-ai/DeepSeek-V3.2",
+      "knowledge": null,
+      "last_updated": "2025-12-03",
+      "lifecycle": null,
+      "limits": {
+        "context": 164000,
+        "output": 164000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/deepseek-ai/DeepSeek-V3.2",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-12-03",
+      "tags": null
+    },
+    "Pro/moonshotai/Kimi-K2-Instruct-0905": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.4,
+        "output": 2
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "kimi",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/moonshotai/Kimi-K2-Instruct-0905",
+      "knowledge": null,
+      "last_updated": "2025-11-25",
+      "lifecycle": null,
+      "limits": {
+        "context": 262000,
+        "output": 262000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/moonshotai/Kimi-K2-Instruct-0905",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-09-08",
+      "tags": null
+    },
+    "Pro/moonshotai/Kimi-K2-Thinking": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.55,
+        "output": 2.5
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "kimi-thinking",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/moonshotai/Kimi-K2-Thinking",
+      "knowledge": null,
+      "last_updated": "2025-11-25",
+      "lifecycle": null,
+      "limits": {
+        "context": 262000,
+        "output": 262000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/moonshotai/Kimi-K2-Thinking",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-11-07",
+      "tags": null
+    },
+    "Pro/moonshotai/Kimi-K2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.55,
+        "output": 3
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "kimi",
+        "open_weights": false,
+        "structured_output": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/moonshotai/Kimi-K2.5",
+      "knowledge": null,
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 262000,
+        "output": 262000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/moonshotai/Kimi-K2.5",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
+    "Pro/zai-org/GLM-4.7": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.6,
+        "output": 2.2
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "glm",
+        "open_weights": false,
+        "structured_output": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "Pro/zai-org/GLM-4.7",
+      "knowledge": null,
+      "last_updated": "2025-12-22",
+      "lifecycle": null,
+      "limits": {
+        "context": 205000,
+        "output": 205000
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Pro/zai-org/GLM-4.7",
+      "pricing": null,
+      "provider": "siliconflow_cn",
+      "provider_model_id": null,
+      "release_date": "2025-12-22",
+      "tags": null
+    },
     "Qwen/QwQ-32B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -285,6 +817,7 @@
       },
       "model": null,
       "name": "Qwen/QwQ-32B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-03-06",
@@ -292,6 +825,7 @@
     },
     "Qwen/Qwen2.5-14B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -341,6 +875,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-14B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -348,6 +883,7 @@
     },
     "Qwen/Qwen2.5-32B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -397,6 +933,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-32B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-09-19",
@@ -404,6 +941,7 @@
     },
     "Qwen/Qwen2.5-72B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -453,6 +991,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-72B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -460,6 +999,7 @@
     },
     "Qwen/Qwen2.5-72B-Instruct-128K": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -509,6 +1049,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-72B-Instruct-128K",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -516,6 +1057,7 @@
     },
     "Qwen/Qwen2.5-7B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -565,6 +1107,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-7B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-09-18",
@@ -572,6 +1115,7 @@
     },
     "Qwen/Qwen2.5-Coder-32B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -621,6 +1165,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-11-11",
@@ -628,6 +1173,7 @@
     },
     "Qwen/Qwen2.5-VL-32B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -678,6 +1224,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-VL-32B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-03-24",
@@ -685,6 +1232,7 @@
     },
     "Qwen/Qwen2.5-VL-72B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -735,63 +1283,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen2.5-VL-72B-Instruct",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-01-28",
-      "tags": null
-    },
-    "Qwen/Qwen2.5-VL-7B-Instruct": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.05,
-        "output": 0.05
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "qwen",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "Qwen/Qwen2.5-VL-7B-Instruct",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 33000,
-        "output": 4000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-01-28",
@@ -799,6 +1291,7 @@
     },
     "Qwen/Qwen3-14B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -848,62 +1341,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-14B",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-04-30",
-      "tags": null
-    },
-    "Qwen/Qwen3-235B-A22B": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.35,
-        "output": 1.42
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "qwen",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "Qwen/Qwen3-235B-A22B",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 131000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Qwen/Qwen3-235B-A22B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-30",
@@ -911,6 +1349,7 @@
     },
     "Qwen/Qwen3-235B-A22B-Instruct-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -960,6 +1399,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -967,6 +1407,7 @@
     },
     "Qwen/Qwen3-235B-A22B-Thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1016,6 +1457,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -1023,6 +1465,7 @@
     },
     "Qwen/Qwen3-30B-A3B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1072,6 +1515,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-30B-A3B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-30",
@@ -1079,6 +1523,7 @@
     },
     "Qwen/Qwen3-30B-A3B-Instruct-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1128,6 +1573,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-30",
@@ -1135,6 +1581,7 @@
     },
     "Qwen/Qwen3-30B-A3B-Thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1184,6 +1631,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-31",
@@ -1191,6 +1639,7 @@
     },
     "Qwen/Qwen3-32B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1240,6 +1689,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-32B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-30",
@@ -1247,6 +1697,7 @@
     },
     "Qwen/Qwen3-8B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1296,6 +1747,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-8B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-30",
@@ -1303,6 +1755,7 @@
     },
     "Qwen/Qwen3-Coder-30B-A3B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1352,6 +1805,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-08-01",
@@ -1359,6 +1813,7 @@
     },
     "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1408,6 +1863,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-31",
@@ -1415,6 +1871,7 @@
     },
     "Qwen/Qwen3-Next-80B-A3B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1464,6 +1921,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-18",
@@ -1471,6 +1929,7 @@
     },
     "Qwen/Qwen3-Next-80B-A3B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1520,6 +1979,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-25",
@@ -1527,6 +1987,7 @@
     },
     "Qwen/Qwen3-Omni-30B-A3B-Captioner": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1576,6 +2037,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Omni-30B-A3B-Captioner",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-04",
@@ -1583,6 +2045,7 @@
     },
     "Qwen/Qwen3-Omni-30B-A3B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1634,6 +2097,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-04",
@@ -1641,6 +2105,7 @@
     },
     "Qwen/Qwen3-Omni-30B-A3B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1692,6 +2157,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-04",
@@ -1699,6 +2165,7 @@
     },
     "Qwen/Qwen3-VL-235B-A22B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1749,6 +2216,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-04",
@@ -1756,6 +2224,7 @@
     },
     "Qwen/Qwen3-VL-235B-A22B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1806,6 +2275,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-04",
@@ -1813,6 +2283,7 @@
     },
     "Qwen/Qwen3-VL-30B-A3B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1863,6 +2334,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-05",
@@ -1870,6 +2342,7 @@
     },
     "Qwen/Qwen3-VL-30B-A3B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1920,6 +2393,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-30B-A3B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-11",
@@ -1927,6 +2401,7 @@
     },
     "Qwen/Qwen3-VL-32B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1977,6 +2452,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-32B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-21",
@@ -1984,6 +2460,7 @@
     },
     "Qwen/Qwen3-VL-32B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2034,6 +2511,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-32B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-21",
@@ -2041,6 +2519,7 @@
     },
     "Qwen/Qwen3-VL-8B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2091,6 +2570,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-8B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -2098,6 +2578,7 @@
     },
     "Qwen/Qwen3-VL-8B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2148,6 +2629,7 @@
       },
       "model": null,
       "name": "Qwen/Qwen3-VL-8B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -2155,6 +2637,7 @@
     },
     "THUDM/GLM-4-32B-0414": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2204,6 +2687,7 @@
       },
       "model": null,
       "name": "THUDM/GLM-4-32B-0414",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-18",
@@ -2211,6 +2695,7 @@
     },
     "THUDM/GLM-4-9B-0414": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2260,6 +2745,7 @@
       },
       "model": null,
       "name": "THUDM/GLM-4-9B-0414",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-18",
@@ -2267,6 +2753,7 @@
     },
     "THUDM/GLM-4.1V-9B-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2317,6 +2804,7 @@
       },
       "model": null,
       "name": "THUDM/GLM-4.1V-9B-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-04",
@@ -2324,6 +2812,7 @@
     },
     "THUDM/GLM-Z1-32B-0414": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2373,6 +2862,7 @@
       },
       "model": null,
       "name": "THUDM/GLM-Z1-32B-0414",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-18",
@@ -2380,6 +2870,7 @@
     },
     "THUDM/GLM-Z1-9B-0414": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2429,6 +2920,7 @@
       },
       "model": null,
       "name": "THUDM/GLM-Z1-9B-0414",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-04-18",
@@ -2436,6 +2928,7 @@
     },
     "ascend-tribe/pangu-pro-moe": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2489,6 +2982,7 @@
       },
       "model": null,
       "name": "ascend-tribe/pangu-pro-moe",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-02",
@@ -2496,6 +2990,7 @@
     },
     "baidu/ERNIE-4.5-300B-A47B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2545,6 +3040,7 @@
       },
       "model": null,
       "name": "baidu/ERNIE-4.5-300B-A47B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-02",
@@ -2552,6 +3048,7 @@
     },
     "deepseek-ai/DeepSeek-R1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2601,6 +3098,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-R1",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-05-28",
@@ -2608,6 +3106,7 @@
     },
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2657,6 +3156,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -2664,6 +3164,7 @@
     },
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2713,6 +3214,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -2720,6 +3222,7 @@
     },
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2769,6 +3272,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -2776,6 +3280,7 @@
     },
     "deepseek-ai/DeepSeek-V3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2825,6 +3330,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-V3",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-12-26",
@@ -2832,6 +3338,7 @@
     },
     "deepseek-ai/DeepSeek-V3.1-Terminus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2881,6 +3388,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -2888,6 +3396,7 @@
     },
     "deepseek-ai/DeepSeek-V3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2937,6 +3446,7 @@
       },
       "model": null,
       "name": "deepseek-ai/DeepSeek-V3.2",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-12-03",
@@ -2944,6 +3454,7 @@
     },
     "deepseek-ai/deepseek-vl2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2994,6 +3505,7 @@
       },
       "model": null,
       "name": "deepseek-ai/deepseek-vl2",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2024-12-13",
@@ -3001,6 +3513,7 @@
     },
     "inclusionAI/Ling-flash-2.0": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3050,6 +3563,7 @@
       },
       "model": null,
       "name": "inclusionAI/Ling-flash-2.0",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-18",
@@ -3057,6 +3571,7 @@
     },
     "inclusionAI/Ling-mini-2.0": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3106,6 +3621,7 @@
       },
       "model": null,
       "name": "inclusionAI/Ling-mini-2.0",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-10",
@@ -3113,6 +3629,7 @@
     },
     "inclusionAI/Ring-flash-2.0": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3162,6 +3679,7 @@
       },
       "model": null,
       "name": "inclusionAI/Ring-flash-2.0",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -3169,6 +3687,7 @@
     },
     "moonshotai/Kimi-Dev-72B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3218,69 +3737,15 @@
       },
       "model": null,
       "name": "moonshotai/Kimi-Dev-72B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-06-19",
       "tags": null
     },
-    "moonshotai/Kimi-K2-Instruct": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.58,
-        "output": 2.29
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "kimi",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "moonshotai/Kimi-K2-Instruct",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 131000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "moonshotai/Kimi-K2-Instruct",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-07-13",
-      "tags": null
-    },
     "moonshotai/Kimi-K2-Instruct-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3330,6 +3795,7 @@
       },
       "model": null,
       "name": "moonshotai/Kimi-K2-Instruct-0905",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-08",
@@ -3337,6 +3803,7 @@
     },
     "moonshotai/Kimi-K2-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3386,181 +3853,15 @@
       },
       "model": null,
       "name": "moonshotai/Kimi-K2-Thinking",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-11-07",
       "tags": null
     },
-    "nex-agi/DeepSeek-V3.1-Nex-N1": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.5,
-        "output": 2
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "deepseek",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "nex-agi/DeepSeek-V3.1-Nex-N1",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 131000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "nex-agi/DeepSeek-V3.1-Nex-N1",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-01-01",
-      "tags": null
-    },
-    "openai/gpt-oss-120b": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.05,
-        "output": 0.45
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "gpt-oss",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "openai/gpt-oss-120b",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 8000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "openai/gpt-oss-120b",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-08-13",
-      "tags": null
-    },
-    "openai/gpt-oss-20b": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.04,
-        "output": 0.18
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "gpt-oss",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "openai/gpt-oss-20b",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 8000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "openai/gpt-oss-20b",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-08-13",
-      "tags": null
-    },
     "stepfun-ai/step3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3611,6 +3912,7 @@
       },
       "model": null,
       "name": "stepfun-ai/step3",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-08-06",
@@ -3618,6 +3920,7 @@
     },
     "tencent/Hunyuan-A13B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3667,6 +3970,7 @@
       },
       "model": null,
       "name": "tencent/Hunyuan-A13B-Instruct",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-06-30",
@@ -3674,6 +3978,7 @@
     },
     "tencent/Hunyuan-MT-7B": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3723,69 +4028,15 @@
       },
       "model": null,
       "name": "tencent/Hunyuan-MT-7B",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-09-18",
       "tags": null
     },
-    "zai-org/GLM-4.5": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "input": 0.4,
-        "output": 2
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "glm",
-        "open_weights": false,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "zai-org/GLM-4.5",
-      "knowledge": null,
-      "last_updated": "2025-11-25",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 131000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "zai-org/GLM-4.5",
-      "provider": "siliconflow_cn",
-      "provider_model_id": null,
-      "release_date": "2025-07-28",
-      "tags": null
-    },
     "zai-org/GLM-4.5-Air": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3835,6 +4086,7 @@
       },
       "model": null,
       "name": "zai-org/GLM-4.5-Air",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -3842,6 +4094,7 @@
     },
     "zai-org/GLM-4.5V": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3892,6 +4145,7 @@
       },
       "model": null,
       "name": "zai-org/GLM-4.5V",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-08-13",
@@ -3899,6 +4153,7 @@
     },
     "zai-org/GLM-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3948,6 +4203,7 @@
       },
       "model": null,
       "name": "zai-org/GLM-4.6",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-10-04",
@@ -3955,6 +4211,7 @@
     },
     "zai-org/GLM-4.6V": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4005,11 +4262,13 @@
       },
       "model": null,
       "name": "zai-org/GLM-4.6V",
+      "pricing": null,
       "provider": "siliconflow_cn",
       "provider_model_id": null,
       "release_date": "2025-12-07",
       "tags": null
     }
   },
-  "name": "SiliconFlow (China)"
+  "name": "SiliconFlow (China)",
+  "pricing_defaults": null
 }

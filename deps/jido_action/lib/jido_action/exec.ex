@@ -43,13 +43,14 @@ defmodule Jido.Exec do
   alias Jido.Exec.Async
   alias Jido.Exec.Compensation
   alias Jido.Exec.Retry
+  alias Jido.Exec.Supervisors
   alias Jido.Exec.Telemetry
   alias Jido.Exec.Validator
   alias Jido.Instruction
 
   require Logger
 
-  @default_timeout 30000
+  @default_timeout 30_000
 
   # Helper functions to get configuration values with fallbacks
   defp get_default_timeout,
@@ -58,7 +59,7 @@ defmodule Jido.Exec do
   @type action :: module()
   @type params :: map()
   @type context :: map()
-  @type run_opts :: [timeout: non_neg_integer()]
+  @type run_opts :: [timeout: non_neg_integer(), jido: atom()]
   @type async_ref :: %{ref: reference(), pid: pid()}
 
   # Execution result types
@@ -86,6 +87,7 @@ defmodule Jido.Exec do
     - `:max_retries` - Maximum number of retry attempts (configurable via `:jido_action, :default_max_retries`).
     - `:backoff` - Initial backoff time in milliseconds, doubles with each retry (configurable via `:jido_action, :default_backoff`).
     - `:log_level` - Override the global Logger level for this specific action. Accepts #{inspect(Logger.levels())}.
+    - `:jido` - Optional instance name for isolation. Routes execution through instance-scoped supervisors (e.g., `MyApp.Jido.TaskSupervisor`).
 
   ## Action Metadata in Context
 
@@ -455,17 +457,69 @@ defmodule Jido.Exec do
       # Get the current process's group leader for IO routing
       current_gl = Process.group_leader()
 
-      # Spawn task under supervisor using async_nolink
-      task =
-        Task.Supervisor.async_nolink(Jido.Action.TaskSupervisor, fn ->
+      # Resolve supervisor based on jido: option (defaults to global)
+      task_sup = Supervisors.task_supervisor(opts)
+
+      parent = self()
+      ref = make_ref()
+
+      # Spawn process under the supervisor and send the result back explicitly.
+      # This avoids relying on Task.yield/2 behavior/typing (Elixir 1.18+).
+      {:ok, pid} =
+        Task.Supervisor.start_child(task_sup, fn ->
           # Use the parent's group leader to ensure IO is properly captured
           Process.group_leader(self(), current_gl)
 
-          execute_action(action, params, context, opts)
+          result = execute_action(action, params, context, opts)
+          send(parent, {:execute_action_result, ref, result})
         end)
 
-      # Wait for task completion or timeout
-      case Task.yield(task, timeout) || Task.shutdown(task, :brutal_kill) do
+      monitor_ref = Process.monitor(pid)
+
+      # Wait for completion, crash, or timeout.
+      result =
+        receive do
+          {:execute_action_result, ^ref, result} ->
+            Process.demonitor(monitor_ref, [:flush])
+            {:ok, result}
+
+          {:DOWN, ^monitor_ref, :process, ^pid, reason} ->
+            # If the process exited normally, a result message may still be in flight.
+            case reason do
+              :normal ->
+                receive do
+                  {:execute_action_result, ^ref, result} -> {:ok, result}
+                after
+                  0 -> {:exit, reason}
+                end
+
+              _ ->
+                {:exit, reason}
+            end
+        after
+          timeout ->
+            _ = Task.Supervisor.terminate_child(task_sup, pid)
+
+            # Best-effort wait for termination to avoid leaking processes in slow CI runners.
+            receive do
+              {:DOWN, ^monitor_ref, :process, ^pid, _reason} -> :ok
+            after
+              100 -> :ok
+            end
+
+            Process.demonitor(monitor_ref, [:flush])
+
+            # Flush any late result message (race with timeout).
+            receive do
+              {:execute_action_result, ^ref, _result} -> :ok
+            after
+              0 -> :ok
+            end
+
+            :timeout
+        end
+
+      case result do
         {:ok, result} ->
           result
 
@@ -476,7 +530,7 @@ defmodule Jido.Exec do
              action: action
            })}
 
-        nil ->
+        :timeout ->
           {:error,
            Error.timeout_error(
              "Action #{inspect(action)} timed out after #{timeout}ms",
@@ -497,83 +551,105 @@ defmodule Jido.Exec do
       log_level = Keyword.get(opts, :log_level, :info)
       Telemetry.cond_log_execution_debug(log_level, action, params, context)
 
-      case action.run(params, context) do
-        {:ok, result, other} ->
-          case Validator.validate_output(action, result, opts) do
-            {:ok, validated_result} ->
-              Telemetry.cond_log_end(log_level, action, {:ok, validated_result, other})
-
-              {:ok, validated_result, other}
-
-            {:error, validation_error} ->
-              Telemetry.cond_log_validation_failure(log_level, action, validation_error)
-
-              {:error, validation_error, other}
-          end
-
-        {:ok, result} ->
-          case Validator.validate_output(action, result, opts) do
-            {:ok, validated_result} ->
-              Telemetry.cond_log_end(log_level, action, {:ok, validated_result})
-
-              {:ok, validated_result}
-
-            {:error, validation_error} ->
-              Telemetry.cond_log_validation_failure(log_level, action, validation_error)
-
-              {:error, validation_error}
-          end
-
-        {:error, reason, other} ->
-          Telemetry.cond_log_error(log_level, action, reason)
-          {:error, reason, other}
-
-        {:error, %_{} = error} when is_exception(error) ->
-          Telemetry.cond_log_error(log_level, action, error)
-          {:error, error}
-
-        {:error, reason} ->
-          Telemetry.cond_log_error(log_level, action, reason)
-          {:error, Error.execution_error(reason)}
-
-        unexpected_result ->
-          error = Error.execution_error("Unexpected return shape: #{inspect(unexpected_result)}")
-          Telemetry.cond_log_error(log_level, action, error)
-          {:error, error}
-      end
+      action.run(params, context)
+      |> handle_action_result(action, log_level, opts)
     rescue
-      e in RuntimeError ->
-        stacktrace = __STACKTRACE__
-        log_level = Keyword.get(opts, :log_level, :info)
-        Telemetry.cond_log_error(log_level, action, e)
-
-        {:error,
-         Error.execution_error(
-           "Server error in #{inspect(action)}: #{Telemetry.extract_safe_error_message(e)}",
-           %{original_exception: e, action: action, stacktrace: stacktrace}
-         )}
-
-      e in ArgumentError ->
-        stacktrace = __STACKTRACE__
-        log_level = Keyword.get(opts, :log_level, :info)
-        Telemetry.cond_log_error(log_level, action, e)
-
-        {:error,
-         Error.execution_error(
-           "Argument error in #{inspect(action)}: #{Telemetry.extract_safe_error_message(e)}",
-           %{original_exception: e, action: action, stacktrace: stacktrace}
-         )}
-
       e ->
-        stacktrace = __STACKTRACE__
-        log_level = Keyword.get(opts, :log_level, :info)
-        Telemetry.cond_log_error(log_level, action, e)
+        handle_action_exception(e, __STACKTRACE__, action, opts)
+    end
 
-        {:error,
-         Error.execution_error(
-           "An unexpected error occurred during execution of #{inspect(action)}: #{inspect(e)}",
-           %{original_exception: e, action: action, stacktrace: stacktrace}
-         )}
+    # Handle successful results with extra data
+    defp handle_action_result({:ok, result, other}, action, log_level, opts) do
+      validate_and_log_success(action, result, log_level, opts, other)
+    end
+
+    # Handle successful results
+    defp handle_action_result({:ok, result}, action, log_level, opts) do
+      validate_and_log_success(action, result, log_level, opts, nil)
+    end
+
+    # Handle errors with extra data
+    defp handle_action_result({:error, reason, other}, action, log_level, _opts) do
+      Telemetry.cond_log_error(log_level, action, reason)
+      {:error, reason, other}
+    end
+
+    # Handle exception errors
+    defp handle_action_result({:error, %_{} = error}, action, log_level, _opts)
+         when is_exception(error) do
+      Telemetry.cond_log_error(log_level, action, error)
+      {:error, error}
+    end
+
+    # Handle generic errors
+    defp handle_action_result({:error, reason}, action, log_level, _opts) do
+      Telemetry.cond_log_error(log_level, action, reason)
+      {:error, Error.execution_error(reason)}
+    end
+
+    # Handle unexpected return shapes
+    defp handle_action_result(unexpected_result, action, log_level, _opts) do
+      error = Error.execution_error("Unexpected return shape: #{inspect(unexpected_result)}")
+      Telemetry.cond_log_error(log_level, action, error)
+      {:error, error}
+    end
+
+    # Validate output and log success, with optional extra data
+    defp validate_and_log_success(action, result, log_level, opts, other) do
+      case Validator.validate_output(action, result, opts) do
+        {:ok, validated_result} ->
+          log_validated_success(action, validated_result, log_level, other)
+
+        {:error, validation_error} ->
+          log_validation_failure(action, validation_error, log_level, other)
+      end
+    end
+
+    defp log_validated_success(action, validated_result, log_level, nil) do
+      Telemetry.cond_log_end(log_level, action, {:ok, validated_result})
+      {:ok, validated_result}
+    end
+
+    defp log_validated_success(action, validated_result, log_level, other) do
+      Telemetry.cond_log_end(log_level, action, {:ok, validated_result, other})
+      {:ok, validated_result, other}
+    end
+
+    defp log_validation_failure(action, validation_error, log_level, nil) do
+      Telemetry.cond_log_validation_failure(log_level, action, validation_error)
+      {:error, validation_error}
+    end
+
+    defp log_validation_failure(action, validation_error, log_level, other) do
+      Telemetry.cond_log_validation_failure(log_level, action, validation_error)
+      {:error, validation_error, other}
+    end
+
+    # Handle exceptions raised during action execution
+    defp handle_action_exception(e, stacktrace, action, opts) do
+      log_level = Keyword.get(opts, :log_level, :info)
+      Telemetry.cond_log_error(log_level, action, e)
+
+      error_message = build_exception_message(e, action)
+
+      {:error,
+       Error.execution_error(error_message, %{
+         original_exception: e,
+         action: action,
+         stacktrace: stacktrace
+       })}
+    end
+
+    defp build_exception_message(%RuntimeError{} = e, action) do
+      "Server error in #{inspect(action)}: #{Telemetry.extract_safe_error_message(e)}"
+    end
+
+    defp build_exception_message(%ArgumentError{} = e, action) do
+      "Argument error in #{inspect(action)}: #{Telemetry.extract_safe_error_message(e)}"
+    end
+
+    defp build_exception_message(e, action) do
+      "An unexpected error occurred during execution of #{inspect(action)}: #{inspect(e)}"
     end
   end
 end

@@ -40,6 +40,7 @@
   "models": {
     "llama-3.1-8b-instant": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -88,6 +89,7 @@
       },
       "model": null,
       "name": "Llama 3.1 8B Instant",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -95,6 +97,7 @@
     },
     "llama-3.3-70b-versatile": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -143,6 +146,7 @@
       },
       "model": null,
       "name": "Llama 3.3 70B Versatile",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -150,6 +154,7 @@
     },
     "meta-llama/llama-4-maverick-17b-128e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -200,6 +205,7 @@
       },
       "model": null,
       "name": "Llama 4 Maverick 17B",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -207,6 +213,7 @@
     },
     "meta-llama/llama-4-scout-17b-16e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -257,6 +264,7 @@
       },
       "model": null,
       "name": "Llama 4 Scout 17B",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -264,6 +272,7 @@
     },
     "meta-llama/llama-guard-4-12b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.2,
@@ -296,6 +305,7 @@
       },
       "model": null,
       "name": "Llama Guard 4 12B",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -303,6 +313,7 @@
     },
     "moonshotai/kimi-k2-instruct-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -352,6 +363,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct 0905",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -359,6 +371,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -408,6 +421,7 @@
       },
       "model": null,
       "name": "GPT OSS 120B",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -415,6 +429,7 @@
     },
     "openai/gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -464,6 +479,7 @@
       },
       "model": null,
       "name": "GPT OSS 20B",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -471,6 +487,7 @@
     },
     "qwen/qwen3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -519,11 +536,13 @@
       },
       "model": null,
       "name": "Qwen3 32B",
+      "pricing": null,
       "provider": "groq",
       "provider_model_id": null,
       "release_date": "2024-12-23",
       "tags": null
     }
   },
-  "name": "Groq"
+  "name": "Groq",
+  "pricing_defaults": null
 }

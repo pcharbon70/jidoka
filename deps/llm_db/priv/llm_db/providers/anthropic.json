@@ -45,6 +45,7 @@
         "claude-3.5-haiku",
         "claude-3.5-haiku-20241022"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -101,6 +102,7 @@
       },
       "model": null,
       "name": "Claude Haiku 3.5",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -108,6 +110,7 @@
     },
     "claude-3-5-sonnet-20240620": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -160,6 +163,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 3.5",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2024-06-20",
@@ -171,6 +175,7 @@
         "claude-3.7-sonnet",
         "claude-3-7-sonnet-latest"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -230,6 +235,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 3.7",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -239,6 +245,7 @@
       "aliases": [
         "claude-3-haiku"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -295,6 +302,7 @@
       },
       "model": null,
       "name": "Claude Haiku 3",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2024-03-13",
@@ -305,6 +313,7 @@
         "claude-haiku-4-5",
         "claude-haiku-4.5"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -361,6 +370,7 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -371,6 +381,7 @@
         "claude-opus-4-1",
         "claude-opus-4.1"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -427,6 +438,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.1",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -437,6 +449,7 @@
         "claude-opus-4-0",
         "claude-opus-4"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -493,6 +506,7 @@
       },
       "model": null,
       "name": "Claude Opus 4",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -500,6 +514,7 @@
     },
     "claude-opus-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -552,6 +567,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.5 (latest)",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-11-24",
@@ -559,6 +575,7 @@
     },
     "claude-opus-4-5-20251101": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -613,9 +630,134 @@
       },
       "model": null,
       "name": "Claude Opus 4.5",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-11-01",
+      "tags": null
+    },
+    "claude-opus-4-6": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.5,
+        "cache_write": 6.25,
+        "input": 5,
+        "output": 25
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "created_at": "2026-02-04T00:00:00Z",
+        "family": "claude-opus",
+        "open_weights": false,
+        "temperature": true,
+        "type": "model"
+      },
+      "family": null,
+      "id": "claude-opus-4-6",
+      "knowledge": "2025-05",
+      "last_updated": "2026-02-05",
+      "lifecycle": null,
+      "limits": {
+        "context": 1000000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Opus 4.6",
+      "pricing": null,
+      "provider": "anthropic",
+      "provider_model_id": null,
+      "release_date": "2026-02-05",
+      "tags": null
+    },
+    "claude-opus-4-6-20260205": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.5,
+        "cache_write": 6.25,
+        "input": 5,
+        "output": 25
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "claude-opus",
+        "open_weights": false,
+        "temperature": true
+      },
+      "family": null,
+      "id": "claude-opus-4-6-20260205",
+      "knowledge": "2025-05",
+      "last_updated": "2026-02-05",
+      "lifecycle": null,
+      "limits": {
+        "context": 200000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Opus 4.6",
+      "pricing": null,
+      "provider": "anthropic",
+      "provider_model_id": null,
+      "release_date": "2026-02-05",
       "tags": null
     },
     "claude-sonnet-4-20250514": {
@@ -623,6 +765,7 @@
         "claude-sonnet-4-0",
         "claude-sonnet-4"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -679,6 +822,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -689,6 +833,7 @@
         "claude-sonnet-4-5",
         "claude-sonnet-4.5"
       ],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -745,11 +890,25 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "anthropic",
       "provider_model_id": null,
       "release_date": "2025-09-29",
       "tags": null
     }
   },
-  "name": "Anthropic"
+  "name": "Anthropic",
+  "pricing_defaults": {
+    "components": [
+      {
+        "id": "tool.web_search",
+        "kind": "tool",
+        "per": 1000,
+        "rate": 10.0,
+        "tool": "web_search",
+        "unit": "call"
+      }
+    ],
+    "currency": "USD"
+  }
 }

@@ -12,6 +12,7 @@
   "models": {
     "cerebras-llama-4-maverick-17b-128e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Cerebras-Llama-4-Maverick-17B-128E-Instruct",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -67,6 +69,7 @@
     },
     "cerebras-llama-4-scout-17b-16e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "Cerebras-Llama-4-Scout-17B-16E-Instruct",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -122,6 +126,7 @@
     },
     "groq-llama-4-maverick-17b-128e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,6 +175,7 @@
       },
       "model": null,
       "name": "Groq-Llama-4-Maverick-17B-128E-Instruct",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -177,6 +183,7 @@
     },
     "llama-3.3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -225,6 +232,7 @@
       },
       "model": null,
       "name": "Llama-3.3-70B-Instruct",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -232,6 +240,7 @@
     },
     "llama-3.3-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -280,6 +289,7 @@
       },
       "model": null,
       "name": "Llama-3.3-8B-Instruct",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -287,6 +297,7 @@
     },
     "llama-4-maverick-17b-128e-instruct-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -336,6 +347,7 @@
       },
       "model": null,
       "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -343,6 +355,7 @@
     },
     "llama-4-scout-17b-16e-instruct-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -392,11 +405,13 @@
       },
       "model": null,
       "name": "Llama-4-Scout-17B-16E-Instruct-FP8",
+      "pricing": null,
       "provider": "llama",
       "provider_model_id": null,
       "release_date": "2025-04-05",
       "tags": null
     }
   },
-  "name": "Llama"
+  "name": "Llama",
+  "pricing_defaults": null
 }

@@ -12,6 +12,7 @@
   "models": {
     "deepseek-r1-distill-llama-70b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -37,7 +38,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "deepseek-thinking",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -48,8 +48,8 @@
       "last_updated": "2025-01-30",
       "lifecycle": null,
       "limits": {
-        "context": 131000,
-        "output": 131000
+        "context": 131072,
+        "output": 131072
       },
       "modalities": {
         "input": [
@@ -61,6 +61,7 @@
       },
       "model": null,
       "name": "DeepSeek-R1-Distill-Llama-70B",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-01-30",
@@ -68,6 +69,7 @@
     },
     "gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -93,7 +95,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "gpt-oss",
         "open_weights": true,
         "structured_output": true
       },
@@ -103,8 +104,8 @@
       "last_updated": "2025-08-28",
       "lifecycle": null,
       "limits": {
-        "context": 131000,
-        "output": 131000
+        "context": 131072,
+        "output": 131072
       },
       "modalities": {
         "input": [
@@ -116,6 +117,7 @@
       },
       "model": null,
       "name": "gpt-oss-120b",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-08-28",
@@ -123,6 +125,7 @@
     },
     "gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -148,7 +151,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "gpt-oss",
         "open_weights": true,
         "structured_output": true
       },
@@ -158,8 +160,8 @@
       "last_updated": "2025-08-28",
       "lifecycle": null,
       "limits": {
-        "context": 131000,
-        "output": 131000
+        "context": 131072,
+        "output": 131072
       },
       "modalities": {
         "input": [
@@ -171,6 +173,7 @@
       },
       "model": null,
       "name": "gpt-oss-20b",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-08-28",
@@ -178,6 +181,7 @@
     },
     "llama-3.1-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -203,7 +207,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "llama",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -214,8 +217,8 @@
       "last_updated": "2025-06-11",
       "lifecycle": null,
       "limits": {
-        "context": 131000,
-        "output": 131000
+        "context": 131072,
+        "output": 131072
       },
       "modalities": {
         "input": [
@@ -227,91 +230,15 @@
       },
       "model": null,
       "name": "Llama-3.1-8B-Instruct",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-06-11",
       "tags": null
     },
-    "llava-next-mistral-7b": {
-      "aliases": [],
-      "capabilities": null,
-      "cost": {
-        "input": 0.32,
-        "output": 0.32
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "mistral",
-        "open_weights": true,
-        "structured_output": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "llava-next-mistral-7b",
-      "knowledge": null,
-      "last_updated": "2025-01-08",
-      "lifecycle": null,
-      "limits": {
-        "context": 32000,
-        "output": 32000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "llava-next-mistral-7b",
-      "provider": "ovhcloud",
-      "provider_model_id": null,
-      "release_date": "2025-01-08",
-      "tags": null
-    },
-    "meta-llama-3_1-70b-instruct": {
-      "aliases": [],
-      "capabilities": null,
-      "cost": {
-        "input": 0.74,
-        "output": 0.74
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "llama",
-        "open_weights": true,
-        "temperature": true
-      },
-      "family": null,
-      "id": "meta-llama-3_1-70b-instruct",
-      "knowledge": null,
-      "last_updated": "2025-04-01",
-      "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 131000
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Meta-Llama-3_1-70B-Instruct",
-      "provider": "ovhcloud",
-      "provider_model_id": null,
-      "release_date": "2025-04-01",
-      "tags": null
-    },
     "meta-llama-3_3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -337,7 +264,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "llama",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -348,8 +274,8 @@
       "last_updated": "2025-04-01",
       "lifecycle": null,
       "limits": {
-        "context": 131000,
-        "output": 131000
+        "context": 131072,
+        "output": 131072
       },
       "modalities": {
         "input": [
@@ -361,6 +287,7 @@
       },
       "model": null,
       "name": "Meta-Llama-3_3-70B-Instruct",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-04-01",
@@ -368,6 +295,7 @@
     },
     "mistral-7b-instruct-v0.3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -393,7 +321,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "mistral",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -404,8 +331,8 @@
       "last_updated": "2025-04-01",
       "lifecycle": null,
       "limits": {
-        "context": 127000,
-        "output": 127000
+        "context": 65536,
+        "output": 65536
       },
       "modalities": {
         "input": [
@@ -417,6 +344,7 @@
       },
       "model": null,
       "name": "Mistral-7B-Instruct-v0.3",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-04-01",
@@ -424,6 +352,7 @@
     },
     "mistral-nemo-instruct-2407": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -449,7 +378,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "mistral-nemo",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -460,8 +388,8 @@
       "last_updated": "2024-11-20",
       "lifecycle": null,
       "limits": {
-        "context": 118000,
-        "output": 118000
+        "context": 65536,
+        "output": 65536
       },
       "modalities": {
         "input": [
@@ -473,6 +401,7 @@
       },
       "model": null,
       "name": "Mistral-Nemo-Instruct-2407",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2024-11-20",
@@ -480,6 +409,7 @@
     },
     "mistral-small-3.2-24b-instruct-2506": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -505,7 +435,6 @@
       "deprecated": false,
       "extra": {
         "attachment": true,
-        "family": "mistral-small",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -516,8 +445,8 @@
       "last_updated": "2025-07-16",
       "lifecycle": null,
       "limits": {
-        "context": 128000,
-        "output": 128000
+        "context": 131072,
+        "output": 131072
       },
       "modalities": {
         "input": [
@@ -530,6 +459,7 @@
       },
       "model": null,
       "name": "Mistral-Small-3.2-24B-Instruct-2506",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-07-16",
@@ -537,6 +467,7 @@
     },
     "mixtral-8x7b-instruct-v0.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.7,
@@ -545,7 +476,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "mixtral",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -556,8 +486,8 @@
       "last_updated": "2025-04-01",
       "lifecycle": null,
       "limits": {
-        "context": 32000,
-        "output": 32000
+        "context": 32768,
+        "output": 32768
       },
       "modalities": {
         "input": [
@@ -569,6 +499,7 @@
       },
       "model": null,
       "name": "Mixtral-8x7B-Instruct-v0.1",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-04-01",
@@ -576,6 +507,7 @@
     },
     "qwen2.5-coder-32b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.96,
@@ -584,7 +516,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "qwen",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -595,8 +526,8 @@
       "last_updated": "2025-03-24",
       "lifecycle": null,
       "limits": {
-        "context": 32000,
-        "output": 32000
+        "context": 32768,
+        "output": 32768
       },
       "modalities": {
         "input": [
@@ -608,6 +539,7 @@
       },
       "model": null,
       "name": "Qwen2.5-Coder-32B-Instruct",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-03-24",
@@ -615,6 +547,7 @@
     },
     "qwen2.5-vl-72b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1.01,
@@ -623,7 +556,6 @@
       "deprecated": false,
       "extra": {
         "attachment": true,
-        "family": "qwen",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -634,8 +566,8 @@
       "last_updated": "2025-03-31",
       "lifecycle": null,
       "limits": {
-        "context": 32000,
-        "output": 32000
+        "context": 32768,
+        "output": 32768
       },
       "modalities": {
         "input": [
@@ -648,6 +580,7 @@
       },
       "model": null,
       "name": "Qwen2.5-VL-72B-Instruct",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-03-31",
@@ -655,6 +588,7 @@
     },
     "qwen3-32b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -680,7 +614,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "qwen",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -691,8 +624,8 @@
       "last_updated": "2025-07-16",
       "lifecycle": null,
       "limits": {
-        "context": 32000,
-        "output": 32000
+        "context": 32768,
+        "output": 32768
       },
       "modalities": {
         "input": [
@@ -704,6 +637,7 @@
       },
       "model": null,
       "name": "Qwen3-32B",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-07-16",
@@ -711,6 +645,7 @@
     },
     "qwen3-coder-30b-a3b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -736,7 +671,6 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "qwen",
         "open_weights": true,
         "structured_output": true,
         "temperature": true
@@ -747,8 +681,8 @@
       "last_updated": "2025-10-28",
       "lifecycle": null,
       "limits": {
-        "context": 256000,
-        "output": 256000
+        "context": 262144,
+        "output": 262144
       },
       "modalities": {
         "input": [
@@ -760,11 +694,13 @@
       },
       "model": null,
       "name": "Qwen3-Coder-30B-A3B-Instruct",
+      "pricing": null,
       "provider": "ovhcloud",
       "provider_model_id": null,
       "release_date": "2025-10-28",
       "tags": null
     }
   },
-  "name": "OVHcloud AI Endpoints"
+  "name": "OVHcloud AI Endpoints",
+  "pricing_defaults": null
 }

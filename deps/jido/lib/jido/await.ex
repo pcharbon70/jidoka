@@ -126,20 +126,30 @@ defmodule Jido.Await do
     if now_ms() > deadline do
       {:error, :timeout}
     else
-      case AgentServer.state(parent_server) do
-        {:ok, %{children: children}} ->
-          case Map.get(children, child_tag) do
-            %{pid: pid} when is_pid(pid) ->
-              {:ok, pid}
+      case lookup_child_pid(parent_server, child_tag) do
+        {:ok, pid} ->
+          {:ok, pid}
 
-            _ ->
-              sleep(poll_interval)
-              poll_for_child(parent_server, child_tag, deadline, poll_interval)
-          end
+        {:error, :not_found} ->
+          sleep(poll_interval)
+          poll_for_child(parent_server, child_tag, deadline, poll_interval)
 
         {:error, _} = error ->
           error
       end
+    end
+  end
+
+  defp lookup_child_pid(parent_server, child_tag) do
+    case AgentServer.state(parent_server) do
+      {:ok, %{children: children}} ->
+        case Map.get(children, child_tag) do
+          %{pid: pid} when is_pid(pid) -> {:ok, pid}
+          _ -> {:error, :not_found}
+        end
+
+      {:error, _} = error ->
+        error
     end
   end
 
@@ -205,6 +215,10 @@ defmodule Jido.Await do
       {:await_result, ref, server, {:ok, result}} ->
         collect_all(Map.delete(waiters, ref), Map.put(acc, server, result), deadline)
 
+      {:await_result, ref, _server, {:error, :timeout}} ->
+        kill_waiters(Map.delete(waiters, ref))
+        {:error, :timeout}
+
       {:await_result, ref, server, {:error, reason}} ->
         kill_waiters(Map.delete(waiters, ref))
         {:error, {server, reason}}
@@ -267,6 +281,10 @@ defmodule Jido.Await do
       {:await_result, ref, server, {:ok, result}} ->
         kill_waiters(Map.delete(waiters, ref))
         {:ok, {server, result}}
+
+      {:await_result, ref, _server, {:error, :timeout}} ->
+        kill_waiters(Map.delete(waiters, ref))
+        {:error, :timeout}
 
       {:await_result, ref, server, {:error, reason}} ->
         kill_waiters(Map.delete(waiters, ref))

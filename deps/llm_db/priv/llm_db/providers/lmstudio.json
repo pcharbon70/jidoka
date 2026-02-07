@@ -12,6 +12,7 @@
   "models": {
     "openai/gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "GPT OSS 20B",
+      "pricing": null,
       "provider": "lmstudio",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -67,6 +69,7 @@
     },
     "qwen/qwen3-30b-a3b-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "Qwen3 30B A3B 2507",
+      "pricing": null,
       "provider": "lmstudio",
       "provider_model_id": null,
       "release_date": "2025-07-30",
@@ -122,6 +126,7 @@
     },
     "qwen/qwen3-coder-30b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,11 +175,13 @@
       },
       "model": null,
       "name": "Qwen3 Coder 30B",
+      "pricing": null,
       "provider": "lmstudio",
       "provider_model_id": null,
       "release_date": "2025-07-23",
       "tags": null
     }
   },
-  "name": "LMStudio"
+  "name": "LMStudio",
+  "pricing_defaults": null
 }

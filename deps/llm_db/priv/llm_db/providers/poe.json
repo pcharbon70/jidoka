@@ -12,6 +12,7 @@
   "models": {
     "anthropic/claude-haiku-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -64,6 +65,7 @@
       },
       "model": null,
       "name": "Claude-Haiku-3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-03-09",
@@ -71,6 +73,7 @@
     },
     "anthropic/claude-haiku-3.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -123,72 +126,15 @@
       },
       "model": null,
       "name": "Claude-Haiku-3.5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-10-01",
       "tags": null
     },
-    "anthropic/claude-haiku-3.5-search": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.068,
-        "cache_write": 0.85,
-        "input": 0.68,
-        "output": 3.4
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-haiku",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-haiku-3.5-search",
-      "knowledge": null,
-      "last_updated": "2025-05-15",
-      "lifecycle": null,
-      "limits": {
-        "context": 189096,
-        "output": 8192
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude-Haiku-3.5-Search",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-05-15",
-      "tags": null
-    },
     "anthropic/claude-haiku-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -241,72 +187,15 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-15",
       "tags": null
     },
-    "anthropic/claude-opus-3": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 1.3,
-        "cache_write": 16,
-        "input": 13,
-        "output": 64
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-opus",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-opus-3",
-      "knowledge": null,
-      "last_updated": "2024-03-04",
-      "lifecycle": null,
-      "limits": {
-        "context": 189096,
-        "output": 8192
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude-Opus-3",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2024-03-04",
-      "tags": null
-    },
     "anthropic/claude-opus-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -359,131 +248,15 @@
       },
       "model": null,
       "name": "Claude Opus 4",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-05-21",
-      "tags": null
-    },
-    "anthropic/claude-opus-4-reasoning": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 1.3,
-        "cache_write": 16,
-        "input": 13,
-        "output": 64
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-opus",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-opus-4-reasoning",
-      "knowledge": null,
-      "last_updated": "2025-05-21",
-      "lifecycle": null,
-      "limits": {
-        "context": 196608,
-        "output": 32768
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude Opus 4 Reasoning",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-05-21",
-      "tags": null
-    },
-    "anthropic/claude-opus-4-search": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 1.3,
-        "cache_write": 16,
-        "input": 13,
-        "output": 64
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-opus",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-opus-4-search",
-      "knowledge": null,
-      "last_updated": "2025-06-20",
-      "lifecycle": null,
-      "limits": {
-        "context": 196608,
-        "output": 128000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude Opus 4 Search",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-06-20",
       "tags": null
     },
     "anthropic/claude-opus-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -536,6 +309,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -543,6 +317,7 @@
     },
     "anthropic/claude-opus-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -595,6 +370,7 @@
       },
       "model": null,
       "name": "claude-opus-4.5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-21",
@@ -602,6 +378,7 @@
     },
     "anthropic/claude-sonnet-3.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -654,6 +431,7 @@
       },
       "model": null,
       "name": "Claude-Sonnet-3.5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-06-05",
@@ -661,6 +439,7 @@
     },
     "anthropic/claude-sonnet-3.5-june": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -713,6 +492,7 @@
       },
       "model": null,
       "name": "Claude-Sonnet-3.5-June",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-11-18",
@@ -720,6 +500,7 @@
     },
     "anthropic/claude-sonnet-3.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -772,131 +553,15 @@
       },
       "model": null,
       "name": "Claude Sonnet 3.7",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-02-19",
-      "tags": null
-    },
-    "anthropic/claude-sonnet-3.7-reasoning": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.26,
-        "cache_write": 3.2,
-        "input": 2.6,
-        "output": 13
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-sonnet",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-sonnet-3.7-reasoning",
-      "knowledge": null,
-      "last_updated": "2025-02-19",
-      "lifecycle": null,
-      "limits": {
-        "context": 196608,
-        "output": 128000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude Sonnet 3.7 Reasoning",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-02-19",
-      "tags": null
-    },
-    "anthropic/claude-sonnet-3.7-search": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.26,
-        "cache_write": 3.2,
-        "input": 2.6,
-        "output": 13
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-sonnet",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-sonnet-3.7-search",
-      "knowledge": null,
-      "last_updated": "2025-05-15",
-      "lifecycle": null,
-      "limits": {
-        "context": 196608,
-        "output": 128000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude Sonnet 3.7 Search",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-05-15",
       "tags": null
     },
     "anthropic/claude-sonnet-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -949,131 +614,15 @@
       },
       "model": null,
       "name": "Claude Sonnet 4",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-05-21",
-      "tags": null
-    },
-    "anthropic/claude-sonnet-4-reasoning": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.26,
-        "cache_write": 3.2,
-        "input": 2.6,
-        "output": 13
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-sonnet",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-sonnet-4-reasoning",
-      "knowledge": null,
-      "last_updated": "2025-05-21",
-      "lifecycle": null,
-      "limits": {
-        "context": 983040,
-        "output": 64000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude Sonnet 4 Reasoning",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-05-21",
-      "tags": null
-    },
-    "anthropic/claude-sonnet-4-search": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.26,
-        "cache_write": 3.2,
-        "input": 2.6,
-        "output": 13
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "claude-sonnet",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "anthropic/claude-sonnet-4-search",
-      "knowledge": null,
-      "last_updated": "2025-06-20",
-      "lifecycle": null,
-      "limits": {
-        "context": 983040,
-        "output": 128000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image",
-          "pdf"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Claude Sonnet 4 Search",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2025-06-20",
       "tags": null
     },
     "anthropic/claude-sonnet-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1126,6 +675,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-09-26",
@@ -1133,6 +683,7 @@
     },
     "cerebras/gpt-oss-120b-cs": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1174,13 +725,98 @@
       },
       "model": null,
       "name": "gpt-oss-120b-cs",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-06",
       "tags": null
     },
-    "cerebras/zai-glm-4.6-cs": {
+    "cerebras/llama-3.1-8b-cs": {
       "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": null,
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "cerebras/llama-3.1-8b-cs",
+      "knowledge": null,
+      "last_updated": "2025-05-13",
+      "lifecycle": null,
+      "limits": null,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "llama-3.1-8b-cs",
+      "pricing": null,
+      "provider": "poe",
+      "provider_model_id": null,
+      "release_date": "2025-05-13",
+      "tags": null
+    },
+    "cerebras/llama-3.3-70b-cs": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": null,
+      "cost": null,
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "cerebras/llama-3.3-70b-cs",
+      "knowledge": null,
+      "last_updated": "2025-05-13",
+      "lifecycle": null,
+      "limits": null,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "llama-3.3-70b-cs",
+      "pricing": null,
+      "provider": "poe",
+      "provider_model_id": null,
+      "release_date": "2025-05-13",
+      "tags": null
+    },
+    "cerebras/qwen3-235b-2507-cs": {
+      "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1207,14 +843,11 @@
         "temperature": false
       },
       "family": null,
-      "id": "cerebras/zai-glm-4.6-cs",
+      "id": "cerebras/qwen3-235b-2507-cs",
       "knowledge": null,
-      "last_updated": "2025-11-11",
+      "last_updated": "2025-08-06",
       "lifecycle": null,
-      "limits": {
-        "context": 131000,
-        "output": 40000
-      },
+      "limits": null,
       "modalities": {
         "input": [
           "text"
@@ -1224,14 +857,66 @@
         ]
       },
       "model": null,
-      "name": "zai-glm-4.6-cs",
+      "name": "qwen3-235b-2507-cs",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
-      "release_date": "2025-11-11",
+      "release_date": "2025-08-06",
+      "tags": null
+    },
+    "cerebras/qwen3-32b-cs": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": null,
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "cerebras/qwen3-32b-cs",
+      "knowledge": null,
+      "last_updated": "2025-05-15",
+      "lifecycle": null,
+      "limits": null,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "qwen3-32b-cs",
+      "pricing": null,
+      "provider": "poe",
+      "provider_model_id": null,
+      "release_date": "2025-05-15",
       "tags": null
     },
     "elevenlabs/elevenlabs-music": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1276,6 +961,7 @@
       },
       "model": null,
       "name": "ElevenLabs-Music",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-29",
@@ -1283,6 +969,7 @@
     },
     "elevenlabs/elevenlabs-v2.5-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1327,6 +1014,7 @@
       },
       "model": null,
       "name": "ElevenLabs-v2.5-Turbo",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-10-28",
@@ -1334,6 +1022,7 @@
     },
     "elevenlabs/elevenlabs-v3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1378,6 +1067,7 @@
       },
       "model": null,
       "name": "ElevenLabs-v3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-05",
@@ -1385,6 +1075,7 @@
     },
     "google/gemini-2.0-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1436,6 +1127,7 @@
       },
       "model": null,
       "name": "Gemini-2.0-Flash",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -1443,6 +1135,7 @@
     },
     "google/gemini-2.0-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1494,6 +1187,7 @@
       },
       "model": null,
       "name": "Gemini-2.0-Flash-Lite",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-02-05",
@@ -1501,6 +1195,7 @@
     },
     "google/gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1553,6 +1248,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-26",
@@ -1560,6 +1256,7 @@
     },
     "google/gemini-2.5-flash-lite": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1611,6 +1308,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash Lite",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-19",
@@ -1618,6 +1316,7 @@
     },
     "google/gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1670,6 +1369,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-02-05",
@@ -1677,6 +1377,7 @@
     },
     "google/gemini-3-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1728,6 +1429,7 @@
       },
       "model": null,
       "name": "gemini-3-flash",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-07",
@@ -1735,6 +1437,7 @@
     },
     "google/gemini-3-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1787,6 +1490,7 @@
       },
       "model": null,
       "name": "Gemini-3-Pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-22",
@@ -1794,6 +1498,7 @@
     },
     "google/gemini-deep-research": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1842,6 +1547,7 @@
       },
       "model": null,
       "name": "gemini-deep-research",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-11",
@@ -1849,6 +1555,7 @@
     },
     "google/imagen-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1893,6 +1600,7 @@
       },
       "model": null,
       "name": "Imagen-3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-10-15",
@@ -1900,6 +1608,7 @@
     },
     "google/imagen-3-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1944,6 +1653,7 @@
       },
       "model": null,
       "name": "Imagen-3-Fast",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-10-17",
@@ -1951,6 +1661,7 @@
     },
     "google/imagen-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1995,6 +1706,7 @@
       },
       "model": null,
       "name": "Imagen-4",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -2002,6 +1714,7 @@
     },
     "google/imagen-4-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2046,6 +1759,7 @@
       },
       "model": null,
       "name": "Imagen-4-Fast",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-25",
@@ -2053,6 +1767,7 @@
     },
     "google/imagen-4-ultra": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2097,6 +1812,7 @@
       },
       "model": null,
       "name": "Imagen-4-Ultra",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-05-24",
@@ -2104,6 +1820,7 @@
     },
     "google/lyria": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2146,6 +1863,7 @@
       },
       "model": null,
       "name": "Lyria",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-04",
@@ -2153,6 +1871,7 @@
     },
     "google/nano-banana": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2189,7 +1908,7 @@
       "last_updated": "2025-08-21",
       "lifecycle": null,
       "limits": {
-        "context": 32768
+        "context": 65536
       },
       "modalities": {
         "input": [
@@ -2203,6 +1922,7 @@
       },
       "model": null,
       "name": "Nano-Banana",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-21",
@@ -2210,6 +1930,7 @@
     },
     "google/nano-banana-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2229,9 +1950,9 @@
         }
       },
       "cost": {
-        "cache_read": 0.17,
-        "input": 1.7,
-        "output": 10
+        "cache_read": 0.2,
+        "input": 2,
+        "output": 12
       },
       "deprecated": false,
       "extra": {
@@ -2259,6 +1980,7 @@
       },
       "model": null,
       "name": "Nano-Banana-Pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-19",
@@ -2266,6 +1988,7 @@
     },
     "google/veo-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2310,6 +2033,7 @@
       },
       "model": null,
       "name": "Veo-2",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-12-02",
@@ -2317,6 +2041,7 @@
     },
     "google/veo-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2361,6 +2086,7 @@
       },
       "model": null,
       "name": "Veo-3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-05-21",
@@ -2368,6 +2094,7 @@
     },
     "google/veo-3-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2412,6 +2139,7 @@
       },
       "model": null,
       "name": "Veo-3-Fast",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-13",
@@ -2419,6 +2147,7 @@
     },
     "google/veo-3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2463,6 +2192,7 @@
       },
       "model": null,
       "name": "Veo-3.1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -2470,6 +2200,7 @@
     },
     "google/veo-3.1-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2506,7 +2237,8 @@
       },
       "modalities": {
         "input": [
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "video"
@@ -2514,6 +2246,7 @@
       },
       "model": null,
       "name": "Veo-3.1-Fast",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -2521,6 +2254,7 @@
     },
     "ideogramai/ideogram": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2566,6 +2300,7 @@
       },
       "model": null,
       "name": "Ideogram",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-04-03",
@@ -2573,6 +2308,7 @@
     },
     "ideogramai/ideogram-v2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2618,6 +2354,7 @@
       },
       "model": null,
       "name": "Ideogram-v2",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-08-21",
@@ -2625,6 +2362,7 @@
     },
     "ideogramai/ideogram-v2a": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2669,6 +2407,7 @@
       },
       "model": null,
       "name": "Ideogram-v2a",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-02-27",
@@ -2676,6 +2415,7 @@
     },
     "ideogramai/ideogram-v2a-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2720,65 +2460,15 @@
       },
       "model": null,
       "name": "Ideogram-v2a-Turbo",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-02-27",
       "tags": null
     },
-    "lumalabs/dream-machine": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": false
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": null,
-      "deprecated": false,
-      "extra": {
-        "attachment": true,
-        "family": "dream-machine",
-        "open_weights": false,
-        "temperature": false
-      },
-      "family": null,
-      "id": "lumalabs/dream-machine",
-      "knowledge": null,
-      "last_updated": "2024-09-18",
-      "lifecycle": null,
-      "limits": {
-        "context": 5000
-      },
-      "modalities": {
-        "input": [
-          "text",
-          "image"
-        ],
-        "output": [
-          "video"
-        ]
-      },
-      "model": null,
-      "name": "Dream-Machine",
-      "provider": "poe",
-      "provider_model_id": null,
-      "release_date": "2024-09-18",
-      "tags": null
-    },
     "lumalabs/ray2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2824,6 +2514,7 @@
       },
       "model": null,
       "name": "Ray2",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-02-20",
@@ -2831,6 +2522,7 @@
     },
     "novita/glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2873,6 +2565,7 @@
       },
       "model": null,
       "name": "GLM-4.6",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -2880,6 +2573,7 @@
     },
     "novita/glm-4.6v": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2925,6 +2619,7 @@
       },
       "model": null,
       "name": "glm-4.6v",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-09",
@@ -2932,6 +2627,7 @@
     },
     "novita/glm-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2976,13 +2672,15 @@
       },
       "model": null,
       "name": "glm-4.7",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-22",
       "tags": null
     },
-    "novita/kat-coder-pro": {
+    "novita/glm-4.7-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2992,7 +2690,7 @@
           "strict": false
         },
         "reasoning": {
-          "enabled": false
+          "enabled": true
         },
         "streaming": {
           "tool_calls": true
@@ -3009,12 +2707,13 @@
         "temperature": false
       },
       "family": null,
-      "id": "novita/kat-coder-pro",
+      "id": "novita/glm-4.7-flash",
       "knowledge": null,
-      "last_updated": "2025-12-16",
+      "last_updated": "2026-01-19",
       "lifecycle": null,
       "limits": {
-        "context": 256000
+        "context": 200000,
+        "output": 65500
       },
       "modalities": {
         "input": [
@@ -3025,14 +2724,69 @@
         ]
       },
       "model": null,
-      "name": "kat-coder-pro",
+      "name": "glm-4.7-flash",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
-      "release_date": "2025-12-16",
+      "release_date": "2026-01-19",
+      "tags": null
+    },
+    "novita/glm-4.7-n": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": null,
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "novita/glm-4.7-n",
+      "knowledge": null,
+      "last_updated": "2025-12-22",
+      "lifecycle": null,
+      "limits": {
+        "context": 205000,
+        "output": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "glm-4.7-n",
+      "pricing": null,
+      "provider": "poe",
+      "provider_model_id": null,
+      "release_date": "2025-12-22",
       "tags": null
     },
     "novita/kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3077,13 +2831,70 @@
       },
       "model": null,
       "name": "kimi-k2-thinking",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-07",
       "tags": null
     },
+    "novita/kimi-k2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": null,
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "novita/kimi-k2.5",
+      "knowledge": null,
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 256000,
+        "output": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "kimi-k2.5",
+      "pricing": null,
+      "provider": "poe",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
     "novita/minimax-m2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3128,6 +2939,7 @@
       },
       "model": null,
       "name": "minimax-m2.1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-26",
@@ -3135,6 +2947,7 @@
     },
     "openai/chatgpt-4o-latest": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3184,6 +2997,7 @@
       },
       "model": null,
       "name": "ChatGPT-4o-Latest",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-08-14",
@@ -3191,6 +3005,7 @@
     },
     "openai/dall-e-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3235,6 +3050,7 @@
       },
       "model": null,
       "name": "DALL-E-3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2023-11-06",
@@ -3242,6 +3058,7 @@
     },
     "openai/gpt-3.5-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3291,6 +3108,7 @@
       },
       "model": null,
       "name": "GPT-3.5-Turbo",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2023-09-13",
@@ -3298,6 +3116,7 @@
     },
     "openai/gpt-3.5-turbo-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3347,6 +3166,7 @@
       },
       "model": null,
       "name": "GPT-3.5-Turbo-Instruct",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2023-09-20",
@@ -3354,6 +3174,7 @@
     },
     "openai/gpt-3.5-turbo-raw": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3403,6 +3224,7 @@
       },
       "model": null,
       "name": "GPT-3.5-Turbo-Raw",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2023-09-27",
@@ -3410,6 +3232,7 @@
     },
     "openai/gpt-4-classic": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3459,6 +3282,7 @@
       },
       "model": null,
       "name": "GPT-4-Classic",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-03-25",
@@ -3466,6 +3290,7 @@
     },
     "openai/gpt-4-classic-0314": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3515,6 +3340,7 @@
       },
       "model": null,
       "name": "GPT-4-Classic-0314",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-08-26",
@@ -3522,6 +3348,7 @@
     },
     "openai/gpt-4-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3571,6 +3398,7 @@
       },
       "model": null,
       "name": "GPT-4-Turbo",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2023-09-13",
@@ -3578,6 +3406,7 @@
     },
     "openai/gpt-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3628,6 +3457,7 @@
       },
       "model": null,
       "name": "GPT-4.1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -3635,6 +3465,7 @@
     },
     "openai/gpt-4.1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3685,6 +3516,7 @@
       },
       "model": null,
       "name": "GPT-4.1-mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-15",
@@ -3692,6 +3524,7 @@
     },
     "openai/gpt-4.1-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3742,6 +3575,7 @@
       },
       "model": null,
       "name": "GPT-4.1-nano",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-15",
@@ -3749,6 +3583,7 @@
     },
     "openai/gpt-4o": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3795,6 +3630,7 @@
       },
       "model": null,
       "name": "GPT-4o",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-05-13",
@@ -3802,6 +3638,7 @@
     },
     "openai/gpt-4o-aug": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3852,6 +3689,7 @@
       },
       "model": null,
       "name": "GPT-4o-Aug",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-11-21",
@@ -3859,6 +3697,7 @@
     },
     "openai/gpt-4o-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3909,6 +3748,7 @@
       },
       "model": null,
       "name": "GPT-4o-mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -3916,6 +3756,7 @@
     },
     "openai/gpt-4o-mini-search": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3964,6 +3805,7 @@
       },
       "model": null,
       "name": "GPT-4o-mini-Search",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-03-11",
@@ -3971,6 +3813,7 @@
     },
     "openai/gpt-4o-search": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4019,6 +3862,7 @@
       },
       "model": null,
       "name": "GPT-4o-Search",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-03-11",
@@ -4026,6 +3870,7 @@
     },
     "openai/gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4076,6 +3921,7 @@
       },
       "model": null,
       "name": "GPT-5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -4083,6 +3929,7 @@
     },
     "openai/gpt-5-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4133,6 +3980,7 @@
       },
       "model": null,
       "name": "GPT-5-Chat",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -4140,6 +3988,7 @@
     },
     "openai/gpt-5-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4189,6 +4038,7 @@
       },
       "model": null,
       "name": "GPT-5-Codex",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-09-23",
@@ -4196,6 +4046,7 @@
     },
     "openai/gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4246,6 +4097,7 @@
       },
       "model": null,
       "name": "GPT-5-mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-25",
@@ -4253,6 +4105,7 @@
     },
     "openai/gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4303,6 +4156,7 @@
       },
       "model": null,
       "name": "GPT-5-nano",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -4310,6 +4164,7 @@
     },
     "openai/gpt-5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4359,6 +4214,7 @@
       },
       "model": null,
       "name": "GPT-5-Pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-06",
@@ -4366,6 +4222,7 @@
     },
     "openai/gpt-5.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4416,6 +4273,7 @@
       },
       "model": null,
       "name": "GPT-5.1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-12",
@@ -4423,6 +4281,7 @@
     },
     "openai/gpt-5.1-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4473,6 +4332,7 @@
       },
       "model": null,
       "name": "GPT-5.1-Codex",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-12",
@@ -4480,6 +4340,7 @@
     },
     "openai/gpt-5.1-codex-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4529,6 +4390,7 @@
       },
       "model": null,
       "name": "gpt-5.1-codex-max",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-08",
@@ -4536,6 +4398,7 @@
     },
     "openai/gpt-5.1-codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4585,6 +4448,7 @@
       },
       "model": null,
       "name": "GPT-5.1-Codex-Mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-12",
@@ -4592,6 +4456,7 @@
     },
     "openai/gpt-5.1-instant": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4642,6 +4507,7 @@
       },
       "model": null,
       "name": "GPT-5.1-Instant",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-12",
@@ -4649,6 +4515,7 @@
     },
     "openai/gpt-5.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4698,13 +4565,73 @@
       },
       "model": null,
       "name": "gpt-5.2",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-08",
       "tags": null
     },
+    "openai/gpt-5.2-codex": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.16,
+        "input": 1.6,
+        "output": 13
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "open_weights": false,
+        "temperature": false
+      },
+      "family": null,
+      "id": "openai/gpt-5.2-codex",
+      "knowledge": null,
+      "last_updated": "2026-01-14",
+      "lifecycle": null,
+      "limits": {
+        "context": 400000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "gpt-5.2-codex",
+      "pricing": null,
+      "provider": "poe",
+      "provider_model_id": null,
+      "release_date": "2026-01-14",
+      "tags": null
+    },
     "openai/gpt-5.2-instant": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4754,6 +4681,7 @@
       },
       "model": null,
       "name": "gpt-5.2-instant",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-11",
@@ -4761,6 +4689,7 @@
     },
     "openai/gpt-5.2-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4809,6 +4738,7 @@
       },
       "model": null,
       "name": "gpt-5.2-pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-11",
@@ -4816,6 +4746,7 @@
     },
     "openai/gpt-image-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4861,6 +4792,7 @@
       },
       "model": null,
       "name": "GPT-Image-1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-03-31",
@@ -4868,6 +4800,7 @@
     },
     "openai/gpt-image-1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4911,6 +4844,7 @@
       },
       "model": null,
       "name": "GPT-Image-1-Mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-26",
@@ -4918,6 +4852,7 @@
     },
     "openai/gpt-image-1.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4962,6 +4897,7 @@
       },
       "model": null,
       "name": "gpt-image-1.5",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-12-16",
@@ -4969,6 +4905,7 @@
     },
     "openai/o1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5018,6 +4955,7 @@
       },
       "model": null,
       "name": "o1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-12-18",
@@ -5025,6 +4963,7 @@
     },
     "openai/o1-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5074,6 +5013,7 @@
       },
       "model": null,
       "name": "o1-pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-03-19",
@@ -5081,6 +5021,7 @@
     },
     "openai/o3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5131,6 +5072,7 @@
       },
       "model": null,
       "name": "o3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -5138,6 +5080,7 @@
     },
     "openai/o3-deep-research": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5187,6 +5130,7 @@
       },
       "model": null,
       "name": "o3-deep-research",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-27",
@@ -5194,6 +5138,7 @@
     },
     "openai/o3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5243,6 +5188,7 @@
       },
       "model": null,
       "name": "o3-mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-01-31",
@@ -5250,6 +5196,7 @@
     },
     "openai/o3-mini-high": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5299,6 +5246,7 @@
       },
       "model": null,
       "name": "o3-mini-high",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-01-31",
@@ -5306,6 +5254,7 @@
     },
     "openai/o3-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5355,6 +5304,7 @@
       },
       "model": null,
       "name": "o3-pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-10",
@@ -5362,6 +5312,7 @@
     },
     "openai/o4-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5412,6 +5363,7 @@
       },
       "model": null,
       "name": "o4-mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -5419,6 +5371,7 @@
     },
     "openai/o4-mini-deep-research": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5468,6 +5421,7 @@
       },
       "model": null,
       "name": "o4-mini-deep-research",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-06-27",
@@ -5475,6 +5429,7 @@
     },
     "openai/sora-2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5518,6 +5473,7 @@
       },
       "model": null,
       "name": "Sora-2",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-06",
@@ -5525,6 +5481,7 @@
     },
     "openai/sora-2-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5568,6 +5525,7 @@
       },
       "model": null,
       "name": "Sora-2-Pro",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-10-06",
@@ -5575,6 +5533,7 @@
     },
     "poetools/claude-code": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5616,6 +5575,7 @@
       },
       "model": null,
       "name": "claude-code",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-27",
@@ -5623,6 +5583,7 @@
     },
     "runwayml/runway": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5668,6 +5629,7 @@
       },
       "model": null,
       "name": "Runway",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-10-11",
@@ -5675,6 +5637,7 @@
     },
     "runwayml/runway-gen-4-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5720,6 +5683,7 @@
       },
       "model": null,
       "name": "Runway-Gen-4-Turbo",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-05-09",
@@ -5727,6 +5691,7 @@
     },
     "stabilityai/stablediffusionxl": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5772,6 +5737,7 @@
       },
       "model": null,
       "name": "StableDiffusionXL",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2023-07-09",
@@ -5779,6 +5745,7 @@
     },
     "topazlabs-co/topazlabs": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5823,6 +5790,7 @@
       },
       "model": null,
       "name": "TopazLabs",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-12-03",
@@ -5830,6 +5798,7 @@
     },
     "trytako/tako": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5874,6 +5843,7 @@
       },
       "model": null,
       "name": "Tako",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2024-08-15",
@@ -5881,6 +5851,7 @@
     },
     "xai/grok-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5930,6 +5901,7 @@
       },
       "model": null,
       "name": "Grok 3",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-11",
@@ -5937,6 +5909,7 @@
     },
     "xai/grok-3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -5986,6 +5959,7 @@
       },
       "model": null,
       "name": "Grok 3 Mini",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-04-11",
@@ -5993,6 +5967,7 @@
     },
     "xai/grok-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6043,6 +6018,7 @@
       },
       "model": null,
       "name": "Grok 4",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-07-10",
@@ -6050,6 +6026,7 @@
     },
     "xai/grok-4-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6100,6 +6077,7 @@
       },
       "model": null,
       "name": "Grok-4-Fast-Non-Reasoning",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-09-16",
@@ -6107,6 +6085,7 @@
     },
     "xai/grok-4-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6157,6 +6136,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast Reasoning",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-09-16",
@@ -6164,6 +6144,7 @@
     },
     "xai/grok-4.1-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6210,6 +6191,7 @@
       },
       "model": null,
       "name": "Grok-4.1-Fast-Non-Reasoning",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-19",
@@ -6217,6 +6199,7 @@
     },
     "xai/grok-4.1-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6263,6 +6246,7 @@
       },
       "model": null,
       "name": "Grok-4.1-Fast-Reasoning",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-11-19",
@@ -6270,6 +6254,7 @@
     },
     "xai/grok-code-fast-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -6319,11 +6304,13 @@
       },
       "model": null,
       "name": "Grok Code Fast 1",
+      "pricing": null,
       "provider": "poe",
       "provider_model_id": null,
       "release_date": "2025-08-22",
       "tags": null
     }
   },
-  "name": "Poe"
+  "name": "Poe",
+  "pricing_defaults": null
 }

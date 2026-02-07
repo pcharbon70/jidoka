@@ -12,6 +12,7 @@
   "models": {
     "v0-1.0-md": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -61,6 +62,7 @@
       },
       "model": null,
       "name": "v0-1.0-md",
+      "pricing": null,
       "provider": "v0",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -68,6 +70,7 @@
     },
     "v0-1.5-lg": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -117,6 +120,7 @@
       },
       "model": null,
       "name": "v0-1.5-lg",
+      "pricing": null,
       "provider": "v0",
       "provider_model_id": null,
       "release_date": "2025-06-09",
@@ -124,6 +128,7 @@
     },
     "v0-1.5-md": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -173,11 +178,13 @@
       },
       "model": null,
       "name": "v0-1.5-md",
+      "pricing": null,
       "provider": "v0",
       "provider_model_id": null,
       "release_date": "2025-06-09",
       "tags": null
     }
   },
-  "name": "v0"
+  "name": "v0",
+  "pricing_defaults": null
 }

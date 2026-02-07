@@ -13,6 +13,7 @@
   "models": {
     "claude-haiku-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -69,6 +70,7 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -76,6 +78,7 @@
     },
     "claude-opus-4-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -132,6 +135,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -139,6 +143,7 @@
     },
     "claude-opus-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -194,6 +199,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.5",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-24",
@@ -201,6 +207,7 @@
     },
     "claude-sonnet-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -257,6 +264,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -264,6 +272,7 @@
     },
     "codestral-2501": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -312,6 +321,7 @@
       },
       "model": null,
       "name": "Codestral 25.01",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-01-01",
@@ -319,6 +329,7 @@
     },
     "codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -368,6 +379,7 @@
       },
       "model": null,
       "name": "Codex Mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-05-16",
@@ -375,6 +387,7 @@
     },
     "cohere-command-a": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -423,6 +436,7 @@
       },
       "model": null,
       "name": "Command A",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-03-13",
@@ -430,6 +444,7 @@
     },
     "cohere-command-r-08-2024": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -478,6 +493,7 @@
       },
       "model": null,
       "name": "Command R",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-08-30",
@@ -485,6 +501,7 @@
     },
     "cohere-command-r-plus-08-2024": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -533,6 +550,7 @@
       },
       "model": null,
       "name": "Command R+",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-08-30",
@@ -540,6 +558,7 @@
     },
     "cohere-embed-v-4-0": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.12,
@@ -572,6 +591,7 @@
       },
       "model": null,
       "name": "Embed v4",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-15",
@@ -579,6 +599,7 @@
     },
     "cohere-embed-v3-english": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -610,6 +631,7 @@
       },
       "model": null,
       "name": "Embed v3 English",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-11-07",
@@ -617,6 +639,7 @@
     },
     "cohere-embed-v3-multilingual": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -648,6 +671,7 @@
       },
       "model": null,
       "name": "Embed v3 Multilingual",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-11-07",
@@ -655,6 +679,7 @@
     },
     "deepseek-r1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -707,6 +732,7 @@
       },
       "model": null,
       "name": "DeepSeek-R1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -714,6 +740,7 @@
     },
     "deepseek-r1-0528": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -762,6 +789,7 @@
       },
       "model": null,
       "name": "DeepSeek-R1-0528",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-05-28",
@@ -769,6 +797,7 @@
     },
     "deepseek-v3-0324": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -817,6 +846,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3-0324",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-03-24",
@@ -824,6 +854,7 @@
     },
     "deepseek-v3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -872,6 +903,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3.1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-08-21",
@@ -879,6 +911,7 @@
     },
     "deepseek-v3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -927,6 +960,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3.2",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -934,6 +968,7 @@
     },
     "deepseek-v3.2-speciale": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -986,6 +1021,7 @@
       },
       "model": null,
       "name": "DeepSeek-V3.2-Speciale",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -993,6 +1029,7 @@
     },
     "gpt-3.5-turbo-0125": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.5,
@@ -1024,6 +1061,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo 0125",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -1031,6 +1069,7 @@
     },
     "gpt-3.5-turbo-0301": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1.5,
@@ -1062,6 +1101,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo 0301",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-03-01",
@@ -1069,6 +1109,7 @@
     },
     "gpt-3.5-turbo-0613": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 3,
@@ -1100,6 +1141,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo 0613",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-06-13",
@@ -1107,6 +1149,7 @@
     },
     "gpt-3.5-turbo-1106": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1,
@@ -1138,6 +1181,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo 1106",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-11-06",
@@ -1145,6 +1189,7 @@
     },
     "gpt-3.5-turbo-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 1.5,
@@ -1176,6 +1221,7 @@
       },
       "model": null,
       "name": "GPT-3.5 Turbo Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-09-21",
@@ -1183,6 +1229,7 @@
     },
     "gpt-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1231,6 +1278,7 @@
       },
       "model": null,
       "name": "GPT-4",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-03-14",
@@ -1238,6 +1286,7 @@
     },
     "gpt-4-32k": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1286,6 +1335,7 @@
       },
       "model": null,
       "name": "GPT-4 32K",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-03-14",
@@ -1293,6 +1343,7 @@
     },
     "gpt-4-turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1342,6 +1393,7 @@
       },
       "model": null,
       "name": "GPT-4 Turbo",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-11-06",
@@ -1349,6 +1401,7 @@
     },
     "gpt-4-turbo-vision": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1398,6 +1451,7 @@
       },
       "model": null,
       "name": "GPT-4 Turbo Vision",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2023-11-06",
@@ -1405,6 +1459,7 @@
     },
     "gpt-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1455,6 +1510,7 @@
       },
       "model": null,
       "name": "GPT-4.1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1462,6 +1518,7 @@
     },
     "gpt-4.1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1512,6 +1569,7 @@
       },
       "model": null,
       "name": "GPT-4.1 mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1519,6 +1577,7 @@
     },
     "gpt-4.1-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1569,6 +1628,7 @@
       },
       "model": null,
       "name": "GPT-4.1 nano",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -1576,6 +1636,7 @@
     },
     "gpt-4o": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1626,6 +1687,7 @@
       },
       "model": null,
       "name": "GPT-4o",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-05-13",
@@ -1633,6 +1695,7 @@
     },
     "gpt-4o-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1683,6 +1746,7 @@
       },
       "model": null,
       "name": "GPT-4o mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -1690,6 +1754,7 @@
     },
     "gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1740,6 +1805,7 @@
       },
       "model": null,
       "name": "GPT-5",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -1747,6 +1813,7 @@
     },
     "gpt-5-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1801,6 +1868,7 @@
       },
       "model": null,
       "name": "GPT-5 Chat",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -1808,6 +1876,7 @@
     },
     "gpt-5-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1858,6 +1927,7 @@
       },
       "model": null,
       "name": "GPT-5-Codex",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-09-15",
@@ -1865,6 +1935,7 @@
     },
     "gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1915,6 +1986,7 @@
       },
       "model": null,
       "name": "GPT-5 Mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -1922,6 +1994,7 @@
     },
     "gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1972,6 +2045,7 @@
       },
       "model": null,
       "name": "GPT-5 Nano",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -1979,6 +2053,7 @@
     },
     "gpt-5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2029,6 +2104,7 @@
       },
       "model": null,
       "name": "GPT-5 Pro",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-10-06",
@@ -2036,6 +2112,7 @@
     },
     "gpt-5.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2089,6 +2166,7 @@
       },
       "model": null,
       "name": "GPT-5.1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-14",
@@ -2096,6 +2174,7 @@
     },
     "gpt-5.1-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2149,6 +2228,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Chat",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-14",
@@ -2156,6 +2236,7 @@
     },
     "gpt-5.1-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2209,6 +2290,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Codex",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-14",
@@ -2216,6 +2298,7 @@
     },
     "gpt-5.1-codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2266,6 +2349,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Codex Mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-14",
@@ -2273,6 +2357,7 @@
     },
     "gpt-5.2-chat": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2324,6 +2409,7 @@
       },
       "model": null,
       "name": "GPT-5.2 Chat",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-12-11",
@@ -2331,6 +2417,7 @@
     },
     "gpt-5.2-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2381,6 +2468,7 @@
       },
       "model": null,
       "name": "GPT-5.2 Codex",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2026-01-14",
@@ -2388,6 +2476,7 @@
     },
     "grok-3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2437,6 +2526,7 @@
       },
       "model": null,
       "name": "Grok 3",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-02-17",
@@ -2444,6 +2534,7 @@
     },
     "grok-3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2494,6 +2585,7 @@
       },
       "model": null,
       "name": "Grok 3 Mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-02-17",
@@ -2501,6 +2593,7 @@
     },
     "grok-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2551,6 +2644,7 @@
       },
       "model": null,
       "name": "Grok 4",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-07-09",
@@ -2558,6 +2652,7 @@
     },
     "grok-4-fast-non-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2608,6 +2703,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast (Non-Reasoning)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -2615,6 +2711,7 @@
     },
     "grok-4-fast-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2665,6 +2762,7 @@
       },
       "model": null,
       "name": "Grok 4 Fast (Reasoning)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-09-19",
@@ -2672,6 +2770,7 @@
     },
     "grok-code-fast-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2721,6 +2820,7 @@
       },
       "model": null,
       "name": "Grok Code Fast 1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-08-28",
@@ -2728,6 +2828,7 @@
     },
     "kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2778,6 +2879,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-11-06",
@@ -2785,6 +2887,7 @@
     },
     "llama-3.2-11b-vision-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2834,6 +2937,7 @@
       },
       "model": null,
       "name": "Llama-3.2-11B-Vision-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-09-25",
@@ -2841,6 +2945,7 @@
     },
     "llama-3.2-90b-vision-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2890,6 +2995,7 @@
       },
       "model": null,
       "name": "Llama-3.2-90B-Vision-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-09-25",
@@ -2897,6 +3003,7 @@
     },
     "llama-3.3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -2945,6 +3052,7 @@
       },
       "model": null,
       "name": "Llama-3.3-70B-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -2952,6 +3060,7 @@
     },
     "llama-4-maverick-17b-128e-instruct-fp8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3001,6 +3110,7 @@
       },
       "model": null,
       "name": "Llama 4 Maverick 17B 128E Instruct FP8",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -3008,6 +3118,7 @@
     },
     "llama-4-scout-17b-16e-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3057,6 +3168,7 @@
       },
       "model": null,
       "name": "Llama 4 Scout 17B 16E Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -3064,6 +3176,7 @@
     },
     "mai-ds-r1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3116,6 +3229,7 @@
       },
       "model": null,
       "name": "MAI-DS-R1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -3123,6 +3237,7 @@
     },
     "meta-llama-3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 2.68,
@@ -3154,6 +3269,7 @@
       },
       "model": null,
       "name": "Meta-Llama-3-70B-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-18",
@@ -3161,6 +3277,7 @@
     },
     "meta-llama-3-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.3,
@@ -3192,6 +3309,7 @@
       },
       "model": null,
       "name": "Meta-Llama-3-8B-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-18",
@@ -3199,6 +3317,7 @@
     },
     "meta-llama-3.1-405b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3247,6 +3366,7 @@
       },
       "model": null,
       "name": "Meta-Llama-3.1-405B-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3254,6 +3374,7 @@
     },
     "meta-llama-3.1-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3302,6 +3423,7 @@
       },
       "model": null,
       "name": "Meta-Llama-3.1-70B-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3309,6 +3431,7 @@
     },
     "meta-llama-3.1-8b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3357,6 +3480,7 @@
       },
       "model": null,
       "name": "Meta-Llama-3.1-8B-Instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -3364,6 +3488,7 @@
     },
     "ministral-3b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3412,6 +3537,7 @@
       },
       "model": null,
       "name": "Ministral 3B",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -3419,6 +3545,7 @@
     },
     "mistral-large-2411": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3467,6 +3594,7 @@
       },
       "model": null,
       "name": "Mistral Large 24.11",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -3474,6 +3602,7 @@
     },
     "mistral-medium-2505": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3523,6 +3652,7 @@
       },
       "model": null,
       "name": "Mistral Medium 3",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-05-07",
@@ -3530,6 +3660,7 @@
     },
     "mistral-nemo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3578,6 +3709,7 @@
       },
       "model": null,
       "name": "Mistral Nemo",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -3585,6 +3717,7 @@
     },
     "mistral-small-2503": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3634,6 +3767,7 @@
       },
       "model": null,
       "name": "Mistral Small 3.1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-03-01",
@@ -3641,6 +3775,7 @@
     },
     "model-router": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3689,6 +3824,7 @@
       },
       "model": null,
       "name": "Model Router",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-05-19",
@@ -3696,6 +3832,7 @@
     },
     "o1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3746,6 +3883,7 @@
       },
       "model": null,
       "name": "o1",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-05",
@@ -3753,6 +3891,7 @@
     },
     "o1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3802,6 +3941,7 @@
       },
       "model": null,
       "name": "o1-mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-09-12",
@@ -3809,6 +3949,7 @@
     },
     "o1-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3858,6 +3999,7 @@
       },
       "model": null,
       "name": "o1-preview",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-09-12",
@@ -3865,6 +4007,7 @@
     },
     "o3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3915,6 +4058,7 @@
       },
       "model": null,
       "name": "o3",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -3922,6 +4066,7 @@
     },
     "o3-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -3971,6 +4116,7 @@
       },
       "model": null,
       "name": "o3-mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-20",
@@ -3978,6 +4124,7 @@
     },
     "o4-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4028,6 +4175,7 @@
       },
       "model": null,
       "name": "o4-mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -4035,6 +4183,7 @@
     },
     "phi-3-medium-128k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.17,
@@ -4066,6 +4215,7 @@
       },
       "model": null,
       "name": "Phi-3-medium-instruct (128k)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-23",
@@ -4073,6 +4223,7 @@
     },
     "phi-3-medium-4k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.17,
@@ -4104,6 +4255,7 @@
       },
       "model": null,
       "name": "Phi-3-medium-instruct (4k)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-23",
@@ -4111,6 +4263,7 @@
     },
     "phi-3-mini-128k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.13,
@@ -4142,6 +4295,7 @@
       },
       "model": null,
       "name": "Phi-3-mini-instruct (128k)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-23",
@@ -4149,6 +4303,7 @@
     },
     "phi-3-mini-4k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.13,
@@ -4180,6 +4335,7 @@
       },
       "model": null,
       "name": "Phi-3-mini-instruct (4k)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-23",
@@ -4187,6 +4343,7 @@
     },
     "phi-3-small-128k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.15,
@@ -4218,6 +4375,7 @@
       },
       "model": null,
       "name": "Phi-3-small-instruct (128k)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-23",
@@ -4225,6 +4383,7 @@
     },
     "phi-3-small-8k-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.15,
@@ -4256,6 +4415,7 @@
       },
       "model": null,
       "name": "Phi-3-small-instruct (8k)",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-04-23",
@@ -4263,6 +4423,7 @@
     },
     "phi-3.5-mini-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.13,
@@ -4294,6 +4455,7 @@
       },
       "model": null,
       "name": "Phi-3.5-mini-instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-08-20",
@@ -4301,6 +4463,7 @@
     },
     "phi-3.5-moe-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.16,
@@ -4332,6 +4495,7 @@
       },
       "model": null,
       "name": "Phi-3.5-MoE-instruct",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-08-20",
@@ -4339,6 +4503,7 @@
     },
     "phi-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.125,
@@ -4370,6 +4535,7 @@
       },
       "model": null,
       "name": "Phi-4",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -4377,6 +4543,7 @@
     },
     "phi-4-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4425,6 +4592,7 @@
       },
       "model": null,
       "name": "Phi-4-mini",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -4432,6 +4600,7 @@
     },
     "phi-4-mini-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4480,6 +4649,7 @@
       },
       "model": null,
       "name": "Phi-4-mini-reasoning",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -4487,6 +4657,7 @@
     },
     "phi-4-multimodal": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.08,
@@ -4521,6 +4692,7 @@
       },
       "model": null,
       "name": "Phi-4-multimodal",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -4528,6 +4700,7 @@
     },
     "phi-4-reasoning": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4580,6 +4753,7 @@
       },
       "model": null,
       "name": "Phi-4-reasoning",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -4587,6 +4761,7 @@
     },
     "phi-4-reasoning-plus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -4639,6 +4814,7 @@
       },
       "model": null,
       "name": "Phi-4-reasoning-plus",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-12-11",
@@ -4646,6 +4822,7 @@
     },
     "text-embedding-3-large": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.13,
@@ -4676,6 +4853,7 @@
       },
       "model": null,
       "name": "text-embedding-3-large",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -4683,6 +4861,7 @@
     },
     "text-embedding-3-small": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.02,
@@ -4713,6 +4892,7 @@
       },
       "model": null,
       "name": "text-embedding-3-small",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2024-01-25",
@@ -4720,6 +4900,7 @@
     },
     "text-embedding-ada-002": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.1,
@@ -4750,11 +4931,13 @@
       },
       "model": null,
       "name": "text-embedding-ada-002",
+      "pricing": null,
       "provider": "azure_cognitive_services",
       "provider_model_id": null,
       "release_date": "2022-12-15",
       "tags": null
     }
   },
-  "name": "Azure Cognitive Services"
+  "name": "Azure Cognitive Services",
+  "pricing_defaults": null
 }

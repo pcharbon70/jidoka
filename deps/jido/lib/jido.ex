@@ -1,6 +1,8 @@
 defmodule Jido do
   use Supervisor
 
+  alias Jido.Agent.WorkerPool
+
   @moduledoc """
   自動 (Jido) - A foundational framework for building autonomous, distributed agent systems in Elixir.
 
@@ -74,9 +76,28 @@ defmodule Jido do
   """
   defmacro __using__(opts) do
     otp_app = Keyword.fetch!(opts, :otp_app)
+    storage = Keyword.get(opts, :storage, {Jido.Storage.ETS, [table: :jido_storage]})
+    default_plugins = Keyword.get(opts, :default_plugins, nil)
 
     quote location: :keep do
       @otp_app unquote(otp_app)
+      @jido_storage Jido.Storage.normalize_storage(unquote(Macro.escape(storage)))
+
+      @doc "Returns the storage configuration for this Jido instance."
+      @spec __jido_storage__() :: {module(), keyword()}
+      def __jido_storage__, do: @jido_storage
+
+      require Jido.Agent.DefaultPlugins
+
+      @default_plugins Jido.Agent.DefaultPlugins.resolve_instance_defaults(
+                         @otp_app,
+                         __MODULE__,
+                         unquote(Macro.escape(default_plugins))
+                       )
+
+      @doc "Returns the default plugins for agents bound to this Jido instance."
+      @spec __default_plugins__() :: [module() | {module(), map()}]
+      def __default_plugins__, do: @default_plugins
 
       @doc false
       def child_spec(init_arg \\ []) do
@@ -152,10 +173,82 @@ defmodule Jido do
       @doc "Returns the TaskSupervisor name for this Jido instance."
       @spec task_supervisor_name() :: atom()
       def task_supervisor_name, do: Jido.task_supervisor_name(__MODULE__)
+
+      @doc "Hibernate an agent to storage."
+      @spec hibernate(Jido.Agent.t()) :: :ok | {:error, term()}
+      def hibernate(agent) do
+        Jido.Persist.hibernate(__jido_storage__(), agent)
+      end
+
+      @doc "Thaw an agent from storage."
+      @spec thaw(module(), term()) :: {:ok, Jido.Agent.t()} | :not_found | {:error, term()}
+      def thaw(agent_module, key) do
+        Jido.Persist.thaw(__jido_storage__(), agent_module, key)
+      end
     end
   end
 
   @type agent_id :: String.t() | atom()
+
+  # Default instance name for scripts/Livebook
+  @default_instance Jido.Default
+
+  @doc """
+  Returns the default Jido instance name.
+
+  Used by `Jido.start/1` for scripts and Livebook quick-start.
+  """
+  @spec default_instance() :: atom()
+  def default_instance, do: @default_instance
+
+  @doc """
+  Start the default Jido instance for scripts and Livebook.
+
+  This is an idempotent convenience function - safe to call multiple times
+  (returns `{:ok, pid}` even if already started).
+
+  ## Examples
+
+      # In a script or Livebook
+      {:ok, _} = Jido.start()
+      {:ok, pid} = Jido.start_agent(Jido.default_instance(), MyAgent)
+
+      # With custom options
+      {:ok, _} = Jido.start(max_tasks: 2000)
+
+  ## Options
+
+  Same as `start_link/1`, but `:name` defaults to `Jido.Default`.
+  """
+  @spec start(keyword()) :: {:ok, pid()} | {:error, term()}
+  def start(opts \\ []) do
+    opts = Keyword.put_new(opts, :name, @default_instance)
+
+    case start_link(opts) do
+      {:ok, pid} -> {:ok, pid}
+      {:error, {:already_started, pid}} -> {:ok, pid}
+      other -> other
+    end
+  end
+
+  @doc """
+  Stop a Jido instance.
+
+  Defaults to stopping the default instance (`Jido.Default`).
+
+  ## Examples
+
+      Jido.stop()
+      Jido.stop(MyApp.Jido)
+
+  """
+  @spec stop(atom()) :: :ok
+  def stop(name \\ @default_instance) do
+    case Process.whereis(name) do
+      nil -> :ok
+      pid -> Supervisor.stop(pid)
+    end
+  end
 
   @doc """
   Starts a Jido instance supervisor.
@@ -201,7 +294,7 @@ defmodule Jido do
     ]
 
     pool_children =
-      Jido.Agent.WorkerPool.build_pool_child_specs(name, Keyword.get(opts, :agent_pools, []))
+      WorkerPool.build_pool_child_specs(name, Keyword.get(opts, :agent_pools, []))
 
     Supervisor.init(base_children ++ pool_children, strategy: :one_for_one)
   end
@@ -320,6 +413,22 @@ defmodule Jido do
   end
 
   # ---------------------------------------------------------------------------
+  # Persistence
+  # ---------------------------------------------------------------------------
+
+  @doc "Hibernate an agent using the given Jido instance."
+  @spec hibernate(atom(), Jido.Agent.t()) :: :ok | {:error, term()}
+  def hibernate(jido_instance, agent) when is_atom(jido_instance) do
+    Jido.Persist.hibernate(jido_instance, agent)
+  end
+
+  @doc "Thaw an agent using the given Jido instance."
+  @spec thaw(atom(), module(), term()) :: {:ok, Jido.Agent.t()} | :not_found | {:error, term()}
+  def thaw(jido_instance, agent_module, key) when is_atom(jido_instance) do
+    Jido.Persist.thaw(jido_instance, agent_module, key)
+  end
+
+  # ---------------------------------------------------------------------------
   # Discovery
   # ---------------------------------------------------------------------------
 
@@ -329,8 +438,8 @@ defmodule Jido do
   @doc "Lists discovered Sensors with optional filtering."
   defdelegate list_sensors(opts \\ []), to: Jido.Discovery
 
-  @doc "Lists discovered Skills with optional filtering."
-  defdelegate list_skills(opts \\ []), to: Jido.Discovery
+  @doc "Lists discovered Plugins with optional filtering."
+  defdelegate list_plugins(opts \\ []), to: Jido.Discovery
 
   @doc "Lists discovered Demos with optional filtering."
   defdelegate list_demos(opts \\ []), to: Jido.Discovery
@@ -341,8 +450,8 @@ defmodule Jido do
   @doc "Gets a Sensor by its slug."
   defdelegate get_sensor_by_slug(slug), to: Jido.Discovery
 
-  @doc "Gets a Skill by its slug."
-  defdelegate get_skill_by_slug(slug), to: Jido.Discovery
+  @doc "Gets a Plugin by its slug."
+  defdelegate get_plugin_by_slug(slug), to: Jido.Discovery
 
   @doc "Refreshes the Discovery catalog."
   defdelegate refresh_discovery(), to: Jido.Discovery, as: :refresh

@@ -282,4 +282,4 @@
                              phoenix_html]},
               {description,"Zoi is a schema validation library for Elixir, designed to provide a simple and flexible way to define and validate data."},
               {registered,[]},
-              {vsn,"0.16.1"}]}.
+              {vsn,"0.17.0"}]}.

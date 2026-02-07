@@ -12,6 +12,7 @@
   "models": {
     "hf:MiniMaxAI/MiniMax-M2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "MiniMax-M2",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-10-27",
@@ -67,6 +69,7 @@
     },
     "hf:MiniMaxAI/MiniMax-M2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -118,6 +121,7 @@
       },
       "model": null,
       "name": "MiniMax-M2.1",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-12-23",
@@ -125,6 +129,7 @@
     },
     "hf:Qwen/Qwen2.5-Coder-32B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 0.8,
@@ -156,6 +161,7 @@
       },
       "model": null,
       "name": "Qwen2.5-Coder-32B-Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2024-11-11",
@@ -163,6 +169,7 @@
     },
     "hf:Qwen/Qwen3-235B-A22B-Instruct-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -211,6 +218,7 @@
       },
       "model": null,
       "name": "Qwen 3 235B Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-04-28",
@@ -218,6 +226,7 @@
     },
     "hf:Qwen/Qwen3-235B-A22B-Thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -266,6 +275,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Thinking 2507",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-07-25",
@@ -273,6 +283,7 @@
     },
     "hf:Qwen/Qwen3-Coder-480B-A35B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -321,6 +332,7 @@
       },
       "model": null,
       "name": "Qwen 3 Coder 480B",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -328,6 +340,7 @@
     },
     "hf:deepseek-ai/DeepSeek-R1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -376,6 +389,7 @@
       },
       "model": null,
       "name": "DeepSeek R1",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -383,6 +397,7 @@
     },
     "hf:deepseek-ai/DeepSeek-R1-0528": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -431,6 +446,7 @@
       },
       "model": null,
       "name": "DeepSeek R1 (0528)",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-08-01",
@@ -438,6 +454,7 @@
     },
     "hf:deepseek-ai/DeepSeek-V3": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -486,6 +503,7 @@
       },
       "model": null,
       "name": "DeepSeek V3",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -493,6 +511,7 @@
     },
     "hf:deepseek-ai/DeepSeek-V3-0324": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -541,6 +560,7 @@
       },
       "model": null,
       "name": "DeepSeek V3 (0324)",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-08-01",
@@ -548,6 +568,7 @@
     },
     "hf:deepseek-ai/DeepSeek-V3.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -596,6 +617,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-08-21",
@@ -603,6 +625,7 @@
     },
     "hf:deepseek-ai/DeepSeek-V3.1-Terminus": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -651,6 +674,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.1 Terminus",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-09-22",
@@ -658,6 +682,7 @@
     },
     "hf:deepseek-ai/DeepSeek-V3.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -709,6 +734,7 @@
       },
       "model": null,
       "name": "DeepSeek V3.2",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -716,6 +742,7 @@
     },
     "hf:meta-llama/Llama-3.1-405B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -764,6 +791,7 @@
       },
       "model": null,
       "name": "Llama-3.1-405B-Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -771,6 +799,7 @@
     },
     "hf:meta-llama/Llama-3.1-70B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -819,6 +848,7 @@
       },
       "model": null,
       "name": "Llama-3.1-70B-Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -826,6 +856,7 @@
     },
     "hf:meta-llama/Llama-3.1-8B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -874,6 +905,7 @@
       },
       "model": null,
       "name": "Llama-3.1-8B-Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2024-07-23",
@@ -881,6 +913,7 @@
     },
     "hf:meta-llama/Llama-3.3-70B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -929,6 +962,7 @@
       },
       "model": null,
       "name": "Llama-3.3-70B-Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -936,6 +970,7 @@
     },
     "hf:meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -985,6 +1020,7 @@
       },
       "model": null,
       "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -992,6 +1028,7 @@
     },
     "hf:meta-llama/Llama-4-Scout-17B-16E-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1041,6 +1078,7 @@
       },
       "model": null,
       "name": "Llama-4-Scout-17B-16E-Instruct",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -1048,6 +1086,7 @@
     },
     "hf:moonshotai/Kimi-K2-Instruct-0905": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1096,6 +1135,7 @@
       },
       "model": null,
       "name": "Kimi K2 0905",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -1103,6 +1143,7 @@
     },
     "hf:moonshotai/Kimi-K2-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1151,13 +1192,76 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-11-07",
       "tags": null
     },
+    "hf:moonshotai/Kimi-K2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.55,
+        "output": 2.19
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "kimi",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "hf:moonshotai/Kimi-K2.5",
+      "knowledge": "2025-01",
+      "last_updated": "2026-01",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 65536
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2.5",
+      "pricing": null,
+      "provider": "synthetic",
+      "provider_model_id": null,
+      "release_date": "2026-01",
+      "tags": null
+    },
     "hf:openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1206,6 +1310,7 @@
       },
       "model": null,
       "name": "GPT OSS 120B",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -1213,6 +1318,7 @@
     },
     "hf:zai-org/GLM-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1261,6 +1367,7 @@
       },
       "model": null,
       "name": "GLM 4.5",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -1268,6 +1375,7 @@
     },
     "hf:zai-org/GLM-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1316,6 +1424,7 @@
       },
       "model": null,
       "name": "GLM 4.6",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-09-30",
@@ -1323,6 +1432,7 @@
     },
     "hf:zai-org/GLM-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1374,11 +1484,13 @@
       },
       "model": null,
       "name": "GLM 4.7",
+      "pricing": null,
       "provider": "synthetic",
       "provider_model_id": null,
       "release_date": "2025-12-22",
       "tags": null
     }
   },
-  "name": "Synthetic"
+  "name": "Synthetic",
+  "pricing_defaults": null
 }

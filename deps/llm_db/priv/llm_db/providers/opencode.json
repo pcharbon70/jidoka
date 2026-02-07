@@ -10,128 +10,9 @@
   "extra": null,
   "id": "opencode",
   "models": {
-    "alpha-gd4": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.15,
-        "input": 0.5,
-        "output": 2
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "alpha",
-        "open_weights": true,
-        "provider": {
-          "npm": "@ai-sdk/anthropic"
-        },
-        "status": "alpha",
-        "temperature": true
-      },
-      "family": null,
-      "id": "alpha-gd4",
-      "knowledge": "2025-01",
-      "last_updated": "2025-01-01",
-      "lifecycle": null,
-      "limits": {
-        "context": 262144,
-        "output": 32768
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Alpha GD4",
-      "provider": "opencode",
-      "provider_model_id": null,
-      "release_date": "2025-01-01",
-      "tags": null
-    },
-    "alpha-glm-4.7": {
-      "aliases": [],
-      "capabilities": {
-        "chat": true,
-        "embeddings": false,
-        "json": {
-          "native": false,
-          "schema": false,
-          "strict": false
-        },
-        "reasoning": {
-          "enabled": true
-        },
-        "streaming": {
-          "tool_calls": true
-        },
-        "tools": {
-          "enabled": true
-        }
-      },
-      "cost": {
-        "cache_read": 0.6,
-        "input": 0.6,
-        "output": 2.2
-      },
-      "deprecated": false,
-      "extra": {
-        "attachment": false,
-        "family": "glm",
-        "interleaved": {
-          "field": "reasoning_content"
-        },
-        "open_weights": true,
-        "status": "alpha",
-        "temperature": true
-      },
-      "family": null,
-      "id": "alpha-glm-4.7",
-      "knowledge": "2025-04",
-      "last_updated": "2025-12-22",
-      "lifecycle": null,
-      "limits": {
-        "context": 204800,
-        "output": 131072
-      },
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "model": null,
-      "name": "Alpha GLM-4.7",
-      "provider": "opencode",
-      "provider_model_id": null,
-      "release_date": "2025-12-22",
-      "tags": null
-    },
     "big-pickle": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -182,6 +63,7 @@
       },
       "model": null,
       "name": "Big Pickle",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-10-17",
@@ -189,6 +71,7 @@
     },
     "claude-3-5-haiku": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -244,6 +127,7 @@
       },
       "model": null,
       "name": "Claude Haiku 3.5",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2024-10-22",
@@ -251,6 +135,7 @@
     },
     "claude-haiku-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -306,6 +191,7 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -313,6 +199,7 @@
     },
     "claude-opus-4-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -368,6 +255,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.1",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -375,6 +263,7 @@
     },
     "claude-opus-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -430,13 +319,79 @@
       },
       "model": null,
       "name": "Claude Opus 4.5",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-11-24",
       "tags": null
     },
+    "claude-opus-4-6": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.5,
+        "cache_write": 6.25,
+        "input": 5,
+        "output": 25
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "claude-opus",
+        "open_weights": false,
+        "provider": {
+          "npm": "@ai-sdk/anthropic"
+        },
+        "temperature": true
+      },
+      "family": null,
+      "id": "claude-opus-4-6",
+      "knowledge": "2025-08-31",
+      "last_updated": "2026-02-05",
+      "lifecycle": null,
+      "limits": {
+        "context": 1000000,
+        "output": 128000
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Claude Opus 4.6",
+      "pricing": null,
+      "provider": "opencode",
+      "provider_model_id": null,
+      "release_date": "2026-02-05",
+      "tags": null
+    },
     "claude-sonnet-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -492,6 +447,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -499,6 +455,7 @@
     },
     "claude-sonnet-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -555,6 +512,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -562,6 +520,7 @@
     },
     "gemini-3-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -619,6 +578,7 @@
       },
       "model": null,
       "name": "Gemini 3 Flash",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-12-17",
@@ -626,6 +586,7 @@
     },
     "gemini-3-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -683,6 +644,7 @@
       },
       "model": null,
       "name": "Gemini 3 Pro",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -690,6 +652,7 @@
     },
     "glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -739,13 +702,76 @@
       },
       "model": null,
       "name": "GLM-4.6",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-09-30",
       "tags": null
     },
+    "glm-4.7": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.1,
+        "input": 0.6,
+        "output": 2.2
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "glm",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "glm-4.7",
+      "knowledge": "2025-04",
+      "last_updated": "2025-12-22",
+      "lifecycle": null,
+      "limits": {
+        "context": 204800,
+        "output": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GLM-4.7",
+      "pricing": null,
+      "provider": "opencode",
+      "provider_model_id": null,
+      "release_date": "2025-12-22",
+      "tags": null
+    },
     "glm-4.7-free": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -797,7 +823,8 @@
         ]
       },
       "model": null,
-      "name": "GLM-4.7",
+      "name": "GLM-4.7 Free",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-12-22",
@@ -805,6 +832,7 @@
     },
     "gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -859,6 +887,7 @@
       },
       "model": null,
       "name": "GPT-5",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -866,6 +895,7 @@
     },
     "gpt-5-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -920,6 +950,7 @@
       },
       "model": null,
       "name": "GPT-5 Codex",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-09-15",
@@ -927,6 +958,7 @@
     },
     "gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -981,6 +1013,7 @@
       },
       "model": null,
       "name": "GPT-5 Nano",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -988,6 +1021,7 @@
     },
     "gpt-5.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1042,6 +1076,7 @@
       },
       "model": null,
       "name": "GPT-5.1",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-11-13",
@@ -1049,6 +1084,7 @@
     },
     "gpt-5.1-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1103,6 +1139,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Codex",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-11-13",
@@ -1110,6 +1147,7 @@
     },
     "gpt-5.1-codex-max": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1164,6 +1202,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Codex Max",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-11-13",
@@ -1171,6 +1210,7 @@
     },
     "gpt-5.1-codex-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1225,6 +1265,7 @@
       },
       "model": null,
       "name": "GPT-5.1 Codex Mini",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-11-13",
@@ -1232,6 +1273,7 @@
     },
     "gpt-5.2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1286,6 +1328,7 @@
       },
       "model": null,
       "name": "GPT-5.2",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-12-11",
@@ -1293,6 +1336,7 @@
     },
     "gpt-5.2-codex": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1339,7 +1383,8 @@
       "modalities": {
         "input": [
           "text",
-          "image"
+          "image",
+          "pdf"
         ],
         "output": [
           "text"
@@ -1347,6 +1392,7 @@
       },
       "model": null,
       "name": "GPT-5.2 Codex",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2026-01-14",
@@ -1354,6 +1400,7 @@
     },
     "grok-code": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1383,6 +1430,7 @@
         "attachment": true,
         "family": "grok",
         "open_weights": false,
+        "status": "deprecated",
         "temperature": true
       },
       "family": null,
@@ -1404,6 +1452,7 @@
       },
       "model": null,
       "name": "Grok Code Fast 1",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-08-20",
@@ -1411,6 +1460,7 @@
     },
     "kimi-k2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1460,6 +1510,7 @@
       },
       "model": null,
       "name": "Kimi K2",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-09-05",
@@ -1467,6 +1518,7 @@
     },
     "kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1519,13 +1571,202 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-09-05",
       "tags": null
     },
+    "kimi-k2.5": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.08,
+        "input": 0.6,
+        "output": 3
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "kimi",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "kimi-k2.5",
+      "knowledge": "2024-10",
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2.5",
+      "pricing": null,
+      "provider": "opencode",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
+    "kimi-k2.5-free": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0,
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": true,
+        "family": "kimi-free",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "kimi-k2.5-free",
+      "knowledge": "2024-10",
+      "last_updated": "2026-01-27",
+      "lifecycle": null,
+      "limits": {
+        "context": 262144,
+        "output": 262144
+      },
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Kimi K2.5 Free",
+      "pricing": null,
+      "provider": "opencode",
+      "provider_model_id": null,
+      "release_date": "2026-01-27",
+      "tags": null
+    },
+    "minimax-m2.1": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "cache_read": 0.1,
+        "input": 0.3,
+        "output": 1.2
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "minimax",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "minimax-m2.1",
+      "knowledge": "2025-01",
+      "last_updated": "2025-12-23",
+      "lifecycle": null,
+      "limits": {
+        "context": 204800,
+        "output": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "MiniMax M2.1",
+      "pricing": null,
+      "provider": "opencode",
+      "provider_model_id": null,
+      "release_date": "2025-12-23",
+      "tags": null
+    },
     "minimax-m2.1-free": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1552,7 +1793,7 @@
       "deprecated": false,
       "extra": {
         "attachment": false,
-        "family": "minimax",
+        "family": "minimax-free",
         "open_weights": true,
         "provider": {
           "npm": "@ai-sdk/anthropic"
@@ -1577,7 +1818,8 @@
         ]
       },
       "model": null,
-      "name": "MiniMax M2.1",
+      "name": "MiniMax M2.1 Free",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-12-23",
@@ -1585,6 +1827,7 @@
     },
     "qwen3-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1633,11 +1876,70 @@
       },
       "model": null,
       "name": "Qwen3 Coder",
+      "pricing": null,
       "provider": "opencode",
       "provider_model_id": null,
       "release_date": "2025-07-23",
       "tags": null
+    },
+    "trinity-large-preview-free": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "trinity",
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "trinity-large-preview-free",
+      "knowledge": "2025-06",
+      "last_updated": "2026-01-28",
+      "lifecycle": null,
+      "limits": {
+        "context": 131072,
+        "output": 131072
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "Trinity Large Preview",
+      "pricing": null,
+      "provider": "opencode",
+      "provider_model_id": null,
+      "release_date": "2026-01-28",
+      "tags": null
     }
   },
-  "name": "OpenCode Zen"
+  "name": "OpenCode Zen",
+  "pricing_defaults": null
 }

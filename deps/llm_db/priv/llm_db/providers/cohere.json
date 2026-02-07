@@ -12,6 +12,7 @@
   "models": {
     "command-a-03-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Command A",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2025-03-13",
@@ -67,6 +69,7 @@
     },
     "command-a-reasoning-08-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -115,6 +118,7 @@
       },
       "model": null,
       "name": "Command A Reasoning",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2025-08-21",
@@ -122,6 +126,7 @@
     },
     "command-a-translate-08-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -170,6 +175,7 @@
       },
       "model": null,
       "name": "Command A Translate",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2025-08-28",
@@ -177,6 +183,7 @@
     },
     "command-a-vision-07-2025": {
       "aliases": [],
+      "base_url": null,
       "capabilities": null,
       "cost": {
         "input": 2.5,
@@ -209,6 +216,7 @@
       },
       "model": null,
       "name": "Command A Vision",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2025-07-31",
@@ -216,6 +224,7 @@
     },
     "command-r-08-2024": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -264,6 +273,7 @@
       },
       "model": null,
       "name": "Command R",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2024-08-30",
@@ -271,6 +281,7 @@
     },
     "command-r-plus-08-2024": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -319,6 +330,7 @@
       },
       "model": null,
       "name": "Command R+",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2024-08-30",
@@ -326,6 +338,7 @@
     },
     "command-r7b-12-2024": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -374,11 +387,13 @@
       },
       "model": null,
       "name": "Command R7B",
+      "pricing": null,
       "provider": "cohere",
       "provider_model_id": null,
       "release_date": "2024-02-27",
       "tags": null
     }
   },
-  "name": "Cohere"
+  "name": "Cohere",
+  "pricing_defaults": null
 }

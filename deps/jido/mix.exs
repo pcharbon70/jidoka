@@ -1,7 +1,7 @@
 defmodule Jido.MixProject do
   use Mix.Project
 
-  @version "2.0.0-rc.1"
+  @version "2.0.0-rc.4"
 
   def vsn do
     @version
@@ -32,7 +32,10 @@ defmodule Jido.MixProject do
         summary: [threshold: 80],
         export: "cov",
         ignore_modules: [~r/^JidoTest\./]
-      ]
+      ],
+
+      # Dialyzer
+      dialyzer: [plt_add_apps: [:mix]]
     ]
   end
 
@@ -73,7 +76,7 @@ defmodule Jido.MixProject do
         "Start Here": [
           "guides/getting-started.livemd",
           "guides/core-loop.md",
-          "guides/your-first-skill.md",
+          "guides/your-first-plugin.md",
           "guides/your-first-sensor.md",
           "guides/observability-intro.md"
         ],
@@ -83,7 +86,7 @@ defmodule Jido.MixProject do
           "guides/signals.md",
           "guides/directives.md",
           "guides/state-ops.md",
-          "guides/skills.md",
+          "guides/plugins.md",
           "guides/strategies.md",
           "guides/runtime.md"
         ],
@@ -95,7 +98,7 @@ defmodule Jido.MixProject do
           "guides/observability.md",
           "guides/testing.md",
           "guides/configuration.md",
-          "guides/persistence.md",
+          "guides/storage.md",
           "guides/worker-pools.md",
           "guides/scheduling.md"
         ],
@@ -127,7 +130,7 @@ defmodule Jido.MixProject do
         # Start Here
         {"guides/getting-started.livemd", title: "Quick Start"},
         {"guides/core-loop.md", title: "Core Loop"},
-        {"guides/your-first-skill.md", title: "Your First Skill"},
+        {"guides/your-first-plugin.md", title: "Your First Plugin"},
         {"guides/your-first-sensor.md", title: "Your First Sensor"},
         {"guides/observability-intro.md", title: "Seeing What Happened"},
 
@@ -137,7 +140,7 @@ defmodule Jido.MixProject do
         {"guides/signals.md", title: "Signals & Routing"},
         {"guides/directives.md", title: "Directives"},
         {"guides/state-ops.md", title: "State Operations"},
-        {"guides/skills.md", title: "Skills"},
+        {"guides/plugins.md", title: "Plugins"},
         {"guides/strategies.md", title: "Strategies"},
         {"guides/runtime.md", title: "Runtime"},
 
@@ -149,7 +152,7 @@ defmodule Jido.MixProject do
         {"guides/observability.md", title: "Observability"},
         {"guides/testing.md", title: "Testing"},
         {"guides/configuration.md", title: "Configuration"},
-        {"guides/persistence.md", title: "Persistence"},
+        {"guides/storage.md", title: "Persistence & Storage"},
         {"guides/worker-pools.md", title: "Worker Pools"},
         {"guides/scheduling.md", title: "Scheduling"},
 
@@ -191,10 +194,26 @@ defmodule Jido.MixProject do
           Jido.Agent.Strategy,
           Jido.Agent.Strategy.Direct,
           Jido.Agent.Strategy.FSM,
-          Jido.Agent.Strategy.State
+          Jido.Agent.Strategy.FSM.Machine,
+          Jido.Agent.Strategy.State,
+          Jido.Agent.Strategy.Snapshot
         ],
-        Skills: [
-          Jido.Skill
+        Plugins: [
+          Jido.Plugin,
+          Jido.Plugin.Config,
+          Jido.Plugin.Instance,
+          Jido.Plugin.Manifest,
+          Jido.Plugin.Requirements,
+          Jido.Plugin.Routes,
+          Jido.Plugin.Schedules,
+          Jido.Plugin.Spec
+        ],
+        Identity: [
+          Jido.Identity,
+          Jido.Identity.Plugin,
+          Jido.Identity.Agent,
+          Jido.Identity.Profile,
+          Jido.Identity.Actions.Evolve
         ],
         Directives: [
           Jido.Agent.Directive,
@@ -208,22 +227,86 @@ defmodule Jido.MixProject do
           Jido.Agent.Directive.Cron,
           Jido.Agent.Directive.CronCancel
         ],
-        "Agent Components": [
+        "State Operations": [
+          Jido.Agent.StateOp,
+          Jido.Agent.StateOp.SetState,
+          Jido.Agent.StateOp.ReplaceState,
+          Jido.Agent.StateOp.DeleteKeys,
+          Jido.Agent.StateOp.SetPath,
+          Jido.Agent.StateOp.DeletePath,
+          Jido.Agent.StateOps
+        ],
+        "Agent Internals": [
+          Jido.Agent.DefaultPlugins,
           Jido.Agent.State,
           Jido.Agent.Schema,
-          Jido.Agent.StateOps,
-          Jido.Agent.StateOp,
           Jido.AgentServer.State,
+          Jido.AgentServer.State.Lifecycle,
           Jido.AgentServer.Status,
           Jido.AgentServer.Options,
           Jido.AgentServer.ErrorPolicy,
-          Jido.AgentServer.SignalRouter
+          Jido.AgentServer.SignalRouter,
+          Jido.AgentServer.ChildInfo,
+          Jido.AgentServer.DirectiveExec,
+          Jido.AgentServer.Lifecycle,
+          Jido.AgentServer.Lifecycle.Keyed,
+          Jido.AgentServer.Lifecycle.Noop,
+          Jido.AgentServer.Signal.ChildStarted,
+          Jido.AgentServer.Signal.ChildExit,
+          Jido.AgentServer.Signal.CronTick,
+          Jido.AgentServer.Signal.Orphaned,
+          Jido.AgentServer.Signal.Scheduled
         ],
         "Built-in Actions": [
           Jido.Actions.Control,
+          Jido.Actions.Control.Broadcast,
+          Jido.Actions.Control.Cancel,
+          Jido.Actions.Control.Forward,
+          Jido.Actions.Control.Noop,
+          Jido.Actions.Control.Reply,
           Jido.Actions.Lifecycle,
+          Jido.Actions.Lifecycle.NotifyParent,
+          Jido.Actions.Lifecycle.NotifyPid,
+          Jido.Actions.Lifecycle.SpawnChild,
+          Jido.Actions.Lifecycle.StopChild,
+          Jido.Actions.Lifecycle.StopSelf,
           Jido.Actions.Scheduling,
-          Jido.Actions.Status
+          Jido.Actions.Scheduling.CancelCron,
+          Jido.Actions.Scheduling.ScheduleCron,
+          Jido.Actions.Scheduling.ScheduleSignal,
+          Jido.Actions.Scheduling.ScheduleTimeout,
+          Jido.Actions.Status,
+          Jido.Actions.Status.MarkCompleted,
+          Jido.Actions.Status.MarkFailed,
+          Jido.Actions.Status.MarkIdle,
+          Jido.Actions.Status.MarkWorking,
+          Jido.Actions.Status.SetStatus
+        ],
+        Sensors: [
+          Jido.Sensor,
+          Jido.Sensor.Runtime,
+          Jido.Sensor.Spec,
+          Jido.Sensors.Heartbeat,
+          Jido.Sensors.Bus
+        ],
+        Thread: [
+          Jido.Thread,
+          Jido.Thread.Agent,
+          Jido.Thread.Entry,
+          Jido.Thread.Store,
+          Jido.Thread.Store.Adapters.InMemory,
+          Jido.Thread.Store.Adapters.JournalBacked
+        ],
+        Storage: [
+          Jido.Storage,
+          Jido.Storage.ETS,
+          Jido.Storage.File,
+          Jido.Persist,
+          Jido.Agent.InstanceManager,
+          Jido.Agent.Persistence,
+          Jido.Agent.Store,
+          Jido.Agent.Store.ETS,
+          Jido.Agent.Store.File
         ],
         Observability: [
           Jido.Observe,
@@ -231,7 +314,11 @@ defmodule Jido.MixProject do
           Jido.Observe.Tracer,
           Jido.Observe.NoopTracer,
           Jido.Observe.SpanCtx,
-          Jido.Telemetry
+          Jido.Telemetry,
+          Jido.Telemetry.Config,
+          Jido.Telemetry.Formatter,
+          Jido.Tracing.Context,
+          Jido.Tracing.Trace
         ],
         Utilities: [
           Jido.Discovery,
@@ -239,6 +326,14 @@ defmodule Jido.MixProject do
           Jido.Scheduler,
           Jido.Util,
           Jido.Agent.WorkerPool
+        ],
+        Exceptions: [
+          Jido.Error.CompensationError,
+          Jido.Error.ExecutionError,
+          Jido.Error.InternalError,
+          Jido.Error.RoutingError,
+          Jido.Error.TimeoutError,
+          Jido.Error.ValidationError
         ]
       ]
     ]
@@ -262,8 +357,8 @@ defmodule Jido.MixProject do
   defp deps do
     [
       # Jido Ecosystem
-      {:jido_action, "~> 2.0.0-rc"},
-      {:jido_signal, "~> 2.0.0-rc"},
+      {:jido_action, "~> 2.0.0-rc.4"},
+      {:jido_signal, "~> 2.0.0-rc.4"},
 
       # Jido Deps
       {:deep_merge, "~> 1.0"},
@@ -277,13 +372,6 @@ defmodule Jido.MixProject do
       {:telemetry_metrics, "~> 1.1"},
       {:sched_ex, "~> 1.1"},
       {:uniq, "~> 0.6.1"},
-
-      # Skill & Action Dependencies for examples
-      # {:req, "~> 0.5.16"},
-
-      # ReAct example dependency (optional - requires API key)
-      # Using GitHub main for upcoming tool call extraction improvements
-      # {:req_llm, github: "agentjido/req_llm", branch: "main"},
 
       # Development & Test Dependencies
       {:git_ops, "~> 2.9", only: :dev, runtime: false},

@@ -12,6 +12,7 @@
   "models": {
     "anthropic/claude-3-7-sonnet": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -64,6 +65,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 3.7",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-02-19",
@@ -71,6 +73,7 @@
     },
     "anthropic/claude-haiku-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -123,6 +126,7 @@
       },
       "model": null,
       "name": "Claude Haiku 4.5",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-10-15",
@@ -130,6 +134,7 @@
     },
     "anthropic/claude-opus-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -182,6 +187,7 @@
       },
       "model": null,
       "name": "Claude Opus 4",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -189,6 +195,7 @@
     },
     "anthropic/claude-opus-4-1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -241,6 +248,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.1",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -248,6 +256,7 @@
     },
     "anthropic/claude-opus-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -300,6 +309,7 @@
       },
       "model": null,
       "name": "Claude Opus 4.5",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-11-24",
@@ -307,6 +317,7 @@
     },
     "anthropic/claude-sonnet-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -359,6 +370,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-05-22",
@@ -366,6 +378,7 @@
     },
     "anthropic/claude-sonnet-4-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -418,6 +431,7 @@
       },
       "model": null,
       "name": "Claude Sonnet 4.5",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-09-29",
@@ -425,6 +439,7 @@
     },
     "google/gemini-2.5-flash": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -479,6 +494,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Flash",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -486,6 +502,7 @@
     },
     "google/gemini-2.5-pro": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -540,6 +557,7 @@
       },
       "model": null,
       "name": "Gemini 2.5 Pro",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-06-17",
@@ -547,6 +565,7 @@
     },
     "google/gemini-3-flash-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -600,6 +619,7 @@
       },
       "model": null,
       "name": "Gemini 3 Flash",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-12-17",
@@ -607,6 +627,7 @@
     },
     "google/gemini-3-pro-preview": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -661,6 +682,7 @@
       },
       "model": null,
       "name": "Gemini 3 Pro",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-11-18",
@@ -668,6 +690,7 @@
     },
     "openai/gpt-4.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -718,6 +741,7 @@
       },
       "model": null,
       "name": "GPT-4.1",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -725,6 +749,7 @@
     },
     "openai/gpt-4.1-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -775,6 +800,7 @@
       },
       "model": null,
       "name": "GPT-4.1 Mini",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-04-14",
@@ -782,6 +808,7 @@
     },
     "openai/gpt-4o-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -832,6 +859,7 @@
       },
       "model": null,
       "name": "GPT-4o Mini",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -839,6 +867,7 @@
     },
     "openai/gpt-5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -893,6 +922,7 @@
       },
       "model": null,
       "name": "GPT-5",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -900,6 +930,7 @@
     },
     "openai/gpt-5-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -950,6 +981,7 @@
       },
       "model": null,
       "name": "GPT-5 Mini",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -957,6 +989,7 @@
     },
     "openai/gpt-5-nano": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1006,6 +1039,7 @@
       },
       "model": null,
       "name": "GPT-5 Nano",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-08-07",
@@ -1013,6 +1047,7 @@
     },
     "openai/o4-mini": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1063,6 +1098,7 @@
       },
       "model": null,
       "name": "o4 Mini",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-04-16",
@@ -1070,6 +1106,7 @@
     },
     "xai/grok-4": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1121,6 +1158,7 @@
       },
       "model": null,
       "name": "Grok 4",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-09-09",
@@ -1128,6 +1166,7 @@
     },
     "xai/grok-4-fast": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1178,11 +1217,13 @@
       },
       "model": null,
       "name": "Grok 4 Fast",
+      "pricing": null,
       "provider": "requesty",
       "provider_model_id": null,
       "release_date": "2025-09-19",
       "tags": null
     }
   },
-  "name": "Requesty"
+  "name": "Requesty",
+  "pricing_defaults": null
 }

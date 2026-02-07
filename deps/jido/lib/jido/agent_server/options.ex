@@ -27,7 +27,9 @@ defmodule Jido.AgentServer.Options do
               agent: Zoi.any(description: "Agent module (atom) or instantiated agent struct"),
               agent_module:
                 Zoi.atom(description: "Agent module for pre-built structs") |> Zoi.optional(),
-              jido: Zoi.atom(description: "Jido instance name (required for registry scoping)"),
+              jido:
+                Zoi.atom(description: "Jido instance name for registry scoping (default: Jido)")
+                |> Zoi.optional(),
               id:
                 Zoi.string(description: "Instance ID (auto-generated if not provided)")
                 |> Zoi.optional(),
@@ -49,7 +51,7 @@ defmodule Jido.AgentServer.Options do
               spawn_fun:
                 Zoi.any(description: "Custom function for spawning children") |> Zoi.optional(),
               skip_schedules:
-                Zoi.boolean(description: "Skip registering skill schedules (useful for tests)")
+                Zoi.boolean(description: "Skip registering plugin schedules (useful for tests)")
                 |> Zoi.default(false),
 
               # InstanceManager integration (set by Jido.Agent.InstanceManager)
@@ -69,7 +71,12 @@ defmodule Jido.AgentServer.Options do
                 |> Zoi.default(:infinity),
               persistence:
                 Zoi.any(description: "Persistence config [store: {Module, opts}]")
-                |> Zoi.optional()
+                |> Zoi.optional(),
+
+              # Debug mode
+              debug:
+                Zoi.boolean(description: "Enable debug mode with event buffer")
+                |> Zoi.default(false)
             },
             coerce: true
           )
@@ -132,15 +139,9 @@ defmodule Jido.AgentServer.Options do
         id when is_atom(id) -> Atom.to_string(id)
       end
 
-    registry =
-      case Map.get(attrs, :jido) do
-        nil ->
-          raise ArgumentError,
-                ":jido option is required - pass the Jido instance name (e.g., MyApp.Jido)"
-
-        jido_instance ->
-          Jido.registry_name(jido_instance)
-      end
+    jido_instance = Map.get(attrs, :jido, Jido)
+    registry = Jido.registry_name(jido_instance)
+    attrs = Map.put(attrs, :jido, jido_instance)
 
     attrs
     |> Map.put(:id, id)

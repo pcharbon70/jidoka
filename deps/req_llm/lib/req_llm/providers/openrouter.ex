@@ -18,6 +18,9 @@ defmodule ReqLLM.Providers.OpenRouter do
   - `openrouter_repetition_penalty` - Repetition penalty for reducing repetitive text
   - `openrouter_min_p` - Minimum probability threshold for sampling
   - `openrouter_top_a` - Top-a sampling parameter
+  - `openrouter_structured_output_mode` - Enables `:json_schema` structured output (when tool calls are not supported)
+  - `openrouter_usage` - Usage options (e.g., `%{include: true}`)
+  - `openrouter_plugins` - Array of plugins (e.g., `[%{id: "web"}]`)
   - `app_referer` - HTTP-Referer header for app identification
   - `app_title` - X-Title header for app title in rankings
 
@@ -89,6 +92,23 @@ defmodule ReqLLM.Providers.OpenRouter do
     app_title: [
       type: :string,
       doc: "X-Title header for app title in OpenRouter rankings"
+    ],
+    response_format: [
+      type: {:or, [:map, :keyword_list]},
+      doc: "Response format (e.g. %{type: \"json_schema\"})"
+    ],
+    openrouter_structured_output_mode: [
+      type: {:in, [:json_schema]},
+      doc:
+        "Structured output mode. Only :json_schema is supported, which enables JSON schema support instead of using tools. Useful when tool calls are not supported by the endpoint."
+    ],
+    openrouter_usage: [
+      type: :map,
+      doc: "OpenRouter usage options. Example: %{include: true}"
+    ],
+    openrouter_plugins: [
+      type: {:list, :map},
+      doc: "OpenRouter plugins. Example: [%{id: \"web\"}]"
     ]
   ]
 
@@ -110,39 +130,61 @@ defmodule ReqLLM.Providers.OpenRouter do
   """
   @impl ReqLLM.Provider
   def prepare_request(:object, model_spec, prompt, opts) do
+    provider_opts = Keyword.get(opts, :provider_options, [])
     compiled_schema = Keyword.fetch!(opts, :compiled_schema)
 
-    structured_output_tool =
-      ReqLLM.Tool.new!(
-        name: "structured_output",
-        description: "Generate structured output matching the provided schema",
-        parameter_schema: compiled_schema.schema,
-        callback: fn _args -> {:ok, "structured output generated"} end
-      )
+    opts =
+      if Keyword.get(provider_opts, :openrouter_structured_output_mode) == :json_schema do
+        json_schema_map = ReqLLM.Schema.to_json(compiled_schema.schema)
 
-    opts_with_tool =
-      opts
-      |> Keyword.update(:tools, [structured_output_tool], &[structured_output_tool | &1])
-      |> Keyword.put(:tool_choice, %{type: "function", function: %{name: "structured_output"}})
+        json_schema_payload = %{
+          type: "json_schema",
+          json_schema: %{
+            name: "structured_output",
+            strict: true,
+            schema: json_schema_map
+          }
+        }
 
-    # Adjust max_tokens for structured output with OpenRouter-specific minimums
-    opts_with_tokens =
-      case Keyword.get(opts_with_tool, :max_tokens) do
-        nil -> Keyword.put(opts_with_tool, :max_tokens, 4096)
-        tokens when tokens < 200 -> Keyword.put(opts_with_tool, :max_tokens, 200)
-        _tokens -> opts_with_tool
+        updated_provider_opts =
+          provider_opts
+          |> Keyword.put(:response_format, json_schema_payload)
+          |> Keyword.delete(:openrouter_structured_output_mode)
+
+        opts
+        |> Keyword.put(:provider_options, updated_provider_opts)
+        |> Keyword.delete(:tools)
+        |> Keyword.delete(:tool_choice)
+      else
+        structured_output_tool =
+          ReqLLM.Tool.new!(
+            name: "structured_output",
+            description: "Generate structured output matching the provided schema",
+            parameter_schema: compiled_schema.schema,
+            callback: fn _args -> {:ok, "structured output generated"} end
+          )
+
+        opts
+        |> Keyword.update(:tools, [structured_output_tool], &[structured_output_tool | &1])
+        |> Keyword.put(:tool_choice, %{type: "function", function: %{name: "structured_output"}})
+        |> Keyword.delete(:response_format)
       end
 
-    # Preserve the :object operation for response decoding
-    opts_with_operation = Keyword.put(opts_with_tokens, :operation, :object)
+    opts =
+      case Keyword.get(opts, :max_tokens) do
+        nil -> Keyword.put(opts, :max_tokens, 4096)
+        tokens when tokens < 200 -> Keyword.put(opts, :max_tokens, 200)
+        _tokens -> opts
+      end
 
-    # Use the default chat preparation with structured output tools
+    opts = Keyword.put(opts, :operation, :object)
+
     ReqLLM.Provider.Defaults.prepare_request(
       __MODULE__,
       :chat,
       model_spec,
       prompt,
-      opts_with_operation
+      opts
     )
   end
 
@@ -243,37 +285,30 @@ defmodule ReqLLM.Providers.OpenRouter do
   """
   @impl ReqLLM.Provider
   def encode_body(request) do
-    # Start with default encoding
-    request = ReqLLM.Provider.Defaults.default_encode_body(request)
+    body = build_body(request)
+    request = ReqLLM.Provider.Defaults.encode_body_from_map(request, body)
+    maybe_add_attribution_headers(request, request.options)
+  end
 
-    # Parse the encoded body to add OpenRouter-specific options
-    body = Jason.decode!(request.body)
-
-    enhanced_body =
-      body
-      |> translate_tool_choice_format()
-      |> encode_reasoning_details_in_messages()
-      |> maybe_put(:models, request.options[:openrouter_models])
-      |> maybe_put(:route, request.options[:openrouter_route])
-      |> maybe_put(:provider, request.options[:openrouter_provider])
-      |> maybe_put(:transforms, request.options[:openrouter_transforms])
-      |> maybe_put(:top_k, request.options[:openrouter_top_k])
-      |> maybe_put(:repetition_penalty, request.options[:openrouter_repetition_penalty])
-      |> maybe_put(:min_p, request.options[:openrouter_min_p])
-      |> maybe_put(:top_a, request.options[:openrouter_top_a])
-      |> maybe_put(:top_logprobs, request.options[:openrouter_top_logprobs])
-      |> maybe_put(:reasoning_effort, request.options[:reasoning_effort])
-      |> add_openrouter_specific_options(request.options)
-      |> add_stream_options(request.options)
-
-    # Re-encode with OpenRouter extensions
-    encoded_body = Jason.encode!(enhanced_body)
-    request = Map.put(request, :body, encoded_body)
-
-    # Add OpenRouter app attribution headers
-    request = maybe_add_attribution_headers(request, request.options)
-
-    request
+  @impl ReqLLM.Provider
+  def build_body(request) do
+    ReqLLM.Provider.Defaults.default_build_body(request)
+    |> translate_tool_choice_format()
+    |> encode_reasoning_details_in_messages()
+    |> maybe_put(:models, request.options[:openrouter_models])
+    |> maybe_put(:route, request.options[:openrouter_route])
+    |> maybe_put(:provider, request.options[:openrouter_provider])
+    |> maybe_put(:transforms, request.options[:openrouter_transforms])
+    |> maybe_put(:top_k, request.options[:openrouter_top_k])
+    |> maybe_put(:repetition_penalty, request.options[:openrouter_repetition_penalty])
+    |> maybe_put(:min_p, request.options[:openrouter_min_p])
+    |> maybe_put(:top_a, request.options[:openrouter_top_a])
+    |> maybe_put(:top_logprobs, request.options[:openrouter_top_logprobs])
+    |> maybe_put(:reasoning_effort, request.options[:reasoning_effort])
+    |> maybe_put(:usage, request.options[:openrouter_usage])
+    |> maybe_put(:plugins, request.options[:openrouter_plugins])
+    |> add_openrouter_specific_options(request.options)
+    |> add_stream_options(request.options)
   end
 
   # Helper function for adding OpenRouter-specific body options not covered by defaults
@@ -459,6 +494,12 @@ defmodule ReqLLM.Providers.OpenRouter do
     }
   end
 
+  defp encode_reasoning_details_in_messages(%{messages: messages} = body)
+       when is_list(messages) do
+    updated_messages = Enum.map(messages, &encode_message_reasoning_details/1)
+    Map.put(body, :messages, updated_messages)
+  end
+
   defp encode_reasoning_details_in_messages(%{"messages" => messages} = body)
        when is_list(messages) do
     updated_messages = Enum.map(messages, &encode_message_reasoning_details/1)
@@ -466,6 +507,20 @@ defmodule ReqLLM.Providers.OpenRouter do
   end
 
   defp encode_reasoning_details_in_messages(body), do: body
+
+  defp encode_message_reasoning_details(%{reasoning_details: details} = message)
+       when is_list(details) and details != [] do
+    encoded_details =
+      details
+      |> Enum.map(&encode_single_reasoning_detail/1)
+      |> Enum.reject(&is_nil/1)
+
+    if encoded_details == [] do
+      Map.delete(message, :reasoning_details)
+    else
+      Map.put(message, :reasoning_details, encoded_details)
+    end
+  end
 
   defp encode_message_reasoning_details(%{"reasoning_details" => details} = message)
        when is_list(details) and details != [] do

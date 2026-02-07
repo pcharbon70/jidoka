@@ -12,6 +12,7 @@
   "models": {
     "Ling-1T": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -60,6 +61,7 @@
       },
       "model": null,
       "name": "Ling-1T",
+      "pricing": null,
       "provider": "bailing",
       "provider_model_id": null,
       "release_date": "2025-10",
@@ -67,6 +69,7 @@
     },
     "Ring-1T": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -119,11 +122,13 @@
       },
       "model": null,
       "name": "Ring-1T",
+      "pricing": null,
       "provider": "bailing",
       "provider_model_id": null,
       "release_date": "2025-10",
       "tags": null
     }
   },
-  "name": "Bailing"
+  "name": "Bailing",
+  "pricing_defaults": null
 }

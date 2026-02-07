@@ -12,6 +12,7 @@
   "models": {
     "deepseek/deepseek-r1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -61,6 +62,7 @@
       },
       "model": null,
       "name": "Deepseek R1",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-01-20",
@@ -68,6 +70,7 @@
     },
     "deepseek/deepseek-v3.2:thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -120,6 +123,7 @@
       },
       "model": null,
       "name": "Deepseek V3.2 Thinking",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -127,6 +131,7 @@
     },
     "meta-llama/llama-3.3-70b-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -176,6 +181,7 @@
       },
       "model": null,
       "name": "Llama 3.3 70b Instruct",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2024-12-06",
@@ -183,6 +189,7 @@
     },
     "meta-llama/llama-4-maverick": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -232,6 +239,7 @@
       },
       "model": null,
       "name": "Llama 4 Maverick",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-04-05",
@@ -239,6 +247,7 @@
     },
     "minimax/minimax-m2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -291,6 +300,7 @@
       },
       "model": null,
       "name": "Minimax M2.1",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-12-23",
@@ -298,6 +308,7 @@
     },
     "mistralai/devstral-2-123b-instruct-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -347,6 +358,7 @@
       },
       "model": null,
       "name": "Devstral 2 123b Instruct 2512",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-12-11",
@@ -354,6 +366,7 @@
     },
     "mistralai/ministral-14b-instruct-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -403,6 +416,7 @@
       },
       "model": null,
       "name": "Ministral 14b Instruct 2512",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-12-01",
@@ -410,6 +424,7 @@
     },
     "mistralai/mistral-large-3-675b-instruct-2512": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -459,6 +474,7 @@
       },
       "model": null,
       "name": "Mistral Large 3 675b Instruct 2512",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-12-02",
@@ -466,6 +482,7 @@
     },
     "moonshotai/kimi-k2-instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -518,6 +535,7 @@
       },
       "model": null,
       "name": "Kimi K2 Instruct",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2024-07-18",
@@ -525,6 +543,7 @@
     },
     "moonshotai/kimi-k2-thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -574,6 +593,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2024-11-01",
@@ -581,6 +601,7 @@
     },
     "nousresearch/hermes-4-405b:thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -630,6 +651,7 @@
       },
       "model": null,
       "name": "Hermes 4 405b Thinking",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2024-08-13",
@@ -637,6 +659,7 @@
     },
     "nvidia/llama-3_3-nemotron-super-49b-v1_5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -686,6 +709,7 @@
       },
       "model": null,
       "name": "Llama 3 3 Nemotron Super 49B V1 5",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-08-08",
@@ -693,6 +717,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -742,6 +767,7 @@
       },
       "model": null,
       "name": "GPT Oss 120b",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-06-23",
@@ -749,6 +775,7 @@
     },
     "qwen/qwen3-235b-a22b-thinking-2507": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -798,6 +825,7 @@
       },
       "model": null,
       "name": "Qwen3 235B A22B Thinking 2507",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-07-01",
@@ -805,6 +833,7 @@
     },
     "qwen/qwen3-coder": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -854,6 +883,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-01-15",
@@ -861,6 +891,7 @@
     },
     "z-ai/glm-4.6": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -910,6 +941,7 @@
       },
       "model": null,
       "name": "GLM 4.6",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2024-11-15",
@@ -917,6 +949,7 @@
     },
     "z-ai/glm-4.6:thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -966,6 +999,7 @@
       },
       "model": null,
       "name": "GLM 4.6 Thinking",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-04-07",
@@ -973,6 +1007,7 @@
     },
     "zai-org/glm-4.5-air": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1022,6 +1057,7 @@
       },
       "model": null,
       "name": "GLM 4.5 Air",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -1029,6 +1065,7 @@
     },
     "zai-org/glm-4.5-air:thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1078,6 +1115,7 @@
       },
       "model": null,
       "name": "GLM 4.5 Air Thinking",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-04-07",
@@ -1085,6 +1123,7 @@
     },
     "zai-org/glm-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1137,6 +1176,7 @@
       },
       "model": null,
       "name": "GLM 4.7",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-12-22",
@@ -1144,6 +1184,7 @@
     },
     "zai-org/glm-4.7:thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -1196,11 +1237,13 @@
       },
       "model": null,
       "name": "GLM 4.7 Thinking",
+      "pricing": null,
       "provider": "nano_gpt",
       "provider_model_id": null,
       "release_date": "2025-04-07",
       "tags": null
     }
   },
-  "name": "NanoGPT"
+  "name": "NanoGPT",
+  "pricing_defaults": null
 }

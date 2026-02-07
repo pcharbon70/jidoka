@@ -48,6 +48,8 @@ defmodule Jido.Sensor.Runtime do
 
   require Logger
 
+  alias Jido.Signal.Dispatch
+
   @type server :: pid() | atom() | {:via, module(), term()}
 
   @doc """
@@ -115,6 +117,7 @@ defmodule Jido.Sensor.Runtime do
     opts = normalize_opts(opts)
 
     with {:ok, sensor} <- get_required(opts, :sensor),
+         true <- Code.ensure_loaded?(sensor),
          {:ok, config} <- parse_config(sensor, opts[:config] || %{}),
          context = opts[:context] || %{},
          id = opts[:id] || Jido.Util.generate_id(),
@@ -293,8 +296,8 @@ defmodule Jido.Sensor.Runtime do
         send(agent_ref, {:signal, signal})
 
       agent_ref != nil ->
-        if Code.ensure_loaded?(Jido.Signal.Dispatch) do
-          Jido.Signal.Dispatch.dispatch(signal, agent_ref)
+        if Code.ensure_loaded?(Dispatch) do
+          Dispatch.dispatch(signal, agent_ref)
         else
           Logger.warning("Jido.Signal.Dispatch not available, cannot deliver signal")
         end

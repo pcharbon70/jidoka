@@ -12,6 +12,7 @@
   "models": {
     "MiniMaxAI/MiniMax-M2": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -63,6 +64,7 @@
       },
       "model": null,
       "name": "MiniMax M2",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-11-13",
@@ -70,6 +72,7 @@
     },
     "MiniMaxAI/MiniMax-M2.1": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -120,6 +123,7 @@
       },
       "model": null,
       "name": "MiniMax M2.1",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-12-23",
@@ -127,6 +131,7 @@
     },
     "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -175,6 +180,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -182,6 +188,7 @@
     },
     "Qwen/Qwen3-Coder-480B-A35B-Instruct-Turbo": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -230,6 +237,7 @@
       },
       "model": null,
       "name": "Qwen3 Coder 480B A35B Instruct Turbo",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-07-23",
@@ -237,6 +245,7 @@
     },
     "moonshotai/Kimi-K2-Instruct": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -285,6 +294,7 @@
       },
       "model": null,
       "name": "Kimi K2",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-07-11",
@@ -292,6 +302,7 @@
     },
     "moonshotai/Kimi-K2-Thinking": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -343,6 +354,7 @@
       },
       "model": null,
       "name": "Kimi K2 Thinking",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-11-06",
@@ -350,6 +362,7 @@
     },
     "openai/gpt-oss-120b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -398,6 +411,7 @@
       },
       "model": null,
       "name": "GPT OSS 120B",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -405,6 +419,7 @@
     },
     "openai/gpt-oss-20b": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -453,6 +468,7 @@
       },
       "model": null,
       "name": "GPT OSS 20B",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-08-05",
@@ -460,6 +476,7 @@
     },
     "zai-org/GLM-4.5": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -509,6 +526,7 @@
       },
       "model": null,
       "name": "GLM-4.5",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-07-28",
@@ -516,6 +534,7 @@
     },
     "zai-org/GLM-4.7": {
       "aliases": [],
+      "base_url": null,
       "capabilities": {
         "chat": true,
         "embeddings": false,
@@ -568,11 +587,73 @@
       },
       "model": null,
       "name": "GLM-4.7",
+      "pricing": null,
       "provider": "deepinfra",
       "provider_model_id": null,
       "release_date": "2025-12-22",
       "tags": null
+    },
+    "zai-org/GLM-4.7-Flash": {
+      "aliases": [],
+      "base_url": null,
+      "capabilities": {
+        "chat": true,
+        "embeddings": false,
+        "json": {
+          "native": false,
+          "schema": false,
+          "strict": false
+        },
+        "reasoning": {
+          "enabled": true
+        },
+        "streaming": {
+          "tool_calls": true
+        },
+        "tools": {
+          "enabled": true
+        }
+      },
+      "cost": {
+        "input": 0.06,
+        "output": 0.4
+      },
+      "deprecated": false,
+      "extra": {
+        "attachment": false,
+        "family": "glm-flash",
+        "interleaved": {
+          "field": "reasoning_content"
+        },
+        "open_weights": true,
+        "temperature": true
+      },
+      "family": null,
+      "id": "zai-org/GLM-4.7-Flash",
+      "knowledge": "2025-04",
+      "last_updated": "2026-01-19",
+      "lifecycle": null,
+      "limits": {
+        "context": 202752,
+        "output": 16384
+      },
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "model": null,
+      "name": "GLM-4.7-Flash",
+      "pricing": null,
+      "provider": "deepinfra",
+      "provider_model_id": null,
+      "release_date": "2026-01-19",
+      "tags": null
     }
   },
-  "name": "Deep Infra"
+  "name": "Deep Infra",
+  "pricing_defaults": null
 }
