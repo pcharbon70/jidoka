@@ -90,3 +90,22 @@ config :jidoka, :session,
 #     params: %{token: System.get_env("PHOENIX_AUTH_TOKEN") || ""},
 #     reconnect: true
 #   ]
+
+# A2A Gateway - Production Configuration
+# Note: Configure A2A Gateway via environment variables
+# Example:
+#   A2A_DIRECTORY_URL=https://directory.example.com/a2a
+#   A2A_AUTH_TOKEN=your-a2a-token
+#   A2A_ENDPOINT_URL=https://jidoka.example.com/a2a/rpc
+#
+# config :jidoka, :a2a_gateway,
+#   directory_url: System.get_env("A2A_DIRECTORY_URL"),
+#   agent_card: %{
+#     endpoints: %{
+#       rpc: System.get_env("A2A_ENDPOINT_URL") || "https://jidoka.example.com/a2a/rpc"
+#     },
+#     authentication: %{
+#       type: "bearer",
+#       token: System.get_env("A2A_AUTH_TOKEN") || ""
+#     }
+#   }

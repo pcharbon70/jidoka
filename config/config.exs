@@ -92,6 +92,34 @@ config :jidoka, :mcp_servers, %{}
 #   ]
 config :jidoka, :phoenix_connections, %{}
 
+# A2A (Agent-to-Agent) Gateway Configuration (Phase 8.5)
+# Configure A2A Gateway for cross-framework agent communication
+config :jidoka, :a2a_gateway,
+  # Agent Card configuration
+  agent_card: %{
+    # Agent type classification
+    type: ["Jidoka", "Coordinator"],
+    # Additional capabilities to advertise
+    capabilities: %{
+      tools: [],
+      accepts: ["text/plain", "application/json", "application/json-rpc+json"],
+      produces: ["application/json", "application/json-rpc+json"]
+    }
+  },
+  # Agent Directory for discovery (optional)
+  directory_url: nil,
+  # Known remote agents (static configuration)
+  known_agents: %{},
+  # Local agents allowed to receive external A2A messages
+  allowed_agents: [:coordinator],
+  # Request timeout in milliseconds
+  timeout: 30_000,
+  # HTTP client options
+  http_options: [
+    recv_timeout: 30_000,
+    max_retries: 3
+  ]
+
 # Logger Configuration
 config :logger,
   backends: [:console],

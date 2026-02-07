@@ -18,6 +18,9 @@ defmodule Jidoka.Signals do
   - `phoenix_event/4` - Phoenix Channels message events
   - `phoenix_connection_state/2` - Phoenix connection state changes
   - `phoenix_channel_state/3` - Phoenix channel state changes
+  - `a2a_message/2` - A2A message sent or received
+  - `a2a_agent_discovered/2` - A2A agent discovered
+  - `a2a_connection_state/1` - A2A gateway connection state changes
 
   ## Options
 
@@ -61,7 +64,10 @@ defmodule Jidoka.Signals do
     IndexingStatus,
     PhoenixEvent,
     PhoenixConnectionState,
-    PhoenixChannelState
+    PhoenixChannelState,
+    A2AMessage,
+    A2AAgentDiscovered,
+    A2AConnectionState
   }
 
   @type signal :: Jido.Signal.t()
@@ -433,6 +439,154 @@ defmodule Jidoka.Signals do
     create_and_dispatch(PhoenixChannelState, data, opts)
   end
 
+  @doc """
+  Creates and optionally dispatches an A2A message signal.
+
+  ## Parameters
+
+  - `direction` - Message direction: `:outgoing` or `:incoming`
+  - `from_agent` - Source agent ID
+  - `to_agent` - Target agent ID
+  - `method` - JSON-RPC method invoked
+  - `message` - Message content map
+  - `status` - Request status: `:pending`, `:success`, `:error`
+  - `opts` - Keyword list of options
+
+  ## Options
+
+  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
+  - `:source` - Override default source (`/jido_coder/a2a`)
+  - `:subject` - Custom subject for the signal
+  - `:gateway_name` - Name of the A2A gateway
+  - `:response` - Response for completed requests
+  - `:session_id` - Associated session ID
+
+  ## Examples
+
+      {:ok, signal} = Signals.a2a_message(
+        :outgoing,
+        "agent:jidoka:coordinator",
+        "agent:external:assistant",
+        "agent.send_message",
+        %{type: "text", content: "Hello!"},
+        :pending
+      )
+
+      {:ok, signal} = Signals.a2a_message(
+        :incoming,
+        "agent:external:assistant",
+        "agent:jidoka:coordinator",
+        "agent.send_message",
+        %{type: "text", content: "Hi back!"},
+        :success,
+        gateway_name: :a2a_gateway
+      )
+
+  """
+  @spec a2a_message(atom(), String.t(), String.t(), String.t(), map(), atom(), Keyword.t()) :: signal_result()
+  def a2a_message(direction, from_agent, to_agent, method, message, status, opts \\ [])
+      when is_atom(direction) and is_binary(from_agent) and is_binary(to_agent) and
+           is_binary(method) and is_map(message) and is_atom(status) do
+    data =
+      %{
+        direction: direction,
+        from_agent: from_agent,
+        to_agent: to_agent,
+        method: method,
+        message: message,
+        status: status
+      }
+      |> maybe_put_gateway_name(opts)
+      |> maybe_put_response(opts)
+      |> maybe_put_session_id(opts)
+
+    create_and_dispatch(A2AMessage, data, opts)
+  end
+
+  @doc """
+  Creates and optionally dispatches an A2A agent discovered signal.
+
+  ## Parameters
+
+  - `agent_id` - ID of the discovered agent
+  - `agent_card` - The agent's card/map
+  - `source` - Discovery source: `:directory`, `:static`, `:cache`
+  - `opts` - Keyword list of options
+
+  ## Options
+
+  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
+  - `:source` - Override default source (`/jido_coder/a2a`)
+  - `:subject` - Custom subject for the signal
+  - `:gateway_name` - Name of the A2A gateway
+  - `:session_id` - Associated session ID
+
+  ## Examples
+
+      {:ok, signal} = Signals.a2a_agent_discovered(
+        "agent:external:assistant",
+        %{name: "External Assistant", type: ["Assistant"]},
+        :directory
+      )
+
+  """
+  @spec a2a_agent_discovered(String.t(), term(), atom(), Keyword.t()) :: signal_result()
+  def a2a_agent_discovered(agent_id, agent_card, source, opts \\ [])
+      when is_binary(agent_id) and is_atom(source) do
+    data =
+      %{
+        agent_id: agent_id,
+        agent_card: agent_card,
+        source: source
+      }
+      |> maybe_put_gateway_name(opts)
+      |> maybe_put_session_id(opts)
+
+    create_and_dispatch(A2AAgentDiscovered, data, opts)
+  end
+
+  @doc """
+  Creates and optionally dispatches an A2A connection state signal.
+
+  ## Parameters
+
+  - `gateway_name` - Name of the A2A gateway
+  - `state` - Connection state: `:initializing`, `:ready`, `:closing`, `:terminated`
+  - `opts` - Keyword list of options
+
+  ## Options
+
+  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
+  - `:source` - Override default source (`/jido_coder/a2a`)
+  - `:subject` - Custom subject for the signal
+  - `:reason` - Reason for state change
+  - `:session_id` - Associated session ID
+
+  ## Examples
+
+      {:ok, signal} = Signals.a2a_connection_state(:a2a_gateway, :ready)
+
+      {:ok, signal} = Signals.a2a_connection_state(
+        :a2a_gateway,
+        :closing,
+        reason: :shutdown
+      )
+
+  """
+  @spec a2a_connection_state(atom(), atom(), Keyword.t()) :: signal_result()
+  def a2a_connection_state(gateway_name, state, opts \\ [])
+      when is_atom(gateway_name) and is_atom(state) do
+    data =
+      %{
+        gateway_name: gateway_name,
+        state: state
+      }
+      |> maybe_put_reason(opts)
+      |> maybe_put_session_id(opts)
+
+    create_and_dispatch(A2AConnectionState, data, opts)
+  end
+
   # Private helper for consistent signal creation and dispatch
 
   defp create_and_dispatch(signal_module, data, opts) do
@@ -549,6 +703,13 @@ defmodule Jidoka.Signals do
     case Keyword.get(opts, :response) do
       nil -> data
       response -> Map.put(data, :response, response)
+    end
+  end
+
+  defp maybe_put_gateway_name(data, opts) do
+    case Keyword.get(opts, :gateway_name) do
+      nil -> data
+      gateway_name -> Map.put(data, :gateway_name, gateway_name)
     end
   end
 end

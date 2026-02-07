@@ -55,3 +55,14 @@ config :jidoka, :session,
 #     params: %{},
 #     auto_join_channels: [{"room:lobby", %{}}]
 #   ]
+
+# A2A Gateway - Development Configuration
+# Example A2A Gateway configuration for development
+# config :jidoka, :a2a_gateway,
+#   directory_url: "http://localhost:4000/a2a/directory",
+#   known_agents: %{
+#     "agent:test:external" => %{
+#       endpoint: "http://localhost:5000/a2a/rpc",
+#       authentication: %{token: "dev-token"}
+#     }
+#   }

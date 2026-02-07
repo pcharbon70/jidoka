@@ -102,7 +102,9 @@ defmodule Jidoka.Application do
       # MCP Connection Supervisor (Phase 8.3)
       {Jidoka.Protocol.MCP.ConnectionSupervisor, []},
       # Phoenix Connection Supervisor (Phase 8.4)
-      {Jidoka.Protocol.Phoenix.ConnectionSupervisor, []}
+      {Jidoka.Protocol.Phoenix.ConnectionSupervisor, []},
+      # A2A Connection Supervisor (Phase 8.5)
+      {Jidoka.Protocol.A2A.ConnectionSupervisor, []}
     ]
 
     # Use one_for_one strategy with restart intensity limits
