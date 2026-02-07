@@ -15,6 +15,9 @@ defmodule Jidoka.Signals do
   - `broadcast_event/3` - Client broadcast events
   - `chat_request/2` - User chat requests
   - `indexing_status/2` - Code indexing status updates
+  - `phoenix_event/4` - Phoenix Channels message events
+  - `phoenix_connection_state/2` - Phoenix connection state changes
+  - `phoenix_channel_state/3` - Phoenix channel state changes
 
   ## Options
 
@@ -55,7 +58,10 @@ defmodule Jidoka.Signals do
     AnalysisComplete,
     BroadcastEvent,
     ChatRequest,
-    IndexingStatus
+    IndexingStatus,
+    PhoenixEvent,
+    PhoenixConnectionState,
+    PhoenixChannelState
   }
 
   @type signal :: Jido.Signal.t()
@@ -280,6 +286,153 @@ defmodule Jidoka.Signals do
     create_and_dispatch(ChatRequest, data, opts)
   end
 
+  @doc """
+  Creates and optionally dispatches a Phoenix Channels event signal.
+
+  ## Parameters
+
+  - `connection_name` - Name of the connection receiving the event
+  - `topic` - Phoenix channel topic
+  - `event` - Event name
+  - `payload` - Event payload map
+  - `opts` - Keyword list of options
+
+  ## Options
+
+  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
+  - `:source` - Override default source (`/jido_coder/phoenix`)
+  - `:subject` - Custom subject for the signal
+  - `:session_id` - Associated session ID
+
+  ## Examples
+
+      {:ok, signal} = Signals.phoenix_event(
+        :my_connection,
+        "room:lobby",
+        "new_msg",
+        %{body: "Hello!"}
+      )
+
+      {:ok, signal} = Signals.phoenix_event(
+        :my_connection,
+        "user:123",
+        "presence_state",
+        %{users: ["user1", "user2"]},
+        session_id: "session-123"
+      )
+
+  """
+  @spec phoenix_event(atom(), String.t(), String.t(), map(), Keyword.t()) :: signal_result()
+  def phoenix_event(connection_name, topic, event, payload, opts \\ [])
+      when is_atom(connection_name) and is_binary(topic) and is_binary(event) and is_map(payload) do
+    data =
+      %{
+        connection_name: connection_name,
+        topic: topic,
+        event: event,
+        payload: payload
+      }
+      |> maybe_put_session_id(opts)
+
+    create_and_dispatch(PhoenixEvent, data, opts)
+  end
+
+  @doc """
+  Creates and optionally dispatches a Phoenix connection state signal.
+
+  ## Parameters
+
+  - `connection_name` - Name of the connection
+  - `state` - Connection state: `:connected`, `:disconnected`, `:connecting`
+  - `opts` - Keyword list of options
+
+  ## Options
+
+  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
+  - `:source` - Override default source (`/jido_coder/phoenix`)
+  - `:subject` - Custom subject for the signal
+  - `:session_id` - Associated session ID
+  - `:reason` - Reason for state change
+  - `:reconnect_attempts` - Number of reconnect attempts
+
+  ## Examples
+
+      {:ok, signal} = Signals.phoenix_connection_state(:my_connection, :connected)
+
+      {:ok, signal} = Signals.phoenix_connection_state(
+        :my_connection,
+        :disconnected,
+        reason: :closed,
+        reconnect_attempts: 1
+      )
+
+  """
+  @spec phoenix_connection_state(atom(), atom(), Keyword.t()) :: signal_result()
+  def phoenix_connection_state(connection_name, state, opts \\ [])
+      when is_atom(connection_name) and is_atom(state) do
+    data =
+      %{
+        connection_name: connection_name,
+        state: state
+      }
+      |> maybe_put_reason(opts)
+      |> maybe_put_reconnect_attempts(opts)
+      |> maybe_put_session_id(opts)
+
+    create_and_dispatch(PhoenixConnectionState, data, opts)
+  end
+
+  @doc """
+  Creates and optionally dispatches a Phoenix channel state signal.
+
+  ## Parameters
+
+  - `connection_name` - Name of the connection
+  - `topic` - Channel topic
+  - `state` - Channel state: `:joined`, `:left`, `:closed`
+  - `opts` - Keyword list of options
+
+  ## Options
+
+  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
+  - `:source` - Override default source (`/jido_coder/phoenix`)
+  - `:subject` - Custom subject for the signal
+  - `:session_id` - Associated session ID
+  - `:response` - Response from join (if applicable)
+  - `:reason` - Reason for state change
+
+  ## Examples
+
+      {:ok, signal} = Signals.phoenix_channel_state(
+        :my_connection,
+        "room:lobby",
+        :joined
+      )
+
+      {:ok, signal} = Signals.phoenix_channel_state(
+        :my_connection,
+        "room:lobby",
+        :left,
+        reason: :user_leave
+      )
+
+  """
+  @spec phoenix_channel_state(atom(), String.t(), atom(), Keyword.t()) :: signal_result()
+  def phoenix_channel_state(connection_name, topic, state, opts \\ [])
+      when is_atom(connection_name) and is_binary(topic) and is_atom(state) do
+    data =
+      %{
+        connection_name: connection_name,
+        topic: topic,
+        state: state
+      }
+      |> maybe_put_response(opts)
+      |> maybe_put_reason(opts)
+      |> maybe_put_session_id(opts)
+
+    create_and_dispatch(PhoenixChannelState, data, opts)
+  end
+
   # Private helper for consistent signal creation and dispatch
 
   defp create_and_dispatch(signal_module, data, opts) do
@@ -375,6 +528,27 @@ defmodule Jidoka.Signals do
     case Keyword.get(opts, :error_message) do
       nil -> data
       error_message -> Map.put(data, :error_message, error_message)
+    end
+  end
+
+  defp maybe_put_reason(data, opts) do
+    case Keyword.get(opts, :reason) do
+      nil -> data
+      reason -> Map.put(data, :reason, reason)
+    end
+  end
+
+  defp maybe_put_reconnect_attempts(data, opts) do
+    case Keyword.get(opts, :reconnect_attempts) do
+      nil -> data
+      reconnect_attempts -> Map.put(data, :reconnect_attempts, reconnect_attempts)
+    end
+  end
+
+  defp maybe_put_response(data, opts) do
+    case Keyword.get(opts, :response) do
+      nil -> data
+      response -> Map.put(data, :response, response)
     end
   end
 end
