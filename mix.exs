@@ -67,7 +67,9 @@ defmodule Jidoka.MixProject do
       # Elixir ontology
       {:elixir_ontologies, path: "../../elixir-ontologies"},
       # Triple store backend
-      {:triple_store, path: "/home/ducky/code/triple_store", override: true}
+      {:triple_store, path: "/home/ducky/code/triple_store", override: true},
+      # JSON encoding for tool schemas
+      {:jason, "~> 1.4"}
     ]
   end
 end
