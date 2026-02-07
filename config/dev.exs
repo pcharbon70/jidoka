@@ -44,3 +44,14 @@ config :jidoka, :session,
   idle_timeout: 1_800_000,
   # 24 hours
   absolute_timeout: 86_400_000
+
+# Phoenix Channels - Development Configuration
+# Example local development Phoenix connection
+# config :jidoka, :phoenix_connections,
+#   local_dev: [
+#     name: :phoenix_local,
+#     uri: "ws://localhost:4000/socket/websocket",
+#     headers: [],
+#     params: %{},
+#     auto_join_channels: [{"room:lobby", %{}}]
+#   ]

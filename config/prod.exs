@@ -74,3 +74,19 @@ config :jidoka, :session,
   # Less frequent cleanup in production
   # 5 minutes
   cleanup_interval: 300_000
+
+# Phoenix Channels - Production Configuration
+# Note: Configure Phoenix connections via environment variables
+# Example:
+#   PHOENIX_BACKEND_URL=wss://example.com/socket/websocket
+#   PHOENIX_API_KEY=your-api-key
+#   PHOENIX_AUTH_TOKEN=your-token
+#
+# config :jidoka, :phoenix_connections,
+#   backend_service: [
+#     name: :phoenix_backend,
+#     uri: System.get_env("PHOENIX_BACKEND_URL") || "wss://example.com/socket/websocket",
+#     headers: [{"X-API-Key", System.get_env("PHOENIX_API_KEY") || ""}],
+#     params: %{token: System.get_env("PHOENIX_AUTH_TOKEN") || ""},
+#     reconnect: true
+#   ]

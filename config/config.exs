@@ -80,6 +80,18 @@ config :jidoka, :session,
 #   ]
 config :jidoka, :mcp_servers, %{}
 
+# Phoenix Channels Configuration (Phase 8.4)
+# Configure Phoenix Channels connections here, e.g.:
+# config :jidoka, :phoenix_connections,
+#   backend_service: [
+#     name: :phoenix_backend,
+#     uri: "ws://localhost:4000/socket/websocket",
+#     headers: [{"X-API-Key", "your-api-key"}],
+#     params: %{token: "auth-token"},
+#     auto_join_channels: [{"room:lobby", %{}}]
+#   ]
+config :jidoka, :phoenix_connections, %{}
+
 # Logger Configuration
 config :logger,
   backends: [:console],

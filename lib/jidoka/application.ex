@@ -14,6 +14,10 @@ defmodule Jidoka.Application do
   ├── Jidoka.Indexing.CodeIndexer - added in Phase 6.2
   ├── Jidoka.ProtocolSupervisor (DynamicSupervisor)
   │   └── Protocol connections (MCP, Phoenix, A2A) - added in later phases
+  ├── Jidoka.Protocol.MCP.ConnectionSupervisor (DynamicSupervisor) - Phase 8.3
+  │   └── MCP server connections
+  ├── Jidoka.Protocol.Phoenix.ConnectionSupervisor (DynamicSupervisor) - Phase 8.4
+  │   └── Phoenix Channels connections
   ├── Jidoka.AgentSupervisor (rest_for_one)
   │   └── Coordinator, CodeAnalyzer, IssueDetector - added in Phase 2.2+
   ├── Jidoka.Agents.SessionManager - added in Phase 3.1
@@ -96,7 +100,9 @@ defmodule Jidoka.Application do
       # Protocol connections (Phase 8)
       {DynamicSupervisor, name: Jidoka.ProtocolSupervisor, strategy: :one_for_one},
       # MCP Connection Supervisor (Phase 8.3)
-      {Jidoka.Protocol.MCP.ConnectionSupervisor, []}
+      {Jidoka.Protocol.MCP.ConnectionSupervisor, []},
+      # Phoenix Connection Supervisor (Phase 8.4)
+      {Jidoka.Protocol.Phoenix.ConnectionSupervisor, []}
     ]
 
     # Use one_for_one strategy with restart intensity limits

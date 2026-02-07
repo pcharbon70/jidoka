@@ -57,6 +57,8 @@ defmodule Jidoka.MixProject do
       {:jido_ai, path: "../jido_ai"},
       # Phoenix PubSub for message passing
       {:phoenix_pubsub, "~> 2.1"},
+      # Phoenix Channels client
+      {:slipstream, "~> 1.2"},
       # LLM integration
       {:req_llm, "~> 1.3", override: true},
       # RDF and SPARQL for knowledge graph
