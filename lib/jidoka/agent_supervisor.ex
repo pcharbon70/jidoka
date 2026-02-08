@@ -3,7 +3,7 @@ defmodule Jidoka.AgentSupervisor do
   Supervisor for global Jido agents.
 
   This supervisor manages the lifecycle of global agents including
-  the Coordinator and future agents (CodeAnalyzer, IssueDetector).
+  the Coordinator, LLMOrchestrator, and future agents (CodeAnalyzer, IssueDetector).
 
   Uses `:rest_for_one` strategy to ensure that if a child terminates,
   all children started after it are also terminated and restarted.
@@ -11,6 +11,7 @@ defmodule Jidoka.AgentSupervisor do
   ## Children
 
   * `Jidoka.Agents.Coordinator` - The central coordinator agent
+  * `Jidoka.Agents.LLMOrchestrator` - LLM agent with tool calling
   * (Future) CodeAnalyzer - Agent for code analysis
   * (Future) IssueDetector - Agent for issue detection
 
@@ -42,6 +43,14 @@ defmodule Jidoka.AgentSupervisor do
          agent: Jidoka.Agents.Coordinator,
          id: "coordinator-main",
          name: :coordinator,
+         jido: Jidoka.Jido
+       ]},
+      # LLM Orchestrator - handles LLM interactions with tool calling
+      {Jido.AgentServer,
+       [
+         agent: Jidoka.Agents.LLMOrchestrator,
+         id: "llm_orchestrator-main",
+         name: :llm_orchestrator,
          jido: Jidoka.Jido
        ]}
     ]
