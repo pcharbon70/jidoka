@@ -35,7 +35,11 @@ defmodule Jidoka.Tools.Registry do
     {Jidoka.Tools.SearchCode, :search_code, "search"},
     {Jidoka.Tools.AnalyzeFunction, :analyze_function, "analysis"},
     {Jidoka.Tools.ListFiles, :list_files, "filesystem"},
-    {Jidoka.Tools.GetDefinition, :get_definition, "analysis"}
+    {Jidoka.Tools.GetDefinition, :get_definition, "analysis"},
+    # Knowledge graph tools
+    {Jidoka.Tools.QueryCodebase, :query_codebase, "knowledge_graph"},
+    {Jidoka.Tools.SearchCodebase, :search_codebase, "knowledge_graph"},
+    {Jidoka.Tools.SparqlQuery, :sparql_query, "knowledge_graph"}
   ]
 
   @doc """
