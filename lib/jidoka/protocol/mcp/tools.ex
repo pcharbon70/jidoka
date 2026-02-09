@@ -82,11 +82,20 @@ defmodule Jidoka.Protocol.MCP.Tools do
   Call a tool on the MCP server.
 
   Returns the tool result content or an error.
+
+  Arguments are validated against the tool's schema before sending to the server.
   """
   def call(client \\ Client, tool_name, arguments) when is_binary(tool_name) and is_map(arguments) do
-    case Client.call_tool(client, tool_name, arguments) do
-      {:ok, response} ->
-        parse_tool_result(response)
+    with {:ok, tool} <- get_tool(client, tool_name),
+         :ok <- validate_arguments(tool, arguments),
+         {:ok, response} <- Client.call_tool(client, tool_name, arguments) do
+      parse_tool_result(response)
+    else
+      {:error, :tool_not_found} ->
+        {:error, {:tool_not_found, tool_name}}
+
+      {:error, errors} when is_list(errors) ->
+        {:error, {:validation_failed, errors}}
 
       {:error, reason} ->
         {:error, {:call_failed, reason}}
@@ -148,21 +157,74 @@ defmodule Jidoka.Protocol.MCP.Tools do
   @doc """
   Validate arguments against a tool's input schema.
 
+  Uses JSON Schema validation to ensure arguments match the tool's
+  expected input format before sending to the MCP server.
+
   Returns `:ok` if valid, `{:error, errors}` if invalid.
   """
-  def validate_arguments(_tool, _arguments) do
-    # TODO: Implement JSON Schema validation
-    # For now, we accept any map and let the server validate
-    :ok
+  def validate_arguments(tool, arguments) when is_map(tool) and is_map(arguments) do
+    schema = Map.get(tool, :input_schema, tool["input_schema"] || %{})
+
+    # If no schema, accept any arguments
+    if schema == %{} do
+      :ok
+    else
+      do_json_schema_validation(arguments, schema)
+    end
+  end
+
+  # JSON Schema validation using ex_json_schema
+  defp do_json_schema_validation(data, schema) do
+    # Resolve the schema to get a validated root schema
+    resolved_schema = ExJsonSchema.Schema.resolve(schema)
+
+    # Validate the data against the resolved schema
+    case ExJsonSchema.Validator.validate(resolved_schema, data) do
+      :ok ->
+        :ok
+
+      {:error, errors} when is_list(errors) ->
+        # Format errors for user-friendly display
+        formatted_errors = Enum.map(errors, &format_validation_error/1)
+        {:error, formatted_errors}
+    end
+  end
+
+  # Format validation errors from ex_json_schema into readable messages
+  defp format_validation_error(error) do
+    # ex_json_schema errors look like: {"#/path/to/field", "error type"}
+    {path, error_type} = error
+
+    formatted_path =
+      path
+      |> String.replace("#", "")
+      |> String.replace(~r|^/|, "")
+      |> String.replace("/", ".")
+
+    case error_type do
+      "required" -> "Required field '#{formatted_path}' is missing"
+      "type" -> "Field '#{formatted_path}' has incorrect type"
+      "minimum" -> "Field '#{formatted_path}' is below minimum value"
+      "maximum" -> "Field '#{formatted_path}' exceeds maximum value"
+      "minLength" -> "Field '#{formatted_path}' is too short"
+      "maxLength" -> "Field '#{formatted_path}' is too long"
+      "pattern" -> "Field '#{formatted_path}' does not match required pattern"
+      "minItems" -> "Array '#{formatted_path}' has too few items"
+      "maxItems" -> "Array '#{formatted_path}' has too many items"
+      "enum" -> "Field '#{formatted_path}' is not one of the allowed values"
+      _ -> "Validation error at #{formatted_path}: #{error_type}"
+    end
   end
 
   ## Private Functions
 
-  defp parse_tools(%{"tools" => tools}) when is_list(tools) do
+  @doc false
+  def parse_tools(%{"tools" => tools}) when is_list(tools) do
     Enum.map(tools, &parse_tool/1)
   end
 
-  defp parse_tools(_other) do
+  @doc false
+  def parse_tools(_other) do
     []
   end
 
@@ -174,7 +236,8 @@ defmodule Jidoka.Protocol.MCP.Tools do
     }
   end
 
-  defp parse_tool_result(%{"result" => result}) when is_map(result) do
+  @doc false
+  def parse_tool_result(%{"result" => result}) when is_map(result) do
     is_error = Map.get(result, "isError", false)
 
     if is_error do
@@ -187,15 +250,18 @@ defmodule Jidoka.Protocol.MCP.Tools do
     end
   end
 
-  defp parse_tool_result(%{"error" => error}) do
+  @doc false
+  def parse_tool_result(%{"error" => error}) do
     {:error, {:rpc_error, error}}
   end
 
-  defp parse_tool_result(response) do
+  @doc false
+  def parse_tool_result(response) do
     {:error, {:unknown_format, response}}
   end
 
-  defp extract_text(%{content: content}) when is_list(content) do
+  @doc false
+  def extract_text(%{content: content}) when is_list(content) do
     text_items =
       content
       |> Enum.filter(fn item -> Map.get(item, "type") == "text" end)
@@ -209,7 +275,8 @@ defmodule Jidoka.Protocol.MCP.Tools do
     end
   end
 
-  defp extract_text(_) do
+  @doc false
+  def extract_text(_) do
     {:error, :invalid_format}
   end
 
@@ -242,7 +309,8 @@ defmodule Jidoka.Protocol.MCP.Tools do
     |> Enum.join("\n")
   end
 
-  defp tool_name_to_atom(name) when is_binary(name) do
+  @doc false
+  def tool_name_to_atom(name) when is_binary(name) do
     name
     |> String.replace("-", "_")
     |> String.to_atom()

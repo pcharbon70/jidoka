@@ -1,5 +1,5 @@
 CMakeFiles/erocksdb.dir/counter_merge_operator.cc.o: \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/counter_merge_operator.cc \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/counter_merge_operator.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -183,14 +183,14 @@ CMakeFiles/erocksdb.dir/counter_merge_operator.cc.o: \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h /usr/include/assert.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice.h \
  /usr/include/c++/13/cassert /usr/include/c++/13/cstring \
  /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cleanable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/merge_operator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cleanable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/merge_operator.h \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h /usr/include/c++/13/variant \
@@ -199,8 +199,8 @@ CMakeFiles/erocksdb.dir/counter_merge_operator.cc.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/customizable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/configurable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/customizable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/configurable.h \
  /usr/include/c++/13/atomic /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -208,12 +208,12 @@ CMakeFiles/erocksdb.dir/counter_merge_operator.cc.o: \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/wide_columns.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/wide_columns.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_nif.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_drv_nif.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_int_sizes_config.h \
  /usr/include/c++/13/stdlib.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_nif_api_funcs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/util.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/counter_merge_operator.h
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/util.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/counter_merge_operator.h

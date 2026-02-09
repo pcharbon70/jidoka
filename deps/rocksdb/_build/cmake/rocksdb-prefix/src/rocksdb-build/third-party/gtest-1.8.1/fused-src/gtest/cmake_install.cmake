@@ -1,4 +1,4 @@
-# Install script for directory: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/third-party/gtest-1.8.1/fused-src/gtest
+# Install script for directory: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/third-party/gtest-1.8.1/fused-src/gtest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

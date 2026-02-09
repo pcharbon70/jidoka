@@ -41,9 +41,12 @@ defmodule Jidoka.Protocol.MCP.RequestManager do
   Register a pending request and get a unique request ID.
 
   Returns the request ID that should be sent to the MCP server.
+
+  Note: This function captures the calling process's GenServer from
+  information automatically, so responses can be replied to correctly.
   """
-  def register_request(manager \\ __MODULE__, from, method) do
-    GenServer.call(manager, {:register, from, method})
+  def register_request(manager \\ __MODULE__, method) do
+    GenServer.call(manager, {:register, method})
   end
 
   @doc """
@@ -88,7 +91,7 @@ defmodule Jidoka.Protocol.MCP.RequestManager do
   end
 
   @impl true
-  def handle_call({:register, from, method}, _from, state) do
+  def handle_call({:register, method}, from, state) do
     request_id = state.request_counter + 1
 
     request = %{
@@ -102,7 +105,7 @@ defmodule Jidoka.Protocol.MCP.RequestManager do
       pending_requests: Map.put(state.pending_requests, request_id, request)
     }
 
-    {:reply, request_id, new_state}
+    {:reply, {:ok, request_id}, new_state}
   end
 
   def handle_call({:cancel, request_id}, _from, state) do

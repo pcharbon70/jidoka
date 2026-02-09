@@ -1,7 +1,7 @@
 CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o: \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/histogram.cc \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/histogram.cc \
  /usr/include/stdc-predef.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/histogram.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/histogram.h \
  /usr/include/c++/13/cassert \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -163,7 +163,7 @@ CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/statistics.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/statistics.h \
  /usr/include/c++/13/atomic /usr/include/c++/13/bits/atomic_base.h \
  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
@@ -177,8 +177,8 @@ CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o: \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/customizable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/configurable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/customizable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/configurable.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -186,13 +186,13 @@ CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o: \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/slice.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/slice.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/cleanable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/cleanable.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
@@ -221,9 +221,9 @@ CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/port.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/port_posix.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/port.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/port_posix.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/port_defs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/cast_util.h
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/port_defs.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/cast_util.h

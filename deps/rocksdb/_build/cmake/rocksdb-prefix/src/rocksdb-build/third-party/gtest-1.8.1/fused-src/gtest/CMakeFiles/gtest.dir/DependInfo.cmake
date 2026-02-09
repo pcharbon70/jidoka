@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/third-party/gtest-1.8.1/fused-src/gtest/gtest-all.cc" "third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.o" "gcc" "third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/third-party/gtest-1.8.1/fused-src/gtest/gtest-all.cc" "third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.o" "gcc" "third-party/gtest-1.8.1/fused-src/gtest/CMakeFiles/gtest.dir/gtest-all.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

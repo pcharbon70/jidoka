@@ -69,7 +69,9 @@ defmodule Jidoka.MixProject do
       # Triple store backend
       {:triple_store, path: "/home/ducky/code/triple_store", override: true},
       # JSON encoding for tool schemas
-      {:jason, "~> 1.4"}
+      {:jason, "~> 1.4"},
+      # JSON Schema validation for MCP tool arguments
+      {:ex_json_schema, "~> 0.11"}
     ]
   end
 end

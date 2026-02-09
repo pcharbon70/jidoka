@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/CMakeFiles/rocksdb"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/CMakeFiles/rocksdb"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/CMakeFiles/rocksdb.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/CMakeFiles/rocksdb.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/CMakeFiles/rocksdb-complete.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/CMakeFiles/rocksdb-complete.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-build.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-build.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-configure.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-configure.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-download.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-download.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-install.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-install.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-mkdir.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-mkdir.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-patch.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-patch.rule"
 		},
 		{
-			"file" : "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-update.rule"
+			"file" : "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-stamp/rocksdb-update.rule"
 		}
 	],
 	"target" : 

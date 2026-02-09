@@ -118,17 +118,45 @@ defmodule Jidoka.Protocol.A2A.Registry do
 
   ## Returns
 
-  - List of `{agent_id, pid}` tuples
+  - List of agent IDs
 
   ## Examples
 
       agents = Registry.list_agents()
-      # => [{:coordinator, #PID<0.123.0>}, {"agent:external:456", #PID<0.124.0>}]
+      # => [:coordinator, "agent:external:456"]
 
   """
-  @spec list_agents() :: [{agent_id(), pid()}]
+  @spec list_agents() :: [agent_id()]
   def list_agents do
     GenServer.call(__MODULE__, :list_agents)
+  end
+
+  @doc """
+  Looks up an agent's PID by agent ID.
+
+  Similar to lookup/1 but returns just the PID (or nil).
+
+  ## Parameters
+
+  - `agent_id` - The agent ID to look up
+
+  ## Returns
+
+  - `pid` - Agent found
+  - `nil` - Agent not registered
+
+  ## Examples
+
+      pid = Registry.whereis(:coordinator)
+      nil = Registry.whereis(:unknown_agent)
+
+  """
+  @spec whereis(agent_id()) :: pid() | nil
+  def whereis(agent_id) when is_atom(agent_id) or is_binary(agent_id) do
+    case lookup(agent_id) do
+      {:ok, pid} -> pid
+      {:error, :not_found} -> nil
+    end
   end
 
   @doc """
@@ -226,7 +254,7 @@ defmodule Jidoka.Protocol.A2A.Registry do
         {:reply, :ok, state}
 
       [] ->
-        {:reply, :ok, state}
+        {:reply, {:error, :not_found}, state}
     end
   end
 
@@ -245,7 +273,7 @@ defmodule Jidoka.Protocol.A2A.Registry do
   def handle_call(:list_agents, _from, state) do
     agents =
       :ets.tab2list(state.table)
-      |> Enum.map(fn {agent_id, pid, _ref} -> {agent_id, pid} end)
+      |> Enum.map(fn {agent_id, _pid, _ref} -> agent_id end)
 
     {:reply, agents, state}
   end

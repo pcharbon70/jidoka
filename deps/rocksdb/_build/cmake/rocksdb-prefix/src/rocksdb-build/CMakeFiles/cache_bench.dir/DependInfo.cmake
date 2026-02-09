@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/cache_bench.cc" "CMakeFiles/cache_bench.dir/cache/cache_bench.cc.o" "gcc" "CMakeFiles/cache_bench.dir/cache/cache_bench.cc.o.d"
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/cache_bench_tool.cc" "CMakeFiles/cache_bench.dir/cache/cache_bench_tool.cc.o" "gcc" "CMakeFiles/cache_bench.dir/cache/cache_bench_tool.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/cache_bench.cc" "CMakeFiles/cache_bench.dir/cache/cache_bench.cc.o" "gcc" "CMakeFiles/cache_bench.dir/cache/cache_bench.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/cache_bench_tool.cc" "CMakeFiles/cache_bench.dir/cache/cache_bench_tool.cc.o" "gcc" "CMakeFiles/cache_bench.dir/cache/cache_bench_tool.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

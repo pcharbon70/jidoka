@@ -158,7 +158,7 @@ defmodule Jidoka.Protocol.A2A.JSONRPCTest do
         "id" => 1
       }
 
-      assert {:ok, :request, "agent.ping", nil, 1} = JSONRPC.parse_request(request)
+      assert {:ok, :request, "agent.ping", %{}, 1} = JSONRPC.parse_request(request)
     end
 
     test "returns error for invalid request" do

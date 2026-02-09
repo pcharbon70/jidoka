@@ -1,7 +1,7 @@
 CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o: \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/clock_cache.cc \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/clock_cache.cc \
  /usr/include/stdc-predef.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/clock_cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/clock_cache.h \
  /usr/include/c++/13/array /usr/include/c++/13/compare \
  /usr/include/c++/13/initializer_list \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -171,24 +171,24 @@ CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o: \
  /usr/include/c++/13/bits/basic_string.tcc \
  /usr/include/c++/13/bits/memory_resource.h \
  /usr/include/c++/13/bits/uses_allocator_args.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/cache_key.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/slice.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/cache_key.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/slice.h \
  /usr/include/c++/13/cassert /usr/include/assert.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/cleanable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/table/unique_id_impl.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/unique_id.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/table_properties.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/cleanable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/table/unique_id_impl.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/unique_id.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/table_properties.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/customizable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/configurable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/customizable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/configurable.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -199,70 +199,70 @@ CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/types.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/sharded_cache.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/lang.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/port.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/port_posix.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/types.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/sharded_cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/lang.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/port.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/port_posix.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/port_defs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/advanced_cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/port_defs.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/advanced_cache.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/cache.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/compression_type.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/data_structure.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/memory_allocator.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/options.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/compression_type.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/data_structure.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/memory_allocator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/options.h \
  /usr/include/c++/13/optional \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/advanced_options.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/memtablerep.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/advanced_options.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/memtablerep.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/stdexcept \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/universal_compaction.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/comparator.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/env.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/universal_compaction.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/comparator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/env.h \
  /usr/include/c++/13/cstdarg \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/functor_wrapper.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/functor_wrapper.h \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/thread_status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/file_checksum.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/listener.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/thread_status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/file_checksum.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/listener.h \
  /usr/include/c++/13/chrono \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/compaction_job_stats.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/io_status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/sst_partitioner.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/version.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/write_buffer_manager.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/compaction_job_stats.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/io_status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/sst_partitioner.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/version.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/write_buffer_manager.h \
  /usr/include/c++/13/condition_variable \
  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
  /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
  /usr/include/c++/13/mutex \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/hash.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/fastrange.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/mutexlock.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/malloc.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/hash.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/fastrange.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/mutexlock.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/malloc.h \
  /usr/include/malloc.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/mmap.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/mmap.h \
  /usr/include/x86_64-linux-gnu/sys/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
  /usr/include/x86_64-linux-gnu/bits/mman-linux.h \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
  /usr/include/x86_64-linux-gnu/bits/mman_ext.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/secondary_cache.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/statistics.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/atomic.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/autovector.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/secondary_cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/statistics.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/atomic.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/autovector.h \
  /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
@@ -271,28 +271,28 @@ CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o: \
  /usr/include/c++/13/bits/locale_classes.h \
  /usr/include/c++/13/bits/locale_classes.tcc \
  /usr/include/c++/13/system_error /usr/include/c++/13/bits/streambuf.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/math.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/math.h \
  /usr/include/c++/13/bitset /usr/include/c++/13/cinttypes \
  /usr/include/inttypes.h /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/secondary_cache_adapter.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/cache_reservation_manager.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/cache_entry_roles.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/typed_cache.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cache/cache_helpers.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/coding.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/coding_lean.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/logging/logging.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/perf_context_imp.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/perf_step_timer.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/perf_level_imp.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/perf_level.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/statistics_impl.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/monitoring/histogram.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/port/likely.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/core_local.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/random.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/secondary_cache_adapter.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/cache_reservation_manager.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/cache_entry_roles.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/typed_cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cache/cache_helpers.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/coding.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/coding_lean.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/logging/logging.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/perf_context_imp.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/perf_step_timer.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/perf_level_imp.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/perf_level.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/statistics_impl.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/monitoring/histogram.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/port/likely.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/core_local.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/random.h \
  /usr/include/c++/13/random /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -318,6 +318,6 @@ CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o: \
  /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/system_clock.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/include/rocksdb/perf_context.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/util/stop_watch.h
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/system_clock.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/include/rocksdb/perf_context.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/util/stop_watch.h

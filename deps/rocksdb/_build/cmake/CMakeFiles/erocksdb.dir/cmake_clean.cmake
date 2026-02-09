@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/priv/liberocksdb.pdb"
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/priv/liberocksdb.so"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/priv/liberocksdb.pdb"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/priv/liberocksdb.so"
   "CMakeFiles/erocksdb.dir/backup.cc.o"
   "CMakeFiles/erocksdb.dir/backup.cc.o.d"
   "CMakeFiles/erocksdb.dir/batch.cc.o"

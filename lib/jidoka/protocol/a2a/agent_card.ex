@@ -18,7 +18,7 @@ defmodule Jidoka.Protocol.A2A.AgentCard do
 
   ## Examples
 
-      iex> card = AgentCard.new(%{
+      iex> {:ok, card} = AgentCard.new(%{
       ...>   id: "agent:jidoka:coordinator",
       ...>   name: "Jidoka Coordinator",
       ...>   type: ["Coordinator"],
@@ -126,20 +126,22 @@ defmodule Jidoka.Protocol.A2A.AgentCard do
 
   """
   def for_jidoka(opts \\ []) when is_list(opts) do
-    agent_type = Keyword.get(opts, :agent_type, ["Jidoka"])
+    agent_type = Keyword.get(opts, :types, Keyword.get(opts, :agent_type, ["Jidoka"]))
     extra_capabilities = Keyword.get(opts, :extra_capabilities, %{})
     endpoints = Keyword.get(opts, :endpoints, %{})
-    build_jidoka_card(agent_type, extra_capabilities, endpoints)
+    name = Keyword.get(opts, :name)
+    build_jidoka_card(agent_type, extra_capabilities, endpoints, name)
   end
 
   def for_jidoka(opts) when is_map(opts) do
-    agent_type = Map.get(opts, :agent_type, ["Jidoka"])
+    agent_type = Map.get(opts, :types, Map.get(opts, :agent_type, ["Jidoka"]))
     extra_capabilities = Map.get(opts, :extra_capabilities, %{})
     endpoints = Map.get(opts, :endpoints, %{})
-    build_jidoka_card(agent_type, extra_capabilities, endpoints)
+    name = Map.get(opts, :name)
+    build_jidoka_card(agent_type, extra_capabilities, endpoints, name)
   end
 
-  defp build_jidoka_card(agent_type, extra_capabilities, endpoints) do
+  defp build_jidoka_card(agent_type, extra_capabilities, endpoints, custom_name \\ nil) do
     capabilities =
       %{
         tools: [],
@@ -148,9 +150,12 @@ defmodule Jidoka.Protocol.A2A.AgentCard do
       }
       |> Map.merge(extra_capabilities)
 
+    # Use custom name if provided, otherwise generate default
+    name = custom_name || "Jidoka #{Enum.join(agent_type, " ")}"
+
     {:ok, card} = new(%{
       id: "agent:jidoka:#{get_instance_id()}",
-      name: "Jidoka #{Enum.join(agent_type, " ")}",
+      name: name,
       type: agent_type,
       version: version(),
       capabilities: capabilities,

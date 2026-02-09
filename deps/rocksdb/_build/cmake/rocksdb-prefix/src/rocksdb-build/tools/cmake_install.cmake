@@ -1,4 +1,4 @@
-# Install script for directory: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools
+# Install script for directory: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

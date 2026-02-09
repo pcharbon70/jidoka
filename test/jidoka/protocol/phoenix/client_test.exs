@@ -17,14 +17,20 @@ defmodule Jidoka.Protocol.Phoenix.ClientTest do
     end
 
     test "accepts valid configuration" do
-      # Note: This test validates configuration parsing
-      # The connection will fail without a real Phoenix server
-      assert_raise ArgumentError, fn ->
-        Client.start_link([
-          name: :test_connection,
-          uri: "ws://localhost:4000/socket/websocket"
-        ])
-      end
+      # Note: Slipstream works asynchronously - start_link returns {:ok, pid}
+      # even when the Phoenix server is not available. The connection status
+      # is tracked through the status/1 function and handle_disconnect/1
+      # callback when the connection fails.
+
+      # Use test_mode to avoid actual WebSocket connection
+      assert {:ok, pid} = Client.start_link([
+        name: :test_connection_config,
+        uri: "ws://localhost:4000/socket/websocket",
+        test_mode?: true
+      ])
+
+      # Clean up
+      GenServer.stop(pid, :normal, 1000)
     end
   end
 

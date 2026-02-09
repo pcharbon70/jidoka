@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb
+CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
+CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
 
 # Include any dependencies generated for this target.
 include tools/CMakeFiles/sst_dump.dir/depend.make
@@ -70,18 +70,18 @@ include tools/CMakeFiles/sst_dump.dir/progress.make
 include tools/CMakeFiles/sst_dump.dir/flags.make
 
 tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o: tools/CMakeFiles/sst_dump.dir/flags.make
-tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc
+tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc
 tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o: tools/CMakeFiles/sst_dump.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o"
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o -MF CMakeFiles/sst_dump.dir/sst_dump.cc.o.d -o CMakeFiles/sst_dump.dir/sst_dump.cc.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o -MF CMakeFiles/sst_dump.dir/sst_dump.cc.o.d -o CMakeFiles/sst_dump.dir/sst_dump.cc.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc
 
 tools/CMakeFiles/sst_dump.dir/sst_dump.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/sst_dump.dir/sst_dump.cc.i"
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc > CMakeFiles/sst_dump.dir/sst_dump.cc.i
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc > CMakeFiles/sst_dump.dir/sst_dump.cc.i
 
 tools/CMakeFiles/sst_dump.dir/sst_dump.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/sst_dump.dir/sst_dump.cc.s"
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc -o CMakeFiles/sst_dump.dir/sst_dump.cc.s
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc -o CMakeFiles/sst_dump.dir/sst_dump.cc.s
 
 # Object files for target sst_dump
 sst_dump_OBJECTS = \
@@ -94,18 +94,18 @@ tools/sst_dump: tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o
 tools/sst_dump: tools/CMakeFiles/sst_dump.dir/build.make
 tools/sst_dump: librocksdb.so.9.10.0
 tools/sst_dump: tools/CMakeFiles/sst_dump.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable sst_dump"
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sst_dump.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable sst_dump"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sst_dump.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tools/CMakeFiles/sst_dump.dir/build: tools/sst_dump
 .PHONY : tools/CMakeFiles/sst_dump.dir/build
 
 tools/CMakeFiles/sst_dump.dir/clean:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && $(CMAKE_COMMAND) -P CMakeFiles/sst_dump.dir/cmake_clean.cmake
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools && $(CMAKE_COMMAND) -P CMakeFiles/sst_dump.dir/cmake_clean.cmake
 .PHONY : tools/CMakeFiles/sst_dump.dir/clean
 
 tools/CMakeFiles/sst_dump.dir/depend:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools/CMakeFiles/sst_dump.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools/CMakeFiles/sst_dump.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : tools/CMakeFiles/sst_dump.dir/depend
 

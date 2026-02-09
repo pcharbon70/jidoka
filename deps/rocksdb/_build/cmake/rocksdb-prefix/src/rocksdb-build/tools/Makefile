@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb
+CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
+CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools//CMakeFiles/progress.marks
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles 0
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/tools//CMakeFiles/progress.marks
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/clean
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/preinstall
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/preinstall
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tools/CMakeFiles/sst_dump.dir/rule:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/CMakeFiles/sst_dump.dir/rule
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/CMakeFiles/sst_dump.dir/rule
 .PHONY : tools/CMakeFiles/sst_dump.dir/rule
 
 # Convenience name for target.
@@ -172,12 +172,12 @@ sst_dump: tools/CMakeFiles/sst_dump.dir/rule
 
 # fast build rule for target.
 sst_dump/fast:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/build
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/build
 .PHONY : sst_dump/fast
 
 # Convenience name for target.
 tools/CMakeFiles/ldb.dir/rule:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/CMakeFiles/ldb.dir/rule
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tools/CMakeFiles/ldb.dir/rule
 .PHONY : tools/CMakeFiles/ldb.dir/rule
 
 # Convenience name for target.
@@ -186,7 +186,7 @@ ldb: tools/CMakeFiles/ldb.dir/rule
 
 # fast build rule for target.
 ldb/fast:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/build
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/build
 .PHONY : ldb/fast
 
 ldb.o: ldb.cc.o
@@ -194,7 +194,7 @@ ldb.o: ldb.cc.o
 
 # target to build an object file
 ldb.cc.o:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/ldb.cc.o
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/ldb.cc.o
 .PHONY : ldb.cc.o
 
 ldb.i: ldb.cc.i
@@ -202,7 +202,7 @@ ldb.i: ldb.cc.i
 
 # target to preprocess a source file
 ldb.cc.i:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/ldb.cc.i
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/ldb.cc.i
 .PHONY : ldb.cc.i
 
 ldb.s: ldb.cc.s
@@ -210,7 +210,7 @@ ldb.s: ldb.cc.s
 
 # target to generate assembly for a file
 ldb.cc.s:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/ldb.cc.s
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/ldb.dir/build.make tools/CMakeFiles/ldb.dir/ldb.cc.s
 .PHONY : ldb.cc.s
 
 sst_dump.o: sst_dump.cc.o
@@ -218,7 +218,7 @@ sst_dump.o: sst_dump.cc.o
 
 # target to build an object file
 sst_dump.cc.o:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o
 .PHONY : sst_dump.cc.o
 
 sst_dump.i: sst_dump.cc.i
@@ -226,7 +226,7 @@ sst_dump.i: sst_dump.cc.i
 
 # target to preprocess a source file
 sst_dump.cc.i:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/sst_dump.cc.i
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/sst_dump.cc.i
 .PHONY : sst_dump.cc.i
 
 sst_dump.s: sst_dump.cc.s
@@ -234,7 +234,7 @@ sst_dump.s: sst_dump.cc.s
 
 # target to generate assembly for a file
 sst_dump.cc.s:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/sst_dump.cc.s
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(MAKE) $(MAKESILENT) -f tools/CMakeFiles/sst_dump.dir/build.make tools/CMakeFiles/sst_dump.dir/sst_dump.cc.s
 .PHONY : sst_dump.cc.s
 
 # Help Target
@@ -268,6 +268,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

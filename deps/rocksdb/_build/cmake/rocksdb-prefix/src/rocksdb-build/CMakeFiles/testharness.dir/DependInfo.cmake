@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc" "CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o" "gcc" "CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o.d"
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc" "CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o" "gcc" "CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o.d"
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/testharness.cc" "CMakeFiles/testharness.dir/test_util/testharness.cc.o" "gcc" "CMakeFiles/testharness.dir/test_util/testharness.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc" "CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o" "gcc" "CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc" "CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o" "gcc" "CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/testharness.cc" "CMakeFiles/testharness.dir/test_util/testharness.cc.o" "gcc" "CMakeFiles/testharness.dir/test_util/testharness.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

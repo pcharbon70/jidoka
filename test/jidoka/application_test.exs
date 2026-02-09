@@ -29,9 +29,11 @@ defmodule Jidoka.ApplicationTest do
       # Get the supervisor's child specifications
       children = Supervisor.which_children(Jidoka.Supervisor)
 
-      # Verify the DynamicSupervisor is a child
+      # Verify the ProtocolSupervisor is a DynamicSupervisor child
+      # Note: The module list will contain [Jidoka.ProtocolSupervisor] since
+      # that module uses DynamicSupervisor, not [DynamicSupervisor] itself
       assert Enum.any?(children, fn
-               {_, pid, :supervisor, [DynamicSupervisor]} when is_pid(pid) -> true
+               {Jidoka.ProtocolSupervisor, pid, :supervisor, [Jidoka.ProtocolSupervisor]} when is_pid(pid) -> true
                _ -> false
              end)
     end

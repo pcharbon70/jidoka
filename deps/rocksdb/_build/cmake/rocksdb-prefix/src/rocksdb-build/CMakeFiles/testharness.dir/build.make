@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb
+CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
+CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/testharness.dir/depend.make
@@ -70,46 +70,46 @@ include CMakeFiles/testharness.dir/progress.make
 include CMakeFiles/testharness.dir/flags.make
 
 CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o: CMakeFiles/testharness.dir/flags.make
-CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc
+CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc
 CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o: CMakeFiles/testharness.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o -MF CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o.d -o CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o -MF CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o.d -o CMakeFiles/testharness.dir/test_util/mock_time_env.cc.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc
 
 CMakeFiles/testharness.dir/test_util/mock_time_env.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testharness.dir/test_util/mock_time_env.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc > CMakeFiles/testharness.dir/test_util/mock_time_env.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc > CMakeFiles/testharness.dir/test_util/mock_time_env.cc.i
 
 CMakeFiles/testharness.dir/test_util/mock_time_env.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testharness.dir/test_util/mock_time_env.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc -o CMakeFiles/testharness.dir/test_util/mock_time_env.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/mock_time_env.cc -o CMakeFiles/testharness.dir/test_util/mock_time_env.cc.s
 
 CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o: CMakeFiles/testharness.dir/flags.make
-CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc
+CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc
 CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o: CMakeFiles/testharness.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o -MF CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o.d -o CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o -MF CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o.d -o CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc
 
 CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc > CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc > CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.i
 
 CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc -o CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/secondary_cache_test_util.cc -o CMakeFiles/testharness.dir/test_util/secondary_cache_test_util.cc.s
 
 CMakeFiles/testharness.dir/test_util/testharness.cc.o: CMakeFiles/testharness.dir/flags.make
-CMakeFiles/testharness.dir/test_util/testharness.cc.o: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/testharness.cc
+CMakeFiles/testharness.dir/test_util/testharness.cc.o: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/testharness.cc
 CMakeFiles/testharness.dir/test_util/testharness.cc.o: CMakeFiles/testharness.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testharness.dir/test_util/testharness.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testharness.dir/test_util/testharness.cc.o -MF CMakeFiles/testharness.dir/test_util/testharness.cc.o.d -o CMakeFiles/testharness.dir/test_util/testharness.cc.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/testharness.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testharness.dir/test_util/testharness.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/testharness.dir/test_util/testharness.cc.o -MF CMakeFiles/testharness.dir/test_util/testharness.cc.o.d -o CMakeFiles/testharness.dir/test_util/testharness.cc.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/testharness.cc
 
 CMakeFiles/testharness.dir/test_util/testharness.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/testharness.dir/test_util/testharness.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/testharness.cc > CMakeFiles/testharness.dir/test_util/testharness.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/testharness.cc > CMakeFiles/testharness.dir/test_util/testharness.cc.i
 
 CMakeFiles/testharness.dir/test_util/testharness.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/testharness.dir/test_util/testharness.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/test_util/testharness.cc -o CMakeFiles/testharness.dir/test_util/testharness.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/test_util/testharness.cc -o CMakeFiles/testharness.dir/test_util/testharness.cc.s
 
 # Object files for target testharness
 testharness_OBJECTS = \
@@ -125,7 +125,7 @@ libtestharness.a: CMakeFiles/testharness.dir/test_util/secondary_cache_test_util
 libtestharness.a: CMakeFiles/testharness.dir/test_util/testharness.cc.o
 libtestharness.a: CMakeFiles/testharness.dir/build.make
 libtestharness.a: CMakeFiles/testharness.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libtestharness.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libtestharness.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/testharness.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testharness.dir/link.txt --verbose=$(VERBOSE)
 
@@ -138,6 +138,6 @@ CMakeFiles/testharness.dir/clean:
 .PHONY : CMakeFiles/testharness.dir/clean
 
 CMakeFiles/testharness.dir/depend:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/testharness.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/testharness.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/testharness.dir/depend
 

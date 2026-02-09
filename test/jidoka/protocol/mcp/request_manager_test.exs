@@ -19,9 +19,9 @@ defmodule Jidoka.Protocol.MCP.RequestManagerTest do
     test "returns incrementing request IDs" do
       {:ok, pid} = RequestManager.start_link([])
 
-      assert {:ok, 1} = RequestManager.register_request(pid, self(), :test)
-      assert {:ok, 2} = RequestManager.register_request(pid, self(), :test)
-      assert {:ok, 3} = RequestManager.register_request(pid, self(), :test)
+      assert {:ok, 1} = RequestManager.register_request(pid, :test)
+      assert {:ok, 2} = RequestManager.register_request(pid, :test)
+      assert {:ok, 3} = RequestManager.register_request(pid, :test)
     end
   end
 
@@ -29,7 +29,7 @@ defmodule Jidoka.Protocol.MCP.RequestManagerTest do
     test "cancels a pending request" do
       {:ok, pid} = RequestManager.start_link([])
 
-      assert {:ok, request_id} = RequestManager.register_request(pid, self(), :test)
+      assert {:ok, request_id} = RequestManager.register_request(pid, :test)
       assert :ok = RequestManager.cancel_request(pid, request_id)
       assert {:error, :not_found} = RequestManager.cancel_request(pid, request_id)
     end
@@ -50,7 +50,7 @@ defmodule Jidoka.Protocol.MCP.RequestManagerTest do
 
       task =
         Task.async(fn ->
-          request_id = RequestManager.register_request(pid, self(), :test)
+          request_id = RequestManager.register_request(pid, :test)
 
           # Wait for response
           receive do
@@ -88,13 +88,13 @@ defmodule Jidoka.Protocol.MCP.RequestManagerTest do
 
       assert 0 = RequestManager.pending_count(pid)
 
-      RequestManager.register_request(pid, self(), :test1)
+      RequestManager.register_request(pid, :test1)
       assert 1 = RequestManager.pending_count(pid)
 
-      RequestManager.register_request(pid, self(), :test2)
+      RequestManager.register_request(pid, :test2)
       assert 2 = RequestManager.pending_count(pid)
 
-      RequestManager.register_request(pid, self(), :test3)
+      RequestManager.register_request(pid, :test3)
       assert 3 = RequestManager.pending_count(pid)
     end
   end
@@ -105,7 +105,7 @@ defmodule Jidoka.Protocol.MCP.RequestManagerTest do
       assert {:ok, pid} = RequestManager.start_link(timeout: 100)
 
       # Register a request
-      assert {:ok, request_id} = RequestManager.register_request(pid, self(), :test)
+      assert {:ok, request_id} = RequestManager.register_request(pid, :test)
 
       # Wait for timeout check (happens every 1 second)
       # Since we can't wait that long in a test, we'll just verify it doesn't crash

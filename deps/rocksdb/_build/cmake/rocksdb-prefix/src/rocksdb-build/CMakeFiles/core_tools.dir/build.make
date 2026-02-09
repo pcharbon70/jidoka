@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb
+CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
+CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
 
 # Utility rule file for core_tools.
 
@@ -78,6 +78,6 @@ CMakeFiles/core_tools.dir/clean:
 .PHONY : CMakeFiles/core_tools.dir/clean
 
 CMakeFiles/core_tools.dir/depend:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/core_tools.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/core_tools.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/core_tools.dir/depend
 

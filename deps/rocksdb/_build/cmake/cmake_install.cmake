@@ -1,4 +1,4 @@
-# Install script for directory: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src
+# Install script for directory: /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

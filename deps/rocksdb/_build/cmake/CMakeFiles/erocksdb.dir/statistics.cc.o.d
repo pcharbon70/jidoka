@@ -1,5 +1,5 @@
 CMakeFiles/erocksdb.dir/statistics.cc.o: \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/statistics.cc \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/statistics.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/array \
  /usr/include/c++/13/compare /usr/include/c++/13/initializer_list \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -29,7 +29,7 @@ CMakeFiles/erocksdb.dir/statistics.cc.o: \
  /usr/include/c++/13/bits/ptr_traits.h /usr/include/c++/13/debug/debug.h \
  /usr/include/c++/13/bits/predefined_ops.h /usr/include/c++/13/bit \
  /usr/include/c++/13/bits/range_access.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/statistics.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/statistics.h \
  /usr/include/c++/13/atomic /usr/include/c++/13/bits/atomic_base.h \
  /usr/include/c++/13/new /usr/include/c++/13/bits/exception.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -167,8 +167,8 @@ CMakeFiles/erocksdb.dir/statistics.cc.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/customizable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/configurable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/customizable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/configurable.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -176,25 +176,25 @@ CMakeFiles/erocksdb.dir/statistics.cc.o: \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice.h \
  /usr/include/c++/13/cassert /usr/include/assert.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cleanable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/atoms.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cleanable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/atoms.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_nif.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_drv_nif.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_int_sizes_config.h \
  /usr/include/c++/13/stdlib.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_nif_api_funcs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/statistics.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/statistics.h \
  /usr/include/c++/13/mutex /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/limits \
  /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
  /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/bits/unique_lock.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/util.h
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/util.h

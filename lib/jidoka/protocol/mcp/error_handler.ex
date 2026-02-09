@@ -119,6 +119,17 @@ defmodule Jidoka.Protocol.MCP.ErrorHandler do
   @doc """
   Format an error for logging or display.
   """
+  # Special formatting for unknown_error (must come before general atom clause)
+  def format({:unknown_error, message, data}) do
+    formatted = "[Unknown Error] #{message}"
+
+    if data do
+      formatted <> " - " <> inspect(data)
+    else
+      formatted
+    end
+  end
+
   def format({category, message, data}) when is_atom(category) do
     formatted = "[#{Atom.to_string(category)}] #{message}"
 
@@ -132,17 +143,6 @@ defmodule Jidoka.Protocol.MCP.ErrorHandler do
   def format({:tool_error, result}) do
     content = Map.get(result, "content", [])
     "[Tool Error] " <> extract_content_text(content)
-  end
-
-  # Special formatting for unknown_error
-  def format({:unknown_error, message, data}) do
-    formatted = "[unknown_error] #{message}"
-
-    if data do
-      formatted <> " - " <> inspect(data)
-    else
-      formatted
-    end
   end
 
   def format(other) do

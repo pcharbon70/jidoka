@@ -2,7 +2,8 @@
 Application.put_env(:jidoka, :env, :test)
 
 # Start ExUnit before cleanup (ExUnit starts the test supervision tree)
-ExUnit.start()
+# Exclude tests that require a fully indexed knowledge graph
+ExUnit.start(exclude: [knowledge_graph_required: true])
 
 # Clean up any existing test databases BEFORE starting the application
 # This ensures tests start with a fresh schema

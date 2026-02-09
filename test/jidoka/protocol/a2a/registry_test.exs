@@ -17,6 +17,15 @@ defmodule Jidoka.Protocol.A2A.RegistryTest do
 
   describe "start_link/0" do
     test "starts the registry" do
+      # First try to stop any existing registry from setup
+      case Process.whereis(Jidoka.Protocol.A2A.Registry) do
+        nil -> :ok
+        pid when is_pid(pid) -> GenServer.stop(Jidoka.Protocol.A2A.Registry)
+      end
+
+      # Wait for shutdown to complete
+      Process.sleep(50)
+
       assert {:ok, _pid} = Registry.start_link()
     end
 

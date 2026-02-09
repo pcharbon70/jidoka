@@ -61,13 +61,49 @@ defmodule Jidoka.Protocol.MCP.Client do
 
   @doc """
   Start an MCP client.
+
+  ## Options
+
+  * `:transport` - Required. Transport configuration tuple `{:stdio, [command: "cmd"]}` or `{:http, [url: "url"]}`
+  * `:name` - Optional. Process name
+  * `:timeout` - Optional. Request timeout (default: 30_000ms)
+
+  ## Examples
+
+      {:ok, pid} = Jidoka.Protocol.MCP.Client.start_link(
+        transport: {:stdio, [command: "node server.js"]}
+      )
+
+      {:ok, pid} = Jidoka.Protocol.MCP.Client.start_link(
+        transport: {:http, [url: "http://localhost:3000/mcp"]},
+        name: :my_mcp_client
+      )
+
+  ## Returns
+
+  * `{:ok, pid}` - Client started successfully
+  * `{:error, {:transport_error, reason}}` - Transport configuration invalid or not implemented
+  * `{:error, reason}` - Other error
+
   """
   def start_link(opts) do
+    unless Keyword.has_key?(opts, :transport) do
+      raise ArgumentError, "required option :transport not found"
+    end
+
     {transport_config, opts} = Keyword.pop!(opts, :transport)
     name = Keyword.get(opts, :name)
     timeout = Keyword.get(opts, :timeout, 30_000)
 
-    GenServer.start_link(__MODULE__, {transport_config, name, timeout}, name: name)
+    # Validate transport before starting the GenServer
+    # This prevents starting child processes that will immediately fail
+    case validate_transport(transport_config) do
+      :ok ->
+        GenServer.start_link(__MODULE__, {transport_config, name, timeout}, name: name)
+
+      {:error, reason} ->
+        {:error, {:transport_error, reason}}
+    end
   end
 
   @doc """
@@ -144,6 +180,27 @@ defmodule Jidoka.Protocol.MCP.Client do
   """
   def ping(client \\ __MODULE__) do
     GenServer.call(client, :ping)
+  end
+
+  ## Private Functions
+
+  @doc """
+  Validate transport configuration before starting the GenServer.
+  """
+  defp validate_transport({:stdio, opts}) when is_list(opts) do
+    if Keyword.has_key?(opts, :command) do
+      :ok
+    else
+      {:error, :missing_command_option}
+    end
+  end
+
+  defp validate_transport({:http, _opts}) do
+    {:error, :http_not_yet_implemented}
+  end
+
+  defp validate_transport({type, _opts}) do
+    {:error, {:unknown_transport_type, type}}
   end
 
   ## Server Callbacks

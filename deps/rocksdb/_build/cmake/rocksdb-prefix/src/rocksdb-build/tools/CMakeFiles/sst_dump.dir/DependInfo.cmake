@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc" "tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o" "gcc" "tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/sst_dump.cc" "tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o" "gcc" "tools/CMakeFiles/sst_dump.dir/sst_dump.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

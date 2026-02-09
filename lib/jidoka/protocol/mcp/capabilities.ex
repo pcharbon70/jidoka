@@ -25,6 +25,12 @@ defmodule Jidoka.Protocol.MCP.Capabilities do
       if Capabilities.supports_resource_subscriptions?(client) do
         # Subscribe to resource updates
       end
+
+      # Can also pass capabilities map directly
+      caps = %{"tools" => %{}}
+      if Capabilities.supports_tools?(caps) do
+        # Tools are supported
+      end
   """
 
   alias Jidoka.Protocol.MCP.Client
@@ -42,19 +48,23 @@ defmodule Jidoka.Protocol.MCP.Capabilities do
   ## Query Functions
 
   @doc """
-  Get the full capabilities map from the client.
+  Get the full capabilities map from the client or return the map if passed directly.
   """
-  def get(client \\ Client) do
-    Client.capabilities(client)
-  end
+  def get(caps) when is_map(caps), do: caps
+  def get(client \\ Client), do: Client.capabilities(client)
 
   @doc """
   Check if the server has a specific capability using a path.
 
+  Can accept either a client process or a capabilities map directly.
+
   ## Examples
 
-      # Check if tools are supported
+      # Check if tools are supported (with client)
       supports?(client, [:tools])
+
+      # Check if tools are supported (with capabilities map)
+      supports?(%{"tools" => %{}}, [:tools])
 
       # Check if resource subscriptions are supported
       supports?(client, [:resources, :subscribe])
@@ -63,10 +73,29 @@ defmodule Jidoka.Protocol.MCP.Capabilities do
       supports?(client, [:prompts, :listChanged])
 
   """
-  def supports?(client \\ Client, path) when is_list(path) do
+  def supports?(caps, path) when is_map(caps) and is_list(path) do
+    # Convert atom keys to string keys for JSON-RPC format
+    string_path = Enum.map(path, &to_string/1)
+
+    # Check if the key path exists, then check its value
+    if key_path_exists?(caps, string_path) do
+      case get_in(caps, string_path) do
+        # false means explicitly disabled
+        false -> false
+        # nil or any other value means capability exists
+        _value -> true
+      end
+    else
+      # Key path doesn't exist
+      false
+    end
+  end
+
+  def supports?(nil, _path), do: false
+  def supports?(client, path) when is_list(path) do
     case get(client) do
       nil -> false
-      caps -> get_in(caps, path) != nil
+      caps -> supports?(caps, path)
     end
   end
 
@@ -185,8 +214,24 @@ defmodule Jidoka.Protocol.MCP.Capabilities do
 
   ## Private Functions
 
+  defp key_path_exists?(map, [key]) when is_map(map) do
+    Map.has_key?(map, key)
+  end
+
+  defp key_path_exists?(map, [key | rest]) when is_map(map) do
+    case Map.get(map, key) do
+      nil -> false
+      nested -> is_map(nested) and key_path_exists?(nested, rest)
+    end
+  end
+
+  defp key_path_exists?(_map, _path), do: false
+
   defp maybe_add_capability(list, caps, key, name) do
-    if Map.has_key?(caps, key) do
+    # Check for both atom and string key
+    has_key = Map.has_key?(caps, key) or Map.has_key?(caps, to_string(key))
+
+    if has_key do
       [name | list]
     else
       list

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/trace_analyzer.cc" "CMakeFiles/trace_analyzer.dir/tools/trace_analyzer.cc.o" "gcc" "CMakeFiles/trace_analyzer.dir/tools/trace_analyzer.cc.o.d"
+  "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/trace_analyzer.cc" "CMakeFiles/trace_analyzer.dir/tools/trace_analyzer.cc.o" "gcc" "CMakeFiles/trace_analyzer.dir/tools/trace_analyzer.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -33,12 +33,12 @@ defmodule Jidoka.Protocol.MCP.ToolsTest do
     test "extracts text from content array" do
       result = %{
         content: [
-          %{"type" => "text", "text" => "Hello "},
+          %{"type" => "text", "text" => "Hello"},
           %{"type" => "text", "text" => "World"}
         ]
       }
 
-      assert {:ok, "Hello World"} = Tools.extract_text(result)
+      assert {:ok, "Hello\nWorld"} = Tools.extract_text(result)
     end
 
     test "filters non-text content" do
@@ -105,9 +105,26 @@ defmodule Jidoka.Protocol.MCP.ToolsTest do
   end
 
   describe "validate_arguments/2" do
-    test "always returns ok (validation not implemented)" do
-      assert :ok = Tools.validate_arguments(:any_tool, %{})
-      assert :ok = Tools.validate_arguments(:any_tool, %{arg1: "value"})
+    test "returns ok when tool has no schema" do
+      tool = %{name: "test_tool", input_schema: %{}}
+      assert :ok = Tools.validate_arguments(tool, %{})
+      assert :ok = Tools.validate_arguments(tool, %{arg1: "value"})
+    end
+
+    test "validates against JSON schema" do
+      tool = %{
+        name: "test_tool",
+        input_schema: %{
+          "type" => "object",
+          "required" => ["name"],
+          "properties" => %{
+            "name" => %{"type" => "string"}
+          }
+        }
+      }
+
+      assert :ok = Tools.validate_arguments(tool, %{"name" => "test"})
+      assert {:error, _} = Tools.validate_arguments(tool, %{})
     end
   end
 end

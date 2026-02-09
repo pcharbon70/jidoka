@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb
+CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
+CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hash_table_bench.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/hash_table_bench.dir/progress.make
 include CMakeFiles/hash_table_bench.dir/flags.make
 
 CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o: CMakeFiles/hash_table_bench.dir/flags.make
-CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc
+CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc
 CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o: CMakeFiles/hash_table_bench.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o -MF CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o.d -o CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o -MF CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o.d -o CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc
 
 CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc > CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc > CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.i
 
 CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc -o CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/utilities/persistent_cache/hash_table_bench.cc -o CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/hash_table_bench.cc.s
 
 # Object files for target hash_table_bench
 hash_table_bench_OBJECTS = \
@@ -94,7 +94,7 @@ hash_table_bench: CMakeFiles/hash_table_bench.dir/utilities/persistent_cache/has
 hash_table_bench: CMakeFiles/hash_table_bench.dir/build.make
 hash_table_bench: librocksdb.so.9.10.0
 hash_table_bench: CMakeFiles/hash_table_bench.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hash_table_bench"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hash_table_bench"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hash_table_bench.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -106,6 +106,6 @@ CMakeFiles/hash_table_bench.dir/clean:
 .PHONY : CMakeFiles/hash_table_bench.dir/clean
 
 CMakeFiles/hash_table_bench.dir/depend:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/hash_table_bench.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/hash_table_bench.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/hash_table_bench.dir/depend
 

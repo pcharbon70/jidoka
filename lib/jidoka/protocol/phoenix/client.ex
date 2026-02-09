@@ -88,8 +88,44 @@ defmodule Jidoka.Protocol.Phoenix.Client do
       )
   """
   def start_link(opts) when is_list(opts) do
-    name = Keyword.fetch!(opts, :name)
-    Slipstream.start_link(__MODULE__, opts, name: name)
+    name = Keyword.get(opts, :name)
+
+    unless name do
+      raise ArgumentError, "required option :name not found"
+    end
+
+    uri = Keyword.get(opts, :uri)
+
+    unless uri do
+      raise ArgumentError, "required option :uri not found"
+    end
+
+    # Extract only valid Slipstream options
+    # Slipstream accepts: :uri, :heartbeat_interval_msec, :headers, :serializer,
+    # :json_parser, :reconnect_after_msec, :rejoin_after_msec, :mint_opts, :extensions, :test_mode?
+    slipstream_opts = [
+      :uri,
+      :heartbeat_interval_msec,
+      :headers,
+      :serializer,
+      :json_parser,
+      :reconnect_after_msec,
+      :rejoin_after_msec,
+      :mint_opts,
+      :extensions,
+      :test_mode?
+    ]
+
+    opts_for_slipstream = Keyword.take(opts, slipstream_opts)
+
+    # Store extra options in process dictionary for init to access
+    # These are not valid Slipstream options so we pass them this way
+    Process.put(:jidoka_name, name)
+    Process.put(:jidoka_params, Keyword.get(opts, :params, %{}))
+    Process.put(:jidoka_auto_join_channels, Keyword.get(opts, :auto_join_channels, []))
+    Process.put(:jidoka_max_retries, Keyword.get(opts, :max_retries, 10))
+
+    Slipstream.start_link(__MODULE__, opts_for_slipstream, name: name)
   end
 
   @doc """
@@ -212,35 +248,45 @@ defmodule Jidoka.Protocol.Phoenix.Client do
   @impl true
   def init(opts) do
     # Extract configuration
-    name = Keyword.fetch!(opts, :name)
+    # Note: Extra options are passed via process dictionary from start_link
+    name = Process.get(:jidoka_name) || Keyword.get(opts, :name) ||
+            case Process.info(self(), :registered_name) do
+              {:registered_name, []} -> nil
+              {:registered_name, atom_name} when is_atom(atom_name) -> atom_name
+              _ -> nil
+            end
+
     uri = Keyword.fetch!(opts, :uri)
     headers = Keyword.get(opts, :headers, [])
-    params = Keyword.get(opts, :params, %{})
-    auto_join_channels = Keyword.get(opts, :auto_join_channels, [])
-    max_retries = Keyword.get(opts, :max_retries, 10)
+    params = Process.get(:jidoka_params, %{})
+    auto_join_channels = Process.get(:jidoka_auto_join_channels, [])
+    max_retries = Process.get(:jidoka_max_retries, 10)
+
+    # Clean up process dictionary
+    Process.delete(:jidoka_name)
+    Process.delete(:jidoka_params)
+    Process.delete(:jidoka_auto_join_channels)
+    Process.delete(:jidoka_max_retries)
 
     # Build Slipstream configuration
+    # Note: assigns are set in handle_connect/1 via assign/2, not here
     config = [
       uri: uri,
       headers: headers,
-      params: params,
       # Exponential backoff for reconnection
       reconnect_after_msec: [100, 500, 1_000, 2_000, 5_000, 10_000, 30_000],
       # Exponential backoff for rejoining
       rejoin_after_msec: [100, 500, 1_000, 2_000, 5_000, 10_000],
       # Heartbeat every 30 seconds (Phoenix closes connections after 60s of inactivity)
-      heartbeat_interval_msec: 30_000,
-      # Custom assigns for our client state
-      assigns: %{
-        connection_name: name,
-        status: :connecting,
-        reconnect_attempts: 0,
-        max_reconnect_attempts: max_retries,
-        channels: %{},
-        pending_pushes: %{},
-        auto_join_channels: auto_join_channels
-      }
+      heartbeat_interval_msec: 30_000
     ]
+
+    # Store the name in process dictionary for handle_connect to use
+    # (We can't pass assigns through Slipstream.connect)
+    Process.put(:jidoka_connection_name, name)
+    Process.put(:jidoka_auto_join_channels, auto_join_channels)
+    Process.put(:jidoka_max_retries, max_retries)
+    Process.put(:jidoka_params, params)
 
     # Start connection
     case Slipstream.connect(config) do
@@ -249,28 +295,60 @@ defmodule Jidoka.Protocol.Phoenix.Client do
         {:ok, socket}
 
       {:error, reason} ->
+        # Clean up process dictionary
+        Process.delete(:jidoka_connection_name)
+        Process.delete(:jidoka_auto_join_channels)
+        Process.delete(:jidoka_max_retries)
+        Process.delete(:jidoka_params)
+
         Logger.error("Failed to initiate Phoenix connection #{name}: #{inspect(reason)}")
-        # Return :ignore to not crash the supervisor
-        :ignore
+        # Raise ArgumentError to fail the start_link
+        raise ArgumentError, """
+        Failed to connect to Phoenix WebSocket server at #{uri}
+
+        Ensure:
+        - The Phoenix server is running and accessible
+        - The WebSocket endpoint is correct (e.g., ws://localhost:4000/socket/websocket)
+        - Network connectivity is available
+
+        Error: #{inspect(reason)}
+        """
     end
   end
 
   @impl true
   def handle_connect(socket) do
-    connection_name = socket.assigns.connection_name
+    # Get connection name and configuration from process dictionary
+    connection_name = Process.get(:jidoka_connection_name)
+    auto_join_channels = Process.get(:jidoka_auto_join_channels, [])
+    max_retries = Process.get(:jidoka_max_retries, 10)
+    params = Process.get(:jidoka_params, %{})
+
     Logger.info("Phoenix connection established: #{connection_name}")
+
+    # Clean up process dictionary
+    Process.delete(:jidoka_connection_name)
+    Process.delete(:jidoka_auto_join_channels)
+    Process.delete(:jidoka_max_retries)
+    Process.delete(:jidoka_params)
+
+    # Set up socket assigns with our custom state
+    socket = assign(socket, :connection_name, connection_name)
+    socket = assign(socket, :status, :connected)
+    socket = assign(socket, :reconnect_attempts, 0)
+    socket = assign(socket, :max_reconnect_attempts, max_retries)
+    socket = assign(socket, :channels, %{})
+    socket = assign(socket, :pending_pushes, %{})
+    socket = assign(socket, :auto_join_channels, auto_join_channels)
+    socket = assign(socket, :jidoka_params, params)
 
     # Dispatch connection state signal
     _ = Signals.phoenix_connection_state(connection_name, :connected, dispatch: true)
 
-    # Update socket assigns with connection state
-    socket = assign(socket, :status, :connected)
-    socket = assign(socket, :reconnect_attempts, 0)
-
     # Auto-join configured channels
-    socket = Enum.reduce(socket.assigns.auto_join_channels || [], socket, fn
-      {topic, params}, acc_socket ->
-        join(acc_socket, topic, params)
+    socket = Enum.reduce(auto_join_channels || [], socket, fn
+      {topic, channel_params}, acc_socket ->
+        join(acc_socket, topic, channel_params)
     end)
 
     {:ok, socket}

@@ -28,7 +28,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+        /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
       
   -
     kind: "message-v1"
@@ -50,7 +50,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/3.28.3/CompilerIdC/a.out
+        /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/3.28.3/CompilerIdC/a.out
       
   -
     kind: "message-v1"
@@ -74,26 +74,26 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ff51d/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ff51d.dir/build.make CMakeFiles/cmTC_ff51d.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv'
-        Building CXX object CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -fPIE   -v -o CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_20172/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_20172.dir/build.make CMakeFiles/cmTC_20172.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J'
+        Building CXX object CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -fPIE   -v -o CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -103,8 +103,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ff51d.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ff51d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccma3Faw.s
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20172.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_20172.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cckWGxpo.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -125,15 +125,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: c81c05345ce537099dafd5580045814a
-        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ff51d.dir/'
-         as -v --64 -o CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccma3Faw.s
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20172.dir/'
+         as -v --64 -o CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o /tmp/cckWGxpo.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_ff51d
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff51d.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ff51d 
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_20172
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20172.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_20172 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -146,11 +146,11 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ff51d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ff51d.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccScCdv2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ff51d /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ff51d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ff51d.'
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20172' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_20172.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNiP0da.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_20172 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20172' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_20172.'
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J'
         
       exitCode: 0
   -
@@ -190,14 +190,14 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv']
+        ignore line: [Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ff51d/fast]
-        ignore line: [gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv']
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ff51d.dir/build.make CMakeFiles/cmTC_ff51d.dir/build]
-        ignore line: [gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-BeMrVv']
-        ignore line: [Building CXX object CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -fPIE   -v -o CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_20172/fast]
+        ignore line: [gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J']
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_20172.dir/build.make CMakeFiles/cmTC_20172.dir/build]
+        ignore line: [gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-LakS0J']
+        ignore line: [Building CXX object CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -fPIE   -v -o CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -207,8 +207,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ff51d.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ff51d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccma3Faw.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20172.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_20172.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cckWGxpo.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -229,15 +229,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
-        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ff51d.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccma3Faw.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20172.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o /tmp/cckWGxpo.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_ff51d]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff51d.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ff51d ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_20172]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20172.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_20172 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -250,13 +250,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ff51d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ff51d.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccScCdv2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ff51d /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20172' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_20172.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNiP0da.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_20172 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccScCdv2.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccNiP0da.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -274,7 +274,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_ff51d] ==> ignore
+          arg [cmTC_20172] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -286,7 +286,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_ff51d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_20172.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -322,26 +322,26 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_96424/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_96424.dir/build.make CMakeFiles/cmTC_96424.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs'
-        Building C object CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -fPIE   -v -o CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_54ef7/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_54ef7.dir/build.make CMakeFiles/cmTC_54ef7.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX'
+        Building C object CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -fPIE   -v -o CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -351,8 +351,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_96424.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_96424.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc9dQb4e.s
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_54ef7.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_54ef7.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cctIwwbJ.s
         GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -369,15 +369,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 38987c28e967c64056a6454abdef726e
-        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_96424.dir/'
-         as -v --64 -o CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o /tmp/cc9dQb4e.s
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_54ef7.dir/'
+         as -v --64 -o CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o /tmp/cctIwwbJ.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_96424
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96424.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o -o cmTC_96424 
+        COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_54ef7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54ef7.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o -o cmTC_54ef7 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -390,11 +390,11 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_96424' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_96424.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPshA58.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_96424 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_96424' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_96424.'
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_54ef7' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_54ef7.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHUAxSs.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_54ef7 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_54ef7' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_54ef7.'
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX'
         
       exitCode: 0
   -
@@ -428,14 +428,14 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs']
+        ignore line: [Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_96424/fast]
-        ignore line: [gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs']
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_96424.dir/build.make CMakeFiles/cmTC_96424.dir/build]
-        ignore line: [gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Ss3fhs']
-        ignore line: [Building C object CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -fPIE   -v -o CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_54ef7/fast]
+        ignore line: [gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX']
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_54ef7.dir/build.make CMakeFiles/cmTC_54ef7.dir/build]
+        ignore line: [gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-xc2sxX']
+        ignore line: [Building C object CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -fPIE   -v -o CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -445,8 +445,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_96424.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_96424.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc9dQb4e.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_54ef7.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_54ef7.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fPIE -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cctIwwbJ.s]
         ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -463,15 +463,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
-        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_96424.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o /tmp/cc9dQb4e.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_54ef7.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o /tmp/cctIwwbJ.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_96424]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96424.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o -o cmTC_96424 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fPIE' '-v' '-o' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_54ef7]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54ef7.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o -o cmTC_54ef7 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -484,13 +484,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_96424' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_96424.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPshA58.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_96424 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_54ef7' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_54ef7.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHUAxSs.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_54ef7 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccPshA58.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccHUAxSs.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -508,7 +508,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_96424] ==> ignore
+          arg [cmTC_54ef7] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -520,7 +520,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_96424.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_54ef7.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -561,31 +561,31 @@ events:
     checks:
       - "Performing Test HAVE_OMIT_LEAF_FRAME_POINTER"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_OMIT_LEAF_FRAME_POINTER"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b546e/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b546e.dir/build.make CMakeFiles/cmTC_b546e.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU'
-        Building CXX object CMakeFiles/cmTC_b546e.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_OMIT_LEAF_FRAME_POINTER  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer  -std=gnu++17 -fPIE   -momit-leaf-frame-pointer -o CMakeFiles/cmTC_b546e.dir/src.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU/src.cxx
-        Linking CXX executable cmTC_b546e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b546e.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer  CMakeFiles/cmTC_b546e.dir/src.cxx.o -o cmTC_b546e 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Gha7TU'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0af26/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0af26.dir/build.make CMakeFiles/cmTC_0af26.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA'
+        Building CXX object CMakeFiles/cmTC_0af26.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_OMIT_LEAF_FRAME_POINTER  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer  -std=gnu++17 -fPIE   -momit-leaf-frame-pointer -o CMakeFiles/cmTC_0af26.dir/src.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA/src.cxx
+        Linking CXX executable cmTC_0af26
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0af26.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer  CMakeFiles/cmTC_0af26.dir/src.cxx.o -o cmTC_0af26 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-dKjwxA'
         
       exitCode: 0
   -
@@ -597,31 +597,31 @@ events:
     checks:
       - "Performing Test BUILTIN_ATOMIC"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "BUILTIN_ATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_79f45/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_79f45.dir/build.make CMakeFiles/cmTC_79f45.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR'
-        Building CXX object CMakeFiles/cmTC_79f45.dir/src.cxx.o
-        /usr/bin/c++ -DBUILTIN_ATOMIC  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer --std=c++17 -std=gnu++17 -fPIE -o CMakeFiles/cmTC_79f45.dir/src.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR/src.cxx
-        Linking CXX executable cmTC_79f45
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79f45.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer --std=c++17 CMakeFiles/cmTC_79f45.dir/src.cxx.o -o cmTC_79f45 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-DT0jVR'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_36614/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_36614.dir/build.make CMakeFiles/cmTC_36614.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy'
+        Building CXX object CMakeFiles/cmTC_36614.dir/src.cxx.o
+        /usr/bin/c++ -DBUILTIN_ATOMIC  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer --std=c++17 -std=gnu++17 -fPIE -o CMakeFiles/cmTC_36614.dir/src.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy/src.cxx
+        Linking CXX executable cmTC_36614
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36614.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer --std=c++17 CMakeFiles/cmTC_36614.dir/src.cxx.o -o cmTC_36614 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-Kz8JQy'
         
       exitCode: 0
   -
@@ -633,31 +633,31 @@ events:
     checks:
       - "Performing Test HAVE_FALLOCATE"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_FALLOCATE"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_058f3/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_058f3.dir/build.make CMakeFiles/cmTC_058f3.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7'
-        Building CXX object CMakeFiles/cmTC_058f3.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_FALLOCATE  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_058f3.dir/src.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7/src.cxx
-        Linking CXX executable cmTC_058f3
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_058f3.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_058f3.dir/src.cxx.o -o cmTC_058f3 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-77tbB7'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f82f3/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f82f3.dir/build.make CMakeFiles/cmTC_f82f3.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9'
+        Building CXX object CMakeFiles/cmTC_f82f3.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_FALLOCATE  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_f82f3.dir/src.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9/src.cxx
+        Linking CXX executable cmTC_f82f3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f82f3.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_f82f3.dir/src.cxx.o -o cmTC_f82f3 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-gIIir9'
         
       exitCode: 0
   -
@@ -669,31 +669,31 @@ events:
     checks:
       - "Performing Test HAVE_SYNC_FILE_RANGE_WRITE"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_SYNC_FILE_RANGE_WRITE"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d8b2c/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_d8b2c.dir/build.make CMakeFiles/cmTC_d8b2c.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U'
-        Building CXX object CMakeFiles/cmTC_d8b2c.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_SYNC_FILE_RANGE_WRITE  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_d8b2c.dir/src.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U/src.cxx
-        Linking CXX executable cmTC_d8b2c
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8b2c.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_d8b2c.dir/src.cxx.o -o cmTC_d8b2c 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-hWTQ7U'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2201f/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2201f.dir/build.make CMakeFiles/cmTC_2201f.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT'
+        Building CXX object CMakeFiles/cmTC_2201f.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_SYNC_FILE_RANGE_WRITE  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_2201f.dir/src.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT/src.cxx
+        Linking CXX executable cmTC_2201f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2201f.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_2201f.dir/src.cxx.o -o cmTC_2201f 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iClDUT'
         
       exitCode: 0
   -
@@ -705,31 +705,31 @@ events:
     checks:
       - "Performing Test HAVE_PTHREAD_MUTEX_ADAPTIVE_NP"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_PTHREAD_MUTEX_ADAPTIVE_NP"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_114a4/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_114a4.dir/build.make CMakeFiles/cmTC_114a4.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q'
-        Building CXX object CMakeFiles/cmTC_114a4.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_PTHREAD_MUTEX_ADAPTIVE_NP  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_114a4.dir/src.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q/src.cxx
-        Linking CXX executable cmTC_114a4
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_114a4.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_114a4.dir/src.cxx.o -o cmTC_114a4 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-IOdA9q'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_720ea/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_720ea.dir/build.make CMakeFiles/cmTC_720ea.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN'
+        Building CXX object CMakeFiles/cmTC_720ea.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_PTHREAD_MUTEX_ADAPTIVE_NP  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_720ea.dir/src.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN/src.cxx
+        Linking CXX executable cmTC_720ea
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_720ea.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_720ea.dir/src.cxx.o -o cmTC_720ea 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-8zR9eN'
         
       exitCode: 0
   -
@@ -741,31 +741,31 @@ events:
     checks:
       - "Looking for malloc_usable_size"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_MALLOC_USABLE_SIZE"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2b462/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_2b462.dir/build.make CMakeFiles/cmTC_2b462.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s'
-        Building CXX object CMakeFiles/cmTC_2b462.dir/CheckSymbolExists.cxx.o
-        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_2b462.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_2b462
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b462.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_2b462.dir/CheckSymbolExists.cxx.o -o cmTC_2b462 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-zHpz9s'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3aa8e/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3aa8e.dir/build.make CMakeFiles/cmTC_3aa8e.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X'
+        Building CXX object CMakeFiles/cmTC_3aa8e.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_3aa8e.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_3aa8e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3aa8e.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_3aa8e.dir/CheckSymbolExists.cxx.o -o cmTC_3aa8e 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-iGTf4X'
         
       exitCode: 0
   -
@@ -777,31 +777,31 @@ events:
     checks:
       - "Looking for sched_getcpu"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_SCHED_GETCPU"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ef37b/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ef37b.dir/build.make CMakeFiles/cmTC_ef37b.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk'
-        Building CXX object CMakeFiles/cmTC_ef37b.dir/CheckSymbolExists.cxx.o
-        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_ef37b.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_ef37b
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef37b.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_ef37b.dir/CheckSymbolExists.cxx.o -o cmTC_ef37b 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-kSMPbk'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9fa46/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9fa46.dir/build.make CMakeFiles/cmTC_9fa46.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT'
+        Building CXX object CMakeFiles/cmTC_9fa46.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_9fa46.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_9fa46
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fa46.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_9fa46.dir/CheckSymbolExists.cxx.o -o cmTC_9fa46 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-lAwiuT'
         
       exitCode: 0
   -
@@ -813,31 +813,31 @@ events:
     checks:
       - "Looking for getauxval"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_AUXV_GETAUXVAL"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_38f78/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_38f78.dir/build.make CMakeFiles/cmTC_38f78.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ'
-        Building CXX object CMakeFiles/cmTC_38f78.dir/CheckSymbolExists.cxx.o
-        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_38f78.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_38f78
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38f78.dir/link.txt --verbose=1
-        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_38f78.dir/CheckSymbolExists.cxx.o -o cmTC_38f78 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-MEJUqQ'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_be51d/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_be51d.dir/build.make CMakeFiles/cmTC_be51d.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub'
+        Building CXX object CMakeFiles/cmTC_be51d.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_be51d.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_be51d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be51d.dir/link.txt --verbose=1
+        /usr/bin/c++  -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  CMakeFiles/cmTC_be51d.dir/CheckSymbolExists.cxx.o -o cmTC_be51d 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-EEIJub'
         
       exitCode: 0
   -
@@ -849,34 +849,34 @@ events:
     checks:
       - "Looking for F_FULLFSYNC"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp"
       CMAKE_CXX_FLAGS_DEBUG: "-g -DROCKSDB_USE_RTTI"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "HAVE_FULLFSYNC"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c443a/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c443a.dir/build.make CMakeFiles/cmTC_c443a.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ'
-        Building CXX object CMakeFiles/cmTC_c443a.dir/CheckSymbolExists.cxx.o
-        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_c443a.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ/CheckSymbolExists.cxx
-        /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-        /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ/CheckSymbolExists.cxx:8:19: error: ‘F_FULLFSYNC’ was not declared in this scope
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e25c1/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e25c1.dir/build.make CMakeFiles/cmTC_e25c1.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS'
+        Building CXX object CMakeFiles/cmTC_e25c1.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -W -Wextra -Wall -pthread -Wsign-compare -Wshadow -Wno-unused-parameter -Wno-unused-variable -Woverloaded-virtual -Wnon-virtual-dtor -Wno-missing-field-initializers -Wno-strict-aliasing -Wno-invalid-offsetof -fno-omit-frame-pointer -momit-leaf-frame-pointer -fno-builtin-memcmp  -std=gnu++17 -fPIE -o CMakeFiles/cmTC_e25c1.dir/CheckSymbolExists.cxx.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS/CheckSymbolExists.cxx
+        /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+        /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS/CheckSymbolExists.cxx:8:19: error: ‘F_FULLFSYNC’ was not declared in this scope
             8 |   return ((int*)(&F_FULLFSYNC))[argc];
               |                   ^~~~~~~~~~~
-        gmake[4]: *** [CMakeFiles/cmTC_c443a.dir/build.make:78: CMakeFiles/cmTC_c443a.dir/CheckSymbolExists.cxx.o] Error 1
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ'
-        gmake[3]: *** [Makefile:127: cmTC_c443a/fast] Error 2
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-amPziQ'
+        gmake[4]: *** [CMakeFiles/cmTC_e25c1.dir/build.make:78: CMakeFiles/cmTC_e25c1.dir/CheckSymbolExists.cxx.o] Error 1
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS'
+        gmake[3]: *** [Makefile:127: cmTC_e25c1/fast] Error 2
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-ydRFKS'
         
       exitCode: 2
   -
@@ -890,31 +890,31 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G"
-      binary: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G"
+      source: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf"
+      binary: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf"
     cmakeVariables:
       CMAKE_C_FLAGS: " -Wstrict-prototypes"
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/cmake/modules/"
+      CMAKE_MODULE_PATH: "/home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/cmake/modules/"
       CMAKE_POSITION_INDEPENDENT_CODE: "ON"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G'
+        Change Dir: '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_48fde/fast
-        gmake[3]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G'
-        /usr/bin/gmake  -f CMakeFiles/cmTC_48fde.dir/build.make CMakeFiles/cmTC_48fde.dir/build
-        gmake[4]: Entering directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G'
-        Building C object CMakeFiles/cmTC_48fde.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -Wstrict-prototypes  -fPIE -o CMakeFiles/cmTC_48fde.dir/src.c.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G/src.c
-        Linking C executable cmTC_48fde
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48fde.dir/link.txt --verbose=1
-        /usr/bin/cc  -Wstrict-prototypes  CMakeFiles/cmTC_48fde.dir/src.c.o -o cmTC_48fde 
-        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G'
-        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-G2Bo6G'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_37dff/fast
+        gmake[3]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf'
+        /usr/bin/gmake  -f CMakeFiles/cmTC_37dff.dir/build.make CMakeFiles/cmTC_37dff.dir/build
+        gmake[4]: Entering directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf'
+        Building C object CMakeFiles/cmTC_37dff.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -Wstrict-prototypes  -fPIE -o CMakeFiles/cmTC_37dff.dir/src.c.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf/src.c
+        Linking C executable cmTC_37dff
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37dff.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wstrict-prototypes  CMakeFiles/cmTC_37dff.dir/src.c.o -o cmTC_37dff 
+        gmake[4]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf'
+        gmake[3]: Leaving directory '/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/CMakeScratch/TryCompile-7GYMnf'
         
       exitCode: 0
 ...

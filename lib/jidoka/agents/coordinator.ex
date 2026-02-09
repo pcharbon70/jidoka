@@ -101,7 +101,7 @@ defmodule Jidoka.Agents.Coordinator do
   end
 
   @impl true
-  def signal_routes do
+  def signal_routes(_ctx) do
     [
       # Route analysis completion signals
       {"jido_coder.analysis.complete", Actions.HandleAnalysisComplete},

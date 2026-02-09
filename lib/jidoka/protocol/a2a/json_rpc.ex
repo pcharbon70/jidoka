@@ -42,15 +42,15 @@ defmodule Jidoka.Protocol.A2A.JSONRPC do
   ## Examples
 
       iex> req = JSONRPC.request("ping", %{}, 1)
-      iex> req.method
+      iex> req["method"]
       "ping"
 
       iex> resp = JSONRPC.success_response(1, %{status: "ok"})
-      iex> resp.result
+      iex> resp["result"]
       %{status: "ok"}
 
       iex> err = JSONRPC.error_response(1, -32601, "Method not found")
-      iex> err.error.code
+      iex> err["error"]["code"]
       -32601
 
   """
@@ -100,9 +100,9 @@ defmodule Jidoka.Protocol.A2A.JSONRPC do
   ## Examples
 
       iex> req = JSONRPC.request("agent.send_message", %{to: "agent:test"}, 1)
-      iex> req.jsonrpc
+      iex> req["jsonrpc"]
       "2.0"
-      iex> req.method
+      iex> req["method"]
       "agent.send_message"
 
   """
@@ -122,8 +122,8 @@ defmodule Jidoka.Protocol.A2A.JSONRPC do
   ## Examples
 
       iex> notif = JSONRPC.notification("agent.status_changed", %{status: "ready"})
-      iex> notif["id"]
-      nil
+      iex> Map.has_key?(notif, "id")
+      false
 
   """
   @spec notification(String.t(), map() | list()) :: map()
@@ -145,7 +145,7 @@ defmodule Jidoka.Protocol.A2A.JSONRPC do
   ## Examples
 
       iex> resp = JSONRPC.success_response(1, %{result: "success"})
-      iex> resp.result
+      iex> resp["result"]
       %{result: "success"}
 
   """
@@ -170,9 +170,9 @@ defmodule Jidoka.Protocol.A2A.JSONRPC do
 
   ## Examples
 
-      iex> err = JSONRPC.error_response(1, @method_not_found, "Method not found")
-      iex> err.error.code
-      -32603
+      iex> err = JSONRPC.error_response(1, -32601, "Method not found")
+      iex> err["error"]["code"]
+      -32601
 
   """
   @spec error_response(integer() | String.t(), integer(), String.t(), term() | nil) :: response()

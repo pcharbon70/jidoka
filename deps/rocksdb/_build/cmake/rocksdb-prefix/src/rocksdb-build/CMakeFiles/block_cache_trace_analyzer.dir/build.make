@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb
+CMAKE_SOURCE_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
+CMAKE_BINARY_DIR = /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/block_cache_trace_analyzer.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/block_cache_trace_analyzer.dir/progress.make
 include CMakeFiles/block_cache_trace_analyzer.dir/flags.make
 
 CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o: CMakeFiles/block_cache_trace_analyzer.dir/flags.make
-CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o: /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc
+CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o: /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc
 CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o: CMakeFiles/block_cache_trace_analyzer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o -MF CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o.d -o CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o -c /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o -MF CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o.d -o CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.o -c /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc
 
 CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc > CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc > CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.i
 
 CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc -o CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc -o CMakeFiles/block_cache_trace_analyzer.dir/tools/block_cache_analyzer/block_cache_trace_analyzer_tool.cc.s
 
 # Object files for target block_cache_trace_analyzer
 block_cache_trace_analyzer_OBJECTS = \
@@ -94,7 +94,7 @@ block_cache_trace_analyzer: CMakeFiles/block_cache_trace_analyzer.dir/tools/bloc
 block_cache_trace_analyzer: CMakeFiles/block_cache_trace_analyzer.dir/build.make
 block_cache_trace_analyzer: librocksdb.so.9.10.0
 block_cache_trace_analyzer: CMakeFiles/block_cache_trace_analyzer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable block_cache_trace_analyzer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable block_cache_trace_analyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/block_cache_trace_analyzer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -106,6 +106,6 @@ CMakeFiles/block_cache_trace_analyzer.dir/clean:
 .PHONY : CMakeFiles/block_cache_trace_analyzer.dir/clean
 
 CMakeFiles/block_cache_trace_analyzer.dir/depend:
-	cd /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/block_cache_trace_analyzer.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/deps/rocksdb /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build /home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src/rocksdb-build/CMakeFiles/block_cache_trace_analyzer.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/block_cache_trace_analyzer.dir/depend
 

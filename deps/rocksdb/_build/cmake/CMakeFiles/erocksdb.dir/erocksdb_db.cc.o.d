@@ -1,5 +1,5 @@
 CMakeFiles/erocksdb.dir/erocksdb_db.cc.o: \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/erocksdb_db.cc \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/erocksdb_db.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/vector \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -51,7 +51,7 @@ CMakeFiles/erocksdb.dir/erocksdb_db.cc.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/db.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/db.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -172,17 +172,17 @@ CMakeFiles/erocksdb.dir/erocksdb_db.cc.o: \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/enable_special_members.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/attribute_groups.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/iterator_base.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cleanable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/attribute_groups.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/iterator_base.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cleanable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rocksdb_namespace.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice.h \
  /usr/include/c++/13/cassert /usr/include/assert.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/wide_columns.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/wide_columns.h \
  /usr/include/c++/13/ostream /usr/include/c++/13/ios \
  /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/bits/locale_classes.h \
@@ -201,23 +201,23 @@ CMakeFiles/erocksdb.dir/erocksdb_db.cc.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/block_cache_trace_writer.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/options.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/block_cache_trace_writer.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/options.h \
  /usr/include/c++/13/limits /usr/include/c++/13/optional \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/advanced_options.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/advanced_options.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/cache.h \
  /usr/include/c++/13/cstdint \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/compression_type.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/types.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/data_structure.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/memory_allocator.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/customizable.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/configurable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/compression_type.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/types.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/data_structure.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/memory_allocator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/customizable.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/configurable.h \
  /usr/include/c++/13/atomic /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/memtablerep.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/memtablerep.h \
  /usr/include/c++/13/stdlib.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/universal_compaction.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/universal_compaction.h \
  /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
@@ -227,82 +227,82 @@ CMakeFiles/erocksdb.dir/erocksdb_db.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/comparator.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/env.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/comparator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/env.h \
  /usr/include/c++/13/cstdarg /usr/include/c++/13/functional \
  /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
  /usr/include/c++/13/compare /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/functor_wrapper.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/port_defs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/thread_status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/file_checksum.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/listener.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/functor_wrapper.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/port_defs.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/thread_status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/file_checksum.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/listener.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/compaction_job_stats.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/io_status.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/table_properties.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/sst_partitioner.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/version.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/write_buffer_manager.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/compaction_job_stats.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/io_status.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/table_properties.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/sst_partitioner.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/version.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/write_buffer_manager.h \
  /usr/include/c++/13/condition_variable \
  /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
  /usr/include/c++/13/mutex \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/system_clock.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/table_reader_caller.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/trace_reader_writer.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/trace_record.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/iterator.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/metadata.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/snapshot.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/sst_file_writer.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/transaction_log.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/write_batch.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/write_batch_base.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/user_write_callback.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/table_properties_collectors.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/db_ttl.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/stackable_db.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rate_limiter.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/statistics.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/sst_file_manager.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/file_system.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/system_clock.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/table_reader_caller.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/trace_reader_writer.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/trace_record.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/iterator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/metadata.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/snapshot.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/sst_file_writer.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/transaction_log.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/write_batch.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/write_batch_base.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/user_write_callback.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/table_properties_collectors.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/db_ttl.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/stackable_db.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/rate_limiter.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/statistics.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/sst_file_manager.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/file_system.h \
  /usr/include/c++/13/sstream /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/table.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/filter_policy.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/table.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/filter_policy.h \
  /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice_transform.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/checkpoint.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/optimistic_transaction_db.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/atoms.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/slice_transform.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/checkpoint.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/optimistic_transaction_db.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/atoms.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_nif.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_drv_nif.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_int_sizes_config.h \
  /home/ducky/.asdf/installs/erlang/27.3/erts-15.2.3/include/erl_nif_api_funcs.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/refobjects.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/transaction.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/util.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/erocksdb_db.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/cache.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/advanced_cache.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/statistics.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/rate_limiter.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/sst_file_manager.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/write_buffer_manager.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/env.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/erlang_merge.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/refobjects.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/utilities/transaction.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/util.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/erocksdb_db.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/advanced_cache.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/statistics.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/rate_limiter.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/sst_file_manager.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/write_buffer_manager.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/env.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/erlang_merge.h \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/merge_operator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb/include/rocksdb/merge_operator.h \
  /usr/include/c++/13/variant \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/bitset_merge_operator.h \
- /home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/counter_merge_operator.h
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/bitset_merge_operator.h \
+ /home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/counter_merge_operator.h

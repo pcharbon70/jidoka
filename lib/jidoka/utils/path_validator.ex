@@ -57,6 +57,8 @@ defmodule Jidoka.Utils.PathValidator do
   end
 
   def validate_within(target_path, allowed_dirs, opts) when is_list(allowed_dirs) do
+    allow_symlinks = Keyword.get(opts, :allow_symlinks, false)
+
     # Expand and normalize the target path
     expanded_target = Path.expand(target_path)
 
@@ -64,9 +66,10 @@ defmodule Jidoka.Utils.PathValidator do
     Enum.find_value(allowed_dirs, fn allowed_dir ->
       expanded_allowed = Path.expand(allowed_dir)
 
-      # Ensure target starts with allowed path
+      # First check: Ensure target starts with allowed path
       if String.starts_with?(expanded_target, expanded_allowed) do
-        :ok
+        # Second check: Verify no symlink escapes the allowed directory
+        check_symlink_safe(expanded_target, expanded_allowed, allow_symlinks)
       else
         nil
       end
@@ -178,6 +181,161 @@ defmodule Jidoka.Utils.PathValidator do
   # ============================================================================
   # Private Helpers
   # ============================================================================
+
+  defp check_symlink_safe(target_path, allowed_dir, allow_symlinks) do
+    if allow_symlinks do
+      # If symlinks are allowed, just do basic path check
+      :ok
+    else
+      # Resolve symlinks to get the real path, then check
+      case resolve_symlinks(target_path) do
+        {:ok, real_path} ->
+          # Check if the real path is within allowed directory
+          real_expanded = Path.expand(real_path)
+          allowed_expanded = Path.expand(allowed_dir)
+
+          # Ensure the real path starts with allowed directory
+          # Also ensure there's a path separator after the allowed dir to prevent
+          # /allowed_dir_something from matching /allowed_dir
+          allowed_with_sep = allowed_expanded <> if(String.ends_with?(allowed_expanded, "/"), do: "", else: "/")
+
+          if String.starts_with?(real_expanded, allowed_with_sep) or real_expanded == allowed_expanded do
+            :ok
+          else
+            {:error, :symlink_escapes_allowed_dir}
+          end
+
+        {:error, :symlink_loop} ->
+          {:error, :symlink_loop_detected}
+
+        {:error, _} ->
+          # If we can't resolve the symlink, be conservative and reject
+          {:error, :cannot_resolve_symlink}
+      end
+    end
+  end
+
+  # Resolve symlinks in a path to get the real target
+  # This handles nested symlinks and detects loops
+  defp resolve_symlinks(path, visited \\ MapSet.new()) do
+    # Get the directory and basename
+    dir = Path.dirname(path)
+    base = Path.basename(path)
+
+    # Resolve the directory first (bottom-up)
+    case resolve_symlinks_in_dir(dir, visited) do
+      {:ok, real_dir} ->
+        # Now check if the current path component is a symlink
+        current_path = Path.join(real_dir, base)
+
+        case File.lstat(current_path) do
+          {:ok, %File.Stat{type: :symlink}} ->
+            # It's a symlink, resolve it
+            case resolve_single_symlink(current_path, visited) do
+              {:ok, target} ->
+                # Recursively resolve the target (might be another symlink)
+                if MapSet.member?(visited, target) do
+                  {:error, :symlink_loop}
+                else
+                  resolve_symlinks(target, MapSet.put(visited, current_path))
+                end
+
+              {:error, _} ->
+                {:error, :symlink_resolution_failed}
+            end
+
+          {:ok, _} ->
+            # Not a symlink, return the path as-is
+            {:ok, current_path}
+
+          {:error, :enoent} ->
+            # Path doesn't exist yet, can't check symlinks
+            # This is okay - we're validating a path that might be created
+            {:ok, current_path}
+
+          {:error, reason} ->
+            {:error, reason}
+        end
+
+      {:error, reason} ->
+        {:error, reason}
+    end
+  end
+
+  # Resolve symlinks in a directory path
+  defp resolve_symlinks_in_dir(dir, visited) do
+    if dir == "." or dir == "" do
+      {:ok, File.cwd!()}
+    else
+      parts = Path.split(dir)
+      resolve_path_parts(parts, visited)
+    end
+  end
+
+  # Resolve each part of a path, handling symlinks
+  # Process parts in order from root to leaf
+  defp resolve_path_parts(parts, visited) do
+    parts
+    |> Enum.reduce_while({:ok, "/"}, fn part, {:ok, base_path} ->
+      current = Path.join([base_path, part])
+
+      case File.lstat(current) do
+        {:ok, %File.Stat{type: :symlink}} ->
+          case resolve_single_symlink(current, visited) do
+            {:ok, target} ->
+              # Continue resolving with the symlink target
+              # Split the target and continue from there
+              target_parts = Path.split(target)
+              # Resolve the target starting from the current base path
+              resolved_target = Path.expand(target, Path.dirname(current))
+
+              # Check if the resolved target is within bounds
+              if String.starts_with?(resolved_target, base_path) do
+                {:cont, {:ok, resolved_target}}
+              else
+                # Symlink target escapes the current base path
+                {:halt, {:error, :symlink_escapes_allowed_dir}}
+              end
+
+            {:error, _} ->
+              {:halt, {:error, :symlink_resolution_failed}}
+          end
+
+        {:ok, _} ->
+          {:cont, {:ok, current}}
+
+        {:error, :enoent} ->
+          # Path component doesn't exist - allow but don't resolve further
+          {:cont, {:ok, current}}
+
+        {:error, reason} ->
+          {:halt, {:error, reason}}
+      end
+    end)
+  end
+
+  # Resolve a single symlink and get its target
+  defp resolve_single_symlink(path, visited) do
+    if MapSet.member?(visited, path) do
+      {:error, :symlink_loop}
+    else
+      case File.read_link(path) do
+        {:ok, target} ->
+          # If relative, resolve against the symlink's directory
+          resolved =
+            if Path.type(target) == :relative do
+              Path.join([Path.dirname(path), target]) |> Path.expand()
+            else
+              Path.expand(target)
+            end
+
+          {:ok, resolved}
+
+        {:error, reason} ->
+          {:error, reason}
+      end
+    end
+  end
 
   defp validate_extension(path, allowed_extensions) do
     ext = Path.extname(path)

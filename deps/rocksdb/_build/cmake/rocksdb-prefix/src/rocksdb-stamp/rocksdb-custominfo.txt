@@ -4,6 +4,6 @@
 
 method=custom
 command=
-source_dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/c_src/../deps/rocksdb
-work_dir=/home/ducky/code/agentjido/jido_coder_lib/deps/rocksdb/_build/cmake/rocksdb-prefix/src
+source_dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/c_src/../deps/rocksdb
+work_dir=/home/ducky/code/agentjido/jidoka/deps/rocksdb/_build/cmake/rocksdb-prefix/src
 
