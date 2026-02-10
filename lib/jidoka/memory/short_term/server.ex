@@ -64,8 +64,13 @@ defmodule Jidoka.Memory.ShortTerm.Server do
       {:ok, pid} = Server.start_link("session_123", max_tokens: 8000)
 
   """
-  # Handle list argument for supervision tree (must come first to avoid conflict)
+  # Handle list argument for supervision tree
   def start_link([session_id]) do
+    start_link(session_id, [])
+  end
+
+  # Handle binary session_id without opts
+  def start_link(session_id) when is_binary(session_id) do
     start_link(session_id, [])
   end
 
@@ -73,7 +78,8 @@ defmodule Jidoka.Memory.ShortTerm.Server do
     start_link(session_id, opts)
   end
 
-  def start_link(session_id, opts \\ []) do
+  # Handle binary session_id with opts
+  def start_link(session_id, opts) when is_binary(session_id) do
     # Validate session_id first
     with :ok <- Validation.validate_session_id(session_id) do
       GenServer.start_link(__MODULE__, {session_id, opts})

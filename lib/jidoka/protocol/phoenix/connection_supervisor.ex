@@ -57,7 +57,7 @@ defmodule Jidoka.Protocol.Phoenix.ConnectionSupervisor do
   """
   def start_connection(opts) when is_list(opts) do
     name = Keyword.fetch!(opts, :name)
-    uri = Keyword.fetch!(opts, :uri)
+    _uri = Keyword.fetch!(opts, :uri)
 
     child_spec = %{
       id: name,

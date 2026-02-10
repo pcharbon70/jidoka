@@ -40,7 +40,7 @@ defmodule Jidoka.Knowledge.Engine do
   use GenServer
   require Logger
 
-  alias Jidoka.Knowledge.{Context, NamedGraphs}
+  alias Jidoka.Knowledge.Context
   alias RDF.IRI
   alias TripleStore.SPARQL.Query
   import TripleStore, only: [update: 2]
@@ -574,15 +574,6 @@ defmodule Jidoka.Knowledge.Engine do
             db_open: true,
             triple_count: Map.get(store_health, :triple_count, 0),
             graph_count: Map.get(store_health, :graph_count, 0),
-            last_check: DateTime.utc_now()
-          }
-
-        {:error, _reason} ->
-          %{
-            status: :unhealthy,
-            db_open: false,
-            triple_count: 0,
-            graph_count: 0,
             last_check: DateTime.utc_now()
           }
       end

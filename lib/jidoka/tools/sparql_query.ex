@@ -62,7 +62,7 @@ defmodule Jidoka.Tools.SparqlQuery do
     ]
 
   alias TripleStore.SPARQL.Query
-  alias Jidoka.Knowledge.{Engine, Context, NamedGraphs}
+  alias Jidoka.Knowledge.{Engine, Context}
 
   @allowed_query_types ["SELECT", "ASK"]
   @default_limit 100

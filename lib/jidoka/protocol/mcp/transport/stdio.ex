@@ -172,7 +172,7 @@ defmodule Jidoka.Protocol.MCP.Transport.Stdio do
 
         {:error, {:command_not_whitelisted, base_command}}
 
-      {:error, reason} = error ->
+      {:error, _reason} = error ->
         error
     end
   end

@@ -40,7 +40,6 @@ defmodule Jidoka.Application do
   """
 
   use Application
-  import Config
 
   @doc """
   Starts the application and its supervision tree.

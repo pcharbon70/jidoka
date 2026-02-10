@@ -284,8 +284,6 @@ defmodule Jidoka.Utils.PathValidator do
           case resolve_single_symlink(current, visited) do
             {:ok, target} ->
               # Continue resolving with the symlink target
-              # Split the target and continue from there
-              target_parts = Path.split(target)
               # Resolve the target starting from the current base path
               resolved_target = Path.expand(target, Path.dirname(current))
 

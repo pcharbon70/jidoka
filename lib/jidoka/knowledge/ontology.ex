@@ -68,7 +68,6 @@ defmodule Jidoka.Knowledge.Ontology do
 
   alias Jidoka.Knowledge.{Engine, NamedGraphs}
   alias RDF.{IRI, Graph}
-  alias TripleStore.SPARQL.Query
 
   # Default engine name
   @default_engine :knowledge_engine

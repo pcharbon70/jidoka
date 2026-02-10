@@ -213,10 +213,6 @@ defmodule Jidoka.Memory.Integration do
 
         Logger.debug("Promoted #{length(results.promoted)} items for session: #{stm.session_id}")
         {:ok, updated_stm, results}
-
-      {:error, reason} ->
-        Logger.error("Promotion failed for session #{stm.session_id}: #{inspect(reason)}")
-        {:error, reason}
     end
   end
 
@@ -254,10 +250,6 @@ defmodule Jidoka.Memory.Integration do
         )
 
         {:ok, updated_stm, results}
-
-      {:error, reason} ->
-        Logger.error("Promote all failed for session #{stm.session_id}: #{inspect(reason)}")
-        {:error, reason}
     end
   end
 

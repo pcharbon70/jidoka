@@ -227,7 +227,7 @@ defmodule Jidoka.Memory.ShortTerm do
       value = ShortTerm.get_context(stm, "key", "default")
 
   """
-  def get_context(%__MODULE__{working_context: ctx} = stm, key, default) when is_binary(key) do
+  def get_context(%__MODULE__{working_context: ctx} = _stm, key, default) when is_binary(key) do
     WorkingContext.get(ctx, key, default)
   end
 

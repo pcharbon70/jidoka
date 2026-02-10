@@ -59,7 +59,7 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
   alias StateOp.SetState
 
   @impl true
-  def run(params, context) do
+  def run(params, _context) do
     # Extract signal data
     message = params[:message]
     session_id = params[:session_id]

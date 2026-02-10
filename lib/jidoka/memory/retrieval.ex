@@ -70,7 +70,6 @@ defmodule Jidoka.Memory.Retrieval do
   @default_limit 10
   # 5 minutes
   @default_cache_ttl 300
-  @default_match_mode :substring
   @cache_table_name :jido_memory_retrieval_cache
   @max_cache_size 100
 
@@ -198,7 +197,7 @@ defmodule Jidoka.Memory.Retrieval do
           {:ok, context()} | {:error, term()}
   def enrich_context(%SessionAdapter{} = adapter, query, opts \\ []) do
     with {:ok, results} <- search(adapter, query) do
-      max_tokens = Keyword.get(opts, :max_tokens, 2000)
+      _max_tokens = Keyword.get(opts, :max_tokens, 2000)
       group_by = Keyword.get(opts, :group_by, :none)
       include_metadata = Keyword.get(opts, :include_metadata, false)
 
@@ -375,7 +374,7 @@ defmodule Jidoka.Memory.Retrieval do
     end
   end
 
-  defp match_reasons(memory, []) do
+  defp match_reasons(_memory, []) do
     []
   end
 

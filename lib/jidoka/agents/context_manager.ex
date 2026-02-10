@@ -96,7 +96,6 @@ defmodule Jidoka.Agents.ContextManager do
 
   alias Jidoka.{PubSub, AgentRegistry, Memory}
   alias Memory.ShortTerm
-  alias Memory.Retrieval
 
   @registry_key_prefix "context_manager:"
 

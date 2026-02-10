@@ -141,9 +141,6 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleIssueFound do
   defp maybe_put_column(data, nil), do: data
   defp maybe_put_column(data, column), do: Map.put(data, :column, column)
 
-  defp maybe_put_session_id(data, nil), do: data
-  defp maybe_put_session_id(data, session_id), do: Map.put(data, :session_id, session_id)
-
   defp increment_count(context, key) do
     get_in(context[:agent_state] || %{}, [:event_aggregation, key, "count"]) ||
       0

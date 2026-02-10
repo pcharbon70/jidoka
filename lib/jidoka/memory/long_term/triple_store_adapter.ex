@@ -64,7 +64,6 @@ defmodule Jidoka.Memory.LongTerm.TripleStoreAdapter do
 
   alias Jidoka.Knowledge.{Engine, Context, Ontology, NamedGraphs}
   alias Jidoka.Memory.Validation
-  alias RDF.IRI
   alias TripleStore.SPARQL.Query
   import TripleStore, only: [update: 2]
 
@@ -86,7 +85,6 @@ defmodule Jidoka.Memory.LongTerm.TripleStoreAdapter do
   @jido_confidence "#{@jido_namespace}confidence"
   @jido_timestamp "#{@jido_namespace}timestamp"
   @jido_source_session "#{@jido_namespace}sourceSession"
-  @prov_started_at_time "http://www.w3.org/ns/prov#startedAtTime"
 
   # ========================================================================
   # Type Definitions
@@ -746,8 +744,6 @@ defmodule Jidoka.Memory.LongTerm.TripleStoreAdapter do
   end
 
   defp extract_confidence(triples) do
-    jido_confidence = @jido_confidence
-
     result =
       Enum.find_value(triples, fn
         %{"p" => @jido_confidence, "o" => confidence} when is_binary(confidence) ->
@@ -1042,10 +1038,6 @@ defmodule Jidoka.Memory.LongTerm.TripleStoreAdapter do
     |> Engine.context()
     |> Map.put(:transaction, nil)
     |> Context.with_permit_all()
-  end
-
-  defp default_context do
-    Engine.context(@default_engine)
   end
 
   defp graph_iri(%__MODULE__{} = adapter) do

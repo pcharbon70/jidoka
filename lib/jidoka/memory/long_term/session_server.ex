@@ -78,14 +78,6 @@ defmodule Jidoka.Memory.LongTerm.SessionServer do
 
   def start_link(_session_id), do: {:error, :invalid_session_id}
 
-  @doc """
-  Starts a SessionServer as part of a supervision tree.
-
-  ## Examples
-
-      {SessionServer, ["session_123"]}
-
-  """
   def start_link([session_id]) do
     GenServer.start_link(__MODULE__, session_id, name: via_tuple(session_id))
   end

@@ -184,9 +184,6 @@ defmodule Jidoka.Protocol.MCP.Client do
 
   ## Private Functions
 
-  @doc """
-  Validate transport configuration before starting the GenServer.
-  """
   defp validate_transport({:stdio, opts}) when is_list(opts) do
     if Keyword.has_key?(opts, :command) do
       :ok

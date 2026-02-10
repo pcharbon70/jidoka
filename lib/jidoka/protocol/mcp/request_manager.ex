@@ -123,7 +123,7 @@ defmodule Jidoka.Protocol.MCP.RequestManager do
       {nil, _} ->
         {:reply, {:error, :not_found}, state}
 
-      {%{from: from, method: method}, pending} ->
+      {%{from: from, method: _method}, pending} ->
         # Reply to the waiting process
         GenServer.reply(from, {:ok, response})
         {:reply, :ok, %{state | pending_requests: pending}}

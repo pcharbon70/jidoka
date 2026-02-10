@@ -100,7 +100,7 @@ defmodule Jidoka.Agent.State do
     Map.put(state, field, value)
   end
 
-  def increment_field(state, [head | tail] = path, amount) when is_atom(head) do
+  def increment_field(state, [head | _tail] = path, amount) when is_atom(head) do
     current = get_in(state, path)
 
     value =
@@ -154,7 +154,7 @@ defmodule Jidoka.Agent.State do
     update_in(state, [Access.key(head, %{})], &do_put_nested(&1, tail, value))
   end
 
-  defp do_put_nested(current, [], value), do: value
+  defp do_put_nested(_current, [], value), do: value
 
   defp do_put_nested(current, [head | tail], value) do
     update_in(current, [Access.key(head, %{})], &do_put_nested(&1, tail, value))
