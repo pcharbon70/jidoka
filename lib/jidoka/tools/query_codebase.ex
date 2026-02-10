@@ -14,6 +14,7 @@ defmodule Jidoka.Tools.QueryCodebase do
   | `list_modules` | List all modules | none |
   | `find_function` | Find a specific function | `module_name`, `function_name`, `arity` |
   | `list_functions` | List functions in a module | `module_name` |
+  | `analyze_function` | Analyze function with module context and call graph | `module_name`, `function_name`, `arity` |
   | `get_dependencies` | Get module dependencies | `module_name` |
   | `get_call_graph` | Get call graph for module/function | `module_name` (optional: `function_name`, `arity`) |
   | `find_protocol` | Find a protocol by name | `module_name` |
@@ -70,9 +71,9 @@ defmodule Jidoka.Tools.QueryCodebase do
         required: true,
         doc: """
         Query type: find_module, list_modules, find_function, list_functions,
-        get_dependencies, get_call_graph, find_protocol, list_protocols,
-        find_behaviour, list_behaviours, find_struct, list_structs,
-        search_by_name, get_index_stats
+        analyze_function, get_dependencies, get_call_graph, find_protocol,
+        list_protocols, find_behaviour, list_behaviours, find_struct,
+        list_structs, search_by_name, get_index_stats
         """
       ],
       module_name: [
@@ -106,6 +107,12 @@ defmodule Jidoka.Tools.QueryCodebase do
         required: false,
         default: 100,
         doc: "Maximum number of results"
+      ],
+      include_call_graph: [
+        type: :boolean,
+        required: false,
+        default: false,
+        doc: "Include call graph in the result (for analyze_function query type)"
       ]
     ]
 
@@ -116,6 +123,7 @@ defmodule Jidoka.Tools.QueryCodebase do
     "list_modules",
     "find_function",
     "list_functions",
+    "analyze_function",
     "get_dependencies",
     "get_call_graph",
     "find_protocol",
@@ -157,7 +165,8 @@ defmodule Jidoka.Tools.QueryCodebase do
          arity: params[:arity],
          pattern: params[:pattern],
          visibility: parse_visibility(params[:visibility]),
-         limit: params[:limit]
+         limit: params[:limit],
+         include_call_graph: params[:include_call_graph] || false
        }}
     end
   end
@@ -197,6 +206,40 @@ defmodule Jidoka.Tools.QueryCodebase do
 
   defp execute_query(%{query_type: "list_functions", module_name: name, visibility: vis}, opts) do
     Queries.list_functions(name, Keyword.put(opts, :visibility, vis))
+  end
+
+  defp execute_query(%{query_type: "analyze_function", module_name: mod, function_name: fun, arity: arity, include_call_graph: include_cg}, _opts) do
+    with {:ok, func_info} <- Queries.find_function(mod, fun, arity || 0),
+         {:ok, module_info} <- Queries.find_module(mod) do
+      result = %{
+        function: %{
+          name: func_info.name,
+          arity: func_info.arity,
+          visibility: func_info.visibility,
+          documentation: func_info.documentation,
+          head: func_info.head
+        },
+        module: %{
+          name: module_info.name,
+          file: module_info.file
+        }
+      }
+
+      result =
+        if include_cg do
+          case Queries.get_call_graph({mod, fun, arity || 0}) do
+            {:ok, call_graph} ->
+              Map.put(result, :call_graph, call_graph)
+
+            _ ->
+              result
+          end
+        else
+          result
+        end
+
+      {:ok, result}
+    end
   end
 
   defp execute_query(%{query_type: "get_dependencies", module_name: name}, opts) do

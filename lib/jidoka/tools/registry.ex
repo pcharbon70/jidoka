@@ -33,7 +33,6 @@ defmodule Jidoka.Tools.Registry do
     # Core tools
     {Jidoka.Tools.ReadFile, :read_file, "filesystem"},
     {Jidoka.Tools.SearchCode, :search_code, "search"},
-    {Jidoka.Tools.AnalyzeFunction, :analyze_function, "analysis"},
     {Jidoka.Tools.ListFiles, :list_files, "filesystem"},
     {Jidoka.Tools.GetDefinition, :get_definition, "analysis"},
     # Knowledge graph tools

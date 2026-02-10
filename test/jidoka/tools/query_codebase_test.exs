@@ -63,6 +63,14 @@ defmodule Jidoka.Tools.QueryCodebaseTest do
       # Query types that require function_name and arity
       result = QueryCodebase.run(%{query_type: "find_function", module_name: "SomeModule", function_name: "foo", arity: 0}, %{})
       refute match?({:error, <<_::binary>>}, result) and String.contains?(elem(result, 1), "Invalid query_type")
+
+      # analyze_function query type
+      result = QueryCodebase.run(%{query_type: "analyze_function", module_name: "SomeModule", function_name: "foo", arity: 0}, %{})
+      refute match?({:error, <<_::binary>>}, result) and String.contains?(elem(result, 1), "Invalid query_type")
+
+      # analyze_function with include_call_graph option
+      result = QueryCodebase.run(%{query_type: "analyze_function", module_name: "SomeModule", function_name: "foo", arity: 0, include_call_graph: true}, %{})
+      refute match?({:error, <<_::binary>>}, result) and String.contains?(elem(result, 1), "Invalid query_type")
     end
 
     test "validates visibility parameter" do
