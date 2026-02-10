@@ -16,6 +16,7 @@ defmodule Jidoka.Session.Supervisor do
   ```
   SessionSupervisor (one_for_one)
   ├── ContextManager (with STM integration)
+  ├── Conversation.Tracker (conversation tracking)
   └── SessionAdapter (LTM per session)
   └── LLMOrchestrator (Phase 4 - placeholder)
   ```
@@ -43,6 +44,10 @@ defmodule Jidoka.Session.Supervisor do
   Getting the ContextManager for a session:
 
       {:ok, ctx_pid} = Jidoka.Session.Supervisor.get_context_manager_pid("session-123")
+
+  Getting the Conversation.Tracker for a session:
+
+      {:ok, tracker_pid} = Jidoka.Session.Supervisor.get_conversation_tracker_pid("session-123")
 
   Getting the LTM adapter for a session:
 
@@ -192,6 +197,39 @@ defmodule Jidoka.Session.Supervisor do
       # Look for ContextManager in children
       case Enum.find(children, fn
              {:context_manager, pid, _, _} when is_pid(pid) -> true
+             _ -> false
+           end) do
+        nil -> {:error, :not_found}
+        {_id, pid, _, _} -> {:ok, pid}
+      end
+    else
+      _ -> {:error, :not_found}
+    end
+  end
+
+  @doc """
+  Gets the Conversation.Tracker PID for a session.
+
+  ## Parameters
+
+  * `session_id` - The session ID
+
+  ## Returns
+
+  * `{:ok, pid}` - Conversation.Tracker found
+  * `{:error, :not_found}` - Conversation.Tracker not found
+
+  ## Examples
+
+      {:ok, tracker_pid} = Session.Supervisor.get_conversation_tracker_pid("session-123")
+
+  """
+  def get_conversation_tracker_pid(session_id) when is_binary(session_id) do
+    with {:ok, supervisor_pid} <- find_supervisor(session_id),
+         {:ok, children} <- get_children(supervisor_pid) do
+      # Look for Conversation.Tracker in children
+      case Enum.find(children, fn
+             {:conversation_tracker, pid, _, _} when is_pid(pid) -> true
              _ -> false
            end) do
         nil -> {:error, :not_found}
@@ -357,6 +395,9 @@ defmodule Jidoka.Session.Supervisor do
         else: context_opts ++ [stm_enabled: false]
 
     [
+      # Conversation.Tracker for conversation IRI and turn index tracking
+      # Registered in SessionRegistry with key {:conversation_tracker, session_id}
+      {Jidoka.Conversation.Tracker, session_id},
       # ContextManager for session-isolated context management
       # Note: ContextManager registers itself in AgentRegistry, not by name
       {Jidoka.Agents.ContextManager, context_opts}

@@ -19,6 +19,12 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
   ## Directives
 
   Broadcasts the chat request to session-specific topic for LLM processing.
+
+  ## Conversation Logging
+
+  Ensures conversation IRI is passed through the signal chain for logging.
+  The conversation_iri is retrieved from session metadata if available,
+  or from the Conversation.Tracker process if running.
   """
 
   use Jido.Action,
@@ -59,12 +65,16 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
   alias StateOp.SetState
 
   @impl true
-  def run(params, _context) do
+  def run(params, context) do
     # Extract signal data
     message = params[:message]
     session_id = params[:session_id]
     user_id = params[:user_id]
     context_data = params[:context]
+
+    # Get or ensure conversation IRI exists
+    # Try to get from Conversation.Tracker first, fall back to session metadata
+    conversation_iri = get_conversation_iri(session_id, context)
 
     # Generate unique task ID for this chat request
     task_id = "chat_#{session_id}_#{System.unique_integer([:positive, :monotonic])}"
@@ -84,7 +94,7 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
         session_id: session_id
       })
 
-    # State updates: track as active task
+    # State updates: track as active task and store conversation_iri in metadata
     state_updates = %{
       active_tasks: %{
         task_id => %{
@@ -97,22 +107,41 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
       }
     }
 
-    # Create a signal to route to LLM processor (using correct Signal API)
+    # Add conversation_iri to metadata if we have one
+    state_updates =
+      if conversation_iri do
+        Map.put(state_updates, :conversation_iri, conversation_iri)
+      else
+        state_updates
+      end
+
+    # Build LLM request signal data
+    llm_request_data = %{
+      task_id: task_id,
+      message: message,
+      session_id: session_id,
+      user_id: user_id,
+      context: context_data
+    }
+
+    # Include conversation_iri if available for downstream logging
+    llm_request_data =
+      if conversation_iri do
+        Map.put(llm_request_data, :conversation_iri, conversation_iri)
+      else
+        llm_request_data
+      end
+
+    # Create a signal to route to LLM processor
     llm_request_signal =
       Signal.new!(
         "jido_coder.llm.request",
-        %{
-          task_id: task_id,
-          message: message,
-          session_id: session_id,
-          user_id: user_id,
-          context: context_data
-        },
+        llm_request_data,
         %{source: "/jido_coder/coordinator"}
       )
 
     # Return result with state update and emit directives
-    {:ok, %{status: :routed, task_id: task_id, session_id: session_id},
+    {:ok, %{status: :routed, task_id: task_id, session_id: session_id, conversation_iri: conversation_iri},
      [
        # State operation: track as active task
        %SetState{attrs: state_updates},
@@ -128,5 +157,30 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
            {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
        }
      ]}
+  end
+
+  # Private helper to get conversation IRI from tracker or session metadata
+  defp get_conversation_iri(session_id, context) do
+    # First try to get from Conversation.Tracker if it's running
+    registry_key = {:conversation_tracker, session_id}
+
+    case Registry.lookup(Jidoka.Memory.SessionRegistry, registry_key) do
+      [{pid, _}] ->
+        # Tracker is running, get or create conversation
+        case Jidoka.Conversation.Tracker.get_or_create_conversation(pid) do
+          {:ok, conversation_iri} -> conversation_iri
+          _ -> nil
+        end
+
+      [] ->
+        # Tracker not running, check session state metadata
+        case Map.get(context, :agent_state) do
+          %{state: %{conversation_iri: conversation_iri}} when is_binary(conversation_iri) ->
+            conversation_iri
+
+          _ ->
+            nil
+        end
+    end
   end
 end

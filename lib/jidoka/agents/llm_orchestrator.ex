@@ -107,7 +107,13 @@ defmodule Jidoka.Agents.LLMOrchestrator do
   def signal_routes do
     [
       # Route LLM request signals
-      {"jido_coder.llm.request", Actions.HandleLLMRequest}
+      {"jido_coder.llm.request", Actions.HandleLLMRequest},
+      # Route LLM response signals
+      {"jido_coder.llm.response", Actions.HandleLLMResponse},
+      # Route tool call signals
+      {"jido_coder.tool.call", Actions.HandleToolCall},
+      # Route tool result signals
+      {"jido_coder.tool.result", Actions.HandleToolResult}
     ]
   end
 
