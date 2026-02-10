@@ -356,9 +356,6 @@ defmodule Jidoka.Memory.ShortTerm.Server do
 
       {:ok, stm, evicted} ->
         {:reply, {:ok, stm, evicted}, %{state | stm: stm}}
-
-      {:error, _} = error ->
-        {:reply, error, state}
     end
   end
 

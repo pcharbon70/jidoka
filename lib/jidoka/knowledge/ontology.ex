@@ -95,8 +95,6 @@ defmodule Jidoka.Knowledge.Ontology do
 
   # Elixir ontology namespace (from elixir-ontologies package)
   @elixir_namespace "https://w3id.org/elixir-code/"
-  @elixir_core_ontology "#{@elixir_namespace}core#"
-  @elixir_structure_ontology "#{@elixir_namespace}structure#"
 
   # Elixir ontology classes (subset for Phase 6.1)
   @elixir_classes %{
@@ -141,16 +139,12 @@ defmodule Jidoka.Knowledge.Ontology do
     :function_spec
   ]
 
-  # Jido namespace for Elixir code individuals (separate from class definitions)
-  @jido_elixir_namespace "https://jido.ai/"
-
   # ========================================================================
   # Conversation Ontology Constants
   # ========================================================================
 
   # Conversation ontology namespace
   @conv_namespace "https://jido.ai/ontology/conversation-history#"
-  @conv_ontology_iri "https://jido.ai/ontology/conversation-history"
 
   # Conversation ontology classes
   @conv_classes %{
@@ -171,28 +165,28 @@ defmodule Jidoka.Knowledge.Ontology do
     :tool_result
   ]
 
-  # Conversation ontology object properties
-  @conv_object_properties %{
-    associated_with_session: "#{@conv_namespace}associatedWithSession",
-    has_turn: "#{@conv_namespace}hasTurn",
-    part_of_conversation: "#{@conv_namespace}partOfConversation",
-    has_prompt: "#{@conv_namespace}hasPrompt",
-    has_answer: "#{@conv_namespace}hasAnswer",
-    involves_tool_invocation: "#{@conv_namespace}involvesToolInvocation",
-    has_result: "#{@conv_namespace}hasResult",
-    uses_tool: "#{@conv_namespace}usesTool"
-  }
+  # Unused - commented out for future use
+  # @conv_object_properties %{
+  #   associated_with_session: "#{@conv_namespace}associatedWithSession",
+  #   has_turn: "#{@conv_namespace}hasTurn",
+  #   part_of_conversation: "#{@conv_namespace}partOfConversation",
+  #   has_prompt: "#{@conv_namespace}hasPrompt",
+  #   has_answer: "#{@conv_namespace}hasAnswer",
+  #   involves_tool_invocation: "#{@conv_namespace}involvesToolInvocation",
+  #   has_result: "#{@conv_namespace}hasResult",
+  #   uses_tool: "#{@conv_namespace}usesTool"
+  # }
 
-  # Conversation ontology data properties
-  @conv_data_properties %{
-    prompt_text: "#{@conv_namespace}promptText",
-    answer_text: "#{@conv_namespace}answerText",
-    invocation_parameters: "#{@conv_namespace}invocationParameters",
-    result_data: "#{@conv_namespace}resultData",
-    timestamp: "#{@conv_namespace}timestamp",
-    turn_index: "#{@conv_namespace}turnIndex",
-    tool_name: "#{@conv_namespace}toolName"
-  }
+  # Unused - commented out for future use
+  # @conv_data_properties %{
+  #   prompt_text: "#{@conv_namespace}promptText",
+  #   answer_text: "#{@conv_namespace}answerText",
+  #   invocation_parameters: "#{@conv_namespace}invocationParameters",
+  #   result_data: "#{@conv_namespace}resultData",
+  #   timestamp: "#{@conv_namespace}timestamp",
+  #   turn_index: "#{@conv_namespace}turnIndex",
+  #   tool_name: "#{@conv_namespace}toolName"
+  # }
 
   # ========================================================================
   # Public API - Loading

@@ -37,7 +37,7 @@ defmodule Jidoka.Agent.Directives do
 
   alias Jido.Agent.{Directive, StateOp}
   alias Jido.Signal
-  alias Jidoka.{Agent, PubSub, Signals}
+  alias Jidoka.{PubSub, Signals}
 
   @type directive :: Directive.Emit.t() | StateOp.SetState.t()
 

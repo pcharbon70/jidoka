@@ -387,7 +387,7 @@ defmodule Jidoka.Telemetry do
 
       result
     rescue
-      error in [Exit, RuntimeError] ->
+      error in [RuntimeError] ->
         measurements = %{
           duration: System.monotonic_time() - start_time
         }

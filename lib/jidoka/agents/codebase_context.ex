@@ -51,7 +51,7 @@ defmodule Jidoka.Agents.CodebaseContext do
   require Logger
 
   alias Jidoka.Codebase.Queries
-  alias Jidoka.Knowledge.{Engine, Context, NamedGraphs, SparqlHelpers}
+  alias Jidoka.Knowledge.{Engine, SparqlHelpers}
 
   @type context_opts :: [
           {:cache_ttl, pos_integer()},
@@ -398,7 +398,7 @@ defmodule Jidoka.Agents.CodebaseContext do
 
         {:ok, stats}
 
-      {:error, reason} ->
+      {:error, _reason} ->
         {:ok, %{total_modules: 0, indexed_files: 0, last_updated: DateTime.utc_now()}}
     end
   end

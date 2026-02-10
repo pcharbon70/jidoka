@@ -465,7 +465,7 @@ defmodule Jidoka.Protocol.A2A.Gateway do
   def handle_call({:handle_incoming, request}, _from, state) do
     # Validate and parse the request
     case JSONRPC.parse_request(request) do
-      {:ok, :request, method, params, _id} ->
+      {:ok, :request, method, params, id} ->
         # Extract from_agent and message from params
         from_agent = Map.get(params, "from", Map.get(params, :from, "unknown"))
         message = Map.get(params, "message", %{})
@@ -483,7 +483,7 @@ defmodule Jidoka.Protocol.A2A.Gateway do
         )
 
         # Handle the request (pass request_id for proper response)
-        response = handle_request(method, params, _id, state)
+        response = handle_request(method, params, id, state)
 
         # Dispatch incoming message signal (success)
         _ = Signals.a2a_message(

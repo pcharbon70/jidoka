@@ -286,7 +286,7 @@ defmodule Jidoka.Memory.Integration do
 
   """
   @spec store_memory(ltm(), map(), keyword()) :: {:ok, map()} | {:error, term()}
-  def store_memory(ltm, memory, opts \\ []) do
+  def store_memory(ltm, memory, _opts \\ []) do
     case SessionAdapter.persist_memory(ltm, memory) do
       {:ok, stored_memory} ->
         # Broadcast stored signal
@@ -324,7 +324,7 @@ defmodule Jidoka.Memory.Integration do
 
   """
   @spec retrieve_memories(ltm(), map(), keyword()) :: {:ok, [map()]} | {:error, term()}
-  def retrieve_memories(ltm, query, opts \\ []) do
+  def retrieve_memories(ltm, query, _opts \\ []) do
     alias Jidoka.Memory.Retrieval
 
     case Retrieval.search(ltm, query) do

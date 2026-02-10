@@ -125,7 +125,8 @@ defmodule Jidoka.Protocol.A2A.AgentCard do
       true
 
   """
-  def for_jidoka(opts \\ []) when is_list(opts) do
+  def for_jidoka(opts \\ [])
+  def for_jidoka(opts) when is_list(opts) do
     agent_type = Keyword.get(opts, :types, Keyword.get(opts, :agent_type, ["Jidoka"]))
     extra_capabilities = Keyword.get(opts, :extra_capabilities, %{})
     endpoints = Keyword.get(opts, :endpoints, %{})
@@ -141,7 +142,7 @@ defmodule Jidoka.Protocol.A2A.AgentCard do
     build_jidoka_card(agent_type, extra_capabilities, endpoints, name)
   end
 
-  defp build_jidoka_card(agent_type, extra_capabilities, endpoints, custom_name \\ nil) do
+  defp build_jidoka_card(agent_type, extra_capabilities, endpoints, custom_name) do
     capabilities =
       %{
         tools: [],
@@ -306,13 +307,6 @@ defmodule Jidoka.Protocol.A2A.AgentCard do
 
   defp maybe_put_description(json, nil), do: json
   defp maybe_put_description(json, description), do: Map.put(json, "description", description)
-
-  defp get_hostname do
-    case :inet.gethostname() do
-      {:ok, hostname} -> to_string(hostname)
-      _ -> "localhost"
-    end
-  end
 
   defp get_instance_id do
     # Use node name or generate a unique ID

@@ -119,7 +119,7 @@ defmodule Jidoka.Session.Persistence do
         case Jason.decode(content) do
           {:ok, %{"state" => state_map}} ->
             case Jidoka.Session.State.deserialize(state_map) do
-              {:ok, session_state} = result ->
+              {:ok, _session_state} = result ->
                 Logger.debug("Loaded session: #{session_id}")
                 result
 

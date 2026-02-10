@@ -50,8 +50,9 @@ defmodule Jidoka.Protocol.MCP.Capabilities do
   @doc """
   Get the full capabilities map from the client or return the map if passed directly.
   """
+  def get(value \\ Client)
   def get(caps) when is_map(caps), do: caps
-  def get(client \\ Client), do: Client.capabilities(client)
+  def get(client), do: Client.capabilities(client)
 
   @doc """
   Check if the server has a specific capability using a path.

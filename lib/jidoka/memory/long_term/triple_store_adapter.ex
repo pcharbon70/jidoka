@@ -130,11 +130,12 @@ defmodule Jidoka.Memory.LongTerm.TripleStoreAdapter do
 
   """
   @spec new(String.t(), keyword()) :: {:ok, t()} | {:error, term()}
+  def new(session_id, opts \\ [])
   def new(session_id, _opts) when not is_binary(session_id) do
     {:error, :invalid_session_id}
   end
 
-  def new(session_id, opts \\ []) when is_binary(session_id) do
+  def new(session_id, opts) when is_binary(session_id) do
     with :ok <- Validation.validate_session_id(session_id) do
       default_engine =
         Application.get_env(:jidoka, :knowledge_engine_name, @default_engine)

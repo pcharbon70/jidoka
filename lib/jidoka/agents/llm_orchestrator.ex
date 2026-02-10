@@ -104,7 +104,6 @@ defmodule Jidoka.Agents.LLMOrchestrator do
     Jido.AgentServer.start_link(start_opts)
   end
 
-  @impl true
   def signal_routes do
     [
       # Route LLM request signals

@@ -59,7 +59,6 @@ defmodule Jidoka.Session.Supervisor do
 
   alias Jidoka.{AgentRegistry, Memory}
   alias Memory.LongTerm.SessionAdapter
-  alias Memory.ShortTerm
 
   @registry_key_prefix "session_supervisor:"
 
@@ -342,7 +341,7 @@ defmodule Jidoka.Session.Supervisor do
 
   # Private Helpers
 
-  defp build_children(session_id, llm_config, stm_enabled, _ltm_enabled) do
+  defp build_children(session_id, _llm_config, stm_enabled, _ltm_enabled) do
     # Build the list of children for this session
     # Note: LTM (SessionAdapter) is NOT a separate process
     # It's accessed via ContextManager.get_ltm_adapter/1 or Session.Supervisor.get_ltm_adapter/1

@@ -64,8 +64,8 @@ defmodule Jidoka.Codebase.Queries do
 
   """
 
-  alias Jidoka.Knowledge.{Engine, Context, NamedGraphs, Ontology, SparqlHelpers}
-  alias TripleStore.SPARQL.Query
+  alias Jidoka.Knowledge.{Engine, Context, NamedGraphs, SparqlHelpers}
+  alias TripleStore.SPARQL.Query, as: SPARQLQuery
 
   # Default engine name
   @default_engine :knowledge_engine
@@ -180,7 +180,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT 1
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, []} ->
         {:error, :not_found}
 
@@ -258,7 +258,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         modules =
           Enum.map(results, fn result ->
@@ -370,7 +370,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT 1
     """
 
-    case Query.query(ctx, private_query, []) do
+    case SPARQLQuery.query(ctx, private_query, []) do
       {:ok, [result | _]} ->
         function_iri = extract_iri(result["function"])
 
@@ -404,7 +404,7 @@ defmodule Jidoka.Codebase.Queries do
         LIMIT 1
         """
 
-        case Query.query(ctx, public_query, []) do
+        case SPARQLQuery.query(ctx, public_query, []) do
           {:ok, [result | _]} ->
             function_iri = extract_iri(result["function"])
 
@@ -484,7 +484,7 @@ defmodule Jidoka.Codebase.Queries do
     # Query public functions
     public_functions =
       if query_public do
-        case Query.query(ctx, query_public, []) do
+        case SPARQLQuery.query(ctx, query_public, []) do
           {:ok, results} when is_list(results) ->
             Enum.map(results, fn result ->
               func_name = extract_string(result["name"]) || "unknown"
@@ -512,7 +512,7 @@ defmodule Jidoka.Codebase.Queries do
     # Query private functions
     private_functions =
       if query_private do
-        case Query.query(ctx, query_private, []) do
+        case SPARQLQuery.query(ctx, query_private, []) do
           {:ok, results} when is_list(results) ->
             Enum.map(results, fn result ->
               func_name = extract_string(result["name"]) || "unknown"
@@ -612,7 +612,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         functions =
           Enum.map(results, fn result ->
@@ -693,7 +693,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         called =
           Enum.map(results, fn result ->
@@ -739,7 +739,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         called =
           Enum.map(results, fn result ->
@@ -819,7 +819,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         deps =
           Enum.map(results, fn result ->
@@ -891,7 +891,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         dependents =
           Enum.map(results, fn result ->
@@ -955,7 +955,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT 1
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, []} ->
         {:error, :not_found}
 
@@ -1021,7 +1021,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         protocols =
           Enum.map(results, fn result ->
@@ -1148,7 +1148,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT 1
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, []} ->
         {:error, :not_found}
 
@@ -1215,7 +1215,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         behaviours =
           Enum.map(results, fn result ->
@@ -1312,7 +1312,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT 1
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, []} ->
         {:error, :not_found}
 
@@ -1375,7 +1375,7 @@ defmodule Jidoka.Codebase.Queries do
     LIMIT #{limit}
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         structs =
           Enum.map(results, fn result ->
@@ -1487,7 +1487,7 @@ defmodule Jidoka.Codebase.Queries do
         LIMIT #{limit}
         """
 
-        case Query.query(ctx, query, []) do
+        case SPARQLQuery.query(ctx, query, []) do
           {:ok, results} -> Enum.map(results, fn r -> extract_string(r["name"]) end)
           _ -> []
         end
@@ -1512,7 +1512,7 @@ defmodule Jidoka.Codebase.Queries do
         LIMIT #{limit}
         """
 
-        case Query.query(ctx, query, []) do
+        case SPARQLQuery.query(ctx, query, []) do
           {:ok, results} -> Enum.map(results, fn r -> extract_string(r["func_name"]) end)
           _ -> []
         end
@@ -1576,7 +1576,7 @@ defmodule Jidoka.Codebase.Queries do
         }
         """
 
-        case Query.query(ctx, query, []) do
+        case SPARQLQuery.query(ctx, query, []) do
           {:ok, [result | _]} ->
             count_str = extract_string(result["count"])
             count = if count_str, do: String.to_integer(count_str), else: 0
@@ -1629,7 +1629,7 @@ defmodule Jidoka.Codebase.Queries do
     """
 
     public_functions =
-      case Query.query(ctx, public_query, []) do
+      case SPARQLQuery.query(ctx, public_query, []) do
         {:ok, results} when is_list(results) ->
           Enum.map(results, fn result ->
             func_name = extract_string(result["name"]) || "unknown"
@@ -1652,7 +1652,7 @@ defmodule Jidoka.Codebase.Queries do
       end
 
     private_functions =
-      case Query.query(ctx, private_query, []) do
+      case SPARQLQuery.query(ctx, private_query, []) do
         {:ok, results} when is_list(results) ->
           Enum.map(results, fn result ->
             func_name = extract_string(result["name"]) || "unknown"
@@ -1694,7 +1694,7 @@ defmodule Jidoka.Codebase.Queries do
     }
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         # Group by struct_iri
         results
@@ -1732,7 +1732,7 @@ defmodule Jidoka.Codebase.Queries do
     }
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, &extract_string/1)
         |> Enum.reject(&is_nil/1)
@@ -1755,7 +1755,7 @@ defmodule Jidoka.Codebase.Queries do
     }
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, &extract_string/1)
         |> Enum.reject(&is_nil/1)
@@ -1782,7 +1782,7 @@ defmodule Jidoka.Codebase.Queries do
     ORDER BY ?name ?arity
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, fn result ->
           func_name = extract_string(result["name"]) || "unknown"
@@ -1819,7 +1819,7 @@ defmodule Jidoka.Codebase.Queries do
     ORDER BY ?impl_name
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, &extract_string(&1["impl_name"]))
         |> Enum.reject(&is_nil/1)
@@ -1844,7 +1844,7 @@ defmodule Jidoka.Codebase.Queries do
     ORDER BY ?name ?arity
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, fn result ->
           name = extract_string(result["name"]) || "unknown"
@@ -1873,7 +1873,7 @@ defmodule Jidoka.Codebase.Queries do
     ORDER BY ?impl_name
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, &extract_string(&1["impl_name"]))
         |> Enum.reject(&is_nil/1)
@@ -1898,7 +1898,7 @@ defmodule Jidoka.Codebase.Queries do
     ORDER BY ?name
     """
 
-    case Query.query(ctx, query, []) do
+    case SPARQLQuery.query(ctx, query, []) do
       {:ok, results} when is_list(results) ->
         Enum.map(results, fn result ->
           name = extract_string(result["name"])

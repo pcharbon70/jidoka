@@ -514,7 +514,7 @@ defmodule Jidoka.ClientEvents do
   """
   @spec tool_call(String.t(), String.t(), String.t(), map(), Keyword.t()) ::
           {:ok, event()} | {:error, term()}
-  def tool_call(session_id, tool_name, tool_id, parameters, opts \\ []) do
+  def tool_call(session_id, tool_name, tool_id, parameters, _opts \\ []) do
     payload = %{
       session_id: session_id,
       tool_name: tool_name,
@@ -583,7 +583,7 @@ defmodule Jidoka.ClientEvents do
     end
   end
 
-  defp validate_payload(type, payload, schema) do
+  defp validate_payload(_type, payload, schema) do
     # Check required fields
     missing =
       Enum.filter(schema.required, fn field ->

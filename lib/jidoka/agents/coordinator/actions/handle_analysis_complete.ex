@@ -58,7 +58,7 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleAnalysisComplete do
   alias StateOp.SetState
 
   @impl true
-  def run(params, context) do
+  def run(params, _context) do
     # Extract signal data
     analysis_type = params[:analysis_type]
     results = params[:results]
@@ -109,9 +109,6 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleAnalysisComplete do
   end
 
   # Private helpers
-
-  defp maybe_put_session_id(data, nil), do: data
-  defp maybe_put_session_id(data, session_id), do: Map.put(data, :session_id, session_id)
 
   defp maybe_put_duration(data, nil), do: data
   defp maybe_put_duration(data, duration_ms), do: Map.put(data, :duration_ms, duration_ms)

@@ -218,7 +218,7 @@ defmodule Jidoka.Memory.Ontology do
     end
   end
 
-  def from_rdf(%IRI{} = iri) do
+  def from_rdf(%IRI{} = _iri) do
     {:error, {:not_implemented, "Use RDF.Graph to look up descriptions by IRI"}}
   end
 
