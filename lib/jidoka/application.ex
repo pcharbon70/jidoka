@@ -90,6 +90,8 @@ defmodule Jidoka.Application do
       Jidoka.ContextStore,
       # Jido instance for agent management
       Jidoka.Jido,
+      # JidoMessaging runtime (new canonical conversation substrate)
+      Jidoka.Messaging,
       # AgentSupervisor for global agents (Coordinator, etc.)
       Jidoka.AgentSupervisor,
       # SessionManager for multi-session management (Phase 3.1)
