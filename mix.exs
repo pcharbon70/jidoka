@@ -54,7 +54,9 @@ defmodule Jidoka.MixProject do
       # Jido framework for agents
       {:jido, "~> 2.0.0-rc.1", override: true},
       # AI/LLM integration
-      {:jido_ai, path: "../jido_ai"},
+      {:jido_ai, git: "https://github.com/agentjido/jido_ai.git", override: true},
+      # Messaging abstractions
+      {:jido_messaging, git: "https://github.com/agentjido/jido_messaging.git"},
       # Phoenix PubSub for message passing
       {:phoenix_pubsub, "~> 2.1"},
       # Phoenix Channels client
@@ -65,9 +67,9 @@ defmodule Jidoka.MixProject do
       {:rdf, "~> 2.0"},
       {:sparql, "~> 0.3"},
       # Elixir ontology
-      {:elixir_ontologies, path: "../../elixir-ontologies"},
+      {:elixir_ontologies, path: "../../semantic/elixir-ontologies"},
       # Triple store backend
-      {:triple_store, path: "/home/ducky/code/triple_store", override: true},
+      {:triple_store, path: "../../semantic/triple_store", override: true},
       # JSON encoding for tool schemas
       {:jason, "~> 1.4"},
       # JSON Schema validation for MCP tool arguments
