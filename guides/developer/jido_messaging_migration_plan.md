@@ -41,10 +41,11 @@ This plan assumes a greenfield migration target with **no backward compatibility
 - Modify `lib/jidoka/agents/llm_orchestrator/actions/handle_llm_response.ex`:
   - Persist assistant response as message via `Jidoka.Messaging.append_session_message/4`.
 
-### Phase 3 - Logging Model Cutover
+### Phase 3 - Logging Model Cutover (In Progress)
 - Add a projection worker:
   - New file: `lib/jidoka/messaging/projections/conversation_graph_projection.ex`.
-  - Subscribe to `JidoMessaging.Signal` message events and write to `Jidoka.Conversation.Logger`.
+  - Subscribe to `jido.messaging.room.message_added` from the `Jidoka.Messaging` signal bus.
+  - Write prompt/answer/tool entries to `Jidoka.Conversation.Logger`.
 - Remove direct conversation logging signals:
   - Delete `lib/jidoka/agents/coordinator/actions/log_conversation_turn.ex`.
   - Remove references to `Jidoka.Signals.ConversationTurn` in:

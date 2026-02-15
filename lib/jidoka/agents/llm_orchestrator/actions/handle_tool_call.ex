@@ -68,7 +68,13 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleToolCall do
              session_id,
              :tool,
              tool_call_content(tool_name, parameters, tool_index),
-             sender_id: "tool:#{tool_name}"
+             sender_id: "tool:#{tool_name}",
+             metadata: %{
+               event_type: :tool_call,
+               tool_name: tool_name,
+               parameters: parameters,
+               tool_index: tool_index
+             }
            ) do
       # Build tool call payload for client broadcast
       tool_call_payload = %{

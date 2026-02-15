@@ -92,6 +92,8 @@ defmodule Jidoka.Application do
       Jidoka.Jido,
       # JidoMessaging runtime (new canonical conversation substrate)
       Jidoka.Messaging,
+      # Projection from canonical messaging events to conversation graph
+      Jidoka.Messaging.Projections.ConversationGraphProjection,
       # AgentSupervisor for global agents (Coordinator, etc.)
       Jidoka.AgentSupervisor,
       # SessionManager for multi-session management (Phase 3.1)

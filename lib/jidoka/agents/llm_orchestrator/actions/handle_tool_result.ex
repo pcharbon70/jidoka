@@ -60,7 +60,12 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleToolResult do
            Messaging.append_session_message(
              session_id,
              :tool,
-             tool_result_content(result_data, tool_index)
+             tool_result_content(result_data, tool_index),
+             metadata: %{
+               event_type: :tool_result,
+               result_data: result_data,
+               tool_index: tool_index
+             }
            ) do
       # Build tool result payload for client broadcast
       tool_result_payload = %{

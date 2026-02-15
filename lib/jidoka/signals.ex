@@ -21,10 +21,6 @@ defmodule Jidoka.Signals do
   - `a2a_message/2` - A2A message sent or received
   - `a2a_agent_discovered/2` - A2A agent discovered
   - `a2a_connection_state/1` - A2A gateway connection state changes
-  - `log_prompt/5` - Log a user prompt to conversation history
-  - `log_answer/5` - Log an assistant answer to conversation history
-  - `log_tool_invocation/7` - Log a tool invocation to conversation history
-  - `log_tool_result/7` - Log a tool result to conversation history
 
   ## Options
 
@@ -72,13 +68,6 @@ defmodule Jidoka.Signals do
     A2AMessage,
     A2AAgentDiscovered,
     A2AConnectionState
-  }
-
-  alias Jidoka.Signals.ConversationTurn.{
-    LogPrompt,
-    LogAnswer,
-    LogToolInvocation,
-    LogToolResult
   }
 
   @type signal :: Jido.Signal.t()
@@ -494,10 +483,11 @@ defmodule Jidoka.Signals do
       )
 
   """
-  @spec a2a_message(atom(), String.t(), String.t(), String.t(), map(), atom(), Keyword.t()) :: signal_result()
+  @spec a2a_message(atom(), String.t(), String.t(), String.t(), map(), atom(), Keyword.t()) ::
+          signal_result()
   def a2a_message(direction, from_agent, to_agent, method, message, status, opts \\ [])
       when is_atom(direction) and is_binary(from_agent) and is_binary(to_agent) and
-           is_binary(method) and is_map(message) and is_atom(status) do
+             is_binary(method) and is_map(message) and is_atom(status) do
     data =
       %{
         direction: direction,
@@ -596,223 +586,6 @@ defmodule Jidoka.Signals do
       |> maybe_put_session_id(opts)
 
     create_and_dispatch(A2AConnectionState, data, opts)
-  end
-
-  @doc """
-  Creates and optionally dispatches a log prompt signal.
-
-  ## Parameters
-
-  - `conversation_iri` - IRI of the conversation
-  - `turn_index` - Turn index within the conversation
-  - `prompt_text` - Text content of the prompt
-  - `session_id` - Associated session ID
-  - `opts` - Keyword list of options
-
-  ## Options
-
-  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
-  - `:source` - Override default source (`/jido_coder/conversation`)
-  - `:subject` - Custom subject for the signal
-  - `:timestamp` - When the prompt was created
-
-  ## Examples
-
-      {:ok, signal} = Signals.log_prompt(
-        "https://jido.ai/conversations#session_123",
-        0,
-        "What files use Jido.Agent?",
-        "session_123"
-      )
-
-  """
-  @spec log_prompt(String.t(), non_neg_integer(), String.t(), String.t(), Keyword.t()) ::
-          signal_result()
-  def log_prompt(conversation_iri, turn_index, prompt_text, session_id, opts \\ [])
-      when is_binary(conversation_iri) and is_integer(turn_index) and is_binary(prompt_text) and
-           is_binary(session_id) do
-    data =
-      %{
-        conversation_iri: conversation_iri,
-        turn_index: turn_index,
-        prompt_text: prompt_text,
-        session_id: session_id
-      }
-      |> maybe_put_timestamp(opts)
-
-    create_and_dispatch(LogPrompt, data, opts)
-  end
-
-  @doc """
-  Creates and optionally dispatches a log answer signal.
-
-  ## Parameters
-
-  - `conversation_iri` - IRI of the conversation
-  - `turn_index` - Turn index within the conversation
-  - `answer_text` - Text content of the answer
-  - `session_id` - Associated session ID
-  - `opts` - Keyword list of options
-
-  ## Options
-
-  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
-  - `:source` - Override default source (`/jido_coder/conversation`)
-  - `:subject` - Custom subject for the signal
-  - `:timestamp` - When the answer was created
-
-  ## Examples
-
-      {:ok, signal} = Signals.log_answer(
-        "https://jido.ai/conversations#session_123",
-        0,
-        "The Jido.Agent module is used in...",
-        "session_123"
-      )
-
-  """
-  @spec log_answer(String.t(), non_neg_integer(), String.t(), String.t(), Keyword.t()) ::
-          signal_result()
-  def log_answer(conversation_iri, turn_index, answer_text, session_id, opts \\ [])
-      when is_binary(conversation_iri) and is_integer(turn_index) and is_binary(answer_text) and
-           is_binary(session_id) do
-    data =
-      %{
-        conversation_iri: conversation_iri,
-        turn_index: turn_index,
-        answer_text: answer_text,
-        session_id: session_id
-      }
-      |> maybe_put_timestamp(opts)
-
-    create_and_dispatch(LogAnswer, data, opts)
-  end
-
-  @doc """
-  Creates and optionally dispatches a log tool invocation signal.
-
-  ## Parameters
-
-  - `conversation_iri` - IRI of the conversation
-  - `turn_index` - Turn index within the conversation
-  - `tool_index` - Index of the tool within this turn
-  - `tool_name` - Name of the tool being invoked
-  - `parameters` - Tool parameters
-  - `session_id` - Associated session ID
-  - `opts` - Keyword list of options
-
-  ## Options
-
-  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
-  - `:source` - Override default source (`/jido_coder/conversation`)
-  - `:subject` - Custom subject for the signal
-  - `:timestamp` - When the tool was invoked
-
-  ## Examples
-
-      {:ok, signal} = Signals.log_tool_invocation(
-        "https://jido.ai/conversations#session_123",
-        0,
-        0,
-        "search_code",
-        %{"query" => "Jido.Agent"},
-        "session_123"
-      )
-
-  """
-  @spec log_tool_invocation(
-          String.t(),
-          non_neg_integer(),
-          non_neg_integer(),
-          String.t(),
-          map(),
-          String.t(),
-          Keyword.t()
-        ) :: signal_result()
-  def log_tool_invocation(
-         conversation_iri,
-         turn_index,
-         tool_index,
-         tool_name,
-         parameters,
-         session_id,
-         opts \\ []
-       )
-       when is_binary(conversation_iri) and is_integer(turn_index) and is_integer(tool_index) and
-            is_binary(tool_name) and is_map(parameters) and is_binary(session_id) do
-    data =
-      %{
-        conversation_iri: conversation_iri,
-        turn_index: turn_index,
-        tool_index: tool_index,
-        tool_name: tool_name,
-        parameters: parameters,
-        session_id: session_id
-      }
-      |> maybe_put_timestamp(opts)
-
-    create_and_dispatch(LogToolInvocation, data, opts)
-  end
-
-  @doc """
-  Creates and optionally dispatches a log tool result signal.
-
-  ## Parameters
-
-  - `conversation_iri` - IRI of the conversation
-  - `turn_index` - Turn index within the conversation
-  - `tool_index` - Index of the tool within this turn
-  - `result_data` - Result data from the tool
-  - `session_id` - Associated session ID
-  - `opts` - Keyword list of options
-
-  ## Options
-
-  - `:dispatch` - Whether to broadcast to PubSub (default: `true`)
-  - `:source` - Override default source (`/jido_coder/conversation`)
-  - `:subject` - Custom subject for the signal
-  - `:timestamp` - When the result was received
-
-  ## Examples
-
-      {:ok, signal} = Signals.log_tool_result(
-        "https://jido.ai/conversations#session_123",
-        0,
-        0,
-        %{"results" => ["file1.ex", "file2.ex"]},
-        "session_123"
-      )
-
-  """
-  @spec log_tool_result(
-          String.t(),
-          non_neg_integer(),
-          non_neg_integer(),
-          map(),
-          String.t(),
-          Keyword.t()
-        ) :: signal_result()
-  def log_tool_result(
-         conversation_iri,
-         turn_index,
-         tool_index,
-         result_data,
-         session_id,
-         opts \\ []
-       )
-       when is_binary(conversation_iri) and is_integer(turn_index) and is_integer(tool_index) and
-            is_map(result_data) and is_binary(session_id) do
-    data =
-      %{
-        conversation_iri: conversation_iri,
-        turn_index: turn_index,
-        tool_index: tool_index,
-        result_data: result_data,
-        session_id: session_id
-      }
-      |> maybe_put_timestamp(opts)
-
-    create_and_dispatch(LogToolResult, data, opts)
   end
 
   # Private helper for consistent signal creation and dispatch
@@ -938,13 +711,6 @@ defmodule Jidoka.Signals do
     case Keyword.get(opts, :gateway_name) do
       nil -> data
       gateway_name -> Map.put(data, :gateway_name, gateway_name)
-    end
-  end
-
-  defp maybe_put_timestamp(data, opts) do
-    case Keyword.get(opts, :timestamp) do
-      nil -> data
-      timestamp -> Map.put(data, :timestamp, timestamp)
     end
   end
 end

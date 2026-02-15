@@ -10,6 +10,9 @@ defmodule Jidoka.Messaging do
   use JidoMessaging,
     adapter: JidoMessaging.Adapters.ETS
 
+  require Logger
+
+  alias JidoMessaging.RoomServer
   alias JidoMessaging.Content.Text
 
   @session_channel :jidoka_session
@@ -71,12 +74,23 @@ defmodule Jidoka.Messaging do
           _ -> default_sender_id(role, session_id)
         end
 
-      save_message(%{
-        room_id: room.id,
-        sender_id: sender_id,
-        role: role,
-        content: [%Text{text: content}]
-      })
+      metadata =
+        case Keyword.get(opts, :metadata, %{}) do
+          value when is_map(value) -> value
+          _ -> %{}
+        end
+
+      with {:ok, message} <-
+             save_message(%{
+               room_id: room.id,
+               sender_id: sender_id,
+               role: role,
+               content: [%Text{text: content}],
+               metadata: metadata
+             }) do
+        publish_room_message(room, message)
+        {:ok, message}
+      end
     end
   end
 
@@ -96,4 +110,24 @@ defmodule Jidoka.Messaging do
   defp default_sender_id(:assistant, _session_id), do: "assistant:jidoka"
   defp default_sender_id(:system, _session_id), do: "system:jidoka"
   defp default_sender_id(:tool, _session_id), do: "tool:jidoka"
+
+  defp publish_room_message(room, message) do
+    case get_or_start_room_server(room) do
+      {:ok, room_pid} ->
+        case RoomServer.add_message(room_pid, message) do
+          :ok ->
+            :ok
+
+          {:error, reason} ->
+            Logger.warning(
+              "[Jidoka.Messaging] Failed to publish room message #{message.id}: #{inspect(reason)}"
+            )
+        end
+
+      {:error, reason} ->
+        Logger.warning(
+          "[Jidoka.Messaging] Failed to start room server for #{room.id}: #{inspect(reason)}"
+        )
+    end
+  end
 end
