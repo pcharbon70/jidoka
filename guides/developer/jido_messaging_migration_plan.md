@@ -5,6 +5,22 @@ Replace Jidoka's current session/tracker/signal conversation pipeline with `jido
 
 This plan assumes a greenfield migration target with **no backward compatibility requirements**.
 
+## Status Snapshot (2026-02-15)
+- Phase 1: Completed
+- Phase 2: Completed
+- Phase 3: Completed (projection path is active for graph logging)
+- Phase 4: In progress
+  - Completed:
+    - Removed `Conversation.Tracker` runtime
+    - `Jidoka.Client.send_message/3` now persists via `Jidoka.Messaging`
+    - `ContextManager` conversation APIs now read/write from `Jidoka.Messaging`
+    - Session conversation events are published from `Jidoka.Messaging.append_session_message/4`
+  - Remaining:
+    - Remove legacy session runtime modules (`SessionManager`, `Session.Supervisor`, session state/persistence)
+    - Remove remaining conversation responsibilities from `ContextManager` (keep only non-conversation context concerns or replace it)
+    - Replace conversation-specific PubSub/session routing with messaging-native subscriptions where applicable
+- Phase 5: In progress (tests/docs cleanup underway)
+
 ## Current Conversation System (To Replace)
 - Session lifecycle and ETS state: `lib/jidoka/agents/session_manager.ex`
 - Per-session runtime: `lib/jidoka/session/supervisor.ex`
@@ -30,7 +46,7 @@ This plan assumes a greenfield migration target with **no backward compatibility
 - Added `Jidoka.Messaging` to app supervision in `lib/jidoka/application.ex`.
 - Added initial room mapping helpers (`session_id` -> room binding) and session message helpers in `lib/jidoka/messaging.ex`.
 
-### Phase 2 - Request Routing Cutover
+### Phase 2 - Request Routing Cutover (Completed)
 - Modify `lib/jidoka/agents/coordinator/actions/handle_chat_request.ex`:
   - Stop deriving `conversation_iri` from `Conversation.Tracker`.
   - Resolve/create room via `Jidoka.Messaging.ensure_room_for_session/1`.
@@ -41,7 +57,7 @@ This plan assumes a greenfield migration target with **no backward compatibility
 - Modify `lib/jidoka/agents/llm_orchestrator/actions/handle_llm_response.ex`:
   - Persist assistant response as message via `Jidoka.Messaging.append_session_message/4`.
 
-### Phase 3 - Logging Model Cutover (In Progress)
+### Phase 3 - Logging Model Cutover (Completed)
 - Add a projection worker:
   - New file: `lib/jidoka/messaging/projections/conversation_graph_projection.ex`.
   - Subscribe to `jido.messaging.room.message_added` from the `Jidoka.Messaging` signal bus.
@@ -55,7 +71,7 @@ This plan assumes a greenfield migration target with **no backward compatibility
     - `lib/jidoka/agents/llm_orchestrator/actions/handle_tool_result.ex`
 - Keep `lib/jidoka/conversation/logger.ex` only as a projection sink.
 
-### Phase 4 - Remove Legacy Runtime
+### Phase 4 - Remove Legacy Runtime (In Progress)
 - Delete legacy session conversation processes:
   - `lib/jidoka/conversation/tracker.ex`
   - `lib/jidoka/session/supervisor.ex`
@@ -64,9 +80,9 @@ This plan assumes a greenfield migration target with **no backward compatibility
   - `lib/jidoka/session/entry.ex`
   - `lib/jidoka/session/persistence.ex`
 - Replace topic-level session routing (`lib/jidoka/pubsub.ex`) with messaging room/event subscriptions where conversation-specific.
-- Update `lib/jidoka/client.ex` to use `Jidoka.Messaging` for conversation operations.
+- Update `lib/jidoka/client.ex` to use `Jidoka.Messaging` for conversation operations. (Completed)
 
-### Phase 5 - API and Test Cleanup
+### Phase 5 - API and Test Cleanup (In Progress)
 - Remove dead `Signals` conversation constructors:
   - `lib/jidoka/signals/conversation_turn.ex`
   - relevant constructors in `lib/jidoka/signals.ex`
