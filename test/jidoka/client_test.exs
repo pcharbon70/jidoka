@@ -161,11 +161,10 @@ defmodule Jidoka.ClientTest do
 
       assert :ok = Jidoka.Client.send_message(session_id, :user, "Hello, world!")
 
-      # Verify message was added via ContextManager
-      {:ok, history} = Jidoka.Agents.ContextManager.get_conversation_history(session_id)
+      {:ok, history} = Jidoka.Messaging.list_session_messages(session_id)
       assert length(history) == 1
       assert hd(history).role == :user
-      assert hd(history).content == "Hello, world!"
+      assert message_text(hd(history)) == "Hello, world!"
     end
 
     test "adds assistant message to session" do
@@ -173,10 +172,10 @@ defmodule Jidoka.ClientTest do
 
       assert :ok = Jidoka.Client.send_message(session_id, :assistant, "Hi there!")
 
-      {:ok, history} = Jidoka.Agents.ContextManager.get_conversation_history(session_id)
+      {:ok, history} = Jidoka.Messaging.list_session_messages(session_id)
       assert length(history) == 1
       assert hd(history).role == :assistant
-      assert hd(history).content == "Hi there!"
+      assert message_text(hd(history)) == "Hi there!"
     end
 
     test "adds multiple messages to session" do
@@ -186,15 +185,15 @@ defmodule Jidoka.ClientTest do
       :ok = Jidoka.Client.send_message(session_id, :assistant, "First response")
       :ok = Jidoka.Client.send_message(session_id, :user, "Second message")
 
-      {:ok, history} = Jidoka.Agents.ContextManager.get_conversation_history(session_id)
+      {:ok, history} = Jidoka.Messaging.list_session_messages(session_id)
       assert length(history) == 3
 
       assert Enum.at(history, 0).role == :user
-      assert Enum.at(history, 0).content == "First message"
+      assert message_text(Enum.at(history, 0)) == "First message"
       assert Enum.at(history, 1).role == :assistant
-      assert Enum.at(history, 1).content == "First response"
+      assert message_text(Enum.at(history, 1)) == "First response"
       assert Enum.at(history, 2).role == :user
-      assert Enum.at(history, 2).content == "Second message"
+      assert message_text(Enum.at(history, 2)) == "Second message"
     end
 
     test "returns error for non-existent session" do
@@ -376,5 +375,15 @@ defmodule Jidoka.ClientTest do
       assert length(sessions) == 1
       assert hd(sessions).session_id == session_b
     end
+  end
+
+  defp message_text(%{content: blocks}) when is_list(blocks) do
+    blocks
+    |> Enum.flat_map(fn
+      %{type: :text, text: text} when is_binary(text) -> [text]
+      %{type: "text", text: text} when is_binary(text) -> [text]
+      _ -> []
+    end)
+    |> Enum.join("\n")
   end
 end

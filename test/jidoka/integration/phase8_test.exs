@@ -17,7 +17,7 @@ defmodule Jidoka.Integration.Phase8Test do
   Tests use async: false due to shared state and event ordering requirements.
   """
 
-  alias Jidoka.{Client, ClientEvents, PubSub}
+  alias Jidoka.{Client, ClientEvents, Messaging, PubSub}
   alias Jidoka.Agents.{SessionManager, ContextManager, LLMOrchestrator}
   alias Jidoka.Tools.Registry
   alias Jido.Signal
@@ -81,7 +81,10 @@ defmodule Jidoka.Integration.Phase8Test do
       assert :ok = Client.send_message(session_id, :user, "Hello, world!")
 
       # Should receive conversation_added event (wrapped in {from, message})
-      assert_receive {_from, {:conversation_added, %{session_id: ^session_id, role: :user, content: "Hello, world!"}}}, 500
+      assert_receive {_from,
+                      {:conversation_added,
+                       %{session_id: ^session_id, role: :user, content: "Hello, world!"}}},
+                     500
 
       # Clean up
       Client.terminate_session(session_id)
@@ -169,7 +172,10 @@ defmodule Jidoka.Integration.Phase8Test do
 
       # Create and broadcast llm_response event
       {:ok, event} =
-        ClientEvents.llm_response("Complete response", session_id, model: "gpt-4", tokens_used: 100)
+        ClientEvents.llm_response("Complete response", session_id,
+          model: "gpt-4",
+          tokens_used: 100
+        )
 
       topic = Jidoka.PubSub.session_topic(session_id)
       Jidoka.PubSub.broadcast(topic, {:llm_response, event.payload})
@@ -212,7 +218,9 @@ defmodule Jidoka.Integration.Phase8Test do
 
       # Tool result event
       {:ok, result_event} =
-        ClientEvents.tool_result(session_id, "tool-123", "read_file", :success, result: %{content: "file content"})
+        ClientEvents.tool_result(session_id, "tool-123", "read_file", :success,
+          result: %{content: "file content"}
+        )
 
       Jidoka.PubSub.broadcast(topic, {:tool_result, result_event.payload})
 
@@ -293,11 +301,15 @@ defmodule Jidoka.Integration.Phase8Test do
         # Verify schema structure
         assert is_map(schema), "Schema for #{tool.name} should be a map"
         assert is_binary(schema.name), "Schema name for #{tool.name} should be a string"
-        assert is_binary(schema.description), "Schema description for #{tool.name} should be a string"
+
+        assert is_binary(schema.description),
+               "Schema description for #{tool.name} should be a string"
+
         assert is_map(schema.parameters), "Schema parameters for #{tool.name} should be a map"
 
         # Verify parameters structure
-        assert is_map(schema.parameters.properties), "Schema properties for #{tool.name} should be a map"
+        assert is_map(schema.parameters.properties),
+               "Schema properties for #{tool.name} should be a map"
       end)
     end
   end
@@ -433,7 +445,13 @@ defmodule Jidoka.Integration.Phase8Test do
       assert signal.data.session_id == session_id
 
       # Dispatch via PubSub to session topic
-      result = Jido.Signal.Dispatch.dispatch(signal, {:pubsub, [target: Jidoka.PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]})
+      result =
+        Jido.Signal.Dispatch.dispatch(
+          signal,
+          {:pubsub,
+           [target: Jidoka.PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
+        )
+
       assert :ok = result
 
       Client.terminate_session(session_id)
@@ -528,10 +546,13 @@ defmodule Jidoka.Integration.Phase8Test do
       :ok = Client.send_message(session_id, :user, "What files are in lib/jidoka?")
 
       # Verify message was added (event is wrapped in {from, message})
-      assert_receive {_from, {:conversation_added, %{role: :user, content: "What files are in lib/jidoka?"}}}, 500
+      assert_receive {_from,
+                      {:conversation_added,
+                       %{role: :user, content: "What files are in lib/jidoka?"}}},
+                     500
 
       # Check conversation history
-      {:ok, messages} = ContextManager.get_conversation_history(session_id)
+      {:ok, messages} = Messaging.list_session_messages(session_id)
       assert length(messages) >= 1
 
       # Get session info
@@ -551,7 +572,7 @@ defmodule Jidoka.Integration.Phase8Test do
       # Send message asking about tools
       :ok = Client.send_message(session_id, :user, "What tools are available?")
 
-      {:ok, messages} = ContextManager.get_conversation_history(session_id)
+      {:ok, messages} = Messaging.list_session_messages(session_id)
       assert length(messages) == 1
 
       # Verify tools exist

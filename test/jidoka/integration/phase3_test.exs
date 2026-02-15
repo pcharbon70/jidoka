@@ -7,7 +7,8 @@ defmodule Jidoka.Integration.Phase3Test do
   These tests verify that all multi-session components work together correctly.
   """
 
-  alias Jidoka.{Client, PubSub, Agents.ContextManager}
+  alias Jidoka.{Client, Messaging, PubSub}
+  alias Jidoka.Agents.ContextManager
   alias Jidoka.Agents.SessionManager
 
   # Clean up all sessions before each test
@@ -87,15 +88,15 @@ defmodule Jidoka.Integration.Phase3Test do
       :ok = Client.send_message(session_a, :assistant, "Response for A")
 
       # Verify each session has its own history
-      {:ok, history_a} = ContextManager.get_conversation_history(session_a)
-      {:ok, history_b} = ContextManager.get_conversation_history(session_b)
+      {:ok, history_a} = Messaging.list_session_messages(session_a)
+      {:ok, history_b} = Messaging.list_session_messages(session_b)
 
       assert length(history_a) == 2
       assert length(history_b) == 1
 
-      assert Enum.at(history_a, 0).content == "Message for A"
-      assert Enum.at(history_a, 1).content == "Response for A"
-      assert Enum.at(history_b, 0).content == "Message for B"
+      assert message_text(Enum.at(history_a, 0)) == "Message for A"
+      assert message_text(Enum.at(history_a, 1)) == "Response for A"
+      assert message_text(Enum.at(history_b, 0)) == "Message for B"
     end
 
     test "events are isolated between sessions" do
@@ -181,7 +182,7 @@ defmodule Jidoka.Integration.Phase3Test do
       :ok = Client.send_message(session_id, :assistant, "Hi there")
 
       # Verify messages were stored
-      {:ok, history} = ContextManager.get_conversation_history(session_id)
+      {:ok, history} = Messaging.list_session_messages(session_id)
       assert length(history) == 2
 
       # Terminate session
@@ -274,7 +275,7 @@ defmodule Jidoka.Integration.Phase3Test do
       assert session_b_info.metadata.name == "B"
 
       # Session B's history should still be accessible
-      {:ok, history_b} = ContextManager.get_conversation_history(session_b)
+      {:ok, history_b} = Messaging.list_session_messages(session_b)
       assert length(history_b) == 1
     end
 
@@ -320,7 +321,7 @@ defmodule Jidoka.Integration.Phase3Test do
       :ok = Client.send_message(session_id, :assistant, "Answer")
 
       # Verify messages
-      {:ok, history} = ContextManager.get_conversation_history(session_id)
+      {:ok, history} = Messaging.list_session_messages(session_id)
       assert length(history) == 2
 
       # List sessions
@@ -504,9 +505,9 @@ defmodule Jidoka.Integration.Phase3Test do
              end)
 
       # Verify all messages were stored
-      {:ok, history_a} = ContextManager.get_conversation_history(session_a)
-      {:ok, history_b} = ContextManager.get_conversation_history(session_b)
-      {:ok, history_c} = ContextManager.get_conversation_history(session_c)
+      {:ok, history_a} = Messaging.list_session_messages(session_a)
+      {:ok, history_b} = Messaging.list_session_messages(session_b)
+      {:ok, history_c} = Messaging.list_session_messages(session_c)
 
       assert length(history_a) == 2
       assert length(history_b) == 2
@@ -572,5 +573,15 @@ defmodule Jidoka.Integration.Phase3Test do
     after
       0 -> :ok
     end
+  end
+
+  defp message_text(%{content: blocks}) when is_list(blocks) do
+    blocks
+    |> Enum.flat_map(fn
+      %{type: :text, text: text} when is_binary(text) -> [text]
+      %{type: "text", text: text} when is_binary(text) -> [text]
+      _ -> []
+    end)
+    |> Enum.join("\n")
   end
 end

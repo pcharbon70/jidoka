@@ -7,7 +7,7 @@ defmodule Jidoka.Client do
 
   The Client module is stateless and delegates to:
   - `SessionManager` for session lifecycle operations
-  - `ContextManager` for conversation and context operations
+  - `Messaging` for conversation persistence
   - `PubSub` for event subscription and broadcasting
 
   ## Architecture
@@ -25,7 +25,7 @@ defmodule Jidoka.Client do
   │   - Event subscription (subscribe_to_session)                │
   ├─────────────────────────────────────────────────────────────┤
   │              Internal Agents (not accessed directly)         │
-  │   SessionManager │ ContextManager │ PubSub                  │
+  │   SessionManager │ Messaging │ PubSub                       │
   └─────────────────────────────────────────────────────────────┘
   ```
 
@@ -52,8 +52,8 @@ defmodule Jidoka.Client do
 
   Send a message to a session:
 
-      {:ok, _history} = Jidoka.Client.send_message(session_id, :user, "Hello!")
-      {:ok, _history} = Jidoka.Client.send_message(session_id, :assistant, "Hi there!")
+      :ok = Jidoka.Client.send_message(session_id, :user, "Hello!")
+      :ok = Jidoka.Client.send_message(session_id, :assistant, "Hi there!")
 
   ## Event Subscription
 
@@ -103,7 +103,8 @@ defmodule Jidoka.Client do
   """
 
   alias Jidoka.PubSub
-  alias Jidoka.Agents.{SessionManager, ContextManager}
+  alias Jidoka.Messaging
+  alias Jidoka.Agents.SessionManager
 
   # Session Lifecycle Functions
 
@@ -224,7 +225,8 @@ defmodule Jidoka.Client do
   @doc """
   Sends a message to a session's conversation.
 
-  The message is added to the session's conversation history in ContextManager.
+  The message is persisted in `Jidoka.Messaging` and a
+  `{:conversation_added, payload}` event is broadcast to the session topic.
 
   ## Parameters
 
@@ -235,20 +237,52 @@ defmodule Jidoka.Client do
   ## Returns
 
   * `:ok` - Message was added
-  * `{:error, :context_manager_not_found}` - Session's ContextManager not found
+  * `{:error, :context_manager_not_found}` - Session not found or inactive
   * `{:error, reason}` - Other error
 
   ## Examples
 
-      {:ok, history} = Client.send_message(session_id, :user, "Hello, world!")
-      {:ok, history} = Client.send_message(session_id, :assistant, "Hi there!")
+      :ok = Client.send_message(session_id, :user, "Hello, world!")
+      :ok = Client.send_message(session_id, :assistant, "Hi there!")
 
   """
   @spec send_message(String.t(), :user | :assistant | :system, String.t()) ::
           :ok | {:error, term()}
   def send_message(session_id, role, content)
-      when is_binary(session_id) and is_atom(role) and is_binary(content) do
-    ContextManager.add_message(session_id, role, content)
+      when is_binary(session_id) and role in [:user, :assistant, :system] and is_binary(content) do
+    with :ok <- ensure_active_session(session_id),
+         {:ok, message} <- Messaging.append_session_message(session_id, role, content) do
+      PubSub.broadcast_session(
+        session_id,
+        {:conversation_added,
+         %{
+           session_id: session_id,
+           role: role,
+           content: content,
+           timestamp: message.inserted_at || DateTime.utc_now()
+         }}
+      )
+
+      :ok
+    else
+      {:error, :not_found} ->
+        {:error, :context_manager_not_found}
+
+      {:error, :session_not_active} ->
+        {:error, :context_manager_not_found}
+
+      {:error, _reason} = error ->
+        error
+    end
+  end
+
+  defp ensure_active_session(session_id) do
+    case SessionManager.get_session_info(session_id) do
+      {:ok, %{status: status}} when status in [:active, :idle] -> :ok
+      {:ok, _session} -> {:error, :session_not_active}
+      {:error, :not_found} -> {:error, :not_found}
+      {:error, reason} -> {:error, reason}
+    end
   end
 
   # Event Subscription Functions
