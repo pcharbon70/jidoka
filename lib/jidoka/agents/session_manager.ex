@@ -49,7 +49,7 @@ defmodule Jidoka.Agents.SessionManager do
   use GenServer
   require Logger
 
-  alias Jidoka.{PubSub, Session.State}
+  alias Jidoka.{Messaging, PubSub, Session.State}
 
   @ets_table :session_registry
 
@@ -297,6 +297,8 @@ defmodule Jidoka.Agents.SessionManager do
               end
             end
 
+            cleanup_session_messages(session_id)
+
             # Transition to terminated
             {:ok, terminated_state} = State.transition(terminating_state, :terminated)
 
@@ -360,6 +362,18 @@ defmodule Jidoka.Agents.SessionManager do
 
       _ ->
         {:reply, {:error, :not_found}, state}
+    end
+  end
+
+  defp cleanup_session_messages(session_id) do
+    case Messaging.clear_session_messages(session_id) do
+      :ok ->
+        :ok
+
+      {:error, reason} ->
+        Logger.warning(
+          "Failed to clear messaging history for terminated session #{session_id}: #{inspect(reason)}"
+        )
     end
   end
 

@@ -50,5 +50,20 @@ defmodule Jidoka.MessagingTest do
                        %{session_id: ^session_id, role: :user, content: "hello from pubsub"}}},
                      500
     end
+
+    test "clears all persisted messages for a session room" do
+      session_id = "messaging_clear_#{System.unique_integer([:positive, :monotonic])}"
+
+      assert {:ok, _} = Jidoka.Messaging.append_session_message(session_id, :user, "one")
+      assert {:ok, _} = Jidoka.Messaging.append_session_message(session_id, :assistant, "two")
+
+      assert {:ok, before_clear} = Jidoka.Messaging.list_session_messages(session_id)
+      assert length(before_clear) == 2
+
+      assert :ok = Jidoka.Messaging.clear_session_messages(session_id)
+
+      assert {:ok, after_clear} = Jidoka.Messaging.list_session_messages(session_id)
+      assert after_clear == []
+    end
   end
 end

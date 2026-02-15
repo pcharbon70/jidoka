@@ -714,7 +714,7 @@ defmodule Jidoka.Agents.ContextManager do
 
   @impl true
   def handle_call(:clear_conversation, _from, state) do
-    case clear_session_messages(state.session_id) do
+    case Messaging.clear_session_messages(state.session_id) do
       :ok ->
         # Broadcast event
         broadcast_context_event(
@@ -993,27 +993,6 @@ defmodule Jidoka.Agents.ContextManager do
   defp list_legacy_session_messages(session_id, limit)
        when is_binary(session_id) and is_integer(limit) and limit <= 0 do
     {:ok, []}
-  end
-
-  defp clear_session_messages(session_id) when is_binary(session_id) do
-    case Messaging.list_session_messages(session_id, limit: 200) do
-      {:ok, []} ->
-        :ok
-
-      {:ok, messages} ->
-        case Enum.reduce_while(messages, :ok, fn message, _acc ->
-               case Messaging.delete_message(message.id) do
-                 :ok -> {:cont, :ok}
-                 {:error, _reason} = error -> {:halt, error}
-               end
-             end) do
-          :ok -> clear_session_messages(session_id)
-          {:error, _reason} = error -> error
-        end
-
-      {:error, _reason} = error ->
-        error
-    end
   end
 
   defp message_to_legacy_history(%{

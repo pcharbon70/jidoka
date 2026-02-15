@@ -108,6 +108,21 @@ defmodule Jidoka.Messaging do
     end
   end
 
+  @doc """
+  Deletes all persisted messages for a session room.
+  """
+  @spec clear_session_messages(String.t(), keyword()) :: :ok | {:error, term()}
+  def clear_session_messages(session_id, opts \\ [])
+      when is_binary(session_id) and is_list(opts) do
+    batch_size =
+      case Keyword.get(opts, :batch_size, 200) do
+        size when is_integer(size) and size > 0 -> size
+        _ -> 200
+      end
+
+    do_clear_session_messages(session_id, batch_size)
+  end
+
   defp default_sender_id(:user, session_id), do: "user:#{session_id}"
   defp default_sender_id(:assistant, _session_id), do: "assistant:jidoka"
   defp default_sender_id(:system, _session_id), do: "system:jidoka"
@@ -130,6 +145,27 @@ defmodule Jidoka.Messaging do
         Logger.warning(
           "[Jidoka.Messaging] Failed to start room server for #{room.id}: #{inspect(reason)}"
         )
+    end
+  end
+
+  defp do_clear_session_messages(session_id, batch_size) do
+    case list_session_messages(session_id, limit: batch_size) do
+      {:ok, []} ->
+        :ok
+
+      {:ok, messages} ->
+        case Enum.reduce_while(messages, :ok, fn message, _acc ->
+               case delete_message(message.id) do
+                 :ok -> {:cont, :ok}
+                 {:error, _reason} = error -> {:halt, error}
+               end
+             end) do
+          :ok -> do_clear_session_messages(session_id, batch_size)
+          {:error, _reason} = error -> error
+        end
+
+      {:error, _reason} = error ->
+        error
     end
   end
 
