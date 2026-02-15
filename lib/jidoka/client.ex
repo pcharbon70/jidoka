@@ -251,18 +251,7 @@ defmodule Jidoka.Client do
   def send_message(session_id, role, content)
       when is_binary(session_id) and role in [:user, :assistant, :system] and is_binary(content) do
     with :ok <- ensure_active_session(session_id),
-         {:ok, message} <- Messaging.append_session_message(session_id, role, content) do
-      PubSub.broadcast_session(
-        session_id,
-        {:conversation_added,
-         %{
-           session_id: session_id,
-           role: role,
-           content: content,
-           timestamp: message.inserted_at || DateTime.utc_now()
-         }}
-      )
-
+         {:ok, _message} <- Messaging.append_session_message(session_id, role, content) do
       :ok
     else
       {:error, :not_found} ->

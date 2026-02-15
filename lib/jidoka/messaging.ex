@@ -14,6 +14,7 @@ defmodule Jidoka.Messaging do
 
   alias JidoMessaging.RoomServer
   alias JidoMessaging.Content.Text
+  alias Jidoka.PubSub
 
   @session_channel :jidoka_session
   @session_instance_id "jidoka-core"
@@ -89,6 +90,7 @@ defmodule Jidoka.Messaging do
                metadata: metadata
              }) do
         publish_room_message(room, message)
+        publish_conversation_event(session_id, role, content, message)
         {:ok, message}
       end
     end
@@ -128,6 +130,25 @@ defmodule Jidoka.Messaging do
         Logger.warning(
           "[Jidoka.Messaging] Failed to start room server for #{room.id}: #{inspect(reason)}"
         )
+    end
+  end
+
+  defp publish_conversation_event(session_id, role, content, message) do
+    case Process.whereis(PubSub.pubsub_name()) do
+      pid when is_pid(pid) ->
+        PubSub.broadcast_session(
+          session_id,
+          {:conversation_added,
+           %{
+             session_id: session_id,
+             role: role,
+             content: content,
+             timestamp: message.inserted_at || DateTime.utc_now()
+           }}
+        )
+
+      nil ->
+        :ok
     end
   end
 end

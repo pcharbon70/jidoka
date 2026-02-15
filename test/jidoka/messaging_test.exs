@@ -36,5 +36,19 @@ defmodule Jidoka.MessagingTest do
       assert user_msg.id in ids
       assert assistant_msg.id in ids
     end
+
+    test "publishes conversation_added events to session topic" do
+      session_id = "messaging_pubsub_#{System.unique_integer([:positive, :monotonic])}"
+      topic = Jidoka.PubSub.session_topic(session_id)
+      :ok = Jidoka.PubSub.subscribe(self(), topic)
+
+      assert {:ok, _message} =
+               Jidoka.Messaging.append_session_message(session_id, :user, "hello from pubsub")
+
+      assert_receive {_,
+                      {:conversation_added,
+                       %{session_id: ^session_id, role: :user, content: "hello from pubsub"}}},
+                     500
+    end
   end
 end
