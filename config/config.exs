@@ -71,6 +71,15 @@ config :jidoka, :session,
   # Session cleanup interval in milliseconds (1 minute)
   cleanup_interval: 60_000
 
+# Extensibility System Configuration
+config :jidoka, :extensibility,
+  # Master toggle for loading extensibility definitions
+  enabled: true,
+  # Global extensibility root (supports ~ expansion)
+  global_root: "~/.jido_code",
+  # Project-local extensibility directory relative to project root
+  local_dir: ".jido_code"
+
 # MCP (Model Context Protocol) Configuration (Phase 8.3)
 # Configure MCP servers here, e.g.:
 # config :jidoka, :mcp_servers,
