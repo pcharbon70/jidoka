@@ -94,7 +94,7 @@ defmodule Jidoka.Agents.ContextManager do
   use GenServer
   require Logger
 
-  alias Jidoka.{PubSub, AgentRegistry, Memory}
+  alias Jidoka.{PubSub, AgentRegistry, Memory, Messaging}
   alias Memory.ShortTerm
 
   @registry_key_prefix "context_manager:"
@@ -694,85 +694,42 @@ defmodule Jidoka.Agents.ContextManager do
 
   @impl true
   def handle_call({:add_message, role, content}, _from, state) do
-    message = %{
-      role: role,
-      content: content,
-      timestamp: DateTime.utc_now()
-    }
-
-    # Add to STM if enabled, otherwise use legacy conversation_history
-    {updated_state, _evicted} =
-      if state.stm_enabled and state.stm do
-        case ShortTerm.add_message(state.stm, message) do
-          {:ok, stm} ->
-            {%{state | stm: stm}, []}
-
-          {:ok, stm, evicted} ->
-            {%{state | stm: stm}, evicted}
-        end
-      else
-        # Legacy behavior: use conversation_history list
-        updated_history =
-          state.conversation_history
-          |> Kernel.then(fn history -> history ++ [message] end)
-          |> enforce_max_history(state.max_history)
-
-        {%{state | conversation_history: updated_history}, []}
+    if role in [:user, :assistant, :system, :tool] do
+      case Messaging.append_session_message(state.session_id, role, content) do
+        {:ok, _message} -> {:reply, :ok, state}
+        {:error, _reason} = error -> {:reply, error, state}
       end
-
-    # Broadcast event
-    broadcast_context_event(
-      state.session_id,
-      {:conversation_added,
-       %{
-         session_id: state.session_id,
-         role: role,
-         content: content,
-         timestamp: message.timestamp
-       }}
-    )
-
-    {:reply, :ok, updated_state}
+    else
+      {:reply, {:error, :invalid_role}, state}
+    end
   end
 
   @impl true
   def handle_call(:get_conversation_history, _from, state) do
-    # Return from STM if enabled, otherwise use legacy conversation_history
-    history =
-      if state.stm_enabled and state.stm do
-        ShortTerm.all_messages(state.stm)
-      else
-        state.conversation_history
-      end
-
-    {:reply, {:ok, history}, state}
+    case list_legacy_session_messages(state.session_id, state.max_history) do
+      {:ok, history} -> {:reply, {:ok, history}, state}
+      {:error, _reason} = error -> {:reply, error, state}
+    end
   end
 
   @impl true
   def handle_call(:clear_conversation, _from, state) do
-    # Clear STM if enabled, otherwise use legacy conversation_history
-    updated_state =
-      if state.stm_enabled and state.stm do
-        cleared_stm = %{
-          state.stm
-          | conversation_buffer: state.stm.conversation_buffer.__struct__.new()
-        }
+    case clear_session_messages(state.session_id) do
+      :ok ->
+        # Broadcast event
+        broadcast_context_event(
+          state.session_id,
+          {:conversation_cleared,
+           %{
+             session_id: state.session_id
+           }}
+        )
 
-        %{state | stm: cleared_stm}
-      else
-        %{state | conversation_history: []}
-      end
+        {:reply, :ok, state}
 
-    # Broadcast event
-    broadcast_context_event(
-      state.session_id,
-      {:conversation_cleared,
-       %{
-         session_id: state.session_id
-       }}
-    )
-
-    {:reply, :ok, updated_state}
+      {:error, _reason} = error ->
+        {:reply, error, state}
+    end
   end
 
   # Working context handlers
@@ -939,13 +896,13 @@ defmodule Jidoka.Agents.ContextManager do
     max_messages = Keyword.get(opts, :max_messages, state.max_history)
     max_files_to_include = Keyword.get(opts, :max_files, state.max_files)
 
-    # Get conversation count based on STM or legacy
-    conversation_count =
-      if state.stm_enabled and state.stm do
-        ShortTerm.message_count(state.stm)
-      else
-        length(state.conversation_history)
+    metadata_conversation =
+      case list_legacy_session_messages(state.session_id, state.max_history) do
+        {:ok, conversation} -> conversation
+        {:error, _reason} -> []
       end
+
+    conversation_count = length(metadata_conversation)
 
     context = %{
       session_id: state.session_id,
@@ -960,15 +917,9 @@ defmodule Jidoka.Agents.ContextManager do
     context =
       if :conversation in include do
         conversation =
-          if state.stm_enabled and state.stm do
-            # Get messages from STM (returns most recent first, reverse for chronological)
-            state.stm
-            |> ShortTerm.recent_messages(max_messages)
-            |> Enum.reverse()
-          else
-            # Legacy behavior
-            state.conversation_history
-            |> Enum.take(-max_messages)
+          case list_legacy_session_messages(state.session_id, max_messages) do
+            {:ok, messages} -> messages
+            {:error, _reason} -> []
           end
 
         Map.put(context, :conversation, conversation)
@@ -1028,13 +979,75 @@ defmodule Jidoka.Agents.ContextManager do
 
   # Private Helpers
 
-  defp enforce_max_history(history, max) do
-    if length(history) > max do
-      Enum.drop(history, length(history) - max)
-    else
-      history
+  defp list_legacy_session_messages(session_id, limit)
+       when is_binary(session_id) and is_integer(limit) and limit > 0 do
+    case Messaging.list_session_messages(session_id, limit: limit) do
+      {:ok, messages} ->
+        {:ok, Enum.map(messages, &message_to_legacy_history/1)}
+
+      {:error, _reason} = error ->
+        error
     end
   end
+
+  defp list_legacy_session_messages(session_id, limit)
+       when is_binary(session_id) and is_integer(limit) and limit <= 0 do
+    {:ok, []}
+  end
+
+  defp clear_session_messages(session_id) when is_binary(session_id) do
+    case Messaging.list_session_messages(session_id, limit: 200) do
+      {:ok, []} ->
+        :ok
+
+      {:ok, messages} ->
+        case Enum.reduce_while(messages, :ok, fn message, _acc ->
+               case Messaging.delete_message(message.id) do
+                 :ok -> {:cont, :ok}
+                 {:error, _reason} = error -> {:halt, error}
+               end
+             end) do
+          :ok -> clear_session_messages(session_id)
+          {:error, _reason} = error -> error
+        end
+
+      {:error, _reason} = error ->
+        error
+    end
+  end
+
+  defp message_to_legacy_history(%{
+         role: role,
+         content: content_blocks,
+         inserted_at: inserted_at
+       }) do
+    %{
+      role: role,
+      content: message_content_to_text(content_blocks),
+      timestamp: inserted_at || DateTime.utc_now()
+    }
+  end
+
+  defp message_to_legacy_history(message) when is_map(message) do
+    %{
+      role: Map.get(message, :role, :user),
+      content: message_content_to_text(Map.get(message, :content, [])),
+      timestamp: Map.get(message, :inserted_at) || DateTime.utc_now()
+    }
+  end
+
+  defp message_content_to_text(content_blocks) when is_list(content_blocks) do
+    content_blocks
+    |> Enum.flat_map(fn
+      %{type: :text, text: text} when is_binary(text) -> [text]
+      %{type: "text", text: text} when is_binary(text) -> [text]
+      _ -> []
+    end)
+    |> Enum.join("\n")
+    |> String.trim()
+  end
+
+  defp message_content_to_text(_content_blocks), do: ""
 
   defp enforce_max_files(files, max) do
     if length(files) > max do
