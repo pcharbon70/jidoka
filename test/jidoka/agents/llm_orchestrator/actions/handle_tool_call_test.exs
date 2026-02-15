@@ -6,6 +6,7 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleToolCallTest do
   use ExUnit.Case, async: true
 
   alias Jidoka.Agents.LLMOrchestrator.Actions.HandleToolCall
+  alias Jidoka.Messaging
 
   describe "run/2" do
     test "broadcasts tool_call to client" do
@@ -23,13 +24,14 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleToolCallTest do
       assert result.tool_name == "search_code"
 
       # Should have a broadcast directive
-      broadcast_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.client.broadcast"
+      broadcast_directive =
+        Enum.find(directives, fn
+          %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
+            signal.type == "jido_coder.client.broadcast"
 
-        _ ->
-          false
-      end)
+          _ ->
+            false
+        end)
 
       assert broadcast_directive != nil
       assert broadcast_directive.signal.data.event_type == "tool_call"
@@ -47,69 +49,42 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleToolCallTest do
 
       assert {:ok, _result, directives} = HandleToolCall.run(params, %{})
 
-      broadcast_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.client.broadcast"
+      broadcast_directive =
+        Enum.find(directives, fn
+          %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
+            signal.type == "jido_coder.client.broadcast"
 
-        _ ->
-          false
-      end)
+          _ ->
+            false
+        end)
 
       assert broadcast_directive != nil
       assert broadcast_directive.signal.data.event_type == "tool_call"
       assert broadcast_directive.signal.data.payload.tool_index == 0
     end
 
-    test "emits log_tool_invocation signal when conversation tracking available" do
+    test "persists tool invocation in messaging history" do
       session_id = "test_session_#{System.unique_integer()}"
-      conversation_iri = "https://jido.ai/conversations##{session_id}"
 
       params = %{
         session_id: session_id,
-        conversation_iri: conversation_iri,
-        turn_index: 0,
         tool_index: 0,
         tool_name: "search_code",
         parameters: %{query: "test"}
       }
 
       assert {:ok, _result, directives} = HandleToolCall.run(params, %{})
+      assert is_list(directives)
 
-      # Should have a log_tool_invocation directive
-      log_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.conversation.log_tool_invocation"
+      assert {:ok, messages} = Messaging.list_session_messages(session_id)
 
-        _ ->
-          false
-      end)
-
-      assert log_directive != nil
-      assert log_directive.signal.data.tool_name == "search_code"
-      assert log_directive.signal.data.tool_index == 0
-    end
-
-    test "does not emit log_tool_invocation when conversation tracking unavailable" do
-      session_id = "test_session_#{System.unique_integer()}"
-
-      params = %{
-        session_id: session_id,
-        tool_name: "search_code",
-        parameters: %{}
-      }
-
-      assert {:ok, _result, directives} = HandleToolCall.run(params, %{})
-
-      # Should NOT have a log_tool_invocation directive
-      log_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.conversation.log_tool_invocation"
-
-        _ ->
-          false
-      end)
-
-      assert log_directive == nil
+      assert Enum.any?(messages, fn message ->
+               message.role == :tool and
+                 Enum.any?(message.content, fn block ->
+                   text = Map.get(block, :text, "")
+                   String.contains?(text, "[tool_call") and String.contains?(text, "search_code")
+                 end)
+             end)
     end
   end
 end

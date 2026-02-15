@@ -2,6 +2,7 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequestTest do
   use ExUnit.Case, async: true
 
   alias Jidoka.Agents.Coordinator.Actions.HandleChatRequest
+  alias Jidoka.Messaging
 
   describe "run/2" do
     test "processes chat request and returns emit directives" do
@@ -54,6 +55,15 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequestTest do
         end)
 
       assert llm_directive != nil
+
+      assert {:ok, messages} = Messaging.list_session_messages("session-456")
+
+      assert Enum.any?(messages, fn message ->
+               message.role == :user and
+                 Enum.any?(message.content, fn block ->
+                   Map.get(block, :text) == "Help me debug this function"
+                 end)
+             end)
     end
 
     test "generates unique task IDs for each request" do

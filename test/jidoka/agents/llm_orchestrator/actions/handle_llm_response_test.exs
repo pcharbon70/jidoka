@@ -6,7 +6,7 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMResponseTest do
   use ExUnit.Case, async: true
 
   alias Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMResponse
-  alias Jidoka.Signals
+  alias Jidoka.Messaging
 
   describe "run/2" do
     test "broadcasts llm_response to client" do
@@ -22,13 +22,14 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMResponseTest do
       assert result.session_id == session_id
 
       # Should have a broadcast directive
-      broadcast_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.client.broadcast"
+      broadcast_directive =
+        Enum.find(directives, fn
+          %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
+            signal.type == "jido_coder.client.broadcast"
 
-        _ ->
-          false
-      end)
+          _ ->
+            false
+        end)
 
       assert broadcast_directive != nil
     end
@@ -45,13 +46,14 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMResponseTest do
       assert {:ok, _result, directives} = HandleLLMResponse.run(params, %{})
 
       # Check that model is included in the broadcast
-      broadcast_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.client.broadcast"
+      broadcast_directive =
+        Enum.find(directives, fn
+          %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
+            signal.type == "jido_coder.client.broadcast"
 
-        _ ->
-          false
-      end)
+          _ ->
+            false
+        end)
 
       assert broadcast_directive != nil
       assert broadcast_directive.signal.data.payload.model == "gpt-4"
@@ -69,66 +71,38 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMResponseTest do
       assert {:ok, _result, directives} = HandleLLMResponse.run(params, %{})
 
       # Check that tokens_used is included in the broadcast
-      broadcast_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.client.broadcast"
+      broadcast_directive =
+        Enum.find(directives, fn
+          %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
+            signal.type == "jido_coder.client.broadcast"
 
-        _ ->
-          false
-      end)
+          _ ->
+            false
+        end)
 
       assert broadcast_directive != nil
       assert broadcast_directive.signal.data.payload.tokens_used == 150
     end
 
-    test "emits log_answer signal when conversation tracking available" do
+    test "persists assistant response in messaging history" do
       session_id = "test_session_#{System.unique_integer()}"
-      conversation_iri = "https://jido.ai/conversations##{session_id}"
-      turn_index = 0
 
       params = %{
         content: "Response to log",
-        session_id: session_id,
-        conversation_iri: conversation_iri,
-        turn_index: turn_index
-      }
-
-      assert {:ok, _result, directives} = HandleLLMResponse.run(params, %{})
-
-      # Should have a log_answer directive
-      log_answer_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.conversation.log_answer"
-
-        _ ->
-          false
-      end)
-
-      assert log_answer_directive != nil
-      assert log_answer_directive.signal.data.answer_text == "Response to log"
-    end
-
-    test "does not emit log_answer when conversation tracking unavailable" do
-      session_id = "test_session_#{System.unique_integer()}"
-
-      params = %{
-        content: "Response",
         session_id: session_id
-        # No conversation_iri or turn_index
       }
 
       assert {:ok, _result, directives} = HandleLLMResponse.run(params, %{})
+      assert is_list(directives)
 
-      # Should NOT have a log_answer directive
-      log_answer_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.Directive.Emit, signal: signal} ->
-          signal.type == "jido_coder.conversation.log_answer"
+      assert {:ok, messages} = Messaging.list_session_messages(session_id)
 
-        _ ->
-          false
-      end)
-
-      assert log_answer_directive == nil
+      assert Enum.any?(messages, fn message ->
+               message.role == :assistant and
+                 Enum.any?(message.content, fn block ->
+                   Map.get(block, :text) == "Response to log"
+                 end)
+             end)
     end
 
     test "deletes active request when request_id provided" do
@@ -144,10 +118,11 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMResponseTest do
       assert {:ok, _result, directives} = HandleLLMResponse.run(params, %{})
 
       # Should have a DeletePath directive
-      delete_directive = Enum.find(directives, fn
-        %{__struct__: Jido.Agent.StateOp.DeletePath} -> true
-        _ -> false
-      end)
+      delete_directive =
+        Enum.find(directives, fn
+          %{__struct__: Jido.Agent.StateOp.DeletePath} -> true
+          _ -> false
+        end)
 
       assert delete_directive != nil
       assert delete_directive.path == [:active_requests, request_id]

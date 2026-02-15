@@ -16,7 +16,6 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMRequest do
   * `:session_id` - Associated session ID
   * `:user_id` - Optional user identifier
   * `:context` - Additional conversation context map
-  * `:conversation_iri` - Optional conversation IRI for logging
   * `:stream` - Whether to stream responses (default: true)
   * `:tools` - Optional list of tool names to include (default: all)
 
@@ -24,7 +23,6 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMRequest do
 
   Emits signals for:
   - Broadcasting LLM responses to client
-  - Logging conversation prompts to knowledge graph
   - Logging tool usage
   """
 
@@ -55,11 +53,6 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMRequest do
         default: %{},
         doc: "Additional conversation context"
       ],
-      conversation_iri: [
-        type: :string,
-        required: false,
-        doc: "Conversation IRI for logging to knowledge graph"
-      ],
       stream: [
         type: :boolean,
         default: true,
@@ -74,9 +67,9 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMRequest do
 
   alias Jido.Agent.{Directive, StateOp}
   alias Jido.Signal
+  alias Jidoka.Messaging
   alias Jidoka.{PubSub, Tools}
   alias Jidoka.Signals.BroadcastEvent
-  alias Jidoka.Signals.ConversationTurn
 
   alias Directive.Emit
   alias StateOp.SetState
@@ -88,142 +81,91 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMRequest do
     session_id = params[:session_id]
     user_id = params[:user_id]
     context_data = params[:context]
-    conversation_iri = params[:conversation_iri]
     stream = params[:stream] != false
     tool_names = params[:tools]
 
-    # Get turn index from Conversation.Tracker if conversation_iri exists
-    turn_index = get_turn_index(session_id, conversation_iri)
+    with {:ok, session_messages} <- Messaging.list_session_messages(session_id, limit: 50) do
+      # Generate unique request ID
+      request_id = "llm_#{session_id}_#{System.unique_integer([:positive, :monotonic])}"
 
-    # Generate unique request ID
-    request_id = "llm_#{session_id}_#{System.unique_integer([:positive, :monotonic])}"
+      # Get available tools
+      tool_schemas = get_tool_schemas(tool_names)
 
-    # Get available tools
-    tool_schemas = get_tool_schemas(tool_names)
+      # Build LLM messages from canonical session history
+      llm_messages = build_messages(session_messages, context_data)
 
-    # Build messages for LLM
-    _messages = build_messages(message, context_data)
+      # Build LLM parameters
+      llm_params = %{
+        prompt: message,
+        system_prompt: build_system_prompt(),
+        messages: llm_messages,
+        tools: tool_names,
+        auto_execute: true,
+        max_turns: 10
+      }
 
-    # Build LLM parameters
-    llm_params = %{
-      prompt: message,
-      system_prompt: build_system_prompt(),
-      tools: tool_names,
-      auto_execute: true,
-      max_turns: 10
-    }
-
-    # State updates: track as active request
-    state_updates = %{
-      active_requests: %{
-        request_id => %{
-          type: :llm,
-          session_id: session_id,
-          user_id: user_id,
-          status: :processing,
-          started_at: DateTime.utc_now()
+      # State updates: track as active request
+      state_updates = %{
+        active_requests: %{
+          request_id => %{
+            type: :llm,
+            session_id: session_id,
+            user_id: user_id,
+            status: :processing,
+            started_at: DateTime.utc_now()
+          }
         }
       }
-    }
 
-    # Build LLM process signal data
-    llm_process_data = %{
-      request_id: request_id,
-      message: message,
-      session_id: session_id,
-      user_id: user_id,
-      context: context_data,
-      stream: stream,
-      tools: tool_names,
-      llm_params: llm_params
-    }
-
-    # Include conversation tracking data if available for downstream answer logging
-    llm_process_data =
-      if conversation_iri and turn_index != nil do
-        llm_process_data
-        |> Map.put(:conversation_iri, conversation_iri)
-        |> Map.put(:turn_index, turn_index)
-      else
-        llm_process_data
-      end
-
-    # Create LLM processing signal
-    llm_signal =
-      Signal.new!(
-        "jido_coder.llm.process",
-        llm_process_data,
-        %{source: "/llm_orchestrator"}
-      )
-
-    # Build list of directives
-    directives = [
-      # State operation: track as active request
-      %SetState{attrs: state_updates},
-      # Broadcast to client that request was received
-      %Emit{
-        signal:
-          BroadcastEvent.new!(%{
-            event_type: "llm_request_received",
-            payload: %{
-              request_id: request_id,
-              session_id: session_id,
-              message: message,
-              tools_available: length(tool_schemas)
-            },
-            session_id: session_id
-          }),
-        dispatch: {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.client_events_topic()]}
-      },
-      # Emit signal for actual LLM processing
-      %Emit{
-        signal: llm_signal,
-        dispatch:
-          {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
+      # Build LLM process signal data
+      llm_process_data = %{
+        request_id: request_id,
+        message: message,
+        session_id: session_id,
+        user_id: user_id,
+        context: context_data,
+        stream: stream,
+        tools: tool_names,
+        llm_params: llm_params
       }
-    ]
 
-    # Add log_prompt directive if we have conversation tracking
-    directives =
-      if conversation_iri != nil and turn_index != nil do
-        [
-          ConversationTurn.LogPrompt.new!(%{
-            conversation_iri: conversation_iri,
-            turn_index: turn_index,
-            prompt_text: message,
-            session_id: session_id
-          })
-          |> then(&%Emit{
-            signal: &1,
-            dispatch: {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
-          })
-        | directives
-        ]
-      else
-        directives
-      end
+      # Create LLM processing signal
+      llm_signal =
+        Signal.new!(
+          "jido_coder.llm.process",
+          llm_process_data,
+          %{source: "/llm_orchestrator"}
+        )
 
-    {:ok, %{status: :processing, request_id: request_id},
-     directives}
-  end
+      directives = [
+        # State operation: track as active request
+        %SetState{attrs: state_updates},
+        # Broadcast to client that request was received
+        %Emit{
+          signal:
+            BroadcastEvent.new!(%{
+              event_type: "llm_request_received",
+              payload: %{
+                request_id: request_id,
+                session_id: session_id,
+                message: message,
+                tools_available: length(tool_schemas)
+              },
+              session_id: session_id
+            }),
+          dispatch: {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.client_events_topic()]}
+        },
+        # Emit signal for actual LLM processing
+        %Emit{
+          signal: llm_signal,
+          dispatch:
+            {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
+        }
+      ]
 
-  # Get turn index from Conversation.Tracker if running
-  defp get_turn_index(session_id, conversation_iri) when is_binary(conversation_iri) do
-    registry_key = {:conversation_tracker, session_id}
-
-    case Registry.lookup(Jidoka.Memory.SessionRegistry, registry_key) do
-      [{pid, _}] ->
-        case Jidoka.Conversation.Tracker.next_turn_index(pid) do
-          {:ok, index} -> index
-          _ -> nil
-        end
-
-      [] ->
-        nil
+      {:ok, %{status: :processing, request_id: request_id}, directives}
     end
   end
-
-  defp get_turn_index(_session_id, _conversation_iri), do: nil
 
   # ============================================================================
   # Private Helpers
@@ -247,26 +189,60 @@ defmodule Jidoka.Agents.LLMOrchestrator.Actions.HandleLLMRequest do
     end)
   end
 
-  defp build_messages(message, context_data) when is_map(context_data) do
-    # Build conversation messages from context
-    base_messages = [
-      %{role: :user, content: message}
-    ]
+  defp build_messages(session_messages, context_data) when is_list(session_messages) do
+    context_messages =
+      if is_map(context_data) and map_size(context_data) > 0 do
+        [%{role: :system, content: format_context(context_data)}]
+      else
+        []
+      end
 
-    # Add context as system message if present
-    if map_size(context_data) > 0 do
-      [
-        %{role: :system, content: format_context(context_data)}
-      ] ++ base_messages
+    history_messages =
+      session_messages
+      |> Enum.flat_map(&message_to_llm_messages/1)
+
+    context_messages ++ history_messages
+  end
+
+  defp message_to_llm_messages(%{role: role, content: content_blocks}) do
+    text =
+      content_blocks
+      |> Enum.map(&content_block_to_text/1)
+      |> Enum.reject(&(&1 == ""))
+      |> Enum.join("\n")
+      |> String.trim()
+
+    if text == "" do
+      []
     else
-      base_messages
+      [%{role: role, content: text}]
     end
   end
 
-  defp build_messages(message, _context_data) do
-    # No context or nil context, just return user message
-    [%{role: :user, content: message}]
+  defp message_to_llm_messages(_message), do: []
+
+  defp content_block_to_text(%{type: :text, text: text}) when is_binary(text), do: text
+
+  defp content_block_to_text(%{type: "text", text: text}) when is_binary(text), do: text
+
+  defp content_block_to_text(%{type: :tool_use, name: name, input: input}) do
+    "[tool_use] #{name}: #{inspect(input)}"
   end
+
+  defp content_block_to_text(%{type: "tool_use", name: name, input: input}) do
+    "[tool_use] #{name}: #{inspect(input)}"
+  end
+
+  defp content_block_to_text(%{type: :tool_result, content: content, is_error: is_error}) do
+    "[tool_result#{if is_error, do: " error", else: ""}] #{inspect(content)}"
+  end
+
+  defp content_block_to_text(%{type: "tool_result", content: content, is_error: is_error}) do
+    "[tool_result#{if is_error, do: " error", else: ""}] #{inspect(content)}"
+  end
+
+  defp content_block_to_text(block) when is_map(block), do: inspect(block)
+  defp content_block_to_text(_block), do: ""
 
   defp build_system_prompt do
     """

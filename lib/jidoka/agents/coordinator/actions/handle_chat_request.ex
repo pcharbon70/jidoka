@@ -20,11 +20,10 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
 
   Broadcasts the chat request to session-specific topic for LLM processing.
 
-  ## Conversation Logging
+  ## Conversation Persistence
 
-  Ensures conversation IRI is passed through the signal chain for logging.
-  The conversation_iri is retrieved from session metadata if available,
-  or from the Conversation.Tracker process if running.
+  Persists incoming user prompts into `Jidoka.Messaging` as the canonical
+  conversation store before routing downstream.
   """
 
   use Jido.Action,
@@ -58,6 +57,7 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
 
   alias Jido.Agent.{Directive, StateOp}
   alias Jido.Signal
+  alias Jidoka.Messaging
   alias Jidoka.PubSub
   alias Jidoka.Signals
 
@@ -65,122 +65,95 @@ defmodule Jidoka.Agents.Coordinator.Actions.HandleChatRequest do
   alias StateOp.SetState
 
   @impl true
-  def run(params, context) do
+  def run(params, _context) do
     # Extract signal data
     message = params[:message]
     session_id = params[:session_id]
     user_id = params[:user_id]
     context_data = params[:context]
 
-    # Get or ensure conversation IRI exists
-    # Try to get from Conversation.Tracker first, fall back to session metadata
-    conversation_iri = get_conversation_iri(session_id, context)
+    with {:ok, _room} <- Messaging.ensure_room_for_session(session_id),
+         {:ok, _stored_message} <-
+           Messaging.append_session_message(
+             session_id,
+             :user,
+             message,
+             sender_id: user_sender_id(user_id, session_id)
+           ) do
+      # Generate unique task ID for this chat request
+      task_id = "chat_#{session_id}_#{System.unique_integer([:positive, :monotonic])}"
 
-    # Generate unique task ID for this chat request
-    task_id = "chat_#{session_id}_#{System.unique_integer([:positive, :monotonic])}"
+      # Build payload for client broadcast (chat received)
+      payload = %{
+        task_id: task_id,
+        message: message,
+        timestamp: DateTime.utc_now() |> DateTime.to_iso8601()
+      }
 
-    # Build payload for client broadcast (chat received)
-    payload = %{
-      task_id: task_id,
-      message: message,
-      timestamp: DateTime.utc_now() |> DateTime.to_iso8601()
-    }
+      # Create chat received signal with proper BroadcastEvent structure
+      received_signal =
+        Signals.BroadcastEvent.new!(%{
+          event_type: "chat_received",
+          payload: payload,
+          session_id: session_id
+        })
 
-    # Create chat received signal with proper BroadcastEvent structure
-    received_signal =
-      Signals.BroadcastEvent.new!(%{
-        event_type: "chat_received",
-        payload: payload,
-        session_id: session_id
-      })
-
-    # State updates: track as active task and store conversation_iri in metadata
-    state_updates = %{
-      active_tasks: %{
-        task_id => %{
-          type: :chat,
-          session_id: session_id,
-          user_id: user_id,
-          status: :processing,
-          started_at: DateTime.utc_now()
+      # State updates: track as active task
+      state_updates = %{
+        active_tasks: %{
+          task_id => %{
+            type: :chat,
+            session_id: session_id,
+            user_id: user_id,
+            status: :processing,
+            started_at: DateTime.utc_now()
+          }
         }
       }
-    }
 
-    # Add conversation_iri to metadata if we have one
-    state_updates =
-      if conversation_iri do
-        Map.put(state_updates, :conversation_iri, conversation_iri)
-      else
-        state_updates
-      end
+      # Build LLM request signal data
+      llm_request_data = %{
+        task_id: task_id,
+        message: message,
+        session_id: session_id,
+        user_id: user_id,
+        context: context_data
+      }
 
-    # Build LLM request signal data
-    llm_request_data = %{
-      task_id: task_id,
-      message: message,
-      session_id: session_id,
-      user_id: user_id,
-      context: context_data
-    }
+      # Create a signal to route to LLM processor
+      llm_request_signal =
+        Signal.new!(
+          "jido_coder.llm.request",
+          llm_request_data,
+          %{source: "/jido_coder/coordinator"}
+        )
 
-    # Include conversation_iri if available for downstream logging
-    llm_request_data =
-      if conversation_iri do
-        Map.put(llm_request_data, :conversation_iri, conversation_iri)
-      else
-        llm_request_data
-      end
-
-    # Create a signal to route to LLM processor
-    llm_request_signal =
-      Signal.new!(
-        "jido_coder.llm.request",
-        llm_request_data,
-        %{source: "/jido_coder/coordinator"}
-      )
-
-    # Return result with state update and emit directives
-    {:ok, %{status: :routed, task_id: task_id, session_id: session_id, conversation_iri: conversation_iri},
-     [
-       # State operation: track as active task
-       %SetState{attrs: state_updates},
-       # Broadcast to client events that chat was received
-       %Emit{
-         signal: received_signal,
-         dispatch: {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.client_events_topic()]}
-       },
-       # Route to session-specific topic for LLM processing
-       %Emit{
-         signal: llm_request_signal,
-         dispatch:
-           {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
-       }
-     ]}
+      # Return result with state update and emit directives
+      {:ok, %{status: :routed, task_id: task_id, session_id: session_id},
+       [
+         # State operation: track as active task
+         %SetState{attrs: state_updates},
+         # Broadcast to client events that chat was received
+         %Emit{
+           signal: received_signal,
+           dispatch:
+             {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.client_events_topic()]}
+         },
+         # Route to session-specific topic for LLM processing
+         %Emit{
+           signal: llm_request_signal,
+           dispatch:
+             {:pubsub, [target: PubSub.pubsub_name(), topic: PubSub.session_topic(session_id)]}
+         }
+       ]}
+    end
   end
 
-  # Private helper to get conversation IRI from tracker or session metadata
-  defp get_conversation_iri(session_id, context) do
-    # First try to get from Conversation.Tracker if it's running
-    registry_key = {:conversation_tracker, session_id}
+  defp user_sender_id(user_id, session_id) when is_binary(user_id) and user_id != "" do
+    "user:#{user_id}"
+  end
 
-    case Registry.lookup(Jidoka.Memory.SessionRegistry, registry_key) do
-      [{pid, _}] ->
-        # Tracker is running, get or create conversation
-        case Jidoka.Conversation.Tracker.get_or_create_conversation(pid) do
-          {:ok, conversation_iri} -> conversation_iri
-          _ -> nil
-        end
-
-      [] ->
-        # Tracker not running, check session state metadata
-        case Map.get(context, :agent_state) do
-          %{state: %{conversation_iri: conversation_iri}} when is_binary(conversation_iri) ->
-            conversation_iri
-
-          _ ->
-            nil
-        end
-    end
+  defp user_sender_id(_user_id, session_id) do
+    "user:#{session_id}"
   end
 end

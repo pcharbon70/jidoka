@@ -5,6 +5,7 @@ defmodule Jidoka.Agents.LLMOrchestratorTest do
 
   alias Jidoka.Agents.LLMOrchestrator
   alias Jidoka.Agents.LLMOrchestrator.Adapter
+  alias Jidoka.Messaging
   alias Jido.Signal
 
   describe "LLMOrchestrator" do
@@ -51,7 +52,8 @@ defmodule Jidoka.Agents.LLMOrchestratorTest do
       params = %{
         message: "List files",
         session_id: "session_test",
-        tools: nil  # Get all tools
+        # Get all tools
+        tools: nil
       }
 
       assert {:ok, result, _directives} = HandleLLMRequest.run(params, %{})
@@ -73,12 +75,12 @@ defmodule Jidoka.Agents.LLMOrchestratorTest do
     test "generates unique request IDs" do
       params1 = %{
         message: "Test 1",
-        session_id: "session_test",
+        session_id: "session_test"
       }
 
       params2 = %{
         message: "Test 2",
-        session_id: "session_test",
+        session_id: "session_test"
       }
 
       {:ok, result1, _} = HandleLLMRequest.run(params1, %{})
@@ -86,6 +88,40 @@ defmodule Jidoka.Agents.LLMOrchestratorTest do
 
       # Request IDs should be unique
       refute result1.request_id == result2.request_id
+    end
+
+    test "uses messaging session history for llm message context" do
+      session_id = "session_history_#{System.unique_integer([:positive, :monotonic])}"
+
+      assert {:ok, _} = Messaging.append_session_message(session_id, :user, "first prompt")
+      assert {:ok, _} = Messaging.append_session_message(session_id, :assistant, "first answer")
+
+      params = %{
+        message: "next prompt",
+        session_id: session_id,
+        context: %{project: "jidoka"}
+      }
+
+      assert {:ok, _result, directives} = HandleLLMRequest.run(params, %{})
+
+      llm_process_directive =
+        Enum.find(directives, fn
+          %Jido.Agent.Directive.Emit{signal: %{type: "jido_coder.llm.process"}} -> true
+          _ -> false
+        end)
+
+      assert llm_process_directive != nil
+
+      llm_messages = get_in(llm_process_directive.signal.data, [:llm_params, :messages])
+      assert is_list(llm_messages)
+
+      assert Enum.any?(llm_messages, fn msg ->
+               msg.role == :user and msg.content == "first prompt"
+             end)
+
+      assert Enum.any?(llm_messages, fn msg ->
+               msg.role == :assistant and msg.content == "first answer"
+             end)
     end
   end
 
@@ -194,15 +230,16 @@ defmodule Jidoka.Agents.LLMOrchestratorTest do
       {:ok, pid} = LLMOrchestrator.start_link(id: "integration-test-llm")
 
       # Create a signal
-      signal = Signal.new!(
-        "jido_coder.llm.request",
-        %{
-          message: "What tools are available?",
-          session_id: "integration_session",
-          user_id: "test_user"
-        },
-        %{source: "/test"}
-      )
+      signal =
+        Signal.new!(
+          "jido_coder.llm.request",
+          %{
+            message: "What tools are available?",
+            session_id: "integration_session",
+            user_id: "test_user"
+          },
+          %{source: "/test"}
+        )
 
       # Dispatch the signal
       assert :ok = Jido.Signal.Dispatch.dispatch(signal, {:pid, target: pid})
