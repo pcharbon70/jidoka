@@ -100,7 +100,7 @@ defmodule Jidoka.Integration.Phase8Test do
       assert "read_file" in tool_names
       assert "list_files" in tool_names
       assert "search_code" in tool_names
-      assert "analyze_function" in tool_names
+      assert "query_codebase" in tool_names
       assert "get_definition" in tool_names
     end
 

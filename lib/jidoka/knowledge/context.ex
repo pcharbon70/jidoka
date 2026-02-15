@@ -50,7 +50,10 @@ defmodule Jidoka.Knowledge.Context do
   @spec with_permit_all(map()) :: map()
   def with_permit_all(ctx) do
     # Set process-level permit_all for authorization bypass
-    TripleStore.SPARQL.Authorization.set_permit_all(true)
+    if Code.ensure_loaded?(TripleStore.SPARQL.Authorization) and
+         function_exported?(TripleStore.SPARQL.Authorization, :set_permit_all, 1) do
+      TripleStore.SPARQL.Authorization.set_permit_all(true)
+    end
 
     # Also add permit_all to context (TripleStore checks both ctx[:permit_all] and process-level)
     Map.put(ctx, :permit_all, true)

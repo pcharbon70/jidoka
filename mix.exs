@@ -72,6 +72,8 @@ defmodule Jidoka.MixProject do
       {:triple_store, path: "../../semantic/triple_store", override: true},
       # JSON encoding for tool schemas
       {:jason, "~> 1.4"},
+      # Ensure Plug macros are available for transitive deps (e.g. telegex hook server)
+      {:plug, "~> 1.19"},
       # JSON Schema validation for MCP tool arguments
       {:ex_json_schema, "~> 0.11"}
     ]
