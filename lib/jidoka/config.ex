@@ -331,48 +331,6 @@ defmodule Jidoka.Config do
     Application.get_env(:jidoka, :enable_telemetry, true)
   end
 
-  @doc """
-  Returns whether extensibility loading is enabled.
-
-  ## Examples
-
-      iex> Jidoka.Config.extensibility_enabled?()
-      true
-
-  """
-  def extensibility_enabled? do
-    Application.get_env(:jidoka, :extensibility, [])
-    |> Keyword.get(:enabled, true)
-  end
-
-  @doc """
-  Returns the configured global extensibility root path.
-
-  ## Examples
-
-      iex> Jidoka.Config.extensibility_global_root()
-      "~/.jido_code"
-
-  """
-  def extensibility_global_root do
-    Application.get_env(:jidoka, :extensibility, [])
-    |> Keyword.get(:global_root, "~/.jido_code")
-  end
-
-  @doc """
-  Returns the configured local extensibility directory for projects.
-
-  ## Examples
-
-      iex> Jidoka.Config.extensibility_local_dir()
-      ".jido_code"
-
-  """
-  def extensibility_local_dir do
-    Application.get_env(:jidoka, :extensibility, [])
-    |> Keyword.get(:local_dir, ".jido_code")
-  end
-
   # Private functions
 
   defp validate_llm_config(errors) do

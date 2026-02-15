@@ -11,18 +11,12 @@ defmodule Jidoka.ConfigTest do
     original_llm = Application.get_env(:jidoka, :llm)
     original_kg = Application.get_env(:jidoka, :knowledge_graph)
     original_session = Application.get_env(:jidoka, :session)
-    original_extensibility = Application.get_env(:jidoka, :extensibility)
 
     on_exit(fn ->
       # Restore original config
       if original_llm, do: Application.put_env(:jidoka, :llm, original_llm)
       if original_kg, do: Application.put_env(:jidoka, :knowledge_graph, original_kg)
       if original_session, do: Application.put_env(:jidoka, :session, original_session)
-      if original_extensibility do
-        Application.put_env(:jidoka, :extensibility, original_extensibility)
-      else
-        Application.delete_env(:jidoka, :extensibility)
-      end
     end)
 
     :ok
@@ -384,42 +378,6 @@ defmodule Jidoka.ConfigTest do
     test "returns true by default" do
       Application.delete_env(:jidoka, :enable_telemetry)
       assert Jidoka.Config.telemetry_enabled?()
-    end
-  end
-
-  describe "extensibility_enabled?/0" do
-    test "returns the configured extensibility enabled setting" do
-      Application.put_env(:jidoka, :extensibility, enabled: false)
-      refute Jidoka.Config.extensibility_enabled?()
-    end
-
-    test "returns true by default" do
-      Application.put_env(:jidoka, :extensibility, [])
-      assert Jidoka.Config.extensibility_enabled?()
-    end
-  end
-
-  describe "extensibility_global_root/0" do
-    test "returns configured global root" do
-      Application.put_env(:jidoka, :extensibility, global_root: "/tmp/custom-global")
-      assert Jidoka.Config.extensibility_global_root() == "/tmp/custom-global"
-    end
-
-    test "returns default global root when not configured" do
-      Application.put_env(:jidoka, :extensibility, [])
-      assert Jidoka.Config.extensibility_global_root() == "~/.jido_code"
-    end
-  end
-
-  describe "extensibility_local_dir/0" do
-    test "returns configured local dir" do
-      Application.put_env(:jidoka, :extensibility, local_dir: ".jidoka_config")
-      assert Jidoka.Config.extensibility_local_dir() == ".jidoka_config"
-    end
-
-    test "returns default local dir when not configured" do
-      Application.put_env(:jidoka, :extensibility, [])
-      assert Jidoka.Config.extensibility_local_dir() == ".jido_code"
     end
   end
 end
