@@ -197,7 +197,7 @@ defmodule Jidoka.ClientTest do
     end
 
     test "returns error for non-existent session" do
-      assert {:error, :context_manager_not_found} =
+      assert {:error, :not_found} =
                Jidoka.Client.send_message("non-existent", :user, "test")
     end
   end

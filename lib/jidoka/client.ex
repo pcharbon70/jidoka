@@ -237,7 +237,7 @@ defmodule Jidoka.Client do
   ## Returns
 
   * `:ok` - Message was added
-  * `{:error, :context_manager_not_found}` - Session not found or inactive
+  * `{:error, :not_found}` - Session not found or inactive
   * `{:error, reason}` - Other error
 
   ## Examples
@@ -255,10 +255,10 @@ defmodule Jidoka.Client do
       :ok
     else
       {:error, :not_found} ->
-        {:error, :context_manager_not_found}
+        {:error, :not_found}
 
       {:error, :session_not_active} ->
-        {:error, :context_manager_not_found}
+        {:error, :not_found}
 
       {:error, _reason} = error ->
         error
