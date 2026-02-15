@@ -228,9 +228,8 @@ defmodule Jidoka.Integration.Phase3Test do
       :ok = Client.terminate_session(session_id)
       Process.sleep(100)
 
-      # ContextManager should no longer find the session
-      assert {:error, :context_manager_not_found} =
-               ContextManager.get_conversation_history(session_id)
+      # Conversation history is now stored in messaging and purged on termination
+      assert {:ok, []} = ContextManager.get_conversation_history(session_id)
 
       # Session should be gone
       assert {:error, :not_found} = Client.get_session_info(session_id)

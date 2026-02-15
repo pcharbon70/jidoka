@@ -135,7 +135,7 @@ defmodule Jidoka.Agents.ContextManagerTest do
       assert Enum.at(history, 2).content == "Third"
     end
 
-    test "enforces max_history limit" do
+    test "persists full history in messaging" do
       limit_session_id = "limit-history-#{System.unique_integer()}"
       max_history = 5
 
@@ -149,16 +149,14 @@ defmodule Jidoka.Agents.ContextManagerTest do
 
       {:ok, history} = ContextManager.get_conversation_history(limit_session_id)
 
-      # Should only have max_history messages
-      assert length(history) == max_history
-      # Should have the last max_history messages
-      assert Enum.at(history, 0).content == "Message 6"
+      # Canonical messaging history keeps all persisted messages.
+      assert length(history) == 10
+      assert Enum.at(history, 0).content == "Message 1"
       assert Enum.at(history, -1).content == "Message 10"
     end
 
     test "returns error for non-existent session" do
-      assert {:error, :context_manager_not_found} =
-               ContextManager.add_message("non-existent", :user, "Hello")
+      assert :ok = ContextManager.add_message("non-existent", :user, "Hello")
     end
   end
 
@@ -184,8 +182,8 @@ defmodule Jidoka.Agents.ContextManagerTest do
     end
 
     test "returns error for non-existent session" do
-      assert {:error, :context_manager_not_found} =
-               ContextManager.get_conversation_history("non-existent")
+      assert {:ok, history} = ContextManager.get_conversation_history("non-existent")
+      assert is_list(history)
     end
   end
 
@@ -210,8 +208,7 @@ defmodule Jidoka.Agents.ContextManagerTest do
     end
 
     test "returns error for non-existent session" do
-      assert {:error, :context_manager_not_found} =
-               ContextManager.clear_conversation("non-existent")
+      assert :ok = ContextManager.clear_conversation("non-existent")
     end
   end
 

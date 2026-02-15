@@ -175,12 +175,13 @@ defmodule Jidoka.Agents.ContextManager do
   """
   def add_message(session_id, role, content)
       when is_binary(session_id) and is_atom(role) and is_binary(content) do
-    case find_context_manager(session_id) do
-      {:ok, pid} ->
-        GenServer.call(pid, {:add_message, role, content})
-
-      {:error, :not_found} ->
-        {:error, :context_manager_not_found}
+    if role in [:user, :assistant, :system, :tool] do
+      case Messaging.append_session_message(session_id, role, content) do
+        {:ok, _message} -> :ok
+        {:error, _reason} = error -> error
+      end
+    else
+      {:error, :invalid_role}
     end
   end
 
@@ -202,13 +203,7 @@ defmodule Jidoka.Agents.ContextManager do
 
   """
   def get_conversation_history(session_id) when is_binary(session_id) do
-    case find_context_manager(session_id) do
-      {:ok, pid} ->
-        GenServer.call(pid, :get_conversation_history)
-
-      {:error, :not_found} ->
-        {:error, :context_manager_not_found}
-    end
+    list_legacy_session_messages(session_id, @default_max_history)
   end
 
   @doc """
@@ -229,12 +224,20 @@ defmodule Jidoka.Agents.ContextManager do
 
   """
   def clear_conversation(session_id) when is_binary(session_id) do
-    case find_context_manager(session_id) do
-      {:ok, pid} ->
-        GenServer.call(pid, :clear_conversation)
+    case Messaging.clear_session_messages(session_id) do
+      :ok ->
+        broadcast_context_event(
+          session_id,
+          {:conversation_cleared,
+           %{
+             session_id: session_id
+           }}
+        )
 
-      {:error, :not_found} ->
-        {:error, :context_manager_not_found}
+        :ok
+
+      {:error, _reason} = error ->
+        error
     end
   end
 
@@ -689,46 +692,6 @@ defmodule Jidoka.Agents.ContextManager do
           {:error, {:already_registered, _pid}} ->
             :ignore
         end
-    end
-  end
-
-  @impl true
-  def handle_call({:add_message, role, content}, _from, state) do
-    if role in [:user, :assistant, :system, :tool] do
-      case Messaging.append_session_message(state.session_id, role, content) do
-        {:ok, _message} -> {:reply, :ok, state}
-        {:error, _reason} = error -> {:reply, error, state}
-      end
-    else
-      {:reply, {:error, :invalid_role}, state}
-    end
-  end
-
-  @impl true
-  def handle_call(:get_conversation_history, _from, state) do
-    case list_legacy_session_messages(state.session_id, state.max_history) do
-      {:ok, history} -> {:reply, {:ok, history}, state}
-      {:error, _reason} = error -> {:reply, error, state}
-    end
-  end
-
-  @impl true
-  def handle_call(:clear_conversation, _from, state) do
-    case Messaging.clear_session_messages(state.session_id) do
-      :ok ->
-        # Broadcast event
-        broadcast_context_event(
-          state.session_id,
-          {:conversation_cleared,
-           %{
-             session_id: state.session_id
-           }}
-        )
-
-        {:reply, :ok, state}
-
-      {:error, _reason} = error ->
-        {:reply, error, state}
     end
   end
 
